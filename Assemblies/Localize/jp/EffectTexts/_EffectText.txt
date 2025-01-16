@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <effectTextList>
+ 
+    <BattleEffectText ID="SinkInto">
+      <Name>沈潜</Name>
+      <Desc>混乱状態でない場合、ダメージを受けるたびに{0}混乱ダメージを受け、この値を半分にする
+混乱状態の場合、ダメージを受けるたびにランダムなタイプの{0}ダメージを受ける</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="GuardUmbrella">
+      <Name>保护伞</Name>
+      <Desc>受けたダメージ量と混乱ダメージ量-{0}*10%</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="SelfGuardPhase">
+      <Name>防御体勢</Name>
+      <Desc>防御ダイスでマッチ勝利するたびに次の幕にて沈潜1を付与
+防御ダイスでマッチ敗北するたびに次の幕にて沈潜2を得る</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="SelfAtkPhase">
+      <Name>攻撃体勢</Name>
+      <Desc>沈潜を最も多く保有する敵を優先に攻撃
+的中するたびに沈潜2を付与</Desc>
+    </BattleEffectText>
+    
+    <BattleEffectText ID="ErosionHeart">
+      <Name>危うい心</Name>
+      <Desc>混乱状態になり、沈潜6を得る
+ダメージを受けるたびに攻撃者に受けたダメージ量だけダメージと混乱ダメージを追加
+特殊な傘を4本召喚</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="Eyliu_Only">
+      <Name>エユイル専用バトルページ</Name>
+      <Desc>エユイルのページにのみ装着可能</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="SinkInto_Over">
+      <Name>沈潜殺到</Name>
+      <Desc>沈潜の値x5だけランダムなタイプのダメージを受けて自分の沈潜を取り除く</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="EGO_Normal">
+      <Name>E.G.O共鳴</Name>
+      <Desc>このページは現在の混乱抵抗値によって変化する
+最初にこのページを使用する場合E.G.Oパッシブを得る</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="EGO_Erosion">
+      <Name>E.G.O侵食</Name>
+      <Desc>このページは現在の混乱抵抗値によって変化する
+最初にこのページを使用する場合E.G.Oパッシブを得る</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="EGO_Passive">
+      <Name>E.G.Oパッシブ:雨が降り注ぐ空</Name>
+      <Desc>全てのバトルページの最初のダイスに「[的中時] このダイスの最小値だけ沈潜を付与」を付与</Desc>
+    </BattleEffectText>
+
+  </effectTextList>
+</BattleEffectTextRoot>

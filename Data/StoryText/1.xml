@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScenarioRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Chapter ID="-1">
+    <Title />
+  </Chapter>
+  <Group>
+    <GroupName>group</GroupName>
+    <Episode>
+      <EpisodeName>Episode</EpisodeName>
+      <Place>
+        <PlaceName>Place</PlaceName>
+        <Dialog ID="0" Model="">
+          <Teller />
+          <Title />
+          <Content />
+        </Dialog>
+      </Place>
+    </Episode>
+  </Group>
+</ScenarioRoot>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PassiveDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PassiveDesc ID="1">
+    <Name>E.G.O::여우비</Name>
+    <Desc>무대 시작시 500의 방어막을 얻음.
+방어막이 0으로 떨어지기 전에는 체력이 400 아래로 감소하지 않음.
+	
+매 막 마다 손과 덱에 있는 모든 책장을 소멸시키고 사용할 책장을 손에 추가.
+모든 책장의 비용이 0이 됨.</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="2">
+    <Name>로보토미 코퍼레이션 지부 징계팀 팀장</Name>
+    <Desc>무대 시작시 방어 우산을 6 얻음. 
+일정한 간격으로 4개의 낡은 우산을 소환.
+공격 태세와 방어 태세가 정기적으로 전환됨.</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="3">
+    <Name>위험한 마음</Name>
+    <Desc>전투 책장 '모조리 가라앉아라!' 를 일정 간격으로 사용.
+막 시작시 모든 캐릭터에게 침잠 1 부여.</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="4">
+    <Name>결의</Name>
+    <Desc>흐트러짐 저항에서 회복될 때 캐릭터에게 침잠이 있을 경우 침잠의 절반 만큼 피해량 증가를 얻고 모든 침잠 수치를 제거</Desc>
+  </PassiveDesc>
+
+  <PassiveDesc ID="5">
+    <Name>우산</Name>
+    <Desc>막이 끝날 때까지 이 우산이 남아 있다면, 다음 막에 에우일에게 신속 2 부여</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="6">
+    <Name>버려진 우산</Name>
+    <Desc>사망시 처치한 캐릭터에게 힘 1 부여. 다음 막에 에우일은 방어 우산 1을 잃음</Desc>
+  </PassiveDesc>
+
+  <PassiveDesc ID="7">
+    <Name>가라앉는 심장</Name>
+    <Desc>막이 끝날 때까지 이 우산이 남아 있다면, 막 시작시 에우일에게 힘 2 부여</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="8">
+    <Name>닫힌 심장</Name>
+    <Desc>막이 끝날 때까지 이 우산이 남아 있다면, 막 시작시 에우일에게 보호 2 부여</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="9">
+    <Name>허무한 심장</Name>
+    <Desc>막이 끝날 때까지 이 우산이 남아 있다면, 막 시작시 에우일에게 피해량 증가 2 부여</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="10">
+    <Name>절박한 마음</Name>
+    <Desc>막이 끝날 때까지 이 우산이 남아 있다면, 막 시작시 에우일에게 신속 2 부여</Desc>
+  </PassiveDesc>
+
+  <PassiveDesc ID="11">
+    <Name>E.G.O::여우비</Name>
+    <Desc>공격으로 받는 피해 25% 감소.
+광역 공격 전투 책장 사용시 아군이 사용하는 모든 전투 책장의 첫번째 주사위의 위력 +2.
+고유의 E.G.O를 사용할 수 있다</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="12">
+    <Name>비바람 부는 밤</Name>
+    <Desc>보유한 침잠 2당 받는 피해 10% 감소 (최대 50%).
+공격 적중시 다음 막에 피해량 증가 1을 얻음 (막 당 최대 3)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="13">
+    <Name>위태로운 정신</Name>
+    <Desc>합 패배시 흐트러짐 피해 2.
+막 종료시 보유한 침잠 만큼 흐트러짐 피해를 입고 보유한 침잠을 절반으로 감소</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="14">
+    <Name>결의</Name>
+    <Desc>막 시작시 흐트러짐 상태일 경우 흐트러짐 상태를 해제하고 힘 1, 신속 1 을 얻음.
+흐트러짐 상태에서 해제될 때마다 접대에서 영구적으로 보호 2를 얻음</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="15">
+    <Name>폭우</Name>
+    <Desc>전투 책장을 사용시 첫 번째 공격 주사위는 '[적중] 주사위의 최솟값 만큼 침잠 부여' 효과를 얻음</Desc>
+  </PassiveDesc>
+</PassiveDescRoot>

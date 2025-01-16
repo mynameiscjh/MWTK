@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleDialogRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <GroupName>Fox_Rain</GroupName>
+  <Character ID="1">
+    <Type ID="START_BATTLE">
+      <BattleDialog ID="0">…来吧</BattleDialog>
+      <BattleDialog ID="1">…开始吧</BattleDialog>
+    </Type>
+    <Type ID="BATTLE_VICTORY">
+      <BattleDialog ID="0">还有很多事情要做…</BattleDialog>
+    </Type>
+    <Type ID="DEATH">
+      <BattleDialog ID="0">…终于…</BattleDialog>
+      <BattleDialog ID="1">…谢谢…</BattleDialog>
+    </Type>
+    <Type ID="COLLEAGUE_DEATH">
+      <BattleDialog ID="0">那把伞不能用了</BattleDialog>
+      <BattleDialog ID="1">…你也再次被抛弃了</BattleDialog>
+      <BattleDialog ID="2">...</BattleDialog>
+    </Type>
+    <Type ID="KILLS_OPPONENT">
+      <BattleDialog ID="0">没时间为你哀悼了，必须立刻打倒下一个…</BattleDialog>
+      <BattleDialog ID="1">抱歉…</BattleDialog>
+      <BattleDialog ID="2">…</BattleDialog>
+      <BattleDialog ID="3">…下一个…</BattleDialog>
+    </Type>
+  </Character>
+</BattleDialogRoot>

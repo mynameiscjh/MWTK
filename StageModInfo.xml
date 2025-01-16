@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NormalInvitation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1.1</Version>
+  <Workshop>
+    <ID>Don_Eyuil</ID>
+    <Title>自百年前的回忆</Title>
+    <Description>人们仰望星空时,看到的群星都是百年以前的景象了，但它门依旧如此闪耀
+接待一位百年前的"收尾人",图标位于杂质(正在施工)</Description>
+    <Tag>Invitation</Tag>
+    <PreviewImage>D:\Steam\steamapps\workshop\content\1256670\狐雨\preview.jpg</PreviewImage>
+  </Workshop>
+  <InvitationFile>
+    <Stage Exist="true">
+      <Path>\Data\StageInfo.xml</Path>
+    </Stage>
+    <EnemyUnit Exist="true">
+      <Path>\Data\EnemyUnitInfo.xml</Path>
+    </EnemyUnit>
+    <EquipPage_Enemy Exist="true">
+      <Path>\Data\EquipPage_Enemy.xml</Path>
+    </EquipPage_Enemy>
+    <EquipPage_Librarian Exist="true">
+      <Path>\Data\EquipPage_Librarian.xml</Path>
+    </EquipPage_Librarian>
+    <DropBook Exist="true">
+      <Path>\Data\Dropbook.xml</Path>
+    </DropBook>
+    <CardDropTable Exist="true">
+      <Path>\Data\CardDropTable.xml</Path>
+    </CardDropTable>
+    <CardInfo Exist="true">
+      <Path>\Data\CardInfo.xml</Path>
+    </CardInfo>
+    <Deck Exist="true">
+      <Path>\Data\Deck_Enemy.xml</Path>
+    </Deck>
+    <Dialog Exist="true">
+      <Path>\Data\Combat_Dialog.xml</Path>
+    </Dialog>
+    <BookDesc Exist="true">
+      <Path>\Data\BookStory.xml</Path>
+    </BookDesc>
+    <Passive Exist="true">
+      <Path>\Data\PassiveList.xml</Path>
+    </Passive>
+  </InvitationFile>
+</NormalInvitation>

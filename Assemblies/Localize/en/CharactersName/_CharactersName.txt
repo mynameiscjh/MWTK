@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CharactersNameRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name ID="1">Eyuil</Name>
+<Name ID="2">Old Umbrella</Name>
+<Name ID="3">Eyuil's Umbrella</Name>
+<Name ID="4">Eyuil's Umbrella</Name>
+<Name ID="5">Eyuil's Umbrella</Name>
+<Name ID="6">Eyuil's Umbrella</Name>
+</CharactersNameRoot>

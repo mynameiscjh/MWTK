@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BattleCardAbility ID="FoxRain_01">
+    <Desc>[使用时]使自身获得3层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_02">
+    <Desc>[命中时]对目标施加3层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_03">
+    <Desc>[命中时]对目标施加2层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_04">
+    <Desc>[未被消耗/拼点胜利]下一幕使自身获得1层[伤害提升]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_05">
+    <Desc>[未被消耗/拼点胜利]下一幕使自身获得1层[强壮]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_06">
+    <Desc>[命中时]对目标施加2层[沉沦]与[易损]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_07">
+    <Desc>[命中时]对目标施加1层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_08">
+    <Desc>[使用时]若自身[沉沦]层数不低于2则使本书页最小值+2
+若目标[沉沦]层数不低于4则使本书页最大值+3</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_09">
+    <Desc>[战斗开始]下一幕使自身获得[侵蚀渐深的心]
+[命中时]本书页视为击中所有角色</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_10">
+    <Desc>[命中时]对所有角色施加5层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_11">
+    <Desc>[命中时]使目标[沉沦泛滥]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_12">
+    <Desc>[使用时]使双方这一幕及下一幕获得3层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_13">
+    <Desc>[命中时]使目标[沉沦泛滥]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_14">
+    <Desc>[使用时]清除自身[沉沦]并使所有我方角色这一幕及下一幕获得1层[强壮]与3层[守护]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_15">
+    <Desc>[命中时]对目标施加3层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_16">
+    <Desc>[战斗开始]对所有敌方角色施加4层[沉沦]
+[使用时]使自身[沉沦泛滥]并使自身这一幕及下一幕造成的伤害增加25%</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_17">
+    <Desc>[使用时]恢复1点光芒并使自身获得2层[沉沦]
+若自身混乱抗性不高于50%则额外抽取一张书页</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_18">
+    <Desc>[拼点失败]下一幕使自身获得2层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_19">
+    <Desc>[使用时]若自身混乱抗性不高于50%则使本书页最小值+2
+若自身混乱抗性不高于25%则使本书页最大值+3</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_20">
+    <Desc>[命中时]消耗4层[沉沦]并对使本骰子伤害与混乱伤害增加25%</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_21">
+    <Desc>[战斗开始]使自身这一幕获得3层[沉沦]
+[使用时]摧毁本书页所有骰子并抽取2张书页这一幕自身被一整张书页击中后将以本书页骰子回击(至多触发一次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_22">
+    <Desc>[命中时]这一幕及下一幕使双方获得2层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_23">
+    <Desc>[战斗开始]使自身失去等同于自身[沉沦]层数的混乱抗性
+[使用时]恢复4点光芒并抽取1张书页</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_24">
+    <Desc>自身每有3层[沉沦]便使本书页费用-1(至多-4)
+[命中时]本书页将视为命中所有敌方角色
+[使用时]使自身获得5层[沉沦]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_25">
+    <Desc>[命中时]对目标施加5层[沉沦]</Desc>
+  </BattleCardAbility>
+</BattleCardAbilityDescRoot>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cardDescList>
+    <BattleCardDesc ID="1">
+      <LocalizedName>Sting Memories</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="2">
+      <LocalizedName>Thorny Memories</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="3">
+      <LocalizedName>Self-defense</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="4">
+      <LocalizedName>Umbrella</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="5">
+      <LocalizedName>Umbrella Pierce</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="6">
+      <LocalizedName>Umbrella Thwack</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="7">
+      <LocalizedName>Puddle Stomp</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="8">
+      <LocalizedName>Sink it All!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="9">
+      <LocalizedName>Aching Heart</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="10">
+      <LocalizedName>Sunshower</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="11">
+      <LocalizedName>Spread Out!!!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="12">
+      <LocalizedName>Sunshower</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="13">
+      <LocalizedName>Sunshower</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="14">
+      <LocalizedName>Umbrella Thwack</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="15">
+      <LocalizedName>Puddle Stomp</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="16">
+      <LocalizedName>Don't Touch Me...!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="17">
+      <LocalizedName>Aching Heart</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="18">
+      <LocalizedName>Sink it All!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="19">
+      <LocalizedName>Spread Out!!!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+  </cardDescList>
+</BattleCardDescRoot>

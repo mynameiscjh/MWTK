@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <effectTextList>
+ 
+    <BattleEffectText ID="SinkInto">
+      <Name>沉沦</Name>
+      <Desc>受到伤害时若自身未陷入混乱则受到{0}点混乱伤害并使层数减半
+若自身已陷入混乱则改为受到{0}点随机类型伤害</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="GuardUmbrella">
+      <Name>保护伞</Name>
+      <Desc>受到的伤害与混乱伤害减少{0}*10%</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="SelfGuardPhase">
+      <Name>防御架势</Name>
+      <Desc>招架骰子拼点胜利时使目标下一幕获得1层"沉沦"招架骰子拼点失败时使自身下一幕获得2层"沉沦"</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="SelfAtkPhase">
+      <Name>进攻架势</Name>
+      <Desc>优先指定场上"沉沦"层数最高的敌方角色为目标
+击中目标时对其施加2层"沉沦"</Desc>
+    </BattleEffectText>
+    
+    <BattleEffectText ID="ErosionHeart">
+      <Name>侵蚀渐深的心</Name>
+      <Desc>自身陷入混乱并获得6层"沉沦"
+受到伤害时将对造成伤害方造成等同于伤害量的伤害与混乱伤害
+生成4把特殊的伞
+(每幕结束时清除)</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="Eyliu_Only">
+      <Name>埃尤尔专属战斗书页</Name>
+      <Desc>仅限装备埃尤尔之页的角色使用</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="SinkInto_Over">
+      <Name>沉沦泛滥</Name>
+      <Desc>受到沉沦层数×5点随机类型伤害随后移除所有沉沦</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="EGO_Normal">
+      <Name>E.G.O共鸣</Name>
+      <Desc>本书页将根据自身剩余混乱抗性发生变化
+首次使用本书页后将获得E.G.O被动</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="EGO_Erosion">
+      <Name>E.G.O侵蚀</Name>
+      <Desc>本书页将根据自身剩余混乱抗性发生变化
+首次使用本书页后将获得E.G.O被动</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="EGO_Passive">
+      <Name>E.G.O被动:阴雨如晦</Name>
+      <Desc>使自身所有书页的第一颗骰子获得额外效果"[命中时]对目标施加等同于最小值的[沉沦]"</Desc>
+    </BattleEffectText>
+
+  </effectTextList>
+</BattleEffectTextRoot>

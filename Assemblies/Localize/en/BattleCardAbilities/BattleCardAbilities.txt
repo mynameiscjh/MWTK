@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BattleCardAbility ID="FoxRain_01">
+    <Desc>[On Use] Gain 3 [Sinking]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_02">
+    <Desc>[On Hit] Inflict 3 [Sinking]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_03">
+    <Desc>[On Hit] Inflict 2 [Sinking]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_04">
+    <Desc>[Not Consumed/On Clash Win] Gain 1 [Damage Up] next Scene</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_05">
+    <Desc>[Not Consumed/On Clash Win] Gain 1 [Strength] next Scene</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_06">
+    <Desc>[On Hit] Inflict 2 [Sinking] and [Vulnerable]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_07">
+    <Desc>[On Hit] Inflict 1 [Sinking]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_08">
+    <Desc>[On Use] If user has 2+ [Sinking] , the min value of the dice on this page by +2
+If target has 4+ [Sinking], the max value of the dice on this page by +3</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_09">
+    <Desc>[Combat Start] Gain  [Corroding Heart] next Scene
+[On Hit]this page is considered to hit all characters</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_10">
+    <Desc>[On Hit] Inflict 5 [Sinking]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_11">
+    <Desc>[On Hit]Cause[Sking Deluge]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_12">
+    <Desc>[On Use] Inflict 3 [Sinking] to each other this and next Scene</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_13">
+    <Desc>[On Hit]Cause[SinKing Deluge]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_14">
+    <Desc>[On Use]Remove all  [Sinking]and gain 1 [Strength] and 3 [Protection] to allies this and next Scene</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_15">
+    <Desc>[On Hit] Inflict 3 [Sinking]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_16">
+    <Desc>[Combat Start] Inflict 4 [Sinking] to all enemies
+[On Use]Cause[SinKing Deluge]and deal 25% more damage with attacks this Scene and next Scene.</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_17">
+    <Desc>[On Use]Restore 1 Light;Gain 2 [Sinking]
+If user's Stagger Resist is below 50%, draw 1 page</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_18">
+    <Desc>[On Clash Lose]Gain 2 [Sinking] next Scene.</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_19">
+    <Desc>[On Use]If user's Stagger Resist is below 50%,the min value of the dice on this page by +2
+If user's Stagger Resist is below 25%,the max value of the dice on this page by +3</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_20">
+    <Desc>[On hit]Spend 4 [Sinking] to deal +25% damage and </Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_21">
+    <Desc>[Combat Start] Gain 3 [Sinking]
+[On Use]Destroy all dice on this page and draw 2 page,when hit by pages in this Scene,will use this page Back(Up to once)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_22">
+    <Desc>[On Hit] Inflict 2 [Sinking] to each other this and next Scene</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_23">
+    <Desc>[Combat Start]lose [Sinking]amount Stagger Resist
+[On Use]Restore 2 Light and draw 1 Page</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_24">
+    <Desc>Lower the Cost by every 3 [Sinking](max 4)
+[On Hit]this page is considered to hit all characters
+[On Use] Gain 5 [Sinking]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_25">
+    <Desc>[On Hit] Inflict 5 [Sinking]</Desc>
+  </BattleCardAbility>
+</BattleCardAbilityDescRoot>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CharactersNameRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name ID="1">エユイル</Name>
+<Name ID="2">古傘</Name>
+<Name ID="3">エユイルの傘</Name>
+<Name ID="4">エユイルの傘</Name>
+<Name ID="5">エユイルの傘</Name>
+<Name ID="6">エユイルの傘</Name>
+</CharactersNameRoot>

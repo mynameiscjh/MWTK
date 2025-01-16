@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BookDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <bookDescList>
+    <BookDesc BookID="1">
+      <BookName>エユイルのページ</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="2">
+      <BookName>古傘のページ</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="3">
+      <BookName>エユイルの傘のページ</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="4">
+      <BookName>エユイルの傘のページ</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="5">
+      <BookName>エユイルの傘のページ</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="6">
+      <BookName>エユイルの傘のページ</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="10000001">
+      <BookName>エユイルのページ</BookName>
+      <TextList>
+              <Desc>こいつだってかつて誰かを雨風から守る一本の傘だ、僕は手に取った瞬間からそう考えた。先輩から「懲戒チームこそ幻想体を貫く剣だぞ」っと教えられたんだけど、僕はそれを守りながら「そしてみんなを守る傘」を付け加えて。最初はこのE.G.Oを装着するたびに憂鬱など負の感情がやってくるけど、時間の流れとともに、僕も徐々にこいつとのバランスを取れるようになった。とことん、すべての暗雲が眩しい日差しに一掃されたんだ、僕も会社の皆さんのために堅い傘とさすようにこの傘で支部の幻想体たちを貫くことに慣れてきた。この支部も私たちの努力で化け物を管理する地獄から家とでも呼ぶことができるところになった。私たちがともに大きい傘を差し、暖かくて平和の時間を過ごした。春日の白昼夢のように、暖かさに包まれた儚い時間だった。</Desc>
+      <Desc>しかし春が急に消え去った。白夜・黒昼期間のあの件で全てに終止符を打った、この儚い夢も夏のはじめと共に散らばった。もしかしたらこいつと一緒に地下に埋められるこそ最善の終わりかもしれない。しかし僕は瓦礫の中から踏みとどまった。僕は時間を稼いだかな？あいつらは無事に逃げ出したのか？僕はほっと廃墟となった支部に佇んでいる。僕はわっかりません、もう一度自分の家を見失った、それ以外何もわからないんだ</Desc>
+      <Desc>この雨がいつから始まったんだろう？なんで雨の声がいつも頭に響くだろうか？僕は、しらない。いつの間にか橋の下や暗い路地の中でしか眠れないようになった、そしてまた延々と続く雨声に夢から引く出す。いつの間にか幸せな記憶に棘が生えてきた、他人のためにさした傘は虚栄や偽りも遮ったかな？僕は、自分のことしか考えないひとでは？など振り払えない考えが僕の頭を過った。そして僕は何かをやると決めた、僕の使命をやり残しただろうか、あるいは誰かがどこで僕を待ってるだろうか？僕はわかる、全ての真相を探し出しても過去に戻れなかったんだ、ですが足が止まったらああいう考えが僕を縛り付けるんだ、あいつらに追いつかれちゃいかないんだ、僕は、それと向き合う勇気はないんだ…</Desc>
+      <Desc>今日も雨が止んでないや、この古傘も穴がいっぱいあってるし、何も遮れないようになった。もう雨から身を守る必要もないんだ、走ろう。より早く走ることだけで、一瞬の躊躇いもなく前に進むことだけで、全てを後ろに捨てられるんだろう。</Desc>
+      <Desc>雨夜に何かをやることがほしいんだけだ、この体、全てが雨に錆びつくまでに。</Desc>
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+  </bookDescList>
+</BookDescRoot>

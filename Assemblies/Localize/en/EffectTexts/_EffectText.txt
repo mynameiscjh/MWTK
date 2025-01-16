@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <effectTextList>
+ 
+    <BattleEffectText ID="SinkInto">
+      <Name>Sinking</Name>
+      <Desc>On hit if not staggered gain {0} Stagger damage and subtract 1/2rd of the Sinking stack.
+If staggered then gain {0} damage</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="GuardUmbrella">
+      <Name>GuardUmbrella</Name>
+      <Desc>Take {0}*10% less damage and Stagger damage</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="SelfGuardPhase">
+      <Name>Guard mode</Name>
+      <Desc>If a Defensive die win a clash Inflict 1 'Sinking',If loses in a clash gain 2 'Sinking'</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="SelfAtkPhase">
+      <Name>Attack mode</Name>
+      <Desc>Prioritize targeting the librarian who has highest  'Sinking'.
+On hit Inflict 2 'Sinking'</Desc>
+    </BattleEffectText>
+    
+    <BattleEffectText ID="ErosionHeart">
+      <Name>Corroding Heart</Name>
+      <Desc>Staggered and gain 6 'Sinking'
+When hit return 200% damege and Stagger damage to the attacker
+four 'Eyuil's Umbrella' are summoned.</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="Eyliu_Only">
+      <Name>Eyuil’s Exclusive Page</Name>
+      <Desc>Can only be set in the deck of Eyuil’s Key page.</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="SinkInto_Over">
+      <Name>SinKing Deluge</Name>
+      <Desc>Deal Sinking *5 damage and remove all 'Sinking'</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="EGO_Normal">
+      <Name>E.G.OAwakening</Name>
+      <Desc>Depending on the BP changes
+Get E.G.O passiveability after frist used</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="EGO_Erosion">
+      <Name>E.G.OCorrosion</Name>
+      <Desc>Depending on the BP changes
+Get E.G.O passiveability after frist used</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="EGO_Passive">
+      <Name>E.G.OPassiveability:Heavy rain</Name>
+      <Desc>When playing a Combat Page, its first Offensive gain an additional effect: ‘[On Hit] Inflict (the minimum value) Sinking’.</Desc>
+    </BattleEffectText>
+
+  </effectTextList>
+</BattleEffectTextRoot>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cardDescList>
+    <BattleCardDesc ID="1">
+      <LocalizedName>蛰痛心灵的回忆</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="2">
+      <LocalizedName>荆棘蔓生的追忆</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="3">
+      <LocalizedName>自我防御</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="4">
+      <LocalizedName>破伞壁垒</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="5">
+      <LocalizedName>伞骨贯穿</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="6">
+      <LocalizedName>破伞挥打</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="7">
+      <LocalizedName>踏入泥泞</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="8">
+      <LocalizedName>尽数沉沦!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="9">
+      <LocalizedName>愈加刺痛的心</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="10">
+      <LocalizedName>狐雨</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="11">
+      <LocalizedName>撑开吧!!!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="12">
+      <LocalizedName>狐雨</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="13">
+      <LocalizedName>狐雨</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="14">
+      <LocalizedName>破伞挥打</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="15">
+      <LocalizedName>踏入泥泞</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="16">
+      <LocalizedName>别碰我...!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="17">
+      <LocalizedName>蛰痛心灵的追忆</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="18">
+      <LocalizedName>尽数沉沦!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="19">
+      <LocalizedName>撑开吧!!!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+  </cardDescList>
+</BattleCardDescRoot>

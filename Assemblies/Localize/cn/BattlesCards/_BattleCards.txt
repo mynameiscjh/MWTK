@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cardDescList>
+    <BattleCardDesc ID="1">
+      <LocalizedName>血之宝库</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="2">
+      <LocalizedName>血剑斩击</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="3">
+      <LocalizedName>凝血化锋</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="4">
+      <LocalizedName>剑刃截断</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="5">
+      <LocalizedName>堂埃尤尔派硬血术1式-血剑</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="6">
+      <LocalizedName>高速穿刺</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="7">
+      <LocalizedName>长枪冲锋</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="8">
+      <LocalizedName>堂埃尤尔派硬血术2式-血枪</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="9">
+      <LocalizedName>镰刃截断</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="10">
+      <LocalizedName>巨镰纵切</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="11">
+      <LocalizedName>堂埃尤尔派硬血术3式-血镰</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="12">
+      <LocalizedName>血刃割裂</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="13">
+      <LocalizedName>血刃环切</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="14">
+      <LocalizedName>堂埃尤尔派硬血术4式-血刃</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="15">
+      <LocalizedName>迅捷剑击</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="16">
+      <LocalizedName>堂埃尤尔派硬血术5式-双剑</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="17">
+      <LocalizedName>血液凝结</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="18">
+      <LocalizedName>堂埃尤尔派硬血术6式-血甲</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="19">
+      <LocalizedName>血之壁垒</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="20">
+      <LocalizedName>硬血化铠</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="21">
+      <LocalizedName>穿云血箭</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="22">
+      <LocalizedName>血箭连射</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="23">
+      <LocalizedName>堂埃尤尔派硬血术7式-血弓</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="24">
+      <LocalizedName>血鞭抽打</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="25">
+      <LocalizedName>堂埃尤尔派硬血术8式-血鞭</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="26">
+      <LocalizedName>血伞挥打</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="27">
+      <LocalizedName>堂埃尤尔派硬血术9式-血伞</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="28">
+      <LocalizedName>为仍在饥渴中的家人设下的晚宴</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="29">
+      <LocalizedName>必须担负的责任</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="30">
+      <LocalizedName>这绝非理想中的共存...</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="31">
+      <LocalizedName>但我有亲族,家人,不能视而不见!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="32">
+      <LocalizedName>凝血化锋</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="33">
+      <LocalizedName>纵血为刃</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="34">
+      <LocalizedName>硬血截断</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="35">
+      <LocalizedName>血如泉涌</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="36">
+      <LocalizedName>梦之冒险</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="37">
+      <LocalizedName>冲锋!驽骍难得!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="38">
+      <LocalizedName>旋转!绽放把!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="39">
+      <LocalizedName>堂埃尤尔派硬血术终式-La Sangre</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="40">
+      <LocalizedName>便以决斗作为这场战斗的结尾吧</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="41">
+      <LocalizedName>你是否心怀梦想,无所畏惧</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="42">
+      <LocalizedName>你是否相信希望,憧憬未来</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="43">
+      <LocalizedName>你是否肩负责任,永不抛弃</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="44">
+      <LocalizedName>你是否心怀理解,尊重他人</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="45">
+      <LocalizedName>堂埃尤尔派硬血术1式-血剑</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="46">
+      <LocalizedName>堂埃尤尔派硬血术2式-血枪</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="47">
+      <LocalizedName>堂埃尤尔派硬血术3式-血镰</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="48">
+      <LocalizedName>堂埃尤尔派硬血术4式-血刃</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="49">
+      <LocalizedName>堂埃尤尔派硬血术5式-双剑</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="50">
+      <LocalizedName>堂埃尤尔派硬血术6式-血甲</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="51">
+      <LocalizedName>堂埃尤尔派硬血术7式-血弓</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="52">
+      <LocalizedName>堂埃尤尔派硬血术8式-血鞭</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="53">
+      <LocalizedName>堂埃尤尔派硬血术9式-血伞</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="54">
+      <LocalizedName>堂埃尤尔派硬血术终式-La Sangre</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="55">
+      <LocalizedName>血之宝库</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="56">
+      <LocalizedName>冲锋!驽骍难得!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="57">
+      <LocalizedName>血伞挥打</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="58">
+      <LocalizedName>旋转!绽放把!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="59">
+      <LocalizedName>凝血化锋</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="60">
+      <LocalizedName>纵血为刃</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="61">
+      <LocalizedName>硬血截断</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="62">
+      <LocalizedName>血如泉涌</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="63">
+      <LocalizedName>梦之冒险</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+  </cardDescList>
+</BattleCardDescRoot>

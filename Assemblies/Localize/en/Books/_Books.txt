@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BookDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <bookDescList>
+    <BookDesc BookID="1">
+      <BookName>Eyuil's pages</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="2">
+      <BookName>破伞之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="3">
+      <BookName>埃尤尔的伞之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="4">
+      <BookName>埃尤尔的伞之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="5">
+      <BookName>埃尤尔的伞之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="6">
+      <BookName>埃尤尔的伞之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="10000001">
+      <BookName>Eyuil's pages</BookName>
+      <TextList>
+              <Desc>一把曾经用来保护某人于风雨之中的伞，从我拿起它的那一刻起，我就是这么认为的了，我的前辈告诫过我“我们惩戒部就是一把用于刺穿异想体的剑”，我在践行它的同时加上了一条——“也是保护大家的伞”，刚开始，只要我穿上这套E.G.O，忧郁与黑暗的情感就会席卷而来，伴随着时间的流逝，我和它逐渐找到了一种平衡，最终那些阴霾被阳光一扫而空，我也终于能够熟练的用这把伞刺穿支部的每一个异想体，为公司大家撑起一把把坚实的伞。而支部也在我们这代人的努力下，从一个管理怪物的人间炼狱，变成了一个足以称为家的地方，我们一同撑起了这把大伞，共同度过了好一段温暖的时光。那段日子就像一个春日里的幻梦一样，温暖美好。</Desc>
+      <Desc>但没人想到这个春日凋零的是如此突然，一切都结束在了“白夜黑昼”期间发生的那次意外，而这场幻梦随着夏日的到来消散殆尽，或许随着它一起埋葬在地下才是我最好的结局，但我却从那堆瓦楞里爬了出来，我有为他们争取到时间吗？他们成功逃出来了吗？我茫然的站在废墟上，我不知道，但我明白我又一次失去了自己的家。</Desc>
+      <Desc>这场雨下了多久了？为什么雨声永远回荡在我的耳旁？我不知道，不知道从什么时候开始，我只能在阴暗的桥洞或者暗巷的角落才能入眠，又被淅沥的雨声拉出梦乡。又不知道什么时候开始，本应美好的回忆逐渐开始荆棘蔓生，我为他人撑起的那把伞下又是否藏着虚荣，虚伪，我是不是一个满脑子只有自己的人？类似的想法一直缭绕在我的心头，挥之不去，所以我决定去做些什么，或许还有什么使命没完成吧，或许还有人在哪里等着我吧？我明白，即使我真的查清了一切的真相也回不到过去，但一旦我停下来那些想法就会再次把我牢牢困住，我绝不能被那些东西追上，我没有胆量去直视它们…</Desc>
+      <Desc>今天雨仍没有停，这把破旧的伞如今是如此空洞，已经遮不住任何东西了，已经没有避雨的必要了，走，必须更快的走下去，绝不应有片刻的停歇，只有不断的前进，我才能将它们甩在身后。</Desc>
+      <Desc>我只是希望在雨夜做些什么，直到彻底生锈在雨中。</Desc>
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+  </bookDescList>
+</BookDescRoot>

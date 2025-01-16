@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cardDescList>
+    <BattleCardDesc ID="1">
+      <LocalizedName>찔러오는 기억들</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="2">
+      <LocalizedName>가시돋친 기억들</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="3">
+      <LocalizedName>자기 방어</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="4">
+      <LocalizedName>우산</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="5">
+      <LocalizedName>우산 찌르기</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="6">
+      <LocalizedName>우산 휘두르기</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="7">
+      <LocalizedName>진창 밟기</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="8">
+      <LocalizedName>모조리 가라앉아라!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="9">
+      <LocalizedName>아파오는 마음</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="10">
+      <LocalizedName>여우비</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="11">
+      <LocalizedName>펼쳐져라!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="12">
+      <LocalizedName>여우비</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="13">
+      <LocalizedName>여우비</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="14">
+      <LocalizedName>우산 휘두르기</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="15">
+      <LocalizedName>진창 밟기</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="16">
+      <LocalizedName>날 건들지 마…!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="17">
+      <LocalizedName>아파오는 심장</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="18">
+      <LocalizedName>모조리 가라앉아라!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="19">
+      <LocalizedName>펼쳐져라!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+  </cardDescList>
+</BattleCardDescRoot>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BookDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <bookDescList>
+    <BookDesc BookID="1">
+      <BookName>堂埃尤尔之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="2">
+      <BookName>凝结的梦想之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="3">
+      <BookName>凝结的希望之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="4">
+      <BookName>凝结的责任之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="5">
+      <BookName>凝结的理解之页</BookName>
+      <TextList>
+        <Desc />
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+    <BookDesc BookID="10000001">
+      <BookName>堂埃尤尔之页</BookName>
+      <TextList>
+              <Desc></Desc>
+      <Desc>。</Desc>
+      <Desc></Desc>
+      <Desc></Desc>
+      <Desc></Desc>
+      </TextList>
+      <PassiveList />
+    </BookDesc>
+  </bookDescList>
+</BookDescRoot>

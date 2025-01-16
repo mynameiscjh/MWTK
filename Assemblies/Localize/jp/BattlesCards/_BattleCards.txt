@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cardDescList>
+    <BattleCardDesc ID="1">
+      <LocalizedName>心に刺さる回憶</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="2">
+      <LocalizedName>棘の生えた追憶</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="3">
+      <LocalizedName>自己防御</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="4">
+      <LocalizedName>古傘の壁</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="5">
+      <LocalizedName>傘で貫く</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="6">
+      <LocalizedName>傘で払う</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="7">
+      <LocalizedName>泥濘踏み</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="8">
+      <LocalizedName>全て沈んでしまえ</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="9">
+      <LocalizedName>ひりつく心</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="10">
+      <LocalizedName>狐雨</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="11">
+      <LocalizedName>拡がれ!!!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="12">
+      <LocalizedName>狐雨</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="13">
+      <LocalizedName>狐雨</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="14">
+      <LocalizedName>傘で払う</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="15">
+      <LocalizedName>泥濘踏み</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="16">
+      <LocalizedName>触れるな...!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="17">
+      <LocalizedName>心に刺さる回憶</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="18">
+      <LocalizedName>全て沈んでしまえ</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+    <BattleCardDesc ID="19">
+      <LocalizedName>拡がれ!</LocalizedName>
+      <Ability />
+    </BattleCardDesc>
+  </cardDescList>
+</BattleCardDescRoot>

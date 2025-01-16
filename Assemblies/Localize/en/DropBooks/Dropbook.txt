@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CharactersNameRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name ID="1">Eyuil's book</Name>
+  <Name ID="2">Lobotomy Company Branch's book</Name>
+</CharactersNameRoot>

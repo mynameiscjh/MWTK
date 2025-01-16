@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PassiveDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PassiveDesc ID="1">
+    <Name>E.G.O狐雨</Name>
+    <Desc>舞台開始時、バリア600を得る、バリアが残っているなら体力が400以下にならない
+毎幕ごとに手元とデッキにある全てのページを消去し、使用するページを手元に追加。全てのページのコストが0になる</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="2">
+    <Name>ロボトミーコンパニー支部懲戒チーム部長</Name>
+    <Desc>舞台開始時、保護傘5を得る
+一定幕毎に古傘を召喚
+一定幕毎に防御体勢と攻撃体勢の間に切り替わる</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="3">
+    <Name>危うい精神</Name>
+    <Desc>一定幕毎に「全て沈んでしまえ」を使用
+幕の開始時、全てのキャラクターに沈潜1を付与</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="4">
+    <Name>決意</Name>
+    <Desc>混乱状態を解除するたびにこの接待にて永久的に「現在の沈潜の値/2」だけダメージ量増加を得て自分の沈潜を取り除く</Desc>
+  </PassiveDesc>
+
+  <PassiveDesc ID="5">
+    <Name>保護傘</Name>
+    <Desc>幕の終了時、生きている場合自分が死亡し、次の幕にてエユイルにクイック2を付与</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="6">
+    <Name>捨てられた古傘</Name>
+    <Desc>倒される時に攻撃者にパワー1を付与し、エユイルの保護傘が1減少</Desc>
+  </PassiveDesc>
+
+  <PassiveDesc ID="7">
+    <Name>沈潜した心</Name>
+    <Desc>幕の終了時、生きている場合自分が死亡し、この舞台にてエユイルに永久的にパワー2を付与</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="8">
+    <Name>閉じた心</Name>
+    <Desc>幕の終了時、生きている場合自分が死亡し、この舞台にてエユイルに永久的に保護2を付与</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="9">
+    <Name>虚栄の心</Name>
+    <Desc>幕の終了時、生きている場合自分が死亡し、この舞台にてエユイルに永久的にダメージ量増加2を付与</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="10">
+    <Name>急迫の心</Name>
+    <Desc>幕の終了時、生きている場合自分が死亡し、この舞台にてエユイルに永久的にクイック2を付与</Desc>
+  </PassiveDesc>
+
+  <PassiveDesc ID="11">
+    <Name>E.G.O狐雨</Name>
+    <Desc>受けるダメージ量-25%
+広域ページを使用する幕にて全ての味方が使用するページの最初のダイスの威力+2
+個人E.G.O狐雨を使用可能
+(帰属不可)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="12">
+    <Name>嵐の夜</Name>
+    <Desc>戦闘開始時、自分の沈潜2につきこの幕にて受けるダメージ量と混乱ダメージ量-10%(最大-50%)
+ダメージを受けるたびに次の幕にてダメージ量増加1を得る(幕ごとに3回)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="13">
+    <Name>危うい精神</Name>
+    <Desc>マッチ敗北するたびに混乱耐性2を失う
+幕の終了時、自分の沈潜だけ混乱耐性を失い、沈潜の値を半分にする</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="14">
+    <Name>決意</Name>
+    <Desc>幕の開始時、混乱状態の場合混乱状態を解除しパワー1とクイック1を得る
+混乱状態を解除するたびにこの接待にて永久的に保護2を得る
+(帰属不可)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="15">
+    <Name>雨が降り注ぐ空</Name>
+    <Desc>全てのバトルページの最初のダイスに「[的中時] このダイスの最小値だけ沈潜を付与」を付与</Desc>
+  </PassiveDesc>
+</PassiveDescRoot>

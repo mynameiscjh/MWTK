@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BattleCardAbility ID="FoxRain_01">
+    <Desc>[使用時]沈潜3を得る</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_02">
+    <Desc>[的中]沈潜3を付与</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_03">
+    <Desc>[的中]沈潜2を付与</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_04">
+    <Desc>[未使用/マッチ勝利]次の幕にてダメージ量増加1を得る</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_05">
+    <Desc>[未使用/マッチ勝利]次の幕にてパワー1を得る</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_06">
+    <Desc>[的中]沈潜2と脆弱2を付与</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_07">
+    <Desc>[的中]沈潜1を付与</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_08">
+    <Desc>[使用時]沈潜が2以上の場合このページのすべてのダイス最小値+2
+相手の沈潜が4以上の場合このページのすべてのダイス最大値+3</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_09">
+    <Desc>[戦闘開始]次に幕にて[危うい心]を得る
+このページで的中するたびに全てのキャラクターを的中したと見なす</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_10">
+    <Desc>[的中]全てのキャラクターに沈潜5を付与</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_11">
+    <Desc>[的中]沈潜殺到</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_12">
+    <Desc>[使用時]この幕と次の幕にて互いに沈潜3を付与</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_13">
+    <Desc>[的中]沈潜殺到</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_14">
+    <Desc>[使用時]自分の沈潜を取り除き、この幕と次の幕にて全ての味方にパワー1と保護3を付与</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_15">
+    <Desc>[的中]沈潜3を付与</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_16">
+    <Desc>[戦闘開始]全ての敵に沈潜4を付与
+[使用時]自分に沈潜殺到し、この幕と次の幕にて与えるダメージ量+25%</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_17">
+    <Desc>[使用時]光を1回復し、沈潜2を得る
+混乱抵抗値が50%以下の場合追加でページを1枚引き</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_18">
+    <Desc>[拼点失败]次の幕にて沈潜2を得る</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_19">
+    <Desc>[使用時]混乱抵抗値が50%以下の場合このページのすべてのダイス最小値+2
+混乱抵抗値が25%以下の場合このページのすべてのダイス最大値+3</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_20">
+    <Desc>[的中]沈潜4を消耗して与えるダメージ量と混乱ダメージ量+25%</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_21">
+    <Desc>[戦闘開始]この幕にて沈潜3を得る
+[使用時]このページのすべてのダイスを破壊し、ページを2枚引く
+以降この幕にてページによるダメージを受けた場合、このページで反撃(最大1回)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_22">
+    <Desc>[的中]この幕と次の幕にて互いに沈潜2を付与</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_23">
+    <Desc>[戦闘開始]沈潜の値だけ混乱耐性を失う
+[使用時]ページを1枚引き、光を4回復</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_24">
+    <Desc>自分の沈潜が4につきこのページのコストが1減少(最大-4)
+このページで的中するたびに全ての敵を的中したと見なす
+[使用時]沈潜5を得る</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="FoxRain_25">
+    <Desc>[的中]沈潜5を付与</Desc>
+  </BattleCardAbility>
+</BattleCardAbilityDescRoot>

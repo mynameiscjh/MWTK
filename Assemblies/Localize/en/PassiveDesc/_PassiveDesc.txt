@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PassiveDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PassiveDesc ID="1">
+    <Name>E.G.O::Sunshower</Name>
+    <Desc>At the start of the Act,gain 500 Shield.
+HP cannot drop below 400 before Shield drop to 0.
+At the start of each Scene, exhaust all pages in hand and deck; add new pages to hand. Their Cost becomes 0.</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="2">
+    <Name>Lobotomy Company Branch Disciplinary Team's Minister</Name>
+    <Desc>At the start of the Act,gain 6 'GuardUmbrella'.
+At a regular interval,four 'Old Umbrella' are summoned.
+Regularly shifts between attack mode and defense mode</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="3">
+    <Name>Perilous Mind</Name>
+    <Desc>Will use the Combat Page  'Sink It All!' at regular intervals.
+At the start of the Scene, inflict 1 'Sinking' on all characters.</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="4">
+    <Name>Determination</Name>
+    <Desc>When the character recovers from Stagger,If the character has 'Sinking' ,Gain (Sinking/2) 'Damage Up' at the start of the Scene for the rest of the Act,then remove all 'Sinking' stacks</Desc>
+  </PassiveDesc>
+
+  <PassiveDesc ID="5">
+    <Name>Umbrella</Name>
+    <Desc>If this remains by the end of the Scene,gain 2 'Haste' to Eyuil next Scene.</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="6">
+    <Name>Discarded Umbrella</Name>
+    <Desc>After death,Eyuil will loses 1  'GuardUmbrella' next Scene.</Desc>
+  </PassiveDesc>
+
+  <PassiveDesc ID="7">
+    <Name>Sinking heart</Name>
+    <Desc>If this remains by the end of the Scene, gain 2 'Strength' to Eyuil at the start of the Scene for the rest of the Act.</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="8">
+    <Name>Closed heart</Name>
+    <Desc>If this remains by the end of the Scene,gain 2 'Protection' to Eyuil at the start of the Scene for the rest of the Act.</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="9">
+    <Name>Vanity heart</Name>
+    <Desc>If this remains by the end of the Scene,gain 2 'Damage Up' to Eyuil at the start of the Scene for the rest of the Act.</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="10">
+    <Name>Urgent heart</Name>
+    <Desc>If this remains by the end of the Scene,gain 2 'Haste' to Eyuil at the start of the Scene for the rest of the Act.</Desc>
+  </PassiveDesc>
+
+  <PassiveDesc ID="11">
+    <Name>E.G.O::Sunshower</Name>
+    <Desc>Take 25% less damage from attacks.
+When useing a area page,all allies' first Offensive  gains +2 Power.
+Can use E.G.O page 'Sunshower'</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="12">
+    <Name>Rainstorm night</Name>
+    <Desc>At the start of each Scene, Take (Sinking/2*10)% less damage and Stagger damage from attacks.(max50%)
+When hit by the attack,gain 2 'Damage Up'  next Scene.(max3)</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="13">
+    <Name>Perilous Mind</Name>
+    <Desc>lose 2 Stagger Resist on clash lose.
+At the end of the Scene,lose 'Sinking' amount Stagger Resist,then make reduce the amount by half</Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="14">
+    <Name>Determination</Name>
+    <Desc>At the start of each Scene,If staggered, recover from Stagger and gain 1  'Strength' and 'Haste'  and gain 2 ' Protection'  at the start of the Scene for the rest of the reception. </Desc>
+  </PassiveDesc>
+  <PassiveDesc ID="15">
+    <Name>Heavy rain</Name>
+    <Desc>When playing a Combat Page, its first Offensive gain an additional effect: ‘[On Hit] Inflict (the minimum value) Sinking’.</Desc>
+  </PassiveDesc>
+</PassiveDescRoot>

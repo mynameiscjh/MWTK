@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleDialogRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <GroupName>Fox_Rain</GroupName>
+  <Character ID="1">
+    <Type ID="START_BATTLE">
+      <BattleDialog ID="0">…와라.</BattleDialog>
+      <BattleDialog ID="1">…시작하자.</BattleDialog>
+    </Type>
+    <Type ID="BATTLE_VICTORY">
+      <BattleDialog ID="0">아직 할 일이 많이 남았으니까…</BattleDialog>
+    </Type>
+    <Type ID="DEATH">
+      <BattleDialog ID="0">…드디어…</BattleDialog>
+      <BattleDialog ID="1">…고마워…</BattleDialog>
+    </Type>
+    <Type ID="COLLEAGUE_DEATH">
+      <BattleDialog ID="0">그 우산을 쓸 수는 없겠어.</BattleDialog>
+      <BattleDialog ID="1">…너도 다시 버려진건가.</BattleDialog>
+      <BattleDialog ID="2">...</BattleDialog>
+    </Type>
+    <Type ID="KILLS_OPPONENT">
+      <BattleDialog ID="0">널 애도할 시간 없어. 당장 다음 녀석을 쓰러트려야 해…</BattleDialog>
+      <BattleDialog ID="1">미안…</BattleDialog>
+      <BattleDialog ID="2">…</BattleDialog>
+      <BattleDialog ID="3">…다음…</BattleDialog>
+    </Type>
+  </Character>
+</BattleDialogRoot>

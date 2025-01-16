@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BattleCardAbility ID="DonEyuil_01">
+    <Desc>本书页将额外命中2名敌方角色</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_02">
+    <Desc>[命中时]对双方施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_03">
+    <Desc>[使用时]消耗自身所有[硬血结晶]每消耗1层便使本书页施加的[流血]层数+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_04">
+    <Desc>[使用时]若目标[流血]层数不低于4层则在下一幕获得2层[迅捷]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_05">
+    <Desc>[使用时]若自身速度不低于6则使本书页所有骰子威力+2</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_06">
+    <Desc>[使用时]自身速度每高于目标2点便时本书页施加的流血层数+1(至多+2)
+若以本书页击杀目标则对所有敌方角色施加9层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_07">
+    <Desc>[命中时]对目标下两幕施加3层[无法凝结的血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_08">
+    <Desc>[命中时]对目标施加1层[流血](重复触发自身激活的硬血术书页次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_09">
+    <Desc>[使用时]若目标[流血]层数不低于4层则使本书页所有骰子威力+3</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_10">
+    <Desc>[命中时]获得4层[结晶硬血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_11">
+    <Desc>本书页命中时将使本书页施加的[流血]层数+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_12">
+    <Desc>骰子将重复投掷2次自身每有10层[结晶硬血]便使该次数+1[命中时]对目标施加1层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_13">
+    <Desc>本书页每施加1层流血便使本骰子威力+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_14">
+    <Desc>[使用时]若目标没有[流血]则本书页施加的[流血]层数翻倍</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_15">
+    <Desc>[命中时]下两幕对目标施加4层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_16">
+    <Desc>[命中时]对所有敌方角色施加共计15层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_17">
+    <Desc>[拼点胜利]下一幕对双方施加1层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_18">
+    <Desc>[拼点胜利]这一幕对双方施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_19">
+    <Desc>[命中时]重复触发本书页拼点胜利次自身[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_20">
+    <Desc>[命中时]恢复等同于造成伤害量的体力溢出部分将转化为等量护盾</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_21">
+    <Desc>[战斗开始]下一幕使目标不会被施加[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_22">
+    <Desc>本书页命中目标时将使自身获得10点护盾
+[使用后]结束本幕</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_23">
+    <Desc>[战斗开始]使自身获得3层[振奋]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_24">
+    <Desc>[使用时]若目标[流血]层数不低于3层则使本书页所有骰子最小值+3</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_25">
+    <Desc>若本骰子基础值不低于9则使本骰子重复投掷一次(至多3次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_26">
+    <Desc>[命中时]这一幕对目标施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_27">
+    <Desc>[命中时]消耗目标3层[流血]层流血并使本骰子重复投掷1次(至多4次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_28">
+    <Desc>[命中时]追加本书页击中目标次数×2的混乱伤害</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_29">
+    <Desc>[命中时]对目标施加等同于目标[流血]层数的[血晶荆棘]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_30">
+    <Desc>[命中时]对目标施加等同于目标[流血]层数的[血晶荆棘]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_31">
+    <Desc>[命中时]将自身的[流血]转移至目标</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_32">
+    <Desc>本书页将同时命中所有敌方角色
+拼点失败时本书页依旧将击中目标但只施加[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_33">
+    <Desc>[拼点胜利]摧毁目标书页所有骰子[命中时]施加2层[流血](重复触发3次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_34">
+    <Desc>[使用时]这一幕及下两幕对自身施加8层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_35">
+    <Desc>[战斗开始]这一幕拼点失败时对自身施加2层[流血](至多3次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_36">
+    <Desc>[战斗开始]这一幕击中目标时对自身施加1层[虚弱](至多2次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_37">
+    <Desc>[命中时]下一幕对自身施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_38">
+    <Desc>[战斗开始]这一幕拼点失败时使自身获得1层[强壮]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_39">
+    <Desc>本书页命中时将恢复等同于伤害量25%的体力若这一幕中自身已经累积承受10点流血伤害则改为50%
+本书页恢复溢出的体力将转化为等量护盾</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_40">
+    <Desc>[命中时]若自己已经激活[血枪]这一幕对目标施加3层[无法凝结的血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_41">
+    <Desc>[命中时]使目标这一幕获得[流血]时层数+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_42">
+    <Desc>[拼点胜利]对目标施加3层[流血]与[血晶荆棘]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_43">
+    <Desc>[战斗开始]对自身与2名敌方角色施加1层[强壮]于[振奋]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_44">
+    <Desc>本书页将命中全体敌方角色</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_45">
+    <Desc>[命中时]使自身获得5层[硬血结晶]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_46">
+    <Desc>[使用时]若自身应用了[血鞭]则使本书页施加[流血]时同时施加[血晶荆棘]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_47">
+    <Desc>[命中时]这一幕与下一幕对目标施加4层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_48">
+    <Desc>[命中时]消耗3层[结晶硬血]并施加3层[无法凝结的血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_49">
+    <Desc>[命中时]重复触发目标5次[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_50">
+    <Desc>场上每有一名处于共鸣状态的敌方角色便使本书页造成的伤害减少20%
+[战斗开始]清除所有的[凝结的情感]
+[使用后]结束本幕</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_51">
+    <Desc>[战斗开始]将场上所有共鸣效果转移至目标并对目标施加[光荣的决斗]同时使所有其余敌方角色无法行动</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_52">
+    <Desc>[使用时]若目标带有[璀璨的梦想]则使本书页所有骰子最大值与最小值-10</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_53">
+    <Desc>[使用时]若目标带有[美好的希望]则使本书页所有骰子最大值与最小值-20</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_54">
+    <Desc>[使用时]若目标带有[背负的责任]则使本书页所有骰子最大值与最小值-20</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_55">
+    <Desc>[使用时]若目标带有[互相的理解]则使本书页所有骰子最大值与最小值-10</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_56">
+    <Desc>本书页仅限[硬血结晶]达到15层后使用
+[使用时]消耗所有[硬血结晶]每消耗1层便使本书页施加的[流血]层数+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_57">
+    <Desc>[拼点胜利]施加4层[流血]并摧毁目标书页剩余骰子</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_58">
+    <Desc>[使用时]自身速度每高于目标2点便时本书页施加的流血层数+1(至多+2)
+若以本书页击杀目标则对所有敌方角色施加9层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_59">
+    <Desc>[命中时]对目标下两幕施加3层[无法凝结的血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_60">
+    <Desc>[命中时]对目标施加1层[流血](重复触发自身激活的硬血术书页次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_61">
+    <Desc>本书页命中目标时将使自身获得3点护盾</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_62">
+    <Desc>本书页仅限自身设置的所有硬血术书页均已被激活后使用
+自身每设置一张硬血术书页便使本书页造成的伤害与混乱伤害增加30%</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_63">
+    <Desc>[命中时]使目标本幕内流血层数不再衰减</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_64">
+    <Desc>[命中时]重复触发目标(自身设置的硬血术书页)次[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_65">
+    <Desc>[使用时]抽取1张书页
+自身每激活了1张[硬血术]书页便使本书页额外命中一名目标(至多3名)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_66">
+    <Desc>自身每激活了1张[硬血术]书页便使本书页费用-1
+本书页将命中全体敌方角色</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_67">
+    <Desc>[使用时]恢复1点光芒
+若自身在这一幕时至少承受了6次流血伤害则在本幕结束时额外恢复1点光芒</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_68">
+    <Desc>[拼点胜利]下一幕对目标施加2层[流血]与[血晶荆棘]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_69">
+    <Desc>[使用时]若自身应用了[血鞭]则使本书页施加[流血]时同时施加[血晶荆棘]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_70">
+    <Desc>[持有时]自身每承受5点[流血]伤害便时本书页所有进攻型骰子威力+1(至多+3)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_71">
+    <Desc>[命中时]将自身的[流血]转移至目标</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_72">
+    <Desc>[使用时]抽取1张书页并在下一幕使自身获得2层[迅捷]
+若自身速度不低于8则额外抽取1张书页</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_73">
+    <Desc>[命中时]若自己已经激活[血枪]这一幕对目标施加2层[无法凝结的血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_74">
+    <Desc>[使用时]若自身已经激活了[血鞭]则本书页命中目标时将额外施加2层[血晶荆棘]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_75">
+    <Desc>[命中时]使目标这一幕获得[流血]时层数+1若自身已经激活了[血弓]则额外+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_76">
+    <Desc>[战斗开始]对自身施加3层[流血]并使两名我方角色获得1层[振奋]自身每激活了一种[硬血术]书页便额外施加1层[强壮](至多2层)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_77">
+    <Desc>[使用时]这一幕对自身施加3层流血</Desc>
+  </BattleCardAbility>
+</BattleCardAbilityDescRoot>

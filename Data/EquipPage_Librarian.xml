@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BookXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1.1</Version>
+  <Book ID="10000001">
+    <Name>堂 埃尤尔之页</Name>
+    <TextId>-1</TextId>
+    <BookIcon>Don_Eyuil</BookIcon>
+    <EquipEffect>
+      <HpReduction>0</HpReduction>
+      <HP>100</HP>
+      <DeadLine>0</DeadLine>
+      <Break>60</Break>
+      <SpeedMin>4</SpeedMin>
+      <Speed>6</Speed>
+      <SpeedDiceNum>0</SpeedDiceNum>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Endure</PBResist>
+      <HBResist>Normal</HBResist>
+      <MaxPlayPoint>4</MaxPlayPoint>
+      <StartPlayPoint>4</StartPlayPoint>
+      <AddedStartDraw>0</AddedStartDraw>
+      <Passive>15</Passive>
+      <Passive>16</Passive>
+      <Passive>17</Passive>
+      <Passive Pid="@origin">10008</Passive>
+      <OnlyCard>14</OnlyCard>
+      <OnlyCard>15</OnlyCard>
+      <OnlyCard>16</OnlyCard>
+      <OnlyCard>17</OnlyCard>
+      <OnlyCard>18</OnlyCard>
+      <OnlyCard>19</OnlyCard>
+    </EquipEffect>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Don_Eyuil</CharacterSkin>
+    <CharacterSkinType>Custom</CharacterSkinType>
+    <SkinGender>N</SkinGender>
+    <Chapter>7</Chapter>
+    <Episode>-1</Episode>
+    <RangeType>Melee</RangeType>
+    <NotEquip>false</NotEquip>
+    <RandomFace>false</RandomFace>
+    <SpeedDiceNum>1</SpeedDiceNum>
+    <SuccessionPossibleNumber>9</SuccessionPossibleNumber>
+	<SoundInfo Motion="H" WinExternal="false" Win="" LoseExternal="false" Lose="" />
+    <SoundInfo Motion="F" WinExternal="false" Win="" LoseExternal="false" Lose="" />
+    <SoundInfo Motion="J" WinExternal="false" Win="" LoseExternal="false" Lose="" />
+    <SoundInfo Motion="Z" WinExternal="false" Win="" LoseExternal="false" Lose="" />
+  </Book>
+</BookXmlRoot>
