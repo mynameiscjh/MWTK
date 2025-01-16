@@ -1,10 +1,11 @@
-﻿using HarmonyLib;
+﻿using Don_Eyuil.Buff;
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 
-namespace Don_Eyuil
+namespace Don_Eyuil.PassiveAbility
 {
     public class PassiveAbility_Mimicry_02 : PassiveAbilityBase
     {

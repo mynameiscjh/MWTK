@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Don_Eyuil
+namespace Don_Eyuil.PassiveAbility
 {
     public class PassiveAbility_Mimicry_01 : PassiveAbilityBase
     {

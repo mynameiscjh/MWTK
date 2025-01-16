@@ -54,10 +54,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buff\BattleUnitBuf_BleedCrystal.cs" />
     <Compile Include="Buff\BattleUnitBuf_Duel.cs" />
+    <Compile Include="Buff\BattleUnitBuf_Flow.cs" />
+    <Compile Include="Buff\BattleUnitBuf_Lance.cs" />
+    <Compile Include="Buff\BattleUnitBuf_Rifle.cs" />
+    <Compile Include="Buff\BattleUnitBuf_Sword.cs" />
+    <Compile Include="DiceCardAbility\DiceCardAbility_DonEyuil_57.cs" />
+    <Compile Include="DiceCardAbility\DiceCardAbility_DonEyuil_59.cs" />
+    <Compile Include="DiceCardAbility\DiceCardAbility_DonEyuil_60.cs" />
+    <Compile Include="DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_56.cs" />
+    <Compile Include="DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_58.cs" />
     <Compile Include="Init.cs" />
+    <Compile Include="MyId.cs" />
     <Compile Include="MyTools.cs" />
-    <Compile Include="PassiveAbility\PassiveAbility_FoxRain_15.cs" />
+    <Compile Include="PassiveAbility\PassiveAbility_DonEyuil_15.cs" />
     <Compile Include="PassiveAbility\PassiveAbility_Mimicry_01.cs" />
     <Compile Include="PassiveAbility\PassiveAbility_Mimicry_02.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

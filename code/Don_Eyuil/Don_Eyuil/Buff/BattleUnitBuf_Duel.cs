@@ -1,4 +1,4 @@
-﻿namespace Don_Eyuil
+﻿namespace Don_Eyuil.Buff
 {
     public class BattleUnitBuf_Duel : BattleUnitBuf
     {

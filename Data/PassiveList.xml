@@ -9,7 +9,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_01</Script>
+    <Script>DonEyuil_01</Script>
     <Name>200年前的回忆</Name>
     <Desc>每幕开始时移除手中的书页并将意图使用的书页置入手中
 自身书页费用为0</Desc>
@@ -23,7 +23,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_02</Script>
+    <Script>DonEyuil_02</Script>
     <Name>堂埃尤尔派硬血术</Name>
     <Desc>自身将定期切换不同的硬血术状态并获得不同效果与书页</Desc>
   </Passive>
@@ -36,7 +36,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_03</Script>
+    <Script>DonEyuil_03</Script>
     <Name>埃尤尔之血</Name>
     <Desc>拼点时目标与自身每有3层流血便使自身所有骰子威力+1(至多+3)
 命中目标时恢复等同于自身骰子最终值的体力</Desc>
@@ -50,7 +50,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_04</Script>
+    <Script>DonEyuil_04</Script>
     <Name>光荣的决斗</Name>
     <Desc>拼点时使双方所有骰子威力+3
 拼点胜利的一方造成的伤害增加30%</Desc>
@@ -64,7 +64,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_05</Script>
+    <Script>DonEyuil_05</Script>
     <Name>奔向梦想!驽骍难得!</Name>
     <Desc>使所有应用了觉醒书页的司书威力+1
 自身体力首次低于400时获得新的被动并更改行动逻辑
@@ -80,7 +80,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_06</Script>
+    <Script>DonEyuil_06</Script>
     <Name>萦绕家族的疾病</Name>
     <Desc>使所有敌方角色获得"席卷而来的饥饿"</Desc>
   </Passive>
@@ -93,7 +93,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_07</Script>
+    <Script>DonEyuil_07</Script>
     <Name>若家人也能找到梦想</Name>
     <Desc>拥有觉醒书页的角色获得的正面情感翻倍
 场上角色解除"席卷而来的饥饿"时将永久获得1层"强壮"与3层"振奋"</Desc>
@@ -107,7 +107,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_08</Script>
+    <Script>DonEyuil_08</Script>
     <Name>无法舍弃的责任</Name>
     <Desc>每幕开始时获得等同于场上拥有"席卷而来的饥饿"角色数的"血铠"
 若场上仍有角色处于"席卷而来的饥饿"状态则自身无法陷入混乱
@@ -124,7 +124,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_09</Script>
+    <Script>DonEyuil_09</Script>
     <Name>让吾看看你的梦想</Name>
     <Desc>召唤4个不同的"凝结的情感"
 定期使用特殊书页且使用特殊书页的下一幕前体力无法低于100</Desc>
@@ -139,7 +139,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_10</Script>
+    <Script>DonEyuil_10</Script>
     <Name>渴望传递的情感与共鸣</Name>
     <Desc>体力无法低于1
 场上有敌方角色完成对应共鸣后死亡并使其获得对应效果</Desc>
@@ -153,7 +153,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_11</Script>
+    <Script>DonEyuil_11</Script>
     <Name>追逐梦想的道路</Name>
     <Desc>使第一名在一幕中获得8点正面情感的敌方角色与自身共鸣</Desc>
   </Passive>
@@ -166,7 +166,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>4</Cost>
-    <Script>FoxRain_12</Script>
+    <Script>DonEyuil_12</Script>
     <Name>永怀憧憬的希冀</Name>
     <Desc>使第一名在一幕中恢复至少6点光芒的敌方角色于自身共鸣</Desc>
   </Passive>
@@ -179,7 +179,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>1</Cost>
-    <Script>FoxRain_13</Script>
+    <Script>DonEyuil_13</Script>
     <Name>应该背负的责任</Name>
     <Desc>使第一名在一幕中至少为友方角色转移两次攻击的敌方角色与自身共鸣</Desc>
   </Passive>
@@ -192,7 +192,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>12</Cost>
-    <Script>FoxRain_14</Script>
+    <Script>DonEyuil_14</Script>
     <Name>希望连接的尊重与理解</Name>
     <Desc>使第一名在一幕中进行的单方面攻击不高于2次且造成伤害少于25的敌方角色与自身共鸣</Desc>
   </Passive>
@@ -206,7 +206,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>0</Cost>
-    <Script>FoxRain_15</Script>
+    <Script>DonEyuil_15</Script>
     <Name>堂埃尤尔派硬血术</Name>
     <Desc>自身拥有一套额外的卡组可设置"硬血术"书页
 情感等级达到0/2/4时可以选择激活设置的"硬血术"书页情感等级达到4级后每有一名角色因流血死亡则可额外激活一次设置的"硬血术"书页
