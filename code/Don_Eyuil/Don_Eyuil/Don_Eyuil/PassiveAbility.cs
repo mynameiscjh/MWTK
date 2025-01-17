@@ -83,7 +83,11 @@ namespace Don_Eyuil
                         });
                     }
                 }
-                
+                public int OnSuccessAttTargetNum = 0;
+                public override void OnRoundEnd()
+                {
+                    OnSuccessAttTargetNum = 0;
+                }
                 public override void OnSuccessAttack(BattleDiceBehavior behavior)
                 {
                     if (behavior != null && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarAreaEach && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarArea)
@@ -92,7 +96,11 @@ namespace Don_Eyuil
                         {
                             if((behavior.card.speedDiceResultValue - behavior.card.target.GetSpeedDiceResult(behavior.card.targetSlotOrder).value) >= 2)
                             {
-
+                                OnSuccessAttTargetNum++;
+                                if(OnSuccessAttTargetNum <=3)
+                                {
+                                    BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(behavior.card.target, 1);
+                                }
                             }
                         }
                     }

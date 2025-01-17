@@ -26,16 +26,13 @@ namespace Don_Eyuil
     public class BattleUnitBuf_UncondensableBlood : BattleUnitBuf_Don_Eyuil
     {
         //自身流血无法低于2+x
+        
         public static void UncodensableBloodCheck(BattleUnitBuf BleedingBuf)
         {
             var owner = BleedingBuf.GetFieldValue<BattleUnitModel>("_owner");
-            if (owner != null)
+            if (owner != null && BattleUnitBuf_UncondensableBlood.GetBufStack<BattleUnitBuf_UncondensableBlood>(owner) > 0)
             {
-                Debug.LogError("TRANSPILERMESSAGE:AAAAAAAAAAAAAAAAAAAAAAAAA");
-                if(BattleUnitBuf_UncondensableBlood.GetBufStack<BattleUnitBuf_UncondensableBlood>(owner) > 0)
-                {
-                    BleedingBuf.stack = Math.Max(BleedingBuf.stack, 2 + BattleUnitBuf_UncondensableBlood.GetBufStack<BattleUnitBuf_UncondensableBlood>(owner));
-                }
+                BleedingBuf.stack = Math.Max(BleedingBuf.stack, 2 + BattleUnitBuf_UncondensableBlood.GetBufStack<BattleUnitBuf_UncondensableBlood>(owner));
             }
         }
 
@@ -55,6 +52,21 @@ namespace Don_Eyuil
         public BattleUnitBuf_UncondensableBlood(BattleUnitModel model) : base(model)
         {
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["无法凝结的血"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+    }
+    //热血尖枪
+    public class BattleUnitBuf_WarmBloodLance : BattleUnitBuf_Don_Eyuil
+    {
+        //自身这一幕施加的"流血"翻倍
+        public override int GetMultiplierOnGiveKeywordBufByCard(BattleUnitBuf cardBuf, BattleUnitModel target)
+        {
+            return cardBuf.bufType == KeywordBuf.Bleeding ? 2 : 1;
+        }
+        public BattleUnitBuf_WarmBloodLance(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["热血尖枪"]);
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
             this.stack = 0;
         }

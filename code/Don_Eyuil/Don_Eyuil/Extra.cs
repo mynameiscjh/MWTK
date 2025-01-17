@@ -88,41 +88,68 @@ namespace Don_Eyuil
         {
             this._owner = model;
         }
-        public static T GainBuf<T>(BattleUnitModel model, int stack) where T : BattleUnitBuf_Don_Eyuil
+        public static T GainBuf<T>(BattleUnitModel model, int stack, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
-            T BuffInstance = GetOrAddBuf<T>(model);
+            T BuffInstance = GetOrAddBuf<T>(model, ReadyType);
             if (BuffInstance != null)
             {
                 BuffInstance.Add(stack);
             }
             return BuffInstance;
         }
-        public static T GetBuf<T>(BattleUnitModel model) where T : BattleUnitBuf_Don_Eyuil => model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is T && !x.IsDestroyed()) as T;
-
-        public static int GetBufStack<T>(BattleUnitModel model) where T : BattleUnitBuf_Don_Eyuil
+        public static T GetBuf<T>(BattleUnitModel model, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
-            T BuffInstance = GetBuf<T>(model);
+            switch(ReadyType)
+            {
+                case BufReadyType.ThisRound:
+                    return model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is T && !x.IsDestroyed()) as T;
+                case BufReadyType.NextRound:
+                    return model.bufListDetail.GetReadyBufList().Find((BattleUnitBuf x) => x is T && !x.IsDestroyed()) as T;
+                case BufReadyType.NextNextRound:
+                    return model.bufListDetail.GetReadyReadyBufList().Find((BattleUnitBuf x) => x is T && !x.IsDestroyed()) as T;
+                default:
+                    return null;
+            }
+        }
+
+        public static int GetBufStack<T>(BattleUnitModel model, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
+        {
+            T BuffInstance = GetBuf<T>(model, ReadyType);
             if (BuffInstance != null)
             {
                 return BuffInstance.stack;
             }
             return 0;
         }
-        public static void RemoveBuf<T>(BattleUnitModel model) where T : BattleUnitBuf_Don_Eyuil
+        public static void RemoveBuf<T>(BattleUnitModel model, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
-            T BuffInstance = GetBuf<T>(model);
+            T BuffInstance = GetBuf<T>(model, ReadyType);
             if (BuffInstance != null)
             {
                 BuffInstance.Destroy();
             }
         }
-        public static T GetOrAddBuf<T>(BattleUnitModel model) where T : BattleUnitBuf_Don_Eyuil
+        public static T GetOrAddBuf<T>(BattleUnitModel model,BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
-            T BuffInstance = GetBuf<T>(model);
+            T BuffInstance = GetBuf<T>(model, ReadyType);
             if (BuffInstance == null)
             {
-                model.bufListDetail.AddBuf(Activator.CreateInstance(typeof(T), model) as T);
-                BuffInstance = GetBuf<T>(model);
+                switch (ReadyType)
+                {
+                    case BufReadyType.ThisRound:
+                        model.bufListDetail.AddBuf(Activator.CreateInstance(typeof(T), model) as T);
+                        break;
+                    case BufReadyType.NextRound:
+                        model.bufListDetail.AddReadyBuf(Activator.CreateInstance(typeof(T), model) as T);
+                        break;
+                    case BufReadyType.NextNextRound:
+                        model.bufListDetail.AddReadyReadyBuf(Activator.CreateInstance(typeof(T), model) as T);
+                        break;
+                    default:
+                        break;
+                }
+
+                BuffInstance = GetBuf<T>(model, ReadyType);
             }
             return BuffInstance;
         }
