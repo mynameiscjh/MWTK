@@ -71,5 +71,57 @@ namespace Don_Eyuil
             this.stack = 0;
         }
     }
+    //深度创痕
+    public class BattleUnitBuf_DeepWound : BattleUnitBuf_Don_Eyuil
+    {
+        public static string Desc = "这一幕受到的\"流血\"伤害增加50%";
+        public BattleUnitBuf_DeepWound(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["深度创痕"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+        public override float DmgFactor(int dmg, DamageType type = DamageType.ETC, KeywordBuf keyword = KeywordBuf.None)
+        {
+            if (keyword == KeywordBuf.Bleeding)
+            {
+                return 1.5f;
+            }
+            return base.DmgFactor(dmg, type, keyword);
+        }
+    }
+    //血晶荆棘
+    public class BattleUnitBuf_BloodCrystalThorn : BattleUnitBuf_Don_Eyuil
+    {
+        public static string Desc = "投掷骰子时使自身在下一幕中获得1层[流血](每幕至多触发x次) 自身速度降低x/2 每幕结束时层数减半";
+        public BattleUnitBuf_BloodCrystalThorn(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["血晶荆棘"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+        public int TriggeredOnRollDiceCount = 0;
+        public override void OnRollDice(BattleDiceBehavior behavior)
+        {
+            TriggeredOnRollDiceCount++;
+            if(TriggeredOnRollDiceCount <= this.stack)
+            {
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 1);
+            }
+        }
+        public override int GetSpeedDiceAdder(int speedDiceResult)
+        {
+            return -this.stack / 2;
+        }
+        public override void OnRoundEnd()
+        {
+            this.stack /= 2;
+            if (this.stack <= 0)
+            {
+                this.Destroy();
+            }
+            TriggeredOnRollDiceCount = 0;
+        }
+    }
 
 }

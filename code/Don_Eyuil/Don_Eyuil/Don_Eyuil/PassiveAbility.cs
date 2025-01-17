@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using LOR_DiceSystem;
 using System.Reflection.Emit;
 using HyperCard;
+using UnityEngine;
 namespace Don_Eyuil
 {
     public class PassiveAbility_DonEyuil_01 : PassiveAbilityBase
@@ -196,7 +197,98 @@ namespace Don_Eyuil
                 {
                     typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血刃"]);
                 }
+            }
+            //血弓
+            //自身远程骰子最小值+3且命中目标时将在本幕对目标施加3层"流血"
+            //自身将对每幕第一个击中的目标施加"深度创痕
+            public class BattleUnitBuf_HardBloodArt_BloodBow: BattleUnitBuf_HardBloodArt
+            {
 
+                public override void OnRollDice(BattleDiceBehavior behavior)
+                {
+                    if(behavior != null && behavior.card != null && behavior.card.card != null && behavior.card.card.XmlData.Spec.Ranged == CardRange.Far)
+                    {
+                        behavior.ApplyDiceStatBonus(new DiceStatBonus() { min = 3 });
+                    }
+                }
+                public bool HasTriggerOnSuccessAtl = false;
+                public override void OnRoundEnd()
+                {
+                    HasTriggerOnSuccessAtl = false;
+                }
+                public override void OnSuccessAttack(BattleDiceBehavior behavior)
+                {
+                    if (behavior != null && behavior.card != null && behavior.card.card != null && behavior.card.card.XmlData.Spec.Ranged == CardRange.Far)
+                    {
+                        if(behavior.card.target != null)
+                        {
+                            behavior.card.target.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Bleeding, 3);
+                            if(HasTriggerOnSuccessAtl == false)
+                            {
+                                HasTriggerOnSuccessAtl = true;
+                                BattleUnitBuf_DeepWound.GainBuf<BattleUnitBuf_DeepWound>(behavior.card.target, 1);
+                            }
+                        }
+                    }
+                }
+                public BattleUnitBuf_HardBloodArt_BloodBow(BattleUnitModel model) : base(model)
+                {
+                    typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血弓"]);
+                }
+            }
+            //血鞭
+            //自身以打击骰子施加"流血"时将额外对一名敌方角色施加等量流血
+            //自身每幕最后一张书页施加"流血"时将额外对目标施加等量"血晶荆棘"
+            public class BattleUnitBuf_HardBloodArt_BloodScourge : BattleUnitBuf_HardBloodArt
+            {
+                private bool _triggered;
+                public override void OnRoundEnd() { _triggered = false; }
+                public override void OnRoundStart() { _triggered = false; }
+                public override int OnGiveKeywordBufByCard(BattleUnitBuf cardBuf, int stack, BattleUnitModel target)
+                {
+                    bool CheckCondition(BattleDiceBehavior behavior)
+                    {
+                        if (this._triggered)
+                        {
+                            return false;
+                        }
+                        BattlePlayingCardDataInUnitModel[] array = Singleton<StageController>.Instance.GetAllCards().ToArray();
+                        BattlePlayingCardDataInUnitModel card = behavior.card;
+                        foreach (BattlePlayingCardDataInUnitModel battlePlayingCardDataInUnitModel in array)
+                        {
+                            if (battlePlayingCardDataInUnitModel.owner == base._owner && battlePlayingCardDataInUnitModel != card)
+                            {
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+                    if(_owner.currentDiceAction != null && _owner.currentDiceAction.currentBehavior != null && cardBuf.bufType == KeywordBuf.Bleeding)
+                    {
+                        if (CheckCondition(_owner.currentDiceAction.currentBehavior))
+                        {
+                            BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(target, stack,BufReadyType.NextRound);
+                        }
+                        if ( _owner.currentDiceAction.currentBehavior.Detail == BehaviourDetail.Hit)
+                        {
+                            var List = BattleObjectManager.instance.GetAliveList_opponent(_owner.faction);
+                            if (List != null)
+                            {
+                                List.Remove(target);
+                                if (List.Count > 0)
+                                {
+                                    RandomUtil.SelectOne(List).bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, stack);
+                                }
+                            }
+                            //.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, stack);
+                        }
+                    }
+                    return base.OnGiveKeywordBufByCard(cardBuf, stack, target);
+                }
+                public BattleUnitBuf_HardBloodArt_BloodScourge(BattleUnitModel model) : base(model)
+                {
+                    typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血鞭"]);
+                }
             }
         }
         //200年前的回忆
