@@ -22,5 +22,13 @@
             }
         }
 
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            if (behavior.behaviourInCard.Type == LOR_DiceSystem.BehaviourType.Atk)
+            {
+                behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg = count / 3 });
+            }
+        }
+
     }
 }
