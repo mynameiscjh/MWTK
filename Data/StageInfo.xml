@@ -12,11 +12,10 @@
     </Wave>
     <StageType>Invitation</StageType>
     <FloorNum>1</FloorNum>
-    <Chapter>6</Chapter>
-        <Invitation Combine="BookRecipe">
-      <Book>2</Book>
-      <Value>0</Value>
-      <Num>0</Num>
+    <Chapter>7</Chapter>
+    <Invitation Combine="BookValue">
+      <Value>7</Value>
+      <Num>1</Num>
     </Invitation>
     <Condition>
       <Level>0</Level>
