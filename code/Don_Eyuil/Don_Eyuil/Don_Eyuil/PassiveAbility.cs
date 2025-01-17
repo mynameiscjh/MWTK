@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LOR_DiceSystem;
 using System.Reflection.Emit;
+using HyperCard;
 namespace Don_Eyuil
 {
     public class PassiveAbility_DonEyuil_01 : PassiveAbilityBase
@@ -48,7 +49,6 @@ namespace Don_Eyuil
                         });
                     }
                 }
-              
                 public override int OnGiveKeywordBufByCard(BattleUnitBuf cardBuf, int stack, BattleUnitModel target)
                 {
                     if(cardBuf.bufType == KeywordBuf.Bleeding)
@@ -110,7 +110,6 @@ namespace Don_Eyuil
                         }
                     }
                 }
-
                 public override void OnKill(BattleUnitModel target)
                 {
                     if (target != null)
@@ -133,7 +132,6 @@ namespace Don_Eyuil
                 {
                     BleedingDamageThisRound += Dmg;
                 }
-                
                 public override void OnRollDice(BattleDiceBehavior behavior)
                 {
                     behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg =  BleedingDamageThisRound / 3 });
@@ -144,9 +142,59 @@ namespace Don_Eyuil
                     }
                     BleedingDamageThisRound = 0;
                 }
+                public override void OnStartBattle()
+                {
+                    BattleDiceCardModel battleDiceCardModel = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_双剑反击闪避书页, false));
+                    if (battleDiceCardModel != null)
+                    {
+                        foreach (BattleDiceBehavior behaviour in battleDiceCardModel.CreateDiceCardBehaviorList())
+                        {
+                            this._owner.cardSlotDetail.keepCard.AddBehaviourForOnlyDefense(battleDiceCardModel, behaviour);
+                        }
+                    }
+                }
                 public BattleUnitBuf_HardBloodArt_DoubleSwords(BattleUnitModel model) : base(model)
                 {
                     typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方双剑"]);
+                }
+            }
+            //血刃
+            //自身命中处于混乱状态的目标时将触发目标"流血"(每张书页至多1次)
+           // 一幕中敌方每受到20点"流血"伤害便使自身获得1层”伤害强化”
+            public class BattleUnitBuf_HardBloodArt_BloodBlade : BattleUnitBuf_HardBloodArt
+            {
+                public List<BattlePlayingCardDataInUnitModel> TriggeredCards = new List<BattlePlayingCardDataInUnitModel>() { };
+                public override void OnSuccessAttack(BattleDiceBehavior behavior)
+                {
+                    if (behavior != null && behavior.card != null && !TriggeredCards.Exists(x => x == behavior.card))
+                    {
+                        if (behavior.card.target.IsBreakLifeZero())
+                        {
+                            var buf = behavior.card.target.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_bleeding) as BattleUnitBuf_bleeding;
+                            if (buf != null)
+                            {
+                                buf.AfterDiceAction(behavior);
+                                TriggeredCards.Add(behavior.card);
+                            }
+                        }
+                    }
+                }
+                public int EnemyBleedingDamageThisRound = 0;
+                public override void OnRoundEnd()
+                {
+                    _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, EnemyBleedingDamageThisRound / 20);
+                    EnemyBleedingDamageThisRound = 0;
+                }
+                public override void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit, int Dmg)
+                {
+                    if(Unit.faction != _owner.faction)
+                    {
+                        EnemyBleedingDamageThisRound += Dmg;
+                    }
+                }
+                public BattleUnitBuf_HardBloodArt_BloodBlade(BattleUnitModel model) : base(model)
+                {
+                    typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血刃"]);
                 }
 
             }

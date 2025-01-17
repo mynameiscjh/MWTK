@@ -42,6 +42,9 @@ namespace Don_Eyuil
                 if(keyword == KeywordBuf.Bleeding && dmg > 0)
                 {
                     Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
+                    List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                    aliveList.Remove(Model);
+                    aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model,dmg))); 
                 }
             }
             [HarmonyPatch(typeof(BattleUnitModel), "TakeDamage")]
@@ -69,6 +72,10 @@ namespace Don_Eyuil
         public virtual void AfterTakeBleedingDamage(int Dmg)
         {
             
+        }
+        public virtual void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit,int Dmg)
+        {
+
         }
         public virtual int GetMaxStack() => -1;
         public virtual void Add(int stack)

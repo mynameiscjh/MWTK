@@ -19,5 +19,15 @@ namespace Don_Eyuil
 
         }
     }
-
+    public class DiceCardAbility_DonEyuil_78 : DiceCardAbilityBase
+    {
+        public static string Desc = "[拼点胜利]对目标施加1层[流血]";
+        public override void OnWinParrying()
+        {
+            if(card.target!=null)
+            {
+                card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 1, owner);
+            }
+        }
+    }
 }
