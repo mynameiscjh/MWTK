@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Blade.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_BleedCrystal.cs" />
+    <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_DoubleSwords.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Duel.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Flow.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Lance.cs" />
@@ -68,10 +69,12 @@
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Tidewater.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_12.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_13.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_16.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_57.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_59.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_60.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_greta_destroyDice.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_01.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_11.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_56.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_58.cs" />
