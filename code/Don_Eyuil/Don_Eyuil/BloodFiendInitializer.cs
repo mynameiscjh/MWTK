@@ -8,6 +8,18 @@ using System.Reflection;
 using System.Xml;
 using UnityEngine;
 using Workshop;
+using System.Runtime.CompilerServices;
+using System.Security.Policy;
+using System.Threading.Tasks;
+using System.Xml.Serialization;
+using LOR_DiceSystem;
+using LOR_XML;
+using Mod;
+using StoryScene;
+using TMPro;
+using UI;
+using UnityEngine.UI;
+using System.Reflection.Emit;
 
 namespace Don_Eyuil
 {
@@ -165,6 +177,9 @@ namespace Don_Eyuil
     public class TKS_BloodFiend_Initializer : ModInitializer
     {
         public static string packageId = "Don_Eyuil";
+
+        public static Dictionary<string, Sprite> ArtWorks = new Dictionary<string, Sprite>();
+
         public class TKS_EnumExtension
         {
             public class TKS_EnumExtender<T> where T : struct, Enum
@@ -299,8 +314,28 @@ namespace Don_Eyuil
                     Debug.LogError("LoadError" + _.Message);
                 }
             }
-
+            void LoadArtWorks(DirectoryInfo dir)
+            {
+                if (dir.GetDirectories().Length != 0)
+                {
+                    DirectoryInfo[] directories = dir.GetDirectories();
+                    for (int i = 0; i < directories.Length; i++)
+                    {
+                        LoadArtWorks(directories[i]);
+                    }
+                }
+                foreach (System.IO.FileInfo fileInfo in dir.GetFiles())
+                {
+                    Texture2D texture2D = new Texture2D(2, 2);
+                    texture2D.LoadImage(File.ReadAllBytes(fileInfo.FullName));
+                    Sprite value = Sprite.Create(texture2D, new Rect(0f, 0f, (float)texture2D.width, (float)texture2D.height), new Vector2(0f, 0f));
+                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileInfo.FullName);
+                    TKS_BloodFiend_Initializer.ArtWorks[fileNameWithoutExtension] = value;
+                }
+            }
+            
             LoadCustomSkin(Path.Combine(DllPath, "..", "Resource\\CharacterSkin"));
+            LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
         }
 
         public override void OnInitializeMod()
@@ -338,115 +373,7 @@ namespace Don_Eyuil
             }
         }
     }
-    public static class MyTools
-    {
-        /// <summary>
-        /// 反射
-        /// </summary>
-        /// <typeparam name="T">返回类型的值的类型</typeparam>
-        /// <param name="obj">实例</param>
-        /// <param name="name">变量名</param>
-        /// <returns></returns>
-        public static T GetFieldValue<T>(this object obj, string name)
-        {
-            var res = default(T);
-            try
-            {
-                res = (T)obj.GetType().GetField(name, AccessTools.all).GetValue(obj);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log($" : T GetFieldValue<T>(this object obj, string name) : {ex}");
-            }
 
-            return res;
-        }
-
-        public static object GetFieldValue(this object obj, Type t, string name)
-        {
-            object res = null;
-            try
-            {
-                res = obj.GetType().GetField(name, AccessTools.all).GetValue(obj);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log($" : T GetFieldValue<T>(this object obj, string name) : {ex}");
-            }
-
-            return res;
-        }
-        public static void SetFieldValue<T>(this object obj, string name, object value)
-        {
-            try
-            {
-                obj.GetType().GetField(name, AccessTools.all).SetValue(obj, value);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log($" : T GetFieldValue<T>(this object obj, string name) : {ex}");
-            }
-        }
-        /// <summary>
-        /// 反射
-        /// </summary>
-        /// <typeparam name="T">返回类型的值的类型</typeparam>
-        /// <param name="obj">实例</param>
-        /// <param name="name">方法名</param>
-        /// <param name="parameters">方法参数</param>
-        /// <returns></returns>
-        public static T InvokeMethod<T>(this object obj, string name, params object[] parameters)
-        {
-            var res = default(T);
-            try
-            {
-                res = (T)obj.GetType().GetMethod(name, AccessTools.all).Invoke(obj, parameters);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log(
-                    $" : T InvokeMethod<T>(this object obj, string name, params object[] parameters) : {ex}");
-            }
-
-            return res;
-        }
-
-        public static object InvokeMethod(this object obj, Type t, string name, params object[] parameters)
-        {
-            object res = null;
-            try
-            {
-                res = obj.GetType().GetMethod(name, AccessTools.all).Invoke(obj, parameters);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log(
-                    $" : object InvokeMethod(this object obj, Type t, string name, params object[] parameters) : {ex}");
-            }
-
-            return res;
-        }
-
-        public static void InvokeMethod(this object obj, string name, params object[] parameters)
-        {
-            try
-            {
-                obj.GetType().GetMethod(name, AccessTools.all).Invoke(obj, parameters);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log(
-                    $" : InvokeMethod(this object obj, string name, params object[] parameters) : {ex}");
-            }
-
-        }
-
-        public static LorId Create(int v)
-        {
-            return new LorId(TKS_BloodFiend_Initializer.packageId, v);
-        }
-
-    }
     public class MyId
     {
         public static LorId Card_血之宝库_1 = MyTools.Create(1);

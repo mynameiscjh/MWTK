@@ -1,14 +1,64 @@
-﻿using System;
+﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using LOR_DiceSystem;
 namespace Don_Eyuil
 {
 
     public class PassiveAbility_DonEyuil_01 : PassiveAbilityBase
     {
+        public class BattleUnitBuf_HardBloodArt : BattleUnitBuf_Don_Eyuil
+        {
+            public BattleUnitBuf_HardBloodArt(BattleUnitModel model) : base(model)
+            {
+                typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+                this.stack = 0;
+            }
+
+            //血剑:
+            //自身斩击骰子最小值+2
+            //自身施加"流血"时额外对自身和目标施加一层
+            //每幕结束时自身每承受2点"流血"伤害便时自身获得1层"硬血结晶"
+            public class BattleUnitBuf_HardBloodArt_BloodSword: BattleUnitBuf_HardBloodArt
+            {
+                public override void BeforeRollDice(BattleDiceBehavior behavior)
+                {
+                    if (behavior.Detail == BehaviourDetail.Slash)
+                    {
+                        BattleCardTotalResult battleCardResultLog = _owner.battleCardResultLog;
+                        if (battleCardResultLog != null)
+                        {
+                            battleCardResultLog.SetBufs(this);
+                        }
+                        behavior.ApplyDiceStatBonus(new DiceStatBonus
+                        {
+                             power = 2
+                        });
+                    }
+                }
+              
+                public override int OnGiveKeywordBufByCard(BattleUnitBuf cardBuf, int stack, BattleUnitModel target)
+                {
+                    if(cardBuf.bufType == KeywordBuf.Bleeding)
+                    {
+                        if (target != null && _owner != null)
+                        {
+                            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Bleeding, 1);
+                            target.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Bleeding, 1);
+                        }
+                    }
+                    return base.OnGiveKeywordBufByCard(cardBuf, stack, target); 
+                }
+                public BattleUnitBuf_HardBloodArt_BloodSword(BattleUnitModel model) : base(model)
+                {
+                    typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this,TKS_BloodFiend_Initializer.ArtWorks["敌方血剑"]);
+                }
+            }
+
+        }
         //200年前的回忆
         public override string debugDesc => "每幕开始时移除手中的书页并将意图使用的书页置入手中\r\n自身书页费用为0";
         /*
