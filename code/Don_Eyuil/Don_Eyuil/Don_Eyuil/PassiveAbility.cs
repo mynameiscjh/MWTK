@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LOR_DiceSystem;
+using System.Reflection.Emit;
 namespace Don_Eyuil
 {
-
     public class PassiveAbility_DonEyuil_01 : PassiveAbilityBase
     {
         public class BattleUnitBuf_HardBloodArt : BattleUnitBuf_Don_Eyuil
@@ -26,6 +26,7 @@ namespace Don_Eyuil
             {
                 public override void BeforeRollDice(BattleDiceBehavior behavior)
                 {
+
                     if (behavior.Detail == BehaviourDetail.Slash)
                     {
                         BattleCardTotalResult battleCardResultLog = _owner.battleCardResultLog;
