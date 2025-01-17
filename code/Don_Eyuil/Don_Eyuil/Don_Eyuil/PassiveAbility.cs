@@ -75,12 +75,17 @@ namespace Don_Eyuil
             {
                 public override void BeforeRollDice(BattleDiceBehavior behavior)
                 {
-                    if(behavior != null && behavior.TargetDice != null)
+                    if (behavior != null && behavior.TargetDice != null)
                     {
                         behavior.ApplyDiceStatBonus(new DiceStatBonus()
                         {
                             max = Math.Max(0, Math.Min(behavior.card.speedDiceResultValue - behavior.TargetDice.card.speedDiceResultValue, 4))
                         });
+                        BattleCardTotalResult battleCardResultLog = _owner.battleCardResultLog;
+                        if (battleCardResultLog != null)
+                        {
+                            battleCardResultLog.SetBufs(this);
+                        }
                     }
                 }
                 public int OnSuccessAttTargetNum = 0;
@@ -92,12 +97,12 @@ namespace Don_Eyuil
                 {
                     if (behavior != null && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarAreaEach && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarArea)
                     {
-                        if(behavior.card.target != null)
+                        if (behavior.card.target != null)
                         {
-                            if((behavior.card.speedDiceResultValue - behavior.card.target.GetSpeedDiceResult(behavior.card.targetSlotOrder).value) >= 2)
+                            if ((behavior.card.speedDiceResultValue - behavior.card.target.GetSpeedDiceResult(behavior.card.targetSlotOrder).value) >= 2)
                             {
                                 OnSuccessAttTargetNum++;
-                                if(OnSuccessAttTargetNum <=3)
+                                if (OnSuccessAttTargetNum <= 3)
                                 {
                                     BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(behavior.card.target, 1);
                                 }
@@ -108,7 +113,7 @@ namespace Don_Eyuil
 
                 public override void OnKill(BattleUnitModel target)
                 {
-                    if(target != null)
+                    if (target != null)
                     {
                         BattleUnitBuf_WarmBloodLance.GainBuf<BattleUnitBuf_WarmBloodLance>(_owner, 1, BufReadyType.NextRound);
                     }
@@ -118,6 +123,33 @@ namespace Don_Eyuil
                     typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血枪"]);
                 }
             }
+            //双剑
+            //自身受到单方面攻击时将以一颗(闪避4-8[拼点胜利]对目标施加1层[流血])迎击
+            //自身承受"流血"伤害时每承受3点便使下一颗进攻型骰子伤害+1
+            public class BattleUnitBuf_HardBloodArt_DoubleSwords : BattleUnitBuf_HardBloodArt
+            {
+                public int BleedingDamageThisRound = 0;
+                public override void AfterTakeBleedingDamage(int Dmg)
+                {
+                    BleedingDamageThisRound += Dmg;
+                }
+                
+                public override void OnRollDice(BattleDiceBehavior behavior)
+                {
+                    behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg =  BleedingDamageThisRound / 3 });
+                    BattleCardTotalResult battleCardResultLog = _owner.battleCardResultLog;
+                    if (battleCardResultLog != null)
+                    {
+                        battleCardResultLog.SetBufs(this);
+                    }
+                    BleedingDamageThisRound = 0;
+                }
+                public BattleUnitBuf_HardBloodArt_DoubleSwords(BattleUnitModel model) : base(model)
+                {
+                    typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方双剑"]);
+                }
+
+            }
         }
         //200年前的回忆
         public override string debugDesc => "每幕开始时移除手中的书页并将意图使用的书页置入手中\r\n自身书页费用为0";
@@ -125,7 +157,7 @@ namespace Don_Eyuil
             每幕开始时移除手中的书页并将意图使用的书页置入手中
             自身书页费用为0
             (一阶段：自第二幕起幕有25%概率进入血甲模式
-            其余将随机进入血剑-血枪 血剑-双刃 血弓-随机 血鞭-血伞模式
+            其余将随机进入血剑-血枪 血刃-双剑 血镰-血剑 血弓-随机 血鞭-血伞模式
             初始5颗速度骰子每两幕增加一颗至多9颗
             除血甲状态，最后一个骰子固定使用血之宝库其余骰子随机填入对应硬血术除大招外书页
             每3幕使用一次当前硬血术大招书页
