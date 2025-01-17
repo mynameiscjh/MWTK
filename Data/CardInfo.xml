@@ -1357,7 +1357,7 @@
     <Rarity>Unique</Rarity>
     <Option>EgoPersonal</Option>
     <Spec Range="Far" Cost="4" Affection="One" EmotionLimit="0" />
-    <Script></Script>
+    <Script>DmgCount</Script>
     <ScriptDesc />
     <BehaviourList>
       <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
