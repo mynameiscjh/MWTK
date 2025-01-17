@@ -244,4 +244,7 @@
   <BattleCardAbility ID="DonEyuil_77">
     <Desc>[使用时]这一幕对自身施加3层流血</Desc>
   </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_78">
+    <Desc>[拼点胜利]对目标施加1层[流血]</Desc>
+  </BattleCardAbility>
 </BattleCardAbilityDescRoot>
