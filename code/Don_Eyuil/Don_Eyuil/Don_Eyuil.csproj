@@ -48,6 +48,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\..\..\Managed\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\Managed\UnityEngine.dll</HintPath>
     </Reference>
@@ -55,9 +58,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Don_Eyuil\PassiveAbility.cs" />
+    <Compile Include="Don_Eyuil\PassiveAbility.cs" />  
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Blade.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_BleedCrystal.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_DoubleSwords.cs" />
