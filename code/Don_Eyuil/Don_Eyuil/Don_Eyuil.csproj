@@ -81,5 +81,8 @@
     <Compile Include="Don_Eyuil\PassiveAbility\PassiveAbility_Mimicry_02.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Don_Eyuil\BehaviorAction\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
