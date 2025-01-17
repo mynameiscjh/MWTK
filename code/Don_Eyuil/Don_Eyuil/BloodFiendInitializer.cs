@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
 using System.Xml;
 using UnityEngine;
 using Workshop;
@@ -65,6 +64,22 @@ namespace Don_Eyuil
             }
             return BuffInstance;
         }
+
+        public virtual void OnStartBattle() { }
+
+        [HarmonyPatch(typeof(BattleUnitModel), "OnStartBattle")]
+        [HarmonyPostfix]
+        public static void BattleUnitModel_OnStartBattle_Post(BattleUnitModel __instance)
+        {
+            __instance.bufListDetail.GetActivatedBufList().ForEach(x =>
+            {
+                if (x is BattleUnitBuf_Don_Eyuil)
+                {
+                    (x as BattleUnitBuf_Don_Eyuil).OnStartBattle();
+                }
+            });
+        }
+
     }
 
     [HarmonyPatch]

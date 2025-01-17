@@ -2,9 +2,13 @@
 
 namespace Don_Eyuil.Buff
 {
-    public class BattleUnitBuf_Tidewater : BattleUnitBuf
+    public class BattleUnitBuf_Tidewater : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc = "汹涌的血潮：所有敌方角色被施加\"流血\"时层数+x\r\n自身对处于流血状态的敌方角色造成的伤害与混乱伤害x×10%\r\n";
+
+        public BattleUnitBuf_Tidewater(BattleUnitModel model) : base(model)
+        {
+        }
 
         public static void GainBuf(BattleUnitModel model, int v)
         {
@@ -14,7 +18,7 @@ namespace Don_Eyuil.Buff
             }
             else
             {
-                var buf = new BattleUnitBuf_Tidewater();
+                var buf = new BattleUnitBuf_Tidewater(model);
                 buf.stack = v;
                 model.bufListDetail.AddBuf(buf);
             }

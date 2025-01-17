@@ -17,7 +17,7 @@ namespace Don_Eyuil.PassiveAbility
 
             if (BattleObjectManager.instance.GetAliveList(owner.faction).Count == 1 && !owner.IsDead())
             {
-                owner.bufListDetail.AddBuf(new BattleUnitBuf_Duel());
+                BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Duel>(owner, 0);
             }
 
         }

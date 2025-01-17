@@ -13,7 +13,7 @@ using static BattleCharacterProfile.BattleCharacterProfileUI;
 
 namespace Don_Eyuil.Don_Eyuil.Buff
 {
-    public class BattleUnitBuf_PhysicalShield : BattleUnitBuf
+    public class BattleUnitBuf_PhysicalShield : BattleUnitBuf_Don_Eyuil
     {
 
         public static void AddBuf(BattleUnitModel unit, int stack)
@@ -28,7 +28,7 @@ namespace Don_Eyuil.Don_Eyuil.Buff
             }
             else
             {
-                BattleUnitBuf_PhysicalShield = new BattleUnitBuf_PhysicalShield
+                BattleUnitBuf_PhysicalShield = new BattleUnitBuf_PhysicalShield(unit)
                 {
                     stack = stack
                 };
@@ -278,6 +278,10 @@ namespace Don_Eyuil.Don_Eyuil.Buff
         public Image img_healedShield;
 
         public Text txt_shield;
+
+        public BattleUnitBuf_PhysicalShield(BattleUnitModel model) : base(model)
+        {
+        }
 
         [HarmonyPatch(typeof(BattleUnitBottomStatUI), "SetBufs")]
         [HarmonyPostfix]
