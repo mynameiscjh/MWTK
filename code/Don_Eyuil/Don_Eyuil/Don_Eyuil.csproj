@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Don_Eyuil\PassiveAbility.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Blade.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_BleedCrystal.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_DoubleSwords.cs" />
