@@ -1,5 +1,11 @@
 ﻿using BattleCharacterProfile;
+using HarmonyLib;
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +13,7 @@ using static BattleCharacterProfile.BattleCharacterProfileUI;
 
 namespace Don_Eyuil.Don_Eyuil.Buff
 {
-    public class BattleUnitBuf_PhysicalShield : BattleUnitBuf
+    public class BattleUnitBuf_PhysicalShield : BattleUnitBuf_Don_Eyuil
     {
 
         public static void AddBuf(BattleUnitModel unit, int stack)
@@ -22,13 +28,16 @@ namespace Don_Eyuil.Don_Eyuil.Buff
             }
             else
             {
-                BattleUnitBuf_PhysicalShield = new BattleUnitBuf_PhysicalShield
+                BattleUnitBuf_PhysicalShield = new BattleUnitBuf_PhysicalShield(unit)
                 {
                     stack = stack
                 };
                 unit.bufListDetail.AddBuf(BattleUnitBuf_PhysicalShield);
             }
-
+            if (unit.bufListDetail.HasBuf<BattleUnitBuf_Armour>())
+            {
+                BattleUnitBuf_PhysicalShield.ChangeColor(new Color(1, 0, 0, 1));
+            }
         }
         public void ReduceShield(int num)
         {
@@ -37,6 +46,12 @@ namespace Don_Eyuil.Don_Eyuil.Buff
             {
                 this.stack = 0;
             }
+
+            if (_owner.bufListDetail.HasBuf<BattleUnitBuf_Armour>())
+            {
+                _owner.DmgFactor(num, keyword: KeywordBuf.Bleeding);
+            }
+
         }
         public static int GetBuf(BattleUnitModel unit)
         {
@@ -120,6 +135,13 @@ namespace Don_Eyuil.Don_Eyuil.Buff
                 this.txt_shield.text = string.Empty;
             }
             this.currentShield = 0f;
+        }
+
+        public void ChangeColor(Color color)
+        {
+            this.shieldColor = color;
+            this.shieldBar.color = this.shieldColor;
+            this.shieldText.color = this.shieldColor;
         }
 
         public void SetShield(int targetstack)
@@ -256,6 +278,77 @@ namespace Don_Eyuil.Don_Eyuil.Buff
         public Image img_healedShield;
 
         public Text txt_shield;
+
+        public BattleUnitBuf_PhysicalShield(BattleUnitModel model) : base(model)
+        {
+        }
+
+        [HarmonyPatch(typeof(BattleUnitBottomStatUI), "SetBufs")]
+        [HarmonyPostfix]
+        public static void BattleUnitBottomStatUI_SetBufs_Post(BattleBufUIDataList bufDataList)
+        {
+            BattleBufUIData battleBufUIData = bufDataList.bufActivatedList.Find((BattleBufUIData x) => x.buf is BattleUnitBuf_PhysicalShield);
+            bool flag = battleBufUIData != null;
+            bool flag2 = flag;
+            if (flag2)
+            {
+                ((BattleUnitBuf_PhysicalShield)battleBufUIData.buf).SetShield(battleBufUIData.stack);
+            }
+        }
+
+        public static void ShieldReduce(BattleUnitModel target, ref int dmg)
+        {
+            bool flag = BattleUnitBuf_PhysicalShield.GetBuf(target) > 0;
+            if (flag)
+            {
+                BattleUnitBuf_PhysicalShield battleUnitBuf_PhysicalShield = target.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_PhysicalShield) as BattleUnitBuf_PhysicalShield;
+                int num = Math.Min(dmg, battleUnitBuf_PhysicalShield.stack);
+                dmg -= num;
+                battleUnitBuf_PhysicalShield.ReduceShield(num);
+            }
+        }
+
+        [HarmonyPatch(typeof(BattleUnitModel), "TakeDamage")]
+        [HarmonyTranspiler]
+        [HarmonyPriority(100)]
+        public static IEnumerable<CodeInstruction> BattleUnitModel_TakeDamage_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> list = instructions.ToList<CodeInstruction>();
+            MethodInfo operand = AccessTools.Method(typeof(BattleUnitBuf_PhysicalShield), "ShieldReduce", null, null);
+            MethodInfo method = AccessTools.Method(typeof(BattleUnitModel), "IsImmuneDmg", new Type[]
+            {
+                typeof(DamageType),
+                typeof(KeywordBuf)
+            }, null);
+            for (int i = 0; i < list.Count; i++)
+            {
+                bool flag = list[i].Calls(method);
+                bool flag2 = flag;
+                if (flag2)
+                {
+                    while (i < list.Count)
+                    {
+                        Label? label;
+                        bool flag3 = list[i].Branches(out label);
+                        if (flag3)
+                        {
+                            int index = list.FindIndex((CodeInstruction code) => code.labels.Contains(label.Value));
+                            list.InsertRange(index, new CodeInstruction[]
+                            {
+                                new CodeInstruction(OpCodes.Nop, null).MoveLabelsFrom(list[index]),
+                                new CodeInstruction(OpCodes.Ldarg_0, null),
+                                new CodeInstruction(OpCodes.Ldloca, 1),
+                                new CodeInstruction(OpCodes.Call, operand)
+                            });
+                            break;
+                        }
+                        i++;
+                    }
+                    break;
+                }
+            }
+            return list;
+        }
     }
 
 }

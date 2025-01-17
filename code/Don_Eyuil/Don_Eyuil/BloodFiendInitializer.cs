@@ -23,6 +23,77 @@ using System.Reflection.Emit;
 
 namespace Don_Eyuil
 {
+    public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
+    {
+        public virtual void Add(int stack)
+        {
+            this.stack += stack;
+            this.OnAddBuf(stack);
+            if (this.stack <= 0)
+            {
+                this.Destroy();
+            }
+        }
+        public BattleUnitBuf_Don_Eyuil(BattleUnitModel model)
+        {
+            this._owner = model;
+        }
+        public static T GainBuf<T>(BattleUnitModel model, int stack) where T : BattleUnitBuf_Don_Eyuil
+        {
+            T BuffInstance = GetOrAddBuf<T>(model);
+            if (BuffInstance != null)
+            {
+                BuffInstance.Add(stack);
+            }
+            return BuffInstance;
+        }
+        public static T GetBuf<T>(BattleUnitModel model) where T : BattleUnitBuf_Don_Eyuil => model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is T && !x.IsDestroyed()) as T;
+
+        public static int GetBufStack<T>(BattleUnitModel model) where T : BattleUnitBuf_Don_Eyuil
+        {
+            T BuffInstance = GetBuf<T>(model);
+            if (BuffInstance != null)
+            {
+                return BuffInstance.stack;
+            }
+            return 0;
+        }
+        public static void RemoveBuf<T>(BattleUnitModel model) where T : BattleUnitBuf_Don_Eyuil
+        {
+            T BuffInstance = GetBuf<T>(model);
+            if (BuffInstance != null)
+            {
+                BuffInstance.Destroy();
+            }
+        }
+        public static T GetOrAddBuf<T>(BattleUnitModel model) where T : BattleUnitBuf_Don_Eyuil
+        {
+            T BuffInstance = GetBuf<T>(model);
+            if (BuffInstance == null)
+            {
+                model.bufListDetail.AddBuf(Activator.CreateInstance(typeof(T), model) as T);
+                BuffInstance = GetBuf<T>(model);
+            }
+            return BuffInstance;
+        }
+
+        public virtual void OnStartBattle() { }
+
+        [HarmonyPatch(typeof(BattleUnitModel), "OnStartBattle")]
+        [HarmonyPostfix]
+        public static void BattleUnitModel_OnStartBattle_Post(BattleUnitModel __instance)
+        {
+            __instance.bufListDetail.GetActivatedBufList().ForEach(x =>
+            {
+                if (x is BattleUnitBuf_Don_Eyuil)
+                {
+                    (x as BattleUnitBuf_Don_Eyuil).OnStartBattle();
+                }
+            });
+        }
+
+    }
+
     [HarmonyPatch]
     public class TKS_BloodFiend_PatchMethods_CustomCharacterSkin
     {

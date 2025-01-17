@@ -11,12 +11,9 @@
     <Script>DonEyuil_01</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -39,10 +36,8 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -65,12 +60,9 @@
     <Script>selfbleeding2</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_02" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_02" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -93,10 +85,8 @@
     <Script />
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="bleeding3atkTwoRound" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="bleeding1atk" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding3atkTwoRound" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding1atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -119,8 +109,7 @@
     <Script>DonEyuil_03</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="17" Dice="34" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="bleeding6atk" ActionScript="" Desc="" />
+      <Behaviour Min="17" Dice="34" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding6atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -143,10 +132,8 @@
     <Script>DonEyuil_04</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -169,12 +156,9 @@
     <Script>DonEyuil_05</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -197,12 +181,9 @@
     <Script>DonEyuil_06</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_07" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_08" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_07" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_08" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -225,12 +206,9 @@
     <Script />
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -253,12 +231,9 @@
     <Script>DonEyuil_09</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="DonEyuil_10" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_10" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -281,12 +256,9 @@
     <Script>DonEyuil_11</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="greta_destroyDice" ActionScript="" Desc="" />
-      <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_12" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_13" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="greta_destroyDice" ActionScript="" Desc="" />
+      <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_12" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_13" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -309,12 +281,9 @@
     <Script>DonEyuil_14</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_15" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_15" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -337,12 +306,9 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="10" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="10" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -365,10 +331,8 @@
     <Script>DonEyuil_01</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="15" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_16" ActionScript="" Desc="" />
-      <Behaviour Min="8" Dice="11" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="15" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_16" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="11" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -391,12 +355,9 @@
     <Script>DonEyuil_01</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="11" Type="Def" Detail="Evasion" Motion="E" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_17" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_18" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="11" Type="Def" Detail="Evasion" Motion="E" MotionDefault="N" EffectRes="" Script="DonEyuil_17" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_18" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -419,14 +380,10 @@
     <Script>DonEyuil_77</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="11" Type="Def" Detail="Evasion" Motion="E" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_18" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_19" ActionScript="" Desc="" />
-      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_20" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="11" Type="Def" Detail="Evasion" Motion="E" MotionDefault="N" EffectRes="" Script="DonEyuil_18" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_19" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_20" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -449,8 +406,7 @@
     <Script>DonEyuil_21</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -473,12 +429,9 @@
     <Script>DonEyuil_22</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -501,10 +454,8 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="10" Type="Standby" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Standby" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="10" Type="Standby" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Standby" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -527,10 +478,8 @@
     <Script>DonEyuil_23</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -553,8 +502,7 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="10" Dice="20" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding6atk" ActionScript="" Desc="" />
+      <Behaviour Min="10" Dice="20" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding6atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -577,8 +525,7 @@
     <Script>DonEyuil_24</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_25" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_25" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -601,12 +548,9 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_26" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_27" ActionScript="" Desc="" />
-      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_28" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_26" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_27" ActionScript="" Desc="" />
+      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_28" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -629,10 +573,8 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="3" Dice="6" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="DonEyuil_29" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="3" Dice="6" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_29" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -655,8 +597,7 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="20" Dice="25" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_30" ActionScript="" Desc="" />
+      <Behaviour Min="20" Dice="25" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_30" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -679,12 +620,9 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="6" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="6" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="6" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="6" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -707,8 +645,7 @@
     <Script>DonEyuil_32</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="11" Dice="17" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_33" ActionScript="" Desc="" />
+      <Behaviour Min="11" Dice="17" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_33" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -731,8 +668,7 @@
     <Script>DonEyuil_34</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="15" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="hubertDice" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="15" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="hubertDice" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -755,10 +691,8 @@
     <Script>DonEyuil_35</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="10" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="bleeding3atk" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="10" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -781,12 +715,9 @@
     <Script>DonEyuil_36</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="15" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_37" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="15" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_37" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -809,12 +740,9 @@
     <Script>DonEyuil_38</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_37" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="10" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_37" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="10" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -837,12 +765,9 @@
     <Script>selfbleeding2</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_02" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_02" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -865,12 +790,9 @@
     <Script>DonEyuil_39</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_31" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_31" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -893,12 +815,9 @@
     <Script>DonEyuil_39</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_40" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_40" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -921,12 +840,9 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_41" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_42" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_41" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="DonEyuil_42" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -949,12 +865,9 @@
     <Script>DonEyuil_43</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -977,12 +890,9 @@
     <Script>DonEyuil_44</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_46" ActionScript="" Desc="" />
-      <Behaviour Min="7" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding4atk" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_46" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding4atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1005,12 +915,9 @@
     <Script>DonEyuil_46</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="DonEyuil_47" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_48" ActionScript="" Desc="" />
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="DonEyuil_49" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_47" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_48" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_49" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1033,10 +940,8 @@
     <Script>DonEyuil_50</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="15" Dice="29" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="17" Dice="34" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="15" Dice="29" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="17" Dice="34" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1059,8 +964,7 @@
     <Script>DonEyuil_51</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="11" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="11" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1083,12 +987,9 @@
     <Script>DonEyuil_52</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="12" Dice="19" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="12" Dice="19" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="12" Dice="19" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="12" Dice="19" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="12" Dice="19" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="12" Dice="19" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1111,8 +1012,7 @@
     <Script>DonEyuil_53</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="25" Dice="35" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="25" Dice="35" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1135,8 +1035,7 @@
     <Script>DonEyuil_54</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="30" Dice="40" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="30" Dice="40" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1159,12 +1058,9 @@
     <Script>DonEyuil_55</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="12" Dice="16" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="12" Dice="16" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="12" Dice="16" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="12" Dice="16" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="12" Dice="16" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="12" Dice="16" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1190,8 +1086,7 @@
     <Script>DonEyuil_56</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="17" Dice="34" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_57" ActionScript="DonEyuil_Area" Desc="" />
+      <Behaviour Min="17" Dice="34" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_57" ActionScript="DonEyuil_Area" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1215,12 +1110,9 @@
     <Script>DonEyuil_58</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_59" ActionScript="DonEyuil_Area" Desc="" />
-      <Behaviour Min="7" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="DonEyuil_Area" Desc="" />
-      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_60" ActionScript="DonEyuil_Area" Desc="" />
+      <Behaviour Min="7" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_59" ActionScript="DonEyuil_Area" Desc="" />
+      <Behaviour Min="7" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="DonEyuil_Area" Desc="" />
+      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_60" ActionScript="DonEyuil_Area" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1244,12 +1136,9 @@
     <Script>DonEyuil_11</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="greta_destroyDice" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="6" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_12" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_13" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="greta_destroyDice" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="6" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_12" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_13" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1273,10 +1162,8 @@
     <Script>DonEyuil_01</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="15" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_16" ActionScript="" Desc="" />
-      <Behaviour Min="8" Dice="11" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="15" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_16" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="11" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1300,14 +1187,10 @@
     <Script>DonEyuil_77</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="11" Type="Def" Detail="Evasion" Motion="E" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_18" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_19" ActionScript="" Desc="" />
-      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_20" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="11" Type="Def" Detail="Evasion" Motion="E" MotionDefault="N" EffectRes="" Script="DonEyuil_18" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_19" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_20" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1331,12 +1214,9 @@
     <Script>DonEyuil_61</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1357,15 +1237,12 @@
     <Rarity>Unique</Rarity>
     <Option>EgoPersonal</Option>
     <Spec Range="Far" Cost="4" Affection="One" EmotionLimit="0" />
-    <Script></Script>
+    <Script>DmgCount</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_26" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_27" ActionScript="" Desc="" />
-      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_28" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_26" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_27" ActionScript="" Desc="" />
+      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_28" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1389,8 +1266,7 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="20" Dice="25" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_30" ActionScript="" Desc="" />
+      <Behaviour Min="20" Dice="25" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_30" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1414,8 +1290,7 @@
     <Script>DonEyuil_32</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="11" Dice="17" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_33" ActionScript="" Desc="" />
+      <Behaviour Min="11" Dice="17" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_33" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1439,10 +1314,8 @@
     <Script>DonEyuil_62</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="DonEyuil_63" ActionScript="" Desc="" />
-      <Behaviour Min="13" Dice="21" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_64" ActionScript="" Desc="" />
+      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_63" ActionScript="" Desc="" />
+      <Behaviour Min="13" Dice="21" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_64" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>6</Chapter>
     <SpecialEffect />
@@ -1465,12 +1338,9 @@
     <Script>DonEyuil_65</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1493,12 +1363,9 @@
     <Script>DonEyuil_66</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_46" ActionScript="" Desc="" />
-      <Behaviour Min="7" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding4atk" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_46" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding4atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1521,10 +1388,8 @@
     <Script>DonEyuil_67</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_68" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="drawCard1atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="DonEyuil_68" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="drawCard1atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1547,12 +1412,9 @@
     <Script>DonEyuil_69</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="DonEyuil_47" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_48" ActionScript="" Desc="" />
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes=""
-        Script="DonEyuil_49" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_47" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_48" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_49" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1575,14 +1437,10 @@
     <Script>DonEyuil_70</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_02" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="3" Dice="7" Type="Standby" Detail="Slash" Motion="H" MotionDefault="N"
-        EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_02" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="3" Dice="7" Type="Standby" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1605,12 +1463,9 @@
     <Script>DonEyuil_39</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_71" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_71" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1633,12 +1488,9 @@
     <Script>DonEyuil_72</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_73" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N"
-        EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_73" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1661,12 +1513,9 @@
     <Script>DonEyuil_74</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_75" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="DonEyuil_42" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_75" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="DonEyuil_42" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1689,12 +1538,9 @@
     <Script>DonEyuil_76</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1717,8 +1563,8 @@
     <Script></Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Evasion" Motion="G" MotionDefault="N"
-        EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Evasion" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />

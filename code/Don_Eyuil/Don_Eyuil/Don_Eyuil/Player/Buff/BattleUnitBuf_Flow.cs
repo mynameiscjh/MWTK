@@ -3,9 +3,13 @@ using System.Collections.Generic;
 
 namespace Don_Eyuil.Buff
 {
-    public class BattleUnitBuf_Flow : BattleUnitBuf
+    public class BattleUnitBuf_Flow : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc = "自身[流血]无法低于2+x";
+
+        public BattleUnitBuf_Flow(BattleUnitModel model) : base(model)
+        {
+        }
 
         public static BattleUnitBuf_Flow GetBuf(BattleUnitModel model)
         {
@@ -20,7 +24,7 @@ namespace Don_Eyuil.Buff
             }
             else
             {
-                var buf = new BattleUnitBuf_Flow();
+                var buf = new BattleUnitBuf_Flow(model);
                 buf.stack = v;
                 model.bufListDetail.AddBuf(buf);
             }
@@ -28,14 +32,14 @@ namespace Don_Eyuil.Buff
 
         public static void GainReadyBuf(BattleUnitModel model, int v)
         {
-            var buf = new BattleUnitBuf_Flow();
+            var buf = new BattleUnitBuf_Flow(model);
             buf.stack = v;
             model.bufListDetail.AddReadyBuf(buf);
         }
 
         public static void GainReadyReadyBuf(BattleUnitModel model, int v)
         {
-            var buf = new BattleUnitBuf_Flow();
+            var buf = new BattleUnitBuf_Flow(model);
             buf.stack = v;
             model.bufListDetail.AddReadyReadyBuf(buf);
         }
