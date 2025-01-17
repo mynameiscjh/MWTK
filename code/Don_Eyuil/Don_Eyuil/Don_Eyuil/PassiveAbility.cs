@@ -57,9 +57,37 @@ namespace Don_Eyuil
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            if(behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarAreaEach && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarArea)
+            if(behavior != null && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarAreaEach && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarArea)
             {
                 owner.RecoverHP(behavior.DiceResultValue);
+            }
+        }
+    }
+    public class PassiveAbility_DonEyuil_04 : PassiveAbilityBase
+    {
+        //光荣的决斗
+        public override string debugDesc => "拼点时使双方所有骰子威力+3\r\n拼点胜利的一方造成的伤害增加30%";
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            var diceStat = new DiceStatBonus() { power = 3 };
+            if(behavior.TargetDice != null)
+            {
+                behavior.ApplyDiceStatBonus(diceStat);
+                behavior.TargetDice.ApplyDiceStatBonus(diceStat);
+            }
+        }
+        public override void OnWinParrying(BattleDiceBehavior behavior)
+        {
+            if(behavior != null)
+            {
+                behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmgRate = 30 });
+            }
+        }
+        public override void OnLoseParrying(BattleDiceBehavior behavior)
+        {
+            if(behavior != null  && behavior.TargetDice != null)
+            {
+                behavior.TargetDice.ApplyDiceStatBonus(new DiceStatBonus() { dmgRate = 30 });
             }
         }
     }
