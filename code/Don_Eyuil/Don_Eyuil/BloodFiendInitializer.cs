@@ -1,26 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using EnumExtenderV2;
+using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Xml;
-using System.Xml.Serialization;
-using Battle.DiceAttackEffect;
-using BattleCharacterProfile;
-using EnumExtenderV2;
-using HarmonyLib;
-using JetBrains.Annotations;
-using LOR_DiceSystem;
-using LOR_XML;
-using Mod;
-using Sound;
-using TMPro;
-using UI;
 using UnityEngine;
-using UnityEngine.UI;
 using Workshop;
 
 namespace Don_Eyuil
@@ -526,6 +512,7 @@ namespace Don_Eyuil
         public static LorId Card_硬血截断_2 = MyTools.Create(61);
         public static LorId Card_血如泉涌_2 = MyTools.Create(62);
         public static LorId Card_梦之冒险_2 = MyTools.Create(63);
+        public static LorId Card_经典反击书页 = MyTools.Create(64);
     }
 
 }
