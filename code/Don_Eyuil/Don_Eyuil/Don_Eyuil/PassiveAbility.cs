@@ -32,7 +32,10 @@ namespace Don_Eyuil
             第四幕：速度骰子×2 堂埃尤尔派硬血术终式-La Sangre 便以决斗作为这场战斗的结尾吧
             第五幕：速度骰子×4  4种决斗书页)
         */
-
+        public override void OnRoundStart()
+        {
+            base.OnRoundStart();
+        }
     }
     public class PassiveAbility_DonEyuil_02 : PassiveAbilityBase
     {
@@ -91,5 +94,22 @@ namespace Don_Eyuil
             }
         }
     }
+    public class PassiveAbility_DonEyuil_05 : PassiveAbilityBase
+    {
+        //奔向梦想!驽骍难得!
+        public override string debugDesc => "使所有应用了觉醒书页的司书威力+1\r\n自身体力首次低于400时获得新的被动并更改行动逻辑\r\n触发前体力无法低于400";
+        //（获得被动“萦绕家族的疾病”“无法舍弃的责任”“若家人也能找到梦想”并获得500层护盾）
+        public class BattleUnitBuf_RunningTowardDream : BattleUnitBuf
+        {
+            public override void OnRollDice(BattleDiceBehavior behavior)
+            {
+                if(behavior != null && _owner.emotionDetail.GetSelectedCardList().Find(x => x.XmlInfo.State == MentalState.Positive) != null)
+                {
+                    behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = 1 });
+                }
+            }
+        }
+    }
+
 
 }
