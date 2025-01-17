@@ -74,8 +74,10 @@
     <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Lance.cs" />
     <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_PhysicalShield.cs" />
     <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Rifle.cs" />
+    <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Scourge.cs" />
     <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Sickle.cs" />
     <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Sword.cs" />
+    <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Thistles.cs" />
     <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Tidewater.cs" />
     <Compile Include="Don_Eyuil\DiceCardAbility\DiceCardAbility_DonEyuil_12.cs" />
     <Compile Include="Don_Eyuil\DiceCardAbility\DiceCardAbility_DonEyuil_13.cs" />

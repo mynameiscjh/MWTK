@@ -16,6 +16,7 @@
 
         public override void OnRoundEnd()
         {
+            bleedDmg = 0;
             BattleUnitBuf_BleedCrystal.GainBuf(_owner, bleedDmg / 2);
         }
 
