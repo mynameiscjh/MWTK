@@ -49,9 +49,14 @@ namespace Don_Eyuil
         {
             
         }
+        public virtual int GetMaxStack() => -1;
         public virtual void Add(int stack)
         {
             this.stack += stack;
+            if(GetMaxStack() >= 0)
+            {
+                this.stack = Math.Min(this.stack, GetMaxStack());
+            }
             this.OnAddBuf(stack);
             if (this.stack <= 0)
             {

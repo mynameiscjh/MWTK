@@ -66,6 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Don_Eyuil\Buff.cs" />
     <Compile Include="Don_Eyuil\DiceCardAbility.cs" />
     <Compile Include="Extra.cs" />
     <Compile Include="Don_Eyuil\PassiveAbility.cs" />

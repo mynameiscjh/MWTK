@@ -17,16 +17,24 @@ namespace Don_Eyuil
                 typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
                 this.stack = 0;
             }
-
             //血剑:
             //自身斩击骰子最小值+2
             //自身施加"流血"时额外对自身和目标施加一层
             //每幕结束时自身每承受2点"流血"伤害便时自身获得1层"硬血结晶"
             public class BattleUnitBuf_HardBloodArt_BloodSword: BattleUnitBuf_HardBloodArt
             {
+                public int BleedingDamageThisRound = 0;
+                public override void OnRoundEnd()
+                {
+                    BattleUnitBuf_HardBlood_Crystal.GainBuf<BattleUnitBuf_HardBlood_Crystal>(_owner, BleedingDamageThisRound / 2);
+                    BleedingDamageThisRound = 0;
+                }
+                public override void AfterTakeBleedingDamage(int Dmg)
+                { 
+                    BleedingDamageThisRound += Dmg;
+                }
                 public override void BeforeRollDice(BattleDiceBehavior behavior)
                 {
-
                     if (behavior.Detail == BehaviourDetail.Slash)
                     {
                         BattleCardTotalResult battleCardResultLog = _owner.battleCardResultLog;
@@ -59,6 +67,49 @@ namespace Don_Eyuil
                 }
             }
 
+            //血枪:
+            //拼点时自身速度每高于目标1点便使自身所有骰子最大值+1(至多+4)
+            //自身以高于目标至少2点的速度击中目标时将对目标施加1层"无法凝结的血"(每幕至多触发3次)
+            //若击杀目标则在下一幕获得一层"热血尖枪"
+            public class BattleUnitBuf_HardBloodArt_BloodLance : BattleUnitBuf_HardBloodArt
+            {
+                public override void BeforeRollDice(BattleDiceBehavior behavior)
+                {
+                    if(behavior != null && behavior.TargetDice != null)
+                    {
+                        behavior.ApplyDiceStatBonus(new DiceStatBonus()
+                        {
+                            max = Math.Max(0, Math.Min(behavior.card.speedDiceResultValue - behavior.TargetDice.card.speedDiceResultValue, 4))
+                        });
+                    }
+                }
+                
+                public override void OnSuccessAttack(BattleDiceBehavior behavior)
+                {
+                    if (behavior != null && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarAreaEach && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarArea)
+                    {
+                        if(behavior.card.target != null)
+                        {
+                            if((behavior.card.speedDiceResultValue - behavior.card.target.GetSpeedDiceResult(behavior.card.targetSlotOrder).value) >= 2)
+                            {
+
+                            }
+                        }
+                    }
+                }
+
+                public override void OnKill(BattleUnitModel target)
+                {
+                    if(target != null)
+                    {
+
+                    }
+                }
+                public BattleUnitBuf_HardBloodArt_BloodLance(BattleUnitModel model) : base(model)
+                {
+                    typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血枪"]);
+                }
+            }
         }
         //200年前的回忆
         public override string debugDesc => "每幕开始时移除手中的书页并将意图使用的书页置入手中\r\n自身书页费用为0";
