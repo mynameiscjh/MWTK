@@ -115,5 +115,6 @@
 	  <Compile Include="Don_Eyuil\Player\PassiveAbility\PassiveAbility_Mimicry_01.cs" />
 	  <Compile Include="Don_Eyuil\Player\PassiveAbility\PassiveAbility_Mimicry_02.cs" />
 	  <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
