@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -54,23 +54,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buff\BattleUnitBuf_BleedCrystal.cs" />
-    <Compile Include="Buff\BattleUnitBuf_Duel.cs" />
-    <Compile Include="Buff\BattleUnitBuf_Flow.cs" />
-    <Compile Include="Buff\BattleUnitBuf_Lance.cs" />
-    <Compile Include="Buff\BattleUnitBuf_Rifle.cs" />
-    <Compile Include="Buff\BattleUnitBuf_Sword.cs" />
-    <Compile Include="DiceCardAbility\DiceCardAbility_DonEyuil_57.cs" />
-    <Compile Include="DiceCardAbility\DiceCardAbility_DonEyuil_59.cs" />
-    <Compile Include="DiceCardAbility\DiceCardAbility_DonEyuil_60.cs" />
-    <Compile Include="DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_56.cs" />
-    <Compile Include="DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_58.cs" />
+    <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_BleedCrystal.cs" />
+    <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Duel.cs" />
+    <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Flow.cs" />
+    <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Lance.cs" />
+    <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Rifle.cs" />
+    <Compile Include="Don_Eyuil\Buff\BattleUnitBuf_Sword.cs" />
+    <Compile Include="Don_Eyuil\DiceCardAbility\DiceCardAbility_DonEyuil_57.cs" />
+    <Compile Include="Don_Eyuil\DiceCardAbility\DiceCardAbility_DonEyuil_59.cs" />
+    <Compile Include="Don_Eyuil\DiceCardAbility\DiceCardAbility_DonEyuil_60.cs" />
+    <Compile Include="Don_Eyuil\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_56.cs" />
+    <Compile Include="Don_Eyuil\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_58.cs" />
     <Compile Include="Init.cs" />
     <Compile Include="MyId.cs" />
     <Compile Include="MyTools.cs" />
-    <Compile Include="PassiveAbility\PassiveAbility_DonEyuil_15.cs" />
-    <Compile Include="PassiveAbility\PassiveAbility_Mimicry_01.cs" />
-    <Compile Include="PassiveAbility\PassiveAbility_Mimicry_02.cs" />
+    <Compile Include="Don_Eyuil\PassiveAbility\PassiveAbility_DonEyuil_15.cs" />
+    <Compile Include="Don_Eyuil\PassiveAbility\PassiveAbility_Mimicry_01.cs" />
+    <Compile Include="Don_Eyuil\PassiveAbility\PassiveAbility_Mimicry_02.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
