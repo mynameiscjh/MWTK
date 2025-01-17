@@ -16,9 +16,12 @@ namespace Don_Eyuil
     {
         public class OnTakeBleedingDamagePatch
         {
-            public static void Trigger_BleedingDmg(int dmg,KeywordBuf keyword)
+            public static void Trigger_BleedingDmg_After(BattleUnitModel Model,int dmg,KeywordBuf keyword)
             {
-
+                if(keyword == KeywordBuf.Bleeding && dmg > 0)
+                {
+                    Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
+                }
             }
             [HarmonyPatch(typeof(BattleUnitModel), "TakeDamage")]
             [HarmonyTranspiler]
@@ -31,9 +34,10 @@ namespace Don_Eyuil
                     {
                         codes.InsertRange(i + 1, new List<CodeInstruction>()
                         {
+                            new CodeInstruction(OpCodes.Ldarg_0),
                             new CodeInstruction(OpCodes.Ldloc_2),
                             new CodeInstruction(OpCodes.Ldarg_S,4),
-                            //new CodeInstruction(OpCodes.Call)
+                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(OnTakeBleedingDamagePatch),"Trigger_BleedingDmg_After"))
                         });
                     }
                 }
@@ -41,9 +45,9 @@ namespace Don_Eyuil
             }
         }
 
-        public virtual void OnTakeBleedingDamage(int Dmg)
+        public virtual void AfterTakeBleedingDamage(int Dmg)
         {
-
+            
         }
         public virtual void Add(int stack)
         {

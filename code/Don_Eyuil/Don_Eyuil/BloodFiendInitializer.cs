@@ -343,6 +343,7 @@ namespace Don_Eyuil
             Harmony harmony = new Harmony(packageId);
             harmony.PatchAll();
             harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
             Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
