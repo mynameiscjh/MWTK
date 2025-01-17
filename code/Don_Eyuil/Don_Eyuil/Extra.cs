@@ -14,6 +14,27 @@ namespace Don_Eyuil
 {
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
+        public virtual void OnStartBattle() 
+        { 
+
+        }
+        public class OnStartBattlePatch
+        {
+            [HarmonyPatch(typeof(BattleUnitModel), "OnStartBattle")]
+            [HarmonyPostfix]
+            public static void BattleUnitModel_OnStartBattle_Post(BattleUnitModel __instance)
+            {
+                __instance.bufListDetail.GetActivatedBufList().ForEach(x =>
+                {
+                    if (x is BattleUnitBuf_Don_Eyuil)
+                    {
+                        (x as BattleUnitBuf_Don_Eyuil).OnStartBattle();
+                    }
+                });
+            }
+        }
+
+
         public class OnTakeBleedingDamagePatch
         {
             public static void Trigger_BleedingDmg_After(BattleUnitModel Model,int dmg,KeywordBuf keyword)
