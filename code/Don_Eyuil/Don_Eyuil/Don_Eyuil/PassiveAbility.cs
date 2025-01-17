@@ -110,7 +110,7 @@ namespace Don_Eyuil
                 {
                     if(target != null)
                     {
-
+                        BattleUnitBuf_WarmBloodLance.GainBuf<BattleUnitBuf_WarmBloodLance>(_owner, 1, BufReadyType.NextRound);
                     }
                 }
                 public BattleUnitBuf_HardBloodArt_BloodLance(BattleUnitModel model) : base(model)
