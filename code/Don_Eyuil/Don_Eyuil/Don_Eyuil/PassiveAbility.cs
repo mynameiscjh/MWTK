@@ -50,16 +50,41 @@ namespace Don_Eyuil
                 battleDiceCardModel.temporary = true;
             }
         }
-        public PassiveAbility_DonEyuil_02 APassive02 => owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_02) as PassiveAbility_DonEyuil_02;
-        public override void OnRoundStart()
+        public override int SpeedDiceNumAdder()
         {
+            int EmotionOffest = (owner.emotionDetail.EmotionLevel >= 4) ? -1 : 0;
+            if (APassive02 != null)
+            {
+                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { return 2 + EmotionOffest; }
+                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { return 4 + EmotionOffest; }
+                return 4 + Math.Min(4,Singleton<StageController>.Instance.RoundTurn / 2);
+            }
+            return 0;
+        }
+        public PassiveAbility_DonEyuil_02 APassive02 => owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_02) as PassiveAbility_DonEyuil_02;
+        public override void OnRoundStartAfter()
+        {
+            owner.allyCardDetail.ExhaustAllCardsInHand();
             int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
             int round = Singleton<StageController>.Instance.RoundTurn;
             if (APassive02 != null)
             { 
                 APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
-                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { }
-                else if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { }
+                //Debug.LogError("CurrentArtPair:" + APassive02.CurrentArtPair.ComboType +"|||||||||" + String.Join(",", APassive02.CurrentArtPair.Arts));
+                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) 
+                {
+                    AddNewCard(MyId.Card_堂埃尤尔派硬血术6式_血甲_1, 999);
+                    AddNewCard(MyId.Card_血液凝结,999);
+                    AddNewCard(MyId.Card_血液凝结, 999);
+                }
+                else if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) 
+                {
+                    AddNewCard(MyId.Card_硬血化铠, 999);
+                    AddNewCard(MyId.Card_硬血化铠, 999);
+                    AddNewCard(MyId.Card_硬血化铠, 999);
+                    AddNewCard(MyId.Card_血之壁垒, 999);
+                    AddNewCard(MyId.Card_血之壁垒, 999);
+                }
                 else
                 {
                     if(round % 3 <= 0)
@@ -71,10 +96,10 @@ namespace Don_Eyuil
                     }
                     while (i - 1 > 0)
                     {
-                        AddNewCard(RandomUtil.SelectOne(APassive02.CurrentArtPair.GetComboCards()),200);
+                        AddNewCard(RandomUtil.SelectOne(APassive02.CurrentArtPair.GetComboCards()),500);
                         i--;
                     }
-                    AddNewCard(MyId.Card_血之宝库_1, 500);
+                    AddNewCard(MyId.Card_血之宝库_1, 200);
                     i = 0;
 
                 }
@@ -83,12 +108,17 @@ namespace Don_Eyuil
     }
     public class PassiveAbility_DonEyuil_02 : PassiveAbilityBase
     {
+        public bool HasEnterBloodSickleArt = false;
+        public override void OnWaveStart()
+        {
+            HasEnterBloodSickleArt = false;
+        }
         public class BattleUnitBuf_HardBloodArt : BattleUnitBuf_Don_Eyuil
         {
-            //硬血术生效触发
+
             public virtual List<LorId> BloodArtCards { get; }
             public virtual List<LorId> BloodArtFinalCard { get; }
-            
+            //硬血术生效触发
             public override void AfterGetOrAddBuf()
             {
                
@@ -271,6 +301,7 @@ namespace Don_Eyuil
                 {
                     _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, EnemyBleedingDamageThisRound / 20);
                     EnemyBleedingDamageThisRound = 0;
+                    BloodArtFinalCard.Clear();
                 }
                 public override void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit, int Dmg)
                 {
@@ -386,7 +417,7 @@ namespace Don_Eyuil
             public class BattleUnitBuf_HardBloodArt_BloodUmbrella : BattleUnitBuf_HardBloodArt
             {
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术9式_血伞_1 };
-                public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血伞挥打_1};
+                public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血伞挥打_1, MyId.Card_血伞反击};
                 public override void OnSuccessAttack(BattleDiceBehavior behavior)
                 {
                     if (behavior != null && behavior.card != null && behavior.card.target != null)
@@ -425,6 +456,16 @@ namespace Don_Eyuil
             {
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术3式_血镰_1};
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_镰刃截断, MyId.Card_巨镰纵切 };
+
+                public override void AfterGetOrAddBuf()
+                {
+                    var Passive02 =  _owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_02) as PassiveAbility_DonEyuil_02;
+                    if(Passive02.HasEnterBloodSickleArt == false)
+                    {
+                        Passive02.HasEnterBloodSickleArt = true;
+                        BattleUnitBuf_BloodTide.GainBuf<BattleUnitBuf_BloodTide>(_owner, 1);
+                    }
+                }
                 public override void OnRollDice(BattleDiceBehavior behavior)
                 {
                     if (behavior != null && behavior.card != null && behavior.card.target != null && behavior.Detail == BehaviourDetail.Slash)
@@ -440,7 +481,24 @@ namespace Don_Eyuil
                     typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血镰"]);
                 }
             }
-
+            //血甲
+            //自身护盾减少时将视作受到等量"流血"伤害
+            //每幕结束时自身每有一颗未被使用的防御型骰子便使自身获得10点护盾
+            //自身被命中时对命中者施加2-3层"流血"
+            public class BattleUnitBuf_HardBloodArt_BloodShield : BattleUnitBuf_HardBloodArt
+            {
+                public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
+                {
+                    if(atkDice != null && atkDice.card != null && atkDice.card.owner != null)
+                    {
+                        atkDice.card.owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, RandomUtil.Range(2, 3));
+                    }
+                }
+                public BattleUnitBuf_HardBloodArt_BloodShield(BattleUnitModel model) : base(model)
+                {
+                    typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血甲"]);
+                }
+            }
         }
         //堂埃尤尔派硬血术
         public override string debugDesc => "自身将定期切换不同的硬血术状态并获得不同效果与书页";
@@ -478,7 +536,7 @@ namespace Don_Eyuil
             owner.bufListDetail.GetActivatedBufList().FindAll(x => x is BattleUnitBuf_HardBloodArt).Do(x => x.Destroy());
             if ( Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 0.25f )
             {
-                return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Sheild, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_DoubleSwords>(owner));
+                return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Sheild, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodShield>(owner));
             }
             switch(RandomUtil.SelectOne(new List<HardBloodArtCombo>() { HardBloodArtCombo.Sword_Lance,HardBloodArtCombo.Kinfe_Double,HardBloodArtCombo.Sickle_Sword,HardBloodArtCombo.Bow_,HardBloodArtCombo.Scourage_Umbre}))
             {
@@ -523,13 +581,13 @@ namespace Don_Eyuil
             public List<LorId> GetComboCards()
             {
                 var CardList = new List<LorId>() { };
-                Arts.Do(x => CardList.Union(x.BloodArtCards));
+                Arts.Do(x => CardList.AddRange(x.BloodArtCards));
                 return CardList;
             }
             public List<LorId> GetComboFinalCards()
             {
                 var CardList = new List<LorId>() { };
-                Arts.Do(x => CardList.Union(x.BloodArtFinalCard));
+                Arts.Do(x => CardList.AddRange(x.BloodArtFinalCard));
                 return CardList;
             }
             public HardBloodArtPair(HardBloodArtCombo Combo,params BattleUnitBuf_HardBloodArt[] ArtBufs)

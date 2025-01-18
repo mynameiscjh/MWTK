@@ -351,6 +351,7 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
@@ -450,6 +451,7 @@ namespace Don_Eyuil
         public static LorId Card_梦之冒险_2 = MyTools.Create(63);
         public static LorId Card_经典反击书页 = MyTools.Create(64);
         public static LorId Card_双剑反击闪避书页 = MyTools.Create(65);
+        public static LorId Card_血伞反击 = MyTools.Create(66);
     }
 
 }
