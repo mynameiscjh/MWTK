@@ -50,11 +50,22 @@ namespace Don_Eyuil
                 battleDiceCardModel.temporary = true;
             }
         }
+        public bool HasSelectPairThisRound = false;
+        public override void OnRoundEndTheLast()
+        {
+            HasSelectPairThisRound = false;
+        }
         public override int SpeedDiceNumAdder()
         {
+
             int EmotionOffest = (owner.emotionDetail.EmotionLevel >= 4) ? -1 : 0;
             if (APassive02 != null)
             {
+                if (HasSelectPairThisRound == false)
+                {
+                    APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
+                    HasSelectPairThisRound = true;
+                }
                 if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { return 2 + EmotionOffest; }
                 if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { return 4 + EmotionOffest; }
                 return 4 + Math.Min(4,Singleton<StageController>.Instance.RoundTurn / 2);
@@ -62,14 +73,14 @@ namespace Don_Eyuil
             return 0;
         }
         public PassiveAbility_DonEyuil_02 APassive02 => owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_02) as PassiveAbility_DonEyuil_02;
-        public override void OnRoundStartAfter()
+        public override void OnRoundStart()
         {
             owner.allyCardDetail.ExhaustAllCardsInHand();
             int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
             int round = Singleton<StageController>.Instance.RoundTurn;
             if (APassive02 != null)
             { 
-                APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
+                //APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
                 //Debug.LogError("CurrentArtPair:" + APassive02.CurrentArtPair.ComboType +"|||||||||" + String.Join(",", APassive02.CurrentArtPair.Arts));
                 if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) 
                 {
