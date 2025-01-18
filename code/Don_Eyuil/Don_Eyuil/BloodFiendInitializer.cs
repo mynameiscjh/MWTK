@@ -451,6 +451,7 @@ namespace Don_Eyuil
         public static LorId Card_梦之冒险_2 = MyTools.Create(63);
         public static LorId Card_经典反击书页 = MyTools.Create(64);
         public static LorId Card_双剑反击闪避书页 = MyTools.Create(65);
+        public static LorId Card_血伞反击 = MyTools.Create(66);
     }
 
 }
