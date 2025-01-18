@@ -3,91 +3,98 @@
   "WorkspaceRootPath": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\passiveability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\passiveability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\dicecardability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\dicecardability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_76.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_76.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_42.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_42.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Don_Eyuil||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_75.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_75.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_74.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_74.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_thistles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_thistles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_69.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_69.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_39.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_39.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_65.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_65.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_66.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_66.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_73.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_73.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_49.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_49.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_47.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_47.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_46.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_46.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_67.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_67.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_67.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_70.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_42.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_42.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_75.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_75.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_74.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_74.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_thistles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_thistles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_69.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_69.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_39.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_39.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_65.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_65.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_66.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_66.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_73.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_73.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_49.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_49.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_47.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_47.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_46.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_46.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_70.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_70.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_72.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_72.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_72.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_71.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_71.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_71.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_physicalshield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_physicalshield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_physicalshield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_48.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_48.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_48.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_flow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_flow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_flow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_bleedcrystal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_bleedcrystal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_bleedcrystal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -95,11 +102,11 @@
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_hardblood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_68.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_68.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_68.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_tidewater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_tidewater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_tidewater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -107,19 +114,15 @@
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_doneyuil_01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_dmgcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_dmgcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardselfability\\dicecardselfability_dmgcount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_greta_destroydice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_greta_destroydice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_64.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_64.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_64.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -127,35 +130,35 @@
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_63.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_60.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_60.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_60.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_59.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_59.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_59.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_57.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_57.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_57.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_33.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_33.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_33.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_28.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_28.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_28.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_27.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_27.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_27.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_26.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_26.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_26.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -167,19 +170,19 @@
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_19.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_18.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_18.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_18.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\dicecardability\\dicecardability_doneyuil_12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -437,6 +440,9 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|a54ad834-9219-4aa6-b589-607af21c3e26"
     }
   ],
   "DocumentGroupContainers": [
@@ -446,554 +452,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DiceCardSelfAbility_DonEyuil_76.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_76.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_76.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_76.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_76.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T08:36:57.116Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DiceCardAbility_DonEyuil_42.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_42.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_42.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_42.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_42.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T08:28:32.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DiceCardAbility_DonEyuil_75.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_75.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_75.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_75.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_75.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAmwA4AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T08:21:53.14Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DiceCardSelfAbility_DonEyuil_74.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_74.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_74.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_74.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_74.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T08:18:02.489Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DiceCardSelfAbility_DonEyuil_69.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_69.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_69.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_69.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_69.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:05:35.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DiceCardSelfAbility_DonEyuil_66.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_66.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_66.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_66.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_66.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:28:08.811Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DiceCardSelfAbility_DonEyuil_65.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_65.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_65.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_65.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_65.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:04:09.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DiceCardSelfAbility_DonEyuil_39.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_39.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_39.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_39.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_39.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:48:30.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BattleUnitBuf_Thistles.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Thistles.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Thistles.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Thistles.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Thistles.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:59:40.327Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DiceCardAbility_DonEyuil_49.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_49.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_49.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_49.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_49.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAABEAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:29:52.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DiceCardAbility_DonEyuil_47.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_47.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_47.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_47.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_47.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:20:02.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DiceCardAbility_DonEyuil_46.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_46.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_46.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_46.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_46.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:38:43.807Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DiceCardAbility_DonEyuil_73.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_73.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_73.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_73.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_73.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T08:05:51.114Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DiceCardSelfAbility_DonEyuil_67.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_67.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_67.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_67.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_67.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:47:06.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DiceCardSelfAbility_DonEyuil_70.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_70.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_70.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_70.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_70.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:33:00.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DiceCardSelfAbility_DonEyuil_72.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_72.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_72.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_72.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_72.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T08:03:21.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DiceCardAbility_DonEyuil_71.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_71.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_71.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_71.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_71.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:58:49.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "BattleUnitBuf_PhysicalShield.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_PhysicalShield.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_PhysicalShield.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_PhysicalShield.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_PhysicalShield.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:53:45.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DiceCardAbility_DonEyuil_02.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_02.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_02.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_02.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_02.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:42:30.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DiceCardAbility_DonEyuil_48.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_48.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_48.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_48.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_48.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:29:22.872Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "BattleUnitBuf_HardBlood.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T04:07:13.089Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BattleUnitBuf_BleedCrystal.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_BleedCrystal.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_BleedCrystal.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_BleedCrystal.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_BleedCrystal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T05:11:07.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BattleUnitBuf_Flow.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Flow.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Flow.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Flow.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Flow.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:34:58.87Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "DiceCardAbility_DonEyuil_68.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_68.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_68.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_68.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_68.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T07:00:43.384Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Extra.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Extra.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Extra.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Extra.cs",
-              "RelativeToolTip": "Don_Eyuil\\Extra.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T03:37:42.246Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "BattleUnitBuf_Tidewater.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Tidewater.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Tidewater.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Tidewater.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Tidewater.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T05:10:53.542Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "DiceCardSelfAbility_DonEyuil_01.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:29.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "DiceCardSelfAbility_DmgCount.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:22.552Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "DiceCardAbility_greta_destroyDice.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_greta_destroyDice.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_greta_destroyDice.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_greta_destroyDice.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_greta_destroyDice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:20.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "DiceCardAbility_DonEyuil_60.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:16.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "DiceCardAbility_DonEyuil_59.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:14.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "DiceCardAbility_DonEyuil_57.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:12.967Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "DiceCardAbility_DonEyuil_33.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:11.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "DiceCardAbility_DonEyuil_63.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_63.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_63.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_63.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_63.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T04:34:44.727Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "DiceCardAbility_DonEyuil_64.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_64.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_64.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_64.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_64.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T04:43:28.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "DiceCardAbility_DonEyuil_30.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:10.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "DiceCardAbility_DonEyuil_28.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:08.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "DiceCardAbility_DonEyuil_27.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:06.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "DiceCardAbility_DonEyuil_26.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:05.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "DiceCardAbility_DonEyuil_18.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:02:00.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "DiceCardAbility_DonEyuil_16.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:01:59.807Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "DiceCardAbility_DonEyuil_13.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_13.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_13.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_13.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_13.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:01:58.937Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -1004,125 +464,82 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "DiceCardAbility_DonEyuil_12.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_12.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_12.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_12.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_12.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PassiveAbility.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\PassiveAbility.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\PassiveAbility.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwD8AAACgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T06:01:57.345Z",
+              "WhenOpened": "2025-01-18T13:58:25.407Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "DiceCardAbility_DonEyuil_19.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "DiceCardAbility.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T04:45:49.116Z",
+              "WhenOpened": "2025-01-18T13:54:14.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "DiceCardAbility_DonEyuil_20.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T04:45:36.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "BattleUnitBuf_Blade.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Blade.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Blade.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Blade.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Blade.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACMAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T03:48:45.52Z",
+              "DocumentIndex": 3,
+              "Title": "Don_Eyuil",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil.csproj",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil.csproj",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil.csproj",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-18T13:50:57.638Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
-              "Title": "DiceCardSelfAbility_DonEyuil_32.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAABaAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DiceCardSelfAbility_DonEyuil_76.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_76.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_76.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_76.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_76.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T17:29:06.243Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "BattleUnitBuf_Umbrella.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAABoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T03:50:34.748Z",
+              "WhenOpened": "2025-01-18T08:36:57.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
-              "Title": "DiceCardSelfAbility_DonEyuil_56.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_56.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_56.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_56.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_56.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 58,
+              "Title": "PassiveAbility_Mimicry_02.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T17:37:36.145Z"
+              "WhenOpened": "2025-01-17T18:01:09.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DiceCardSelfAbility_DonEyuil_67.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_67.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_67.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_67.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_67.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAmwB0AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:47:06.606Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 75,
-              "Title": "DiceCardSelfAbility_DonEyuil_11.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T17:37:47.171Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "BattleUnitBuf_Scourge.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T03:50:17.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 74,
               "Title": "DiceCardAbility_DonEyuil_33.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
@@ -1134,18 +551,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "PassiveAbility_Mimicry_02.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "DocumentIndex": 76,
+              "Title": "DiceCardSelfAbility_DonEyuil_11.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T18:01:09.531Z"
+              "WhenOpened": "2025-01-17T17:37:47.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "DiceCardSelfAbility_DonEyuil_56.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_56.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_56.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_56.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_56.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T17:37:36.145Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 78,
+              "Title": "DiceCardSelfAbility_DonEyuil_32.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T17:29:06.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
               "Title": "BattleUnitBuf_Duel.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Duel.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Duel.cs",
@@ -1157,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 80,
               "Title": "DiceCardSelfAbility_DonEyuil_58.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_58.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_58.cs",
@@ -1169,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 81,
               "Title": "DiceCardSelfAbility_DonEyuil_61.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_61.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_61.cs",
@@ -1181,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 82,
               "Title": "DiceCardSelfAbility_DonEyuil_01.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
@@ -1193,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 83,
               "Title": "BattleUnitBuf_DoubleSwords.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_DoubleSwords.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_DoubleSwords.cs",
@@ -1205,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 84,
               "Title": "DiceCardSelfAbility_DonEyuil_77.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_77.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_77.cs",
@@ -1217,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 85,
               "Title": "BattleUnitBuf_Flow.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Flow.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Flow.cs",
@@ -1229,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 86,
               "Title": "BattleUnitBuf_Bow.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Bow.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Bow.cs",
@@ -1241,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 87,
               "Title": "BattleUnitBuf_BleedCrystal.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_BleedCrystal.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_BleedCrystal.cs",
@@ -1253,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 88,
               "Title": "BattleUnitBuf_Lance.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Lance.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Lance.cs",
@@ -1265,7 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 89,
               "Title": "BattleUnitBuf_Umbrella.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Umbrella.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Umbrella.cs",
@@ -1277,7 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 90,
               "Title": "BattleUnitBuf_PhysicalShield.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_PhysicalShield.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_PhysicalShield.cs",
@@ -1289,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 91,
               "Title": "BattleUnitBuf_Rifle.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Rifle.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Rifle.cs",
@@ -1301,7 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 92,
               "Title": "BattleUnitBuf_Scourge.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Scourge.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Scourge.cs",
@@ -1313,7 +755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 93,
               "Title": "BattleUnitBuf_Sickle.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Sickle.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Sickle.cs",
@@ -1325,7 +767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 94,
               "Title": "BattleUnitBuf_Sword.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Sword.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Sword.cs",
@@ -1337,7 +779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 95,
               "Title": "BattleUnitBuf_Thistles.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Thistles.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Thistles.cs",
@@ -1349,7 +791,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 96,
               "Title": "BattleUnitBuf_Tidewater.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Tidewater.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Tidewater.cs",
@@ -1361,7 +803,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 97,
               "Title": "DiceCardAbility_DonEyuil_30.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
@@ -1373,7 +815,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 98,
               "Title": "BattleUnitBuf_Armour.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Armour.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Armour.cs",
@@ -1385,7 +827,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 99,
               "Title": "BattleUnitBuf_Blade.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Blade.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Blade.cs",
@@ -1397,7 +839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 100,
               "Title": "BattleUnitBuf_DeepWound.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_DeepWound.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_DeepWound.cs",
@@ -1409,7 +851,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "BattleUnitBuf_Flow.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Flow.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Buff\\BattleUnitBuf_Flow.cs",
@@ -1421,7 +863,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 64,
               "Title": "PassiveAbility_DonEyuil_15.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
@@ -1433,7 +875,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 63,
               "Title": "BattleUnitBuf_BleedCrystal.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_BleedCrystal.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Buff\\BattleUnitBuf_BleedCrystal.cs",
@@ -1445,7 +887,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 65,
               "Title": "BattleUnitBuf_Duel.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Duel.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Buff\\BattleUnitBuf_Duel.cs",
@@ -1457,7 +899,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "DiceCardAbility_DonEyuil_60.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
@@ -1468,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "DiceCardSelfAbility_DonEyuil_58.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_58.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_58.cs",
@@ -1479,7 +921,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "DiceCardAbility_DonEyuil_59.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
@@ -1490,7 +932,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 66,
               "Title": "BattleUnitBuf_Lance.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Lance.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Buff\\BattleUnitBuf_Lance.cs",
@@ -1502,7 +944,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 67,
               "Title": "BattleUnitBuf_Rifle.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Rifle.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Buff\\BattleUnitBuf_Rifle.cs",
@@ -1514,7 +956,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 68,
               "Title": "BattleUnitBuf_Sword.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Buff\\BattleUnitBuf_Sword.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Buff\\BattleUnitBuf_Sword.cs",
@@ -1526,7 +968,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 69,
               "Title": "MyId.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\MyId.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\MyId.cs",
@@ -1538,7 +980,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 70,
               "Title": "DiceCardAbility_DonEyuil_57.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
@@ -1550,7 +992,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 71,
               "Title": "PassiveAbility_Mimicry_02.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
@@ -1562,7 +1004,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 72,
               "Title": "PassiveAbility_Mimicry_01.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_01.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_01.cs",
@@ -1574,7 +1016,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 73,
               "Title": "Init.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Init.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Init.cs",
@@ -1586,7 +1028,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 74,
               "Title": "MyTools.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\MyTools.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\MyTools.cs",
@@ -1598,7 +1040,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 101,
               "Title": "DiceCardAbility_DonEyuil_28.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
@@ -1610,7 +1052,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 102,
               "Title": "DiceCardSelfAbility_DmgCount.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
@@ -1622,7 +1064,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 103,
               "Title": "DiceCardAbility_DonEyuil_27.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
@@ -1634,7 +1076,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 104,
               "Title": "DiceCardAbility_DonEyuil_26.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
@@ -1646,7 +1088,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 105,
               "Title": "DiceCardAbility_greta_destroyDice.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_greta_destroyDice.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_greta_destroyDice.cs",
@@ -1658,7 +1100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 106,
               "Title": "DiceCardAbility_DonEyuil_20.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
@@ -1670,7 +1112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 107,
               "Title": "DiceCardAbility_DonEyuil_19.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
@@ -1682,7 +1124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 108,
               "Title": "DiceCardAbility_DonEyuil_18.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
@@ -1694,7 +1136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 109,
               "Title": "DiceCardAbility_DonEyuil_16.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
@@ -1706,7 +1148,535 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 5,
+              "Title": "DiceCardAbility_DonEyuil_42.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_42.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_42.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_42.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_42.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T08:28:32.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DiceCardAbility_DonEyuil_75.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_75.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_75.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_75.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_75.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAmwA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T08:21:53.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DiceCardSelfAbility_DonEyuil_74.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_74.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_74.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_74.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_74.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T08:18:02.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DiceCardSelfAbility_DonEyuil_69.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_69.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_69.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_69.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_69.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T07:05:35.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DiceCardSelfAbility_DonEyuil_66.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_66.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_66.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_66.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_66.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:28:08.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DiceCardSelfAbility_DonEyuil_65.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_65.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_65.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_65.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_65.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:04:09.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DiceCardSelfAbility_DonEyuil_39.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_39.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_39.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_39.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_39.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T07:48:30.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BattleUnitBuf_Thistles.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Thistles.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Thistles.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Thistles.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Thistles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:59:40.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DiceCardAbility_DonEyuil_49.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_49.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_49.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_49.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_49.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABEAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T07:29:52.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DiceCardAbility_DonEyuil_47.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_47.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_47.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_47.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_47.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T07:20:02.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DiceCardAbility_DonEyuil_46.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_46.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_46.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_46.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_46.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:38:43.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DiceCardAbility_DonEyuil_73.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_73.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_73.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_73.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_73.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T08:05:51.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DiceCardSelfAbility_DonEyuil_70.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_70.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_70.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_70.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_70.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T07:33:00.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DiceCardSelfAbility_DonEyuil_72.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_72.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_72.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_72.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_72.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T08:03:21.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DiceCardAbility_DonEyuil_71.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_71.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_71.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_71.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_71.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T07:58:49.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BattleUnitBuf_PhysicalShield.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_PhysicalShield.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_PhysicalShield.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_PhysicalShield.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_PhysicalShield.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T07:53:45.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DiceCardAbility_DonEyuil_48.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_48.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_48.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_48.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_48.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T07:29:22.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "BattleUnitBuf_HardBlood.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T04:07:13.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BattleUnitBuf_BleedCrystal.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_BleedCrystal.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_BleedCrystal.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_BleedCrystal.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_BleedCrystal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T05:11:07.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BattleUnitBuf_Flow.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Flow.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Flow.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Flow.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Flow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:34:58.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DiceCardAbility_DonEyuil_68.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_68.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_68.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_68.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_68.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T07:00:43.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Extra.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Extra.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Extra.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Extra.cs",
+              "RelativeToolTip": "Don_Eyuil\\Extra.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T03:37:42.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BattleUnitBuf_Tidewater.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Tidewater.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Tidewater.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Tidewater.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Tidewater.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T05:10:53.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DiceCardSelfAbility_DonEyuil_01.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_01.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:29.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "DiceCardSelfAbility_DmgCount.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DmgCount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:22.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "DiceCardAbility_DonEyuil_60.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_60.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:16.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "DiceCardAbility_DonEyuil_59.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_59.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:14.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "DiceCardAbility_DonEyuil_57.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_57.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:12.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "DiceCardAbility_DonEyuil_33.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_33.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:11.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "DiceCardAbility_DonEyuil_63.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_63.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_63.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_63.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_63.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T04:34:44.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "DiceCardAbility_DonEyuil_64.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_64.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_64.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_64.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_64.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T04:43:28.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "DiceCardAbility_DonEyuil_30.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_30.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:10.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "DiceCardAbility_DonEyuil_28.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_28.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:08.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "DiceCardAbility_DonEyuil_27.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_27.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:06.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "DiceCardAbility_DonEyuil_26.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_26.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:05.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "DiceCardAbility_DonEyuil_18.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_18.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:02:00.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "DiceCardAbility_DonEyuil_16.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_16.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:01:59.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "DiceCardAbility_DonEyuil_13.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_13.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_13.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_13.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_13.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:01:58.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "DiceCardAbility_DonEyuil_12.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_12.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_12.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_12.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_12.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T06:01:57.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "DiceCardAbility_DonEyuil_19.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_19.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T04:45:49.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "DiceCardAbility_DonEyuil_20.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardAbility\\DiceCardAbility_DonEyuil_20.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T04:45:36.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "BattleUnitBuf_Blade.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Blade.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Blade.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Blade.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Blade.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACMAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T03:48:45.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "BattleUnitBuf_Umbrella.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAABoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T03:50:34.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "BattleUnitBuf_Scourge.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T03:50:17.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
               "Title": "BattleUnitBuf_Armour.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Armour.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Armour.cs",
@@ -1718,7 +1688,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "BloodFiendInitializer.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\BloodFiendInitializer.cs",
@@ -1730,7 +1700,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "DiceCardSelfAbility_DonEyuil_62.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_62.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_62.cs",
@@ -1742,7 +1712,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "BattleUnitBuf_Bow.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
@@ -1754,7 +1724,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "BattleUnitBuf_DoubleSwords.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_DoubleSwords.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_DoubleSwords.cs",
@@ -1766,7 +1736,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "BattleUnitBuf_Sickle.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Sickle.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Sickle.cs",
@@ -1778,7 +1748,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "BattleUnitBuf_Lance.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Lance.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Lance.cs",
@@ -1790,7 +1760,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "BattleUnitBuf_Sword.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Sword.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Sword.cs",
@@ -1802,7 +1772,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "PassiveAbility_Mimicry_02.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
