@@ -136,6 +136,10 @@ namespace Don_Eyuil
                 BuffInstance.Destroy();
             }
         }
+        public virtual void AfterGetOrAddBuf()
+        {
+
+        }
         public static T GetOrAddBuf<T>(BattleUnitModel model,BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
             T BuffInstance = GetBuf<T>(model, ReadyType);
@@ -157,6 +161,7 @@ namespace Don_Eyuil
                 }
 
                 BuffInstance = GetBuf<T>(model, ReadyType);
+                BuffInstance.AfterGetOrAddBuf();
             }
             return BuffInstance;
         }
