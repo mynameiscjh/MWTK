@@ -33,6 +33,7 @@
       <OnlyCard>18</OnlyCard>
       <OnlyCard>19</OnlyCard>
     </EquipEffect>
+    <Option>MultiDeck</Option>
     <Rarity>Unique</Rarity>
     <CharacterSkin>Don_Eyuil</CharacterSkin>
     <CharacterSkinType>Custom</CharacterSkinType>

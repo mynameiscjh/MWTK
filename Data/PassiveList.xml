@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PassiveXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<PassiveXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Passive ID="1">
     <Negative>false</Negative>
     <IsHide>false</IsHide>
@@ -200,7 +201,7 @@
   <Passive ID="15">
     <Negative>false</Negative>
     <IsHide>false</IsHide>
-    <Rarity>Special</Rarity>
+    <Rarity>Unique</Rarity>
     <Lock>false</Lock>
     <CanGivePassive>true</CanGivePassive>
     <CanReceivePassive>false</CanReceivePassive>

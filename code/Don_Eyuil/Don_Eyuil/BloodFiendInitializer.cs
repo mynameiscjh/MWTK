@@ -1,5 +1,7 @@
-﻿using EnumExtenderV2;
+﻿using Don_Eyuil.PassiveAbility;
+using EnumExtenderV2;
 using HarmonyLib;
+using LOR_DiceSystem;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,26 +10,14 @@ using System.Reflection;
 using System.Xml;
 using UnityEngine;
 using Workshop;
-using System.Runtime.CompilerServices;
-using System.Security.Policy;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-using LOR_DiceSystem;
-using LOR_XML;
-using Mod;
-using StoryScene;
-using TMPro;
-using UI;
-using UnityEngine.UI;
-using System.Reflection.Emit;
 
 namespace Don_Eyuil
 {
-    
 
 
 
-    
+
+
 
     [HarmonyPatch]
     public class TKS_BloodFiend_PatchMethods_CustomCharacterSkin
@@ -339,7 +329,7 @@ namespace Don_Eyuil
                     TKS_BloodFiend_Initializer.ArtWorks[fileNameWithoutExtension] = value;
                 }
             }
-            
+
             LoadCustomSkin(Path.Combine(DllPath, "..", "Resource\\CharacterSkin"));
             LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
         }
@@ -353,6 +343,7 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
+            harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
             Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
@@ -375,11 +366,17 @@ namespace Don_Eyuil
         }
         [HarmonyPatch(typeof(EmotionEgoXmlInfo), "get_CardId")]
         [HarmonyPostfix]
-        public static void EmotionEgoXmlInfo_get_CardId_Post(EmotionEgoXmlInfo __instance, LorId __result)
+        public static void EmotionEgoXmlInfo_get_CardId_Post(EmotionEgoXmlInfo __instance, ref LorId __result)
         {
             if (__instance is EmotionEgoXmlInfo_Mod)
             {
-                __result = new LorId((__instance as EmotionEgoXmlInfo_Mod).packageId, __instance.id);
+                __result = new LorId((__instance as EmotionEgoXmlInfo_Mod).packageId, __instance._CardId);
+
+                if (!ItemXmlDataList.instance.GetFieldValue<Dictionary<LorId, DiceCardXmlInfo>>("_cardInfoTable").TryGetValue(__result, out var v))
+                {
+                    var card = ItemXmlDataList.instance.GetCardItem(__result);
+                    ItemXmlDataList.instance.GetFieldValue<Dictionary<LorId, DiceCardXmlInfo>>("_cardInfoTable").Add(__result, card);
+                }
             }
         }
     }
