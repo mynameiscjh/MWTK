@@ -50,14 +50,17 @@ namespace Don_Eyuil
                 battleDiceCardModel.temporary = true;
             }
         }
+        public override int SpeedDiceNumAdder() => 5;
         public PassiveAbility_DonEyuil_02 APassive02 => owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_02) as PassiveAbility_DonEyuil_02;
-        public override void OnRoundStart()
+        public override void OnRoundStartAfter()
         {
+            owner.allyCardDetail.ExhaustAllCardsInHand();
             int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
             int round = Singleton<StageController>.Instance.RoundTurn;
             if (APassive02 != null)
             { 
                 APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
+                Debug.LogError("CurrentArtPair:" + APassive02.CurrentArtPair.ComboType +"|||||||||" + String.Join(",", APassive02.CurrentArtPair.Arts));
                 if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { }
                 else if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { }
                 else
@@ -71,10 +74,10 @@ namespace Don_Eyuil
                     }
                     while (i - 1 > 0)
                     {
-                        AddNewCard(RandomUtil.SelectOne(APassive02.CurrentArtPair.GetComboCards()),200);
+                        AddNewCard(RandomUtil.SelectOne(APassive02.CurrentArtPair.GetComboCards()),500);
                         i--;
                     }
-                    AddNewCard(MyId.Card_血之宝库_1, 500);
+                    AddNewCard(MyId.Card_血之宝库_1, 200);
                     i = 0;
 
                 }
@@ -271,6 +274,7 @@ namespace Don_Eyuil
                 {
                     _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, EnemyBleedingDamageThisRound / 20);
                     EnemyBleedingDamageThisRound = 0;
+                    BloodArtFinalCard.Clear();
                 }
                 public override void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit, int Dmg)
                 {
@@ -523,13 +527,13 @@ namespace Don_Eyuil
             public List<LorId> GetComboCards()
             {
                 var CardList = new List<LorId>() { };
-                Arts.Do(x => CardList.Union(x.BloodArtCards));
+                Arts.Do(x => CardList.AddRange(x.BloodArtCards));
                 return CardList;
             }
             public List<LorId> GetComboFinalCards()
             {
                 var CardList = new List<LorId>() { };
-                Arts.Do(x => CardList.Union(x.BloodArtFinalCard));
+                Arts.Do(x => CardList.AddRange(x.BloodArtFinalCard));
                 return CardList;
             }
             public HardBloodArtPair(HardBloodArtCombo Combo,params BattleUnitBuf_HardBloodArt[] ArtBufs)

@@ -26,7 +26,11 @@ namespace Don_Eyuil
     public class BattleUnitBuf_UncondensableBlood : BattleUnitBuf_Don_Eyuil
     {
         //自身流血无法低于2+x
-        
+        public override void OnRoundEnd()
+        {
+            this.Destroy();
+        }
+
         public static void UncodensableBloodCheck(BattleUnitBuf BleedingBuf)
         {
             var owner = BleedingBuf.GetFieldValue<BattleUnitModel>("_owner");
@@ -70,6 +74,11 @@ namespace Don_Eyuil
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
             this.stack = 0;
         }
+
+        public override void OnRoundEnd()
+        {
+            this.Destroy();
+        }
     }
     //深度创痕
     public class BattleUnitBuf_DeepWound : BattleUnitBuf_Don_Eyuil
@@ -80,6 +89,10 @@ namespace Don_Eyuil
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["深度创痕"]);
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
             this.stack = 0;
+        }
+        public override void OnRoundEnd()
+        {
+            this.Destroy();
         }
         public override float DmgFactor(int dmg, DamageType type = DamageType.ETC, KeywordBuf keyword = KeywordBuf.None)
         {
