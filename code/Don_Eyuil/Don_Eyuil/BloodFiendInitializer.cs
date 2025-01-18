@@ -344,6 +344,7 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
+            harmony.PatchAll(typeof(RedDiceCardAbility));
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
             Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));

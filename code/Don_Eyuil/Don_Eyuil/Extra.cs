@@ -1,24 +1,211 @@
-﻿using EnumExtenderV2;
-using HarmonyLib;
+﻿using HarmonyLib;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Reflection.Emit;
-using System.Xml;
 using UnityEngine;
-using Workshop;
 
 namespace Don_Eyuil
 {
+    public class RedDiceCardAbility : DiceCardAbilityBase
+    {
+        public static Dictionary<BattlePlayingCardDataInUnitModel, List<BattleDiceBehavior>> RedDice = new Dictionary<BattlePlayingCardDataInUnitModel, List<BattleDiceBehavior>>();
+        public override bool IsImmuneDestory => true;
+        public virtual void BeforNewRoll(BattleParryingManager.ParryingTeam teamEnemy, BattleParryingManager.ParryingTeam teamLibrarian)
+        {
+        }
+        //这里是给骰子染色的
+#if false
+
+        [HarmonyPatch(typeof(BattleDiceCardUI), "SetCard")]
+        [HarmonyPostfix]
+        public static void BattleDiceCardUI_SetCard_Post(BattleDiceCardModel cardModel, BattleDiceCardUI __instance)
+        {
+            for (int i = 0; i < cardModel.GetBehaviourList().Count; i++)
+            {
+                if (cardModel.GetBehaviourList()[i].Script.StartsWith("RED__"))
+                {
+                    switch (cardModel.GetBehaviourList()[i].Detail)
+                    {
+                        case BehaviourDetail.Slash:
+                            __instance.img_behaviourDetatilList[i].sprite = TKS_BloodFiend_Initializer.ArtWorks["SlashRed"];
+                            break;
+                        case BehaviourDetail.Penetrate:
+                            __instance.img_behaviourDetatilList[i].sprite = TKS_BloodFiend_Initializer.ArtWorks["PenetrateRed"];
+                            break;
+                        case BehaviourDetail.Hit:
+                            __instance.img_behaviourDetatilList[i].sprite = TKS_BloodFiend_Initializer.ArtWorks["HitRed"];
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+
+        [HarmonyPatch(typeof(BattleDiceCard_BehaviourDescUI), "SetBehaviourInfo")]
+        [HarmonyPostfix]
+        public static void BattleDiceCard_BehaviourDescUI_SetBehaviourInfo_Post(DiceBehaviour behaviour, BattleDiceCard_BehaviourDescUI __instance)
+        {
+            if (behaviour.Script.StartsWith("RED__"))
+            {
+                switch (behaviour.Detail)
+                {
+                    case BehaviourDetail.Slash:
+                        __instance.img_detail.sprite = TKS_BloodFiend_Initializer.ArtWorks["SlashRed"];
+                        break;
+                    case BehaviourDetail.Penetrate:
+                        __instance.img_detail.sprite = TKS_BloodFiend_Initializer.ArtWorks["PenetrateRed"];
+                        break;
+                    case BehaviourDetail.Hit:
+                        __instance.img_detail.sprite = TKS_BloodFiend_Initializer.ArtWorks["HitRed"];
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(UIOriginCardSlot), "SetData")]
+        [HarmonyPostfix]
+        public static void UIOriginCardSlot_SetData_Post(DiceCardItemModel cardmodel, UIOriginCardSlot __instance)
+        {
+            if (cardmodel == null) { return; }
+            for (int i = 0; i < cardmodel.ClassInfo.DiceBehaviourList.Count; i++)
+            {
+                if (cardmodel.ClassInfo.DiceBehaviourList[i].Script.StartsWith("RED__"))
+                {
+                    switch (cardmodel.ClassInfo.DiceBehaviourList[i].Detail)
+                    {
+                        case BehaviourDetail.Slash:
+                            __instance.GetFieldValue<Image[]>("img_BehaviourIcons")[i].sprite = TKS_BloodFiend_Initializer.ArtWorks["SlashRed"];
+                            break;
+                        case BehaviourDetail.Penetrate:
+                            __instance.GetFieldValue<Image[]>("img_BehaviourIcons")[i].sprite = TKS_BloodFiend_Initializer.ArtWorks["PenetrateRed"];
+                            break;
+                        case BehaviourDetail.Hit:
+                            __instance.GetFieldValue<Image[]>("img_BehaviourIcons")[i].sprite = TKS_BloodFiend_Initializer.ArtWorks["HitRed"];
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(UIDetailCardDescSlot), "SetBehaviourInfo")]
+        [HarmonyPostfix]
+        public static void UIDetailCardDescSlot_SetBehaviourInfo_Post(DiceBehaviour behaviour, UIDetailCardDescSlot __instance)
+        {
+            if (behaviour.Script.StartsWith("RED__"))
+            {
+                switch (behaviour.Detail)
+                {
+                    case BehaviourDetail.Slash:
+                        __instance.img_detail.sprite = TKS_BloodFiend_Initializer.ArtWorks["SlashRed"];
+                        break;
+                    case BehaviourDetail.Penetrate:
+                        __instance.img_detail.sprite = TKS_BloodFiend_Initializer.ArtWorks["PenetrateRed"];
+                        break;
+                    case BehaviourDetail.Hit:
+                        __instance.img_detail.sprite = TKS_BloodFiend_Initializer.ArtWorks["HitRed"];
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+#endif
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(BattleParryingManager), "GetDecisionResult")]
+        public static void BattleParryingManager_GetDecisionResult_Pre(BattleParryingManager.ParryingTeam teamA, BattleParryingManager.ParryingTeam teamB, BattleParryingManager.ParryingDecisionResult __result)
+        {
+            if (__result == BattleParryingManager.ParryingDecisionResult.WinLibrarian)
+            {
+                if (teamA.playingCard.currentBehavior.behaviourInCard.Script.StartsWith("RED__") || teamA.playingCard.currentBehavior.abilityList.Find(x => x is RedDiceCardAbility) != null)
+                {
+                    if (!RedDice.ContainsKey(teamA.playingCard))
+                    {
+                        RedDice.Add(teamA.playingCard, new List<BattleDiceBehavior> { teamA.playingCard.currentBehavior });
+                    }
+                    else
+                    {
+                        RedDice[teamA.playingCard].Add(teamA.playingCard.currentBehavior);
+                    }
+                }
+            }
+
+            if (__result == BattleParryingManager.ParryingDecisionResult.WinEnemy)
+            {
+                if (teamB.playingCard.currentBehavior.behaviourInCard.Script.StartsWith("RED__") || teamB.playingCard.currentBehavior.abilityList.Find(x => x is RedDiceCardAbility) != null)
+                {
+                    if (!RedDice.ContainsKey(teamB.playingCard))
+                    {
+                        RedDice.Add(teamB.playingCard, new List<BattleDiceBehavior> { teamB.playingCard.currentBehavior });
+                    }
+                    else
+                    {
+                        RedDice[teamB.playingCard].Add(teamB.playingCard.currentBehavior);
+                    }
+                }
+            }
+        }
+
+
+        [HarmonyPatch(typeof(BattleParryingManager), "CheckParryingEnd")]
+        [HarmonyPrefix]
+        public static void BattleParryingManager_CheckParryingEnd_Pre(BattleParryingManager.ParryingTeam ____teamEnemy, BattleParryingManager.ParryingTeam ____teamLibrarian)
+        {
+            bool flag = ____teamEnemy.unit.IsDead() || ____teamLibrarian.unit.IsDead() || ____teamEnemy.unit.IsExtinction() || ____teamLibrarian.unit.IsExtinction() || ____teamEnemy.isKeepedCard || ____teamLibrarian.isKeepedCard || ____teamEnemy.DiceExists() || ____teamLibrarian.DiceExists();
+            if (!flag)
+            {
+                if (RedDice.TryGetValue(____teamEnemy.playingCard, out List<BattleDiceBehavior> dicesEnemy))
+                {
+                    foreach (var behavior in dicesEnemy)
+                    {
+                        behavior.ApplyDiceStatBonus(new DiceStatBonus { max = -3 });
+                        ____teamEnemy.playingCard.AddDice(behavior);
+                        var ability = behavior.abilityList.Find(x => x is RedDiceCardAbility);
+                        if (ability != null)
+                        {
+                            ((RedDiceCardAbility)ability).BeforNewRoll(____teamEnemy, ____teamLibrarian);
+                        }
+
+                    }
+                    ____teamEnemy.playingCard.NextDice();
+                    RedDice.Remove(____teamEnemy.playingCard);
+                }
+                if (RedDice.TryGetValue(____teamLibrarian.playingCard, out List<BattleDiceBehavior> dicesLibrarian))
+                {
+                    foreach (var behavior in dicesLibrarian)
+                    {
+                        behavior.ApplyDiceStatBonus(new DiceStatBonus { max = -3 });
+                        ____teamLibrarian.playingCard.AddDice(behavior);
+                        var ability = behavior.abilityList.Find(x => x is RedDiceCardAbility);
+                        if (ability != null)
+                        {
+                            ((RedDiceCardAbility)ability).BeforNewRoll(____teamEnemy, ____teamLibrarian);
+                        }
+
+                    }
+                    ____teamLibrarian.playingCard.NextDice();
+                    RedDice.Remove(____teamLibrarian.playingCard);
+                }
+            }
+        }
+
+
+    }
+
+
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
         public virtual void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
         {
 
         }
-        public virtual void BeforeOtherUnitAddKeywordBuf(KeywordBuf BufType,BattleUnitModel Target, ref int Stack)
+        public virtual void BeforeOtherUnitAddKeywordBuf(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
         {
 
         }
@@ -26,11 +213,11 @@ namespace Don_Eyuil
         {
             public static void Trigger_AddKeywordBuf_Before(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
             {
-                if(Stack > 0)
+                if (Stack > 0)
                 {
                     foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
                     {
-                        if(!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
                         {
                             (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(BufType, ref Stack);//Target = owner所以没有一参传入
                         }
@@ -43,7 +230,7 @@ namespace Don_Eyuil
                         {
                             if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
                             {
-                                (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(BufType, Target,ref Stack);
+                                (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(BufType, Target, ref Stack);
                             }
                         }
                     }                    // Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
@@ -65,15 +252,15 @@ namespace Don_Eyuil
                         new CodeInstruction(OpCodes.Ldarg_1),
                         new CodeInstruction(OpCodes.Ldarg_0),
                         new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
-                        new CodeInstruction(OpCodes.Ldarga,2),                       
+                        new CodeInstruction(OpCodes.Ldarga,2),
                         new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddKeywordBufPatch),"Trigger_AddKeywordBuf_Before")),
                  });
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
 
-        public virtual void OnStartBattle() 
-        { 
+        public virtual void OnStartBattle()
+        {
 
         }
         public class OnStartBattlePatch
@@ -95,14 +282,14 @@ namespace Don_Eyuil
 
         public class OnTakeBleedingDamagePatch
         {
-            public static void Trigger_BleedingDmg_After(BattleUnitModel Model,int dmg,KeywordBuf keyword)
+            public static void Trigger_BleedingDmg_After(BattleUnitModel Model, int dmg, KeywordBuf keyword)
             {
-                if(keyword == KeywordBuf.Bleeding && dmg > 0)
+                if (keyword == KeywordBuf.Bleeding && dmg > 0)
                 {
                     Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
                     List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
                     aliveList.Remove(Model);
-                    aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model,dmg))); 
+                    aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model, dmg)));
                 }
             }
             [HarmonyPatch(typeof(BattleUnitModel), "TakeDamage")]
@@ -129,9 +316,9 @@ namespace Don_Eyuil
 
         public virtual void AfterTakeBleedingDamage(int Dmg)
         {
-            
+
         }
-        public virtual void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit,int Dmg)
+        public virtual void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit, int Dmg)
         {
 
         }
@@ -139,7 +326,7 @@ namespace Don_Eyuil
         public virtual void Add(int stack)
         {
             this.stack += stack;
-            if(GetMaxStack() >= 0)
+            if (GetMaxStack() >= 0)
             {
                 this.stack = Math.Min(this.stack, GetMaxStack());
             }
@@ -164,7 +351,7 @@ namespace Don_Eyuil
         }
         public static T GetBuf<T>(BattleUnitModel model, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
-            switch(ReadyType)
+            switch (ReadyType)
             {
                 case BufReadyType.ThisRound:
                     return model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is T && !x.IsDestroyed()) as T;
@@ -198,7 +385,7 @@ namespace Don_Eyuil
         {
 
         }
-        public static T GetOrAddBuf<T>(BattleUnitModel model,BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
+        public static T GetOrAddBuf<T>(BattleUnitModel model, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
             T BuffInstance = GetBuf<T>(model, ReadyType);
             if (BuffInstance == null)
