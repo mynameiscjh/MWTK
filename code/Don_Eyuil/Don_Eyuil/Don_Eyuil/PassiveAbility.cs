@@ -8,6 +8,7 @@ using LOR_DiceSystem;
 using System.Reflection.Emit;
 using HyperCard;
 using UnityEngine;
+using Don_Eyuil.Buff;
 namespace Don_Eyuil
 {
     public class PassiveAbility_DonEyuil_01 : PassiveAbilityBase
@@ -290,6 +291,63 @@ namespace Don_Eyuil
                     typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血鞭"]);
                 }
             }
+            //血伞
+            //自身命中带有流血的目标时造成的混乱伤害增加25%同时使自身获得1层"结晶硬血"
+            //下令战斗时若自身至少拥有6层"结晶硬血"则使自身获得一颗反击(突刺4-8)骰子
+            public class BattleUnitBuf_HardBloodArt_BloodUmbrella : BattleUnitBuf_HardBloodArt
+            {
+                public override void OnSuccessAttack(BattleDiceBehavior behavior)
+                {
+                    if(behavior != null && behavior.card != null && behavior.card.target != null)
+                    {
+                        if(behavior.card.target.bufListDetail.GetActivatedBufList().Exists(x => x.bufType == KeywordBuf.Bleeding))
+                        {
+                            behavior.ApplyDiceStatBonus(new DiceStatBonus() { breakRate = 25 });
+                            BattleUnitBuf_HardBlood_Crystal.GainBuf<BattleUnitBuf_HardBlood_Crystal>(_owner, 1);
+                        }
+                    }
+                }
+                public override void OnStartBattle()
+                {
+                    if(BattleUnitBuf_HardBlood_Crystal.GetBufStack<BattleUnitBuf_HardBlood_Crystal>(_owner) >= 6)
+                    {
+                        DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(MyId.Card_经典反击书页, false);
+                        List<BattleDiceBehavior> list = new List<BattleDiceBehavior>();
+                        BattleDiceBehavior battleDiceBehavior = new BattleDiceBehavior();
+                        battleDiceBehavior.behaviourInCard = cardItem.DiceBehaviourList[1].Copy();
+                        battleDiceBehavior.SetIndex(1);
+                        list.Add(battleDiceBehavior);
+                        this._owner.cardSlotDetail.keepCard.AddBehaviours(cardItem, list);
+                    }
+
+                }
+
+                public BattleUnitBuf_HardBloodArt_BloodUmbrella(BattleUnitModel model) : base(model)
+                {
+                    typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血伞"]);
+                }
+            }
+            //血镰
+            //目标每有2层流血便使自身斩击骰子造成的伤害增加10%(至多50%)
+            //首次进入时使自身获得1层"汹涌的血潮"
+            public class BattleUnitBuf_HardBloodArt_BloodSickle : BattleUnitBuf_HardBloodArt
+            {
+                public override void OnRollDice(BattleDiceBehavior behavior)
+                {
+                    if (behavior != null && behavior.card != null && behavior.card.target != null && behavior.Detail == BehaviourDetail.Slash)
+                    {
+                        behavior.ApplyDiceStatBonus(new DiceStatBonus()
+                        {
+                            dmgRate = 10 * Math.Min(5,(behavior.card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) / 2))
+                        });
+                    }
+                }
+                public BattleUnitBuf_HardBloodArt_BloodSickle(BattleUnitModel model) : base(model)
+                {
+                    typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血镰"]);
+                }
+            }
+
         }
         //200年前的回忆
         public override string debugDesc => "每幕开始时移除手中的书页并将意图使用的书页置入手中\r\n自身书页费用为0";
