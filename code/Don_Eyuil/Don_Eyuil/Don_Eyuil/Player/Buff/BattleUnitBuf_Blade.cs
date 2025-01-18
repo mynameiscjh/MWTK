@@ -22,14 +22,9 @@ namespace Don_Eyuil.Buff
             }
         }
 
-        public override void OnUseCard(BattlePlayingCardDataInUnitModel card)
-        {
-            cards.Add(card);
-        }
-
         public override void OnSuccessAttack(BattleDiceBehavior behavior)
         {
-            if (cards.Exists(x => x == behavior.card))
+            if (!cards.Exists(x => x == behavior.card))
             {
                 if (behavior.card.target.IsBreakLifeZero())
                 {
@@ -38,6 +33,7 @@ namespace Don_Eyuil.Buff
                     {
                         var temp = behavior.card.CopyDiceBehaviour(behavior);
                         buf.AfterDiceAction(temp);
+                        cards.Add(behavior.card);
                     }
                 }
             }

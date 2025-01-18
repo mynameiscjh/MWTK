@@ -20,6 +20,11 @@ namespace Don_Eyuil.Don_Eyuil.Buff
 
         public override void OnStartBattle()
         {
+
+            if (GetBufStack<BattleUnitBuf_BleedCrystal>(_owner) < 6)
+            {
+                return;
+            }
             base.OnStartBattle();
             DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(MyId.Card_经典反击书页, false);
             List<BattleDiceBehavior> list = new List<BattleDiceBehavior>();

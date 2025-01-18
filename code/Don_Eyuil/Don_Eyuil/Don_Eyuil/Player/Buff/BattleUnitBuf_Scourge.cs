@@ -1,4 +1,6 @@
-﻿namespace Don_Eyuil.Don_Eyuil.Buff
+﻿using System.Collections.Generic;
+
+namespace Don_Eyuil.Don_Eyuil.Buff
 {
     public class BattleUnitBuf_Scourge : BattleUnitBuf_Don_Eyuil
     {
@@ -7,29 +9,43 @@
         {
             if (cardBuf.bufType == KeywordBuf.Bleeding && _owner.currentDiceAction.currentBehavior.Detail == LOR_DiceSystem.BehaviourDetail.Hit)
             {
-                target.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, stack);
+                RandomUtil.SelectOne(BattleObjectManager.instance.GetAliveList_opponent(_owner.faction)).bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, stack);
             }
 
             return base.OnGiveKeywordBufByCard(cardBuf, stack, target);
         }
-        public int cardCount = 0;
 
         public BattleUnitBuf_Scourge(BattleUnitModel model) : base(model)
         {
         }
 
-        public override void OnStartBattle()
+        public bool CheckTrigger(BattlePlayingCardDataInUnitModel card)
         {
-            cardCount = _owner.cardSlotDetail.cardAry.Count;
+            BattlePlayingCardDataInUnitModel[] array = Singleton<StageController>.Instance.GetAllCards().ToArray();
+            foreach (BattlePlayingCardDataInUnitModel battlePlayingCardDataInUnitModel in array)
+            {
+                if (battlePlayingCardDataInUnitModel.owner == base._owner && battlePlayingCardDataInUnitModel != card)
+                {
+                    return false;
+                }
+            }
+            if (card != null)
+            {
+                Queue<BattleDiceBehavior> cardBehaviorQueue = card.cardBehaviorQueue;
+                if (cardBehaviorQueue != null && cardBehaviorQueue.Count <= 0)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public override void OnUseCard(BattlePlayingCardDataInUnitModel card)
         {
-            if (cardCount == 1)
+            if (CheckTrigger(card))
             {
                 card.card.AddBuf(new BattleDiceCardBuf_Thistles());
             }
-            cardCount--;
         }
 
         public class BattleDiceCardBuf_Thistles : BattleDiceCardBuf
