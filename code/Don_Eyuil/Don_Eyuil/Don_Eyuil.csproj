@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Don_Eyuil\Buff.cs" />
     <Compile Include="Don_Eyuil\DiceCardAbility.cs" />
+    <Compile Include="Don_Eyuil\DiceCardSelfAbility.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_HardBlood.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_42.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_46.cs" />
