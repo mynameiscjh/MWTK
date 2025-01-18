@@ -86,12 +86,17 @@ namespace Don_Eyuil
     }
     public class PassiveAbility_DonEyuil_02 : PassiveAbilityBase
     {
+        public bool HasEnterBloodSickleArt = false;
+        public override void OnWaveStart()
+        {
+            HasEnterBloodSickleArt = false;
+        }
         public class BattleUnitBuf_HardBloodArt : BattleUnitBuf_Don_Eyuil
         {
-            //硬血术生效触发
+
             public virtual List<LorId> BloodArtCards { get; }
             public virtual List<LorId> BloodArtFinalCard { get; }
-            
+            //硬血术生效触发
             public override void AfterGetOrAddBuf()
             {
                
@@ -429,6 +434,16 @@ namespace Don_Eyuil
             {
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术3式_血镰_1};
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_镰刃截断, MyId.Card_巨镰纵切 };
+
+                public override void AfterGetOrAddBuf()
+                {
+                    var Passive02 =  _owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_02) as PassiveAbility_DonEyuil_02;
+                    if(Passive02.HasEnterBloodSickleArt == false)
+                    {
+                        Passive02.HasEnterBloodSickleArt = true;
+
+                    }
+                }
                 public override void OnRollDice(BattleDiceBehavior behavior)
                 {
                     if (behavior != null && behavior.card != null && behavior.card.target != null && behavior.Detail == BehaviourDetail.Slash)

@@ -136,5 +136,35 @@ namespace Don_Eyuil
             TriggeredOnRollDiceCount = 0;
         }
     }
+    //汹涌的血潮(不衰减）
+    public class BattleUnitBuf_BloodTide : BattleUnitBuf_Don_Eyuil
+    {
+        public static string Desc = "所有敌方角色被施加\"流血\"时层数+x\r\n自身对处于流血状态的敌方角色造成的伤害与混乱伤害x×10%";
+        public BattleUnitBuf_BloodTide(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["汹涌的血潮"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 1;
+        }
+        public override void BeforeOtherUnitAddKeywordBuf(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
+        {
+            if(bufType == KeywordBuf.Bleeding && Target.faction != _owner.faction )
+            {
+                Stack += this.stack;
+            }
+        }
+        public override void BeforeGiveDamage(BattleDiceBehavior behavior)
+        {
+            if(behavior != null && behavior.card!=null && behavior.card.target != null)
+            {
+                behavior.ApplyDiceStatBonus(new DiceStatBonus()
+                {
+                    dmgRate = 10 * stack,
+                    breakRate = 10 * stack,
+                });
+            }
+        }
+    }
+
 
 }

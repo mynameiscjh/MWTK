@@ -14,6 +14,64 @@ namespace Don_Eyuil
 {
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
+        public virtual void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
+        {
+
+        }
+        public virtual void BeforeOtherUnitAddKeywordBuf(KeywordBuf BufType,BattleUnitModel Target, ref int Stack)
+        {
+
+        }
+        public class BeforeAddKeywordBufPatch
+        {
+            public static void Trigger_AddKeywordBuf_Before(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
+            {
+                if(Stack > 0)
+                {
+                    foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
+                    {
+                        if(!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                        {
+                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(BufType, ref Stack);//Target = owner所以没有一参传入
+                        }
+                    }
+                    List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                    aliveList.Remove(Target);
+                    foreach (var Model in aliveList)
+                    {
+                        foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                        {
+                            if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                            {
+                                (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(BufType, Target,ref Stack);
+                            }
+                        }
+                    }                    // Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
+
+                    // aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model, dmg)));
+                }
+            }
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByEtc")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByEtc")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByCard")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByCard")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufNextNextByCard")]
+            [HarmonyTranspiler]
+            public static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                codes.InsertRange(0, new List<CodeInstruction>()
+                {
+                        new CodeInstruction(OpCodes.Ldarg_1),
+                        new CodeInstruction(OpCodes.Ldarg_0),
+                        new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
+                        new CodeInstruction(OpCodes.Ldarga,2),                       
+                        new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddKeywordBufPatch),"Trigger_AddKeywordBuf_Before")),
+                 });
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
+
         public virtual void OnStartBattle() 
         { 
 
