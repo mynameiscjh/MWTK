@@ -25,6 +25,21 @@ namespace Don_Eyuil.Don_Eyuil.Buff
             }
         }
 
+        public static void GainReadyBuf(BattleUnitModel model, int v)
+        {
+            if (model.bufListDetail.HasBuf<BattleUnitBuf_Thistles>())
+            {
+                (model.bufListDetail.GetFieldValue<List<BattleUnitBuf>>("_readyBufList").Find(x => x is BattleUnitBuf_Thistles) as BattleUnitBuf_Thistles).stack += v;
+            }
+            else
+            {
+                var buf = new BattleUnitBuf_Thistles(model);
+                buf.stack = v;
+                model.bufListDetail.AddReadyBuf(buf);
+            }
+        }
+
+
         public override void OnRollDice(BattleDiceBehavior behavior)
         {
             if (count <= this.stack)

@@ -25,6 +25,24 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
         public BattleUnitBuf_Umbrella Umbrella => GetBuf<BattleUnitBuf_Umbrella>(_owner);
         public bool IsAllActivate => _owner.bufListDetail.HasBuf<BattleUnitBuf_Sword>() && _owner.bufListDetail.HasBuf<BattleUnitBuf_Lance>() && _owner.bufListDetail.HasBuf<BattleUnitBuf_Sickle>() && _owner.bufListDetail.HasBuf<BattleUnitBuf_Blade>() && _owner.bufListDetail.HasBuf<BattleUnitBuf_DoubleSwords>() && _owner.bufListDetail.HasBuf<BattleUnitBuf_Armour>() && _owner.bufListDetail.HasBuf<BattleUnitBuf_Bow>() && _owner.bufListDetail.HasBuf<BattleUnitBuf_Scourge>() && _owner.bufListDetail.HasBuf<BattleUnitBuf_Umbrella>();
 
+        public int ActivatedNum
+        {
+            get
+            {
+                int temp = 0;
+                temp += Sword != null ? 1 : 0;
+                temp += Lance != null ? 1 : 0;
+                temp += Sickle != null ? 1 : 0;
+                temp += Blade != null ? 1 : 0;
+                temp += DoubleSwords != null ? 1 : 0;
+                temp += Armour != null ? 1 : 0;
+                temp += Bow != null ? 1 : 0;
+                temp += Scourge != null ? 1 : 0;
+                temp += Umbrella != null ? 1 : 0;
+                return temp;
+            }
+        }
+
         public override void OnRoundEnd()
         {
             _owner.bufListDetail.GetBufUIDataList().bufActivatedList.Find(x => x.bufClassType == typeof(BattleUnitBuf_HardBlood)).bufActivatedText = bufActivatedText;
