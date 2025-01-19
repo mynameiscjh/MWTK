@@ -206,7 +206,7 @@ namespace Don_Eyuil
         public static string Desc = "若本骰子基础值不低于9则使本骰子重复投掷一次(至多3次)";
         public override void AfterAction()
         {
-            if (!base.owner.IsBreakLifeZero() && this._repeatCount < 2 && behavior.DiceVanillaValue >= 9)
+            if (!base.owner.IsBreakLifeZero() && this._repeatCount < 3 && behavior.DiceVanillaValue >= 9)
             {
                 this._repeatCount++;
                 base.ActivateBonusAttackDice();
@@ -231,7 +231,7 @@ namespace Don_Eyuil
         public static string Desc = "[命中时]消耗目标3层[流血]层流血并使本骰子重复投掷1次(至多4次)";
         public override void OnSucceedAttack(BattleUnitModel target) 
         {
-            if (target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 3 && !base.owner.IsBreakLifeZero() && this._repeatCount < 3)
+            if (target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 3 && !base.owner.IsBreakLifeZero() && this._repeatCount < 4)
             {
                 this._repeatCount++;
                 base.ActivateBonusAttackDice();
