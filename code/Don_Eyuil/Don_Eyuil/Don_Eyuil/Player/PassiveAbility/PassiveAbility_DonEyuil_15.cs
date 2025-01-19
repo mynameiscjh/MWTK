@@ -147,9 +147,9 @@ namespace Don_Eyuil.PassiveAbility
                 return;
             }
             __result.Clear();
-            foreach (var item in HardBloodCards)
+            foreach (var item in __instance.ClassInfo.EquipEffect.OnlyCard)
             {
-                var card = ItemXmlDataList.instance.GetCardItem(item);
+                var card = ItemXmlDataList.instance.GetCardItem(MyTools.Create(item));
                 __result.Add(card);
             }
         }
@@ -175,6 +175,7 @@ namespace Don_Eyuil.PassiveAbility
                     DiceCardItemModel itemModel = new DiceCardItemModel(card);
                     itemModel.num = 99;
                     ____currentCardListForFilter.Add(itemModel);
+                    ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
                 }
             }
             else
