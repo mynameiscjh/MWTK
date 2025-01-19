@@ -292,6 +292,7 @@ namespace Don_Eyuil
             {
                 if (keyword == KeywordBuf.Bleeding && dmg > 0)
                 {
+                    Debug.LogError(Model.Book.Name + "TakeBleedingDmg:" + dmg);
                     Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
                     List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
                     aliveList.Remove(Model);

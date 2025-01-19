@@ -40,6 +40,20 @@ namespace Don_Eyuil
             第四幕：速度骰子×2 堂埃尤尔派硬血术终式-La Sangre 便以决斗作为这场战斗的结尾吧
             第五幕：速度骰子×4  4种决斗书页)
         */
+        public static int Phase = 1;
+        public override void OnWaveStart()
+        {
+            Phase = 1;
+        }
+        public override int GetMinHp()
+        {
+            switch (Phase)
+            {
+                case 1: case 2: return 400;
+                case 3: return 100;
+                default:return base.GetMinHp();
+            }
+        }
         public void AddNewCard(LorId Id, int pro)
         {
             BattleDiceCardModel battleDiceCardModel = this.owner.allyCardDetail.AddTempCard(Id);
@@ -54,21 +68,36 @@ namespace Don_Eyuil
         public override void OnRoundEndTheLast()
         {
             HasSelectPairThisRound = false;
+            if(Phase == 1 && owner.hp <= 400)
+            {
+                Phase = 2;
+                if(APassive02 != null && APassive02.CurrentArtPair != null)
+                {
+                    if(APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild || APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2)
+                    {
+                        APassive02.SelectHardBloodArt(APassive02.CurrentArtPair, true);
+                    }
+                    owner.passiveDetail.DestroyPassive(APassive02);
+                }
+            }
         }
         public override int SpeedDiceNumAdder()
         {
 
             int EmotionOffest = (owner.emotionDetail.EmotionLevel >= 4) ? -1 : 0;
-            if (APassive02 != null)
+            if(Phase == 1)
             {
-                if (HasSelectPairThisRound == false)
+                if (APassive02 != null)
                 {
-                    APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
-                    HasSelectPairThisRound = true;
+                    if (HasSelectPairThisRound == false)
+                    {
+                        APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
+                        HasSelectPairThisRound = true;
+                    }
+                    if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { return 2 + EmotionOffest; }
+                    if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { return 4 + EmotionOffest; }
+                    return 5 + Math.Min(4, Singleton<StageController>.Instance.RoundTurn / 2);
                 }
-                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { return 2 + EmotionOffest; }
-                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { return 4 + EmotionOffest; }
-                return 5 + Math.Min(4,Singleton<StageController>.Instance.RoundTurn / 2);
             }
             return 0;
         }
@@ -78,7 +107,7 @@ namespace Don_Eyuil
             owner.allyCardDetail.ExhaustAllCardsInHand();
             int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
             int round = Singleton<StageController>.Instance.RoundTurn;
-            if (APassive02 != null)
+            if (Phase == 1 && APassive02 != null)
             { 
                 //APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
                 //Debug.LogError("CurrentArtPair:" + APassive02.CurrentArtPair.ComboType +"|||||||||" + String.Join(",", APassive02.CurrentArtPair.Arts));
@@ -137,6 +166,7 @@ namespace Don_Eyuil
             public BattleUnitBuf_HardBloodArt(BattleUnitModel model) : base(model)
             {
                 typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+                stack = 0;
             }
             //血剑:
             //自身斩击骰子最小值+2
@@ -144,6 +174,7 @@ namespace Don_Eyuil
             //每幕结束时自身每承受2点"流血"伤害便时自身获得1层"硬血结晶"
             public class BattleUnitBuf_HardBloodArt_BloodSword : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Sword";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() {MyId.Card_堂埃尤尔派硬血术1式_血剑_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血剑斩击, MyId.Card_凝血化锋_1, MyId.Card_剑刃截断 };
                 public int BleedingDamageThisRound = 0;
@@ -194,6 +225,7 @@ namespace Don_Eyuil
             //若击杀目标则在下一幕获得一层"热血尖枪"
             public class BattleUnitBuf_HardBloodArt_BloodLance : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Lance";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术2式_血枪_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_高速穿刺, MyId.Card_长枪冲锋 };
                 public override void BeforeRollDice(BattleDiceBehavior behavior)
@@ -250,6 +282,7 @@ namespace Don_Eyuil
             //自身承受"流血"伤害时每承受3点便使下一颗进攻型骰子伤害+1
             public class BattleUnitBuf_HardBloodArt_DoubleSwords : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_DoubleSwords";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术5式_双剑_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_迅捷剑击 };
                 public int BleedingDamageThisRound = 0;
@@ -288,6 +321,7 @@ namespace Don_Eyuil
             // 一幕中敌方每受到20点"流血"伤害便使自身获得1层”伤害强化”
             public class BattleUnitBuf_HardBloodArt_BloodBlade : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Blade";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术4式_血刃_1};
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血刃割裂, MyId.Card_血刃环切 };
 
@@ -331,6 +365,7 @@ namespace Don_Eyuil
             //自身将对每幕第一个击中的目标施加"深度创痕
             public class BattleUnitBuf_HardBloodArt_BloodBow : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Bow";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术7式_血弓_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_穿云血箭, MyId.Card_血箭连射 };
 
@@ -371,6 +406,7 @@ namespace Don_Eyuil
             //自身每幕最后一张书页施加"流血"时将额外对目标施加等量"血晶荆棘"
             public class BattleUnitBuf_HardBloodArt_BloodScourge : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Scourge";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术8式_血鞭_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血鞭抽打 };
                 private bool _triggered;
@@ -427,6 +463,7 @@ namespace Don_Eyuil
             //下令战斗时若自身至少拥有6层"结晶硬血"则使自身获得一颗反击(突刺4-8)骰子
             public class BattleUnitBuf_HardBloodArt_BloodUmbrella : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Umbrella";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术9式_血伞_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血伞挥打_1, MyId.Card_血伞反击};
                 public override void OnSuccessAttack(BattleDiceBehavior behavior)
@@ -465,6 +502,7 @@ namespace Don_Eyuil
             //首次进入时使自身获得1层"汹涌的血潮"
             public class BattleUnitBuf_HardBloodArt_BloodSickle : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Sickle";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术3式_血镰_1};
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_镰刃截断, MyId.Card_巨镰纵切 };
 
@@ -498,6 +536,7 @@ namespace Don_Eyuil
             //自身被命中时对命中者施加2-3层"流血"
             public class BattleUnitBuf_HardBloodArt_BloodShield : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Armour";
                 public override void OnRoundEnd()
                 {
                     foreach (DiceBehaviour diceBehaviour in this._owner.cardSlotDetail.keepCard.GetDiceBehaviourXmlList())
@@ -526,7 +565,7 @@ namespace Don_Eyuil
         public override string debugDesc => "自身将定期切换不同的硬血术状态并获得不同效果与书页 命中时对目标施加2层流血";
         public override void OnSucceedAreaAttack(BattleDiceBehavior behavior, BattleUnitModel target)
         {
-            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Binding, 2, owner);
+            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 2, owner);
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
@@ -537,7 +576,7 @@ namespace Don_Eyuil
         }
 
         public HardBloodArtPair CurrentArtPair;
-        public HardBloodArtPair SelectHardBloodArt(HardBloodArtPair LatestArtPair)
+        public HardBloodArtPair SelectHardBloodArt(HardBloodArtPair LatestArtPair,bool WithOutShield = false)
         {
             BattleUnitBuf_HardBloodArt RandomHardBloodArt()
             {
@@ -567,7 +606,7 @@ namespace Don_Eyuil
                 if (ExpiredArtPair != null) { return ExpiredArtPair; }
             }
             owner.bufListDetail.GetActivatedBufList().FindAll(x => x is BattleUnitBuf_HardBloodArt).Do(x => x.Destroy());
-            if ( Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 0.25f )
+            if (WithOutShield == false && Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 1f )
             {
                 return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Sheild, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodShield>(owner));
             }
@@ -687,6 +726,7 @@ namespace Don_Eyuil
         //奔向梦想!驽骍难得!
         public override string debugDesc => "使所有应用了觉醒书页的司书威力+1\r\n自身体力首次低于400时获得新的被动并更改行动逻辑\r\n触发前体力无法低于400";
         //（获得被动“萦绕家族的疾病”“无法舍弃的责任”“若家人也能找到梦想”并获得500层护盾）
+
         public override void OnWaveStart()
         {
             BattleObjectManager.instance.GetAliveList(Faction.Player).Do(x => x.bufListDetail.AddBuf(new BattleUnitBuf_RunningTowardDream()));

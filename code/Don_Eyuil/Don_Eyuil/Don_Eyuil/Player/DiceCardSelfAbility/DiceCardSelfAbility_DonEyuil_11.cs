@@ -21,7 +21,7 @@
             }
             public override int OnAddKeywordBufByCard(BattleUnitBuf cardBuf, int stack)
             {
-                if (cardBuf.bufType == KeywordBuf.Binding)
+                if (cardBuf.bufType == KeywordBuf.Bleeding)
                 {
                     count += stack + this._stack;
                     return this._stack;

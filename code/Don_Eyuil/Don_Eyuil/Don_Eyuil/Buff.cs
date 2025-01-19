@@ -19,6 +19,7 @@ namespace Don_Eyuil
     //硬血结晶
     public class BattleUnitBuf_HardBlood_Crystal: BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_BleedCrystal";
         //至多30层
         //可配合硬血术效果
         public override int GetMaxStack() => 30;
@@ -32,6 +33,7 @@ namespace Don_Eyuil
     //无法凝结的血
     public class BattleUnitBuf_UncondensableBlood : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_Flow";
         //自身流血无法低于2+x
         public override void OnRoundEnd()
         {
@@ -70,6 +72,7 @@ namespace Don_Eyuil
     //热血尖枪
     public class BattleUnitBuf_WarmBloodLance : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_Rifle";
         //自身这一幕施加的"流血"翻倍
         public override int GetMultiplierOnGiveKeywordBufByCard(BattleUnitBuf cardBuf, BattleUnitModel target)
         {
@@ -90,6 +93,8 @@ namespace Don_Eyuil
     //深度创痕
     public class BattleUnitBuf_DeepWound : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_DeepWound";
+
         public static string Desc = "这一幕受到的\"流血\"伤害增加50%";
         public BattleUnitBuf_DeepWound(BattleUnitModel model) : base(model)
         {
@@ -113,6 +118,7 @@ namespace Don_Eyuil
     //血晶荆棘
     public class BattleUnitBuf_BloodCrystalThorn : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_Thistles";
         public static string Desc = "投掷骰子时使自身在下一幕中获得1层[流血](每幕至多触发x次) 自身速度降低x/2 每幕结束时层数减半";
         public BattleUnitBuf_BloodCrystalThorn(BattleUnitModel model) : base(model)
         {
@@ -146,6 +152,7 @@ namespace Don_Eyuil
     //汹涌的血潮(不衰减）
     public class BattleUnitBuf_BloodTide : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_Tidewater";
         public static string Desc = "所有敌方角色被施加\"流血\"时层数+x\r\n自身对处于流血状态的敌方角色造成的伤害与混乱伤害x×10%";
         public BattleUnitBuf_BloodTide(BattleUnitModel model) : base(model)
         {
@@ -361,7 +368,7 @@ namespace Don_Eyuil
         }
 
 
-        public Color shieldColor = Color.blue;
+        public Color shieldColor = new Color(0.68f,0,0,1);
 
         public GameObject shieldBarGameObject;
 

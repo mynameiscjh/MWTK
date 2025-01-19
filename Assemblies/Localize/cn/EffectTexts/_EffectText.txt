@@ -59,6 +59,11 @@
 下令战斗时若自身至少拥有6层"结晶硬血"则使自身获得一颗反击(突刺4-8)骰子</Desc>
     </BattleEffectText>
 
+    <BattleEffectText ID="BattleUnitBuf_DeepWound">
+      <Name>深度创痕</Name>
+      <Desc>这一幕受到的"流血"伤害增加50%</Desc>
+    </BattleEffectText>
+
     <BattleEffectText ID="BattleUnitBuf_Flow">
       <Name>无法凝结的血</Name>
       <Desc>自身流血无法低于2+{0}</Desc>
@@ -72,7 +77,7 @@
     <BattleEffectText ID="BattleUnitBuf_Tidewater">
       <Name>汹涌的血潮</Name>
       <Desc>所有敌方角色被施加"流血"时层数+{0}
-自身对处于流血状态的敌方角色造成的伤害与混乱伤害{0}×10%</Desc>
+自身对处于流血状态的敌方角色造成的伤害与混乱伤害+{0}×10%</Desc>
     </BattleEffectText>
 
     <BattleEffectText ID="BattleUnitBuf_Thistles">

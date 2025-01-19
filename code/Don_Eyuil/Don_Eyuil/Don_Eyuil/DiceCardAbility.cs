@@ -96,8 +96,8 @@ namespace Don_Eyuil
         {
             if(target != null)
             {
-                target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Binding, 4, owner);
-                target.bufListDetail.AddKeywordBufNextNextByCard(KeywordBuf.Binding, 4, owner);
+                target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 4, owner);
+                target.bufListDetail.AddKeywordBufNextNextByCard(KeywordBuf.Bleeding, 4, owner);
             }
         }
     }
@@ -191,7 +191,7 @@ namespace Don_Eyuil
         public static IEnumerable<CodeInstruction> BattleDiceBehavior_GiveDamage_Tran(IEnumerable<CodeInstruction> instructions)
         {
             List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
-            int index = codes.FindIndex(x => x.operand.ToString().Contains("TakeDamage") && x.opcode == OpCodes.Callvirt);
+            int index = codes.FindIndex(x => x.opcode == OpCodes.Callvirt && x.operand.ToString().Contains("TakeDamage"));
             codes.InsertRange(index + 1, new List<CodeInstruction>()
             {
                 new CodeInstruction(OpCodes.Ldarg_0),

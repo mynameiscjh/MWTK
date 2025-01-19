@@ -13,6 +13,7 @@ using static Don_Eyuil.PassiveAbility_DonEyuil_01;
 using static Don_Eyuil.PassiveAbility_DonEyuil_02.HardBloodArtPair;
 using static UnityEngine.UI.GridLayoutGroup;
 using Don_Eyuil.Don_Eyuil.DiceCardSelfAbility;
+using TMPro;
 namespace Don_Eyuil
 {
     public class DiceCardSelfAbility_DonEyuil_03 : DiceCardSelfAbilityBase
@@ -169,13 +170,26 @@ namespace Don_Eyuil
     public class DiceCardSelfAbility_DonEyuil_21 : DiceCardSelfAbilityBase
     {
         public static string Desc = "[战斗开始]下一幕使目标不会被施加[流血]";
+        
+        public override void OnStartBattle()
+        {
+            BattleUnitBuf_AntiBleeding.GainBuf<BattleUnitBuf_AntiBleeding>(card.target, 1,BufReadyType.NextRound);
+        }
         public class BattleUnitBuf_AntiBleeding : BattleUnitBuf_Don_Eyuil
         {
-            public BattleUnitBuf_AntiBleeding(BattleUnitModel model) : base(model) { }
-            public override void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
+            public override void OnRoundEnd()
             {
-                if(BufType == KeywordBuf.Bleeding) { stack = 0; }
+                this.Destroy();
             }
+            public BattleUnitBuf_AntiBleeding(BattleUnitModel model) : base(model){ }
+
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByEtc")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByEtc")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByCard")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByCard")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufNextNextByCard")]
+            [HarmonyPrefix]
+            public static bool BattleUnitBufListDetail_AddKeywordBuf_Pre(BattleUnitBufListDetail __instance, KeywordBuf bufType) => !(bufType == KeywordBuf.Bleeding && __instance.GetFieldValue<BattleUnitModel>("_self").bufListDetail.HasBuf<BattleUnitBuf_AntiBleeding>());
         }
     }
     //群体书页
@@ -192,7 +206,12 @@ namespace Don_Eyuil
         }
         public override void OnEndAreaAttack()
         {
-            Singleton<StageController>.Instance.RoundEndForcely();
+
+        }
+        public override void OnEndBattle()
+        {
+            //Singleton<StageController>.Instance.InvokeMethod("set_phase", StageController.StagePhase.RoundEndPhase);
+            //Singleton<StageController>.Instance.InvokeMethod("RoundEndPhase", Time.deltaTime);
         }
     }
     public class DiceCardSelfAbility_DonEyuil_23 : DiceCardSelfAbilityBase

@@ -325,10 +325,29 @@ namespace Don_Eyuil
             }
             return Array.Empty<FileInfo>();
         }
+
         public static void DonEyuilLoad(string DllPath)
         {
             void LoadLocalize()
             {
+                void AddLocalize_EffectTexts()
+                {
+                    Dictionary<string, BattleEffectText> dictionary = typeof(BattleEffectTextsXmlList).GetField("_dictionary", AccessTools.all).GetValue(Singleton<BattleEffectTextsXmlList>.Instance) as Dictionary<string, BattleEffectText>;
+                    FileInfo[] files = new DirectoryInfo(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language + "/EffectTexts").GetFiles();
+                    for (int i = 0; i < files.Length; i++)
+                    {
+                        using (StringReader stringReader = new StringReader(File.ReadAllText(files[i].FullName)))
+                        {
+                            BattleEffectTextRoot battleEffectTextRoot = (BattleEffectTextRoot)new XmlSerializer(typeof(BattleEffectTextRoot)).Deserialize(stringReader);
+                            for (int j = 0; j < battleEffectTextRoot.effectTextList.Count; j++)
+                            {
+                                BattleEffectText battleEffectText = battleEffectTextRoot.effectTextList[j];
+                                dictionary.Add(battleEffectText.ID, battleEffectText);
+                            }
+                        }
+                    }
+                }
+
                 void LoadLocalize_BattleCardAbilities()
                 {
                     FileInfo[] array = TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language + "/BattleCardAbilities");
@@ -355,6 +374,7 @@ namespace Don_Eyuil
                     }
                 }
                 LoadLocalize_BattleCardAbilities();
+                AddLocalize_EffectTexts();
             }
             void LoadCustomSkin(string path)
             {
@@ -419,9 +439,12 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
+            harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             harmony.PatchAll(typeof(RedDiceCardAbility));
             harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
+            harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
+
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
             TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
