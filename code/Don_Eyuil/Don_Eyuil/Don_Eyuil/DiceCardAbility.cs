@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using static Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility.DiceCardSelfAbility_DonEyuil_69;
 
 namespace Don_Eyuil
 {
@@ -335,6 +336,50 @@ namespace Don_Eyuil
                 card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3, owner);
                 BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(card.target, 3);
             }
+        }
+    }
+    public class DiceCardAbility_DonEyuil_45 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]使自身获得5层[硬血结晶]";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            BattleUnitBuf_HardBlood_Crystal.GainBuf<BattleUnitBuf_HardBlood_Crystal>(owner, 5);
+        }
+    }
+    public class DiceCardAbility_DonEyuil_47 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]这一幕与下一幕施加4层[流血]";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            target.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Bleeding, 4, owner);
+            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 4, owner);
+        }
+    }
+    public class DiceCardAbility_DonEyuil_48 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]消耗3层[结晶硬血]并施加3层[无法凝结的血]";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            if (BattleUnitBuf_HardBlood_Crystal.UseBuf<BattleUnitBuf_HardBlood_Crystal>(target, 3))
+            {
+                BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(target, 3);
+            }
+        }
+    }
+    public class DiceCardAbility_DonEyuil_49 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]重复触发目标5次[流血]";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (target.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_bleeding) == null)
+                {
+                    return;
+                }
+                target.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_bleeding).AfterDiceAction(behavior);
+            }
+            BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_AddThistles>(owner)?.Destroy();
         }
     }
     public class DiceCardAbility_DonEyuil_78 : DiceCardAbilityBase

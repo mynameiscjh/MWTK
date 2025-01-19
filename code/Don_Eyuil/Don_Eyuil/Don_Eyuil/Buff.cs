@@ -257,6 +257,108 @@ namespace Don_Eyuil
             return 20 * stack;
         }
     }
+    public class BattleUnitBuf_GloriousDuel : BattleUnitBuf_Don_Eyuil
+    {
+        protected override string keywordId => "BattleUnitBuf_GloriousDuel";
+        public static string Desc = "\"堂埃尤尔\"的体力不会低于100\r\n若本幕结束时司书存活则接待胜利";
+        public override void OnRoundEndTheLast()
+        {
+            if(!_owner.IsDead())
+            {
+                Singleton<StageController>.Instance.CheckEndBattle();
+            }
+        }
+        public BattleUnitBuf_GloriousDuel(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["光荣的决斗"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+    }
+
+    public class BattleUnitBuf_Resonance : BattleUnitBuf_Don_Eyuil
+    {
+        public BattleUnitBuf_Resonance(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+        public class BattleUnitBuf_Resonance_BrightDream: BattleUnitBuf_Resonance
+        {
+            protected override string keywordId => "BattleUnitBuf_Resonance_BrightDream";
+            public static string Desc = "自身永久获得1层\"强壮\"与\"迅捷\"\r\n拼点时恢复2点混乱抗性";
+            public override void OnRoundEnd()
+            {
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Quickness, 1);
+            }
+            public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
+            {
+                _owner.breakDetail.RecoverBreak(2);
+            }
+            public BattleUnitBuf_Resonance_BrightDream(BattleUnitModel model) : base(model)
+            {
+                typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["璀璨的梦想"]);
+            }
+        }
+        public class BattleUnitBuf_Resonance_GreatHope : BattleUnitBuf_Resonance
+        {
+            protected override string keywordId => "BattleUnitBuf_Resonance_GreatHope";
+            public static string Desc = "自身光芒恢复量+1\r\n自身使用书页使将为光芒最低的一名友方角色恢复1点光芒";
+            public override void BeforeRecoverPlayPoint(ref int value)
+            {
+                value += 1;
+            }
+            public override void OnUseCard(BattlePlayingCardDataInUnitModel card)
+            {
+                var Alivelist = BattleObjectManager.instance.GetAliveList(_owner.faction);
+                Alivelist.Remove(_owner);
+                if(Alivelist.Count > 0)
+                {
+                    Alivelist.OrderByDescending(x => x.cardSlotDetail.PlayPoint);
+                    Alivelist[0].cardSlotDetail.RecoverPlayPoint(1);
+                }
+            }
+            public BattleUnitBuf_Resonance_GreatHope(BattleUnitModel model) : base(model)
+            {
+                typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["美好的希望"]);
+            }
+        }
+        public class BattleUnitBuf_Resonance_BoreResponsibility : BattleUnitBuf_Resonance
+        {
+            protected override string keywordId => "BattleUnitBuf_Resonance_BoreResponsibility";
+            public static string Desc = "自身将可以无视速度转移敌方攻击\r\n自身为友方角色转移攻击时使自身所有骰子威力+2";
+            public BattleUnitBuf_Resonance_BoreResponsibility(BattleUnitModel model) : base(model)
+            {
+                typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["背负的责任"]);
+            }
+        }
+        public class BattleUnitBuf_Resonance_MutualUnderstanding : BattleUnitBuf_Resonance
+        {
+            protected override string keywordId => "BattleUnitBuf_Resonance_MutualUnderstanding";
+            public static string Desc = "受到的伤害与混乱伤害减少50%\r\n拼点时使对方进攻型骰子威力-1";
+            public BattleUnitBuf_Resonance_MutualUnderstanding(BattleUnitModel model) : base(model)
+            {
+                typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["互相的理解"]);
+            }
+            public override int GetBreakDamageReductionRate()
+            {
+                return 50;
+            }
+            public override int GetDamageReductionRate()
+            {
+                return 50;
+            }
+            public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
+            {
+                if(card.currentBehavior != null && card.currentBehavior.TargetDice != null && card.currentBehavior.TargetDice.card != null)
+                {
+                    card.currentBehavior.TargetDice.card.ApplyDiceStatBonus(DiceMatch.AllAttackDice, new DiceStatBonus() { power = -1 });
+                }
+            }
+        }
+        
+    }
     //血甲护盾
     public class BattleUnitBuf_BloodShield : BattleUnitBuf_Don_Eyuil
     {
@@ -483,7 +585,7 @@ namespace Don_Eyuil
             Transform[] componentsInChildren = __instance.gameObject.GetComponentsInChildren<Transform>(true);
             for (int i = 0; i < componentsInChildren.Length; i++)
             {
-                if (componentsInChildren[i].gameObject.name.Contains("BloodShieldUI4"))
+                if (componentsInChildren[i].gameObject.name.Contains("BloodShieldUI"))
                 {
                     UnityEngine.Object.Destroy(componentsInChildren[i].gameObject);
                 }

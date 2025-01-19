@@ -106,31 +106,31 @@
       <Desc>这一幕中受到的伤害与混乱伤害减少{0}×20%</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2__">
+    <BattleEffectText ID="BattleUnitBuf_Resonance_BrightDream">
       <Name>璀璨的梦想</Name>
       <Desc>自身永久获得1层"强壮"与"迅捷"
 拼点时恢复2点混乱抗性</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2___">
+    <BattleEffectText ID="BattleUnitBuf_Resonance_GreatHope">
       <Name>美好的希望</Name>
       <Desc>自身光芒恢复量+1
 自身使用书页使将为光芒最低的一名友方角色恢复1点光芒</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2____">
+    <BattleEffectText ID="BattleUnitBuf_Resonance_BoreResponsibility">
       <Name>背负的责任</Name>
       <Desc>自身将可以无视速度转移敌方攻击
 自身为友方角色转移攻击时使自身所有骰子威力+2</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2_____">
+    <BattleEffectText ID="BattleUnitBuf_Resonance_MutualUnderstanding">
       <Name>互相的理解</Name>
       <Desc>受到的伤害与混乱伤害减少50%
 拼点时使对方进攻型骰子威力-1</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2______">
+    <BattleEffectText ID="BattleUnitBuf_GloriousDuel">
       <Name>光荣的决斗</Name>
       <Desc>"堂埃尤尔"的体力不会低于100
 若本幕结束时司书存活则接待胜利</Desc>

@@ -449,6 +449,7 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterRecoverHpPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
 
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
             harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));

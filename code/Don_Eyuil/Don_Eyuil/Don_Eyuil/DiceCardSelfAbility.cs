@@ -206,7 +206,7 @@ namespace Don_Eyuil
         }
         public override void OnEndAreaAttack()
         {
-
+            Singleton<StageController>.Instance.BattleEndForcelyNotRound();
         }
         public override void OnEndBattle()
         {
@@ -359,6 +359,125 @@ namespace Don_Eyuil
         public override void OnStartBattle()
         {
             BattleUnitBuf_HardBloodBleedingAddition.GetOrAddBuf<BattleUnitBuf_HardBloodBleedingAddition>(owner);
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_43 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[战斗开始]对自身与2名敌方角色施加1层[强壮]于[振奋]";
+        public override void OnStartBattle()
+        {
+            owner.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Strength, 1,owner);
+            MyTools.TKSRandomUtil(BattleObjectManager.instance.GetAliveList_opponent(owner.faction), 2, false, false).Do(x => x.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.BreakProtection, 1, owner));
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_44 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "本书页将命中全体敌方角色";
+    }
+
+    public class DiceCardSelfAbility_DonEyuil_46 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[使用时]若自身应用了[血鞭]则使本书页施加[流血]时同时施加[血晶荆棘]";
+    }
+    public class DiceCardSelfAbility_DonEyuil_50 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "场上每有一名处于共鸣状态的敌方角色便使本书页造成的伤害减少20%\r\n[战斗开始]清除所有的[凝结的情感]\r\n[使用后]结束本幕";
+        public override void BeforeGiveDamage(BattleDiceBehavior behavior)
+        {
+            var Count = BattleUnitBuf_Resonance.GetAllUnitWithBuf<BattleUnitBuf_Resonance>(Faction.Player).Count;
+            if(Count >0)
+            {
+                behavior.ApplyDiceStatBonus(new DiceStatBonus()
+                {
+                    dmgRate = -Count ,
+                    breakRate = -Count
+                });
+            }
+        }
+        public override void OnStartBattle()
+        {
+            BattleObjectManager.instance.GetAliveList().DoIf(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_10>(), y => y.Die());
+        }
+        public override void OnEndAreaAttack()
+        {
+            Singleton<StageController>.Instance.BattleEndForcelyNotRound();
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_51 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[战斗开始]将场上所有共鸣效果转移至目标并对目标施加[光荣的决斗]同时使所有其余敌方角色无法行动";
+        public override void OnStartBattle()
+        {
+            if(card.target != null)
+            {
+                BattleUnitBuf_Resonance.GetAllBufOnField<BattleUnitBuf_Resonance>().DoIf(y => y.owner!= card.target,x =>
+                {
+                    x.Destroy();
+                    if (x.GetType().Name.Contains("BrightDream")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BrightDream>(card.target); }
+                    else if (x.GetType().Name.Contains("GreatHope")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_GreatHope>(card.target); }
+                    else if (x.GetType().Name.Contains("BoreResponsibility")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(card.target); }
+                    else if (x.GetType().Name.Contains("MutualUnderstanding")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(card.target); }
+                    BattleUnitBuf_DuelStun.GainBuf<BattleUnitBuf_DuelStun>(x.owner, 1);
+                });
+            }
+            BattleUnitBuf_GloriousDuel.GetOrAddBuf<BattleUnitBuf_GloriousDuel>(card.target);
+        }
+        public class BattleUnitBuf_DuelStun : BattleUnitBuf_Don_Eyuil
+        {
+            public BattleUnitBuf_DuelStun(BattleUnitModel model) : base(model) { }
+            public override bool IsActionable()
+            {
+                return base.IsDestroyed();
+            }
+            public override int SpeedDiceBreakedAdder()
+            {
+                return 10;
+            }
+
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_52: DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[使用时]若目标带有[璀璨的梦想]则使本书页所有骰子最大值与最小值-10";
+        public override void OnUseCard()
+        {
+            if(card.target != null && BattleUnitBuf_Resonance.GetBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BrightDream>(card.target) != null)
+            {
+                card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { min = -10, max = -10 });
+            }    
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_53 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[使用时]若目标带有[美好的希望]则使本书页所有骰子最大值与最小值-20";
+        public override void OnUseCard()
+        {
+            if (card.target != null && BattleUnitBuf_Resonance.GetBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_GreatHope>(card.target) != null)
+            {
+                card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { min = -20, max = -20 });
+            }
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_54 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[使用时]若目标带有[背负的责任]则使本书页所有骰子最大值与最小值-20";
+        public override void OnUseCard()
+        {
+            if (card.target != null && BattleUnitBuf_Resonance.GetBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(card.target) != null)
+            {
+                card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { min = -20, max = -20 });
+            }
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_55 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[使用时]若目标带有[互相的理解]则使本书页所有骰子最大值与最小值-10";
+        public override void OnUseCard()
+        {
+            if (card.target != null && BattleUnitBuf_Resonance.GetBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(card.target) != null)
+            {
+                card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { min = -10, max = -10 });
+            }
         }
     }
     public class DiceCardSelfAbility_DonEyuil_77 : DiceCardSelfAbilityBase

@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
+using static CharacterSound;
+using static UI.UIIconManager;
 using static UnityEngine.GraphicsBuffer;
 
 namespace Don_Eyuil
@@ -203,6 +205,42 @@ namespace Don_Eyuil
 
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
+        public virtual void BeforeRecoverPlayPoint(ref int value)
+        {
+
+        }
+        public class BeforeRecoverPlayPointPatch
+        {
+            public static void Trigger_RecoverPlayPoint_Before(BattlePlayingCardSlotDetail Detail,ref int value)
+            {
+                var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
+                if (Model != null)
+                {
+                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                    {
+                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                        {
+                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeRecoverPlayPoint(ref value);
+                        }
+                    }
+                }
+            }
+
+            [HarmonyPatch(typeof(BattlePlayingCardSlotDetail), "RecoverPlayPoint")]
+            [HarmonyPostfix]
+            public static IEnumerable<CodeInstruction> BattlePlayingCardSlotDetail_RecoverPlayPoint_Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                codes.InsertRange(0, new List<CodeInstruction>()
+                { 
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldarga_S,1),
+                    new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeRecoverPlayPointPatch),"Trigger_RecoverPlayPoint_Before")),
+                });
+
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
         public virtual void AfterRecoverHp(int v)
         {
 
@@ -405,6 +443,20 @@ namespace Don_Eyuil
         {
             this._owner = model;
         }
+        public static List<T> GetAllBufOnField<T>(Faction? Faction = null, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
+        {
+            List<BattleUnitModel> UnitList = Faction.HasValue ? BattleObjectManager.instance.GetAliveList(Faction.Value) : BattleObjectManager.instance.GetAliveList();
+            List<T> ResultList = new List<T>() { };
+            foreach (BattleUnitModel model in UnitList)
+            {
+                T BuffInstance = GetBuf<T>(model, ReadyType);
+                if (BuffInstance != null)
+                {
+                    ResultList.Add(BuffInstance);
+                }
+            }
+            return ResultList;
+        }
         public static List<BattleUnitModel> GetAllUnitWithBuf<T>(Faction? Faction = null,BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
             List<BattleUnitModel> UnitList = Faction.HasValue? BattleObjectManager.instance.GetAliveList(Faction.Value): BattleObjectManager.instance.GetAliveList();
@@ -500,6 +552,8 @@ namespace Don_Eyuil
             }
             return BuffInstance;
         }
+
+        public BattleUnitModel owner { get{ return this._owner; } }
     }
     public static class MyTools
     {
@@ -608,6 +662,31 @@ namespace Don_Eyuil
         {
             return new LorId(TKS_BloodFiend_Initializer.packageId, v);
         }
-
+        public static List<T> TKSRandomUtil<T>(List<T> ListToRandom, int randomnum, bool canbethesame = false, bool copywhenempty = true)
+        {
+            List<T> list = new List<T>();
+            T item = default(T);
+            for (int i = 0; i < randomnum; i++)
+            {
+                if (ListToRandom.Count >= 1)
+                {
+                    item = RandomUtil.SelectOne<T>(ListToRandom);
+                    if (!canbethesame)
+                    {
+                        ListToRandom.Remove(item);
+                    }
+                    list.Add(item);
+                }
+                else
+                {
+                    if (!copywhenempty)
+                    {
+                        break;
+                    }
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
     }
 }
