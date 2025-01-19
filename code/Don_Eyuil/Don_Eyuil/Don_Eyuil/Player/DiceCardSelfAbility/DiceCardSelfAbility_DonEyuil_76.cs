@@ -17,6 +17,10 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
                 {
                     return;
                 }
+                if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner) == null)
+                {
+                    return;
+                }
                 var temp = RandomUtil.SelectOne(temp_list);
                 temp_list.Remove(temp);
                 temp.bufListDetail.AddKeywordBufByCard(KeywordBuf.BreakProtection, 1, owner);

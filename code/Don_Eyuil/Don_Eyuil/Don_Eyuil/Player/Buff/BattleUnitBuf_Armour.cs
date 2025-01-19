@@ -11,6 +11,8 @@ namespace Don_Eyuil.Don_Eyuil.Buff
 
         }
 
+        protected override string keywordId => "BattleUnitBuf_Armour";
+
         public override void Init(BattleUnitModel owner)
         {
             base.Init(owner);

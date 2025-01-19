@@ -8,6 +8,9 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
     {
         public static string Desc = "把百般武艺包装在一起";
 
+        protected override string keywordId => "BattleUnitBuf_HardBlood";
+        public override int paramInBufDesc => ActivatedNum;
+
         public BattleUnitBuf_HardBlood(BattleUnitModel model) : base(model)
         {
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["玩家硬血术统一图标"]);

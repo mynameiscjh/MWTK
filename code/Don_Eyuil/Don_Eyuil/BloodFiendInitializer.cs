@@ -2,12 +2,14 @@
 using EnumExtenderV2;
 using HarmonyLib;
 using LOR_DiceSystem;
+using LOR_XML;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
+using System.Xml.Serialization;
 using UnityEngine;
 using Workshop;
 
@@ -330,8 +332,29 @@ namespace Don_Eyuil
                 }
             }
 
+            void LoadEffectTexts()
+            {
+                var language = GlobalGameManager.Instance.CurrentOption.language;
+                var dic = Singleton<BattleEffectTextsXmlList>.Instance.GetFieldValue<Dictionary<string, BattleEffectText>>("_dictionary");
+                var dir = new DirectoryInfo(DllPath + "/Localize/" + language + "/EffectTexts");
+                var files = dir.GetFiles();
+                foreach (System.IO.FileInfo file in files)
+                {
+                    using (StringReader stringReader = new StringReader(File.ReadAllText(file.FullName)))
+                    {
+                        BattleEffectTextRoot battleEffectTextRoot =
+                            (BattleEffectTextRoot)new XmlSerializer(typeof(BattleEffectTextRoot)).Deserialize(stringReader);
+                        foreach (BattleEffectText battleEffectText in battleEffectTextRoot.effectTextList)
+                        {
+                            dic.Add(battleEffectText.ID, battleEffectText);
+                        }
+                    }
+                }
+            }
+
             LoadCustomSkin(Path.Combine(DllPath, "..", "Resource\\CharacterSkin"));
             LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
+            LoadEffectTexts();
         }
 
         public override void OnInitializeMod()

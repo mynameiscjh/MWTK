@@ -8,6 +8,8 @@
         {
         }
 
+        protected override string keywordId => "BattleUnitBuf_Rifle";
+
         public override int GetMultiplierOnGiveKeywordBufByCard(BattleUnitBuf cardBuf, BattleUnitModel target)
         {
             if (cardBuf.bufType == KeywordBuf.Bleeding)

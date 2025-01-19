@@ -1082,6 +1082,7 @@
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
     <Option>EgoPersonal</Option>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="5" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_56</Script>
     <ScriptDesc />
@@ -1106,6 +1107,7 @@
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
     <Option>EgoPersonal</Option>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_58</Script>
     <ScriptDesc />
@@ -1132,6 +1134,7 @@
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
     <Option>EgoPersonal</Option>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="5" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_11</Script>
     <ScriptDesc />
@@ -1158,6 +1161,7 @@
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
     <Option>EgoPersonal</Option>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_01</Script>
     <ScriptDesc />
@@ -1182,6 +1186,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Option>EgoPersonal</Option>
     <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_77</Script>
@@ -1209,6 +1214,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Option>EgoPersonal</Option>
     <Spec Range="FarAreaEach" Cost="5" Affection="Team" EmotionLimit="0" />
     <Script>DonEyuil_61</Script>
@@ -1235,6 +1241,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Option>EgoPersonal</Option>
     <Spec Range="Far" Cost="4" Affection="One" EmotionLimit="0" />
     <Script>DmgCount</Script>
@@ -1261,6 +1268,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Option>EgoPersonal</Option>
     <Spec Range="FarArea" Cost="5" Affection="Team" EmotionLimit="0" />
     <Script></Script>
@@ -1285,6 +1293,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Option>EgoPersonal</Option>
     <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_32</Script>
@@ -1309,6 +1318,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuilEGO.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Option>EgoPersonal</Option>
     <Spec Range="FarArea" Cost="6" Affection="Team" EmotionLimit="0" />
     <Script>DonEyuil_62</Script>
@@ -1334,6 +1344,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Rare</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Far" Cost="2" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_65</Script>
     <ScriptDesc />
@@ -1359,6 +1370,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="6" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_66</Script>
     <ScriptDesc />
@@ -1384,6 +1396,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Common</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_67</Script>
     <ScriptDesc />
@@ -1408,6 +1421,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_69</Script>
     <ScriptDesc />
@@ -1433,6 +1447,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_70</Script>
     <ScriptDesc />
@@ -1459,6 +1474,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Rare</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_39</Script>
     <ScriptDesc />
@@ -1484,6 +1500,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Rare</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_72</Script>
     <ScriptDesc />
@@ -1509,6 +1526,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_74</Script>
     <ScriptDesc />
@@ -1534,6 +1552,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_76</Script>
     <ScriptDesc />

@@ -7,6 +7,8 @@ namespace Don_Eyuil.Buff
     {
         public static string Desc = "硬血结晶\r\n至多30层\r\n可配合硬血术效果\r\n";
 
+        protected override string keywordId => "BattleUnitBuf_BleedCrystal";
+
         public BattleUnitBuf_BleedCrystal(BattleUnitModel model) : base(model)
         {
         }
