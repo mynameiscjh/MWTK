@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Xml;
 using UnityEngine;
-using Workshop;
+//using Workshop;
 using System.Runtime.CompilerServices;
 using System.Security.Policy;
 using System.Threading.Tasks;
@@ -32,9 +32,9 @@ namespace Don_Eyuil
     [HarmonyPatch]
     public class TKS_BloodFiend_PatchMethods_CustomCharacterSkin
     {
-        public static WorkshopAppearanceInfo LoadCustomAppearanceSMotion(string path)
+        public static Workshop.WorkshopAppearanceInfo LoadCustomAppearanceSMotion(string path)
         {
-            bool LoadCustomAppearanceInfoSMotion(string rootPath, string xml, ref WorkshopAppearanceInfo __result)
+            bool LoadCustomAppearanceInfoSMotion(string rootPath, string xml, ref Workshop.WorkshopAppearanceInfo __result)
             {
                 if (__result == null)
                 {
@@ -111,7 +111,7 @@ namespace Don_Eyuil
                             {
                                 direction = CharacterMotion.MotionDirection.SideView;
                             }
-                            ClothCustomizeData value = new ClothCustomizeData
+                            Workshop.ClothCustomizeData value = new Workshop.ClothCustomizeData
                             {
                                 spritePath = text4,
                                 frontSpritePath = frontSpritePath,
@@ -133,7 +133,7 @@ namespace Don_Eyuil
                 }
                 return true;
             }
-            WorkshopAppearanceInfo result = new WorkshopAppearanceInfo();
+            Workshop.WorkshopAppearanceInfo result = new Workshop.WorkshopAppearanceInfo();
             string xmlinfo = Path.Combine(path, "ModInfo.xml");
             if (File.Exists(xmlinfo) && LoadCustomAppearanceInfoSMotion(path, xmlinfo, ref result))
             {
@@ -143,8 +143,8 @@ namespace Don_Eyuil
         }
 
         [HarmonyPrefix]
-        [HarmonyPatch(typeof(WorkshopSkinDataSetter), "SetData", argumentTypes: new Type[1] { typeof(WorkshopSkinData) })]
-        public static void WorkshopSkinDataSetter_SetData_Prefix(WorkshopSkinDataSetter __instance, WorkshopSkinData data)
+        [HarmonyPatch(typeof(Workshop.WorkshopSkinDataSetter), "SetData", argumentTypes: new Type[1] { typeof(Workshop.WorkshopSkinData) })]
+        public static void WorkshopSkinDataSetter_SetData_Prefix(Workshop.WorkshopSkinDataSetter __instance, Workshop.WorkshopSkinData data)
         {
             CharacterMotion CopyCharacterMotion(CharacterAppearance apprearance, ActionDetail detail)
             {
@@ -161,7 +161,7 @@ namespace Don_Eyuil
 
             if (data.contentFolderIdx == TKS_BloodFiend_Initializer.packageId)
             {
-                foreach (KeyValuePair<ActionDetail, ClothCustomizeData> keyValuePair in data.dic)
+                foreach (KeyValuePair<ActionDetail, Workshop.ClothCustomizeData> keyValuePair in data.dic)
                 {
                     Debug.LogError("Actiondetail" + keyValuePair.Key);
                     CharacterMotion characterMotion = __instance.Appearance.GetCharacterMotion(keyValuePair.Key);
@@ -183,9 +183,8 @@ namespace Don_Eyuil
     public class TKS_BloodFiend_Initializer : ModInitializer
     {
         public static string packageId = "Don_Eyuil";
-
         public static Dictionary<string, Sprite> ArtWorks = new Dictionary<string, Sprite>();
-
+        public static string language;
         public class TKS_EnumExtension
         {
             public class TKS_EnumExtender<T> where T : struct, Enum
@@ -290,9 +289,53 @@ namespace Don_Eyuil
                 public static ActionDetail TKS_BL_S66 { get; internal set; }
             }
         }
+        private static FileInfo[] SafeGetFiles(string path)
+        {
+            try
+            {
+                return new DirectoryInfo(path).GetFiles();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogErrorFormat("DONEYUILLOADERROR:", new object[]
+                {
+                    path,
+                    ex
+                });
+            }
+            return Array.Empty<FileInfo>();
+        }
         public static void DonEyuilLoad(string DllPath)
         {
-
+            void LoadLocalize()
+            {
+                void LoadLocalize_BattleCardAbilities()
+                {
+                    FileInfo[] array = TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language + "/BattleCardAbilities");
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        using (StringReader stringReader = new StringReader(File.ReadAllText(array[i].FullName)))
+                        {
+                            foreach (BattleCardAbilityDesc battleCardAbilityDesc in ((BattleCardAbilityDescRoot)new XmlSerializer(typeof(BattleCardAbilityDescRoot)).Deserialize(stringReader)).cardDescList)
+                            {
+                                try
+                                {
+                                    Singleton<BattleCardAbilityDescXmlList>.Instance.GetData(battleCardAbilityDesc.id).desc = battleCardAbilityDesc.desc;
+                                }
+                                catch (Exception ex)
+                                {
+                                    Debug.LogErrorFormat("Failed Load Localize:{0}\nCause:{1}", new object[]
+                                    {
+                                        battleCardAbilityDesc.id,
+                                        ex
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+                LoadLocalize_BattleCardAbilities();
+            }
             void LoadCustomSkin(string path)
             {
                 try
@@ -304,10 +347,10 @@ namespace Don_Eyuil
                         for (int i = 0; i < directories5.Length; i++)
                         {
                             string[] array5 = directories5[i].Split('\\');
-                            WorkshopSkinData workshopBookSkinData = Singleton<CustomizingBookSkinLoader>.Instance.GetWorkshopBookSkinData(packageId, array5[array5.Length - 1]);
+                            Workshop.WorkshopSkinData workshopBookSkinData = Singleton<CustomizingBookSkinLoader>.Instance.GetWorkshopBookSkinData(packageId, array5[array5.Length - 1]);
                             if (workshopBookSkinData != null && workshopBookSkinData.dataName == "Don_Eyuil")
                             {
-                                foreach (KeyValuePair<ActionDetail, ClothCustomizeData> keyValuePair in TKS_BloodFiend_PatchMethods_CustomCharacterSkin.LoadCustomAppearanceSMotion(directories5[i]).clothCustomInfo)
+                                foreach (KeyValuePair<ActionDetail, Workshop.ClothCustomizeData> keyValuePair in TKS_BloodFiend_PatchMethods_CustomCharacterSkin.LoadCustomAppearanceSMotion(directories5[i]).clothCustomInfo)
                                 {
                                     workshopBookSkinData.dic[keyValuePair.Key] = keyValuePair.Value;
                                 }
@@ -339,9 +382,9 @@ namespace Don_Eyuil
                     TKS_BloodFiend_Initializer.ArtWorks[fileNameWithoutExtension] = value;
                 }
             }
-            
             LoadCustomSkin(Path.Combine(DllPath, "..", "Resource\\CharacterSkin"));
             LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
+            LoadLocalize();
         }
 
         public override void OnInitializeMod()
@@ -353,8 +396,9 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
-            harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
+            // harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
+            TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
             Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
             DonEyuilLoad(Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path)));

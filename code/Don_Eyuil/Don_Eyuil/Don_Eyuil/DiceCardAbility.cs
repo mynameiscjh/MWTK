@@ -185,7 +185,7 @@ namespace Don_Eyuil
 
             }
         }
-        [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
+        /*[HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BattleDiceBehavior_GiveDamage_Tran(IEnumerable<CodeInstruction> instructions)
         {
@@ -199,6 +199,7 @@ namespace Don_Eyuil
             });
             return codes.AsEnumerable();
         }
+        */
     }
     public class DiceCardAbility_DonEyuil_25 : DiceCardAbilityBase
     {

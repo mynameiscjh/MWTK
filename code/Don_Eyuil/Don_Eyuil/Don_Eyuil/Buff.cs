@@ -144,7 +144,7 @@ namespace Don_Eyuil
         {
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["汹涌的血潮"]);
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
-            this.stack = 1;
+            this.stack = 0;
         }
         public override void BeforeOtherUnitAddKeywordBuf(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
         {
