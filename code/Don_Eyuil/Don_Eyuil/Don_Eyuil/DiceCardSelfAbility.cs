@@ -245,7 +245,122 @@ namespace Don_Eyuil
             }
         }
     }
+    public class DiceCardSelfAbility_DonEyuil_34 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[使用时]这一幕及下两幕对自身施加8层[流血]";
+        public override void OnUseCard()
+        {
+            owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 8);
+            owner.bufListDetail.AddKeywordBufNextNextByCard(KeywordBuf.Bleeding, 8);
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_35 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[战斗开始]这一幕拼点失败时对自身施加2层[流血](至多3次)";
 
+        public override void OnStartBattle()
+        {
+            BattleUnitBuf_LoseParryingSelfBleeding.GainBuf<BattleUnitBuf_LoseParryingSelfBleeding>(owner, 1);
+        }
+        public class BattleUnitBuf_LoseParryingSelfBleeding : BattleUnitBuf_Don_Eyuil
+        {
+            int TriggeredCount = 0;
+            public override void OnLoseParrying(BattleDiceBehavior behavior)
+            {
+                if(TriggeredCount < 3)//0 1 2
+                {
+                    TriggeredCount++;//1 2 3
+                    _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 2);
+                }
+            }
+            public override void OnRoundEnd()
+            {
+                this.Destroy();
+            }
+            public BattleUnitBuf_LoseParryingSelfBleeding(BattleUnitModel model) : base(model) { }
+        }
+
+    }
+    public class DiceCardSelfAbility_DonEyuil_36 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[战斗开始]这一幕击中目标时对自身施加1层[虚弱](至多2次";
+        public override void OnStartBattle()
+        {
+            BattleUnitBuf_AtkSelfWeak.GainBuf<BattleUnitBuf_AtkSelfWeak>(owner, 1);
+        }
+        public class BattleUnitBuf_AtkSelfWeak : BattleUnitBuf_Don_Eyuil
+        {
+            int TriggeredCount = 0;
+            public override void OnSuccessAttack(BattleDiceBehavior behavior)
+            {
+                if (TriggeredCount < 2)//0 1  
+                {
+                    TriggeredCount++;//1 2  
+                    _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 1);
+                }
+            }
+            public override void OnRoundEnd()
+            {
+                this.Destroy();
+            }
+            public BattleUnitBuf_AtkSelfWeak(BattleUnitModel model) : base(model) { }
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_38 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[战斗开始]这一幕拼点失败时使自身获得1层[强壮]";
+        public override void OnStartBattle()
+        {
+            BattleUnitBuf_LoseParryingStrong.GainBuf<BattleUnitBuf_LoseParryingStrong>(owner, 1);
+        }
+        public class BattleUnitBuf_LoseParryingStrong : BattleUnitBuf_Don_Eyuil
+        {
+            public override void OnLoseParrying(BattleDiceBehavior behavior)
+            {
+                _owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Strength, 1,_owner);
+            }
+            public override void OnRoundEnd()
+            {
+                this.Destroy();
+            }
+            public BattleUnitBuf_LoseParryingStrong(BattleUnitModel model) : base(model) { }
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_39 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "本书页命中时将恢复等同于伤害量25%的体力若这一幕中自身已经累积承受10点流血伤害则改为50%\r\n本书页恢复溢出的体力将转化为等量护盾";
+        public class BattleUnitBuf_HardBloodBleedingAddition : BattleUnitBuf_Don_Eyuil
+        {
+            public int BleedingDmgTotal = 0;
+            public BattleUnitBuf_HardBloodBleedingAddition(BattleUnitModel model) : base(model) { }
+            public override void OnSuccessAttack(BattleDiceBehavior behavior)
+            {
+                if(behavior != null && behavior.card != null && behavior.card.card.XmlData.Script == "DonEyuil_39")
+                {
+                    int RecoverHpNum = (int)(behavior.DiceResultDamage * BleedingDmgTotal >= 10 ? 0.5 : 0.25);
+                    if(_owner.hp + RecoverHpNum > _owner.MaxHp)
+                    {
+                        BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(_owner,(int) _owner.hp + RecoverHpNum - _owner.MaxHp);
+                        RecoverHpNum = _owner.MaxHp - (int)_owner.hp;
+                    }
+                    _owner.RecoverHP(RecoverHpNum);
+                }
+            }
+            public override void AfterTakeBleedingDamage(int Dmg)
+            {
+                BleedingDmgTotal += Dmg;
+            }
+        }
+        public override void OnEndBattle()
+        {
+            BattleUnitBuf_HardBloodBleedingAddition.RemoveBuf<BattleUnitBuf_HardBloodBleedingAddition>(owner);
+        }
+
+        public override void OnStartBattle()
+        {
+            BattleUnitBuf_HardBloodBleedingAddition.GetOrAddBuf<BattleUnitBuf_HardBloodBleedingAddition>(owner);
+        }
+    }
     public class DiceCardSelfAbility_DonEyuil_77 : DiceCardSelfAbilityBase
     {
         public static string Desc = "[使用时]这一幕对自身施加3层流血";

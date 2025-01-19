@@ -179,6 +179,84 @@ namespace Don_Eyuil
             }
         }
     }
+    //席卷而来的饥饿
+    public class BattleUnitBuf_FloodOfHunger : BattleUnitBuf_Don_Eyuil
+    {
+        protected override string keywordId => "BattleUnitBuf_FloodOfHunger";
+        public static string Desc = "击中\"流血\"不低于3的目标时恢复2点体力\r\n若一幕中没有恢复体力则失去20%的混乱抗性并获得1层\"虚弱\"\r\n获得15点正面情感后移除本效果";
+        //P07:场上角色解除\"席卷而来的饥饿\"时将永久获得1层\"强壮\"与3层\"振奋\"";
+        public BattleUnitBuf_FloodOfHunger(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["席卷而来的饥饿"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+        public bool HasTriggered = false;
+        public int TotalEmotionCoinNum = 0;
+        public class BattleUnitBuf_InfinityStrongNBreakProtection : BattleUnitBuf
+        {
+            public override void OnRoundEnd()
+            {
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.BreakProtection,3);
+            }
+        }
+        public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+        {
+            TotalEmotionCoinNum += CoinType == EmotionCoinType.Positive ? Count : 0;
+            if(TotalEmotionCoinNum >= 15)
+            {
+                if(_owner.passiveDetail.HasPassive<PassiveAbility_DonEyuil_07>())
+                {
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_InfinityStrongNBreakProtection());
+                }
+                this.Destroy();
+            }
+        }
+        public override void OnRoundEnd()
+        {
+            if(HasTriggered == false)
+            {
+                _owner.TakeBreakDamage((int)(this._owner.breakDetail.GetDefaultBreakGauge() * 0.2),DamageType.ETC);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 1);
+                return;
+            }
+            HasTriggered = false;
+        }
+        public override void OnSuccessAttack(BattleDiceBehavior behavior)
+        {
+            if(behavior != null && behavior.card != null && behavior.card.target != null && behavior.card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 3)
+            {
+                _owner.RecoverHP(2);
+            }
+        }
+
+        public override void AfterRecoverHp(int v)
+        {
+            HasTriggered = true;
+        }
+
+    }
+    //血铠
+    public class BattleUnitBuf_BloodArmor : BattleUnitBuf_Don_Eyuil
+    {
+        protected override string keywordId => "BattleUnitBuf_BloodArmor";
+        public static string Desc = "这一幕中受到的伤害与混乱伤害减少{0}×20%";
+        public BattleUnitBuf_BloodArmor(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血甲"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+        public override int GetBreakDamageReductionRate()
+        {
+            return 20 * stack;
+        }
+        public override int GetDamageReductionRate()
+        {
+            return 20 * stack;
+        }
+    }
     //血甲护盾
     public class BattleUnitBuf_BloodShield : BattleUnitBuf_Don_Eyuil
     {

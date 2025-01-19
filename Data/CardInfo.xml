@@ -765,9 +765,10 @@
     <Script>selfbleeding2</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_02" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_02" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1627,6 +1628,30 @@
     <Rarity>Uncommon</Rarity>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
     <Script></Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="5" Dice="9" Type="Standby" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Standby" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <SpecialEffect />
+    <SkinChange />
+    <SkinChangeType>EGO</SkinChangeType>
+    <SkinHeight>0</SkinHeight>
+    <MapChange />
+    <Priority>0</Priority>
+    <PriorityScript />
+    <Category>None</Category>
+    <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
+    <MaxNum>150</MaxNum>
+  </Card>
+  <Card ID="67">
+    <Name>若能摆脱这可怖的疾病</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>DonEyuil_79</Script>
     <ScriptDesc />
     <BehaviourList>
       <Behaviour Min="5" Dice="9" Type="Standby" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />

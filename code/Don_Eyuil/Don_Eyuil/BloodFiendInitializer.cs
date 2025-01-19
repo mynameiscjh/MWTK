@@ -309,6 +309,14 @@ namespace Don_Eyuil
                 public static ActionDetail TKS_BL_S66 { get; internal set; }
             }
         }
+        public static string GetPassiveName(int id)
+        {
+            return Singleton<PassiveXmlList>.Instance.GetDataAll().Find((PassiveXmlInfo x) => x.id == new LorId(packageId, id)).name;
+        }
+        public static string GetPassiveDesc(int id)
+        {
+            return Singleton<PassiveXmlList>.Instance.GetDataAll().Find((PassiveXmlInfo x) => x.id == new LorId(packageId, id)).desc;
+        }
         private static FileInfo[] SafeGetFiles(string path)
         {
             try
@@ -435,9 +443,13 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
             harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
             harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
+
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterRecoverHpPatch));
+
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
             harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
@@ -552,6 +564,7 @@ namespace Don_Eyuil
         public static LorId Card_经典反击书页 = MyTools.Create(64);
         public static LorId Card_双剑反击闪避书页 = MyTools.Create(65);
         public static LorId Card_血伞反击 = MyTools.Create(66);
+        public static LorId Card_若能摆脱这可怖的疾病 = MyTools.Create(67);
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
     }
 

@@ -93,11 +93,17 @@
 可配合硬血术效果</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2_">
+    <BattleEffectText ID="BattleUnitBuf_FloodOfHunger">
       <Name>席卷而来的饥饿</Name>
       <Desc>击中"流血"不低于3的目标时恢复2点体力
 若一幕中没有恢复体力则失去20%的混乱抗性并获得1层"虚弱"
 获得15点正面情感后移除本效果</Desc>
+    </BattleEffectText>
+
+
+    <BattleEffectText ID="BattleUnitBuf_BloodArmor">
+      <Name>血铠</Name>
+      <Desc>这一幕中受到的伤害与混乱伤害减少{0}×20%</Desc>
     </BattleEffectText>
 
     <BattleEffectText ID="TheDetermination2__">

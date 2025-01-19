@@ -269,7 +269,15 @@ namespace Don_Eyuil
             BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(target, target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding));
         }
     }
-
+    public class DiceCardAbility_DonEyuil_31 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]将自身的[流血]转移至目标";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            target.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, owner.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding));
+            owner.bufListDetail.RemoveBufAll(KeywordBuf.Bleeding);
+        }
+    }
     public class DiceCardAbility_DonEyuil_33 : RedDiceCardAbility
     {
         public static string Desc = "[拼点胜利]摧毁目标书页所有骰子[命中时]施加2层[流血](重复触发3次)";
@@ -283,6 +291,49 @@ namespace Don_Eyuil
             for (int i = 0; i < 3; i++)
             {
                 target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 2, owner);
+            }
+        }
+    }
+    public class DiceCardAbility_DonEyuil_37 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]下一幕对自身施加3层[流血]";
+        public override void OnSucceedAttack()
+        {
+            owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3,owner);
+        }
+    }
+    public class DiceCardAbility_DonEyuil_41 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]使目标这一幕获得[流血]时层数+1";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            BattleUnitBuf_HardBloodBleedingAddition.GainBuf<BattleUnitBuf_HardBloodBleedingAddition>(target, 1);
+        }
+        public class BattleUnitBuf_HardBloodBleedingAddition : BattleUnitBuf_Don_Eyuil
+        {
+            public BattleUnitBuf_HardBloodBleedingAddition(BattleUnitModel model) : base(model) { }
+            public override void OnRoundEnd()
+            {
+                this.Destroy();
+            }
+            public override void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
+            {
+                if(BufType == KeywordBuf.Bleeding)
+                {
+                    Stack += 1;
+                }
+            }
+        }
+    }
+    public class DiceCardAbility_DonEyuil_42 : DiceCardAbilityBase
+    {
+        public static string Desc = "[拼点胜利]对目标施加3层[流血]与[血晶荆棘]";
+        public override void OnWinParrying()
+        {
+            if (card != null && card.target != null)
+            {
+                card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3, owner);
+                BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(card.target, 3);
             }
         }
     }

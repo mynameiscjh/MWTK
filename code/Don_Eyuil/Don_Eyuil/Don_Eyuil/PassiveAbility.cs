@@ -12,6 +12,8 @@ using Don_Eyuil.Buff;
 using static Don_Eyuil.PassiveAbility_DonEyuil_01;
 using static Don_Eyuil.PassiveAbility_DonEyuil_02.HardBloodArtPair;
 using static UnityEngine.UI.GridLayoutGroup;
+using UI;
+using static Don_Eyuil.PassiveAbility_DonEyuil_07;
 namespace Don_Eyuil
 {
     public class PassiveAbility_DonEyuil_01 : PassiveAbilityBase
@@ -41,9 +43,10 @@ namespace Don_Eyuil
             第五幕：速度骰子×4  4种决斗书页)
         */
         public static int Phase = 1;
+        public static int Phase2Round = 0;
         public override void OnWaveStart()
         {
-            Phase = 1;
+            Phase = 1; Phase2Round = 0;
         }
         public override int GetMinHp()
         {
@@ -79,11 +82,30 @@ namespace Don_Eyuil
                     }
                     owner.passiveDetail.DestroyPassive(APassive02);
                 }
+                owner.bufListDetail.GetActivatedBufList().DoIf(x => x.positiveType == BufPositiveType.Negative, y => y.Destroy());
+                if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                {
+                    this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                }
+                this.owner.breakDetail.nextTurnBreak = false;
+                this.owner.breakDetail.RecoverBreakLife(1, false);
+                this.owner.breakDetail.RecoverBreak(this.owner.breakDetail.GetDefaultBreakGauge());
+                BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(owner, 500);
+                owner.passiveDetail.AddPassive(MyTools.Create(6));
+                owner.passiveDetail.AddPassive(MyTools.Create(7));
+                owner.passiveDetail.AddPassive(MyTools.Create(8));
+            }
+            if(Phase == 2 && BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(owner)<=0)
+            {
+                Phase = 3;
+                owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_06));
+                owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_07));
+                owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_08));
+                owner.passiveDetail.AddPassive(MyTools.Create(9));
             }
         }
         public override int SpeedDiceNumAdder()
         {
-
             int EmotionOffest = (owner.emotionDetail.EmotionLevel >= 4) ? -1 : 0;
             if(Phase == 1)
             {
@@ -96,7 +118,16 @@ namespace Don_Eyuil
                     }
                     if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { return 2 + EmotionOffest; }
                     if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { return 4 + EmotionOffest; }
-                    return 5 + Math.Min(4, Singleton<StageController>.Instance.RoundTurn / 2);
+                    return 5 + Math.Min(4, Singleton<StageController>.Instance.RoundTurn / 2) + EmotionOffest;
+                }
+            }
+            if(Phase == 2)
+            {
+                switch(Phase2Round)
+                {
+                    case 1: return 4 + EmotionOffest;
+                    case 2: return 6 + EmotionOffest;
+                    case 3: return 7 + EmotionOffest;
                 }
             }
             return 0;
@@ -141,8 +172,50 @@ namespace Don_Eyuil
                     }
                     AddNewCard(MyId.Card_血之宝库_1, 200);
                     i = 0;
-
                 }
+            }
+            if(Phase == 2)
+            {
+                /*二阶段：开幕清空自身负面状态并恢复所有混乱抗性, 不再切换硬血术状态
+                    第一幕：速度骰子×5 为仍在饥渴中的家人设下的晚宴 必须担负的责任 硬血截断 血之宝库 血之宝库
+                    第二幕：速度骰子×7 若能摆脱这可怖的疾病 必须担负的责任 这绝非理想中的共存...旋转!绽放吧!! 凝血化锋 硬血截断 血之宝库
+                    第三幕：速度骰子×8 必须担负的责任 若能摆脱这可怖的疾病 这绝非理想中的共存...这绝非理想中的共存...血如泉涌 血如泉涌 凝血化锋 血之宝库
+                */
+                if (Phase2Round > 2)//0 1 2 Pass 3 -> 0
+                {
+                    Phase2Round = 0;
+                }
+                Phase2Round++;//0 1 2 -> 1 2 3
+                switch(Phase2Round)
+                {
+                    case 1:
+                        AddNewCard(MyId.Card_为仍在饥渴中的家人设下的晚宴, 999);
+                        AddNewCard(MyId.Card_必须担负的责任, 999);
+                        AddNewCard(MyId.Card_硬血截断_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                    break;
+                    case 2:
+                        AddNewCard(MyId.Card_若能摆脱这可怖的疾病, 999);
+                        AddNewCard(MyId.Card_必须担负的责任, 999);
+                        AddNewCard(MyId.Card_这绝非理想中的共存, 999);
+                        AddNewCard(MyId.Card_旋转_绽放把_1, 999);
+                        AddNewCard(MyId.Card_凝血化锋_2, 999);
+                        AddNewCard(MyId.Card_硬血截断_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                    break;
+                    case 3:
+                        AddNewCard(MyId.Card_必须担负的责任, 999);
+                        AddNewCard(MyId.Card_若能摆脱这可怖的疾病, 999);
+                        AddNewCard(MyId.Card_这绝非理想中的共存, 999);
+                        AddNewCard(MyId.Card_这绝非理想中的共存, 999);
+                        AddNewCard(MyId.Card_血如泉涌_1, 999);
+                        AddNewCard(MyId.Card_血如泉涌_1, 999);
+                        AddNewCard(MyId.Card_凝血化锋_2, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                    break;
+                }
+
             }
         }
     }
@@ -672,13 +745,13 @@ namespace Don_Eyuil
     public class PassiveAbility_DonEyuil_03 : PassiveAbilityBase
     {
         //埃尤尔之血
-        public override string debugDesc => "拼点时目标与自身每有3层流血便使自身所有骰子威力+1(至多+3)\r\n命中目标时恢复等同于自身骰子最终值的体力";
+        public override string debugDesc => "拼点时目标与自身每有2层流血便使自身所有骰子威力+1(至多+3)\r\n命中目标时恢复等同于自身骰子最终值的体力";
 
         public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
         {
             card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
             {
-                power = Math.Min((owner.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) + card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding)) / 3  ,3)
+                power = Math.Min((owner.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) + card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding)) / 2  ,3)
             });
         }
         public override void OnSucceedAreaAttack(BattleDiceBehavior behavior, BattleUnitModel target)
@@ -742,6 +815,59 @@ namespace Don_Eyuil
             }
         }
     }
+    public class PassiveAbility_DonEyuil_06 : PassiveAbilityBase
+    {
+        //萦绕家族的疾病
+        public override string debugDesc => "使所有敌方角色获得\"席卷而来的饥饿\"";
+        public override void OnCreated()
+        {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_FloodOfHunger.GetOrAddBuf<BattleUnitBuf_FloodOfHunger>(x));
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(6);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(6);
+        }
+    }
+    public class PassiveAbility_DonEyuil_07 : PassiveAbilityBase
+    {
+        //若家人也能找到梦想
+        public override string debugDesc => "拥有觉醒书页的角色获得的正面情感翻倍\r\n场上角色解除\"席卷而来的饥饿\"时将永久获得1层\"强壮\"与3层\"振奋\"";
+        public override void OnCreated()
+        {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_FloodOfHunger.GetOrAddBuf<BattleUnitBuf_MayYouFindDream>(x));
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(7);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(7);
+        }
+        public override void OnDestroyed()
+        {
+            BattleUnitBuf_MayYouFindDream.RemoveBuf<BattleUnitBuf_MayYouFindDream>(owner);
+        }
 
+        public class BattleUnitBuf_MayYouFindDream : BattleUnitBuf_Don_Eyuil
+        {
+            public BattleUnitBuf_MayYouFindDream(BattleUnitModel model):base(model) { }
+            public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+            {
+                if (CoinType == EmotionCoinType.Positive && _owner.emotionDetail.GetSelectedCardList().Find(x => x.XmlInfo.State == MentalState.Positive) != null)
+                {
+                    Count *= 2;
+                }
+            }
+        }
+    }
+    public class PassiveAbility_DonEyuil_08 : PassiveAbilityBase
+    {
+        //无法舍弃的责任
+        public override string debugDesc => "每幕开始时获得等同于场上拥有\"席卷而来的饥饿\"角色数的\"血铠\"\r\n若场上仍有角色处于\"席卷而来的饥饿\"状态则自身无法陷入混乱\r\n护盾消耗完后一幕移除本阶段被动并获得新的被动于行动逻辑\r\n体力无法低于400";
+        public override void OnCreated()
+        {
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(8);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(8);
+        }
+        public override void OnRoundStartAfter()
+        {
+            BattleUnitBuf_BloodArmor.GainBuf<BattleUnitBuf_BloodArmor>(owner, BattleUnitBuf_FloodOfHunger.GetAllUnitWithBuf<BattleUnitBuf_FloodOfHunger>().Count);
+        }
+        public override bool isStraighten => BattleUnitBuf_FloodOfHunger.GetAllUnitWithBuf<BattleUnitBuf_FloodOfHunger>().Count > 0; 
+
+    }
 
 }

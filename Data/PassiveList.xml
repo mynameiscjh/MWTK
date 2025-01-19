@@ -40,7 +40,7 @@
     <Cost>0</Cost>
     <Script>DonEyuil_03</Script>
     <Name>埃尤尔之血</Name>
-    <Desc>拼点时目标与自身每有3层流血便使自身所有骰子威力+1(至多+3)
+    <Desc>拼点时目标与自身每有2层流血便使自身所有骰子威力+1(至多+3)
 命中目标时恢复等同于自身骰子最终值的体力</Desc>
   </Passive>
   <Passive ID="4">

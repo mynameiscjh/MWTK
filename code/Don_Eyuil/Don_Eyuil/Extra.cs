@@ -1,9 +1,11 @@
 ﻿using HarmonyLib;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Don_Eyuil
 {
@@ -201,6 +203,62 @@ namespace Don_Eyuil
 
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
+        public virtual void AfterRecoverHp(int v)
+        {
+
+        }
+        public class AfterRecoverHpPatch
+        {
+            [HarmonyPatch(typeof(BattleUnitModel), "RecoverHP")]
+            [HarmonyPostfix]
+            public static void BattleUnitModel_RecoverHP_Post(BattleUnitModel __instance,int v)
+            {
+                __instance.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterRecoverHp(v));
+            }
+        }
+        public virtual void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+        {
+
+        }
+        public class BeforeAddEmotionCoinPatch
+        {
+            public static void Trigger_CreateEmotionCoin_Before(BattleUnitEmotionDetail Detail,EmotionCoinType CoinType, ref int Count)
+            {
+                var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
+                if(Model != null)
+                {
+                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                    {
+                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                        {
+                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddEmotionCoin(CoinType, ref Count);
+                        }
+                    }
+                }
+            }
+            [HarmonyPatch(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")]
+            [HarmonyTranspiler]
+            public static IEnumerable<CodeInstruction> BattleUnitEmotionDetail_CreateEmotionCoin_Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                Label? L ;
+                for (int i = 1; i < codes.Count; i++)
+                {
+                    if (codes[i].opcode == OpCodes.Call && codes[i].operand.ToString().Contains("get_MaximumEmotionLevel") && codes[i + 1].Branches(out L))
+                    {
+                        codes.InsertRange(codes.FindIndex((CodeInstruction code) => code.labels.Contains(L.Value)),new List<CodeInstruction>()
+                        { 
+                            new CodeInstruction(OpCodes.Ldarg_0),
+                            new CodeInstruction(OpCodes.Ldarg_1),
+                            new CodeInstruction(OpCodes.Ldarga_S,2),
+                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddEmotionCoinPatch),"Trigger_CreateEmotionCoin_Before")),
+                        });
+                      
+                    }
+                }
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
         public virtual void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
         {
 
@@ -285,7 +343,14 @@ namespace Don_Eyuil
             }
         }
 
+        public virtual void AfterTakeBleedingDamage(int Dmg)
+        {
 
+        }
+        public virtual void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit, int Dmg)
+        {
+
+        }
         public class OnTakeBleedingDamagePatch
         {
             public static void Trigger_BleedingDmg_After(BattleUnitModel Model, int dmg, KeywordBuf keyword)
@@ -321,14 +386,7 @@ namespace Don_Eyuil
             }
         }
 
-        public virtual void AfterTakeBleedingDamage(int Dmg)
-        {
 
-        }
-        public virtual void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit, int Dmg)
-        {
-
-        }
         public virtual int GetMaxStack() => -1;
         public virtual void Add(int stack)
         {
@@ -347,6 +405,21 @@ namespace Don_Eyuil
         {
             this._owner = model;
         }
+        public static List<BattleUnitModel> GetAllUnitWithBuf<T>(Faction? Faction = null,BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
+        {
+            List<BattleUnitModel> UnitList = Faction.HasValue? BattleObjectManager.instance.GetAliveList(Faction.Value): BattleObjectManager.instance.GetAliveList();
+            List<BattleUnitModel> ResultList = new List<BattleUnitModel>() { };
+            foreach (BattleUnitModel model in UnitList)
+            {
+                T BuffInstance = GetBuf<T>(model, ReadyType);
+                if (BuffInstance != null)
+                {
+                    ResultList.Add(model);
+                }
+            }
+            return ResultList;
+        }
+
         public static bool UseBuf<T>(BattleUnitModel model, int stack) where T : BattleUnitBuf_Don_Eyuil
         {
             T BuffInstance = GetOrAddBuf<T>(model,BufReadyType.ThisRound);
