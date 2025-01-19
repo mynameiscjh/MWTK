@@ -26,7 +26,8 @@
     <Cost>0</Cost>
     <Script>DonEyuil_02</Script>
     <Name>堂埃尤尔派硬血术</Name>
-    <Desc>自身将定期切换不同的硬血术状态并获得不同效果与书页</Desc>
+    <Desc>自身将定期切换不同的硬血术状态并获得不同效果与书页
+命中时对目标施加2层流血</Desc>
   </Passive>
   <Passive ID="3">
     <Negative>false</Negative>

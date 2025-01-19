@@ -184,6 +184,10 @@ namespace Don_Eyuil
         public static string Desc = "本书页命中目标时将使自身获得10点护盾\r\n[使用后]结束本幕";
         public override void OnSucceedAreaAttack(BattleUnitModel target)
         {
+            if(target != null)
+            {
+                BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(owner, 10);
+            }
             
         }
         public override void OnEndAreaAttack()
@@ -211,7 +215,17 @@ namespace Don_Eyuil
             }
         }
     }
-
+    public class DiceCardSelfAbility_DonEyuil_32 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "本书页将同时命中所有敌方角色\r\n拼点失败时本书页依旧将击中目标但只施加[流血]\r\n";
+        public override void OnSucceedAttack(BattleDiceBehavior behavior)
+        {
+            foreach (var item in BattleObjectManager.instance.GetAliveList_opponent(owner.faction))
+            {
+                DiceCardSelfAbility_DonEyuil_01.GiveDamageForSubTarget(behavior, item);
+            }
+        }
+    }
 
     public class DiceCardSelfAbility_DonEyuil_77 : DiceCardSelfAbilityBase
     {

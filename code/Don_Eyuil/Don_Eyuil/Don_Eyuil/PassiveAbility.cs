@@ -24,7 +24,7 @@ namespace Don_Eyuil
             自身书页费用为0
             (一阶段：自第二幕起幕有25%概率进入血甲模式
             其余将随机进入血剑-血枪 血刃-双剑 血镰-血剑 血弓-随机 血鞭-血伞模式
-            初始5颗速度骰子每两幕增加一颗至多9颗
+            初始6颗速度骰子每两幕增加一颗至多9颗
             除血甲状态，最后一个骰子固定使用血之宝库其余骰子随机填入对应硬血术除大招外书页
             每3幕使用一次当前硬血术大招书页
             如果进入血甲状态则当幕速度骰子变为3颗并使用堂埃尤尔硬血术6式-血甲与两张血液凝结，下幕速度骰子变为5颗并使用硬血化铠×3 血之壁垒×2
@@ -68,7 +68,7 @@ namespace Don_Eyuil
                 }
                 if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { return 2 + EmotionOffest; }
                 if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { return 4 + EmotionOffest; }
-                return 4 + Math.Min(4,Singleton<StageController>.Instance.RoundTurn / 2);
+                return 5 + Math.Min(4,Singleton<StageController>.Instance.RoundTurn / 2);
             }
             return 0;
         }
@@ -498,6 +498,16 @@ namespace Don_Eyuil
             //自身被命中时对命中者施加2-3层"流血"
             public class BattleUnitBuf_HardBloodArt_BloodShield : BattleUnitBuf_HardBloodArt
             {
+                public override void OnRoundEnd()
+                {
+                    foreach (DiceBehaviour diceBehaviour in this._owner.cardSlotDetail.keepCard.GetDiceBehaviourXmlList())
+                    {
+                        if (diceBehaviour.Type == BehaviourType.Def)
+                        {
+                            BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(_owner, 10);
+                        }
+                    }
+                }
                 public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
                 {
                     if(atkDice != null && atkDice.card != null && atkDice.card.owner != null)
@@ -512,7 +522,19 @@ namespace Don_Eyuil
             }
         }
         //堂埃尤尔派硬血术
-        public override string debugDesc => "自身将定期切换不同的硬血术状态并获得不同效果与书页";
+
+        public override string debugDesc => "自身将定期切换不同的硬血术状态并获得不同效果与书页 命中时对目标施加2层流血";
+        public override void OnSucceedAreaAttack(BattleDiceBehavior behavior, BattleUnitModel target)
+        {
+            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Binding, 2, owner);
+        }
+        public override void OnSucceedAttack(BattleDiceBehavior behavior)
+        {
+            if(behavior != null && behavior.card !=null && behavior.card.target != null)
+            {
+                behavior.card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding,2,owner);
+            }
+        }
 
         public HardBloodArtPair CurrentArtPair;
         public HardBloodArtPair SelectHardBloodArt(HardBloodArtPair LatestArtPair)

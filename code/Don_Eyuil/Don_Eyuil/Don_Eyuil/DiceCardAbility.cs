@@ -172,20 +172,21 @@ namespace Don_Eyuil
     {
         public static string Desc = "[命中时]恢复等同于造成伤害量的体力溢出部分将转化为等量护盾";
 
-        public static void AfterGiveDamage(BattleDiceBehavior behavior, int dmg)
+        public static int AfterGiveDamage(BattleDiceBehavior behavior, int dmg)
         {
-            if(behavior != null && behavior.abilityList.Exists(x => x is DiceCardAbility_DonEyuil_20))
+            if(behavior != null && behavior.abilityList.Exists(x => x is DiceCardAbility_DonEyuil_20) && behavior.owner != null)
             {
                 int losthp = behavior.owner.MaxHp - (int)behavior.owner.hp;
                 behavior.owner.RecoverHP(Math.Min(losthp, dmg));
                 if(dmg - losthp > 0)
                 {
                     //BattleUnitBuf_PhysicalShield.AddBuf(behavior.owner, dmg - losthp);
+                    BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(behavior.owner, dmg);
                 }
-
             }
+            return dmg;
         }
-        /*[HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
+        [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BattleDiceBehavior_GiveDamage_Tran(IEnumerable<CodeInstruction> instructions)
         {
@@ -199,7 +200,7 @@ namespace Don_Eyuil
             });
             return codes.AsEnumerable();
         }
-        */
+        
     }
     public class DiceCardAbility_DonEyuil_25 : DiceCardAbilityBase
     {
@@ -268,19 +269,8 @@ namespace Don_Eyuil
             BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(target, target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding));
         }
     }
-    public class DiceCardSelfAbility_DonEyuil_32 : DiceCardSelfAbilityBase
-    {
-        public static string Desc = "本书页将同时命中所有敌方角色\r\n拼点失败时本书页依旧将击中目标但只施加[流血]\r\n";
-        public override void OnSucceedAttack(BattleDiceBehavior behavior)
-        {
-            foreach (var item in BattleObjectManager.instance.GetAliveList_opponent(owner.faction))
-            {
-                DiceCardSelfAbility_DonEyuil_01.GiveDamageForSubTarget(behavior, item);
-            }
-        }
-    }
 
-    public class DiceCardAbility_DonEyuil_33 : DiceCardAbilityBase
+    public class DiceCardAbility_DonEyuil_33 : RedDiceCardAbility
     {
         public static string Desc = "[拼点胜利]摧毁目标书页所有骰子[命中时]施加2层[流血](重复触发3次)";
 
