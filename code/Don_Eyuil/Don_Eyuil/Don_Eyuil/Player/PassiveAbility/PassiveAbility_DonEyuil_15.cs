@@ -109,17 +109,31 @@ namespace Don_Eyuil.PassiveAbility
         [HarmonyPostfix]
         public static void UILibrarianEquipInfoSlot_SetData_Post(BookPassiveInfo passive, Image ___Frame, TextMeshProUGUI ___txt_cost)
         {
-            if (passive == null || passive.passive.id != MyTools.Create(15))
+            if (passive == null)
             {
                 return;
             }
-            ___Frame.color = Color.red;
-            ___txt_cost.text = "";
-            GameObject gameObject = new GameObject("摩天轮");
-            gameObject.transform.parent = ___txt_cost.transform;
-            gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-            gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-            gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
+            if (passive.passive.id == MyTools.Create(15))
+            {
+                ___Frame.color = Color.red;
+                ___txt_cost.text = "";
+                GameObject gameObject = new GameObject("摩天轮");
+                gameObject.transform.parent = ___txt_cost.transform;
+                gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+                gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
+            }
+            if (passive.passive.id == MyTools.Create(1))
+            {
+                ___Frame.color = Color.red;
+                ___txt_cost.text = "";
+                GameObject gameObject = new GameObject("摩天轮");
+                gameObject.transform.parent = ___txt_cost.transform;
+                gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+                gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
+            }
+
         }
 
         public enum DeckId
