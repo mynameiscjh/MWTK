@@ -115,11 +115,6 @@ namespace Don_Eyuil.PassiveAbility
             }
             ___Frame.color = Color.red;
             ___txt_cost.text = "";
-            GameObject gameObject = new GameObject("摩天轮");
-            gameObject.transform.parent = ___txt_cost.transform;
-            gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-            gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-            gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
         }
 
         public enum DeckId

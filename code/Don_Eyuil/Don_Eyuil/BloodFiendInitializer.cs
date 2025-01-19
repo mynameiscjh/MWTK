@@ -181,6 +181,25 @@ namespace Don_Eyuil
 
         }
     }
+    [HarmonyPatch]
+    public class TKS_BloodFiend_PatchMethods_PassiveUI
+    {
+        [HarmonyPatch(typeof(UILibrarianEquipInfoSlot), "SetData")]
+        [HarmonyPostfix]
+        public static void UILibrarianEquipInfoSlot_SetData_Post(BookPassiveInfo passive, Image ___Frame, TextMeshProUGUI ___txt_cost)
+        {
+            if (passive != null && passive.passive.id == MyTools.Create(1))
+            {
+                ___txt_cost.text = "";
+                GameObject gameObject = new GameObject("摩天轮");
+                gameObject.transform.parent = ___txt_cost.transform;
+                gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+                gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
+            }
+
+        }
+    }
     public class TKS_BloodFiend_Initializer : ModInitializer
     {
         public static string packageId = "Don_Eyuil";
@@ -394,6 +413,8 @@ namespace Don_Eyuil
             Harmony harmony = new Harmony(packageId);
             harmony.PatchAll();
             harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
