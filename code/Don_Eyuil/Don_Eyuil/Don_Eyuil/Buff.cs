@@ -7,24 +7,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using static BattleCharacterProfile.BattleCharacterProfileUI;
 using UnityEngine.UI;
+using static BattleCharacterProfile.BattleCharacterProfileUI;
 
 namespace Don_Eyuil
 {
     //硬血结晶
-    public class BattleUnitBuf_HardBlood_Crystal: BattleUnitBuf_Don_Eyuil
+    public class BattleUnitBuf_HardBlood_Crystal : BattleUnitBuf_Don_Eyuil
     {
         //至多30层
         //可配合硬血术效果
+        protected override string keywordId => "BattleUnitBuf_HardBlood_Crystal";
         public override int GetMaxStack() => 30;
         public BattleUnitBuf_HardBlood_Crystal(BattleUnitModel model) : base(model)
         {
-            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this,TKS_BloodFiend_Initializer.ArtWorks["硬血结晶"]);
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["硬血结晶"]);
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
             this.stack = 0;
         }
@@ -37,6 +36,8 @@ namespace Don_Eyuil
         {
             this.Destroy();
         }
+
+        protected override string keywordId => "BattleUnitBuf_UncondensableBlood";
 
         public static void UncodensableBloodCheck(BattleUnitBuf BleedingBuf)
         {
@@ -71,6 +72,9 @@ namespace Don_Eyuil
     public class BattleUnitBuf_WarmBloodLance : BattleUnitBuf_Don_Eyuil
     {
         //自身这一幕施加的"流血"翻倍
+
+        protected override string keywordId => "BattleUnitBuf_WarmBloodLance";
+
         public override int GetMultiplierOnGiveKeywordBufByCard(BattleUnitBuf cardBuf, BattleUnitModel target)
         {
             return cardBuf.bufType == KeywordBuf.Bleeding ? 2 : 1;
@@ -114,6 +118,9 @@ namespace Don_Eyuil
     public class BattleUnitBuf_BloodCrystalThorn : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc = "投掷骰子时使自身在下一幕中获得1层[流血](每幕至多触发x次) 自身速度降低x/2 每幕结束时层数减半";
+
+        protected override string keywordId => "BattleUnitBuf_BloodCrystalThorn";
+
         public BattleUnitBuf_BloodCrystalThorn(BattleUnitModel model) : base(model)
         {
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["血晶荆棘"]);
@@ -124,7 +131,7 @@ namespace Don_Eyuil
         public override void OnRollDice(BattleDiceBehavior behavior)
         {
             TriggeredOnRollDiceCount++;
-            if(TriggeredOnRollDiceCount <= this.stack)
+            if (TriggeredOnRollDiceCount <= this.stack)
             {
                 _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 1);
             }
@@ -147,6 +154,9 @@ namespace Don_Eyuil
     public class BattleUnitBuf_BloodTide : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc = "所有敌方角色被施加\"流血\"时层数+x\r\n自身对处于流血状态的敌方角色造成的伤害与混乱伤害x×10%";
+
+        protected override string keywordId => "BattleUnitBuf_BloodTide";
+
         public BattleUnitBuf_BloodTide(BattleUnitModel model) : base(model)
         {
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["汹涌的血潮"]);
@@ -155,14 +165,14 @@ namespace Don_Eyuil
         }
         public override void BeforeOtherUnitAddKeywordBuf(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
         {
-            if(bufType == KeywordBuf.Bleeding && Target.faction != _owner.faction )
+            if (bufType == KeywordBuf.Bleeding && Target.faction != _owner.faction)
             {
                 Stack += this.stack;
             }
         }
         public override void BeforeGiveDamage(BattleDiceBehavior behavior)
         {
-            if(behavior != null && behavior.card!=null && behavior.card.target != null)
+            if (behavior != null && behavior.card != null && behavior.card.target != null)
             {
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
@@ -279,7 +289,7 @@ namespace Don_Eyuil
             bool activeInHierarchy = this._owner.view.unitBottomStatUI.gameObject.activeInHierarchy;
             if (activeInHierarchy)
             {
-                this.shieldText.text = targetstack <= 0 ? string.Empty: targetstack.ToString();
+                this.shieldText.text = targetstack <= 0 ? string.Empty : targetstack.ToString();
                 this._owner.view.unitBottomStatUI.StartCoroutine(this.ShieldBarAnimationRoutine(targetstack));
             }
             if (this.shieldBarUIGameObject1 == null && this.shieldBarUIGameObject2 == null && this.shieldBarUIGameObject3 == null && this.shieldTextUIGameObject == null)

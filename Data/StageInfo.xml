@@ -26,4 +26,30 @@
     <IsChapterLast>false</IsChapterLast>
     <invitationtype>false</invitationtype>
   </Stage>
+  <Stage id="2">
+    <Name>测试</Name>
+    <Wave>
+      <Unit>1</Unit>
+      <Formation>1</Formation>
+      <FormationType>Default</FormationType>
+      <AvailableUnit>5</AvailableUnit>
+      <emotionCardList />
+    </Wave>
+    <StageType>Invitation</StageType>
+    <FloorNum>1</FloorNum>
+    <Chapter>7</Chapter>
+    <Invitation Combine="BookRecipe">
+      <Book Pid="@origin">260003</Book>
+      <Value>0</Value>
+      <Num>1</Num>
+    </Invitation>
+    <Condition>
+      <Level>0</Level>
+    </Condition>
+    <StoryType>Don_Eyuil</StoryType>
+    <Story Condition="Start">Button</Story>
+    <Story Condition="End" />
+    <IsChapterLast>false</IsChapterLast>
+    <invitationtype>false</invitationtype>
+  </Stage>
 </StageXmlRoot>

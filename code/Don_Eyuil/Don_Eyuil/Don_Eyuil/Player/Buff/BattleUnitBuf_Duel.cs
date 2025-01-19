@@ -1,4 +1,6 @@
-﻿namespace Don_Eyuil.Buff
+﻿using HarmonyLib;
+
+namespace Don_Eyuil.Buff
 {
     public class BattleUnitBuf_Duel : BattleUnitBuf_Don_Eyuil
     {
@@ -6,7 +8,12 @@
 
         public BattleUnitBuf_Duel(BattleUnitModel model) : base(model)
         {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["光荣的决斗"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
         }
+
+        protected override string keywordId => "BattleUnitBuf_Duel";
 
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {

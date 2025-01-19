@@ -2,25 +2,20 @@
 using EnumExtenderV2;
 using HarmonyLib;
 using LOR_DiceSystem;
+using LOR_XML;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
-using UnityEngine;
 //using Workshop;
-using System.Runtime.CompilerServices;
-using System.Security.Policy;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
-using LOR_XML;
-using Mod;
-using StoryScene;
 using TMPro;
 using UI;
+using UnityEngine;
 using UnityEngine.UI;
-using System.Reflection.Emit;
 
 namespace Don_Eyuil
 {
@@ -354,7 +349,26 @@ namespace Don_Eyuil
                         }
                     }
                 }
+                void LoadEffectTexts()
+                {
+                    var dic = Singleton<BattleEffectTextsXmlList>.Instance.GetFieldValue<Dictionary<string, BattleEffectText>>("_dictionary");
+                    var dir = new DirectoryInfo(DllPath + "/Localize/" + language + "/EffectTexts");
+                    var files = dir.GetFiles();
+                    foreach (System.IO.FileInfo file in files)
+                    {
+                        using (StringReader stringReader = new StringReader(File.ReadAllText(file.FullName)))
+                        {
+                            BattleEffectTextRoot battleEffectTextRoot =
+                                (BattleEffectTextRoot)new XmlSerializer(typeof(BattleEffectTextRoot)).Deserialize(stringReader);
+                            foreach (BattleEffectText battleEffectText in battleEffectTextRoot.effectTextList)
+                            {
+                                dic.Add(battleEffectText.ID, battleEffectText);
+                            }
+                        }
+                    }
+                }
                 LoadLocalize_BattleCardAbilities();
+                LoadEffectTexts();
             }
             void LoadCustomSkin(string path)
             {
@@ -402,7 +416,7 @@ namespace Don_Eyuil
                     TKS_BloodFiend_Initializer.ArtWorks[fileNameWithoutExtension] = value;
                 }
             }
-            
+
             LoadCustomSkin(Path.Combine(DllPath, "..", "Resource\\CharacterSkin"));
             LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
             LoadLocalize();
@@ -421,6 +435,8 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             harmony.PatchAll(typeof(RedDiceCardAbility));
+            harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
+            harmony.PatchAll(typeof(Story_FerrisWheel));
             // harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
             TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
@@ -530,6 +546,158 @@ namespace Don_Eyuil
         public static LorId Card_双剑反击闪避书页 = MyTools.Create(65);
         public static LorId Card_血伞反击 = MyTools.Create(66);
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
+        public static LorId Stage_埃尤尔 = MyTools.Create(1);
+        public static LorId Stage_测试 = MyTools.Create(2);
+    }
+
+
+    public static class Story_FerrisWheel
+    {
+        public static bool isInit = false;
+        public static GameObject Icons_FerrisWheel = null;
+        public static GameObject Phase_FerrisWheel = null;
+        [HarmonyPatch(typeof(UIStoryProgressPanel), "SetStoryLine")]
+        [HarmonyPostfix]
+        public static void UIStoryProgressPanel_SetStoryLine_Post(UIStoryProgressPanel __instance)
+        {
+            if (isInit)
+            {
+                return;
+            }
+            var list = __instance.GetFieldValue<List<UIStoryProgressIconSlot>>("iconList");
+            var temp = list.Find((UIStoryProgressIconSlot x) => x.currentStory == UIStoryLine.HanaAssociation);
+            var icons = temp.transform.parent.parent.gameObject;
+            Icons_FerrisWheel = UnityEngine.Object.Instantiate(icons, icons.transform.parent);
+            Icons_FerrisWheel.name = "..D";
+            for (int i = 0; i < Icons_FerrisWheel.transform.childCount; i++)
+            {
+                if (i == 3)
+                {
+                    Phase_FerrisWheel = Icons_FerrisWheel.transform.GetChild(3).gameObject;
+                    continue;
+                }
+                UnityEngine.Object.Destroy(Icons_FerrisWheel.transform.GetChild(i).gameObject);
+            }
+            Phase_FerrisWheel.name = "TK";
+            foreach (Transform child in Phase_FerrisWheel.GetComponentsInChildren<Transform>())
+            {
+                if (child.gameObject == Phase_FerrisWheel)
+                {
+                    continue;
+                }
+                UnityEngine.Object.Destroy(child.gameObject);
+            }
+
+            GameObject ferrisWheel = new GameObject("摩天轮");
+            ferrisWheel.transform.parent = icons.transform;
+            ferrisWheel.transform.localPosition = new Vector3(652.9309f, 6645f, 0f);
+            var image = ferrisWheel.AddComponent<Image>();
+            image.sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮_BIG"];
+            var button = ferrisWheel.AddComponent<Button>();
+            button.targetGraphic = image;
+            button.onClick.AddListener(new UnityEngine.Events.UnityAction(() =>
+            {
+                if (icons.transform.parent.GetChild(0).gameObject.activeSelf)
+                {
+                    for (int i = 0; i < icons.transform.childCount; i++)
+                    {
+                        if (icons.transform.GetChild(i).gameObject == ferrisWheel)
+                        {
+                            continue;
+                        }
+                        icons.transform.GetChild(i).gameObject.SetActive(false);
+                    }
+                    icons.transform.parent.GetChild(0).gameObject.SetActive(false);
+                    Icons_FerrisWheel.SetActive(true);
+                }
+                else
+                {
+                    for (int i = 0; i < icons.transform.childCount; i++)
+                    {
+                        if (icons.transform.GetChild(i).gameObject == ferrisWheel)
+                        {
+                            continue;
+                        }
+                        icons.transform.GetChild(i).gameObject.SetActive(true);
+                    }
+                    icons.transform.parent.GetChild(0).gameObject.SetActive(true);
+                    Icons_FerrisWheel.SetActive(false);
+                }
+            }));
+
+            var testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+            testS.name = "139";
+            testS.currentStory = UIStoryLine.HanaAssociation;
+            testS.Initialized(__instance);
+            testS.transform.localPosition = new Vector3(652.9309f, 6645f, 0f);
+            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("Don_Eyuil", new UIIconManager.IconSet
+            {
+                icon = TKS_BloodFiend_Initializer.ArtWorks["Don_Eyuil"],
+                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["Don_Eyuil"],
+                colorGlow = new Color(1, 1, 1, 1),
+                color = new Color(1, 1, 1, 1),
+                type = ""
+            });
+            testS.SetSlotData(new List<StageClassInfo>()
+            {
+                Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
+            });
+            testS.gameObject.AddComponent<Roll>().Init(new Vector3(652.9309f, 6545f, 0f), 100);
+            Icons_FerrisWheel.SetActive(false);
+            isInit = true;
+
+        }
+
+        public class Roll : MonoBehaviour
+        {
+            public Vector2 point; // 旋转中心的坐标
+            public float R;
+
+            public void Init(Vector2 point, float r)
+            {
+                this.point = point;
+                this.R = r;
+            }
+
+            public List<Vector2> points = new List<Vector2>();
+            public int index = 0;
+            void Start()
+            {
+                float count = 360;
+                float a = 360 / count;
+                for (int i = 0; i < count; i++)
+                {
+                    points.Add(new Vector2(Mathf.Cos(a * i * Mathf.Deg2Rad) * R + point.x, Mathf.Sin(a * i * Mathf.Deg2Rad) * R + point.y));
+                }
+                //StartCoroutine(GetEnumerator());
+            }
+            float time = 0.1f;
+            void Update()
+            {
+                time -= Time.deltaTime;
+                if (time > 0)
+                {
+                    return;
+                }
+                transform.localPosition = points[index];
+                index++;
+                index %= points.Count;
+                time = 0.1f;
+            }
+
+            IEnumerator GetEnumerator()
+            {
+                while (true)
+                {
+                    transform.localPosition = points[index];
+                    yield return new WaitForSeconds(0.1f);
+                    index++;
+                    index %= points.Count;
+                    yield return new WaitForSeconds(0.1f);
+                }
+            }
+        }
+
     }
 
 }

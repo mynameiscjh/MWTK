@@ -59,30 +59,30 @@
 下令战斗时若自身至少拥有6层"结晶硬血"则使自身获得一颗反击(突刺4-8)骰子</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_Flow">
+    <BattleEffectText ID="BattleUnitBuf_UncondensableBlood">
       <Name>无法凝结的血</Name>
       <Desc>自身流血无法低于2+{0}</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_Rifle">
+    <BattleEffectText ID="BattleUnitBuf_WarmBloodLance">
       <Name>热血尖枪</Name>
       <Desc>自身这一幕施加的"流血"翻倍</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_Tidewater">
+    <BattleEffectText ID="BattleUnitBuf_BloodTide">
       <Name>汹涌的血潮</Name>
       <Desc>所有敌方角色被施加"流血"时层数+{0}
 自身对处于流血状态的敌方角色造成的伤害与混乱伤害{0}×10%</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_Thistles">
+    <BattleEffectText ID="BattleUnitBuf_BloodCrystalThorn">
       <Name>血晶荆棘</Name>
       <Desc>投掷骰子时使自身在下一幕中获得1层[流血](每幕至多触发{0}次)
 自身速度降低{0}/2
 每幕结束时层数减半</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_BleedCrystal">
+    <BattleEffectText ID="BattleUnitBuf_HardBlood_Crystal">
       <Name>硬血结晶</Name>
       <Desc>至多30层
 可配合硬血术效果</Desc>
@@ -125,7 +125,7 @@
 若本幕结束时司书存活则接待胜利</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2_______">
+    <BattleEffectText ID="BattleUnitBuf_Duel">
       <Name>光荣的决斗</Name>
       <Desc>拼点时双方所有骰子威力+3
 拼点胜利的一方造成的伤害增加25%

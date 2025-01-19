@@ -3,6 +3,7 @@ using Don_Eyuil.Don_Eyuil.Buff;
 using Don_Eyuil.Don_Eyuil.Player.Buff;
 using HarmonyLib;
 using LOR_DiceSystem;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,15 +30,35 @@ namespace Don_Eyuil.PassiveAbility
             MyId.Card_堂埃尤尔派硬血术7式_血弓_2,
             MyId.Card_堂埃尤尔派硬血术8式_血鞭_2,
             MyId.Card_堂埃尤尔派硬血术9式_血伞_2,
-            MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2,
         };
+
+        public override void OnWaveStart()
+        {
+            owner.personalEgoDetail.AddCard(MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
+        }
+
+        bool fl0 = false;
+        bool fl2 = false;
+        bool fl4 = false;
 
         public override void OnRoundStart()
         {
-            if (owner.emotionDetail.EmotionLevel == 0 || owner.emotionDetail.EmotionLevel == 2 || owner.emotionDetail.EmotionLevel == 4 || (fl && owner.emotionDetail.EmotionLevel > 4))
+            if ((owner.emotionDetail.EmotionLevel == 0 && !fl0) || (owner.emotionDetail.EmotionLevel == 2 && !fl2) || (owner.emotionDetail.EmotionLevel == 4 && !fl4) || (fl && owner.emotionDetail.EmotionLevel > 4))
             {
                 ShowCards();
                 fl = false;
+                if (owner.emotionDetail.EmotionLevel == 0)
+                {
+                    fl0 = true;
+                }
+                if (owner.emotionDetail.EmotionLevel == 2)
+                {
+                    fl2 = true;
+                }
+                if (owner.emotionDetail.EmotionLevel == 4)
+                {
+                    fl4 = true;
+                }
             }
         }
 
@@ -85,6 +106,127 @@ namespace Don_Eyuil.PassiveAbility
                 BattleManagerUI.Instance.ui_levelup.InitEgo(3, new List<EmotionEgoXmlInfo>() { new EmotionEgoXmlInfo_Mod(temp1), new EmotionEgoXmlInfo_Mod(temp2), new EmotionEgoXmlInfo_Mod(temp3) });
                 //怀疑效果不是这么实现的 可能会出bug
             }
+        }
+
+        [HarmonyPatch(typeof(BattleUnitCardsInHandUI), "UpdateCardList")]
+        [HarmonyPrefix]
+        public static bool BattleUnitCardsInHandUI_UpdateCardList_Pre(BattleUnitCardsInHandUI.HandState ____handState, BattleUnitModel ____selectedUnit, BattleUnitModel ____hOveredUnit, BattleUnitCardsInHandUI __instance, ref float ____xInterval, List<BattleDiceCardUI> ____activatedCardList, List<BattleDiceCardUI> ____cardList)
+        {
+            if (!__instance.IsActivated())
+            {
+                return false;
+            }
+            List<BattleDiceCardModel> list = new List<BattleDiceCardModel>();
+            if (____handState == BattleUnitCardsInHandUI.HandState.BattleCard)
+            {
+                ____xInterval = 60f;
+                if (____selectedUnit != null)
+                {
+                    list = ____selectedUnit.allyCardDetail.GetHand();
+                }
+                else if (____hOveredUnit != null)
+                {
+                    list = ____hOveredUnit.allyCardDetail.GetHand();
+                }
+                if (list.Count >= 9)
+                {
+                    ____xInterval = ____xInterval * 8f / (float)list.Count;
+                }
+            }
+            else if (____handState == BattleUnitCardsInHandUI.HandState.EgoCard)
+            {
+                ____xInterval = 65f;
+                BattleUnitModel battleUnitModel = null;
+                if (____selectedUnit != null)
+                {
+                    battleUnitModel = ____selectedUnit;
+                }
+                else if (____hOveredUnit != null)
+                {
+                    battleUnitModel = ____hOveredUnit;
+                }
+                if (battleUnitModel != null && battleUnitModel.personalEgoDetail.ExistsCard())
+                {
+                    list = battleUnitModel.personalEgoDetail.GetHand();
+                }
+                if (battleUnitModel != null && battleUnitModel.Book.GetBookClassInfoId() != 250022 && battleUnitModel.Book.GetBookClassInfoId() != MyId.Book_堂_埃尤尔之页)
+                {
+                    list.AddRange(Singleton<SpecialCardListModel>.Instance.GetHand());
+                }
+                if (list.Count >= 9)
+                {
+                    ____xInterval = ____xInterval * 8f / (float)list.Count;
+                }
+            }
+            ____activatedCardList.Clear();
+            List<BattleDiceCardModel> list2 = list;
+            int num = 0;
+            while (num < list2.Count && num < ____cardList.Count)
+            {
+                ____cardList[num].gameObject.SetActive(true);
+                ____cardList[num].SetCard(list2[num], Array.Empty<BattleDiceCardUI.Option>());
+                ____cardList[num].SetDefault();
+                ____cardList[num].ResetSiblingIndex();
+                ____activatedCardList.Add(____cardList[num]);
+                num++;
+            }
+            for (int i = 0; i < ____activatedCardList.Count; i++)
+            {
+                Navigation navigation = default(Navigation);
+                navigation.mode = Navigation.Mode.Explicit;
+                if (i > 0)
+                {
+                    navigation.selectOnLeft = ____activatedCardList[i - 1].selectable;
+                }
+                else if (____activatedCardList.Count >= 2)
+                {
+                    navigation.selectOnLeft = ____activatedCardList[____activatedCardList.Count - 1].selectable;
+                }
+                else
+                {
+                    navigation.selectOnLeft = null;
+                }
+                if (i < ____activatedCardList.Count - 1)
+                {
+                    navigation.selectOnRight = ____activatedCardList[i + 1].selectable;
+                }
+                else if (____activatedCardList.Count >= 2)
+                {
+                    navigation.selectOnRight = ____activatedCardList[0].selectable;
+                }
+                else
+                {
+                    navigation.selectOnRight = null;
+                }
+                ____activatedCardList[i].selectable.navigation = navigation;
+                ____activatedCardList[i].selectable.parentSelectable = __instance.selectablePanel;
+            }
+            if (____activatedCardList.Count == 0)
+            {
+                if (UIControlManager.isControllerInput)
+                {
+                    __instance.emptyCardImage.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                __instance.emptyCardImage.gameObject.SetActive(false);
+            }
+            __instance.SetSelectedCardUI(null);
+            for (int j = list2.Count; j < ____cardList.Count; j++)
+            {
+                ____cardList[j].gameObject.SetActive(false);
+            }
+            if (____selectedUnit == null)
+            {
+                __instance.InvokeMethod("SetActivatedCardsDefaultPos");
+                return false;
+            }
+            if (__instance._beforeSelectDice != SingletonBehavior<BattleManagerUI>.Instance.selectedAllyDice && __instance._beforeSelectDice != null)
+            {
+                __instance.InvokeMethod("SetActivatedCardsDefaultPos");
+            }
+            return false;
         }
 
         [HarmonyPatch(typeof(UIEquipDeckCardList), "SetDeckLayout")]
