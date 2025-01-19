@@ -8,8 +8,8 @@ namespace Don_Eyuil.DiceCardAbility
 
         public override void OnSucceedAttack(BattleUnitModel target)
         {
-            BattleUnitBuf_Flow.GainReadyBuf(target, 3);
-            BattleUnitBuf_Flow.GainReadyReadyBuf(target, 3);
+            BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(target, 3,BufReadyType.NextRound);
+            BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(target, 3, BufReadyType.NextNextRound);
         }
     }
 }

@@ -17,31 +17,23 @@
         public override void OnRoundEnd()
         {
             bleedDmg = 0;
-            BattleUnitBuf_BleedCrystal.GainBuf(_owner, bleedDmg / 2);
+            BattleUnitBuf_HardBlood_Crystal.GainBuf<BattleUnitBuf_HardBlood_Crystal>(_owner, bleedDmg / 2);
         }
 
         public override void OnRollDice(BattleDiceBehavior behavior)
         {
             behavior.ApplyDiceStatBonus(new DiceStatBonus()
             {
-                min = BattleUnitBuf_BleedCrystal.GetBuf(_owner).stack >= 15 ? 2 : 0
+                min = BattleUnitBuf_HardBlood_Crystal.GetBufStack<BattleUnitBuf_HardBlood_Crystal>(_owner) >= 15 ? 2 : 0
             });
         }
-
         public int bleedDmg = 0;
-
         public BattleUnitBuf_Sword(BattleUnitModel model) : base(model)
         {
         }
-
-        public override float DmgFactor(int dmg, DamageType type = DamageType.ETC, KeywordBuf keyword = KeywordBuf.None)
+        public override void AfterTakeBleedingDamage(int Dmg)
         {
-            if (keyword == KeywordBuf.Bleeding)
-            {
-                bleedDmg += dmg;
-            }
-
-            return base.DmgFactor(dmg, type, keyword);
+            bleedDmg += Dmg;
         }
     }
 }

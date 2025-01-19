@@ -1,11 +1,18 @@
-﻿using HarmonyLib;
+﻿using BattleCharacterProfile;
+using Don_Eyuil.Don_Eyuil.Buff;
+using HarmonyLib;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
+using static BattleCharacterProfile.BattleCharacterProfileUI;
+using UnityEngine.UI;
 
 namespace Don_Eyuil
 {
@@ -163,6 +170,297 @@ namespace Don_Eyuil
                     breakRate = 10 * stack,
                 });
             }
+        }
+    }
+    //血甲护盾
+    public class BattleUnitBuf_BloodShield : BattleUnitBuf_Don_Eyuil
+    {
+        public void ReduceShield(int num)
+        {
+            this.stack -= num;
+            if (this.stack <= 0)
+            {
+                this.stack = 0;
+            }
+            if (_owner.bufListDetail.HasBuf<BattleUnitBuf_Armour>() || _owner.bufListDetail.HasBuf<PassiveAbility_DonEyuil_02.BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodShield>())
+            {
+                BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch.Trigger_BleedingDmg_After(_owner, num, KeywordBuf.Bleeding);
+            }
+
+        }
+        private void DestroyUI()
+        {
+            UnityEngine.Object.DestroyImmediate(this.shieldBarGameObject);
+            UnityEngine.Object.DestroyImmediate(this.shieldTextGameObject);
+        }
+
+        public override void Destroy()
+        {
+            this.DestroyUI();
+        }
+
+        private void CreateUI1()
+        {
+            this.shieldBarGameObject = UnityEngine.Object.Instantiate<GameObject>(this._owner.view.unitBottomStatUI.GetFieldValue<Image>("hpBar").transform.gameObject, this._owner.view.unitBottomStatUI.GetFieldValue<Image>("hpBar").transform.parent.transform);
+            this.shieldTextGameObject = UnityEngine.Object.Instantiate<GameObject>(this._owner.view.unitBottomStatUI.GetFieldValue<TextMeshProUGUI>("_txtHp").transform.gameObject, this._owner.view.unitBottomStatUI.GetFieldValue<TextMeshProUGUI>("_txtHp").transform.parent.transform);
+            if (this.shieldBarGameObject.GetComponent<Image>() != null)
+            {
+                this.shieldBar = this.shieldBarGameObject.GetComponent<Image>();
+                this.shieldBar.color = this.shieldColor;
+            }
+            if (this.shieldTextGameObject.GetComponent<TextMeshProUGUI>() != null)
+            {
+                this.shieldTextGameObject.transform.localPosition += new Vector3(0f, -50f, 0f);
+                this.shieldText = this.shieldTextGameObject.GetComponent<TextMeshProUGUI>();
+                this.shieldText.color = this.shieldColor;
+                this.shieldText.text = string.Empty;
+            }
+        }
+
+        private void CreateUI2()
+        {
+            this.currentShieldValue = 0f;
+            this.currentShield = 0f;
+            BattleCharacterProfileUI profileUI = SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.GetProfileUI(this._owner);
+            if (profileUI != null)
+            {
+                this.shieldBarUIGameObject1 = UnityEngine.Object.Instantiate<GameObject>(profileUI.GetFieldValue<HpBar>("hpBar").img.transform.gameObject, profileUI.GetFieldValue<HpBar>("hpBar").img.transform.parent.transform);
+                this.shieldBarUIGameObject2 = UnityEngine.Object.Instantiate<GameObject>(profileUI.GetFieldValue<HpBar>("img_damagedHp").img.transform.gameObject, profileUI.GetFieldValue<HpBar>("img_damagedHp").img.transform.parent.transform);
+                this.shieldBarUIGameObject3 = UnityEngine.Object.Instantiate<GameObject>(profileUI.GetFieldValue<HpBar>("img_healedHp").img.transform.gameObject, profileUI.GetFieldValue<HpBar>("img_healedHp").img.transform.parent.transform);
+                this.shieldTextUIGameObject = UnityEngine.Object.Instantiate<GameObject>(profileUI.GetFieldValue<Text>("txt_hp").transform.gameObject, profileUI.GetFieldValue<Text>("txt_hp").transform.parent.transform);
+                this.shieldBarUIGameObject1.name = "BloodShieldUI1";
+                this.shieldBarUIGameObject2.name = "BloodShieldUI2";
+                this.shieldBarUIGameObject3.name = "BloodShieldUI3";
+                this.shieldTextUIGameObject.name = "BloodShieldUI4";
+                Color color = this.shieldColor;
+                if (shieldBarUIGameObject1 != null && this.shieldBarUIGameObject1.GetComponent<Image>() != null)
+                {
+                    this.shieldBarUIGameObject1.transform.localPosition += new Vector3(17f, 30f, 0f);
+                    this.shieldBarUI = this.shieldBarUIGameObject1.GetComponent<Image>();
+                    this.shieldBarUI.color = color;
+                }
+                if (shieldBarUIGameObject2 != null && this.shieldBarUIGameObject2.GetComponent<Image>() != null)
+                {
+                    this.shieldBarUIGameObject2.transform.localPosition += new Vector3(17f, 30f, 0f);
+                    this.img_damagedShield = this.shieldBarUIGameObject2.GetComponent<Image>();
+                    this.img_damagedShield.color = color;
+                }
+                if (shieldBarUIGameObject3 != null && this.shieldBarUIGameObject3.GetComponent<Image>() != null)
+                {
+                    this.shieldBarUIGameObject3.transform.localPosition += new Vector3(17f, 30f, 0f);
+                    this.img_healedShield = this.shieldBarUIGameObject3.GetComponent<Image>();
+                    this.img_healedShield.color = color;
+                }
+                if (shieldTextUIGameObject != null && this.shieldTextUIGameObject.GetComponent<Text>() != null)
+                {
+                    this.shieldTextUIGameObject.transform.localPosition += new Vector3(-20f, 90f, 0f);
+                    this.shieldTextUIGameObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                    this.txt_shield = this.shieldTextUIGameObject.GetComponent<Text>();
+                    this.txt_shield.color = color;
+                    this.txt_shield.text = string.Empty;
+                }
+            }
+
+        }
+
+        public void ChangeColor(Color color)
+        {
+            this.shieldColor = color;
+            this.shieldBar.color = this.shieldColor;
+            this.shieldText.color = this.shieldColor;
+        }
+
+        public void SetShield(int targetstack)
+        {
+            if (this.shieldBarGameObject == null && this.shieldTextGameObject == null)
+            {
+                this.CreateUI1();
+            }
+            bool activeInHierarchy = this._owner.view.unitBottomStatUI.gameObject.activeInHierarchy;
+            if (activeInHierarchy)
+            {
+                this.shieldText.text = targetstack <= 0 ? string.Empty: targetstack.ToString();
+                this._owner.view.unitBottomStatUI.StartCoroutine(this.ShieldBarAnimationRoutine(targetstack));
+            }
+            if (this.shieldBarUIGameObject1 == null && this.shieldBarUIGameObject2 == null && this.shieldBarUIGameObject3 == null && this.shieldTextUIGameObject == null)
+            {
+                this.CreateUI2();
+            }
+            BattleCharacterProfileUI profileUI = SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.GetProfileUI(this._owner);
+            if (profileUI != null)
+            {
+                if ((float)targetstack > this.currentShield)
+                {
+                    profileUI.StartCoroutine(this.UpdateShieldBar(this.shieldBarUI, this.img_healedShield, (float)targetstack, this.img_healedShield));
+                }
+                else
+                {
+                    profileUI.StartCoroutine(this.UpdateShieldBar(this.img_damagedShield, this.shieldBarUI, (float)targetstack, this.img_damagedShield));
+                }
+                if ((float)targetstack != this.currentShield)
+                {
+                    profileUI.StartCoroutine(this.UpdateShieldNum(this.currentShield, (float)targetstack));
+                }
+            }
+        }
+
+        public IEnumerator ShieldBarAnimationRoutine(int targetstack)
+        {
+            while (Mathf.Abs((float)targetstack - this.currentShieldValue) > Mathf.Epsilon)
+            {
+                this.currentShieldValue = Mathf.Lerp(this.currentShieldValue, (float)targetstack, Time.deltaTime);
+                float num = this.currentShieldValue / (float)this._owner.MaxHp;
+                float z = 90f * (1f - num);
+                this.shieldBar.transform.localRotation = Quaternion.Euler(0f, 0f, z);
+                yield return null;
+            }
+            yield break;
+        }
+
+        private IEnumerator UpdateShieldBar(Image src, Image dst, float newShield, Image bar)
+        {
+            Color c = bar.color;
+            c.a = 1f;
+            bar.color = c;
+            float t = newShield / (float)this._owner.MaxHp;
+            float x = Mathf.Lerp(-550f, 0f, t);
+            Vector3 dstPos = dst.transform.localPosition;
+            dstPos.x = x;
+            dst.transform.localPosition = dstPos;
+            float e = 0f;
+            Vector3 srcPos = src.transform.localPosition;
+            while (e < 1f)
+            {
+                e += Time.deltaTime;
+                src.transform.localPosition = Vector3.Lerp(srcPos, dstPos, e);
+                c.a = 1f - e;
+                bar.color = c;
+                yield return YieldCache.waitFrame;
+            }
+            c.a = 0f;
+            bar.color = c;
+            yield break;
+        }
+
+        private IEnumerator UpdateShieldNum(float curShield, float newShield)
+        {
+            float e = 0f;
+            while (e < 1f)
+            {
+                e += Time.deltaTime;
+                float num = Mathf.Lerp(curShield, newShield, e);
+                this.txt_shield.text = ((int)num).ToString();
+                yield return YieldCache.waitFrame;
+            }
+            this.currentShield = newShield;
+            if (this.currentShield <= 0f)
+            {
+                this.txt_shield.text = string.Empty;
+            }
+            yield break;
+        }
+
+
+        public Color shieldColor = Color.blue;
+
+        public GameObject shieldBarGameObject;
+
+        public GameObject shieldTextGameObject;
+
+        public Image shieldBar;
+
+        public TextMeshProUGUI shieldText;
+
+        public float currentShieldValue;
+
+        public float currentShield;
+
+        public GameObject shieldBarUIGameObject1;
+
+        public GameObject shieldBarUIGameObject2;
+
+        public GameObject shieldBarUIGameObject3;
+
+        public GameObject shieldTextUIGameObject;
+
+        public Image shieldBarUI;
+
+        public Image img_damagedShield;
+
+        public Image img_healedShield;
+
+        public Text txt_shield;
+
+        [HarmonyPatch(typeof(BattleCharacterProfileUI), "Initialize")]
+        [HarmonyPostfix]
+        public static void BattleCharacterProfileUI_Initialize_Post(BattleCharacterProfileUI __instance)
+        {
+            Transform[] componentsInChildren = __instance.gameObject.GetComponentsInChildren<Transform>(true);
+            for (int i = 0; i < componentsInChildren.Length; i++)
+            {
+                if (componentsInChildren[i].gameObject.name.Contains("BloodShieldUI4"))
+                {
+                    UnityEngine.Object.Destroy(componentsInChildren[i].gameObject);
+                }
+            }
+        }
+        public BattleUnitBuf_BloodShield(BattleUnitModel model) : base(model) { stack = 0; }
+        [HarmonyPatch(typeof(BattleUnitBottomStatUI), "SetBufs")]
+        [HarmonyPostfix]
+        public static void BattleUnitBottomStatUI_SetBufs_Post(BattleBufUIDataList bufDataList)
+        {
+            BattleBufUIData battleBufUIData = bufDataList.bufActivatedList.Find((BattleBufUIData x) => x.buf is BattleUnitBuf_BloodShield);
+            if (battleBufUIData != null)
+            {
+                ((BattleUnitBuf_BloodShield)battleBufUIData.buf).SetShield(battleBufUIData.stack);
+            }
+        }
+
+        public static void ShieldReduce(BattleUnitModel target, ref int dmg)
+        {
+            if (BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(target) > 0)
+            {
+                int ShieldReduceStack = Math.Min(dmg, BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(target));
+                dmg -= ShieldReduceStack;
+                BattleUnitBuf_BloodShield.GetBuf<BattleUnitBuf_BloodShield>(target).ReduceShield(ShieldReduceStack);
+            }
+        }
+
+        [HarmonyPatch(typeof(BattleUnitModel), "TakeDamage")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BattleUnitModel_TakeDamage_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> list = instructions.ToList<CodeInstruction>();
+            MethodInfo method = AccessTools.Method(typeof(BattleUnitModel), "IsImmuneDmg", new Type[]
+            {
+                typeof(DamageType),
+                typeof(KeywordBuf)
+            }, null);
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Calls(method))
+                {
+                    while (i < list.Count)
+                    {
+                        Label? label;
+                        if (list[i].Branches(out label))
+                        {
+                            int index = list.FindIndex((CodeInstruction code) => code.labels.Contains(label.Value));
+                            list.InsertRange(index, new CodeInstruction[]
+                            {
+                                new CodeInstruction(OpCodes.Nop, null).MoveLabelsFrom(list[index]),
+                                new CodeInstruction(OpCodes.Ldarg_0, null),
+                                new CodeInstruction(OpCodes.Ldloca, 1),
+                                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BattleUnitBuf_BloodShield), "ShieldReduce", null, null))
+                            });
+                            break;
+                        }
+                        i++;
+                    }
+                    break;
+                }
+            }
+            return list;
         }
     }
 

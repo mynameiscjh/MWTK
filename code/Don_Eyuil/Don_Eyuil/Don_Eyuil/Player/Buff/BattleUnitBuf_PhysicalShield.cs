@@ -1,4 +1,4 @@
-﻿using BattleCharacterProfile;
+﻿/*using BattleCharacterProfile;
 using HarmonyLib;
 using System;
 using System.Collections;
@@ -351,4 +351,4 @@ namespace Don_Eyuil.Don_Eyuil.Buff
         }
     }
 
-}
+}*/

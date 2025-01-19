@@ -346,6 +346,16 @@ namespace Don_Eyuil
         {
             this._owner = model;
         }
+        public static bool UseBuf<T>(BattleUnitModel model, int stack) where T : BattleUnitBuf_Don_Eyuil
+        {
+            T BuffInstance = GetOrAddBuf<T>(model,BufReadyType.ThisRound);
+            if (BuffInstance != null && BuffInstance.stack >= stack)
+            {
+                BuffInstance.Add(-stack);
+                return true;
+            }
+            return false;
+        }
         public static T GainBuf<T>(BattleUnitModel model, int stack, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
             T BuffInstance = GetOrAddBuf<T>(model, ReadyType);

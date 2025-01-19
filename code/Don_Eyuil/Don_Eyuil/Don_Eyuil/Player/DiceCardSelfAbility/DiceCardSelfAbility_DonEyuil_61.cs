@@ -8,7 +8,7 @@ namespace Don_Eyuil.Don_Eyuil.DiceCardSelfAbility
 
         public override void OnSucceedAreaAttack(BattleUnitModel target)
         {
-            BattleUnitBuf_PhysicalShield.AddBuf(owner, 3);
+            BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(owner, 3);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Don_Eyuil.DiceCardAbility
             if (!fl)
             {
                 fl = true;
-                var temp = BattleUnitBuf_BleedCrystal.GetBuf(owner);
+                var temp = BattleUnitBuf_HardBlood_Crystal.GetBuf<BattleUnitBuf_HardBlood_Crystal>(owner);
                 count += temp != null ? temp.stack / 10 : 0;
             }
 

@@ -8,16 +8,16 @@ namespace Don_Eyuil.DiceCardSelfAbility
 
         public override bool OnChooseCard(BattleUnitModel owner)
         {
-            return BattleUnitBuf_BleedCrystal.GetBuf(owner) != null && BattleUnitBuf_BleedCrystal.GetBuf(owner).stack >= 15;
+            return BattleUnitBuf_HardBlood_Crystal.GetBufStack<BattleUnitBuf_HardBlood_Crystal>(owner) >= 15;
         }
         public int useBuf = 0;
         public override void OnUseCard()
         {
             useBuf = 0;
-            if (BattleUnitBuf_BleedCrystal.GetBuf(owner) != null)
+            if (BattleUnitBuf_HardBlood_Crystal.GetBufStack<BattleUnitBuf_HardBlood_Crystal>(owner) > 0)
             {
-                useBuf = BattleUnitBuf_BleedCrystal.GetBuf(owner).stack;
-                BattleUnitBuf_BleedCrystal.UseBuf(owner, useBuf);
+                useBuf = BattleUnitBuf_HardBlood_Crystal.GetBufStack<BattleUnitBuf_HardBlood_Crystal>(owner);
+                BattleUnitBuf_HardBlood_Crystal.RemoveBuf<BattleUnitBuf_HardBlood_Crystal>(owner);
                 BattleDiceCardBuf_Temp buf = new BattleDiceCardBuf_Temp();
                 buf.SetStack(useBuf);
                 this.card.card.AddBuf(buf);

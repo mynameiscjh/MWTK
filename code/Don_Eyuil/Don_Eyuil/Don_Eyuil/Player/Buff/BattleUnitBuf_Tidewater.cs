@@ -2,7 +2,7 @@
 
 namespace Don_Eyuil.Buff
 {
-    public class BattleUnitBuf_Tidewater : BattleUnitBuf_Don_Eyuil
+    /*public class BattleUnitBuf_Tidewater : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc = "汹涌的血潮：所有敌方角色被施加\"流血\"时层数+x\r\n自身对处于流血状态的敌方角色造成的伤害与混乱伤害x×10%\r\n";
 
@@ -46,5 +46,5 @@ namespace Don_Eyuil.Buff
                 behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmgRate = this.stack * 10, breakRate = this.stack * 10 });
             }
         }
-    }
+    }*/
 }

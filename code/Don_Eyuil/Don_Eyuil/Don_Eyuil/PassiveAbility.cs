@@ -665,6 +665,10 @@ namespace Don_Eyuil
         //奔向梦想!驽骍难得!
         public override string debugDesc => "使所有应用了觉醒书页的司书威力+1\r\n自身体力首次低于400时获得新的被动并更改行动逻辑\r\n触发前体力无法低于400";
         //（获得被动“萦绕家族的疾病”“无法舍弃的责任”“若家人也能找到梦想”并获得500层护盾）
+        public override void OnWaveStart()
+        {
+            BattleObjectManager.instance.GetAliveList(Faction.Player).Do(x => x.bufListDetail.AddBuf(new BattleUnitBuf_RunningTowardDream()));
+        }
         public class BattleUnitBuf_RunningTowardDream : BattleUnitBuf
         {
             public override void OnRollDice(BattleDiceBehavior behavior)

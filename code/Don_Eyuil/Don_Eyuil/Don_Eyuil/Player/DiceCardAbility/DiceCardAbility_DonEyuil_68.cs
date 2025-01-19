@@ -8,7 +8,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardAbility
         public override void OnWinParrying()
         {
             this.card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 2, owner);
-            BattleUnitBuf_Thistles.GainReadyBuf(this.card.target, 2);
+           BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(this.card.target, 2,BufReadyType.NextRound);
         }
     }
 }
