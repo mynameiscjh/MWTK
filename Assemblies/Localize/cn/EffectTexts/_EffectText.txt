@@ -1,134 +1,140 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <effectTextList>
- 
-    <BattleEffectText ID="SinkInto">
+
+    <BattleEffectText ID="BattleUnitBuf_Sword">
       <Name>堂埃尤尔派硬血术1式-血剑</Name>
       <Desc>自身斩击骰子最小值+2
 自身施加"流血"时额外对自身和目标施加一层
 每幕结束时自身每承受2点"流血"伤害便时自身获得1层"硬血结晶"</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="GuardUmbrella">
+    <BattleEffectText ID="BattleUnitBuf_Lance">
       <Name>堂埃尤尔派硬血术2式-血枪</Name>
       <Desc>拼点时自身速度每高于目标1点便使自身所有骰子最大值+1(至多+4)
 自身以高于目标至少2点的速度击中目标时将对目标施加1层"无法凝结的血"(每幕至多触发3次)若击杀目标则在下一幕获得一层"热血尖枪"</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="SelfGuardPhase">
+    <BattleEffectText ID="BattleUnitBuf_Sickle">
       <Name>堂埃尤尔派硬血术3式-血镰</Name>
       <Desc>目标每有2层流血便使自身斩击骰子造成的伤害增加10%(至多50%)
 首次进入时使自身获得1层"汹涌的血潮"</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="SelfAtkPhase">
+    <BattleEffectText ID="BattleUnitBuf_Blade">
       <Name>堂埃尤尔派硬血术4式-血刃</Name>
       <Desc>自身命中处于混乱状态的目标时将触发目标"流血"(每张书页至多1次)
 一幕中敌方每受到20点"流血"伤害便使自身获得1层”伤害强化”</Desc>
     </BattleEffectText>
-    
-    <BattleEffectText ID="ErosionHeart">
+
+    <BattleEffectText ID="BattleUnitBuf_DoubleSwords">
       <Name>堂埃尤尔派硬血术5式-双剑</Name>
       <Desc>自身受到单方面攻击时将以一颗(闪避4-8[拼点胜利]对目标施加1层[流血])迎击
 自身承受"流血"伤害时每承受3点便使下一颗进攻型骰子伤害+1</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="Eyliu_Only">
+    <BattleEffectText ID="BattleUnitBuf_Armour">
       <Name>堂埃尤尔派硬血术6式-血甲</Name>
       <Desc>自身护盾减少时将视作受到等量"流血"伤害
 每幕结束时自身每有一颗未被使用的防御型骰子便使自身获得10点护盾
 自身被命中时对命中者施加2-3层"流血"</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="SinkInto_Over">
+    <BattleEffectText ID="BattleUnitBuf_Bow">
       <Name>堂埃尤尔派硬血术7式-血弓</Name>
       <Desc>自身远程骰子最小值+3且命中目标时将在本幕对目标施加3层"流血"
 自身将对每幕第一个击中的目标施加"深度创痕"</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="EGO_Normal">
+    <BattleEffectText ID="BattleUnitBuf_Scourge">
       <Name>堂埃尤尔派硬血术8式-血鞭</Name>
       <Desc>自身以打击骰子施加"流血"时将额外对一名敌方角色施加等量流血
 自身每幕最后一张书页施加"流血"时将额外对目标施加等量"血晶荆棘"</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="EGO_Erosion">
+    <BattleEffectText ID="BattleUnitBuf_Umbrella">
       <Name>堂埃尤尔派硬血术9式-血伞</Name>
       <Desc>自身命中带有流血的目标时造成的混乱伤害增加25%同时使自身获得1层"结晶硬血"
 下令战斗时若自身至少拥有6层"结晶硬血"则使自身获得一颗反击(突刺4-8)骰子</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="EGO_Passive">
+    <BattleEffectText ID="BattleUnitBuf_Flow">
       <Name>无法凝结的血</Name>
       <Desc>自身流血无法低于2+{0}</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="Olevelup">
+    <BattleEffectText ID="BattleUnitBuf_Rifle">
       <Name>热血尖枪</Name>
       <Desc>自身这一幕施加的"流血"翻倍</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="Dleveldown">
+    <BattleEffectText ID="BattleUnitBuf_Tidewater">
       <Name>汹涌的血潮</Name>
       <Desc>所有敌方角色被施加"流血"时层数+{0}
 自身对处于流血状态的敌方角色造成的伤害与混乱伤害{0}×10%</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheMimic">
+    <BattleEffectText ID="BattleUnitBuf_Thistles">
       <Name>血晶荆棘</Name>
       <Desc>投掷骰子时使自身在下一幕中获得1层[流血](每幕至多触发{0}次)
 自身速度降低{0}/2
 每幕结束时层数减半</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination1">
+    <BattleEffectText ID="BattleUnitBuf_BleedCrystal">
       <Name>硬血结晶</Name>
       <Desc>至多30层
 可配合硬血术效果</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2">
+    <BattleEffectText ID="TheDetermination2_">
       <Name>席卷而来的饥饿</Name>
       <Desc>击中"流血"不低于3的目标时恢复2点体力
 若一幕中没有恢复体力则失去20%的混乱抗性并获得1层"虚弱"
 获得15点正面情感后移除本效果</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2">
+    <BattleEffectText ID="TheDetermination2__">
       <Name>璀璨的梦想</Name>
       <Desc>自身永久获得1层"强壮"与"迅捷"
 拼点时恢复2点混乱抗性</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2">
+    <BattleEffectText ID="TheDetermination2___">
       <Name>美好的希望</Name>
       <Desc>自身光芒恢复量+1
 自身使用书页使将为光芒最低的一名友方角色恢复1点光芒</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2">
+    <BattleEffectText ID="TheDetermination2____">
       <Name>背负的责任</Name>
       <Desc>自身将可以无视速度转移敌方攻击
 自身为友方角色转移攻击时使自身所有骰子威力+2</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2">
+    <BattleEffectText ID="TheDetermination2_____">
       <Name>互相的理解</Name>
       <Desc>受到的伤害与混乱伤害减少50%
 拼点时使对方进攻型骰子威力-1</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2">
+    <BattleEffectText ID="TheDetermination2______">
       <Name>光荣的决斗</Name>
       <Desc>"堂埃尤尔"的体力不会低于100
 若本幕结束时司书存活则接待胜利</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2">
+    <BattleEffectText ID="TheDetermination2_______">
       <Name>光荣的决斗</Name>
       <Desc>拼点时双方所有骰子威力+3
 拼点胜利的一方造成的伤害增加25%
 自身受到的单方面伤害与混乱伤害减少50%</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_HardBlood">
+      <Name>百般武艺</Name>
+      <Desc>现在获得了{0}个硬血术</Desc>
     </BattleEffectText>
   </effectTextList>
 </BattleEffectTextRoot>

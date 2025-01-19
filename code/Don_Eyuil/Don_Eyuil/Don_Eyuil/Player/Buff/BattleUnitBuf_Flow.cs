@@ -7,6 +7,8 @@ namespace Don_Eyuil.Buff
     {
         public static string Desc = "自身[流血]无法低于2+x";
 
+        protected override string keywordId => "BattleUnitBuf_Flow";
+
         public BattleUnitBuf_Flow(BattleUnitModel model) : base(model)
         {
         }

@@ -9,6 +9,8 @@
         {
         }
 
+        protected override string keywordId => "BattleUnitBuf_DoubleSwords";
+
         public override float DmgFactor(int dmg, DamageType type = DamageType.ETC, KeywordBuf keyword = KeywordBuf.None)
         {
             if (keyword == KeywordBuf.Bleeding)

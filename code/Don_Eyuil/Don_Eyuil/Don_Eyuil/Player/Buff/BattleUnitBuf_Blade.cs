@@ -8,6 +8,8 @@ namespace Don_Eyuil.Buff
 
         public List<BattlePlayingCardDataInUnitModel> cards = new List<BattlePlayingCardDataInUnitModel>();
 
+        protected override string keywordId => "BattleUnitBuf_Blade";
+
         public BattleUnitBuf_Blade(BattleUnitModel model) : base(model)
         {
         }

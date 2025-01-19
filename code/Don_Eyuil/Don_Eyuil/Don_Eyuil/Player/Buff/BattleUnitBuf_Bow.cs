@@ -10,6 +10,8 @@
         {
         }
 
+        protected override string keywordId => "BattleUnitBuf_Bow";
+
         public override void OnRoundStartAfter()
         {
             fl1 = false;

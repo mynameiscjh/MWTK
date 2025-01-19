@@ -33,6 +33,25 @@
       <OnlyCard>17</OnlyCard>
       <OnlyCard>18</OnlyCard>
       <OnlyCard>19</OnlyCard>
+      <OnlyCard>45</OnlyCard>
+      <OnlyCard>46</OnlyCard>
+      <OnlyCard>47</OnlyCard>
+      <OnlyCard>48</OnlyCard>
+      <OnlyCard>49</OnlyCard>
+      <OnlyCard>50</OnlyCard>
+      <OnlyCard>51</OnlyCard>
+      <OnlyCard>52</OnlyCard>
+      <OnlyCard>53</OnlyCard>
+      <OnlyCard>54</OnlyCard>
+      <OnlyCard>55</OnlyCard>
+      <OnlyCard>56</OnlyCard>
+      <OnlyCard>57</OnlyCard>
+      <OnlyCard>58</OnlyCard>
+      <OnlyCard>59</OnlyCard>
+      <OnlyCard>60</OnlyCard>
+      <OnlyCard>61</OnlyCard>
+      <OnlyCard>62</OnlyCard>
+      <OnlyCard>63</OnlyCard>
     </EquipEffect>
     <Option>MultiDeck</Option>
     <Rarity>Unique</Rarity>
@@ -41,7 +60,7 @@
     <SkinGender>N</SkinGender>
     <Chapter>7</Chapter>
     <Episode>-1</Episode>
-    <RangeType>Hybrid</RangeType>
+    <RangeType>Melee</RangeType>
     <NotEquip>false</NotEquip>
     <RandomFace>false</RandomFace>
     <SpeedDiceNum>1</SpeedDiceNum>
