@@ -1,5 +1,9 @@
-﻿using HarmonyLib;
+﻿using Don_Eyuil.Buff;
+using Don_Eyuil.Don_Eyuil.Buff;
+using Don_Eyuil.Don_Eyuil.Player.Buff;
+using HarmonyLib;
 using LOR_DiceSystem;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -366,6 +370,7 @@ namespace Don_Eyuil.PassiveAbility
             return true;
         }
 
+#if false
         [HarmonyPatch(typeof(UIOriginCardSlot), "SetHighlightedSlot")]
         [HarmonyPostfix]
         public static void UIOriginCardSlot_SetHighlightedSlot_Post(UIOriginCardSlot __instance, bool on, ref DiceCardItemModel ____cardModel, ref Image[] ___img_Frames)
@@ -383,6 +388,54 @@ namespace Don_Eyuil.PassiveAbility
                 }
             }
         }
+#endif
         //应该需要hp把特定buff加上
+        [HarmonyPatch(typeof(LevelUpUI), "OnSelectEgoCard")]
+        [HarmonyPrefix]
+        public static bool LevelUpUI_OnSelectEgoCard_Pre(BattleDiceCardUI picked)
+        {
+            if (HardBloodCards.Exists(x => x == picked.CardModel.GetID()))
+            {
+                var I39 = BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页);
+                if (I39 == null)
+                {
+                    return true;
+                }
+
+                if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(I39) == null)
+                {
+                    BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_HardBlood>(I39, 0);
+                }
+
+                // 创建映射字典
+                var cardToBufMap = new Dictionary<LorId, System.Type>
+                {
+                    { MyId.Card_堂埃尤尔派硬血术1式_血剑_2, typeof(BattleUnitBuf_Sword) },
+                    { MyId.Card_堂埃尤尔派硬血术2式_血枪_2, typeof(BattleUnitBuf_Lance) },
+                    { MyId.Card_堂埃尤尔派硬血术3式_血镰_2, typeof(BattleUnitBuf_Sickle) },
+                    { MyId.Card_堂埃尤尔派硬血术4式_血刃_2, typeof(BattleUnitBuf_Blade) },
+                    { MyId.Card_堂埃尤尔派硬血术5式_双剑_2, typeof(BattleUnitBuf_DoubleSwords) },
+                    { MyId.Card_堂埃尤尔派硬血术6式_血甲_2, typeof(BattleUnitBuf_Armour) },
+                    { MyId.Card_堂埃尤尔派硬血术7式_血弓_2, typeof(BattleUnitBuf_Bow) },
+                    { MyId.Card_堂埃尤尔派硬血术8式_血鞭_2, typeof(BattleUnitBuf_Scourge) },
+                    { MyId.Card_堂埃尤尔派硬血术9式_血伞_2, typeof(BattleUnitBuf_Umbrella) }
+                };
+
+                if (cardToBufMap.TryGetValue(picked.CardModel.GetID(), out System.Type bufType))
+                {
+                    var method = typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GainBuf").MakeGenericMethod(bufType);
+                    method.Invoke(null, new object[] { I39, 1, BufReadyType.ThisRound });
+                }
+
+                I39.personalEgoDetail.AddCard(picked.CardModel.GetID());
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
+
+                return false;
+            }
+
+            return true;
+        }
+
+
     }
 }
