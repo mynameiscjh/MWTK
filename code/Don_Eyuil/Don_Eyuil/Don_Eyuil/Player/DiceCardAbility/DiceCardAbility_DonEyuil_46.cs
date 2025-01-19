@@ -8,7 +8,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardAbility
 
         public override void OnSucceedAttack(BattleUnitModel target)
         {
-            BattleUnitBuf_BleedCrystal.GainBuf(owner, 5);
+            BattleUnitBuf_HardBlood_Crystal.GainBuf<BattleUnitBuf_HardBlood_Crystal>(owner, 5);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Don_Eyuil.Don_Eyuil.Buff
 {
-    public class BattleUnitBuf_Thistles : BattleUnitBuf_Don_Eyuil
+    /*public class BattleUnitBuf_Thistles : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc = "投掷骰子时使自身在下一幕中获得1层[流血](每幕至多触发x次)\r\n自身速度降低x/2\r\n每幕结束时层数减半\r\n";
         int count = 0;
@@ -63,5 +63,5 @@ namespace Don_Eyuil.Don_Eyuil.Buff
                 this.Destroy();
             }
         }
-    }
+    }*/
 }

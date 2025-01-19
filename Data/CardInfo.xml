@@ -545,7 +545,7 @@
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
     <Spec Range="Far" Cost="4" Affection="One" EmotionLimit="0" />
-    <Script></Script>
+    <Script>DmgCount</Script>
     <ScriptDesc />
     <BehaviourList>
       <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_26" ActionScript="" Desc="" />

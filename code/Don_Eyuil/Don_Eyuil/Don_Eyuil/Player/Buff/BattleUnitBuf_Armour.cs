@@ -10,44 +10,29 @@ namespace Don_Eyuil.Don_Eyuil.Buff
         {
 
         }
-
-        protected override string keywordId => "BattleUnitBuf_Armour";
-
-        public override void Init(BattleUnitModel owner)
-        {
-            base.Init(owner);
-            if (owner.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_PhysicalShield) is BattleUnitBuf_PhysicalShield)
-            {
-                var buf = owner.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_PhysicalShield) as BattleUnitBuf_PhysicalShield;
-                buf.ChangeColor(new Color(1, 0, 0, 1));
-            }
-        }
-
         public override void OnRoundEnd()
         {
             foreach (var item in _owner.cardSlotDetail.keepCard.cardBehaviorQueue)
             {
                 if (item.Type == LOR_DiceSystem.BehaviourType.Def)
                 {
-                    BattleUnitBuf_PhysicalShield.AddBuf(_owner, 10);
+                    BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(_owner, 10);
                 }
             }
         }
-
         public override void OnBreakState()
         {
-            if (!_owner.bufListDetail.HasBuf<BattleUnitBuf_PhysicalShield>() || BattleUnitBuf_PhysicalShield.GetBuf(_owner) < 30)
+            if (BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(_owner) < 30)
             {
                 return;
             }
-            var buf = _owner.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_PhysicalShield) as BattleUnitBuf_PhysicalShield;
+            var buf = BattleUnitBuf_BloodShield.GetBuf<BattleUnitBuf_BloodShield>(_owner);
             buf.ReduceShield(30);
             this._owner.breakDetail.ResetGauge();
         }
-
         public override double ChangeDamage(BattleUnitModel attacker, double dmg)
         {
-            if (_owner.bufListDetail.HasBuf<BattleUnitBuf_PhysicalShield>())
+            if (BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(_owner) > 0)
             {
                 attacker.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, UnityEngine.Random.Range(1, 2));
             }

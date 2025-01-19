@@ -20,7 +20,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
             if (owner.hp + temp2 > owner.MaxHp)
             {
                 owner.RecoverHP(owner.MaxHp - (int)owner.hp);
-                BattleUnitBuf_PhysicalShield.AddBuf(owner, temp2 - owner.MaxHp + (int)owner.hp);
+                BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(owner, temp2 + (int)owner.hp - owner.MaxHp );
             }
             else
             {

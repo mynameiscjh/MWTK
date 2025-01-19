@@ -17,13 +17,13 @@ namespace Don_Eyuil.Don_Eyuil.Buff
                 return;
             }
             behavior.ApplyDiceStatBonus(new DiceStatBonus() { breakRate = 25 });
-            BattleUnitBuf_BleedCrystal.GainBuf(_owner, 1);
+            BattleUnitBuf_HardBlood_Crystal.GainBuf<BattleUnitBuf_HardBlood_Crystal>(_owner, 1);
         }
 
         public override void OnStartBattle()
         {
 
-            if (GetBufStack<BattleUnitBuf_BleedCrystal>(_owner) < 6)
+            if (GetBufStack<BattleUnitBuf_HardBlood_Crystal>(_owner) < 6)
             {
                 return;
             }

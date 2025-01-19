@@ -45,7 +45,7 @@ namespace Don_Eyuil.Buff
 
                 if (stack >= 50 && T39 != null)
                 {
-                    BattleUnitBuf_Tidewater.GainBuf(T39, 1);
+                    BattleUnitBuf_BloodTide.GainBuf<BattleUnitBuf_BloodTide>(T39, 1);
                     this.stack -= 50;
                 }
 

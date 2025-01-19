@@ -1,6 +1,6 @@
 ﻿namespace Don_Eyuil.Buff
 {
-    public class BattleUnitBuf_Rifle : BattleUnitBuf_Don_Eyuil
+    /*public class BattleUnitBuf_Rifle : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc = "自身这一幕施加的\"流血\"翻倍";
 
@@ -24,5 +24,5 @@
         {
             this.Destroy();
         }
-    }
+    }*/
 }

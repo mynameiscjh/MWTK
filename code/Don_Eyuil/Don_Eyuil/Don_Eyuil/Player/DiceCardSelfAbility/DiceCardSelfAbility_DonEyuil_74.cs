@@ -10,7 +10,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
         {
             if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner) != null && BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).Scourge != null)
             {
-                BattleUnitBuf_Thistles.GainBuf(behavior.card.target, 2);
+                BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(behavior.card.target, 2);
             }
         }
     }

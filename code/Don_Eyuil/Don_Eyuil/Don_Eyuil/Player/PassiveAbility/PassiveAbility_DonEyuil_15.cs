@@ -1,10 +1,5 @@
-﻿using Don_Eyuil.Buff;
-using Don_Eyuil.Don_Eyuil.Buff;
-using Don_Eyuil.Don_Eyuil.Player.Buff;
-using HarmonyLib;
+﻿using HarmonyLib;
 using LOR_DiceSystem;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -114,31 +109,12 @@ namespace Don_Eyuil.PassiveAbility
         [HarmonyPostfix]
         public static void UILibrarianEquipInfoSlot_SetData_Post(BookPassiveInfo passive, Image ___Frame, TextMeshProUGUI ___txt_cost)
         {
-            if (passive == null)
+            if (passive == null || passive.passive.id != MyTools.Create(15))
             {
                 return;
             }
-            if (passive.passive.id == MyTools.Create(15))
-            {
-                ___Frame.color = Color.red;
-                ___txt_cost.text = "";
-                GameObject gameObject = new GameObject("摩天轮");
-                gameObject.transform.parent = ___txt_cost.transform;
-                gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-                gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-                gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
-            }
-            if (passive.passive.id == MyTools.Create(1))
-            {
-                ___Frame.color = Color.red;
-                ___txt_cost.text = "";
-                GameObject gameObject = new GameObject("摩天轮");
-                gameObject.transform.parent = ___txt_cost.transform;
-                gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-                gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-                gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
-            }
-
+            ___Frame.color = Color.red;
+            ___txt_cost.text = "";
         }
 
         public enum DeckId
@@ -156,7 +132,6 @@ namespace Don_Eyuil.PassiveAbility
             MyId.Card_堂埃尤尔派硬血术7式_血弓_2,
             MyId.Card_堂埃尤尔派硬血术8式_血鞭_2,
             MyId.Card_堂埃尤尔派硬血术9式_血伞_2,
-            MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2,
         };
 
         [HarmonyPatch(typeof(BookModel), "GetOnlyCards")]
@@ -168,9 +143,9 @@ namespace Don_Eyuil.PassiveAbility
                 return;
             }
             __result.Clear();
-            foreach (var item in __instance.ClassInfo.EquipEffect.OnlyCard)
+            foreach (var item in HardBloodCards)
             {
-                var card = ItemXmlDataList.instance.GetCardItem(MyTools.Create(item));
+                var card = ItemXmlDataList.instance.GetCardItem(item);
                 __result.Add(card);
             }
         }
@@ -196,7 +171,6 @@ namespace Don_Eyuil.PassiveAbility
                     DiceCardItemModel itemModel = new DiceCardItemModel(card);
                     itemModel.num = 99;
                     ____currentCardListForFilter.Add(itemModel);
-                    ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
                 }
             }
             else
@@ -391,7 +365,7 @@ namespace Don_Eyuil.PassiveAbility
             }
             return true;
         }
-#if false
+
         [HarmonyPatch(typeof(UIOriginCardSlot), "SetHighlightedSlot")]
         [HarmonyPostfix]
         public static void UIOriginCardSlot_SetHighlightedSlot_Post(UIOriginCardSlot __instance, bool on, ref DiceCardItemModel ____cardModel, ref Image[] ___img_Frames)
@@ -409,56 +383,6 @@ namespace Don_Eyuil.PassiveAbility
                 }
             }
         }
-#endif
-
         //应该需要hp把特定buff加上
-
-        [HarmonyPatch(typeof(LevelUpUI), "OnSelectEgoCard")]
-        [HarmonyPrefix]
-        public static bool LevelUpUI_OnSelectEgoCard_Pre(BattleDiceCardUI picked)
-        {
-            if (HardBloodCards.Exists(x => x == picked.CardModel.GetID()))
-            {
-                var I39 = BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页);
-                if (I39 == null)
-                {
-                    return true;
-                }
-
-                if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(I39) == null)
-                {
-                    BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_HardBlood>(I39, 0);
-                }
-
-                // 创建映射字典
-                var cardToBufMap = new Dictionary<LorId, Type>
-                {
-                    { MyId.Card_堂埃尤尔派硬血术1式_血剑_2, typeof(BattleUnitBuf_Sword) },
-                    { MyId.Card_堂埃尤尔派硬血术2式_血枪_2, typeof(BattleUnitBuf_Lance) },
-                    { MyId.Card_堂埃尤尔派硬血术3式_血镰_2, typeof(BattleUnitBuf_Sickle) },
-                    { MyId.Card_堂埃尤尔派硬血术4式_血刃_2, typeof(BattleUnitBuf_Blade) },
-                    { MyId.Card_堂埃尤尔派硬血术5式_双剑_2, typeof(BattleUnitBuf_DoubleSwords) },
-                    { MyId.Card_堂埃尤尔派硬血术6式_血甲_2, typeof(BattleUnitBuf_Armour) },
-                    { MyId.Card_堂埃尤尔派硬血术7式_血弓_2, typeof(BattleUnitBuf_Bow) },
-                    { MyId.Card_堂埃尤尔派硬血术8式_血鞭_2, typeof(BattleUnitBuf_Scourge) },
-                    { MyId.Card_堂埃尤尔派硬血术9式_血伞_2, typeof(BattleUnitBuf_Umbrella) }
-                };
-
-                if (cardToBufMap.TryGetValue(picked.CardModel.GetID(), out Type bufType))
-                {
-                    var method = typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GainBuf").MakeGenericMethod(bufType);
-                    method.Invoke(null, new object[] { I39, 1, BufReadyType.ThisRound });
-                }
-
-                I39.personalEgoDetail.AddCard(picked.CardModel.GetID());
-                BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
-
-                return false;
-            }
-
-            return true;
-        }
-
-
     }
 }

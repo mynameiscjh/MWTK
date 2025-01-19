@@ -244,9 +244,11 @@ namespace Don_Eyuil
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByCard")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufNextNextByCard")]
             [HarmonyTranspiler]
-            public static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions)
+            public static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions,ILGenerator ILcodegenerator)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                Label l = ILcodegenerator.DefineLabel();
+                codes[0].labels.Add(l);
                 codes.InsertRange(0, new List<CodeInstruction>()
                 {
                         new CodeInstruction(OpCodes.Ldarg_1),
@@ -254,6 +256,10 @@ namespace Don_Eyuil
                         new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
                         new CodeInstruction(OpCodes.Ldarga,2),
                         new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddKeywordBufPatch),"Trigger_AddKeywordBuf_Before")),
+                        new CodeInstruction(OpCodes.Ldarg_2),
+                        new CodeInstruction(OpCodes.Ldc_I4_0),
+                        new CodeInstruction(OpCodes.Bgt_S,l),
+                        new CodeInstruction(OpCodes.Ret),
                  });
                 return codes.AsEnumerable<CodeInstruction>();
             }
@@ -339,6 +345,16 @@ namespace Don_Eyuil
         public BattleUnitBuf_Don_Eyuil(BattleUnitModel model)
         {
             this._owner = model;
+        }
+        public static bool UseBuf<T>(BattleUnitModel model, int stack) where T : BattleUnitBuf_Don_Eyuil
+        {
+            T BuffInstance = GetOrAddBuf<T>(model,BufReadyType.ThisRound);
+            if (BuffInstance != null && BuffInstance.stack >= stack)
+            {
+                BuffInstance.Add(-stack);
+                return true;
+            }
+            return false;
         }
         public static T GainBuf<T>(BattleUnitModel model, int stack, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {

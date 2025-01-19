@@ -13,7 +13,7 @@ namespace Don_Eyuil.Don_Eyuil.DiceCardAbility
             }
 
             //BattleUnitBuf_Don_Eyuil.GetBufStack<BattleUnitBuf_bleeding>()
-            BattleUnitBuf_Thistles.GainBuf(target, target.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_bleeding).stack);
+            BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(target, target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding));
 
         }
     }

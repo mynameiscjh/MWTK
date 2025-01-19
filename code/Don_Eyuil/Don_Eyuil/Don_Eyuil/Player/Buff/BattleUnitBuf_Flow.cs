@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Don_Eyuil.Buff
 {
-    public class BattleUnitBuf_Flow : BattleUnitBuf_Don_Eyuil
+   /* public class BattleUnitBuf_Flow : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc = "自身[流血]无法低于2+x";
 
@@ -59,5 +59,5 @@ namespace Don_Eyuil.Buff
                 }
             }
         }
-    }
+    }*/
 }

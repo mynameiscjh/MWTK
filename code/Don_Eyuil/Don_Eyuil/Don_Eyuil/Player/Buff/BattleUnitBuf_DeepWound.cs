@@ -1,4 +1,4 @@
-﻿namespace Don_Eyuil.Don_Eyuil.Buff
+﻿/*namespace Don_Eyuil.Don_Eyuil.Buff
 {
     public class BattleUnitBuf_DeepWound : BattleUnitBuf_Don_Eyuil
     {
@@ -17,4 +17,4 @@
             return base.DmgFactor(dmg, type, keyword);
         }
     }
-}
+}*/

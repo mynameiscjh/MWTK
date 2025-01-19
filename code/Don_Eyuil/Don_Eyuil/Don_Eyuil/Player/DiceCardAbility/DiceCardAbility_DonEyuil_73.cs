@@ -14,7 +14,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardAbility
             }
             if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).Lance != null)
             {
-                BattleUnitBuf_Flow.GainBuf(target, 2);
+                BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(target, 2);
             }
         }
     }

@@ -57,7 +57,7 @@ namespace Don_Eyuil.Don_Eyuil.Buff
             {
                 if (cardBuf.bufType == KeywordBuf.Bleeding)
                 {
-                    BattleUnitBuf_Thistles.GainBuf(cardBuf.GetFieldValue<BattleUnitModel>("_owner"), stack);
+                    BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(cardBuf.GetFieldValue<BattleUnitModel>("_owner"), stack);
                 }
 
                 return base.OnAddKeywordBufByCard(cardBuf, stack);

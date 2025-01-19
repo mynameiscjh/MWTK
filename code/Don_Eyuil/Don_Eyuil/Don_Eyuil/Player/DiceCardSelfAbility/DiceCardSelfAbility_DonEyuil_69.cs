@@ -20,7 +20,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
             }
             public override int OnGiveKeywordBufByCard(BattleUnitBuf cardBuf, int stack, BattleUnitModel target)
             {
-                BattleUnitBuf_Thistles.GainBuf(target, stack);
+                BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(target, stack);
                 return base.OnGiveKeywordBufByCard(cardBuf, stack, target);
             }
         }
