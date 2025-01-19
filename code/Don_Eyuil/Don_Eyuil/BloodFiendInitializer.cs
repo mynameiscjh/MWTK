@@ -14,7 +14,6 @@ using System.Runtime.CompilerServices;
 using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using LOR_DiceSystem;
 using LOR_XML;
 using Mod;
 using StoryScene;
