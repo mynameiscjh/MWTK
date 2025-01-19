@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BookXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<BookXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Version>1.1</Version>
   <Book ID="10000001">
     <Name>堂 埃尤尔之页</Name>
@@ -40,12 +41,12 @@
     <SkinGender>N</SkinGender>
     <Chapter>7</Chapter>
     <Episode>-1</Episode>
-    <RangeType>Melee</RangeType>
+    <RangeType>Hybrid</RangeType>
     <NotEquip>false</NotEquip>
     <RandomFace>false</RandomFace>
     <SpeedDiceNum>1</SpeedDiceNum>
     <SuccessionPossibleNumber>9</SuccessionPossibleNumber>
-	<SoundInfo Motion="H" WinExternal="false" Win="" LoseExternal="false" Lose="" />
+    <SoundInfo Motion="H" WinExternal="false" Win="" LoseExternal="false" Lose="" />
     <SoundInfo Motion="F" WinExternal="false" Win="" LoseExternal="false" Lose="" />
     <SoundInfo Motion="J" WinExternal="false" Win="" LoseExternal="false" Lose="" />
     <SoundInfo Motion="Z" WinExternal="false" Win="" LoseExternal="false" Lose="" />

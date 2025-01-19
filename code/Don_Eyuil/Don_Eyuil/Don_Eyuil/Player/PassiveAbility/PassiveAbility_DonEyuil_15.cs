@@ -2,6 +2,7 @@
 using LOR_DiceSystem;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -104,6 +105,23 @@ namespace Don_Eyuil.PassiveAbility
             }
         }
 
+        [HarmonyPatch(typeof(UILibrarianEquipInfoSlot), "SetData")]
+        [HarmonyPostfix]
+        public static void UILibrarianEquipInfoSlot_SetData_Post(BookPassiveInfo passive, Image ___Frame, TextMeshProUGUI ___txt_cost)
+        {
+            if (passive == null || passive.passive.id != MyTools.Create(15))
+            {
+                return;
+            }
+            ___Frame.color = Color.red;
+            ___txt_cost.text = "";
+            GameObject gameObject = new GameObject("摩天轮");
+            gameObject.transform.parent = ___txt_cost.transform;
+            gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+            gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+            gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
+        }
+
         public enum DeckId
         {
             Normal, HardBlood
@@ -119,8 +137,24 @@ namespace Don_Eyuil.PassiveAbility
             MyId.Card_堂埃尤尔派硬血术7式_血弓_2,
             MyId.Card_堂埃尤尔派硬血术8式_血鞭_2,
             MyId.Card_堂埃尤尔派硬血术9式_血伞_2,
-            MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2,
         };
+
+        [HarmonyPatch(typeof(BookModel), "GetOnlyCards")]
+        [HarmonyPostfix]
+        public static void BookModel_GetOnlyCards_Post(ref List<DiceCardXmlInfo> __result, BookModel __instance)
+        {
+            if (__instance.BookId != MyId.Book_堂_埃尤尔之页)
+            {
+                return;
+            }
+            __result.Clear();
+            foreach (var item in HardBloodCards)
+            {
+                var card = ItemXmlDataList.instance.GetCardItem(item);
+                __result.Add(card);
+            }
+        }
+
         [HarmonyPatch(typeof(UIInvenCardListScroll), "ApplyFilterAll")]
         [HarmonyPostfix]
         public static void UIInvenCardListScroll_ApplyFilterAll_Post(List<DiceCardItemModel> ____currentCardListForFilter, UIInvenCardListScroll __instance)
@@ -129,7 +163,7 @@ namespace Don_Eyuil.PassiveAbility
             {
                 return;
             }
-            if (__instance.GetFieldValue<UnitDataModel>("_unitdata").bookItem.BookId != MyTools.Create(10000001))
+            if (__instance.GetFieldValue<UnitDataModel>("_unitdata").bookItem.BookId != MyId.Book_堂_埃尤尔之页)
             {
                 return;
             }
@@ -143,6 +177,11 @@ namespace Don_Eyuil.PassiveAbility
                     itemModel.num = 99;
                     ____currentCardListForFilter.Add(itemModel);
                 }
+            }
+            else
+            {
+                ____currentCardListForFilter.RemoveAll(x => HardBloodCards.Exists(item => item == x.ClassInfo.id));
+                ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
             }
             __instance.SetCardsData(__instance.GetCurrentPageList());
         }
@@ -177,7 +216,7 @@ namespace Don_Eyuil.PassiveAbility
             {
                 return;
             }
-            if (__instance.currentunit.bookItem.BookId == MyTools.Create(10000001))
+            if (__instance.currentunit.bookItem.BookId == MyId.Book_堂_埃尤尔之页)
             {
                 int currentIndex = ___deckTabsController.GetCurrentIndex();
                 if (currentIndex == 1)
