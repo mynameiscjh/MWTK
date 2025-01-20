@@ -126,9 +126,6 @@ namespace Don_Eyuil.PassiveAbility
             gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
         }
-
-        }
-
         public enum DeckId
         {
             Normal, HardBlood

@@ -447,7 +447,7 @@ namespace Don_Eyuil
                     else if (x.GetType().Name.Contains("BoreResponsibility")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(card.target); }
                     else if (x.GetType().Name.Contains("MutualUnderstanding")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(card.target); }
                 });
-               BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(x => x != card.target,y => BattleUnitBuf_DuelStun.)
+               //BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(x => x != card.target,y => BattleUnitBuf_DuelStun.)
             }
             BattleUnitBuf_GloriousDuel.GetOrAddBuf<BattleUnitBuf_GloriousDuel>(card.target);
         }
