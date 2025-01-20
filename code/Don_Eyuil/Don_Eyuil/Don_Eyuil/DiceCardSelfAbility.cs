@@ -206,10 +206,23 @@ namespace Don_Eyuil
         }
         public override void OnEndAreaAttack()
         {
-            Singleton<StageController>.Instance.BattleEndForcelyNotRound();
+
+            // Singleton<StageController>.Instance.BattleEndForcelyNotRound();
         }
         public override void OnEndBattle()
         {
+            BattleObjectManager.instance.GetAliveList().Do(target =>
+            {
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>();
+                for (int i = 0; i < target.cardSlotDetail.cardAry.Count; i++)
+                {
+                    BattlePlayingCardDataInUnitModel battlePlayingCardDataInUnitModel = target.cardSlotDetail.cardAry[i];
+                    if (battlePlayingCardDataInUnitModel != null && !battlePlayingCardDataInUnitModel.isDestroyed && battlePlayingCardDataInUnitModel.GetDiceBehaviorList().Count > 0)
+                    {
+                        battlePlayingCardDataInUnitModel.DestroyPlayingCard();
+                    }
+                }
+            });
             //Singleton<StageController>.Instance.InvokeMethod("set_phase", StageController.StagePhase.RoundEndPhase);
             //Singleton<StageController>.Instance.InvokeMethod("RoundEndPhase", Time.deltaTime);
         }
@@ -400,7 +413,23 @@ namespace Don_Eyuil
         }
         public override void OnEndAreaAttack()
         {
-            Singleton<StageController>.Instance.BattleEndForcelyNotRound();
+
+            // Singleton<StageController>.Instance.BattleEndForcelyNotRound();
+        }
+        public override void OnEndBattle()
+        {
+            BattleObjectManager.instance.GetAliveList().Do(target =>
+            {
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>();
+                for (int i = 0; i < target.cardSlotDetail.cardAry.Count; i++)
+                {
+                    BattlePlayingCardDataInUnitModel battlePlayingCardDataInUnitModel = target.cardSlotDetail.cardAry[i];
+                    if (battlePlayingCardDataInUnitModel != null && !battlePlayingCardDataInUnitModel.isDestroyed && battlePlayingCardDataInUnitModel.GetDiceBehaviorList().Count > 0)
+                    {
+                        battlePlayingCardDataInUnitModel.DestroyPlayingCard();
+                    }
+                }
+            });
         }
     }
     public class DiceCardSelfAbility_DonEyuil_51 : DiceCardSelfAbilityBase
@@ -417,8 +446,8 @@ namespace Don_Eyuil
                     else if (x.GetType().Name.Contains("GreatHope")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_GreatHope>(card.target); }
                     else if (x.GetType().Name.Contains("BoreResponsibility")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(card.target); }
                     else if (x.GetType().Name.Contains("MutualUnderstanding")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(card.target); }
-                    BattleUnitBuf_DuelStun.GainBuf<BattleUnitBuf_DuelStun>(x.owner, 1);
                 });
+               // BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(x => x != card.target,y => BattleUnitBuf_DuelStun.)
             }
             BattleUnitBuf_GloriousDuel.GetOrAddBuf<BattleUnitBuf_GloriousDuel>(card.target);
         }
@@ -496,6 +525,14 @@ namespace Don_Eyuil
         public override void OnWinParryingDef()
         {
             winCount++;
+        }
+    }
+    public class DiceCardSelfAbility_DonEyuil_79 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "[使用时]这一幕对自身施加5层流血";
+        public override void OnUseCard()
+        {
+            owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 5, owner);
         }
     }
 }

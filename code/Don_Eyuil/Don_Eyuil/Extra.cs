@@ -227,7 +227,7 @@ namespace Don_Eyuil
             }
 
             [HarmonyPatch(typeof(BattlePlayingCardSlotDetail), "RecoverPlayPoint")]
-            [HarmonyPostfix]
+            [HarmonyTranspiler]
             public static IEnumerable<CodeInstruction> BattlePlayingCardSlotDetail_RecoverPlayPoint_Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
