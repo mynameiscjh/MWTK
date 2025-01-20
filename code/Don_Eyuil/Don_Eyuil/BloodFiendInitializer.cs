@@ -599,33 +599,29 @@ namespace Don_Eyuil
             button.targetGraphic = image;
             button.onClick.AddListener(new UnityEngine.Events.UnityAction(() =>
             {
-                if (icons.transform.parent.GetChild(0).gameObject.activeSelf)
-                {
-                    for (int i = 0; i < icons.transform.childCount; i++)
-                    {
-                        if (icons.transform.GetChild(i).gameObject == ferrisWheel)
-                        {
-                            continue;
-                        }
-                        icons.transform.GetChild(i).gameObject.SetActive(false);
-                    }
-                    icons.transform.parent.GetChild(0).gameObject.SetActive(false);
-                    Icons_FerrisWheel.SetActive(true);
-                }
-                else
-                {
-                    for (int i = 0; i < icons.transform.childCount; i++)
-                    {
-                        if (icons.transform.GetChild(i).gameObject == ferrisWheel)
-                        {
-                            continue;
-                        }
-                        icons.transform.GetChild(i).gameObject.SetActive(true);
-                    }
-                    icons.transform.parent.GetChild(0).gameObject.SetActive(true);
-                    Icons_FerrisWheel.SetActive(false);
-                }
+                icons.SetActive(false);
+                icons.transform.parent.GetChild(0).gameObject.SetActive(false);
+                Icons_FerrisWheel.SetActive(true);
             }));
+
+            GameObject ferrisWheel_back = new GameObject("摩天轮_back");
+            ferrisWheel_back.transform.parent = Icons_FerrisWheel.transform;
+            ferrisWheel_back.transform.localPosition = new Vector3(652.9309f, 7871.67f - 400f + 200f, 0) + 降低可读性的魔法数字2;
+            var image_back = ferrisWheel_back.AddComponent<Image>();
+            image_back.sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮_BIG"];
+            var button_back = ferrisWheel_back.AddComponent<Button>();
+            button_back.targetGraphic = image_back;
+            button_back.onClick.AddListener(new UnityEngine.Events.UnityAction(() =>
+            {
+                icons.SetActive(true);
+                icons.transform.parent.GetChild(0).gameObject.SetActive(true);
+                Icons_FerrisWheel.SetActive(false);
+            }));
+
+            GameObject 箭头 = new GameObject("箭头");
+            箭头.transform.parent = Icons_FerrisWheel.transform;
+            箭头.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["箭头"];
+            箭头.transform.localPosition = new Vector3(652.9309f, 6085.005f, 0);
 
             Vector3 降低可读性的魔法数字 = new Vector3(0f, 140f, 0f);
 
@@ -740,6 +736,67 @@ namespace Don_Eyuil
                 temp += 0.2f;
                 time = 0.05f;
             }
+        }
+
+        public static List<string> Stages = new List<string>()
+        {
+            "Don_Eyuil"
+        };
+
+        [HarmonyPatch(typeof(UIInvitationPanel), "GetTheBlueReverberationPrimaryStage")]
+        [HarmonyPostfix]
+        public static void UIInvitationPanel_GetTheBlueReverberationPrimaryStage_Post(UIInvitationPanel __instance, ref UIStoryLine __result)
+        {
+
+            if (__instance == null || __instance.CurrentStage.storyType == null || !Stages.Exists(x => x == __instance.CurrentStage.storyType))
+            {
+                return;
+            }
+
+            __result = UIStoryLine.BlackSilence;
+        }
+        [HarmonyPatch(typeof(UIInvitationRightMainPanel), "SetInvBookApplyState")]
+        [HarmonyPostfix]
+        public static void UIInvitationRightMainPanel_SetInvBookApplyState_Post(InvitationApply_State state, UIInvitationPanel ___invPanel, ref Image ___img_endcontents_content)
+        {
+            var temp = ___invPanel.CurrentStage;
+            if (temp == null || temp.storyType == null)
+            {
+                return;
+            }
+
+            if (state == InvitationApply_State.BlackSilence && Stages.Exists(x => x == temp.storyType))
+            {
+                ___img_endcontents_content.sprite = TKS_BloodFiend_Initializer.ArtWorks["..D"];
+            }
+        }
+        [HarmonyPatch(typeof(UIInvitationRightMainPanel), "OnClickSendButtonForBlue")]
+        [HarmonyPrefix]
+        public static bool UIInvitationRightMainPanel_OnClickSendButtonForBlue_Pre(UIInvitationRightMainPanel __instance, UIInvitationPanel ___invPanel)
+        {
+            StageClassInfo currentStage = ___invPanel.CurrentStage;
+
+            if (currentStage == null || currentStage.storyType == null || !Stages.Exists(x => x == currentStage.storyType))
+            {
+                return true;
+            }
+
+            if (__instance.currentinvState == InvitationApply_State.BlackSilence)
+            {
+                UIAlarmPopup.instance.SetAlarmTextForBlue(UIAlarmType.StartTheBlueBattlePrimary, (bool yesno) =>
+                {
+                    if (yesno)
+                    {
+                        StageClassInfo stageClassInfo = Singleton<StageClassInfoList>.Instance.GetAllDataList().Find((StageClassInfo x) => x.storyType == currentStage.storyType);
+                        Singleton<LibraryQuestManager>.Instance.OnSendInvitation(stageClassInfo.id);
+                        UI.UIController.Instance.PrepareBattle(stageClassInfo, new List<DropBookXmlInfo>());
+                        UISoundManager.instance.PlayEffectSound(UISoundType.Ui_Invite);
+                    }
+                }, "伟大摩天轮", UIStoryLine.BlackSilence);
+                return false;
+            }
+            return true;
+
         }
 
     }

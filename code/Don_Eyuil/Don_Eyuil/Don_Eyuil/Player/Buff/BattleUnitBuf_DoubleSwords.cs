@@ -29,6 +29,19 @@
             }
         }
 
+        public class DiceCardSelfAbility_Bleed : DiceCardSelfAbilityBase
+        {
+            public static string Desc = "[拼点胜利]对目标施加1层[流血]";
+            public override void OnWinParryingAtk()
+            {
+                card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 1, owner);
+            }
+            public override void OnWinParryingDef()
+            {
+                card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 1, owner);
+            }
+        }
+
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             if (behavior.behaviourInCard.Type == LOR_DiceSystem.BehaviourType.Atk)
