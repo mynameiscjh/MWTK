@@ -555,6 +555,7 @@ namespace Don_Eyuil
         public static bool isInit = false;
         public static GameObject Icons_FerrisWheel = null;
         public static GameObject Phase_FerrisWheel = null;
+        public static string Desc;
         [HarmonyPatch(typeof(UIStoryProgressPanel), "SetStoryLine")]
         [HarmonyPostfix]
         public static void UIStoryProgressPanel_SetStoryLine_Post(UIStoryProgressPanel __instance)
@@ -589,7 +590,9 @@ namespace Don_Eyuil
             Vector3 降低可读性的魔法数字2 = new Vector3(0, -50, 0);
             GameObject ferrisWheel = new GameObject("摩天轮");
             ferrisWheel.transform.parent = icons.transform;
-            ferrisWheel.transform.localPosition = new Vector3(652.9309f, 7871.67f, 0) + 降低可读性的魔法数字2;
+            ferrisWheel.transform.localPosition = new Vector3(652.9309f, 7871.67f - 400f + 200f, 0) + 降低可读性的魔法数字2;
+            Desc = "200是应为好看";
+            Desc = "400 和 降低可读性的魔法数字2都是因为月亮计划会让坐标上移所以需要减回来";
             var image = ferrisWheel.AddComponent<Image>();//7871.67
             image.sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮_BIG"];
             var button = ferrisWheel.AddComponent<Button>();
@@ -635,7 +638,8 @@ namespace Don_Eyuil
             Don_Eyuil.name = "Don_Eyuil";
             Don_Eyuil.currentStory = UIStoryLine.HanaAssociation;
             Don_Eyuil.Initialized(__instance);
-            Don_Eyuil.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2;
+            Don_Eyuil.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f + 50, 0) + 降低可读性的魔法数字2;
+            Desc = "50是因为不在中间";
             UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("Don_Eyuil", new UIIconManager.IconSet
             {
                 icon = TKS_BloodFiend_Initializer.ArtWorks["Don_Eyuil"],
@@ -653,25 +657,25 @@ namespace Don_Eyuil
             testS.name = "139";
             testS.currentStory = UIStoryLine.HanaAssociation;
             testS.Initialized(__instance);
-            testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2;
+            testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
             testS.SetSlotData(new List<StageClassInfo>()
             {
                 Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
             });
-            testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2, 600, 0);
+            testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, 0);
 
             var testS2 = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
             testS2.name = "139";
             testS2.currentStory = UIStoryLine.HanaAssociation;
             testS2.Initialized(__instance);
-            testS2.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2;
+            testS2.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
             testS2.SetSlotData(new List<StageClassInfo>()
             {
                 Singleton<StageClassInfoList>.Instance.GetData(MyTools.Create(3))
             });
-            testS2.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2, 600, 180);
+            testS2.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, 900);
 
-            point.transform.localPosition = new Vector3(853.7309f, 7736f + 1583.335f, 0f) + 降低可读性的魔法数字2;
+            point.transform.localPosition = new Vector3(853.7309f, 7736f + 1583.335f - 400f, 0f) + 降低可读性的魔法数字2;
             point.AddComponent<RedLine>();
             point.transform.localScale = new Vector3(15f, 15f, 0.8f);
             point.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["特别大的摩天轮"];
@@ -698,7 +702,7 @@ namespace Don_Eyuil
             public int index = 0;
             void Start()
             {
-                float count = 360;
+                float count = 1800;
                 float a = 360 / count;
                 for (int i = 0; i < count; i++)
                 {
@@ -733,7 +737,7 @@ namespace Don_Eyuil
                     return;
                 }
                 transform.localRotation = Quaternion.Euler(0, 0, temp);
-                temp += 1;
+                temp += 0.2f;
                 time = 0.05f;
             }
         }
