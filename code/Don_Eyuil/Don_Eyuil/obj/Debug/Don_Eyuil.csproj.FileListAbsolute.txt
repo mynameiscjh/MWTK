@@ -151,12 +151,12 @@ E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 
 E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\code\Don_Eyuil\Don_Eyuil\bin\Debug\UnityEngine.ARModule.dll
 E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\code\Don_Eyuil\Don_Eyuil\bin\Debug\UnityEngine.XRModule.dll
 E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\code\Don_Eyuil\Don_Eyuil\bin\Debug\UnityEngine.InputModule.dll
+G:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\BloodFiend\Assemblies\Don_Eyuil.dll
+G:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\BloodFiend\Assemblies\Don_Eyuil.pdb
+E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\Assemblies\Don_Eyuil.dll
+E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\Assemblies\Don_Eyuil.pdb
 E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\code\Don_Eyuil\Don_Eyuil\obj\Debug\Don_Eyuil.csproj.AssemblyReference.cache
 E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\code\Don_Eyuil\Don_Eyuil\obj\Debug\Don_Eyuil.csproj.CoreCompileInputs.cache
 E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\code\Don_Eyuil\Don_Eyuil\obj\Debug\Don_Eyuil.csproj.Up2Date
 E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\code\Don_Eyuil\Don_Eyuil\obj\Debug\Don_Eyuil.dll
 E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\code\Don_Eyuil\Don_Eyuil\obj\Debug\Don_Eyuil.pdb
-E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\Assemblies\Don_Eyuil.dll
-E:\game\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔 - 副本\Assemblies\Don_Eyuil.pdb
-G:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\BloodFiend\Assemblies\Don_Eyuil.dll
-G:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\BloodFiend\Assemblies\Don_Eyuil.pdb

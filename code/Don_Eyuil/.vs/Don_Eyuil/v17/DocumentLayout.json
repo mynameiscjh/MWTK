@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\UiTest\\Assets\\Roll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -460,7 +460,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -472,12 +472,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Roll.cs",
-              "DocumentMoniker": "D:\\unity\\UiTest\\Assets\\Roll.cs",
-              "ToolTip": "D:\\unity\\UiTest\\Assets\\Roll.cs",
+              "DocumentIndex": 0,
+              "Title": "BloodFiendInitializer.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\BloodFiendInitializer.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
+              "RelativeToolTip": "Don_Eyuil\\BloodFiendInitializer.cs",
+              "ViewState": "AgIAACoCAAAAAAAAAAAAADECAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T19:37:59.246Z"
+              "WhenOpened": "2025-01-20T07:03:34.058Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -518,25 +522,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BloodFiendInitializer.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\BloodFiendInitializer.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
-              "RelativeToolTip": "Don_Eyuil\\BloodFiendInitializer.cs",
-              "ViewState": "AgIAAAECAAAAAAAAAAAuwDICAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T17:15:55.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "PassiveAbility_DonEyuil_15.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
               "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
               "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAmwDsAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAmwC8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-18T14:31:46.667Z",
               "EditorCaption": ""
@@ -551,6 +542,15 @@
               "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-17T18:01:09.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Roll.cs",
+              "DocumentMoniker": "D:\\unity\\UiTest\\Assets\\Roll.cs",
+              "ToolTip": "D:\\unity\\UiTest\\Assets\\Roll.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:37:59.246Z"
             },
             {
               "$type": "Document",

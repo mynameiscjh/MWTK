@@ -4,7 +4,6 @@ using HarmonyLib;
 using LOR_DiceSystem;
 using LOR_XML;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -587,11 +586,11 @@ namespace Don_Eyuil
                 }
                 UnityEngine.Object.Destroy(child.gameObject);
             }
-
+            Vector3 降低可读性的魔法数字2 = new Vector3(0, -50, 0);
             GameObject ferrisWheel = new GameObject("摩天轮");
             ferrisWheel.transform.parent = icons.transform;
-            ferrisWheel.transform.localPosition = new Vector3(652.9309f, 6645f, 0f);
-            var image = ferrisWheel.AddComponent<Image>();
+            ferrisWheel.transform.localPosition = new Vector3(652.9309f, 7871.67f, 0) + 降低可读性的魔法数字2;
+            var image = ferrisWheel.AddComponent<Image>();//7871.67
             image.sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮_BIG"];
             var button = ferrisWheel.AddComponent<Button>();
             button.targetGraphic = image;
@@ -625,11 +624,18 @@ namespace Don_Eyuil
                 }
             }));
 
-            var testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
-            testS.name = "139";
-            testS.currentStory = UIStoryLine.HanaAssociation;
-            testS.Initialized(__instance);
-            testS.transform.localPosition = new Vector3(652.9309f, 6645f, 0f);
+            Vector3 降低可读性的魔法数字 = new Vector3(0f, 140f, 0f);
+
+            GameObject point = new GameObject("point");
+            //point.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
+            point.transform.parent = Phase_FerrisWheel.transform;
+
+
+            var Don_Eyuil = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+            Don_Eyuil.name = "Don_Eyuil";
+            Don_Eyuil.currentStory = UIStoryLine.HanaAssociation;
+            Don_Eyuil.Initialized(__instance);
+            Don_Eyuil.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2;
             UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("Don_Eyuil", new UIIconManager.IconSet
             {
                 icon = TKS_BloodFiend_Initializer.ArtWorks["Don_Eyuil"],
@@ -638,11 +644,39 @@ namespace Don_Eyuil
                 color = new Color(1, 1, 1, 1),
                 type = ""
             });
+            Don_Eyuil.SetSlotData(new List<StageClassInfo>()
+            {
+                Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_埃尤尔)
+            });
+
+            var testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+            testS.name = "139";
+            testS.currentStory = UIStoryLine.HanaAssociation;
+            testS.Initialized(__instance);
+            testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2;
             testS.SetSlotData(new List<StageClassInfo>()
             {
                 Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
             });
-            testS.gameObject.AddComponent<Roll>().Init(new Vector3(652.9309f, 6545f, 0f), 100);
+            testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2, 600, 0);
+
+            var testS2 = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+            testS2.name = "139";
+            testS2.currentStory = UIStoryLine.HanaAssociation;
+            testS2.Initialized(__instance);
+            testS2.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2;
+            testS2.SetSlotData(new List<StageClassInfo>()
+            {
+                Singleton<StageClassInfoList>.Instance.GetData(MyTools.Create(3))
+            });
+            testS2.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f, 0) + 降低可读性的魔法数字2, 600, 180);
+
+            point.transform.localPosition = new Vector3(853.7309f, 7736f + 1583.335f, 0f) + 降低可读性的魔法数字2;
+            point.AddComponent<RedLine>();
+            point.transform.localScale = new Vector3(15f, 15f, 0.8f);
+            point.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["特别大的摩天轮"];
+
+
             Icons_FerrisWheel.SetActive(false);
             isInit = true;
 
@@ -653,10 +687,11 @@ namespace Don_Eyuil
             public Vector2 point; // 旋转中心的坐标
             public float R;
 
-            public void Init(Vector2 point, float r)
+            public void Init(Vector2 point, float r, int index = 0)
             {
                 this.point = point;
                 this.R = r;
+                this.index = index;
             }
 
             public List<Vector2> points = new List<Vector2>();
@@ -671,7 +706,7 @@ namespace Don_Eyuil
                 }
                 //StartCoroutine(GetEnumerator());
             }
-            float time = 0.1f;
+            float time = 0.05f;
             void Update()
             {
                 time -= Time.deltaTime;
@@ -682,19 +717,24 @@ namespace Don_Eyuil
                 transform.localPosition = points[index];
                 index++;
                 index %= points.Count;
-                time = 0.1f;
+                time = 0.05f;
             }
+        }
 
-            IEnumerator GetEnumerator()
+        public class RedLine : MonoBehaviour
+        {
+            float time = 0.05f;
+            float temp = 0f;
+            void Update()
             {
-                while (true)
+                time -= Time.deltaTime;
+                if (time > 0)
                 {
-                    transform.localPosition = points[index];
-                    yield return new WaitForSeconds(0.1f);
-                    index++;
-                    index %= points.Count;
-                    yield return new WaitForSeconds(0.1f);
+                    return;
                 }
+                transform.localRotation = Quaternion.Euler(0, 0, temp);
+                temp += 1;
+                time = 0.05f;
             }
         }
 
