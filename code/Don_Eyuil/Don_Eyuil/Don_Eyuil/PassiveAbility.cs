@@ -1033,7 +1033,7 @@ namespace Don_Eyuil
             }
         }
     }
-    public class PassiveAbility_DonEyuil_13 : PassiveAbilityBase
+    public class PassiveAbility_DonEyuil_13 : PassiveAbilityBase_Don_Eyuil
     {
         //应该背负的责任
         public override string debugDesc => "使第一名在一幕中至少为友方角色转移两次攻击的敌方角色与自身共鸣";
@@ -1042,32 +1042,55 @@ namespace Don_Eyuil
         {
             BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
             {
-                var buf = BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x);
-                if (buf != null && !buf.BeforeBattleStartCardArys.ContainsKey(x))
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                for (int i = 0; i < owner.cardSlotDetail.cardAry.Count; i++)
                 {
-                    List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
-                    for (int i = 0; i < owner.cardSlotDetail.cardAry.Count; i++)
-                    {
-                        if (owner.cardSlotDetail.cardAry[i] != null && !owner.cardSlotDetail.cardAry[i].isDestroyed && owner.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0)
-                            list.Add(owner.cardSlotDetail.cardAry[i]);
-                    }
-                    buf.BeforeBattleStartCardArys.Add(x, list);
+                    if (owner.cardSlotDetail.cardAry[i] != null && !owner.cardSlotDetail.cardAry[i].isDestroyed && owner.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && owner.cardSlotDetail.cardAry[i].target == x)
+                        list.Add(owner.cardSlotDetail.cardAry[i]);
                 }
+                this.BeforeBattleStartCardArys.Add(x, list);
             });
         }
-        public override void OnRoundEnd()
+        public override void OnStartBattleTheLast()
         {
-            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x));
-        }
-        public class BattleUnitBuf_PathTowardYourDream : BattleUnitBuf_Don_Eyuil
-        {
-            public override void OnStartBattle()
+            Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>> AfterBattleStartCardArys = new Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>>() { };
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
             {
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                for (int i = 0; i < owner.cardSlotDetail.cardAry.Count; i++)
+                {
+                    if (owner.cardSlotDetail.cardAry[i] != null && !owner.cardSlotDetail.cardAry[i].isDestroyed && owner.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && owner.cardSlotDetail.cardAry[i].target == x)
+                        list.Add(owner.cardSlotDetail.cardAry[i]);
+                }
+                AfterBattleStartCardArys.Add(x, list);
+            });
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
+            {
+                if(AfterBattleStartCardArys.ContainsKey(x) && BeforeBattleStartCardArys.ContainsKey(x))
+                {
+                    int delta = AfterBattleStartCardArys.GetValueSafe(x).Count - BeforeBattleStartCardArys.GetValueSafe(x).Count;
+                    if(delta >= 2)
+                    {
+                        BattleObjectManager.instance.GetAliveList().Do(y =>
+                        {
+                            if (y.passiveDetail.HasPassive<PassiveAbility_DonEyuil_13>())
+                            {
+                                y.Die();
+                            }
+                        });
+                        BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(x);
+                        return;
+                    }
+                }
 
-            }
-            public Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>> BeforeBattleStartCardArys = new Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>>() { };
-            public BattleUnitBuf_PathTowardYourDream(BattleUnitModel model) : base(model) { stack = 0; }
+            });
+
         }
+
+        //目标战斗开始前存在3张书页 战斗开始后不存在 ->指向目标的3张书页被转移
+        //目标战斗开始前不存在书页 战斗开始后存在3张书页->目标转移了3张书页
+        //所以使用KV的V的count的变化delta来计算转移书页
+        public Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>> BeforeBattleStartCardArys = new Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>>() { };//表示目标在战斗开始前所有指向他的书页
     }
     public class PassiveAbility_DonEyuil_14 : PassiveAbilityBase
     {

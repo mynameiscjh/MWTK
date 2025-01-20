@@ -202,7 +202,22 @@ namespace Don_Eyuil
 
     }
 
+    public class PassiveAbilityBase_Don_Eyuil : PassiveAbilityBase
+    {
+        public virtual void OnStartBattleTheLast()
+        {
 
+        }
+        public class OnStartBattleTheLastPatch
+        {
+            [HarmonyPatch(typeof(StageController), "ActivateStartBattleEffectPhase")]
+            [HarmonyPostfix]
+            public static void StageController_ActivateStartBattleEffectPhase_Post()
+            {
+                BattleObjectManager.instance.GetAliveList().Do(x => x.passiveDetail.PassiveList.FindAll(n => n is PassiveAbilityBase_Don_Eyuil).Do(y => (y as PassiveAbilityBase_Don_Eyuil).OnStartBattleTheLast()));
+            }
+        }
+    }
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
         public virtual void BeforeRecoverPlayPoint(ref int value)
@@ -227,7 +242,7 @@ namespace Don_Eyuil
             }
 
             [HarmonyPatch(typeof(BattlePlayingCardSlotDetail), "RecoverPlayPoint")]
-            [HarmonyPostfix]
+            [HarmonyTranspiler]
             public static IEnumerable<CodeInstruction> BattlePlayingCardSlotDetail_RecoverPlayPoint_Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
