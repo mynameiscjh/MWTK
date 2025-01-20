@@ -10,6 +10,17 @@ namespace Don_Eyuil.Don_Eyuil.Buff
         {
 
         }
+
+        public override void Init(BattleUnitModel owner)
+        {
+            base.Init(owner);
+            if (owner.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_PhysicalShield) is BattleUnitBuf_PhysicalShield)
+            {
+                var buf = owner.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_PhysicalShield) as BattleUnitBuf_PhysicalShield;
+                buf.ChangeColor(new Color(1, 0, 0, 1));
+            }
+        }
+
         public override void OnRoundEnd()
         {
             foreach (var item in _owner.cardSlotDetail.keepCard.cardBehaviorQueue)
