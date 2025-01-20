@@ -3,6 +3,7 @@ using Don_Eyuil.Don_Eyuil.Buff;
 using Don_Eyuil.Don_Eyuil.Player.Buff;
 using HarmonyLib;
 using LOR_DiceSystem;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -113,12 +114,19 @@ namespace Don_Eyuil.PassiveAbility
         [HarmonyPostfix]
         public static void UILibrarianEquipInfoSlot_SetData_Post(BookPassiveInfo passive, Image ___Frame, TextMeshProUGUI ___txt_cost)
         {
-            if (passive == null || passive.passive.id != MyTools.Create(15))
+            if (passive == null)
             {
                 return;
             }
             ___Frame.color = Color.red;
             ___txt_cost.text = "";
+            GameObject gameObject = new GameObject("摩天轮");
+            gameObject.transform.parent = ___txt_cost.transform;
+            gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+            gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+            gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
+        }
+
         }
 
         public enum DeckId
@@ -136,6 +144,7 @@ namespace Don_Eyuil.PassiveAbility
             MyId.Card_堂埃尤尔派硬血术7式_血弓_2,
             MyId.Card_堂埃尤尔派硬血术8式_血鞭_2,
             MyId.Card_堂埃尤尔派硬血术9式_血伞_2,
+            MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2,
         };
 
         [HarmonyPatch(typeof(BookModel), "GetOnlyCards")]
@@ -370,7 +379,6 @@ namespace Don_Eyuil.PassiveAbility
             }
             return true;
         }
-
 #if false
         [HarmonyPatch(typeof(UIOriginCardSlot), "SetHighlightedSlot")]
         [HarmonyPostfix]
@@ -390,7 +398,9 @@ namespace Don_Eyuil.PassiveAbility
             }
         }
 #endif
+
         //应该需要hp把特定buff加上
+
         [HarmonyPatch(typeof(LevelUpUI), "OnSelectEgoCard")]
         [HarmonyPrefix]
         public static bool LevelUpUI_OnSelectEgoCard_Pre(BattleDiceCardUI picked)
@@ -409,7 +419,7 @@ namespace Don_Eyuil.PassiveAbility
                 }
 
                 // 创建映射字典
-                var cardToBufMap = new Dictionary<LorId, System.Type>
+                var cardToBufMap = new Dictionary<LorId, Type>
                 {
                     { MyId.Card_堂埃尤尔派硬血术1式_血剑_2, typeof(BattleUnitBuf_Sword) },
                     { MyId.Card_堂埃尤尔派硬血术2式_血枪_2, typeof(BattleUnitBuf_Lance) },
@@ -422,7 +432,7 @@ namespace Don_Eyuil.PassiveAbility
                     { MyId.Card_堂埃尤尔派硬血术9式_血伞_2, typeof(BattleUnitBuf_Umbrella) }
                 };
 
-                if (cardToBufMap.TryGetValue(picked.CardModel.GetID(), out System.Type bufType))
+                if (cardToBufMap.TryGetValue(picked.CardModel.GetID(), out Type bufType))
                 {
                     var method = typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GainBuf").MakeGenericMethod(bufType);
                     method.Invoke(null, new object[] { I39, 1, BufReadyType.ThisRound });
