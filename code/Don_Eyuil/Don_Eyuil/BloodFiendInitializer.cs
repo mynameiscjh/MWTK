@@ -636,7 +636,7 @@ namespace Don_Eyuil
 
             var Don_Eyuil = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
             Don_Eyuil.name = "Don_Eyuil";
-            Don_Eyuil.currentStory = UIStoryLine.HanaAssociation;
+            Don_Eyuil.currentStory = UIStoryLine.BlackSilence;
             Don_Eyuil.Initialized(__instance);
             Don_Eyuil.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f + 50, 0) + 降低可读性的魔法数字2;
             Desc = "50是因为不在中间";
@@ -653,27 +653,27 @@ namespace Don_Eyuil
                 Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_埃尤尔)
             });
 
-            var testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
-            testS.name = "139";
-            testS.currentStory = UIStoryLine.HanaAssociation;
-            testS.Initialized(__instance);
-            testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
-            testS.SetSlotData(new List<StageClassInfo>()
-            {
-                Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
-            });
-            testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, 0);
+            //var testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+            //testS.name = "139";
+            //testS.currentStory = UIStoryLine.HanaAssociation;
+            //testS.Initialized(__instance);
+            //testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
+            //testS.SetSlotData(new List<StageClassInfo>()
+            //{
+            //    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
+            //});
+            //testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, 0);
 
-            var testS2 = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
-            testS2.name = "139";
-            testS2.currentStory = UIStoryLine.HanaAssociation;
-            testS2.Initialized(__instance);
-            testS2.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
-            testS2.SetSlotData(new List<StageClassInfo>()
-            {
-                Singleton<StageClassInfoList>.Instance.GetData(MyTools.Create(3))
-            });
-            testS2.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, 900);
+            //var testS2 = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+            //testS2.name = "139";
+            //testS2.currentStory = UIStoryLine.HanaAssociation;
+            //testS2.Initialized(__instance);
+            //testS2.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
+            //testS2.SetSlotData(new List<StageClassInfo>()
+            //{
+            //    Singleton<StageClassInfoList>.Instance.GetData(MyTools.Create(3))
+            //});
+            //testS2.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, 900);
 
             point.transform.localPosition = new Vector3(853.7309f, 7736f + 1583.335f - 400f, 0f) + 降低可读性的魔法数字2;
             point.AddComponent<RedLine>();
