@@ -16,7 +16,6 @@ using UI;
 using static Don_Eyuil.PassiveAbility_DonEyuil_07;
 using static CharacterSound;
 using System.Runtime.InteropServices;
-using static UnityEngine.GraphicsBuffer;
 namespace Don_Eyuil
 {
     public class PassiveAbility_DonEyuil_01 : PassiveAbilityBase
@@ -1039,22 +1038,9 @@ namespace Don_Eyuil
         //应该背负的责任
         public override string debugDesc => "使第一名在一幕中至少为友方角色转移两次攻击的敌方角色与自身共鸣";
 
-        public override void OnRoundStartAfter()
+        public override void OnRoundStart()
         {
-            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => 
-            {
-                var buf = BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x);
-                if(buf != null && !buf.BeforeBattleStartCardArys.ContainsKey(x))
-                {
-                    List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
-                    for (int i = 0; i < owner.cardSlotDetail.cardAry.Count; i++)
-                    {
-                        if(owner.cardSlotDetail.cardAry[i] != null && !owner.cardSlotDetail.cardAry[i].isDestroyed && owner.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0)
-                        list.Add(owner.cardSlotDetail.cardAry[i]);
-                    }
-                    buf.BeforeBattleStartCardArys.Add(x, list);
-                }
-            });
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x));
         }
         public override void OnRoundEnd()
         {
@@ -1062,11 +1048,6 @@ namespace Don_Eyuil
         }
         public class BattleUnitBuf_PathTowardYourDream : BattleUnitBuf_Don_Eyuil
         {
-            public override void OnStartBattle()
-            {
-                
-            }
-            public Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>> BeforeBattleStartCardArys = new Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>>() { };
             public BattleUnitBuf_PathTowardYourDream(BattleUnitModel model) : base(model) { stack = 0; }
         }
     }
