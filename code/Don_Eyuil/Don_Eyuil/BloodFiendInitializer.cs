@@ -379,24 +379,6 @@ namespace Don_Eyuil
                         }
                     }
                 }
-                void LoadEffectTexts()
-                {
-                    var dic = Singleton<BattleEffectTextsXmlList>.Instance.GetFieldValue<Dictionary<string, BattleEffectText>>("_dictionary");
-                    var dir = new DirectoryInfo(DllPath + "/Localize/" + language + "/EffectTexts");
-                    var files = dir.GetFiles();
-                    foreach (System.IO.FileInfo file in files)
-                    {
-                        using (StringReader stringReader = new StringReader(File.ReadAllText(file.FullName)))
-                        {
-                            BattleEffectTextRoot battleEffectTextRoot =
-                                (BattleEffectTextRoot)new XmlSerializer(typeof(BattleEffectTextRoot)).Deserialize(stringReader);
-                            foreach (BattleEffectText battleEffectText in battleEffectTextRoot.effectTextList)
-                            {
-                                dic.Add(battleEffectText.ID, battleEffectText);
-                            }
-                        }
-                    }
-                }
                 LoadLocalize_BattleCardAbilities();
                 AddLocalize_EffectTexts();
             }

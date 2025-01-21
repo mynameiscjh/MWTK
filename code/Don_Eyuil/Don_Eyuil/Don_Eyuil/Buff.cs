@@ -20,7 +20,6 @@ namespace Don_Eyuil
         protected override string keywordId => "BattleUnitBuf_BleedCrystal";
         //至多30层
         //可配合硬血术效果
-        protected override string keywordId => "BattleUnitBuf_HardBlood_Crystal";
         public override int GetMaxStack() => 30;
         public BattleUnitBuf_HardBlood_Crystal(BattleUnitModel model) : base(model)
         {
@@ -38,8 +37,6 @@ namespace Don_Eyuil
         {
             this.Destroy();
         }
-
-        protected override string keywordId => "BattleUnitBuf_UncondensableBlood";
 
         public static void UncodensableBloodCheck(BattleUnitBuf BleedingBuf)
         {
@@ -76,7 +73,6 @@ namespace Don_Eyuil
         protected override string keywordId => "BattleUnitBuf_Rifle";
         //自身这一幕施加的"流血"翻倍
 
-        protected override string keywordId => "BattleUnitBuf_WarmBloodLance";
 
         public override int GetMultiplierOnGiveKeywordBufByCard(BattleUnitBuf cardBuf, BattleUnitModel target)
         {
@@ -125,7 +121,6 @@ namespace Don_Eyuil
         protected override string keywordId => "BattleUnitBuf_Thistles";
         public static string Desc = "投掷骰子时使自身在下一幕中获得1层[流血](每幕至多触发x次) 自身速度降低x/2 每幕结束时层数减半";
 
-        protected override string keywordId => "BattleUnitBuf_BloodCrystalThorn";
 
         public BattleUnitBuf_BloodCrystalThorn(BattleUnitModel model) : base(model)
         {
@@ -162,7 +157,6 @@ namespace Don_Eyuil
         protected override string keywordId => "BattleUnitBuf_Tidewater";
         public static string Desc = "所有敌方角色被施加\"流血\"时层数+x\r\n自身对处于流血状态的敌方角色造成的伤害与混乱伤害x×10%";
 
-        protected override string keywordId => "BattleUnitBuf_BloodTide";
 
         public BattleUnitBuf_BloodTide(BattleUnitModel model) : base(model)
         {
