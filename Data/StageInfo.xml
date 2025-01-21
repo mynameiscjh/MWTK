@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<StageXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<StageXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Version>1.1</Version>
   <Stage id="1">
     <Name>埃尤尔</Name>
@@ -20,7 +21,7 @@
     <Condition>
       <Level>0</Level>
     </Condition>
-    <StoryType>Fox_Rain</StoryType>
+    <StoryType>Don_Eyuil</StoryType>
     <Story Condition="Start">Button</Story>
     <Story Condition="End" />
     <IsChapterLast>false</IsChapterLast>
