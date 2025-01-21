@@ -754,7 +754,7 @@ namespace Don_Eyuil
                 if (ExpiredArtPair != null) { return ExpiredArtPair; }
             }
             owner.bufListDetail.GetActivatedBufList().FindAll(x => x is BattleUnitBuf_HardBloodArt).Do(x => x.Destroy());
-            if (WithOutShield == false && Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 1f )
+            if (WithOutShield == false && Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 0.25f )
             {
                 return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Sheild, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodShield>(owner));
             }
@@ -1040,6 +1040,7 @@ namespace Don_Eyuil
 
         public override void OnRoundStartAfter()
         {
+            BeforeBattleStartCardArys.Clear();
             BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
             {
                 List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
@@ -1082,7 +1083,6 @@ namespace Don_Eyuil
                         return;
                     }
                 }
-
             });
 
         }

@@ -328,6 +328,43 @@ namespace Don_Eyuil
         {
             protected override string keywordId => "BattleUnitBuf_Resonance_BoreResponsibility";
             public static string Desc = "自身将可以无视速度转移敌方攻击\r\n自身为友方角色转移攻击时使自身所有骰子威力+2";
+            public List<BattlePlayingCardDataInUnitModel> BeforeBattleStartCardArys = new List<BattlePlayingCardDataInUnitModel>() { };//表示目标在战斗开始前所有指向他的书页
+            public List<BattlePlayingCardDataInUnitModel> AfterBattleStartCardArys = new List<BattlePlayingCardDataInUnitModel>() { };
+            //后比前多出来的书页即为此角色转移的书页->Except
+
+            public override bool CanForcelyAggro(BattleUnitModel target) => target.faction != owner.faction;
+            public override void OnRoundStartAfter()
+            {
+                BeforeBattleStartCardArys.Clear();
+                AfterBattleStartCardArys.Clear();
+                var EnemyModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_01>());
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                for (int i = 0; i < EnemyModel.cardSlotDetail.cardAry.Count; i++)
+                {
+                    if (EnemyModel.cardSlotDetail.cardAry[i] != null && !EnemyModel.cardSlotDetail.cardAry[i].isDestroyed && EnemyModel.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && EnemyModel.cardSlotDetail.cardAry[i].target == owner)
+                        list.Add(EnemyModel.cardSlotDetail.cardAry[i]);
+                }
+                this.BeforeBattleStartCardArys.AddRange(list);
+            }
+            public override void OnStartBattle()
+            {
+                var EnemyModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_01>());
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                for (int i = 0; i < EnemyModel.cardSlotDetail.cardAry.Count; i++)
+                {
+                    if (EnemyModel.cardSlotDetail.cardAry[i] != null && !EnemyModel.cardSlotDetail.cardAry[i].isDestroyed && EnemyModel.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && EnemyModel.cardSlotDetail.cardAry[i].target == owner)
+                        list.Add(EnemyModel.cardSlotDetail.cardAry[i]);
+                }
+                AfterBattleStartCardArys.AddRange(list);
+                AfterBattleStartCardArys = AfterBattleStartCardArys.Except(this.BeforeBattleStartCardArys).ToList();
+            }
+            public override void BeforeRollDice(BattleDiceBehavior behavior)
+            {
+                if (behavior != null && behavior.TargetDice != null && behavior.TargetDice.card != null && AfterBattleStartCardArys.Contains(behavior.TargetDice.card))
+                {
+                    behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = 2 });
+                }
+            }
             public BattleUnitBuf_Resonance_BoreResponsibility(BattleUnitModel model) : base(model)
             {
                 typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["背负的责任"]);

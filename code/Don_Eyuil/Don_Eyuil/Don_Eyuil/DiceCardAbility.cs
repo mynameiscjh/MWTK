@@ -12,6 +12,13 @@ using static Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility.DiceCardSelfAbility_
 
 namespace Don_Eyuil
 {
+    public class DiceCardAbility_DonEyuil_Testify : DiceCardAbilityBase
+    {
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            target.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.WarpCharge, 1);
+        }
+    }
     public class DiceCardAbility_DonEyuil_02 : DiceCardAbilityBase
     {
         public static string Desc = "[命中时]对双方施加3层[流血]";

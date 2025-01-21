@@ -1,4 +1,6 @@
-﻿using HarmonyLib;
+﻿using EnumExtenderV2;
+using HarmonyLib;
+using HyperCard;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +10,7 @@ using UnityEngine;
 using static CharacterSound;
 using static UI.UIIconManager;
 using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.UI.GridLayoutGroup;
 
 namespace Don_Eyuil
 {
@@ -220,6 +223,27 @@ namespace Don_Eyuil
     }
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
+        public virtual bool CanForcelyAggro(BattleUnitModel target) => false;
+        public class CanForcelyAggroPatch
+        {
+            [HarmonyPatch(typeof(BattleUnitModel), "CanChangeAttackTarget")]
+            [HarmonyPrefix]
+            public static bool BattleUnitModel_CanChangeAttackTarget_Prefix(BattleUnitModel __instance, BattleUnitModel target, ref bool __result)
+            {
+                foreach (var x in __instance.bufListDetail.GetActivatedBufList())
+                {
+                    if (!x.IsDestroyed() && x is BattleUnitBuf_Don_Eyuil)
+                    {
+                        if ((x as BattleUnitBuf_Don_Eyuil).CanForcelyAggro(target))
+                        {
+                            __result = true;
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+        }
         public virtual void BeforeRecoverPlayPoint(ref int value)
         {
 
@@ -388,7 +412,7 @@ namespace Don_Eyuil
             {
                 __instance.bufListDetail.GetActivatedBufList().ForEach(x =>
                 {
-                    if (x is BattleUnitBuf_Don_Eyuil)
+                    if (!x.IsDestroyed() && x is BattleUnitBuf_Don_Eyuil)
                     {
                         (x as BattleUnitBuf_Don_Eyuil).OnStartBattle();
                     }
@@ -570,6 +594,44 @@ namespace Don_Eyuil
 
         public BattleUnitModel owner { get{ return this._owner; } }
     }
+    public static class ExtraMethods
+    {
+        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior, int EnemyCount)
+        {
+            var owner = behavior.owner;
+            if(owner != null)
+            {
+                if (!behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
+                {
+                    var AliveList = BattleObjectManager.instance.GetAliveList_opponent(owner.faction);
+                    AliveList.Remove(behavior.card.target);
+                    behavior.GiveDamage_SubTarget((EnemyCount == -1 ? AliveList : MyTools.TKSRandomUtil(AliveList.ToList(), EnemyCount, false, false)).ToArray());
+                }
+            }
+        }
+        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior,params BattleUnitModel[] target)
+        {
+            if(behavior != null && !behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
+            {
+                behavior.AddFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget);
+                if (behavior.owner.battleCardResultLog == null) { behavior.owner.battleCardResultLog = new BattleCardTotalResult(behavior.card); }
+                target.Do(x =>
+                {
+                    if (x.battleCardResultLog == null) { x.battleCardResultLog = new BattleCardTotalResult(x.currentDiceAction); }
+                    //Debug.LogError(behavior.Detail + "givesubdamage:" + x.Book.Name);
+                    behavior.SetFieldValue<BattleDiceBehavior>("_targetDice", null);
+                    behavior.card.earlyTarget = behavior.card.target;
+                    behavior.card.earlyTargetOrder = behavior.card.targetSlotOrder;
+                    behavior.card.target = x;
+                    behavior.card.targetSlotOrder = 0;
+                    behavior.GiveDamage(x);
+                });
+
+            }
+
+        }
+    }
+
     public static class MyTools
     {
         /// <summary>
@@ -677,9 +739,10 @@ namespace Don_Eyuil
         {
             return new LorId(TKS_BloodFiend_Initializer.packageId, v);
         }
-        public static List<T> TKSRandomUtil<T>(List<T> ListToRandom, int randomnum, bool canbethesame = false, bool copywhenempty = true)
+        public static List<T> TKSRandomUtil<T>(List<T> ListToRandom_Arg, int randomnum, bool canbethesame = false, bool copywhenempty = true)
         {
             List<T> list = new List<T>();
+            var ListToRandom = ListToRandom_Arg;
             T item = default(T);
             for (int i = 0; i < randomnum; i++)
             {

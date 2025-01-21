@@ -16,6 +16,31 @@ using Don_Eyuil.Don_Eyuil.DiceCardSelfAbility;
 using TMPro;
 namespace Don_Eyuil
 {
+    public class DiceCardSelfAbility_DonEyuil_01 : DiceCardSelfAbilityBase
+    {
+        public static string Desc = "本书页将额外命中两名敌方角色";
+        public override void OnSucceedAttack(BattleDiceBehavior behavior)
+        {
+            behavior.GiveDamage_SubTarget(2);
+            /*if(!behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
+            {
+                var AliveList = BattleObjectManager.instance.GetAliveList_opponent(owner.faction);
+                AliveList.Remove(card.target);
+                var list = new List<string>(){ };
+                AliveList.Do(x => list.Add(x.Book.Name));
+                Debug.LogError(String.Join(",",list));
+                behavior.GiveDamage_SubTarget(MyTools.TKSRandomUtil(AliveList.ToList(), 2, false, false).ToArray());
+            }*/
+            //behavior.GiveDamage_SubTarget(MyTools.TKSRandomUtil(BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Except(new List<BattleUnitModel>() { card.target }).ToList(), 2, false, false).ToArray());
+            //MyTools.TKSRandomUtil(BattleObjectManager.instance.GetAliveList_opponent(owner.faction), 2, false, false).DoIf(x => x != card.target, y => behavior.GiveDamage_SubTarget(y));
+        }
+        public override void OnRollDice(BattleDiceBehavior behavior)
+        {
+            //Singleton<StageController>.Instance.dontUseUILog = true;
+
+            //Singleton<StageController>.Instance.dontUseUILog = false;
+        }
+    }
     public class DiceCardSelfAbility_DonEyuil_03 : DiceCardSelfAbilityBase
     {
         public static string Desc = "[使用时]消耗自身所有[硬血结晶]每消耗1层便使本书页施加的[流血]层数+1";
@@ -252,10 +277,9 @@ namespace Don_Eyuil
         public static string Desc = "本书页将同时命中所有敌方角色\r\n拼点失败时本书页依旧将击中目标但只施加[流血]\r\n";
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            foreach (var item in BattleObjectManager.instance.GetAliveList_opponent(owner.faction))
-            {
-                DiceCardSelfAbility_DonEyuil_01.GiveDamageForSubTarget(behavior, item);
-            }
+            //Singleton<StageController>.Instance.dontUseUILog = true;
+            //BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(y => y != card.target, x => behavior.GiveDamage_SubTarget(x));
+            //Singleton<StageController>.Instance.dontUseUILog = false;
         }
     }
     public class DiceCardSelfAbility_DonEyuil_34 : DiceCardSelfAbilityBase
@@ -386,6 +410,17 @@ namespace Don_Eyuil
     public class DiceCardSelfAbility_DonEyuil_44 : DiceCardSelfAbilityBase
     {
         public static string Desc = "本书页将命中全体敌方角色";
+        public override void OnSucceedAttack(BattleDiceBehavior behavior)
+        {
+            behavior.GiveDamage_SubTarget(-1);
+           // BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(y => y != card.target, x => behavior.GiveDamage_SubTarget(x));
+        }
+        public override void OnRollDice(BattleDiceBehavior behavior)
+        {
+            //Singleton<StageController>.Instance.dontUseUILog = true;
+
+            //Singleton<StageController>.Instance.dontUseUILog = false;
+        }
     }
 
     public class DiceCardSelfAbility_DonEyuil_46 : DiceCardSelfAbilityBase
