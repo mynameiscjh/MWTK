@@ -304,7 +304,7 @@ namespace Don_Eyuil
             }
             public class DiceFlagExtension : TKS_EnumExtender<DiceFlag>
             {
-                public static DiceFlag HasGivenDamage_SubTarget{ get; internal set; }
+                public static DiceFlag HasGivenDamage_SubTarget { get; internal set; }
             }
         }
         public static string GetPassiveName(int id)
@@ -769,12 +769,26 @@ namespace Don_Eyuil
             "Don_Eyuil"
         };
 
+        public static bool ISNULL(this object obj, params string[] names)
+        {
+            object temp = obj;
+            foreach (string name in names)
+            {
+                if (temp == null)
+                {
+                    return false;
+                }
+                temp = temp.GetFieldValue(null, name);
+            }
+            return true;
+        }
+
         [HarmonyPatch(typeof(UIInvitationPanel), "GetTheBlueReverberationPrimaryStage")]
         [HarmonyPostfix]
         public static void UIInvitationPanel_GetTheBlueReverberationPrimaryStage_Post(UIInvitationPanel __instance, ref UIStoryLine __result)
         {
 
-            if (__instance == null || __instance.CurrentStage.storyType == null || !Stages.Exists(x => x == __instance.CurrentStage.storyType))
+            if (__instance == null || __instance.CurrentStage == null || __instance.CurrentStage.storyType == null || !Stages.Exists(x => x == __instance.CurrentStage.storyType))
             {
                 return;
             }
