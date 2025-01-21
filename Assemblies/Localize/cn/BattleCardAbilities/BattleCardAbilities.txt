@@ -247,4 +247,7 @@
   <BattleCardAbility ID="DonEyuil_78">
     <Desc>[拼点胜利]对目标施加1层[流血]</Desc>
   </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_79">
+    <Desc>[战斗开始]这一幕对自身施加5层[流血]</Desc>
+  </BattleCardAbility>
 </BattleCardAbilityDescRoot>

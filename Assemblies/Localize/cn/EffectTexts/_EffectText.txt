@@ -59,73 +59,84 @@
 下令战斗时若自身至少拥有6层"结晶硬血"则使自身获得一颗反击(突刺4-8)骰子</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_UncondensableBlood">
+    <BattleEffectText ID="BattleUnitBuf_DeepWound">
+      <Name>深度创痕</Name>
+      <Desc>这一幕受到的"流血"伤害增加50%</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_Flow">
       <Name>无法凝结的血</Name>
       <Desc>自身流血无法低于2+{0}</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_WarmBloodLance">
+    <BattleEffectText ID="BattleUnitBuf_Rifle">
       <Name>热血尖枪</Name>
       <Desc>自身这一幕施加的"流血"翻倍</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_BloodTide">
+    <BattleEffectText ID="BattleUnitBuf_Tidewater">
       <Name>汹涌的血潮</Name>
       <Desc>所有敌方角色被施加"流血"时层数+{0}
-自身对处于流血状态的敌方角色造成的伤害与混乱伤害{0}×10%</Desc>
+自身对处于流血状态的敌方角色造成的伤害与混乱伤害+{0}×10%</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_BloodCrystalThorn">
+    <BattleEffectText ID="BattleUnitBuf_Thistles">
       <Name>血晶荆棘</Name>
       <Desc>投掷骰子时使自身在下一幕中获得1层[流血](每幕至多触发{0}次)
 自身速度降低{0}/2
 每幕结束时层数减半</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_HardBlood_Crystal">
+    <BattleEffectText ID="BattleUnitBuf_BleedCrystal">
       <Name>硬血结晶</Name>
       <Desc>至多30层
 可配合硬血术效果</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2_">
+    <BattleEffectText ID="BattleUnitBuf_FloodOfHunger">
       <Name>席卷而来的饥饿</Name>
       <Desc>击中"流血"不低于3的目标时恢复2点体力
 若一幕中没有恢复体力则失去20%的混乱抗性并获得1层"虚弱"
 获得15点正面情感后移除本效果</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2__">
+
+    <BattleEffectText ID="BattleUnitBuf_BloodArmor">
+      <Name>血铠</Name>
+      <Desc>这一幕中受到的伤害与混乱伤害减少{0}×20%</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_Resonance_BrightDream">
       <Name>璀璨的梦想</Name>
       <Desc>自身永久获得1层"强壮"与"迅捷"
 拼点时恢复2点混乱抗性</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2___">
+    <BattleEffectText ID="BattleUnitBuf_Resonance_GreatHope">
       <Name>美好的希望</Name>
       <Desc>自身光芒恢复量+1
 自身使用书页使将为光芒最低的一名友方角色恢复1点光芒</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2____">
+    <BattleEffectText ID="BattleUnitBuf_Resonance_BoreResponsibility">
       <Name>背负的责任</Name>
       <Desc>自身将可以无视速度转移敌方攻击
 自身为友方角色转移攻击时使自身所有骰子威力+2</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2_____">
+    <BattleEffectText ID="BattleUnitBuf_Resonance_MutualUnderstanding">
       <Name>互相的理解</Name>
       <Desc>受到的伤害与混乱伤害减少50%
 拼点时使对方进攻型骰子威力-1</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2______">
+    <BattleEffectText ID="BattleUnitBuf_GloriousDuel">
       <Name>光荣的决斗</Name>
       <Desc>"堂埃尤尔"的体力不会低于100
 若本幕结束时司书存活则接待胜利</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="BattleUnitBuf_Duel">
+    <BattleEffectText ID="TheDetermination2_______">
       <Name>光荣的决斗</Name>
       <Desc>拼点时双方所有骰子威力+3
 拼点胜利的一方造成的伤害增加25%

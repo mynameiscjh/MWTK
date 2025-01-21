@@ -12,8 +12,10 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
         {
             owner.allyCardDetail.DrawCards(1);
         }
-        public override void BeforeGiveDamage(BattleDiceBehavior behavior)
+        public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
+            behavior.GiveDamage_SubTarget(Math.Min(3, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum));
+            /*
             var temp = new List<BattleUnitModel>(BattleObjectManager.instance.GetAliveList_opponent(owner.faction));
             for (int i = 0; i < Math.Min(3, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum); i++)
             {
@@ -23,8 +25,14 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
                 }
                 var luckyDog = RandomUtil.SelectOne(temp);
                 temp.Remove(luckyDog);
-                DiceCardSelfAbility_DonEyuil_01.GiveDamageForSubTarget(behavior, luckyDog);
-            }
+                //Singleton<StageController>.Instance.dontUseUILog = true;
+                behavior.GiveDamage_SubTarget(luckyDog);
+                //Singleton<StageController>.Instance.dontUseUILog = false;
+            }*/
+        }
+        public override void BeforeGiveDamage(BattleDiceBehavior behavior)
+        {
+
         }
     }
 }

@@ -8,9 +8,17 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using static Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility.DiceCardSelfAbility_DonEyuil_69;
 
 namespace Don_Eyuil
 {
+    public class DiceCardAbility_DonEyuil_Testify : DiceCardAbilityBase
+    {
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            target.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.WarpCharge, 1);
+        }
+    }
     public class DiceCardAbility_DonEyuil_02 : DiceCardAbilityBase
     {
         public static string Desc = "[命中时]对双方施加3层[流血]";
@@ -96,8 +104,8 @@ namespace Don_Eyuil
         {
             if(target != null)
             {
-                target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Binding, 4, owner);
-                target.bufListDetail.AddKeywordBufNextNextByCard(KeywordBuf.Binding, 4, owner);
+                target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 4, owner);
+                target.bufListDetail.AddKeywordBufNextNextByCard(KeywordBuf.Bleeding, 4, owner);
             }
         }
     }
@@ -172,25 +180,26 @@ namespace Don_Eyuil
     {
         public static string Desc = "[命中时]恢复等同于造成伤害量的体力溢出部分将转化为等量护盾";
 
-        public static void AfterGiveDamage(BattleDiceBehavior behavior, int dmg)
+        public static int AfterGiveDamage(BattleDiceBehavior behavior, int dmg)
         {
-            if(behavior != null && behavior.abilityList.Exists(x => x is DiceCardAbility_DonEyuil_20))
+            if(behavior != null && behavior.abilityList.Exists(x => x is DiceCardAbility_DonEyuil_20) && behavior.owner != null)
             {
                 int losthp = behavior.owner.MaxHp - (int)behavior.owner.hp;
                 behavior.owner.RecoverHP(Math.Min(losthp, dmg));
                 if(dmg - losthp > 0)
                 {
                     //BattleUnitBuf_PhysicalShield.AddBuf(behavior.owner, dmg - losthp);
+                    BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(behavior.owner, dmg);
                 }
-
             }
+            return dmg;
         }
-        /*[HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
+        [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BattleDiceBehavior_GiveDamage_Tran(IEnumerable<CodeInstruction> instructions)
         {
             List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
-            int index = codes.FindIndex(x => x.operand.ToString().Contains("TakeDamage") && x.opcode == OpCodes.Callvirt);
+            int index = codes.FindIndex(x => x.opcode == OpCodes.Callvirt && x.operand.ToString().Contains("TakeDamage"));
             codes.InsertRange(index + 1, new List<CodeInstruction>()
             {
                 new CodeInstruction(OpCodes.Ldarg_0),
@@ -199,7 +208,7 @@ namespace Don_Eyuil
             });
             return codes.AsEnumerable();
         }
-        */
+        
     }
     public class DiceCardAbility_DonEyuil_25 : DiceCardAbilityBase
     {
@@ -268,19 +277,16 @@ namespace Don_Eyuil
             BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(target, target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding));
         }
     }
-    public class DiceCardSelfAbility_DonEyuil_32 : DiceCardSelfAbilityBase
+    public class DiceCardAbility_DonEyuil_31 : DiceCardAbilityBase
     {
-        public static string Desc = "本书页将同时命中所有敌方角色\r\n拼点失败时本书页依旧将击中目标但只施加[流血]\r\n";
-        public override void OnSucceedAttack(BattleDiceBehavior behavior)
+        public static string Desc = "[命中时]将自身的[流血]转移至目标";
+        public override void OnSucceedAttack(BattleUnitModel target)
         {
-            foreach (var item in BattleObjectManager.instance.GetAliveList_opponent(owner.faction))
-            {
-                DiceCardSelfAbility_DonEyuil_01.GiveDamageForSubTarget(behavior, item);
-            }
+            target.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, owner.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding));
+            owner.bufListDetail.RemoveBufAll(KeywordBuf.Bleeding);
         }
     }
-
-    public class DiceCardAbility_DonEyuil_33 : DiceCardAbilityBase
+    public class DiceCardAbility_DonEyuil_33 : RedDiceCardAbility
     {
         public static string Desc = "[拼点胜利]摧毁目标书页所有骰子[命中时]施加2层[流血](重复触发3次)";
 
@@ -294,6 +300,93 @@ namespace Don_Eyuil
             {
                 target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 2, owner);
             }
+        }
+    }
+    public class DiceCardAbility_DonEyuil_37 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]下一幕对自身施加3层[流血]";
+        public override void OnSucceedAttack()
+        {
+            owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3,owner);
+        }
+    }
+    public class DiceCardAbility_DonEyuil_41 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]使目标这一幕获得[流血]时层数+1";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            BattleUnitBuf_HardBloodBleedingAddition.GainBuf<BattleUnitBuf_HardBloodBleedingAddition>(target, 1);
+        }
+        public class BattleUnitBuf_HardBloodBleedingAddition : BattleUnitBuf_Don_Eyuil
+        {
+            public BattleUnitBuf_HardBloodBleedingAddition(BattleUnitModel model) : base(model) { }
+            public override void OnRoundEnd()
+            {
+                this.Destroy();
+            }
+            public override void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
+            {
+                if(BufType == KeywordBuf.Bleeding)
+                {
+                    Stack += 1;
+                }
+            }
+        }
+    }
+    public class DiceCardAbility_DonEyuil_42 : DiceCardAbilityBase
+    {
+        public static string Desc = "[拼点胜利]对目标施加3层[流血]与[血晶荆棘]";
+        public override void OnWinParrying()
+        {
+            if (card != null && card.target != null)
+            {
+                card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3, owner);
+                BattleUnitBuf_BloodCrystalThorn.GainBuf<BattleUnitBuf_BloodCrystalThorn>(card.target, 3);
+            }
+        }
+    }
+    public class DiceCardAbility_DonEyuil_45 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]使自身获得5层[硬血结晶]";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            BattleUnitBuf_HardBlood_Crystal.GainBuf<BattleUnitBuf_HardBlood_Crystal>(owner, 5);
+        }
+    }
+    public class DiceCardAbility_DonEyuil_47 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]这一幕与下一幕施加4层[流血]";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            target.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Bleeding, 4, owner);
+            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 4, owner);
+        }
+    }
+    public class DiceCardAbility_DonEyuil_48 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]消耗3层[结晶硬血]并施加3层[无法凝结的血]";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            if (BattleUnitBuf_HardBlood_Crystal.UseBuf<BattleUnitBuf_HardBlood_Crystal>(target, 3))
+            {
+                BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(target, 3);
+            }
+        }
+    }
+    public class DiceCardAbility_DonEyuil_49 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]重复触发目标5次[流血]";
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (target.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_bleeding) == null)
+                {
+                    return;
+                }
+                target.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_bleeding).AfterDiceAction(behavior);
+            }
+            BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_AddThistles>(owner)?.Destroy();
         }
     }
     public class DiceCardAbility_DonEyuil_78 : DiceCardAbilityBase

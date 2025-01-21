@@ -17,6 +17,7 @@ namespace Don_Eyuil
     //硬血结晶
     public class BattleUnitBuf_HardBlood_Crystal : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_BleedCrystal";
         //至多30层
         //可配合硬血术效果
         protected override string keywordId => "BattleUnitBuf_HardBlood_Crystal";
@@ -31,6 +32,7 @@ namespace Don_Eyuil
     //无法凝结的血
     public class BattleUnitBuf_UncondensableBlood : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_Flow";
         //自身流血无法低于2+x
         public override void OnRoundEnd()
         {
@@ -71,6 +73,7 @@ namespace Don_Eyuil
     //热血尖枪
     public class BattleUnitBuf_WarmBloodLance : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_Rifle";
         //自身这一幕施加的"流血"翻倍
 
         protected override string keywordId => "BattleUnitBuf_WarmBloodLance";
@@ -94,6 +97,8 @@ namespace Don_Eyuil
     //深度创痕
     public class BattleUnitBuf_DeepWound : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_DeepWound";
+
         public static string Desc = "这一幕受到的\"流血\"伤害增加50%";
         public BattleUnitBuf_DeepWound(BattleUnitModel model) : base(model)
         {
@@ -117,6 +122,7 @@ namespace Don_Eyuil
     //血晶荆棘
     public class BattleUnitBuf_BloodCrystalThorn : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_Thistles";
         public static string Desc = "投掷骰子时使自身在下一幕中获得1层[流血](每幕至多触发x次) 自身速度降低x/2 每幕结束时层数减半";
 
         protected override string keywordId => "BattleUnitBuf_BloodCrystalThorn";
@@ -153,6 +159,7 @@ namespace Don_Eyuil
     //汹涌的血潮(不衰减）
     public class BattleUnitBuf_BloodTide : BattleUnitBuf_Don_Eyuil
     {
+        protected override string keywordId => "BattleUnitBuf_Tidewater";
         public static string Desc = "所有敌方角色被施加\"流血\"时层数+x\r\n自身对处于流血状态的敌方角色造成的伤害与混乱伤害x×10%";
 
         protected override string keywordId => "BattleUnitBuf_BloodTide";
@@ -181,6 +188,223 @@ namespace Don_Eyuil
                 });
             }
         }
+    }
+    //席卷而来的饥饿
+    public class BattleUnitBuf_FloodOfHunger : BattleUnitBuf_Don_Eyuil
+    {
+        protected override string keywordId => "BattleUnitBuf_FloodOfHunger";
+        public static string Desc = "击中\"流血\"不低于3的目标时恢复2点体力\r\n若一幕中没有恢复体力则失去20%的混乱抗性并获得1层\"虚弱\"\r\n获得15点正面情感后移除本效果";
+        //P07:场上角色解除\"席卷而来的饥饿\"时将永久获得1层\"强壮\"与3层\"振奋\"";
+        public BattleUnitBuf_FloodOfHunger(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["席卷而来的饥饿"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+        public bool HasTriggered = false;
+        public int TotalEmotionCoinNum = 0;
+        public class BattleUnitBuf_InfinityStrongNBreakProtection : BattleUnitBuf
+        {
+            public override void OnRoundEnd()
+            {
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.BreakProtection,3);
+            }
+        }
+        public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+        {
+            TotalEmotionCoinNum += CoinType == EmotionCoinType.Positive ? Count : 0;
+            if(TotalEmotionCoinNum >= 15)
+            {
+                if(_owner.passiveDetail.HasPassive<PassiveAbility_DonEyuil_07>())
+                {
+                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_InfinityStrongNBreakProtection());
+                }
+                this.Destroy();
+            }
+        }
+        public override void OnRoundEnd()
+        {
+            if(HasTriggered == false)
+            {
+                _owner.TakeBreakDamage((int)(this._owner.breakDetail.GetDefaultBreakGauge() * 0.2),DamageType.ETC);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 1);
+                return;
+            }
+            HasTriggered = false;
+        }
+        public override void OnSuccessAttack(BattleDiceBehavior behavior)
+        {
+            if(behavior != null && behavior.card != null && behavior.card.target != null && behavior.card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 3)
+            {
+                _owner.RecoverHP(2);
+            }
+        }
+
+        public override void AfterRecoverHp(int v)
+        {
+            HasTriggered = true;
+        }
+
+    }
+    //血铠
+    public class BattleUnitBuf_BloodArmor : BattleUnitBuf_Don_Eyuil
+    {
+        protected override string keywordId => "BattleUnitBuf_BloodArmor";
+        public static string Desc = "这一幕中受到的伤害与混乱伤害减少{0}×20%";
+        public BattleUnitBuf_BloodArmor(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血甲"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+        public override int GetBreakDamageReductionRate()
+        {
+            return 20 * stack;
+        }
+        public override int GetDamageReductionRate()
+        {
+            return 20 * stack;
+        }
+    }
+    public class BattleUnitBuf_GloriousDuel : BattleUnitBuf_Don_Eyuil
+    {
+        protected override string keywordId => "BattleUnitBuf_GloriousDuel";
+        public static string Desc = "\"堂埃尤尔\"的体力不会低于100\r\n若本幕结束时司书存活则接待胜利";
+        public override void OnRoundEndTheLast()
+        {
+            if(!_owner.IsDead())
+            {
+                Singleton<StageController>.Instance.CheckEndBattle();
+            }
+        }
+        public BattleUnitBuf_GloriousDuel(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["光荣的决斗"]);
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+    }
+
+    public class BattleUnitBuf_Resonance : BattleUnitBuf_Don_Eyuil
+    {
+        public BattleUnitBuf_Resonance(BattleUnitModel model) : base(model)
+        {
+            typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+            this.stack = 0;
+        }
+        public class BattleUnitBuf_Resonance_BrightDream: BattleUnitBuf_Resonance
+        {
+            protected override string keywordId => "BattleUnitBuf_Resonance_BrightDream";
+            public static string Desc = "自身永久获得1层\"强壮\"与\"迅捷\"\r\n拼点时恢复2点混乱抗性";
+            public override void OnRoundEnd()
+            {
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Quickness, 1);
+            }
+            public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
+            {
+                _owner.breakDetail.RecoverBreak(2);
+            }
+            public BattleUnitBuf_Resonance_BrightDream(BattleUnitModel model) : base(model)
+            {
+                typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["璀璨的梦想"]);
+            }
+        }
+        public class BattleUnitBuf_Resonance_GreatHope : BattleUnitBuf_Resonance
+        {
+            protected override string keywordId => "BattleUnitBuf_Resonance_GreatHope";
+            public static string Desc = "自身光芒恢复量+1\r\n自身使用书页使将为光芒最低的一名友方角色恢复1点光芒";
+            public override void BeforeRecoverPlayPoint(ref int value)
+            {
+                value += 1;
+            }
+            public override void OnUseCard(BattlePlayingCardDataInUnitModel card)
+            {
+                var Alivelist = BattleObjectManager.instance.GetAliveList(_owner.faction);
+                Alivelist.Remove(_owner);
+                if(Alivelist.Count > 0)
+                {
+                    Alivelist.OrderByDescending(x => x.cardSlotDetail.PlayPoint);
+                    Alivelist[0].cardSlotDetail.RecoverPlayPoint(1);
+                }
+            }
+            public BattleUnitBuf_Resonance_GreatHope(BattleUnitModel model) : base(model)
+            {
+                typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["美好的希望"]);
+            }
+        }
+        public class BattleUnitBuf_Resonance_BoreResponsibility : BattleUnitBuf_Resonance
+        {
+            protected override string keywordId => "BattleUnitBuf_Resonance_BoreResponsibility";
+            public static string Desc = "自身将可以无视速度转移敌方攻击\r\n自身为友方角色转移攻击时使自身所有骰子威力+2";
+            public List<BattlePlayingCardDataInUnitModel> BeforeBattleStartCardArys = new List<BattlePlayingCardDataInUnitModel>() { };//表示目标在战斗开始前所有指向他的书页
+            public List<BattlePlayingCardDataInUnitModel> AfterBattleStartCardArys = new List<BattlePlayingCardDataInUnitModel>() { };
+            //后比前多出来的书页即为此角色转移的书页->Except
+
+            public override bool CanForcelyAggro(BattleUnitModel target) => target.faction != owner.faction;
+            public override void OnRoundStartAfter()
+            {
+                BeforeBattleStartCardArys.Clear();
+                AfterBattleStartCardArys.Clear();
+                var EnemyModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_01>());
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                for (int i = 0; i < EnemyModel.cardSlotDetail.cardAry.Count; i++)
+                {
+                    if (EnemyModel.cardSlotDetail.cardAry[i] != null && !EnemyModel.cardSlotDetail.cardAry[i].isDestroyed && EnemyModel.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && EnemyModel.cardSlotDetail.cardAry[i].target == owner)
+                        list.Add(EnemyModel.cardSlotDetail.cardAry[i]);
+                }
+                this.BeforeBattleStartCardArys.AddRange(list);
+            }
+            public override void OnStartBattle()
+            {
+                var EnemyModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_01>());
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                for (int i = 0; i < EnemyModel.cardSlotDetail.cardAry.Count; i++)
+                {
+                    if (EnemyModel.cardSlotDetail.cardAry[i] != null && !EnemyModel.cardSlotDetail.cardAry[i].isDestroyed && EnemyModel.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && EnemyModel.cardSlotDetail.cardAry[i].target == owner)
+                        list.Add(EnemyModel.cardSlotDetail.cardAry[i]);
+                }
+                AfterBattleStartCardArys.AddRange(list);
+                AfterBattleStartCardArys = AfterBattleStartCardArys.Except(this.BeforeBattleStartCardArys).ToList();
+            }
+            public override void BeforeRollDice(BattleDiceBehavior behavior)
+            {
+                if (behavior != null && behavior.TargetDice != null && behavior.TargetDice.card != null && AfterBattleStartCardArys.Contains(behavior.TargetDice.card))
+                {
+                    behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = 2 });
+                }
+            }
+            public BattleUnitBuf_Resonance_BoreResponsibility(BattleUnitModel model) : base(model)
+            {
+                typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["背负的责任"]);
+            }
+        }
+        public class BattleUnitBuf_Resonance_MutualUnderstanding : BattleUnitBuf_Resonance
+        {
+            protected override string keywordId => "BattleUnitBuf_Resonance_MutualUnderstanding";
+            public static string Desc = "受到的伤害与混乱伤害减少50%\r\n拼点时使对方进攻型骰子威力-1";
+            public BattleUnitBuf_Resonance_MutualUnderstanding(BattleUnitModel model) : base(model)
+            {
+                typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["互相的理解"]);
+            }
+            public override int GetBreakDamageReductionRate()
+            {
+                return 50;
+            }
+            public override int GetDamageReductionRate()
+            {
+                return 50;
+            }
+            public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
+            {
+                if(card.currentBehavior != null && card.currentBehavior.TargetDice != null && card.currentBehavior.TargetDice.card != null)
+                {
+                    card.currentBehavior.TargetDice.card.ApplyDiceStatBonus(DiceMatch.AllAttackDice, new DiceStatBonus() { power = -1 });
+                }
+            }
+        }
+        
     }
     //血甲护盾
     public class BattleUnitBuf_BloodShield : BattleUnitBuf_Don_Eyuil
@@ -371,7 +595,7 @@ namespace Don_Eyuil
         }
 
 
-        public Color shieldColor = Color.blue;
+        public Color shieldColor = new Color(0.68f,0,0,1);
 
         public GameObject shieldBarGameObject;
 
@@ -408,7 +632,7 @@ namespace Don_Eyuil
             Transform[] componentsInChildren = __instance.gameObject.GetComponentsInChildren<Transform>(true);
             for (int i = 0; i < componentsInChildren.Length; i++)
             {
-                if (componentsInChildren[i].gameObject.name.Contains("BloodShieldUI4"))
+                if (componentsInChildren[i].gameObject.name.Contains("BloodShieldUI"))
                 {
                     UnityEngine.Object.Destroy(componentsInChildren[i].gameObject);
                 }

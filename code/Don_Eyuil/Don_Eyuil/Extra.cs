@@ -1,9 +1,16 @@
-﻿using HarmonyLib;
+﻿using EnumExtenderV2;
+using HarmonyLib;
+using HyperCard;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
+using static CharacterSound;
+using static UI.UIIconManager;
+using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.UI.GridLayoutGroup;
 
 namespace Don_Eyuil
 {
@@ -198,9 +205,137 @@ namespace Don_Eyuil
 
     }
 
+    public class PassiveAbilityBase_Don_Eyuil : PassiveAbilityBase
+    {
+        public virtual void OnStartBattleTheLast()
+        {
 
+        }
+        public class OnStartBattleTheLastPatch
+        {
+            [HarmonyPatch(typeof(StageController), "ActivateStartBattleEffectPhase")]
+            [HarmonyPostfix]
+            public static void StageController_ActivateStartBattleEffectPhase_Post()
+            {
+                BattleObjectManager.instance.GetAliveList().Do(x => x.passiveDetail.PassiveList.FindAll(n => n is PassiveAbilityBase_Don_Eyuil).Do(y => (y as PassiveAbilityBase_Don_Eyuil).OnStartBattleTheLast()));
+            }
+        }
+    }
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
+        public virtual bool CanForcelyAggro(BattleUnitModel target) => false;
+        public class CanForcelyAggroPatch
+        {
+            [HarmonyPatch(typeof(BattleUnitModel), "CanChangeAttackTarget")]
+            [HarmonyPrefix]
+            public static bool BattleUnitModel_CanChangeAttackTarget_Prefix(BattleUnitModel __instance, BattleUnitModel target, ref bool __result)
+            {
+                foreach (var x in __instance.bufListDetail.GetActivatedBufList())
+                {
+                    if (!x.IsDestroyed() && x is BattleUnitBuf_Don_Eyuil)
+                    {
+                        if ((x as BattleUnitBuf_Don_Eyuil).CanForcelyAggro(target))
+                        {
+                            __result = true;
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+        public virtual void BeforeRecoverPlayPoint(ref int value)
+        {
+
+        }
+        public class BeforeRecoverPlayPointPatch
+        {
+            public static void Trigger_RecoverPlayPoint_Before(BattlePlayingCardSlotDetail Detail,ref int value)
+            {
+                var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
+                if (Model != null)
+                {
+                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                    {
+                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                        {
+                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeRecoverPlayPoint(ref value);
+                        }
+                    }
+                }
+            }
+
+            [HarmonyPatch(typeof(BattlePlayingCardSlotDetail), "RecoverPlayPoint")]
+            [HarmonyTranspiler]
+            public static IEnumerable<CodeInstruction> BattlePlayingCardSlotDetail_RecoverPlayPoint_Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                codes.InsertRange(0, new List<CodeInstruction>()
+                { 
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldarga_S,1),
+                    new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeRecoverPlayPointPatch),"Trigger_RecoverPlayPoint_Before")),
+                });
+
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
+        public virtual void AfterRecoverHp(int v)
+        {
+
+        }
+        public class AfterRecoverHpPatch
+        {
+            [HarmonyPatch(typeof(BattleUnitModel), "RecoverHP")]
+            [HarmonyPostfix]
+            public static void BattleUnitModel_RecoverHP_Post(BattleUnitModel __instance,int v)
+            {
+                __instance.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterRecoverHp(v));
+            }
+        }
+        public virtual void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+        {
+
+        }
+        public class BeforeAddEmotionCoinPatch
+        {
+            public static void Trigger_CreateEmotionCoin_Before(BattleUnitEmotionDetail Detail,EmotionCoinType CoinType, ref int Count)
+            {
+                var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
+                if(Model != null)
+                {
+                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                    {
+                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                        {
+                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddEmotionCoin(CoinType, ref Count);
+                        }
+                    }
+                }
+            }
+            [HarmonyPatch(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")]
+            [HarmonyTranspiler]
+            public static IEnumerable<CodeInstruction> BattleUnitEmotionDetail_CreateEmotionCoin_Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                Label? L ;
+                for (int i = 1; i < codes.Count; i++)
+                {
+                    if (codes[i].opcode == OpCodes.Call && codes[i].operand.ToString().Contains("get_MaximumEmotionLevel") && codes[i + 1].Branches(out L))
+                    {
+                        codes.InsertRange(codes.FindIndex((CodeInstruction code) => code.labels.Contains(L.Value)),new List<CodeInstruction>()
+                        { 
+                            new CodeInstruction(OpCodes.Ldarg_0),
+                            new CodeInstruction(OpCodes.Ldarg_1),
+                            new CodeInstruction(OpCodes.Ldarga_S,2),
+                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddEmotionCoinPatch),"Trigger_CreateEmotionCoin_Before")),
+                        });
+                      
+                    }
+                }
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
         public virtual void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
         {
 
@@ -277,7 +412,7 @@ namespace Don_Eyuil
             {
                 __instance.bufListDetail.GetActivatedBufList().ForEach(x =>
                 {
-                    if (x is BattleUnitBuf_Don_Eyuil)
+                    if (!x.IsDestroyed() && x is BattleUnitBuf_Don_Eyuil)
                     {
                         (x as BattleUnitBuf_Don_Eyuil).OnStartBattle();
                     }
@@ -285,13 +420,21 @@ namespace Don_Eyuil
             }
         }
 
+        public virtual void AfterTakeBleedingDamage(int Dmg)
+        {
 
+        }
+        public virtual void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit, int Dmg)
+        {
+
+        }
         public class OnTakeBleedingDamagePatch
         {
             public static void Trigger_BleedingDmg_After(BattleUnitModel Model, int dmg, KeywordBuf keyword)
             {
                 if (keyword == KeywordBuf.Bleeding && dmg > 0)
                 {
+                    Debug.LogError(Model.Book.Name + "TakeBleedingDmg:" + dmg);
                     Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
                     List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
                     aliveList.Remove(Model);
@@ -320,14 +463,7 @@ namespace Don_Eyuil
             }
         }
 
-        public virtual void AfterTakeBleedingDamage(int Dmg)
-        {
 
-        }
-        public virtual void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit, int Dmg)
-        {
-
-        }
         public virtual int GetMaxStack() => -1;
         public virtual void Add(int stack)
         {
@@ -346,6 +482,35 @@ namespace Don_Eyuil
         {
             this._owner = model;
         }
+        public static List<T> GetAllBufOnField<T>(Faction? Faction = null, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
+        {
+            List<BattleUnitModel> UnitList = Faction.HasValue ? BattleObjectManager.instance.GetAliveList(Faction.Value) : BattleObjectManager.instance.GetAliveList();
+            List<T> ResultList = new List<T>() { };
+            foreach (BattleUnitModel model in UnitList)
+            {
+                T BuffInstance = GetBuf<T>(model, ReadyType);
+                if (BuffInstance != null)
+                {
+                    ResultList.Add(BuffInstance);
+                }
+            }
+            return ResultList;
+        }
+        public static List<BattleUnitModel> GetAllUnitWithBuf<T>(Faction? Faction = null,BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
+        {
+            List<BattleUnitModel> UnitList = Faction.HasValue? BattleObjectManager.instance.GetAliveList(Faction.Value): BattleObjectManager.instance.GetAliveList();
+            List<BattleUnitModel> ResultList = new List<BattleUnitModel>() { };
+            foreach (BattleUnitModel model in UnitList)
+            {
+                T BuffInstance = GetBuf<T>(model, ReadyType);
+                if (BuffInstance != null)
+                {
+                    ResultList.Add(model);
+                }
+            }
+            return ResultList;
+        }
+
         public static bool UseBuf<T>(BattleUnitModel model, int stack) where T : BattleUnitBuf_Don_Eyuil
         {
             T BuffInstance = GetOrAddBuf<T>(model,BufReadyType.ThisRound);
@@ -426,7 +591,47 @@ namespace Don_Eyuil
             }
             return BuffInstance;
         }
+
+        public BattleUnitModel owner { get{ return this._owner; } }
     }
+    public static class ExtraMethods
+    {
+        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior, int EnemyCount)
+        {
+            var owner = behavior.owner;
+            if(owner != null)
+            {
+                if (!behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
+                {
+                    var AliveList = BattleObjectManager.instance.GetAliveList_opponent(owner.faction);
+                    AliveList.Remove(behavior.card.target);
+                    behavior.GiveDamage_SubTarget((EnemyCount == -1 ? AliveList : MyTools.TKSRandomUtil(AliveList.ToList(), EnemyCount, false, false)).ToArray());
+                }
+            }
+        }
+        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior,params BattleUnitModel[] target)
+        {
+            if(behavior != null && !behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
+            {
+                behavior.AddFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget);
+                if (behavior.owner.battleCardResultLog == null) { behavior.owner.battleCardResultLog = new BattleCardTotalResult(behavior.card); }
+                target.Do(x =>
+                {
+                    if (x.battleCardResultLog == null) { x.battleCardResultLog = new BattleCardTotalResult(x.currentDiceAction); }
+                    //Debug.LogError(behavior.Detail + "givesubdamage:" + x.Book.Name);
+                    behavior.SetFieldValue<BattleDiceBehavior>("_targetDice", null);
+                    behavior.card.earlyTarget = behavior.card.target;
+                    behavior.card.earlyTargetOrder = behavior.card.targetSlotOrder;
+                    behavior.card.target = x;
+                    behavior.card.targetSlotOrder = 0;
+                    behavior.GiveDamage(x);
+                });
+
+            }
+
+        }
+    }
+
     public static class MyTools
     {
         /// <summary>
@@ -534,6 +739,32 @@ namespace Don_Eyuil
         {
             return new LorId(TKS_BloodFiend_Initializer.packageId, v);
         }
-
+        public static List<T> TKSRandomUtil<T>(List<T> ListToRandom_Arg, int randomnum, bool canbethesame = false, bool copywhenempty = true)
+        {
+            List<T> list = new List<T>();
+            var ListToRandom = ListToRandom_Arg;
+            T item = default(T);
+            for (int i = 0; i < randomnum; i++)
+            {
+                if (ListToRandom.Count >= 1)
+                {
+                    item = RandomUtil.SelectOne<T>(ListToRandom);
+                    if (!canbethesame)
+                    {
+                        ListToRandom.Remove(item);
+                    }
+                    list.Add(item);
+                }
+                else
+                {
+                    if (!copywhenempty)
+                    {
+                        break;
+                    }
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Don_Eyuil.Don_Eyuil.DiceCardSelfAbility;
 using Don_Eyuil.Don_Eyuil.Player.Buff;
+using HarmonyLib;
 
 namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
 {
@@ -15,12 +16,17 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
             }
             return -buf.ActivatedNum;
         }
+        public override void OnSucceedAttack(BattleDiceBehavior behavior)
+        {
+            behavior.GiveDamage_SubTarget(-1);
+            //BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(y => y != card.target, x => behavior.GiveDamage_SubTarget(x));
+        }
         public override void OnRollDice(BattleDiceBehavior behavior)
         {
-            foreach (var item in BattleObjectManager.instance.GetAliveList_opponent(owner.faction))
-            {
-                DiceCardSelfAbility_DonEyuil_01.GiveDamageForSubTarget(behavior, item);
-            }
+            //Singleton<StageController>.Instance.dontUseUILog = true;
+            //BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(y => y != card.target, x => behavior.GiveDamage(x));
+            //Singleton<StageController>.Instance.dontUseUILog = false;
+
         }
     }
 }

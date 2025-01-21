@@ -12,6 +12,10 @@ using Don_Eyuil.Buff;
 using static Don_Eyuil.PassiveAbility_DonEyuil_01;
 using static Don_Eyuil.PassiveAbility_DonEyuil_02.HardBloodArtPair;
 using static UnityEngine.UI.GridLayoutGroup;
+using UI;
+using static Don_Eyuil.PassiveAbility_DonEyuil_07;
+using static CharacterSound;
+using System.Runtime.InteropServices;
 namespace Don_Eyuil
 {
     public class PassiveAbility_DonEyuil_01 : PassiveAbilityBase
@@ -24,7 +28,7 @@ namespace Don_Eyuil
             自身书页费用为0
             (一阶段：自第二幕起幕有25%概率进入血甲模式
             其余将随机进入血剑-血枪 血刃-双剑 血镰-血剑 血弓-随机 血鞭-血伞模式
-            初始5颗速度骰子每两幕增加一颗至多9颗
+            初始6颗速度骰子每两幕增加一颗至多9颗
             除血甲状态，最后一个骰子固定使用血之宝库其余骰子随机填入对应硬血术除大招外书页
             每3幕使用一次当前硬血术大招书页
             如果进入血甲状态则当幕速度骰子变为3颗并使用堂埃尤尔硬血术6式-血甲与两张血液凝结，下幕速度骰子变为5颗并使用硬血化铠×3 血之壁垒×2
@@ -40,6 +44,23 @@ namespace Don_Eyuil
             第四幕：速度骰子×2 堂埃尤尔派硬血术终式-La Sangre 便以决斗作为这场战斗的结尾吧
             第五幕：速度骰子×4  4种决斗书页)
         */
+
+        public static int Phase = 1;
+        public static int Phase2Round = 0;
+        public static int Phase3Round = 0;
+        public override void OnWaveStart()
+        {
+            Phase = 1; Phase2Round = 0; Phase3Round = 0;
+        }
+        public override int GetMinHp()
+        {
+            switch (Phase)
+            {
+                case 1: case 2: return 400;
+                case 3: return 100;
+                default:return base.GetMinHp();
+            }
+        }
         public void AddNewCard(LorId Id, int pro)
         {
             BattleDiceCardModel battleDiceCardModel = this.owner.allyCardDetail.AddTempCard(Id);
@@ -54,21 +75,89 @@ namespace Don_Eyuil
         public override void OnRoundEndTheLast()
         {
             HasSelectPairThisRound = false;
+            if(Phase == 1 && owner.hp <= 400)
+            {
+                Phase = 2;
+                if(APassive02 != null && APassive02.CurrentArtPair != null)
+                {
+                    if(APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild || APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2)
+                    {
+                        APassive02.SelectHardBloodArt(APassive02.CurrentArtPair, true);
+                    }
+                    owner.passiveDetail.DestroyPassive(APassive02);
+                }
+                owner.bufListDetail.GetActivatedBufList().DoIf(x => x.positiveType == BufPositiveType.Negative, y => y.Destroy());
+                if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                {
+                    this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                }
+                this.owner.breakDetail.nextTurnBreak = false;
+                this.owner.breakDetail.RecoverBreakLife(1, false);
+                this.owner.breakDetail.RecoverBreak(this.owner.breakDetail.GetDefaultBreakGauge());
+                BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(owner, 500);
+                owner.passiveDetail.AddPassive(MyTools.Create(6));
+                owner.passiveDetail.AddPassive(MyTools.Create(7));
+                owner.passiveDetail.AddPassive(MyTools.Create(8));
+            }
+            if(Phase == 2 && BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(owner)<=0)
+            {
+                Phase = 3;
+                owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_06));
+                owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_07));
+                owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_08));
+                owner.passiveDetail.AddPassive(MyTools.Create(9));
+                Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(2), 1, -1);
+                Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(3), 2, -1);
+                Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(4), 3, -1);
+                Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(5), 4, -1);
+                SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfileAll();
+                int num = 0;
+                foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetList())
+                {
+                    if (battleUnitModel != null)
+                    {
+                        SingletonBehavior<UICharacterRenderer>.Instance.SetCharacter(battleUnitModel.UnitData.unitData, num++, true, false);
+                    }
+                }
+                BattleObjectManager.instance.InitUI();
+            }
         }
         public override int SpeedDiceNumAdder()
         {
-
             int EmotionOffest = (owner.emotionDetail.EmotionLevel >= 4) ? -1 : 0;
-            if (APassive02 != null)
+            if(Phase == 1)
             {
-                if (HasSelectPairThisRound == false)
+                if (APassive02 != null)
                 {
-                    APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
-                    HasSelectPairThisRound = true;
+                    if (HasSelectPairThisRound == false)
+                    {
+                        APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
+                        HasSelectPairThisRound = true;
+                    }
+                    if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { return 2 + EmotionOffest; }
+                    if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { return 4 + EmotionOffest; }
+                    return 5 + Math.Min(4, Singleton<StageController>.Instance.RoundTurn / 2) + EmotionOffest;
                 }
-                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) { return 2 + EmotionOffest; }
-                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) { return 4 + EmotionOffest; }
-                return 4 + Math.Min(4,Singleton<StageController>.Instance.RoundTurn / 2);
+            }
+            if(Phase == 2)
+            {
+                switch(Phase2Round)
+                {
+                    case 1: return 4 + EmotionOffest;
+                    case 2: return 6 + EmotionOffest;
+                    case 3: return 7 + EmotionOffest;
+                }
+            }
+            if (Phase == 3)
+            {
+                switch(Phase3Round)
+                {
+                    case 1: return 5 + EmotionOffest;
+                    case 2: return 4 + EmotionOffest;
+                    case 3: return 4 + EmotionOffest;
+                    case 4: return 1 + EmotionOffest;
+                    case 5: return 3 + EmotionOffest;
+                }
             }
             return 0;
         }
@@ -78,7 +167,7 @@ namespace Don_Eyuil
             owner.allyCardDetail.ExhaustAllCardsInHand();
             int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
             int round = Singleton<StageController>.Instance.RoundTurn;
-            if (APassive02 != null)
+            if (Phase == 1 && APassive02 != null)
             { 
                 //APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
                 //Debug.LogError("CurrentArtPair:" + APassive02.CurrentArtPair.ComboType +"|||||||||" + String.Join(",", APassive02.CurrentArtPair.Arts));
@@ -112,7 +201,95 @@ namespace Don_Eyuil
                     }
                     AddNewCard(MyId.Card_血之宝库_1, 200);
                     i = 0;
-
+                }
+            }
+            if(Phase == 2)
+            {
+                /*二阶段：开幕清空自身负面状态并恢复所有混乱抗性, 不再切换硬血术状态
+                    第一幕：速度骰子×5 为仍在饥渴中的家人设下的晚宴 必须担负的责任 硬血截断 血之宝库 血之宝库
+                    第二幕：速度骰子×7 若能摆脱这可怖的疾病 必须担负的责任 这绝非理想中的共存...旋转!绽放吧!! 凝血化锋 硬血截断 血之宝库
+                    第三幕：速度骰子×8 必须担负的责任 若能摆脱这可怖的疾病 这绝非理想中的共存...这绝非理想中的共存...血如泉涌 血如泉涌 凝血化锋 血之宝库
+                */
+                if (Phase2Round > 2)//0 1 2 Pass 3 -> 0
+                {
+                    Phase2Round = 0;
+                }
+                Phase2Round++;//0 1 2 -> 1 2 3
+                switch(Phase2Round)
+                {
+                    case 1:
+                        AddNewCard(MyId.Card_为仍在饥渴中的家人设下的晚宴, 999);
+                        AddNewCard(MyId.Card_必须担负的责任, 999);
+                        AddNewCard(MyId.Card_硬血截断_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                        break;
+                    case 2:
+                        AddNewCard(MyId.Card_若能摆脱这可怖的疾病, 999);
+                        AddNewCard(MyId.Card_必须担负的责任, 999);
+                        AddNewCard(MyId.Card_这绝非理想中的共存, 999);
+                        AddNewCard(MyId.Card_旋转_绽放把_1, 999);
+                        AddNewCard(MyId.Card_凝血化锋_2, 999);
+                        AddNewCard(MyId.Card_硬血截断_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                        break;
+                    case 3:
+                        AddNewCard(MyId.Card_必须担负的责任, 999);
+                        AddNewCard(MyId.Card_若能摆脱这可怖的疾病, 999);
+                        AddNewCard(MyId.Card_这绝非理想中的共存, 999);
+                        AddNewCard(MyId.Card_这绝非理想中的共存, 999);
+                        AddNewCard(MyId.Card_血如泉涌_1, 999);
+                        AddNewCard(MyId.Card_血如泉涌_1, 999);
+                        AddNewCard(MyId.Card_凝血化锋_2, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                        break;
+                }
+            }
+            if(Phase == 3)
+            {
+                /*
+                    三阶段：开幕清空自身负面状态并恢复所有混乱抗性并召唤4个不同的凝结的情感
+                    第一幕：速度骰子×6 冲锋!驽骍难得! 梦之冒险 硬血截断 血如泉涌 血之宝库 血之宝库
+                    第二幕：速度骰子×5 梦之冒险 梦之冒险 血如泉涌 凝血化锋 旋转!绽放吧!!
+                    第三幕：速度骰子×5 梦之冒险 硬血截断 硬血截断 血之宝库 血之宝库
+                    第四幕：速度骰子×2 堂埃尤尔派硬血术终式-La Sangre 便以决斗作为这场战斗的结尾吧
+                    第五幕：速度骰子×4  4种决斗书页)
+                */
+                Phase3Round++;
+                switch (Phase3Round)
+                {
+                    case 1:
+                        AddNewCard(MyId.Card_冲锋_驽骍难得_1, 999);
+                        AddNewCard(MyId.Card_梦之冒险_1, 999);
+                        AddNewCard(MyId.Card_硬血截断_1, 999);
+                        AddNewCard(MyId.Card_血如泉涌_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                        break;
+                    case 2:
+                        AddNewCard(MyId.Card_梦之冒险_1, 999);
+                        AddNewCard(MyId.Card_梦之冒险_1, 999);
+                        AddNewCard(MyId.Card_血如泉涌_1, 999);
+                        AddNewCard(MyId.Card_凝血化锋_2, 999);
+                        AddNewCard(MyId.Card_旋转_绽放把_1, 999);
+                        break;
+                    case 3:
+                        AddNewCard(MyId.Card_梦之冒险_1, 999);
+                        AddNewCard(MyId.Card_硬血截断_1, 999);
+                        AddNewCard(MyId.Card_硬血截断_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                        AddNewCard(MyId.Card_血之宝库_1, 999);
+                        break;
+                    case 4:
+                        AddNewCard(MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_1, 999);
+                        AddNewCard(MyId.Card_便以决斗作为这场战斗的结尾吧, 900);
+                        break;
+                    case 5:
+                        AddNewCard(MyId.Card_你是否心怀梦想_无所畏惧, 999);
+                        AddNewCard(MyId.Card_你是否心怀理解_尊重他人, 999);
+                        AddNewCard(MyId.Card_你是否相信希望_憧憬未来, 999);
+                        AddNewCard(MyId.Card_你是否肩负责任_永不抛弃, 999);
+                        break;
                 }
             }
         }
@@ -137,6 +314,7 @@ namespace Don_Eyuil
             public BattleUnitBuf_HardBloodArt(BattleUnitModel model) : base(model)
             {
                 typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
+                stack = 0;
             }
             //血剑:
             //自身斩击骰子最小值+2
@@ -144,6 +322,7 @@ namespace Don_Eyuil
             //每幕结束时自身每承受2点"流血"伤害便时自身获得1层"硬血结晶"
             public class BattleUnitBuf_HardBloodArt_BloodSword : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Sword";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() {MyId.Card_堂埃尤尔派硬血术1式_血剑_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血剑斩击, MyId.Card_凝血化锋_1, MyId.Card_剑刃截断 };
                 public int BleedingDamageThisRound = 0;
@@ -194,6 +373,7 @@ namespace Don_Eyuil
             //若击杀目标则在下一幕获得一层"热血尖枪"
             public class BattleUnitBuf_HardBloodArt_BloodLance : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Lance";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术2式_血枪_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_高速穿刺, MyId.Card_长枪冲锋 };
                 public override void BeforeRollDice(BattleDiceBehavior behavior)
@@ -250,6 +430,7 @@ namespace Don_Eyuil
             //自身承受"流血"伤害时每承受3点便使下一颗进攻型骰子伤害+1
             public class BattleUnitBuf_HardBloodArt_DoubleSwords : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_DoubleSwords";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术5式_双剑_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_迅捷剑击 };
                 public int BleedingDamageThisRound = 0;
@@ -288,6 +469,7 @@ namespace Don_Eyuil
             // 一幕中敌方每受到20点"流血"伤害便使自身获得1层”伤害强化”
             public class BattleUnitBuf_HardBloodArt_BloodBlade : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Blade";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术4式_血刃_1};
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血刃割裂, MyId.Card_血刃环切 };
 
@@ -331,6 +513,7 @@ namespace Don_Eyuil
             //自身将对每幕第一个击中的目标施加"深度创痕
             public class BattleUnitBuf_HardBloodArt_BloodBow : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Bow";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术7式_血弓_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_穿云血箭, MyId.Card_血箭连射 };
 
@@ -371,6 +554,7 @@ namespace Don_Eyuil
             //自身每幕最后一张书页施加"流血"时将额外对目标施加等量"血晶荆棘"
             public class BattleUnitBuf_HardBloodArt_BloodScourge : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Scourge";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术8式_血鞭_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血鞭抽打 };
                 private bool _triggered;
@@ -427,6 +611,7 @@ namespace Don_Eyuil
             //下令战斗时若自身至少拥有6层"结晶硬血"则使自身获得一颗反击(突刺4-8)骰子
             public class BattleUnitBuf_HardBloodArt_BloodUmbrella : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Umbrella";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术9式_血伞_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血伞挥打_1, MyId.Card_血伞反击};
                 public override void OnSuccessAttack(BattleDiceBehavior behavior)
@@ -465,6 +650,7 @@ namespace Don_Eyuil
             //首次进入时使自身获得1层"汹涌的血潮"
             public class BattleUnitBuf_HardBloodArt_BloodSickle : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Sickle";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术3式_血镰_1};
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_镰刃截断, MyId.Card_巨镰纵切 };
 
@@ -498,6 +684,17 @@ namespace Don_Eyuil
             //自身被命中时对命中者施加2-3层"流血"
             public class BattleUnitBuf_HardBloodArt_BloodShield : BattleUnitBuf_HardBloodArt
             {
+                protected override string keywordId => "BattleUnitBuf_Armour";
+                public override void OnRoundEnd()
+                {
+                    foreach (DiceBehaviour diceBehaviour in this._owner.cardSlotDetail.keepCard.GetDiceBehaviourXmlList())
+                    {
+                        if (diceBehaviour.Type == BehaviourType.Def)
+                        {
+                            BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(_owner, 10);
+                        }
+                    }
+                }
                 public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
                 {
                     if(atkDice != null && atkDice.card != null && atkDice.card.owner != null)
@@ -512,10 +709,22 @@ namespace Don_Eyuil
             }
         }
         //堂埃尤尔派硬血术
-        public override string debugDesc => "自身将定期切换不同的硬血术状态并获得不同效果与书页";
+
+        public override string debugDesc => "自身将定期切换不同的硬血术状态并获得不同效果与书页 命中时对目标施加2层流血";
+        public override void OnSucceedAreaAttack(BattleDiceBehavior behavior, BattleUnitModel target)
+        {
+            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 2, owner);
+        }
+        public override void OnSucceedAttack(BattleDiceBehavior behavior)
+        {
+            if(behavior != null && behavior.card !=null && behavior.card.target != null)
+            {
+                behavior.card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding,2,owner);
+            }
+        }
 
         public HardBloodArtPair CurrentArtPair;
-        public HardBloodArtPair SelectHardBloodArt(HardBloodArtPair LatestArtPair)
+        public HardBloodArtPair SelectHardBloodArt(HardBloodArtPair LatestArtPair,bool WithOutShield = false)
         {
             BattleUnitBuf_HardBloodArt RandomHardBloodArt()
             {
@@ -545,7 +754,7 @@ namespace Don_Eyuil
                 if (ExpiredArtPair != null) { return ExpiredArtPair; }
             }
             owner.bufListDetail.GetActivatedBufList().FindAll(x => x is BattleUnitBuf_HardBloodArt).Do(x => x.Destroy());
-            if ( Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 0.25f )
+            if (WithOutShield == false && Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 0.25f )
             {
                 return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Sheild, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodShield>(owner));
             }
@@ -611,13 +820,13 @@ namespace Don_Eyuil
     public class PassiveAbility_DonEyuil_03 : PassiveAbilityBase
     {
         //埃尤尔之血
-        public override string debugDesc => "拼点时目标与自身每有3层流血便使自身所有骰子威力+1(至多+3)\r\n命中目标时恢复等同于自身骰子最终值的体力";
+        public override string debugDesc => "拼点时目标与自身每有2层流血便使自身所有骰子威力+1(至多+3)\r\n命中目标时恢复等同于自身骰子最终值的体力";
 
         public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
         {
             card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
             {
-                power = Math.Min((owner.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) + card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding)) / 3  ,3)
+                power = Math.Min((owner.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) + card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding)) / 2  ,3)
             });
         }
         public override void OnSucceedAreaAttack(BattleDiceBehavior behavior, BattleUnitModel target)
@@ -665,6 +874,7 @@ namespace Don_Eyuil
         //奔向梦想!驽骍难得!
         public override string debugDesc => "使所有应用了觉醒书页的司书威力+1\r\n自身体力首次低于400时获得新的被动并更改行动逻辑\r\n触发前体力无法低于400";
         //（获得被动“萦绕家族的疾病”“无法舍弃的责任”“若家人也能找到梦想”并获得500层护盾）
+
         public override void OnWaveStart()
         {
             BattleObjectManager.instance.GetAliveList(Faction.Player).Do(x => x.bufListDetail.AddBuf(new BattleUnitBuf_RunningTowardDream()));
@@ -680,6 +890,248 @@ namespace Don_Eyuil
             }
         }
     }
+    public class PassiveAbility_DonEyuil_06 : PassiveAbilityBase
+    {
+        //萦绕家族的疾病
+        public override string debugDesc => "使所有敌方角色获得\"席卷而来的饥饿\"";
+        public override void OnCreated()
+        {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_FloodOfHunger.GetOrAddBuf<BattleUnitBuf_FloodOfHunger>(x));
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(6);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(6);
+        }
+    }
+    public class PassiveAbility_DonEyuil_07 : PassiveAbilityBase
+    {
+        //若家人也能找到梦想
+        public override string debugDesc => "拥有觉醒书页的角色获得的正面情感翻倍\r\n场上角色解除\"席卷而来的饥饿\"时将永久获得1层\"强壮\"与3层\"振奋\"";
+        public override void OnCreated()
+        {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_FloodOfHunger.GetOrAddBuf<BattleUnitBuf_MayYouFindDream>(x));
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(7);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(7);
+        }
+        public override void OnDestroyed()
+        {
+            BattleUnitBuf_MayYouFindDream.RemoveBuf<BattleUnitBuf_MayYouFindDream>(owner);
+        }
+
+        public class BattleUnitBuf_MayYouFindDream : BattleUnitBuf_Don_Eyuil
+        {
+            public BattleUnitBuf_MayYouFindDream(BattleUnitModel model):base(model) { }
+            public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+            {
+                if (CoinType == EmotionCoinType.Positive && _owner.emotionDetail.GetSelectedCardList().Find(x => x.XmlInfo.State == MentalState.Positive) != null)
+                {
+                    Count *= 2;
+                }
+            }
+        }
+    }
+    public class PassiveAbility_DonEyuil_08 : PassiveAbilityBase
+    {
+        //无法舍弃的责任
+        public override string debugDesc => "每幕开始时获得等同于场上拥有\"席卷而来的饥饿\"角色数的\"血铠\"\r\n若场上仍有角色处于\"席卷而来的饥饿\"状态则自身无法陷入混乱\r\n护盾消耗完后一幕移除本阶段被动并获得新的被动于行动逻辑\r\n体力无法低于400";
+        public override void OnCreated()
+        {
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(8);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(8);
+        }
+        public override void OnRoundStartAfter()
+        {
+            BattleUnitBuf_BloodArmor.GainBuf<BattleUnitBuf_BloodArmor>(owner, BattleUnitBuf_FloodOfHunger.GetAllUnitWithBuf<BattleUnitBuf_FloodOfHunger>().Count);
+        }
+        public override bool isStraighten => BattleUnitBuf_FloodOfHunger.GetAllUnitWithBuf<BattleUnitBuf_FloodOfHunger>().Count > 0; 
+
+    }
+    public class PassiveAbility_DonEyuil_09 : PassiveAbilityBase
+    {
+        //让吾看看你的梦想
+        public override string debugDesc => "召唤4个不同的\"凝结的情感\"\r\n定期使用特殊书页且使用特殊书页的下一幕前体力无法低于100";
+        public override void OnCreated()
+        {
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(9);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(9);
+        }
+
+    }
+    public class PassiveAbility_DonEyuil_10 : PassiveAbilityBase
+    {
+        //渴望传递的情感与共鸣
+        public override string debugDesc => "体力无法低于1\r\n场上有敌方角色完成对应共鸣后死亡并使其获得对应效果";
+        public override int GetMinHp() => 1;
+
+    }
+    public class PassiveAbility_DonEyuil_11 : PassiveAbilityBase
+    {
+        //追逐梦想的道路
+        public override string debugDesc => "使第一名在一幕中获得8点正面情感的敌方角色与自身共鸣";
+
+        public override void OnRoundStart()
+        {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x));
+        }
+        public override void OnRoundEnd()
+        {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x));
+        }
+        public class BattleUnitBuf_PathTowardYourDream : BattleUnitBuf_Don_Eyuil
+        {
+            public int PostiveCoinCount = 0;
+            public BattleUnitBuf_PathTowardYourDream(BattleUnitModel model):base(model) { stack = 0; }
+            public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+            {
+                if(CoinType == EmotionCoinType.Positive)
+                {
+                    PostiveCoinCount += Count;
+                    if(PostiveCoinCount >= 8)
+                    {
+                        BattleObjectManager.instance.GetAliveList().Do(x =>
+                        {
+                            if (x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_11>())
+                            {
+                                x.Die();
+                            }
+                            BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
+                        });
+                        BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BrightDream>(_owner);
+                    }
+                }
+            }
+        }
+    }
+    public class PassiveAbility_DonEyuil_12 : PassiveAbilityBase
+    {
+        //永怀憧憬的希冀
+        public override string debugDesc => "使第一名在一幕中恢复至少6点光芒的敌方角色于自身共鸣";
+
+        public override void OnRoundStartAfter()
+        {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x));
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x));
+
+        }
+        public class BattleUnitBuf_PathTowardYourDream : BattleUnitBuf_Don_Eyuil
+        {
+            public int PlayPointCount = 0;
+            public BattleUnitBuf_PathTowardYourDream(BattleUnitModel model) : base(model) { stack = 0; }
+            public override void BeforeRecoverPlayPoint(ref int value)
+            {
+                PlayPointCount += value;
+                if (PlayPointCount >= 6)
+                {
+                    BattleObjectManager.instance.GetAliveList().Do(x =>
+                    {
+                        if (x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_12>())
+                        {
+                            x.Die();
+                        }
+                        BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
+                    });
+                    BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_GreatHope>(_owner);
+                }
+            }
+        }
+    }
+    public class PassiveAbility_DonEyuil_13 : PassiveAbilityBase_Don_Eyuil
+    {
+        //应该背负的责任
+        public override string debugDesc => "使第一名在一幕中至少为友方角色转移两次攻击的敌方角色与自身共鸣";
+
+        public override void OnRoundStartAfter()
+        {
+            BeforeBattleStartCardArys.Clear();
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
+            {
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                for (int i = 0; i < owner.cardSlotDetail.cardAry.Count; i++)
+                {
+                    if (owner.cardSlotDetail.cardAry[i] != null && !owner.cardSlotDetail.cardAry[i].isDestroyed && owner.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && owner.cardSlotDetail.cardAry[i].target == x)
+                        list.Add(owner.cardSlotDetail.cardAry[i]);
+                }
+                this.BeforeBattleStartCardArys.Add(x, list);
+            });
+        }
+        public override void OnStartBattleTheLast()
+        {
+            Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>> AfterBattleStartCardArys = new Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>>() { };
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
+            {
+                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                for (int i = 0; i < owner.cardSlotDetail.cardAry.Count; i++)
+                {
+                    if (owner.cardSlotDetail.cardAry[i] != null && !owner.cardSlotDetail.cardAry[i].isDestroyed && owner.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && owner.cardSlotDetail.cardAry[i].target == x)
+                        list.Add(owner.cardSlotDetail.cardAry[i]);
+                }
+                AfterBattleStartCardArys.Add(x, list);
+            });
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
+            {
+                if(AfterBattleStartCardArys.ContainsKey(x) && BeforeBattleStartCardArys.ContainsKey(x))
+                {
+                    int delta = AfterBattleStartCardArys.GetValueSafe(x).Count - BeforeBattleStartCardArys.GetValueSafe(x).Count;
+                    if(delta >= 2)
+                    {
+                        BattleObjectManager.instance.GetAliveList().Do(y =>
+                        {
+                            if (y.passiveDetail.HasPassive<PassiveAbility_DonEyuil_13>())
+                            {
+                                y.Die();
+                            }
+                        });
+                        BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(x);
+                        return;
+                    }
+                }
+            });
+
+        }
+
+        //目标战斗开始前存在3张书页 战斗开始后不存在 ->指向目标的3张书页被转移
+        //目标战斗开始前不存在书页 战斗开始后存在3张书页->目标转移了3张书页
+        //所以使用KV的V的count的变化delta来计算转移书页
+        public Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>> BeforeBattleStartCardArys = new Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>>() { };//表示目标在战斗开始前所有指向他的书页
+    }
+    public class PassiveAbility_DonEyuil_14 : PassiveAbilityBase
+    {
+        //希望连接的尊重与理解
+        public override string debugDesc => "使第一名在一幕中进行的单方面攻击不高于2次且造成伤害少于25的敌方角色与自身共鸣";
+
+        public override void OnRoundStart()
+        {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x));
+        }
+        public override void OnRoundEnd()
+        {
+            var buf = BattleUnitBuf_PathTowardYourDream.GetBuf<BattleUnitBuf_PathTowardYourDream>(owner);
+            if (buf != null && buf.TotalDmg < 25 && buf.OneSideATKCount <= 2)
+            {
+                BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
+                {
+                    if (x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_13>())
+                    {
+                        x.Die();
+                    }
+                    BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
+                });
+               BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(owner);
+            }
 
 
+        }
+        public class BattleUnitBuf_PathTowardYourDream : BattleUnitBuf_Don_Eyuil
+        {
+            public int OneSideATKCount = 0;
+            public int TotalDmg = 0;
+            public override void OnEndOneSideAction(BattlePlayingCardDataInUnitModel curCard)
+            {
+                OneSideATKCount++;
+            }
+            public override void OnSuccessAttack(BattleDiceBehavior behavior)
+            {
+                TotalDmg += behavior.DiceResultDamage;
+            }
+            public BattleUnitBuf_PathTowardYourDream(BattleUnitModel model) : base(model) { stack = 0; }
+        }
+    }
 }
