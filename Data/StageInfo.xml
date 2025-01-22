@@ -27,4 +27,29 @@
     <IsChapterLast>false</IsChapterLast>
     <invitationtype>false</invitationtype>
   </Stage>
+  <Stage id="881506">
+    <Name>测试</Name>
+    <Wave>
+      <Unit>1</Unit>
+      <Formation>1</Formation>
+      <FormationType>Default</FormationType>
+      <AvailableUnit>5</AvailableUnit>
+      <emotionCardList />
+    </Wave>
+    <StageType>Invitation</StageType>
+    <FloorNum>1</FloorNum>
+    <Chapter>7</Chapter>
+    <Invitation Combine="BookValue">
+      <Value>7</Value>
+      <Num>1</Num>
+    </Invitation>
+    <Condition>
+      <Level>0</Level>
+    </Condition>
+    <StoryType>TEST</StoryType>
+    <Story Condition="Start">Button</Story>
+    <Story Condition="End" />
+    <IsChapterLast>false</IsChapterLast>
+    <invitationtype>false</invitationtype>
+  </Stage>
 </StageXmlRoot>
