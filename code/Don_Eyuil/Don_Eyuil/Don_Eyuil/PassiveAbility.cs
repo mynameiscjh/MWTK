@@ -1,21 +1,11 @@
 ﻿using HarmonyLib;
+using LOR_DiceSystem;
+using Steamworks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LOR_DiceSystem;
-using System.Reflection.Emit;
-using HyperCard;
-using UnityEngine;
-using Don_Eyuil.Buff;
-using static Don_Eyuil.PassiveAbility_DonEyuil_01;
-using static Don_Eyuil.PassiveAbility_DonEyuil_02.HardBloodArtPair;
-using static UnityEngine.UI.GridLayoutGroup;
 using UI;
-using static Don_Eyuil.PassiveAbility_DonEyuil_07;
-using static CharacterSound;
-using System.Runtime.InteropServices;
+using static Don_Eyuil.PassiveAbility_DonEyuil_02.HardBloodArtPair;
 namespace Don_Eyuil
 {
     public class PassiveAbility_DonEyuil_01 : PassiveAbilityBase
@@ -52,13 +42,30 @@ namespace Don_Eyuil
         {
             Phase = 1; Phase2Round = 0; Phase3Round = 0;
         }
+
+        public override void OnRoundStartAfter()
+        {
+            if (SteamClient.SteamId == MyId.User_漠北九月 || SteamClient.SteamId == MyId.User_139 && TKS_BloodFiend_Initializer.简单模式)
+            {
+                owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 3);
+                return;
+            }
+
+            if (TKS_BloodFiend_Initializer.简单模式)
+            {
+                owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 5);
+                owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Disarm, 5);
+            }
+
+        }
+
         public override int GetMinHp()
         {
             switch (Phase)
             {
                 case 1: case 2: return 400;
                 case 3: return 100;
-                default:return base.GetMinHp();
+                default: return base.GetMinHp();
             }
         }
         public void AddNewCard(LorId Id, int pro)
@@ -75,12 +82,12 @@ namespace Don_Eyuil
         public override void OnRoundEndTheLast()
         {
             HasSelectPairThisRound = false;
-            if(Phase == 1 && owner.hp <= 400)
+            if (Phase == 1 && owner.hp <= 400)
             {
                 Phase = 2;
-                if(APassive02 != null && APassive02.CurrentArtPair != null)
+                if (APassive02 != null && APassive02.CurrentArtPair != null)
                 {
-                    if(APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild || APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2)
+                    if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild || APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2)
                     {
                         APassive02.SelectHardBloodArt(APassive02.CurrentArtPair, true);
                     }
@@ -99,7 +106,7 @@ namespace Don_Eyuil
                 owner.passiveDetail.AddPassive(MyTools.Create(7));
                 owner.passiveDetail.AddPassive(MyTools.Create(8));
             }
-            if(Phase == 2 && BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(owner)<=0)
+            if (Phase == 2 && BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(owner) <= 0)
             {
                 Phase = 3;
                 owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_06));
@@ -125,7 +132,7 @@ namespace Don_Eyuil
         public override int SpeedDiceNumAdder()
         {
             int EmotionOffest = (owner.emotionDetail.EmotionLevel >= 4) ? -1 : 0;
-            if(Phase == 1)
+            if (Phase == 1)
             {
                 if (APassive02 != null)
                 {
@@ -139,9 +146,9 @@ namespace Don_Eyuil
                     return 5 + Math.Min(4, Singleton<StageController>.Instance.RoundTurn / 2) + EmotionOffest;
                 }
             }
-            if(Phase == 2)
+            if (Phase == 2)
             {
-                switch(Phase2Round)
+                switch (Phase2Round)
                 {
                     case 1: return 4 + EmotionOffest;
                     case 2: return 6 + EmotionOffest;
@@ -150,7 +157,7 @@ namespace Don_Eyuil
             }
             if (Phase == 3)
             {
-                switch(Phase3Round)
+                switch (Phase3Round)
                 {
                     case 1: return 5 + EmotionOffest;
                     case 2: return 4 + EmotionOffest;
@@ -168,16 +175,16 @@ namespace Don_Eyuil
             int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
             int round = Singleton<StageController>.Instance.RoundTurn;
             if (Phase == 1 && APassive02 != null)
-            { 
+            {
                 //APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
                 //Debug.LogError("CurrentArtPair:" + APassive02.CurrentArtPair.ComboType +"|||||||||" + String.Join(",", APassive02.CurrentArtPair.Arts));
-                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) 
+                if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild)
                 {
                     AddNewCard(MyId.Card_堂埃尤尔派硬血术6式_血甲_1, 999);
-                    AddNewCard(MyId.Card_血液凝结,999);
+                    AddNewCard(MyId.Card_血液凝结, 999);
                     AddNewCard(MyId.Card_血液凝结, 999);
                 }
-                else if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2) 
+                else if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild2)
                 {
                     AddNewCard(MyId.Card_硬血化铠, 999);
                     AddNewCard(MyId.Card_硬血化铠, 999);
@@ -187,23 +194,24 @@ namespace Don_Eyuil
                 }
                 else
                 {
-                    if(round % 3 <= 0)
+                    if (round % 3 <= 0)
                     {
-                        APassive02.CurrentArtPair.GetComboFinalCards().Do(x => {
+                        APassive02.CurrentArtPair.GetComboFinalCards().Do(x =>
+                        {
                             AddNewCard(x, 999);
                             i--;
-                        }) ;
+                        });
                     }
                     while (i - 1 > 0)
                     {
-                        AddNewCard(RandomUtil.SelectOne(APassive02.CurrentArtPair.GetComboCards()),500);
+                        AddNewCard(RandomUtil.SelectOne(APassive02.CurrentArtPair.GetComboCards()), 500);
                         i--;
                     }
                     AddNewCard(MyId.Card_血之宝库_1, 200);
                     i = 0;
                 }
             }
-            if(Phase == 2)
+            if (Phase == 2)
             {
                 /*二阶段：开幕清空自身负面状态并恢复所有混乱抗性, 不再切换硬血术状态
                     第一幕：速度骰子×5 为仍在饥渴中的家人设下的晚宴 必须担负的责任 硬血截断 血之宝库 血之宝库
@@ -215,7 +223,7 @@ namespace Don_Eyuil
                     Phase2Round = 0;
                 }
                 Phase2Round++;//0 1 2 -> 1 2 3
-                switch(Phase2Round)
+                switch (Phase2Round)
                 {
                     case 1:
                         AddNewCard(MyId.Card_为仍在饥渴中的家人设下的晚宴, 999);
@@ -245,7 +253,7 @@ namespace Don_Eyuil
                         break;
                 }
             }
-            if(Phase == 3)
+            if (Phase == 3)
             {
                 /*
                     三阶段：开幕清空自身负面状态并恢复所有混乱抗性并召唤4个不同的凝结的情感
@@ -309,7 +317,7 @@ namespace Don_Eyuil
             //硬血术生效触发
             public override void AfterGetOrAddBuf()
             {
-               
+
             }
             public BattleUnitBuf_HardBloodArt(BattleUnitModel model) : base(model)
             {
@@ -323,7 +331,7 @@ namespace Don_Eyuil
             public class BattleUnitBuf_HardBloodArt_BloodSword : BattleUnitBuf_HardBloodArt
             {
                 protected override string keywordId => "BattleUnitBuf_Sword";
-                public override List<LorId> BloodArtFinalCard => new List<LorId>() {MyId.Card_堂埃尤尔派硬血术1式_血剑_1 };
+                public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术1式_血剑_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血剑斩击, MyId.Card_凝血化锋_1, MyId.Card_剑刃截断 };
                 public int BleedingDamageThisRound = 0;
                 public override void OnRoundEnd()
@@ -470,7 +478,7 @@ namespace Don_Eyuil
             public class BattleUnitBuf_HardBloodArt_BloodBlade : BattleUnitBuf_HardBloodArt
             {
                 protected override string keywordId => "BattleUnitBuf_Blade";
-                public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术4式_血刃_1};
+                public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术4式_血刃_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血刃割裂, MyId.Card_血刃环切 };
 
                 public List<BattlePlayingCardDataInUnitModel> TriggeredCards = new List<BattlePlayingCardDataInUnitModel>() { };
@@ -613,7 +621,7 @@ namespace Don_Eyuil
             {
                 protected override string keywordId => "BattleUnitBuf_Umbrella";
                 public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术9式_血伞_1 };
-                public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血伞挥打_1, MyId.Card_血伞反击};
+                public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_血伞挥打_1, MyId.Card_血伞反击 };
                 public override void OnSuccessAttack(BattleDiceBehavior behavior)
                 {
                     if (behavior != null && behavior.card != null && behavior.card.target != null)
@@ -651,13 +659,13 @@ namespace Don_Eyuil
             public class BattleUnitBuf_HardBloodArt_BloodSickle : BattleUnitBuf_HardBloodArt
             {
                 protected override string keywordId => "BattleUnitBuf_Sickle";
-                public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术3式_血镰_1};
+                public override List<LorId> BloodArtFinalCard => new List<LorId>() { MyId.Card_堂埃尤尔派硬血术3式_血镰_1 };
                 public override List<LorId> BloodArtCards => new List<LorId>() { MyId.Card_镰刃截断, MyId.Card_巨镰纵切 };
 
                 public override void AfterGetOrAddBuf()
                 {
-                    var Passive02 =  _owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_02) as PassiveAbility_DonEyuil_02;
-                    if(Passive02.HasEnterBloodSickleArt == false)
+                    var Passive02 = _owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_02) as PassiveAbility_DonEyuil_02;
+                    if (Passive02.HasEnterBloodSickleArt == false)
                     {
                         Passive02.HasEnterBloodSickleArt = true;
                         BattleUnitBuf_BloodTide.GainBuf<BattleUnitBuf_BloodTide>(_owner, 1);
@@ -697,7 +705,7 @@ namespace Don_Eyuil
                 }
                 public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
                 {
-                    if(atkDice != null && atkDice.card != null && atkDice.card.owner != null)
+                    if (atkDice != null && atkDice.card != null && atkDice.card.owner != null)
                     {
                         atkDice.card.owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, RandomUtil.Range(2, 3));
                     }
@@ -717,18 +725,18 @@ namespace Don_Eyuil
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            if(behavior != null && behavior.card !=null && behavior.card.target != null)
+            if (behavior != null && behavior.card != null && behavior.card.target != null)
             {
-                behavior.card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding,2,owner);
+                behavior.card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 2, owner);
             }
         }
 
         public HardBloodArtPair CurrentArtPair;
-        public HardBloodArtPair SelectHardBloodArt(HardBloodArtPair LatestArtPair,bool WithOutShield = false)
+        public HardBloodArtPair SelectHardBloodArt(HardBloodArtPair LatestArtPair, bool WithOutShield = false)
         {
             BattleUnitBuf_HardBloodArt RandomHardBloodArt()
             {
-                switch (RandomUtil.SelectOne(new List<string>() { "S", "L", "SS","SC","U","SI" }))
+                switch (RandomUtil.SelectOne(new List<string>() { "S", "L", "SS", "SC", "U", "SI" }))
                 {
                     case "S":
                         return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSword>(owner);
@@ -748,17 +756,17 @@ namespace Don_Eyuil
                 //Type BloodArt = RandomUtil.SelectOne(typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSword), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodLance), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_DoubleSwords), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodBlade), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodScourge), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodUmbrella), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSickle));
                 //return AccessTools.Method(typeof(BattleUnitBuf_HardBloodArt), "GetOrAddBuf").MakeGenericMethod(BloodArt).Invoke(null, new object[] { owner }) as BattleUnitBuf_HardBloodArt;
             }
-            if(LatestArtPair != null)
+            if (LatestArtPair != null)
             {
                 var ExpiredArtPair = LatestArtPair.Expire();
                 if (ExpiredArtPair != null) { return ExpiredArtPair; }
             }
             owner.bufListDetail.GetActivatedBufList().FindAll(x => x is BattleUnitBuf_HardBloodArt).Do(x => x.Destroy());
-            if (WithOutShield == false && Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 0.25f )
+            if (WithOutShield == false && Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 0.25f)
             {
                 return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Sheild, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodShield>(owner));
             }
-            switch(RandomUtil.SelectOne(new List<HardBloodArtCombo>() { HardBloodArtCombo.Sword_Lance,HardBloodArtCombo.Kinfe_Double,HardBloodArtCombo.Sickle_Sword,HardBloodArtCombo.Bow_,HardBloodArtCombo.Scourage_Umbre}))
+            switch (RandomUtil.SelectOne(new List<HardBloodArtCombo>() { HardBloodArtCombo.Sword_Lance, HardBloodArtCombo.Kinfe_Double, HardBloodArtCombo.Sickle_Sword, HardBloodArtCombo.Bow_, HardBloodArtCombo.Scourage_Umbre }))
             {
                 case HardBloodArtCombo.Sword_Lance:
                     return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Sword_Lance, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSword>(owner), BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodLance>(owner));
@@ -767,7 +775,7 @@ namespace Don_Eyuil
                 case HardBloodArtCombo.Sickle_Sword:
                     return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Sickle_Sword, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSickle>(owner), BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSword>(owner));
                 case HardBloodArtCombo.Bow_:
-                    return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Bow_, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodBow>(owner),RandomHardBloodArt());
+                    return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Bow_, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodBow>(owner), RandomHardBloodArt());
                 case HardBloodArtCombo.Scourage_Umbre:
                     return new HardBloodArtPair(HardBloodArtPair.HardBloodArtCombo.Scourage_Umbre, BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodScourge>(owner), BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodUmbrella>(owner));
                 default:
@@ -791,7 +799,7 @@ namespace Don_Eyuil
 
             public HardBloodArtPair Expire()
             {
-                if(ComboType == HardBloodArtCombo.Sheild)
+                if (ComboType == HardBloodArtCombo.Sheild)
                 {
                     ComboType = HardBloodArtCombo.Sheild2;
                     return this;
@@ -810,7 +818,7 @@ namespace Don_Eyuil
                 Arts.Do(x => CardList.AddRange(x.BloodArtFinalCard));
                 return CardList;
             }
-            public HardBloodArtPair(HardBloodArtCombo Combo,params BattleUnitBuf_HardBloodArt[] ArtBufs)
+            public HardBloodArtPair(HardBloodArtCombo Combo, params BattleUnitBuf_HardBloodArt[] ArtBufs)
             {
                 ComboType = Combo;
                 Arts = ArtBufs.ToList();
@@ -826,7 +834,7 @@ namespace Don_Eyuil
         {
             card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
             {
-                power = Math.Min((owner.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) + card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding)) / 2  ,3)
+                power = Math.Min((owner.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) + card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding)) / 2, 3)
             });
         }
         public override void OnSucceedAreaAttack(BattleDiceBehavior behavior, BattleUnitModel target)
@@ -835,7 +843,7 @@ namespace Don_Eyuil
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            if(behavior != null && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarAreaEach && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarArea)
+            if (behavior != null && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarAreaEach && behavior.card.card.XmlData.Spec.Ranged != LOR_DiceSystem.CardRange.FarArea)
             {
                 owner.RecoverHP(behavior.DiceResultValue);
             }
@@ -848,7 +856,7 @@ namespace Don_Eyuil
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             var diceStat = new DiceStatBonus() { power = 3 };
-            if(behavior.TargetDice != null)
+            if (behavior.TargetDice != null)
             {
                 behavior.ApplyDiceStatBonus(diceStat);
                 behavior.TargetDice.ApplyDiceStatBonus(diceStat);
@@ -856,14 +864,14 @@ namespace Don_Eyuil
         }
         public override void OnWinParrying(BattleDiceBehavior behavior)
         {
-            if(behavior != null)
+            if (behavior != null)
             {
                 behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmgRate = 30 });
             }
         }
         public override void OnLoseParrying(BattleDiceBehavior behavior)
         {
-            if(behavior != null  && behavior.TargetDice != null)
+            if (behavior != null && behavior.TargetDice != null)
             {
                 behavior.TargetDice.ApplyDiceStatBonus(new DiceStatBonus() { dmgRate = 30 });
             }
@@ -883,7 +891,7 @@ namespace Don_Eyuil
         {
             public override void OnRollDice(BattleDiceBehavior behavior)
             {
-                if(behavior != null && _owner.emotionDetail.GetSelectedCardList().Find(x => x.XmlInfo.State == MentalState.Positive) != null)
+                if (behavior != null && _owner.emotionDetail.GetSelectedCardList().Find(x => x.XmlInfo.State == MentalState.Positive) != null)
                 {
                     behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = 1 });
                 }
@@ -918,7 +926,7 @@ namespace Don_Eyuil
 
         public class BattleUnitBuf_MayYouFindDream : BattleUnitBuf_Don_Eyuil
         {
-            public BattleUnitBuf_MayYouFindDream(BattleUnitModel model):base(model) { }
+            public BattleUnitBuf_MayYouFindDream(BattleUnitModel model) : base(model) { }
             public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
             {
                 if (CoinType == EmotionCoinType.Positive && _owner.emotionDetail.GetSelectedCardList().Find(x => x.XmlInfo.State == MentalState.Positive) != null)
@@ -941,7 +949,7 @@ namespace Don_Eyuil
         {
             BattleUnitBuf_BloodArmor.GainBuf<BattleUnitBuf_BloodArmor>(owner, BattleUnitBuf_FloodOfHunger.GetAllUnitWithBuf<BattleUnitBuf_FloodOfHunger>().Count);
         }
-        public override bool isStraighten => BattleUnitBuf_FloodOfHunger.GetAllUnitWithBuf<BattleUnitBuf_FloodOfHunger>().Count > 0; 
+        public override bool isStraighten => BattleUnitBuf_FloodOfHunger.GetAllUnitWithBuf<BattleUnitBuf_FloodOfHunger>().Count > 0;
 
     }
     public class PassiveAbility_DonEyuil_09 : PassiveAbilityBase
@@ -978,13 +986,13 @@ namespace Don_Eyuil
         public class BattleUnitBuf_PathTowardYourDream : BattleUnitBuf_Don_Eyuil
         {
             public int PostiveCoinCount = 0;
-            public BattleUnitBuf_PathTowardYourDream(BattleUnitModel model):base(model) { stack = 0; }
+            public BattleUnitBuf_PathTowardYourDream(BattleUnitModel model) : base(model) { stack = 0; }
             public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
             {
-                if(CoinType == EmotionCoinType.Positive)
+                if (CoinType == EmotionCoinType.Positive)
                 {
                     PostiveCoinCount += Count;
-                    if(PostiveCoinCount >= 8)
+                    if (PostiveCoinCount >= 8)
                     {
                         BattleObjectManager.instance.GetAliveList().Do(x =>
                         {
@@ -1067,10 +1075,10 @@ namespace Don_Eyuil
             });
             BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
             {
-                if(AfterBattleStartCardArys.ContainsKey(x) && BeforeBattleStartCardArys.ContainsKey(x))
+                if (AfterBattleStartCardArys.ContainsKey(x) && BeforeBattleStartCardArys.ContainsKey(x))
                 {
                     int delta = AfterBattleStartCardArys.GetValueSafe(x).Count - BeforeBattleStartCardArys.GetValueSafe(x).Count;
-                    if(delta >= 2)
+                    if (delta >= 2)
                     {
                         BattleObjectManager.instance.GetAliveList().Do(y =>
                         {
@@ -1114,7 +1122,7 @@ namespace Don_Eyuil
                     }
                     BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
                 });
-               BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(owner);
+                BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(owner);
             }
 
 
