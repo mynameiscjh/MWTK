@@ -197,6 +197,7 @@ namespace Don_Eyuil
     public class TKS_BloodFiend_Initializer : ModInitializer
     {
         public static string packageId = "Don_Eyuil";
+        public static bool 简单模式 = false;
         public static Dictionary<string, Sprite> ArtWorks = new Dictionary<string, Sprite>();
         public static string language;
         public class TKS_EnumExtension
@@ -831,6 +832,12 @@ namespace Don_Eyuil
                         Singleton<LibraryQuestManager>.Instance.OnSendInvitation(stageClassInfo.id);
                         UI.UIController.Instance.PrepareBattle(stageClassInfo, new List<DropBookXmlInfo>());
                         UISoundManager.instance.PlayEffectSound(UISoundType.Ui_Invite);
+                        bool 真的不给我加一个简单模式吗 = false;
+                        if (真的不给我加一个简单模式吗)
+                        {
+                            UIAlarmPopup.instance.SetAlarmTextForBlue(UIAlarmType.StartTheBlueBattlePrimary, x => TKS_BloodFiend_Initializer.简单模式 = x, "", UIStoryLine.BlackSilence);
+                            GameObject.Find("[Canvas][Script]PopupCanvas/[Prefab]PopupAlarm/[Rect]Blue/[Cg]/[Text]AlarmText").GetComponent<TextMeshProUGUI>().text = "是否开启简单模式";
+                        }
                     }
                 }, "伟大摩天轮", UIStoryLine.BlackSilence);
                 return false;
