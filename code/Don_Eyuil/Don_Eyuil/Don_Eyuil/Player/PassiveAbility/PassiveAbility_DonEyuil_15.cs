@@ -306,15 +306,16 @@ namespace Don_Eyuil.PassiveAbility
         [HarmonyPostfix]
         public static void UIInvenCardListScroll_ApplyFilterAll_Post(List<DiceCardItemModel> ____currentCardListForFilter, UIInvenCardListScroll __instance)
         {
-            if (__instance.GetFieldValue<UnitDataModel>("_unitdata") == null)
+            var temp = __instance.GetFieldValue<UnitDataModel>("_unitdata");
+            if (temp == null)
             {
                 return;
             }
-            if (__instance.GetFieldValue<UnitDataModel>("_unitdata").bookItem.BookId != MyId.Book_堂_埃尤尔之页)
+            if (temp.bookItem.BookId != MyId.Book_堂_埃尤尔之页)
             {
                 return;
             }
-            if (Current_DeckId == DeckId.HardBlood)
+            if (temp.bookItem.GetCurrentDeckIndex() == 1)
             {
                 ____currentCardListForFilter.Clear();
                 foreach (var item in HardBloodCards)
@@ -330,6 +331,36 @@ namespace Don_Eyuil.PassiveAbility
             {
                 ____currentCardListForFilter.RemoveAll(x => HardBloodCards.Exists(item => item == x.ClassInfo.id));
                 ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
+
+                var list = temp.bookItem.GetCardListByIndex(1).Select(x => x.id).ToList();
+
+                List<(LorId, List<LorId>)> cardRemovaList = new List<(LorId, List<LorId>)>
+                {
+                     ( MyId.Card_血伞挥打_2, new List<LorId>{MyId.Card_堂埃尤尔派硬血术8式_血鞭_2, MyId.Card_堂埃尤尔派硬血术9式_血伞_2}),
+                     ( MyId.Card_旋转_绽放把_2, new List<LorId>{MyId.Card_堂埃尤尔派硬血术9式_血伞_2}),
+                     ( MyId.Card_凝血化锋_2, new List<LorId>{MyId.Card_堂埃尤尔派硬血术1式_血剑_2, MyId.Card_堂埃尤尔派硬血术5式_双剑_2}),
+                     ( MyId.Card_纵血为刃_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术5式_双剑_2, MyId.Card_堂埃尤尔派硬血术6式_血甲_2}),
+                     ( MyId.Card_硬血截断_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术2式_血枪_2}),
+                     ( MyId.Card_血如泉涌_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术7式_血弓_2, MyId.Card_堂埃尤尔派硬血术8式_血鞭_2}),
+                     ( MyId.Card_梦之冒险_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术1式_血剑_2, MyId.Card_堂埃尤尔派硬血术2式_血枪_2}),
+                };
+
+                var temp_object = GameObject.Find("UI_Object/[CG]PPForForceCg/FrontCanvas/[Panel]BattlePagePanel(Clone)/PanelActiveController/[Librarian]Left_Panel/[Script]LibrarianDeckPanel/[Script]CardDeckPanel");
+
+                foreach (var item in cardRemovaList)
+                {
+                    foreach (var needCard in item.Item2)
+                    {
+                        if (!list.Contains(needCard))
+                        {
+                            ____currentCardListForFilter.RemoveAll(x => x.GetID() == item.Item1);
+                            temp.bookItem.MoveCardFromCurrentDeckToInventory(item.Item1);
+                            var component = temp_object?.GetComponent<UIEquipDeckCardList>();
+
+                            component?.SetCardsData(component?.currentunit?.GetDeckCardModelAll());
+                        }
+                    }
+                }
             }
             __instance.SetCardsData(__instance.GetCurrentPageList());
         }
