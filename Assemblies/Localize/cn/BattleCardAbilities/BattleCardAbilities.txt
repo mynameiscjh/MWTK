@@ -152,7 +152,7 @@
     <Desc>[命中时]重复触发目标5次[流血]</Desc>
   </BattleCardAbility>
   <BattleCardAbility ID="DonEyuil_50">
-    <Desc>场上每有一名处于共鸣状态的敌方角色便使本书页造成的伤害减少20%
+    <Desc>场上每有一名处于共鸣状态的敌方角色便使本书页造成的伤害减少25%
 [战斗开始]清除所有的[凝结的情感]
 [使用后]结束本幕</Desc>
   </BattleCardAbility>

@@ -971,7 +971,7 @@ namespace Don_Eyuil
         {
             BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x));
         }
-        public override void OnRoundEnd()
+        public override void OnRoundEndTheLast()
         {
             BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x));
         }
@@ -979,23 +979,28 @@ namespace Don_Eyuil
         {
             public int PostiveCoinCount = 0;
             public BattleUnitBuf_PathTowardYourDream(BattleUnitModel model):base(model) { stack = 0; }
+            public override void OnRoundEnd()
+            {
+                if (PostiveCoinCount >= 8)
+                {
+                    BattleObjectManager.instance.GetAliveList().Do(x =>
+                    {
+                        if (x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_11>() && !x.IsDead())
+                        {
+                            x.Die();
+                            BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BrightDream>(_owner);
+                        }
+                        BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
+                    });
+
+                }
+            }
             public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
             {
+                
                 if(CoinType == EmotionCoinType.Positive)
                 {
                     PostiveCoinCount += Count;
-                    if(PostiveCoinCount >= 8)
-                    {
-                        BattleObjectManager.instance.GetAliveList().Do(x =>
-                        {
-                            if (x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_11>())
-                            {
-                                x.Die();
-                            }
-                            BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
-                        });
-                        BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BrightDream>(_owner);
-                    }
                 }
             }
         }
@@ -1007,29 +1012,37 @@ namespace Don_Eyuil
 
         public override void OnRoundStartAfter()
         {
-            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x));
-            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x));
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => {
+                BattleUnitBuf_PathTowardYourDream.GetBuf<BattleUnitBuf_PathTowardYourDream>(x)?.CheckCondition();
+                BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
+                BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x);
+            });
+
 
         }
         public class BattleUnitBuf_PathTowardYourDream : BattleUnitBuf_Don_Eyuil
         {
             public int PlayPointCount = 0;
             public BattleUnitBuf_PathTowardYourDream(BattleUnitModel model) : base(model) { stack = 0; }
-            public override void BeforeRecoverPlayPoint(ref int value)
+            
+            public void CheckCondition()
             {
-                PlayPointCount += value;
                 if (PlayPointCount >= 6)
                 {
                     BattleObjectManager.instance.GetAliveList().Do(x =>
                     {
-                        if (x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_12>())
+                        if (x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_12>() && !x.IsDead())
                         {
                             x.Die();
+                            BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_GreatHope>(_owner);
                         }
                         BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
                     });
-                    BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_GreatHope>(_owner);
                 }
+            }
+            public override void BeforeRecoverPlayPoint(ref int value)
+            {
+                PlayPointCount += value;
             }
         }
     }
@@ -1037,53 +1050,64 @@ namespace Don_Eyuil
     {
         //应该背负的责任
         public override string debugDesc => "使第一名在一幕中至少为友方角色转移两次攻击的敌方角色与自身共鸣";
-
-        public override void OnRoundStartAfter()
+        public override void AfterApplyEnemyCard()
         {
-            BeforeBattleStartCardArys.Clear();
-            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
+            BattleUnitModel DonEyuilUnit = BattleObjectManager.instance.GetAliveList().Find(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_01>());
+            if (DonEyuilUnit != null)
             {
-                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
-                for (int i = 0; i < owner.cardSlotDetail.cardAry.Count; i++)
+                BeforeBattleStartCardArys.Clear();
+                BattleObjectManager.instance.GetAliveList_opponent(DonEyuilUnit.faction).Do(x =>
                 {
-                    if (owner.cardSlotDetail.cardAry[i] != null && !owner.cardSlotDetail.cardAry[i].isDestroyed && owner.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && owner.cardSlotDetail.cardAry[i].target == x)
-                        list.Add(owner.cardSlotDetail.cardAry[i]);
-                }
-                this.BeforeBattleStartCardArys.Add(x, list);
-            });
+                    List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                    for (int i = 0; i < DonEyuilUnit.cardSlotDetail.cardAry.Count; i++)
+                    {
+                        if (DonEyuilUnit.cardSlotDetail.cardAry[i] != null && !DonEyuilUnit.cardSlotDetail.cardAry[i].isDestroyed && DonEyuilUnit.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && DonEyuilUnit.cardSlotDetail.cardAry[i].target == x)
+                            list.Add(DonEyuilUnit.cardSlotDetail.cardAry[i]);
+                    }
+                    this.BeforeBattleStartCardArys.Add(x, list);
+                });
+                BeforeBattleStartCardArys.Do(x => Debug.LogError(x.Key.Book.Name + x.Value.Count));
+            }
         }
         public override void OnStartBattleTheLast()
         {
-            Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>> AfterBattleStartCardArys = new Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>>() { };
-            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
+            BattleUnitModel DonEyuilUnit = BattleObjectManager.instance.GetAliveList().Find(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_01>());
+            if (DonEyuilUnit != null)
             {
-                List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
-                for (int i = 0; i < owner.cardSlotDetail.cardAry.Count; i++)
+                Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>> AfterBattleStartCardArys = new Dictionary<BattleUnitModel, List<BattlePlayingCardDataInUnitModel>>() { };
+                BattleObjectManager.instance.GetAliveList_opponent(DonEyuilUnit.faction).Do(x =>
                 {
-                    if (owner.cardSlotDetail.cardAry[i] != null && !owner.cardSlotDetail.cardAry[i].isDestroyed && owner.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && owner.cardSlotDetail.cardAry[i].target == x)
-                        list.Add(owner.cardSlotDetail.cardAry[i]);
-                }
-                AfterBattleStartCardArys.Add(x, list);
-            });
-            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
-            {
-                if(AfterBattleStartCardArys.ContainsKey(x) && BeforeBattleStartCardArys.ContainsKey(x))
-                {
-                    int delta = AfterBattleStartCardArys.GetValueSafe(x).Count - BeforeBattleStartCardArys.GetValueSafe(x).Count;
-                    if(delta >= 2)
+                    List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>() { };
+                    for (int i = 0; i < DonEyuilUnit.cardSlotDetail.cardAry.Count; i++)
                     {
-                        BattleObjectManager.instance.GetAliveList().Do(y =>
-                        {
-                            if (y.passiveDetail.HasPassive<PassiveAbility_DonEyuil_13>())
-                            {
-                                y.Die();
-                            }
-                        });
-                        BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(x);
-                        return;
+                        if (DonEyuilUnit.cardSlotDetail.cardAry[i] != null && !DonEyuilUnit.cardSlotDetail.cardAry[i].isDestroyed && DonEyuilUnit.cardSlotDetail.cardAry[i].GetDiceBehaviorList().Count > 0 && DonEyuilUnit.cardSlotDetail.cardAry[i].target == x)
+                            list.Add(DonEyuilUnit.cardSlotDetail.cardAry[i]);
                     }
-                }
-            });
+                    AfterBattleStartCardArys.Add(x, list);
+                });
+                BattleObjectManager.instance.GetAliveList_opponent(DonEyuilUnit.faction).Do(x =>
+                {
+                    if (AfterBattleStartCardArys.ContainsKey(x) && BeforeBattleStartCardArys.ContainsKey(x))
+                    {
+                        int delta = AfterBattleStartCardArys.GetValueSafe(x).Count - BeforeBattleStartCardArys.GetValueSafe(x).Count;
+                        if (delta >= 2)
+                        {
+                            BattleObjectManager.instance.GetAliveList().Do(y =>
+                            {
+                                if (y.passiveDetail.HasPassive<PassiveAbility_DonEyuil_13>() && !y.IsDead())
+                                {
+                                    BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(x);
+                                    y.Die();
+                                }
+                            });
+
+                            return;
+                        }
+                    }
+                });
+            }
+
+
 
         }
 
@@ -1099,23 +1123,29 @@ namespace Don_Eyuil
 
         public override void OnRoundStart()
         {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x));
             BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_PathTowardYourDream.GetOrAddBuf<BattleUnitBuf_PathTowardYourDream>(x));
         }
         public override void OnRoundEnd()
         {
-            var buf = BattleUnitBuf_PathTowardYourDream.GetBuf<BattleUnitBuf_PathTowardYourDream>(owner);
-            if (buf != null && buf.TotalDmg < 25 && buf.OneSideATKCount <= 2)
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(unit =>
             {
-                BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x =>
+                var buf = BattleUnitBuf_PathTowardYourDream.GetBuf<BattleUnitBuf_PathTowardYourDream>(unit);
+                if (buf != null && buf.TotalDmg < 25 && buf.OneSideATKCount <= 2)
                 {
-                    if (x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_13>())
+                    BattleObjectManager.instance.GetAliveList().Do(x =>
                     {
-                        x.Die();
-                    }
-                    BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
-                });
-               BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(owner);
-            }
+                        if (x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_14>() && !x.IsDead())
+                        {
+                            x.Die();
+                            BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(unit);
+                        }
+                        BattleUnitBuf_PathTowardYourDream.RemoveBuf<BattleUnitBuf_PathTowardYourDream>(x);
+                    });
+
+                }
+            });
+
 
 
         }

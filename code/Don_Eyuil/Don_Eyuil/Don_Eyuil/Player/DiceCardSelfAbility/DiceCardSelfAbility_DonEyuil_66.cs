@@ -18,7 +18,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            behavior.GiveDamage_SubTarget(-1);
+            behavior.GiveDamage_SubTarget(card.target, -1);
             //BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(y => y != card.target, x => behavior.GiveDamage_SubTarget(x));
         }
         public override void OnRollDice(BattleDiceBehavior behavior)

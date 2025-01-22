@@ -1,10 +1,12 @@
 ﻿using EnumExtenderV2;
 using HarmonyLib;
 using HyperCard;
+using LOR_BattleUnit_UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using UnityEngine;
 using static CharacterSound;
@@ -220,6 +222,22 @@ namespace Don_Eyuil
                 BattleObjectManager.instance.GetAliveList().Do(x => x.passiveDetail.PassiveList.FindAll(n => n is PassiveAbilityBase_Don_Eyuil).Do(y => (y as PassiveAbilityBase_Don_Eyuil).OnStartBattleTheLast()));
             }
         }
+        public virtual void AfterApplyEnemyCard()
+        {
+
+        }
+        [HarmonyPatch]
+        public class AfterApplyEnemyCardPatch
+        {
+            public static MethodBase TargetMethod()
+            {
+                return typeof(StageController).GetMethod("ApplyEnemyCardPhase", AccessTools.all);
+            }
+            public static void Postfix(StageController __instance)
+            {
+                BattleObjectManager.instance.GetAliveList().Do(x => x.passiveDetail.PassiveList.FindAll(n => n is PassiveAbilityBase_Don_Eyuil).Do(y => (y as PassiveAbilityBase_Don_Eyuil).AfterApplyEnemyCard()));
+            }
+        }
     }
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
@@ -259,6 +277,7 @@ namespace Don_Eyuil
                     {
                         if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
                         {
+                            Debug.LogError("BeforeRecoverPlayPoint:" + value);
                             (Buf as BattleUnitBuf_Don_Eyuil).BeforeRecoverPlayPoint(ref value);
                         }
                     }
@@ -280,17 +299,17 @@ namespace Don_Eyuil
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
-        public virtual void AfterRecoverHp(int v)
+        public virtual void BeforeRecoverHp(int v)
         {
 
         }
-        public class AfterRecoverHpPatch
+        public class BeforeRecoverHpPatch
         {
             [HarmonyPatch(typeof(BattleUnitModel), "RecoverHP")]
-            [HarmonyPostfix]
-            public static void BattleUnitModel_RecoverHP_Post(BattleUnitModel __instance,int v)
+            [HarmonyPrefix]
+            public static void BattleUnitModel_RecoverHP_Pre(BattleUnitModel __instance,int v)
             {
-                __instance.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterRecoverHp(v));
+                __instance.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).BeforeRecoverHp(v));
             }
         }
         public virtual void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
@@ -301,6 +320,7 @@ namespace Don_Eyuil
         {
             public static void Trigger_CreateEmotionCoin_Before(BattleUnitEmotionDetail Detail,EmotionCoinType CoinType, ref int Count)
             {
+
                 var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
                 if(Model != null)
                 {
@@ -309,6 +329,7 @@ namespace Don_Eyuil
                         if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
                         {
                             (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddEmotionCoin(CoinType, ref Count);
+                            Debug.LogError("BeforeAddEmotionCoin:" + CoinType + "," + Count);
                         }
                     }
                 }
@@ -318,11 +339,20 @@ namespace Don_Eyuil
             public static IEnumerable<CodeInstruction> BattleUnitEmotionDetail_CreateEmotionCoin_Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
-                Label? L ;
+                //Label? L ;
+                codes.InsertRange(0, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_0),
+                            new CodeInstruction(OpCodes.Ldarg_1),
+                            new CodeInstruction(OpCodes.Ldarga_S,2),
+                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddEmotionCoinPatch),"Trigger_CreateEmotionCoin_Before")),
+                        });
+                /*
                 for (int i = 1; i < codes.Count; i++)
                 {
                     if (codes[i].opcode == OpCodes.Call && codes[i].operand.ToString().Contains("get_MaximumEmotionLevel") && codes[i + 1].Branches(out L))
                     {
+                        Debug.LogError("BBBBBBBBBBBBBBBBBBBBBB" + codes.FindIndex((CodeInstruction code) => code.labels.Contains(L.Value)));
                         codes.InsertRange(codes.FindIndex((CodeInstruction code) => code.labels.Contains(L.Value)),new List<CodeInstruction>()
                         { 
                             new CodeInstruction(OpCodes.Ldarg_0),
@@ -333,6 +363,7 @@ namespace Don_Eyuil
                       
                     }
                 }
+                */
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
@@ -399,7 +430,6 @@ namespace Don_Eyuil
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
-
         public virtual void OnStartBattle()
         {
 
@@ -596,7 +626,7 @@ namespace Don_Eyuil
     }
     public static class ExtraMethods
     {
-        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior, int EnemyCount)
+        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior,BattleUnitModel OriginalTarget, int EnemyCount)
         {
             var owner = behavior.owner;
             if(owner != null)
@@ -604,7 +634,7 @@ namespace Don_Eyuil
                 if (!behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
                 {
                     var AliveList = BattleObjectManager.instance.GetAliveList_opponent(owner.faction);
-                    AliveList.Remove(behavior.card.target);
+                    AliveList.Remove(OriginalTarget);
                     behavior.GiveDamage_SubTarget((EnemyCount == -1 ? AliveList : MyTools.TKSRandomUtil(AliveList.ToList(), EnemyCount, false, false)).ToArray());
                 }
             }
@@ -615,18 +645,19 @@ namespace Don_Eyuil
             {
                 behavior.AddFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget);
                 if (behavior.owner.battleCardResultLog == null) { behavior.owner.battleCardResultLog = new BattleCardTotalResult(behavior.card); }
+                behavior.card.earlyTarget = behavior.card.target;
+                behavior.card.earlyTargetOrder = behavior.card.targetSlotOrder;
                 target.Do(x =>
                 {
                     if (x.battleCardResultLog == null) { x.battleCardResultLog = new BattleCardTotalResult(x.currentDiceAction); }
                     //Debug.LogError(behavior.Detail + "givesubdamage:" + x.Book.Name);
                     behavior.SetFieldValue<BattleDiceBehavior>("_targetDice", null);
-                    behavior.card.earlyTarget = behavior.card.target;
-                    behavior.card.earlyTargetOrder = behavior.card.targetSlotOrder;
                     behavior.card.target = x;
                     behavior.card.targetSlotOrder = 0;
                     behavior.GiveDamage(x);
                 });
-
+                behavior.card.target = behavior.card.earlyTarget;
+                behavior.card.targetSlotOrder = behavior.card.earlyTargetOrder;
             }
 
         }

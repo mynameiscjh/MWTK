@@ -442,30 +442,35 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
             harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
 
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
-            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterRecoverHpPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverHpPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.CanForcelyAggroPatch));
+            //harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterApplyEnemyCardPatch));
 
             harmony.PatchAll(typeof(RedDiceCardAbility));
+
+            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil));
             harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.OnStartBattleTheLastPatch));
+            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.AfterApplyEnemyCardPatch));
 
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
             harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
             harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
-            harmony.PatchAll(typeof(Story_FerrisWheel));
+            //harmony.PatchAll(typeof(Story_FerrisWheel));
 
 
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
             TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
             TKS_EnumExtension.DiceFlagExtension.ExtendEnum(typeof(TKS_EnumExtension.DiceFlagExtension));
-            Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
+           // Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
             DonEyuilLoad(Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path)));
 
         }

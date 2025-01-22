@@ -292,7 +292,11 @@ namespace Don_Eyuil
 
         public override void OnWinParrying()
         {
-            card.target.currentDiceAction.DestroyDice(DiceMatch.AllDice);
+            if(card.target != null && card.target.currentDiceAction != null)
+            {
+                card.target.currentDiceAction.DestroyDice(DiceMatch.AllDice);
+            }
+
         }
         public override void OnSucceedAttack(BattleUnitModel target)
         {
