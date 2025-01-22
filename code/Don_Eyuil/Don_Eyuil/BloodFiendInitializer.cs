@@ -466,7 +466,7 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
             harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
-            //harmony.PatchAll(typeof(Story_FerrisWheel));
+            harmony.PatchAll(typeof(Story_FerrisWheel));
 
 
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
