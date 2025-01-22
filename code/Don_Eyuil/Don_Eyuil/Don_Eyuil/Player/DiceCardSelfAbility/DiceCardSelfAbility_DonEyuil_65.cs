@@ -14,7 +14,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            behavior.GiveDamage_SubTarget(Math.Min(3, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum));
+            behavior.GiveDamage_SubTarget(card.target, Math.Min(3, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum));
             /*
             var temp = new List<BattleUnitModel>(BattleObjectManager.instance.GetAliveList_opponent(owner.faction));
             for (int i = 0; i < Math.Min(3, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum); i++)

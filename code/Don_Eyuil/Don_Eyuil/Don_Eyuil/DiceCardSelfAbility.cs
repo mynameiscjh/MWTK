@@ -21,7 +21,9 @@ namespace Don_Eyuil
         public static string Desc = "本书页将额外命中两名敌方角色";
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            behavior.GiveDamage_SubTarget(2);
+            //Debug.LogError("AAAAAAAAAAAAAAAAAAAAAAAAAAAA" + behavior.card.target.Book.Name);
+            behavior.GiveDamage_SubTarget(card.target, 2);
+
             /*if(!behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
             {
                 var AliveList = BattleObjectManager.instance.GetAliveList_opponent(owner.faction);
@@ -412,7 +414,7 @@ namespace Don_Eyuil
         public static string Desc = "本书页将命中全体敌方角色";
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            behavior.GiveDamage_SubTarget(-1);
+            behavior.GiveDamage_SubTarget(card.target, -1);
            // BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(y => y != card.target, x => behavior.GiveDamage_SubTarget(x));
         }
         public override void OnRollDice(BattleDiceBehavior behavior)
@@ -429,10 +431,10 @@ namespace Don_Eyuil
     }
     public class DiceCardSelfAbility_DonEyuil_50 : DiceCardSelfAbilityBase
     {
-        public static string Desc = "场上每有一名处于共鸣状态的敌方角色便使本书页造成的伤害减少20%\r\n[战斗开始]清除所有的[凝结的情感]\r\n[使用后]结束本幕";
+        public static string Desc = "场上每有一名处于共鸣状态的敌方角色便使本书页造成的伤害减少25%\r\n[战斗开始]清除所有的[凝结的情感]\r\n[使用后]结束本幕";
         public override void BeforeGiveDamage(BattleDiceBehavior behavior)
         {
-            var Count = BattleUnitBuf_Resonance.GetAllUnitWithBuf<BattleUnitBuf_Resonance>(Faction.Player).Count;
+            var Count = BattleUnitBuf_Resonance.GetAllUnitWithBuf<BattleUnitBuf_Resonance>(Faction.Player).Count * 25;
             if(Count >0)
             {
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
@@ -453,6 +455,7 @@ namespace Don_Eyuil
         }
         public override void OnEndBattle()
         {
+            
             BattleObjectManager.instance.GetAliveList().Do(target =>
             {
                 List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>();
@@ -474,20 +477,29 @@ namespace Don_Eyuil
         {
             if(card.target != null)
             {
-                BattleUnitBuf_Resonance.GetAllBufOnField<BattleUnitBuf_Resonance>().DoIf(y => y.owner!= card.target,x =>
+                /*BattleUnitBuf_Resonance.GetAllBufOnField<BattleUnitBuf_Resonance>().DoIf(y => y.owner!= card.target,x =>
                 {
-                    x.Destroy();
                     if (x.GetType().Name.Contains("BrightDream")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BrightDream>(card.target); }
-                    else if (x.GetType().Name.Contains("GreatHope")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_GreatHope>(card.target); }
-                    else if (x.GetType().Name.Contains("BoreResponsibility")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(card.target); }
-                    else if (x.GetType().Name.Contains("MutualUnderstanding")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(card.target); }
+                    if (x.GetType().Name.Contains("GreatHope")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_GreatHope>(card.target); }
+                    if (x.GetType().Name.Contains("BoreResponsibility")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BoreResponsibility>(card.target); }
+                    if (x.GetType().Name.Contains("MutualUnderstanding")) { BattleUnitBuf_Resonance.GetOrAddBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_MutualUnderstanding>(card.target); }
+                    x.Destroy();
+                });*/
+                BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(x => x != card.target, y =>
+                {
+                    y.bufListDetail.GetActivatedBufList().DoIf(bx => bx is BattleUnitBuf_Resonance && !bx.IsDestroyed(), by =>
+                    {
+                        card.target.bufListDetail.AddBuf(by);
+                        by.Destroy();
+                    });
+                    BattleUnitBuf_DuelStun.GetOrAddBuf<BattleUnitBuf_DuelStun>(y,BufReadyType.NextRound);
                 });
-               //BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(x => x != card.target,y => BattleUnitBuf_DuelStun.)
             }
             BattleUnitBuf_GloriousDuel.GetOrAddBuf<BattleUnitBuf_GloriousDuel>(card.target);
         }
         public class BattleUnitBuf_DuelStun : BattleUnitBuf_Don_Eyuil
         {
+            public override bool IsTargetable() => false;
             public BattleUnitBuf_DuelStun(BattleUnitModel model) : base(model) { }
             public override bool IsActionable()
             {

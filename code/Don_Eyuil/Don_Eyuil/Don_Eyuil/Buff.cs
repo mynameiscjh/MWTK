@@ -208,18 +208,18 @@ namespace Don_Eyuil
         public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
         {
             TotalEmotionCoinNum += CoinType == EmotionCoinType.Positive ? Count : 0;
-            if(TotalEmotionCoinNum >= 15)
+        }
+        public override void OnRoundEnd()
+        {
+            if (TotalEmotionCoinNum >= 15)
             {
-                if(_owner.passiveDetail.HasPassive<PassiveAbility_DonEyuil_07>())
+                if (BattleObjectManager.instance.GetAliveList().Exists(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_07>()))
                 {
                     _owner.bufListDetail.AddBuf(new BattleUnitBuf_InfinityStrongNBreakProtection());
                 }
                 this.Destroy();
             }
-        }
-        public override void OnRoundEnd()
-        {
-            if(HasTriggered == false)
+            if (HasTriggered == false)
             {
                 _owner.TakeBreakDamage((int)(this._owner.breakDetail.GetDefaultBreakGauge() * 0.2),DamageType.ETC);
                 _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 1);
@@ -235,7 +235,7 @@ namespace Don_Eyuil
             }
         }
 
-        public override void AfterRecoverHp(int v)
+        public override void BeforeRecoverHp(int v)
         {
             HasTriggered = true;
         }
@@ -246,6 +246,10 @@ namespace Don_Eyuil
     {
         protected override string keywordId => "BattleUnitBuf_BloodArmor";
         public static string Desc = "这一幕中受到的伤害与混乱伤害减少{0}×20%";
+        public override void OnRoundEnd()
+        {
+            this.Destroy();
+        }
         public BattleUnitBuf_BloodArmor(BattleUnitModel model) : base(model)
         {
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["敌方血甲"]);
@@ -269,6 +273,7 @@ namespace Don_Eyuil
         {
             if(!_owner.IsDead())
             {
+                BattleObjectManager.instance.GetAliveList(Faction.Enemy).Do(x => x.DieFake());
                 Singleton<StageController>.Instance.CheckEndBattle();
             }
         }
