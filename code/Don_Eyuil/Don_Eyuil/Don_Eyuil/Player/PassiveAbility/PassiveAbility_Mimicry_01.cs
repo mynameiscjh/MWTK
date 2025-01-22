@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HarmonyLib;
+using System;
 
 namespace Don_Eyuil.PassiveAbility
 {
@@ -21,11 +22,13 @@ namespace Don_Eyuil.PassiveAbility
                 fl = false;
             }
         }
-        public int recoverHpCount = 0;
-        public override void OnRecoverHp(int amount)
+        public static int recoverHpCount = 0;
+
+        [HarmonyPatch(typeof(BattleUnitModel), "RecoverHP")]
+        [HarmonyPrefix]
+        public static void BattleUnitModel_RecoverHP_Pre(int v)
         {
-            base.OnRecoverHp(amount);
-            recoverHpCount += amount;
+            recoverHpCount += v;
         }
 
         public override void OnRoundEnd()

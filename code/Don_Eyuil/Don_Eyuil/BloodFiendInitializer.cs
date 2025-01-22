@@ -3,6 +3,7 @@ using EnumExtenderV2;
 using HarmonyLib;
 using LOR_DiceSystem;
 using LOR_XML;
+using Steamworks;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,7 @@ using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
+using File = System.IO.File;
 
 namespace Don_Eyuil
 {
@@ -197,6 +199,7 @@ namespace Don_Eyuil
     public class TKS_BloodFiend_Initializer : ModInitializer
     {
         public static string packageId = "Don_Eyuil";
+        public static bool 简单模式 = false;
         public static Dictionary<string, Sprite> ArtWorks = new Dictionary<string, Sprite>();
         public static string language;
         public class TKS_EnumExtension
@@ -304,7 +307,7 @@ namespace Don_Eyuil
             }
             public class DiceFlagExtension : TKS_EnumExtender<DiceFlag>
             {
-                public static DiceFlag HasGivenDamage_SubTarget{ get; internal set; }
+                public static DiceFlag HasGivenDamage_SubTarget { get; internal set; }
             }
         }
         public static string GetPassiveName(int id)
@@ -577,7 +580,11 @@ namespace Don_Eyuil
         public static LorId Card_若能摆脱这可怖的疾病 = MyTools.Create(67);
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
         public static LorId Stage_埃尤尔 = MyTools.Create(1);
-        public static LorId Stage_测试 = MyTools.Create(2);
+        public static LorId Stage_测试 = MyTools.Create(881506);
+        public static ulong User_漠北九月 = 76561198941514651;
+        public static ulong User_小D = 76561199079466854;
+        public static ulong User_天空 = 76561198877012566;
+        public static ulong User_139 = 76561198995229429;
     }
 
 
@@ -619,6 +626,14 @@ namespace Don_Eyuil
                 UnityEngine.Object.Destroy(child.gameObject);
             }
             Vector3 降低可读性的魔法数字2 = new Vector3(0, -50, 0);
+
+            GameObject point = new GameObject("point");
+            point.transform.parent = Phase_FerrisWheel.transform;
+            point.transform.localPosition = new Vector3(853.7309f, 7736f + 1583.335f - 400f, 0f) + 降低可读性的魔法数字2;
+            point.AddComponent<RedLine>();
+            point.transform.localScale = new Vector3(15f, 15f, 0.8f);
+            point.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["特别大的摩天轮"];
+
             GameObject ferrisWheel = new GameObject("摩天轮");
             ferrisWheel.transform.parent = icons.transform;
             ferrisWheel.transform.localPosition = new Vector3(652.9309f, 7871.67f - 400f + 200f, 0) + 降低可读性的魔法数字2;
@@ -656,10 +671,48 @@ namespace Don_Eyuil
 
             Vector3 降低可读性的魔法数字 = new Vector3(0f, 140f, 0f);
 
-            GameObject point = new GameObject("point");
-            //point.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
-            point.transform.parent = Phase_FerrisWheel.transform;
+            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("TEST", new UIIconManager.IconSet
+            {
+                icon = TKS_BloodFiend_Initializer.ArtWorks["..D"],
+                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["..D"],
+                colorGlow = new Color(1, 1, 1, 1),
+                color = new Color(1, 1, 1, 1),
+                type = ""
+            });
 
+            void Func(int r, LorId id)
+            {
+                UIStoryProgressIconSlot testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+                testS.name = "139";
+                testS.currentStory = UIStoryLine.HanaAssociation;
+                testS.Initialized(__instance);
+                testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
+                testS.SetSlotData(new List<StageClassInfo>()
+                {
+                    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
+                });
+
+                testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, r * 5);
+                testS.gameObject.SetActive(true);
+            }
+
+            Func(0, MyId.Stage_测试);
+            Func(45, MyId.Stage_测试);
+            Func(90, MyId.Stage_测试);
+            Func(135, MyId.Stage_测试);
+            Func(180, MyId.Stage_测试);
+            Func(45 + 180, MyId.Stage_测试);
+            Func(90 + 180, MyId.Stage_测试);
+            Func(135 + 180, MyId.Stage_测试);
+
+
+            GameObject 底座 = new GameObject("摩天轮底座");
+            底座.transform.parent = Phase_FerrisWheel.transform;
+            底座.transform.localPosition = new Vector3(853.7309f, 7606f + 1583.335f - 400f, 0f) + 降低可读性的魔法数字2;//853.7309 8739.335 0
+            底座.transform.localScale = new Vector3(16.25f, 15.25f, 0.8713f);
+            var A = 底座.AddComponent<Image>();
+            A.sprite = TKS_BloodFiend_Initializer.ArtWorks["底座"];
+            A.raycastTarget = false;
 
             var Don_Eyuil = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
             Don_Eyuil.name = "Don_Eyuil";
@@ -680,37 +733,30 @@ namespace Don_Eyuil
                 Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_埃尤尔)
             });
 
-            //var testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
-            //testS.name = "139";
-            //testS.currentStory = UIStoryLine.HanaAssociation;
-            //testS.Initialized(__instance);
-            //testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
-            //testS.SetSlotData(new List<StageClassInfo>()
-            //{
-            //    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
-            //});
-            //testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, 0);
-
-            //var testS2 = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
-            //testS2.name = "139";
-            //testS2.currentStory = UIStoryLine.HanaAssociation;
-            //testS2.Initialized(__instance);
-            //testS2.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
-            //testS2.SetSlotData(new List<StageClassInfo>()
-            //{
-            //    Singleton<StageClassInfoList>.Instance.GetData(MyTools.Create(3))
-            //});
-            //testS2.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, 900);
-
-            point.transform.localPosition = new Vector3(853.7309f, 7736f + 1583.335f - 400f, 0f) + 降低可读性的魔法数字2;
-            point.AddComponent<RedLine>();
-            point.transform.localScale = new Vector3(15f, 15f, 0.8f);
-            point.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["特别大的摩天轮"];
-
+            UIStoryProgressIconSlot B = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+            B.name = "B..D";
+            B.currentStory = UIStoryLine.HanaAssociation;
+            B.Initialized(__instance);
+            B.transform.localPosition = new Vector3(1052.931f, 7938.335f, 0f);
+            B.SetSlotData(new List<StageClassInfo>()
+                {
+                    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
+                });
+            B.gameObject.SetActive(true);
 
             Icons_FerrisWheel.SetActive(false);
             isInit = true;
 
+        }
+
+        [HarmonyPatch(typeof(StageClassInfo), "currentState", MethodType.Getter)]
+        [HarmonyPostfix]
+        public static void StageClassInfo_currentState_Post(StageClassInfo __instance, ref StoryState __result)
+        {
+            if (__instance.id == MyId.Stage_测试)
+            {
+                __result = StoryState.Close;
+            }
         }
 
         public class Roll : MonoBehaviour
@@ -774,12 +820,26 @@ namespace Don_Eyuil
             "Don_Eyuil"
         };
 
+        public static bool ISNULL(this object obj, params string[] names)
+        {
+            object temp = obj;
+            foreach (string name in names)
+            {
+                if (temp == null)
+                {
+                    return false;
+                }
+                temp = temp.GetFieldValue(null, name);
+            }
+            return true;
+        }
+
         [HarmonyPatch(typeof(UIInvitationPanel), "GetTheBlueReverberationPrimaryStage")]
         [HarmonyPostfix]
         public static void UIInvitationPanel_GetTheBlueReverberationPrimaryStage_Post(UIInvitationPanel __instance, ref UIStoryLine __result)
         {
 
-            if (__instance == null || __instance.CurrentStage.storyType == null || !Stages.Exists(x => x == __instance.CurrentStage.storyType))
+            if (__instance == null || __instance.CurrentStage == null || __instance.CurrentStage.storyType == null || !Stages.Exists(x => x == __instance.CurrentStage.storyType))
             {
                 return;
             }
@@ -822,6 +882,19 @@ namespace Don_Eyuil
                         Singleton<LibraryQuestManager>.Instance.OnSendInvitation(stageClassInfo.id);
                         UI.UIController.Instance.PrepareBattle(stageClassInfo, new List<DropBookXmlInfo>());
                         UISoundManager.instance.PlayEffectSound(UISoundType.Ui_Invite);
+                        bool 真的不给我加一个简单模式吗 = true;
+                        if (真的不给我加一个简单模式吗)
+                        {
+                            UIAlarmPopup.instance.SetAlarmTextForBlue(UIAlarmType.StartTheBlueBattlePrimary, x => TKS_BloodFiend_Initializer.简单模式 = x, "", UIStoryLine.BlackSilence);
+                            if (SteamClient.SteamId == MyId.User_小D || SteamClient.SteamId == MyId.User_天空)
+                            {
+                                GameObject.Find("[Canvas][Script]PopupCanvas/[Prefab]PopupAlarm/[Rect]Blue/[Cg]/[Text]AlarmText").GetComponent<TextMeshProUGUI>().text = "是否开启简单模式";
+                            }
+                            if (SteamClient.SteamId == MyId.User_漠北九月 || SteamClient.SteamId == MyId.User_139)
+                            {
+                                GameObject.Find("[Canvas][Script]PopupCanvas/[Prefab]PopupAlarm/[Rect]Blue/[Cg]/[Text]AlarmText").GetComponent<TextMeshProUGUI>().text = "是否开启困难模式";
+                            }
+                        }
                     }
                 }, "伟大摩天轮", UIStoryLine.BlackSilence);
                 return false;

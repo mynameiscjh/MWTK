@@ -19,21 +19,11 @@ namespace Don_Eyuil.PassiveAbility
     {
         public override string debugDesc => "堂埃尤尔派硬血术 0费 特殊\r\n自身拥有一套额外的卡组可设置\"硬血术\"书页\r\n情感等级达到0/2/4时可以选择激活设置的\"硬血术\"书页情感等级达到4级后每有一名角色因流血死亡则可额外激活一次设置的\"硬血术\"书页\r\n（这里的选择激活硬血术界面用选EGO的那个levelup的UI做)\r\n（实现上面，基本就是正常的多写一个卡组就可以了)\r\n\r\n自身可使用个人书页\"堂埃尤尔派硬血术终式\"且无法使用楼层E.G.O书页\r\n";
 
-        public List<LorId> Cards = new List<LorId>()
-        {
-            MyId.Card_堂埃尤尔派硬血术1式_血剑_2,
-            MyId.Card_堂埃尤尔派硬血术2式_血枪_2,
-            MyId.Card_堂埃尤尔派硬血术3式_血镰_2,
-            MyId.Card_堂埃尤尔派硬血术4式_血刃_2,
-            MyId.Card_堂埃尤尔派硬血术5式_双剑_2,
-            MyId.Card_堂埃尤尔派硬血术6式_血甲_2,
-            MyId.Card_堂埃尤尔派硬血术7式_血弓_2,
-            MyId.Card_堂埃尤尔派硬血术8式_血鞭_2,
-            MyId.Card_堂埃尤尔派硬血术9式_血伞_2,
-        };
+
 
         public override void OnWaveStart()
         {
+            cards = new List<LorId>(this.owner.UnitData.unitData.GetDeckForBattle(1).Where(item => HardBloodCards.Contains(item.id)).Select(item => item.id));
             owner.personalEgoDetail.AddCard(MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
         }
 
@@ -91,22 +81,38 @@ namespace Don_Eyuil.PassiveAbility
 
         public static int count = 0;
 
+        public static List<LorId> cards = new List<LorId>();
+
         public void ShowCards()
         {
-            if (Cards != null && Cards.Count > 0)
+            if (cards == null || cards.Count <= 0)
             {
-                count++;
+                return;
+            }
+            var Cards = new List<LorId>(cards);
+            var temp = new List<LorId>();
+            for (int i = 0; i < 3; i++)
+            {
+                if (Cards.Count <= 0)
+                {
+                    break;
+                }
                 LorId temp1 = RandomUtil.SelectOne(Cards);
                 Cards.Remove(temp1);
-                LorId temp2 = RandomUtil.SelectOne(Cards);
-                Cards.Remove(temp2);
-                LorId temp3 = RandomUtil.SelectOne(Cards);
-                Cards.Remove(temp3);
-                BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
-                BattleManagerUI.Instance.ui_levelup.InitEgo(3, new List<EmotionEgoXmlInfo>() { new EmotionEgoXmlInfo_Mod(temp1), new EmotionEgoXmlInfo_Mod(temp2), new EmotionEgoXmlInfo_Mod(temp3) });
-                //怀疑效果不是这么实现的 可能会出bug
+                temp.Add(temp1);
             }
+            var emoCards = new List<EmotionEgoXmlInfo>(temp.Count);
+            foreach (var item in temp)
+            {
+                emoCards.Add(new EmotionEgoXmlInfo_Mod(item));
+            }
+
+            BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
+            BattleManagerUI.Instance.ui_levelup.InitEgo(Math.Min(3, emoCards.Count), emoCards);
+
         }
+
+
 
         [HarmonyPatch(typeof(BattleUnitCardsInHandUI), "UpdateCardList")]
         [HarmonyPrefix]
@@ -300,15 +306,16 @@ namespace Don_Eyuil.PassiveAbility
         [HarmonyPostfix]
         public static void UIInvenCardListScroll_ApplyFilterAll_Post(List<DiceCardItemModel> ____currentCardListForFilter, UIInvenCardListScroll __instance)
         {
-            if (__instance.GetFieldValue<UnitDataModel>("_unitdata") == null)
+            var temp = __instance.GetFieldValue<UnitDataModel>("_unitdata");
+            if (temp == null)
             {
                 return;
             }
-            if (__instance.GetFieldValue<UnitDataModel>("_unitdata").bookItem.BookId != MyId.Book_堂_埃尤尔之页)
+            if (temp.bookItem.BookId != MyId.Book_堂_埃尤尔之页)
             {
                 return;
             }
-            if (Current_DeckId == DeckId.HardBlood)
+            if (temp.bookItem.GetCurrentDeckIndex() == 1)
             {
                 ____currentCardListForFilter.Clear();
                 foreach (var item in HardBloodCards)
@@ -324,6 +331,36 @@ namespace Don_Eyuil.PassiveAbility
             {
                 ____currentCardListForFilter.RemoveAll(x => HardBloodCards.Exists(item => item == x.ClassInfo.id));
                 ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
+
+                var list = temp.bookItem.GetCardListByIndex(1).Select(x => x.id).ToList();
+
+                List<(LorId, List<LorId>)> cardRemovaList = new List<(LorId, List<LorId>)>
+                {
+                     ( MyId.Card_血伞挥打_2, new List<LorId>{MyId.Card_堂埃尤尔派硬血术8式_血鞭_2, MyId.Card_堂埃尤尔派硬血术9式_血伞_2}),
+                     ( MyId.Card_旋转_绽放把_2, new List<LorId>{MyId.Card_堂埃尤尔派硬血术9式_血伞_2}),
+                     ( MyId.Card_凝血化锋_2, new List<LorId>{MyId.Card_堂埃尤尔派硬血术1式_血剑_2, MyId.Card_堂埃尤尔派硬血术5式_双剑_2}),
+                     ( MyId.Card_纵血为刃_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术5式_双剑_2, MyId.Card_堂埃尤尔派硬血术6式_血甲_2}),
+                     ( MyId.Card_硬血截断_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术2式_血枪_2}),
+                     ( MyId.Card_血如泉涌_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术7式_血弓_2, MyId.Card_堂埃尤尔派硬血术8式_血鞭_2}),
+                     ( MyId.Card_梦之冒险_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术1式_血剑_2, MyId.Card_堂埃尤尔派硬血术2式_血枪_2}),
+                };
+
+                var temp_object = GameObject.Find("UI_Object/[CG]PPForForceCg/FrontCanvas/[Panel]BattlePagePanel(Clone)/PanelActiveController/[Librarian]Left_Panel/[Script]LibrarianDeckPanel/[Script]CardDeckPanel");
+
+                foreach (var item in cardRemovaList)
+                {
+                    foreach (var needCard in item.Item2)
+                    {
+                        if (!list.Contains(needCard))
+                        {
+                            ____currentCardListForFilter.RemoveAll(x => x.GetID() == item.Item1);
+                            temp.bookItem.MoveCardFromCurrentDeckToInventory(item.Item1);
+                            var component = temp_object?.GetComponent<UIEquipDeckCardList>();
+
+                            component?.SetCardsData(component?.currentunit?.GetDeckCardModelAll());
+                        }
+                    }
+                }
             }
             __instance.SetCardsData(__instance.GetCurrentPageList());
         }
@@ -566,10 +603,13 @@ namespace Don_Eyuil.PassiveAbility
 
                 if (cardToBufMap.TryGetValue(picked.CardModel.GetID(), out System.Type bufType))
                 {
-                    var method = typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GainBuf").MakeGenericMethod(bufType);
-                    method.Invoke(null, new object[] { I39, 1, BufReadyType.ThisRound });
+                    if (typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GetBuf").MakeGenericMethod(bufType).Invoke(null, new object[] { I39, BufReadyType.ThisRound }) == null)
+                    {
+                        var method = typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GainBuf").MakeGenericMethod(bufType);
+                        method.Invoke(null, new object[] { I39, 1, BufReadyType.ThisRound });
+                    }
                 }
-
+                cards.Remove(picked.CardModel.GetID());
                 I39.personalEgoDetail.AddCard(picked.CardModel.GetID());
                 BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
 
