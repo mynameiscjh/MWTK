@@ -4,7 +4,6 @@ using HarmonyLib;
 using LOR_DiceSystem;
 using LOR_XML;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,8 +16,6 @@ using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
-using static Don_Eyuil.BattleUnitBuf_Don_Eyuil;
-using static Don_Eyuil.TKS_BloodFiend_PatchMethods_Testify;
 using File = System.IO.File;
 
 namespace Don_Eyuil
@@ -53,7 +50,7 @@ namespace Don_Eyuil
         {
             switch (T)
             {
-                case Team.attacker: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentAttackerTeam", TM);break;
+                case Team.attacker: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentAttackerTeam", TM); break;
                 case Team.defender: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentDefenderTeam", TM); break;
                 case Team.winner: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentWinnerTeam", TM); break;
                 case Team.loser: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentLoserTeam", TM); break;
@@ -70,9 +67,9 @@ namespace Don_Eyuil
             //Defender = winner
             public static bool CheckDiceCardAbility(BattleParryingManager PM)
             {
-                if (GetParryingTeam(PM,Team.defender) != null 
-                    && GetParryingTeam(PM, Team.defender).playingCard != null 
-                    && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior != null && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card != null 
+                if (GetParryingTeam(PM, Team.defender) != null
+                    && GetParryingTeam(PM, Team.defender).playingCard != null
+                    && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior != null && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card != null
                     && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card.card.XmlData.Script == "Testify_TransDice")
                 {
                     return true;
@@ -82,7 +79,7 @@ namespace Don_Eyuil
             //Defender = winner
             public static void TransDice(BattleParryingManager PM)
             {
-                if(PM != null)
+                if (PM != null)
                 {
                     if (GetParryingTeam(PM, Team.defender).playingCard.currentBehavior != null)
                     {
@@ -101,10 +98,10 @@ namespace Don_Eyuil
                 Label? L = null;
                 for (int i = 1; i < codes.Count; i++)
                 {
-                    if (codes[i].opcode == OpCodes.Ldarg_0 
-                        && codes[i + 1].opcode == OpCodes.Ldfld && codes[i + 1].operand == AccessTools.Field(typeof(BattleParryingManager), "_currentDefenderTeam") 
-                        && codes[i + 2].opcode == OpCodes.Ldarg_0 
-                        && codes[i + 3].opcode == OpCodes.Ldfld && codes[i + 3].operand == AccessTools.Field(typeof(BattleParryingManager), "_currentLoserTeam") 
+                    if (codes[i].opcode == OpCodes.Ldarg_0
+                        && codes[i + 1].opcode == OpCodes.Ldfld && codes[i + 1].operand == AccessTools.Field(typeof(BattleParryingManager), "_currentDefenderTeam")
+                        && codes[i + 2].opcode == OpCodes.Ldarg_0
+                        && codes[i + 3].opcode == OpCodes.Ldfld && codes[i + 3].operand == AccessTools.Field(typeof(BattleParryingManager), "_currentLoserTeam")
                         && codes[i + 4].opcode == OpCodes.Bne_Un && codes[i + 4].Branches(out L))
                     {
                         Label L2 = ILcodegenerator.DefineLabel();
@@ -118,7 +115,7 @@ namespace Don_Eyuil
                             new CodeInstruction(OpCodes.Ldarg_0),
                             new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(TransBehavior_AtkVSDfnPatch),"TransDice")),
                             new CodeInstruction(OpCodes.Ret)
-                        }) ;
+                        });
                     }
                 }
                 return codes.AsEnumerable<CodeInstruction>();
@@ -152,7 +149,7 @@ namespace Don_Eyuil
                     SetParryingTeam(PM, Team.defender, GetParryingTeam(PM, Team.loser));
                     GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.behaviourInCard.Type = BehaviourType.Def;
                     GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.behaviourInCard.Detail = BehaviourDetail.Guard;
-                    if(GetParryingTeam(PM, Team.winner) != null)
+                    if (GetParryingTeam(PM, Team.winner) != null)
                     {
                         if (GetParryingTeam(PM, Team.winner).GetParryingDiceType() == BattleParryingManager.ParryingDiceType.Attack)
                         {
@@ -756,6 +753,8 @@ namespace Don_Eyuil
         public static GameObject Icons_FerrisWheel = null;
         public static GameObject Phase_FerrisWheel = null;
         public static string Desc;
+        public static bool IsInFerrisWheel = false;
+        public static GameObject icons = null;
         [HarmonyPatch(typeof(UIStoryProgressPanel), "SetStoryLine")]
         [HarmonyPostfix]
         public static void UIStoryProgressPanel_SetStoryLine_Post(UIStoryProgressPanel __instance)
@@ -766,7 +765,7 @@ namespace Don_Eyuil
             }
             var list = __instance.GetFieldValue<List<UIStoryProgressIconSlot>>("iconList");
             var temp = list.Find((UIStoryProgressIconSlot x) => x.currentStory == UIStoryLine.HanaAssociation);
-            var icons = temp.transform.parent.parent.gameObject;
+            icons = temp.transform.parent.parent.gameObject;
             Icons_FerrisWheel = UnityEngine.Object.Instantiate(icons, icons.transform.parent);
             Icons_FerrisWheel.name = "..D";
             for (int i = 0; i < Icons_FerrisWheel.transform.childCount; i++)
@@ -810,6 +809,7 @@ namespace Don_Eyuil
                 icons.SetActive(false);
                 icons.transform.parent.GetChild(0).gameObject.SetActive(false);
                 Icons_FerrisWheel.SetActive(true);
+                IsInFerrisWheel = true;
             }));
 
             GameObject ferrisWheel_back = new GameObject("摩天轮_back");
@@ -824,13 +824,19 @@ namespace Don_Eyuil
                 icons.SetActive(true);
                 icons.transform.parent.GetChild(0).gameObject.SetActive(true);
                 Icons_FerrisWheel.SetActive(false);
+                IsInFerrisWheel = false;
             }));
 
+            //-879.5304 -9054.552 0
+#if false
             GameObject 箭头 = new GameObject("箭头");
             箭头.transform.parent = Icons_FerrisWheel.transform;
-            箭头.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["箭头"];
-            箭头.transform.localPosition = new Vector3(652.9309f, 6085.005f, 0);
-
+            箭头.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["..D"];
+            箭头.transform.localPosition = new Vector3(652.9309f, -715f, 0);
+            var 箭头_button = 箭头.AddComponent<Button>();
+            箭头_button.targetGraphic = 箭头.GetComponent<Image>();
+            箭头_button.onClick.AddListener(new UnityEngine.Events.UnityAction(() => Icons_FerrisWheel.transform.parent.localPosition = new Vector3(-879.5304f, -9054.552f, 0)));
+#endif
             Vector3 降低可读性的魔法数字 = new Vector3(0f, 140f, 0f);
 
             UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("TEST", new UIIconManager.IconSet
@@ -907,6 +913,7 @@ namespace Don_Eyuil
             B.gameObject.SetActive(true);
 
             Icons_FerrisWheel.SetActive(false);
+
             isInit = true;
 
         }
@@ -918,6 +925,19 @@ namespace Don_Eyuil
             if (__instance.id == MyId.Stage_测试)
             {
                 __result = StoryState.Close;
+            }
+        }
+
+        [HarmonyPatch(typeof(UIStoryProgressPanel), "OpenInit")]
+        [HarmonyPostfix]
+        public static void UIStoryProgressPanel_OpenInit_Post()
+        {
+            if (IsInFerrisWheel)
+            {
+                icons.SetActive(true);
+                icons.transform.parent.GetChild(0).gameObject.SetActive(true);
+                Icons_FerrisWheel.SetActive(false);
+                IsInFerrisWheel = false;
             }
         }
 
@@ -974,6 +994,9 @@ namespace Don_Eyuil
                 transform.localRotation = Quaternion.Euler(0, 0, temp);
                 temp += 0.2f;
                 time = 0.05f;
+
+
+
             }
         }
 
