@@ -429,7 +429,7 @@
     <Script>DonEyuil_22</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_80" ActionScript="" Desc="" />
       <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
       <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
@@ -668,7 +668,7 @@
     <Script>DonEyuil_34</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="15" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="hubertDice" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="15" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_81" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
