@@ -83,6 +83,19 @@ namespace Don_Eyuil.PassiveAbility
 
         public static List<LorId> cards = new List<LorId>();
 
+        public static Dictionary<LorId, LorId> map = new Dictionary<LorId, LorId>()
+        {
+            {MyTools.Create(45), MyTools.Create(68)},
+            {MyTools.Create(46), MyTools.Create(69)},
+            {MyTools.Create(47), MyTools.Create(70)},
+            {MyTools.Create(48), MyTools.Create(71)},
+            {MyTools.Create(49), MyTools.Create(72)},
+            {MyTools.Create(50), MyTools.Create(73)},
+            {MyTools.Create(51), MyTools.Create(74)},
+            {MyTools.Create(52), MyTools.Create(75)},
+            {MyTools.Create(53), MyTools.Create(76)},
+        };
+
         public void ShowCards()
         {
             if (cards == null || cards.Count <= 0)
@@ -104,7 +117,7 @@ namespace Don_Eyuil.PassiveAbility
             var emoCards = new List<EmotionEgoXmlInfo>(temp.Count);
             foreach (var item in temp)
             {
-                emoCards.Add(new EmotionEgoXmlInfo_Mod(item));
+                emoCards.Add(new EmotionEgoXmlInfo_Mod(map[item]));
             }
 
 
@@ -578,7 +591,7 @@ namespace Don_Eyuil.PassiveAbility
         [HarmonyPrefix]
         public static bool LevelUpUI_OnSelectEgoCard_Pre(BattleDiceCardUI picked)
         {
-            if (HardBloodCards.Exists(x => x == picked.CardModel.GetID()))
+            if (map.Values.ToList().Exists(x => x == picked.CardModel.GetID()))
             {
                 var I39 = BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页);
                 if (I39 == null)
@@ -594,15 +607,15 @@ namespace Don_Eyuil.PassiveAbility
                 // 创建映射字典
                 var cardToBufMap = new Dictionary<LorId, System.Type>
                 {
-                    { MyId.Card_堂埃尤尔派硬血术1式_血剑_2, typeof(BattleUnitBuf_Sword) },
-                    { MyId.Card_堂埃尤尔派硬血术2式_血枪_2, typeof(BattleUnitBuf_Lance) },
-                    { MyId.Card_堂埃尤尔派硬血术3式_血镰_2, typeof(BattleUnitBuf_Sickle) },
-                    { MyId.Card_堂埃尤尔派硬血术4式_血刃_2, typeof(BattleUnitBuf_Blade) },
-                    { MyId.Card_堂埃尤尔派硬血术5式_双剑_2, typeof(BattleUnitBuf_DoubleSwords) },
-                    { MyId.Card_堂埃尤尔派硬血术6式_血甲_2, typeof(BattleUnitBuf_Armour) },
-                    { MyId.Card_堂埃尤尔派硬血术7式_血弓_2, typeof(BattleUnitBuf_Bow) },
-                    { MyId.Card_堂埃尤尔派硬血术8式_血鞭_2, typeof(BattleUnitBuf_Scourge) },
-                    { MyId.Card_堂埃尤尔派硬血术9式_血伞_2, typeof(BattleUnitBuf_Umbrella) }
+                    { map[MyId.Card_堂埃尤尔派硬血术1式_血剑_2], typeof(BattleUnitBuf_Sword) },
+                    { map[MyId.Card_堂埃尤尔派硬血术2式_血枪_2], typeof(BattleUnitBuf_Lance) },
+                    { map[MyId.Card_堂埃尤尔派硬血术3式_血镰_2], typeof(BattleUnitBuf_Sickle) },
+                    { map[MyId.Card_堂埃尤尔派硬血术4式_血刃_2], typeof(BattleUnitBuf_Blade) },
+                    { map[MyId.Card_堂埃尤尔派硬血术5式_双剑_2], typeof(BattleUnitBuf_DoubleSwords) },
+                    { map[MyId.Card_堂埃尤尔派硬血术6式_血甲_2], typeof(BattleUnitBuf_Armour) },
+                    { map[MyId.Card_堂埃尤尔派硬血术7式_血弓_2], typeof(BattleUnitBuf_Bow) },
+                    { map[MyId.Card_堂埃尤尔派硬血术8式_血鞭_2], typeof(BattleUnitBuf_Scourge) },
+                    { map[MyId.Card_堂埃尤尔派硬血术9式_血伞_2], typeof(BattleUnitBuf_Umbrella) }
                 };
 
                 if (cardToBufMap.TryGetValue(picked.CardModel.GetID(), out System.Type bufType))
@@ -613,8 +626,9 @@ namespace Don_Eyuil.PassiveAbility
                         method.Invoke(null, new object[] { I39, 1, BufReadyType.ThisRound });
                     }
                 }
-                cards.Remove(picked.CardModel.GetID());
-                I39.personalEgoDetail.AddCard(picked.CardModel.GetID());
+                var temp = map.ToList().Find(x => x.Value == picked.CardModel.GetID()).Key;
+                cards.Remove(temp);
+                I39.personalEgoDetail.AddCard(temp);
                 BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
                 return false;
             }

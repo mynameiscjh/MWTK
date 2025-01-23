@@ -23,8 +23,8 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
                 }
                 var temp = RandomUtil.SelectOne(temp_list);
                 temp_list.Remove(temp);
-                temp.bufListDetail.AddKeywordBufByCard(KeywordBuf.BreakProtection, 1, owner);
-                temp.bufListDetail.AddKeywordBufByCard(KeywordBuf.Strength, Math.Min(2, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum), owner);
+                temp.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.BreakProtection, 1, owner);
+                temp.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Strength, Math.Min(2, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum), owner);
 
             }
         }
