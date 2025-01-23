@@ -3,7 +3,6 @@ using EnumExtenderV2;
 using HarmonyLib;
 using LOR_DiceSystem;
 using LOR_XML;
-using Steamworks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -360,7 +359,6 @@ namespace Don_Eyuil
     public class TKS_BloodFiend_Initializer : ModInitializer
     {
         public static string packageId = "Don_Eyuil";
-        public static bool 简单模式 = false;
         public static Dictionary<string, Sprite> ArtWorks = new Dictionary<string, Sprite>();
         public static string language;
         public class TKS_EnumExtension
@@ -637,7 +635,7 @@ namespace Don_Eyuil
             TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
             TKS_EnumExtension.DiceFlagExtension.ExtendEnum(typeof(TKS_EnumExtension.DiceFlagExtension));
-           // Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
+            // Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
             DonEyuilLoad(Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path)));
 
         }
@@ -1046,19 +1044,8 @@ namespace Don_Eyuil
                         Singleton<LibraryQuestManager>.Instance.OnSendInvitation(stageClassInfo.id);
                         UI.UIController.Instance.PrepareBattle(stageClassInfo, new List<DropBookXmlInfo>());
                         UISoundManager.instance.PlayEffectSound(UISoundType.Ui_Invite);
-                        bool 真的不给我加一个简单模式吗 = true;
-                        if (真的不给我加一个简单模式吗)
-                        {
-                            UIAlarmPopup.instance.SetAlarmTextForBlue(UIAlarmType.StartTheBlueBattlePrimary, x => TKS_BloodFiend_Initializer.简单模式 = x, "", UIStoryLine.BlackSilence);
-                            if (SteamClient.SteamId == MyId.User_小D || SteamClient.SteamId == MyId.User_天空)
-                            {
-                                GameObject.Find("[Canvas][Script]PopupCanvas/[Prefab]PopupAlarm/[Rect]Blue/[Cg]/[Text]AlarmText").GetComponent<TextMeshProUGUI>().text = "是否开启简单模式";
-                            }
-                            if (SteamClient.SteamId == MyId.User_漠北九月 || SteamClient.SteamId == MyId.User_139)
-                            {
-                                GameObject.Find("[Canvas][Script]PopupCanvas/[Prefab]PopupAlarm/[Rect]Blue/[Cg]/[Text]AlarmText").GetComponent<TextMeshProUGUI>().text = "是否开启困难模式";
-                            }
-                        }
+
+
                     }
                 }, "伟大摩天轮", UIStoryLine.BlackSilence);
                 return false;

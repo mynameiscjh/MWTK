@@ -94,6 +94,13 @@
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_71.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_73.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_75.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DmgCount_Desc.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_01_Desc.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_11_Desc.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_32_Desc.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_56_Desc.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_58_Desc.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_61_Desc.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_62.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_65.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_66.cs" />
@@ -103,6 +110,8 @@
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_72.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_74.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_76.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_77_Desc.cs" />
+    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility__Desc.cs" />
     <Compile Include="Extra.cs" />
     <Compile Include="Don_Eyuil\PassiveAbility.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Armour.cs" />

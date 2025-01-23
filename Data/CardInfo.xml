@@ -429,7 +429,7 @@
     <Script>DonEyuil_22</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_80" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
       <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
       <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
@@ -668,7 +668,7 @@
     <Script>DonEyuil_34</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="15" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_81" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="15" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="hubertDice" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1575,7 +1575,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="64">
-    <Name></Name>
+    <Name>经典反击书页</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>
@@ -1599,7 +1599,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="65">
-    <Name></Name>
+    <Name>双剑反击闪避书页</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>
@@ -1670,19 +1670,18 @@
     <MaxNum>150</MaxNum>
   </Card>
 
-  <Card ID="99">
-    <Name>测试书页_骰子转换</Name>
+
+  <Card ID="68">
+    <Name>堂埃尤尔派硬血术-血剑</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
-    <Rarity>Uncommon</Rarity>
-    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
-    <Script>Testify_TransDice</Script>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="5" Affection="One" EmotionLimit="0" />
+    <Script>DonEyuil_56_Desc</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="9" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="1" Dice="1" Type="Atk" Detail="Hit" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="9" Dice="9" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="9" Dice="9" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1696,4 +1695,199 @@
     <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
     <MaxNum>150</MaxNum>
   </Card>
+  <Card ID="69">
+    <Name>堂埃尤尔派硬血术-血枪</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>DonEyuil_58_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <SpecialEffect />
+    <SkinChange />
+    <SkinChangeType>EGO</SkinChangeType>
+    <SkinHeight>0</SkinHeight>
+    <MapChange />
+    <Priority>0</Priority>
+    <PriorityScript />
+    <Category>None</Category>
+    <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
+    <MaxNum>150</MaxNum>
+  </Card>
+  <Card ID="70">
+    <Name>堂埃尤尔派硬血术-血镰</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="5" Affection="One" EmotionLimit="0" />
+    <Script>DonEyuil_11_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <SpecialEffect />
+    <SkinChange />
+    <SkinChangeType>EGO</SkinChangeType>
+    <SkinHeight>0</SkinHeight>
+    <MapChange />
+    <Priority>0</Priority>
+    <PriorityScript />
+    <Category>None</Category>
+    <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
+    <MaxNum>150</MaxNum>
+  </Card>
+  <Card ID="71">
+    <Name>堂埃尤尔派硬血术-血刃</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>DonEyuil_01_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <SpecialEffect />
+    <SkinChange />
+    <SkinChangeType>EGO</SkinChangeType>
+    <SkinHeight>0</SkinHeight>
+    <MapChange />
+    <Priority>0</Priority>
+    <PriorityScript />
+    <Category>None</Category>
+    <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
+    <MaxNum>150</MaxNum>
+  </Card>
+  <Card ID="72">
+    <Name>堂埃尤尔派硬血术-双剑</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>DonEyuil_77_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <SpecialEffect />
+    <SkinChange />
+    <SkinChangeType>EGO</SkinChangeType>
+    <SkinHeight>0</SkinHeight>
+    <MapChange />
+    <Priority>0</Priority>
+    <PriorityScript />
+    <Category>None</Category>
+    <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
+    <MaxNum>150</MaxNum>
+  </Card>
+  <Card ID="73">
+    <Name>堂埃尤尔派硬血术-血甲</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
+    <Option>EgoPersonal</Option>
+    <Spec Range="FarAreaEach" Cost="5" Affection="Team" EmotionLimit="0" />
+    <Script>DonEyuil_61_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <SpecialEffect />
+    <SkinChange />
+    <SkinChangeType>EGO</SkinChangeType>
+    <SkinHeight>0</SkinHeight>
+    <MapChange />
+    <Priority>0</Priority>
+    <PriorityScript />
+    <Category>None</Category>
+    <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
+    <MaxNum>150</MaxNum>
+  </Card>
+  <Card ID="74">
+    <Name>堂埃尤尔派硬血术-血弓</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Far" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>DmgCount_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <SpecialEffect />
+    <SkinChange />
+    <SkinChangeType>EGO</SkinChangeType>
+    <SkinHeight>0</SkinHeight>
+    <MapChange />
+    <Priority>0</Priority>
+    <PriorityScript />
+    <Category>None</Category>
+    <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
+    <MaxNum>150</MaxNum>
+  </Card>
+  <Card ID="75">
+    <Name>堂埃尤尔派硬血术-血鞭</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
+    <Option>EgoPersonal</Option>
+    <Spec Range="FarArea" Cost="5" Affection="Team" EmotionLimit="0" />
+    <Script>_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <SpecialEffect />
+    <SkinChange />
+    <SkinChangeType>EGO</SkinChangeType>
+    <SkinHeight>0</SkinHeight>
+    <MapChange />
+    <Priority>0</Priority>
+    <PriorityScript />
+    <Category>None</Category>
+    <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
+    <MaxNum>150</MaxNum>
+  </Card>
+  <Card ID="76">
+    <Name>堂埃尤尔派硬血术-血伞</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>DonEyuil_32_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+    <SpecialEffect />
+    <SkinChange />
+    <SkinChangeType>EGO</SkinChangeType>
+    <SkinHeight>0</SkinHeight>
+    <MapChange />
+    <Priority>0</Priority>
+    <PriorityScript />
+    <Category>None</Category>
+    <MaxCooltimeForEgo>9</MaxCooltimeForEgo>
+    <MaxNum>150</MaxNum>
+  </Card>
+
+
+
 </DiceCardXmlRoot>

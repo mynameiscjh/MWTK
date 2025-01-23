@@ -9,7 +9,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
         public static string Desc = "[战斗开始]对自身施加3层[流血]并使两名我方角色获得1层[振奋]自身每激活了一种[硬血术]书页便额外施加1层[强壮](至多2层)";
         public override void OnStartBattle()
         {
-            owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Blurry, 3, owner);
+            owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3, owner);
             var temp_list = new List<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(owner.faction));
             for (int i = 0; i < 2; i++)
             {
@@ -23,8 +23,8 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
                 }
                 var temp = RandomUtil.SelectOne(temp_list);
                 temp_list.Remove(temp);
-                temp.bufListDetail.AddKeywordBufByCard(KeywordBuf.BreakProtection, 1, owner);
-                temp.bufListDetail.AddKeywordBufByCard(KeywordBuf.Strength, Math.Min(2, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum), owner);
+                temp.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.BreakProtection, 1, owner);
+                temp.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Strength, Math.Min(2, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum), owner);
 
             }
         }
