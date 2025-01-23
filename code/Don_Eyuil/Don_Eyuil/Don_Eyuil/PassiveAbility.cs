@@ -106,6 +106,14 @@ namespace Don_Eyuil
                 owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_07));
                 owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_08));
                 owner.passiveDetail.AddPassive(MyTools.Create(9));
+                owner.bufListDetail.GetActivatedBufList().DoIf(x => x.positiveType == BufPositiveType.Negative, y => y.Destroy());
+                if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                {
+                    this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                }
+                this.owner.breakDetail.nextTurnBreak = false;
+                this.owner.breakDetail.RecoverBreakLife(1, false);
+                this.owner.breakDetail.RecoverBreak(this.owner.breakDetail.GetDefaultBreakGauge());
                 Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(2), 1, -1);
                 Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(3), 2, -1);
                 Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(4), 3, -1);
@@ -166,6 +174,12 @@ namespace Don_Eyuil
         {
             owner.allyCardDetail.ExhaustAllCardsInHand();
             int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
+            //while (i> 0)
+            //{
+            //    AddNewCard(MyTools.Create(99), 500);
+            //    i--;
+            //}
+            //return;
             int round = Singleton<StageController>.Instance.RoundTurn;
             if (Phase == 1 && APassive02 != null)
             { 
@@ -913,7 +927,7 @@ namespace Don_Eyuil
         }
         public override void OnDestroyed()
         {
-            BattleUnitBuf_MayYouFindDream.RemoveBuf<BattleUnitBuf_MayYouFindDream>(owner);
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_MayYouFindDream.RemoveBuf<BattleUnitBuf_MayYouFindDream>(x));
         }
 
         public class BattleUnitBuf_MayYouFindDream : BattleUnitBuf_Don_Eyuil

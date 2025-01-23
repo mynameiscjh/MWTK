@@ -5,10 +5,12 @@ using LOR_DiceSystem;
 using LOR_XML;
 using Steamworks;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Xml;
 //using Workshop;
 using System.Xml.Serialization;
@@ -16,13 +18,172 @@ using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
+using static Don_Eyuil.BattleUnitBuf_Don_Eyuil;
+using static Don_Eyuil.TKS_BloodFiend_PatchMethods_Testify;
 using File = System.IO.File;
 
 namespace Don_Eyuil
 {
 
+    public class DiceCardSelfAbility_Testify_TransDice : DiceCardSelfAbilityBase
+    {
 
 
+
+    }
+    [HarmonyPatch]
+    public class TKS_BloodFiend_PatchMethods_Testify
+    {
+        public enum Team
+        {
+            attacker, defender,
+            winner, loser,
+        }
+        public static BattleParryingManager.ParryingTeam GetParryingTeam(BattleParryingManager PM, Team T)
+        {
+            switch (T)
+            {
+                case Team.attacker: return PM.GetFieldValue<BattleParryingManager.ParryingTeam>("_currentAttackerTeam");
+                case Team.defender: return PM.GetFieldValue<BattleParryingManager.ParryingTeam>("_currentDefenderTeam");
+                case Team.winner: return PM.GetFieldValue<BattleParryingManager.ParryingTeam>("_currentWinnerTeam");
+                case Team.loser: return PM.GetFieldValue<BattleParryingManager.ParryingTeam>("_currentLoserTeam");
+            }
+            return null;
+        }
+        public static void SetParryingTeam(BattleParryingManager PM, Team T, BattleParryingManager.ParryingTeam TM)
+        {
+            switch (T)
+            {
+                case Team.attacker: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentAttackerTeam", TM);break;
+                case Team.defender: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentDefenderTeam", TM); break;
+                case Team.winner: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentWinnerTeam", TM); break;
+                case Team.loser: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentLoserTeam", TM); break;
+            }
+        }
+
+        [HarmonyPatch]
+        public class TransBehavior_AtkVSDfnPatch
+        {
+            public static MethodBase TargetMethod()
+            {
+                return AccessTools.Method(typeof(BattleParryingManager), "ActionPhaseAtkVSDfn");
+            }
+            //Defender = winner
+            public static bool CheckDiceCardAbility(BattleParryingManager PM)
+            {
+                if (GetParryingTeam(PM,Team.defender) != null 
+                    && GetParryingTeam(PM, Team.defender).playingCard != null 
+                    && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior != null && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card != null 
+                    && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card.card.XmlData.Script == "Testify_TransDice")
+                {
+                    return true;
+                }
+                return false;
+            }
+            //Defender = winner
+            public static void TransDice(BattleParryingManager PM)
+            {
+                if(PM != null)
+                {
+                    if (GetParryingTeam(PM, Team.defender).playingCard.currentBehavior != null)
+                    {
+                        GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.behaviourInCard.Type = BehaviourType.Atk;
+                        GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.behaviourInCard.Detail = RandomUtil.SelectOne(BehaviourDetail.Slash, BehaviourDetail.Hit, BehaviourDetail.Penetrate);
+                        PM.InvokeMethod("ActionPhaseAtkVSAtk");
+                        //GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.behaviourInCard.Type = BehaviourType.Def;
+                        //GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.behaviourInCard.Detail = BehaviourDetail.Guard;
+                    }
+
+                }
+            }
+            public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                Label? L = null;
+                for (int i = 1; i < codes.Count; i++)
+                {
+                    if (codes[i].opcode == OpCodes.Ldarg_0 
+                        && codes[i + 1].opcode == OpCodes.Ldfld && codes[i + 1].operand == AccessTools.Field(typeof(BattleParryingManager), "_currentDefenderTeam") 
+                        && codes[i + 2].opcode == OpCodes.Ldarg_0 
+                        && codes[i + 3].opcode == OpCodes.Ldfld && codes[i + 3].operand == AccessTools.Field(typeof(BattleParryingManager), "_currentLoserTeam") 
+                        && codes[i + 4].opcode == OpCodes.Bne_Un && codes[i + 4].Branches(out L))
+                    {
+                        Label L2 = ILcodegenerator.DefineLabel();
+                        int codeIndex = codes.FindIndex((CodeInstruction code) => code.labels.Contains(L.Value));
+                        codes[i + 4].operand = L2;
+                        codes.InsertRange(codeIndex, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_0).WithLabels(L2),
+                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(TransBehavior_AtkVSDfnPatch),"CheckDiceCardAbility")),
+                            new CodeInstruction(OpCodes.Brfalse_S,L),
+                            new CodeInstruction(OpCodes.Ldarg_0),
+                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(TransBehavior_AtkVSDfnPatch),"TransDice")),
+                            new CodeInstruction(OpCodes.Ret)
+                        }) ;
+                    }
+                }
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
+        [HarmonyPatch]
+        public class TransBehavior_AtkVSAtkPatch
+        {
+            public static MethodBase TargetMethod()
+            {
+                return AccessTools.Method(typeof(BattleParryingManager), "ActionPhaseAtkVSAtk");
+            }
+            //loser = defender 
+            public static bool CheckDiceCardAbility(BattleParryingManager PM)
+            {
+                if (GetParryingTeam(PM, Team.loser) != null
+                    && GetParryingTeam(PM, Team.loser).playingCard != null
+                    && GetParryingTeam(PM, Team.loser).playingCard.currentBehavior != null && GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.card != null
+                    && GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.card.card.XmlData.Script == "Testify_TransDice")
+                {
+                    return true;
+                }
+                return false;
+            }
+            //loser = defender 
+            public static void TransDice(BattleParryingManager PM)
+            {
+                if (PM != null)
+                {
+                    SetParryingTeam(PM, Team.attacker, GetParryingTeam(PM, Team.winner));
+                    SetParryingTeam(PM, Team.defender, GetParryingTeam(PM, Team.loser));
+                    GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.behaviourInCard.Type = BehaviourType.Def;
+                    GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.behaviourInCard.Detail = BehaviourDetail.Guard;
+                    if(GetParryingTeam(PM, Team.winner) != null)
+                    {
+                        if (GetParryingTeam(PM, Team.winner).GetParryingDiceType() == BattleParryingManager.ParryingDiceType.Attack)
+                        {
+                            PM.InvokeMethod("ActionPhaseAtkVSDfn");
+                        }
+                        else
+                        {
+                            PM.InvokeMethod("ActionPhaseDfnVSDfn");
+                        }
+                    }
+                }
+            }
+            public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                Label L2 = ILcodegenerator.DefineLabel();
+                codes[0].labels.Add(L2);
+                codes.InsertRange(0, new List<CodeInstruction>()
+                {
+                    new CodeInstruction(OpCodes.Ldarg_0).WithLabels(),
+                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(TransBehavior_AtkVSAtkPatch),"CheckDiceCardAbility")),
+                            new CodeInstruction(OpCodes.Brfalse_S,L2),
+                            new CodeInstruction(OpCodes.Ldarg_0),
+                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(TransBehavior_AtkVSAtkPatch),"TransDice")),
+                            new CodeInstruction(OpCodes.Ret)
+                });
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
+    }
 
 
 
@@ -456,6 +617,9 @@ namespace Don_Eyuil
             //harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterApplyEnemyCardPatch));
 
             harmony.PatchAll(typeof(RedDiceCardAbility));
+
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
+            //harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify.TransBehavior_AtkVSDfnPatch));
 
             harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil));
             harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.OnStartBattleTheLastPatch));
