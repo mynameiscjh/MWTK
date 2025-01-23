@@ -107,8 +107,12 @@ namespace Don_Eyuil.PassiveAbility
                 emoCards.Add(new EmotionEgoXmlInfo_Mod(item));
             }
 
+
             BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
             BattleManagerUI.Instance.ui_levelup.InitEgo(Math.Min(3, emoCards.Count), emoCards);
+            BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["玩家硬血术统一图标"];
+            BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "选择硬血流书页";
+            BattleManagerUI.Instance.ui_levelup._emotionLevels.Do(x => x.Set(false, false, false));
 
         }
 
@@ -612,7 +616,6 @@ namespace Don_Eyuil.PassiveAbility
                 cards.Remove(picked.CardModel.GetID());
                 I39.personalEgoDetail.AddCard(picked.CardModel.GetID());
                 BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
-
                 return false;
             }
 

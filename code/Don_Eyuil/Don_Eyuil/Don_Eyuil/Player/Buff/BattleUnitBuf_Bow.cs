@@ -37,7 +37,7 @@
             if (!fl2)
             {
                 behavior.card.target.bufListDetail.AddBuf(new BattleUnitBuf_DeepWound(behavior.card.target));
-                fl1 = true;
+                fl2 = true;
             }
         }
 
