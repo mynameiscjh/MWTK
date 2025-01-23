@@ -51,6 +51,10 @@ namespace Don_Eyuil
         public override void OnWaveStart()
         {
             Phase = 1; Phase2Round = 0; Phase3Round = 0;
+            MyTools.CMH.InitCustomMap<DonEyuilPhase1MapManager>("Don_Eyuil1");
+            MyTools.CMH.InitCustomMap<DonEyuilPhase2MapManager>("Don_Eyuil2");
+            MyTools.CMH.InitCustomMap<DonEyuilPhase3MapManager>("Don_Eyuil3");
+            MyTools.CMH.EnforceMap(0);
         }
         public override int GetMinHp()
         {
@@ -98,6 +102,7 @@ namespace Don_Eyuil
                 owner.passiveDetail.AddPassive(MyTools.Create(6));
                 owner.passiveDetail.AddPassive(MyTools.Create(7));
                 owner.passiveDetail.AddPassive(MyTools.Create(8));
+                MyTools.CMH.EnforceMap(1);
             }
             if(Phase == 2 && BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(owner)<=0)
             {
@@ -128,6 +133,7 @@ namespace Don_Eyuil
                     }
                 }
                 BattleObjectManager.instance.InitUI();
+                MyTools.CMH.EnforceMap(2);
             }
         }
         public override int SpeedDiceNumAdder()
@@ -765,7 +771,7 @@ namespace Don_Eyuil
             if(LatestArtPair != null)
             {
                 var ExpiredArtPair = LatestArtPair.Expire();
-                if (ExpiredArtPair != null) { return ExpiredArtPair; }
+                if (ExpiredArtPair != null && !WithOutShield) { return ExpiredArtPair; }
             }
             owner.bufListDetail.GetActivatedBufList().FindAll(x => x is BattleUnitBuf_HardBloodArt).Do(x => x.Destroy());
             if (WithOutShield == false && Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 0.25f )

@@ -40,6 +40,14 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomMapUtility, Version=3.1.1.0, Culture=neutral, PublicKeyToken=52e277cf1b9a4a04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\CustomMapUtility.dll</HintPath>
+    </Reference>
     <Reference Include="Facepunch.Steamworks.Win64, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Managed\Facepunch.Steamworks.Win64.dll</HintPath>
@@ -57,6 +65,10 @@
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -132,6 +144,7 @@
     <Compile Include="Don_Eyuil\Player\PassiveAbility\PassiveAbility_Mimicry_02.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_48.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_49.cs" />
+    <Compile Include="Don_Eyuil\MapManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

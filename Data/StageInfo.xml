@@ -11,6 +11,9 @@
       <AvailableUnit>5</AvailableUnit>
       <emotionCardList />
     </Wave>
+	<MapInfo>Don_Eyuil1</MapInfo>
+	<MapInfo>Don_Eyuil2</MapInfo>
+	<MapInfo>Don_Eyuil3</MapInfo>
     <StageType>Invitation</StageType>
     <FloorNum>1</FloorNum>
     <Chapter>7</Chapter>
