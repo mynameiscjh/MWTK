@@ -188,7 +188,8 @@ namespace Don_Eyuil
             //return;
             int round = Singleton<StageController>.Instance.RoundTurn;
             if (Phase == 1 && APassive02 != null)
-            { 
+            {
+                MyTools.CMH.EnforceMap(0);
                 //APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
                 //Debug.LogError("CurrentArtPair:" + APassive02.CurrentArtPair.ComboType +"|||||||||" + String.Join(",", APassive02.CurrentArtPair.Arts));
                 if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild) 
@@ -225,6 +226,7 @@ namespace Don_Eyuil
             }
             if(Phase == 2)
             {
+                MyTools.CMH.EnforceMap(1);
                 /*二阶段：开幕清空自身负面状态并恢复所有混乱抗性, 不再切换硬血术状态
                     第一幕：速度骰子×5 为仍在饥渴中的家人设下的晚宴 必须担负的责任 硬血截断 血之宝库 血之宝库
                     第二幕：速度骰子×7 若能摆脱这可怖的疾病 必须担负的责任 这绝非理想中的共存...旋转!绽放吧!! 凝血化锋 硬血截断 血之宝库
@@ -267,6 +269,7 @@ namespace Don_Eyuil
             }
             if(Phase == 3)
             {
+                MyTools.CMH.EnforceMap(2);
                 /*
                     三阶段：开幕清空自身负面状态并恢复所有混乱抗性并召唤4个不同的凝结的情感
                     第一幕：速度骰子×6 冲锋!驽骍难得! 梦之冒险 硬血截断 血如泉涌 血之宝库 血之宝库
@@ -709,7 +712,7 @@ namespace Don_Eyuil
                 {
                     foreach (DiceBehaviour diceBehaviour in this._owner.cardSlotDetail.keepCard.GetDiceBehaviourXmlList())
                     {
-                        if (diceBehaviour.Type == BehaviourType.Def)
+                        if (diceBehaviour.Type == BehaviourType.Def || (diceBehaviour.Type == BehaviourType.Standby && diceBehaviour.Detail == BehaviourDetail.Guard))
                         {
                             BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(_owner, 10);
                         }

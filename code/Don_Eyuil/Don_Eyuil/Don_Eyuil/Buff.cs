@@ -278,6 +278,10 @@ namespace Don_Eyuil
                 Singleton<StageController>.Instance.CheckEndBattle();
             }
         }
+        public override void OnDie()
+        {
+            BattleObjectManager.instance.GetAliveList(Faction.Player).Do(x => x.Die());
+        }
         public BattleUnitBuf_GloriousDuel(BattleUnitModel model) : base(model)
         {
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["光荣的决斗"]);
