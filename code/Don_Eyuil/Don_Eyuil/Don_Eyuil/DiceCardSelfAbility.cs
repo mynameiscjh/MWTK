@@ -491,7 +491,8 @@ namespace Don_Eyuil
                     {
                         AccessTools.Method(by.GetType(), "GetOrAddBuf").MakeGenericMethod(by.GetType()).Invoke(null, new object[]
                         {
-                            card.target
+                            card.target,
+                            BufReadyType.ThisRound
                         });
                         //card.target.bufListDetail.AddBuf(by);
                         by.Destroy();
