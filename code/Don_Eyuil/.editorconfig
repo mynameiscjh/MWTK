@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0252: 可能非有意的引用比较；左侧需要强制转换
+dotnet_diagnostic.CS0252.severity = suggestion

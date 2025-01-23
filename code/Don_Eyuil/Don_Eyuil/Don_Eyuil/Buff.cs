@@ -197,8 +197,9 @@ namespace Don_Eyuil
         }
         public bool HasTriggered = false;
         public int TotalEmotionCoinNum = 0;
-        public class BattleUnitBuf_InfinityStrongNBreakProtection : BattleUnitBuf
+        public class BattleUnitBuf_InfinityStrongNBreakProtection : BattleUnitBuf_Don_Eyuil
         {
+            public BattleUnitBuf_InfinityStrongNBreakProtection(BattleUnitModel model) : base(model) { }
             public override void OnRoundEnd()
             {
                 _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
@@ -215,7 +216,7 @@ namespace Don_Eyuil
             {
                 if (BattleObjectManager.instance.GetAliveList().Exists(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_07>()))
                 {
-                    _owner.bufListDetail.AddBuf(new BattleUnitBuf_InfinityStrongNBreakProtection());
+                    BattleUnitBuf_InfinityStrongNBreakProtection.GetOrAddBuf < BattleUnitBuf_InfinityStrongNBreakProtection>(owner).OnRoundEnd();
                 }
                 this.Destroy();
             }
@@ -594,7 +595,7 @@ namespace Don_Eyuil
         }
 
 
-        public Color shieldColor = new Color(0.68f,0,0,1);
+        public Color shieldColor = Color.blue;
 
         public GameObject shieldBarGameObject;
 

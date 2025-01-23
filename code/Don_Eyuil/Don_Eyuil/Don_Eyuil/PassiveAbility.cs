@@ -51,6 +51,10 @@ namespace Don_Eyuil
         public override void OnWaveStart()
         {
             Phase = 1; Phase2Round = 0; Phase3Round = 0;
+            MyTools.CMH.InitCustomMap<DonEyuilPhase1MapManager>("Don_Eyuil1");
+            MyTools.CMH.InitCustomMap<DonEyuilPhase2MapManager>("Don_Eyuil2");
+            MyTools.CMH.InitCustomMap<DonEyuilPhase3MapManager>("Don_Eyuil3");
+            MyTools.CMH.EnforceMap(0);
         }
         public override int GetMinHp()
         {
@@ -98,6 +102,7 @@ namespace Don_Eyuil
                 owner.passiveDetail.AddPassive(MyTools.Create(6));
                 owner.passiveDetail.AddPassive(MyTools.Create(7));
                 owner.passiveDetail.AddPassive(MyTools.Create(8));
+                MyTools.CMH.EnforceMap(1);
             }
             if(Phase == 2 && BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(owner)<=0)
             {
@@ -106,6 +111,14 @@ namespace Don_Eyuil
                 owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_07));
                 owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_08));
                 owner.passiveDetail.AddPassive(MyTools.Create(9));
+                owner.bufListDetail.GetActivatedBufList().DoIf(x => x.positiveType == BufPositiveType.Negative, y => y.Destroy());
+                if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                {
+                    this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                }
+                this.owner.breakDetail.nextTurnBreak = false;
+                this.owner.breakDetail.RecoverBreakLife(1, false);
+                this.owner.breakDetail.RecoverBreak(this.owner.breakDetail.GetDefaultBreakGauge());
                 Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(2), 1, -1);
                 Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(3), 2, -1);
                 Singleton<StageController>.Instance.AddNewUnit(Faction.Enemy, MyTools.Create(4), 3, -1);
@@ -120,6 +133,7 @@ namespace Don_Eyuil
                     }
                 }
                 BattleObjectManager.instance.InitUI();
+                MyTools.CMH.EnforceMap(2);
             }
         }
         public override int SpeedDiceNumAdder()
@@ -166,6 +180,12 @@ namespace Don_Eyuil
         {
             owner.allyCardDetail.ExhaustAllCardsInHand();
             int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
+            //while (i> 0)
+            //{
+            //    AddNewCard(MyTools.Create(99), 500);
+            //    i--;
+            //}
+            //return;
             int round = Singleton<StageController>.Instance.RoundTurn;
             if (Phase == 1 && APassive02 != null)
             { 
@@ -751,7 +771,7 @@ namespace Don_Eyuil
             if(LatestArtPair != null)
             {
                 var ExpiredArtPair = LatestArtPair.Expire();
-                if (ExpiredArtPair != null) { return ExpiredArtPair; }
+                if (ExpiredArtPair != null && !WithOutShield) { return ExpiredArtPair; }
             }
             owner.bufListDetail.GetActivatedBufList().FindAll(x => x is BattleUnitBuf_HardBloodArt).Do(x => x.Destroy());
             if (WithOutShield == false && Singleton<StageController>.Instance.RoundTurn >= 2 && RandomUtil.valueForProb < 0.25f )
@@ -913,7 +933,7 @@ namespace Don_Eyuil
         }
         public override void OnDestroyed()
         {
-            BattleUnitBuf_MayYouFindDream.RemoveBuf<BattleUnitBuf_MayYouFindDream>(owner);
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Do(x => BattleUnitBuf_MayYouFindDream.RemoveBuf<BattleUnitBuf_MayYouFindDream>(x));
         }
 
         public class BattleUnitBuf_MayYouFindDream : BattleUnitBuf_Don_Eyuil

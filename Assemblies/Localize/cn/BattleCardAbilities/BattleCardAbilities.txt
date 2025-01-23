@@ -250,4 +250,10 @@
   <BattleCardAbility ID="DonEyuil_79">
     <Desc>[战斗开始]这一幕对自身施加5层[流血]</Desc>
   </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_80">
+    <Desc>[命中时]对目标施加2层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_80">
+    <Desc>[命中时]对目标施加8层[流血]与1层[虚弱]</Desc>
+  </BattleCardAbility>
 </BattleCardAbilityDescRoot>

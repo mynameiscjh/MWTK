@@ -404,4 +404,21 @@ namespace Don_Eyuil
             }
         }
     }
+    public class DiceCardAbility_DonEyuil_80 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]对目标施加2层[流血]";
+        public override void OnSucceedAreaAttack(BattleUnitModel target)
+        {
+            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 2, owner);
+        }
+    }
+    public class DiceCardAbility_DonEyuil_81 : DiceCardAbilityBase
+    {
+        public static string Desc = "[命中时]对目标施加8层[流血]与1层[虚弱]";
+        public override void OnSucceedAreaAttack(BattleUnitModel target)
+        {
+            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 8, owner);
+            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Weak, 1, owner);
+        }
+    }
 }

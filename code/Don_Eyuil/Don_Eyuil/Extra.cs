@@ -13,6 +13,7 @@ using static CharacterSound;
 using static UI.UIIconManager;
 using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.UI.GridLayoutGroup;
+using CustomMapUtility;
 
 namespace Don_Eyuil
 {
@@ -765,11 +766,18 @@ namespace Don_Eyuil
             }
 
         }
-
+        public static CustomMapHandler CMH
+        {
+            get
+            {
+                return  CustomMapHandler.GetCMU(TKS_BloodFiend_Initializer.packageId);
+            }
+        }
         public static LorId Create(int v)
         {
             return new LorId(TKS_BloodFiend_Initializer.packageId, v);
         }
+
         public static List<T> TKSRandomUtil<T>(List<T> ListToRandom_Arg, int randomnum, bool canbethesame = false, bool copywhenempty = true)
         {
             List<T> list = new List<T>();

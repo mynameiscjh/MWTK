@@ -489,13 +489,18 @@ namespace Don_Eyuil
                 {
                     y.bufListDetail.GetActivatedBufList().DoIf(bx => bx is BattleUnitBuf_Resonance && !bx.IsDestroyed(), by =>
                     {
-                        card.target.bufListDetail.AddBuf(by);
+                        AccessTools.Method(by.GetType(), "GetOrAddBuf").MakeGenericMethod(by.GetType()).Invoke(null, new object[]
+                        {
+                            card.target,
+                            BufReadyType.ThisRound
+                        });
+                        //card.target.bufListDetail.AddBuf(by);
                         by.Destroy();
                     });
-                    BattleUnitBuf_DuelStun.GetOrAddBuf<BattleUnitBuf_DuelStun>(y,BufReadyType.NextRound);
+                    BattleUnitBuf_DuelStun.GetOrAddBuf<BattleUnitBuf_DuelStun>(y);
                 });
             }
-            BattleUnitBuf_GloriousDuel.GetOrAddBuf<BattleUnitBuf_GloriousDuel>(card.target);
+            BattleUnitBuf_GloriousDuel.GetOrAddBuf<BattleUnitBuf_GloriousDuel>(card.target,BufReadyType.NextRound);
         }
         public class BattleUnitBuf_DuelStun : BattleUnitBuf_Don_Eyuil
         {
