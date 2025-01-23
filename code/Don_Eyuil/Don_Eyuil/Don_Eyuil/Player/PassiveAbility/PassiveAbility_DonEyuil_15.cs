@@ -25,6 +25,9 @@ namespace Don_Eyuil.PassiveAbility
         {
             cards = new List<LorId>(this.owner.UnitData.unitData.GetDeckForBattle(1).Where(item => HardBloodCards.Contains(item.id)).Select(item => item.id));
             owner.personalEgoDetail.AddCard(MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
+            fl0 = false;
+            fl2 = false;
+            fl4 = false;
         }
 
         bool fl0 = false;

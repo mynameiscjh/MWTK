@@ -224,7 +224,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>8</Cost>
-    <Script>Mimicry_01</Script>
+    <Script>DonEyuil_16</Script>
     <Name>埃尤尔之血</Name>
     <Desc>自身所有第一颗进攻型骰子命中带有"流血"的目标时将恢复等同于自身骰子基础值的体力
 在一幕中自身每恢复3点体力便在下一幕获得1层"伤害提升"(至多3层)</Desc>
@@ -238,7 +238,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>12</Cost>
-    <Script>Mimicry_02</Script>
+    <Script>DonEyuil_17</Script>
     <Name>奔向梦想,驽骍难得</Name>
     <Desc>在一幕中自身每获得3点正面情感便使自身在下一幕中获得1层"强壮"与"迅捷"(至多2层)
 获得正面情感时若自身情感槽已被填满则使情感最低的一名友方角色获得1点正面情感

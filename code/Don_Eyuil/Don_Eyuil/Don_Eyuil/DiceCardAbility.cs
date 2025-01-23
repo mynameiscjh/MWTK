@@ -1,13 +1,9 @@
-﻿using Don_Eyuil.Don_Eyuil.Buff;
-using Don_Eyuil.Don_Eyuil.DiceCardSelfAbility;
+﻿using Don_Eyuil.Don_Eyuil.DiceCardSelfAbility;
 using HarmonyLib;
-using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using static Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility.DiceCardSelfAbility_DonEyuil_69;
 
 namespace Don_Eyuil
@@ -25,7 +21,7 @@ namespace Don_Eyuil
         public override void OnSucceedAttack(BattleUnitModel target)
         {
             owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3, owner);
-            if(target != null)
+            if (target != null)
             {
                 target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3, owner);
             }
@@ -37,7 +33,7 @@ namespace Don_Eyuil
         public static string Desc = "[命中时]对目标下两幕施加3层[无法凝结的血]";
         public override void OnSucceedAttack(BattleUnitModel target)
         {
-            BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(target, 3,BufReadyType.NextRound);
+            BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(target, 3, BufReadyType.NextRound);
             BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(target, 3, BufReadyType.NextNextRound);
         }
     }
@@ -47,9 +43,9 @@ namespace Don_Eyuil
         public override void OnSucceedAttack(BattleUnitModel target)
         {
             var P02 = owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_DonEyuil_02) as PassiveAbility_DonEyuil_02;
-            if(P02 != null)
+            if (P02 != null)
             {
-                if(P02.CurrentArtPair != null &&  P02.CurrentArtPair.Arts != null && P02.CurrentArtPair.Arts.Count > 0)
+                if (P02.CurrentArtPair != null && P02.CurrentArtPair.Arts != null && P02.CurrentArtPair.Arts.Count > 0)
                 {
                     P02.CurrentArtPair.Arts.Do(x => target.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 1));
                 }
@@ -78,7 +74,7 @@ namespace Don_Eyuil
         }
         public override void OnSucceedAttack(BattleUnitModel target)
         {
-            if(target != null)
+            if (target != null)
             {
                 target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 1, owner);
             }
@@ -102,7 +98,7 @@ namespace Don_Eyuil
         public static string Desc = "[命中时]下两幕对目标施加4层[流血]";
         public override void OnSucceedAttack(BattleUnitModel target)
         {
-            if(target != null)
+            if (target != null)
             {
                 target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 4, owner);
                 target.bufListDetail.AddKeywordBufNextNextByCard(KeywordBuf.Bleeding, 4, owner);
@@ -114,14 +110,14 @@ namespace Don_Eyuil
         public static string Desc = "[命中时]对所有敌方角色施加共计15层[流血]";
         public override void OnSucceedAttack()
         {
-            List<int> BleedingCount = new List<int>() {0};
+            List<int> BleedingCount = new List<int>() { 0 };
             var AliveList = BattleObjectManager.instance.GetAliveList_opponent(owner.faction);
-            for (int i =0;i< AliveList.Count - 1;i++)
+            for (int i = 0; i < AliveList.Count - 1; i++)
             {
                 BleedingCount.Add(RandomUtil.Range(0, 15));
             }
-            BleedingCount.Add(15);BleedingCount.Sort();
-            for(int i = 0;i<BleedingCount.Count-1;i++)
+            BleedingCount.Add(15); BleedingCount.Sort();
+            for (int i = 0; i < BleedingCount.Count - 1; i++)
             {
                 BleedingCount[i] = BleedingCount[i + 1] - BleedingCount[i];
             }
@@ -182,11 +178,11 @@ namespace Don_Eyuil
 
         public static int AfterGiveDamage(BattleDiceBehavior behavior, int dmg)
         {
-            if(behavior != null && behavior.abilityList.Exists(x => x is DiceCardAbility_DonEyuil_20) && behavior.owner != null)
+            if (behavior != null && behavior.abilityList.Exists(x => x is DiceCardAbility_DonEyuil_20) && behavior.owner != null)
             {
                 int losthp = behavior.owner.MaxHp - (int)behavior.owner.hp;
                 behavior.owner.RecoverHP(Math.Min(losthp, dmg));
-                if(dmg - losthp > 0)
+                if (dmg - losthp > 0)
                 {
                     //BattleUnitBuf_PhysicalShield.AddBuf(behavior.owner, dmg - losthp);
                     BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(behavior.owner, dmg);
@@ -208,7 +204,7 @@ namespace Don_Eyuil
             });
             return codes.AsEnumerable();
         }
-        
+
     }
     public class DiceCardAbility_DonEyuil_25 : DiceCardAbilityBase
     {
@@ -233,18 +229,18 @@ namespace Don_Eyuil
     public class DiceCardAbility_DonEyuil_26 : DiceCardAbilityBase
     {
         public static string Desc = "[命中时]这一幕对目标施加3层[流血]";
-        public override void OnSucceedAttack(BattleUnitModel target) {target.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Bleeding,3,owner);}
+        public override void OnSucceedAttack(BattleUnitModel target) { target.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Bleeding, 3, owner); }
     }
     public class DiceCardAbility_DonEyuil_27 : DiceCardAbilityBase
     {
         public static string Desc = "[命中时]消耗目标3层[流血]层流血并使本骰子重复投掷1次(至多4次)";
-        public override void OnSucceedAttack(BattleUnitModel target) 
+        public override void OnSucceedAttack(BattleUnitModel target)
         {
             if (target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 3 && !base.owner.IsBreakLifeZero() && this._repeatCount < 4)
             {
                 this._repeatCount++;
                 base.ActivateBonusAttackDice();
-                target.bufListDetail.GetActivatedBuf(KeywordBuf.Bleeding).stack -=3;
+                target.bufListDetail.GetActivatedBuf(KeywordBuf.Bleeding).stack -= 3;
             }
         }
         private int _repeatCount;
@@ -292,7 +288,7 @@ namespace Don_Eyuil
 
         public override void OnWinParrying()
         {
-            if(card.target != null && card.target.currentDiceAction != null)
+            if (card.target != null && card.target.currentDiceAction != null)
             {
                 card.target.currentDiceAction.DestroyDice(DiceMatch.AllDice);
             }
@@ -311,7 +307,7 @@ namespace Don_Eyuil
         public static string Desc = "[命中时]下一幕对自身施加3层[流血]";
         public override void OnSucceedAttack()
         {
-            owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3,owner);
+            owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3, owner);
         }
     }
     public class DiceCardAbility_DonEyuil_41 : DiceCardAbilityBase
@@ -330,7 +326,7 @@ namespace Don_Eyuil
             }
             public override void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
             {
-                if(BufType == KeywordBuf.Bleeding)
+                if (BufType == KeywordBuf.Bleeding)
                 {
                     Stack += 1;
                 }
@@ -371,7 +367,7 @@ namespace Don_Eyuil
         public static string Desc = "[命中时]消耗3层[结晶硬血]并施加3层[无法凝结的血]";
         public override void OnSucceedAttack(BattleUnitModel target)
         {
-            if (BattleUnitBuf_HardBlood_Crystal.UseBuf<BattleUnitBuf_HardBlood_Crystal>(target, 3))
+            if (BattleUnitBuf_HardBlood_Crystal.UseBuf<BattleUnitBuf_HardBlood_Crystal>(owner, 3))
             {
                 BattleUnitBuf_UncondensableBlood.GainBuf<BattleUnitBuf_UncondensableBlood>(target, 3);
             }
@@ -398,7 +394,7 @@ namespace Don_Eyuil
         public static string Desc = "[拼点胜利]对目标施加1层[流血]";
         public override void OnWinParrying()
         {
-            if(card.target!=null)
+            if (card.target != null)
             {
                 card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 1, owner);
             }

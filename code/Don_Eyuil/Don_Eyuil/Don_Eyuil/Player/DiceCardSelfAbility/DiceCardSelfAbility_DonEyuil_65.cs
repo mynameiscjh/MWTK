@@ -1,7 +1,5 @@
-﻿using Don_Eyuil.Don_Eyuil.DiceCardSelfAbility;
-using Don_Eyuil.Don_Eyuil.Player.Buff;
+﻿using Don_Eyuil.Don_Eyuil.Player.Buff;
 using System;
-using System.Collections.Generic;
 
 namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
 {
@@ -14,6 +12,11 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
+            if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner) == null)
+            {
+                return;
+            }
+
             behavior.GiveDamage_SubTarget(card.target, Math.Min(3, BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner).ActivatedNum));
             /*
             var temp = new List<BattleUnitModel>(BattleObjectManager.instance.GetAliveList_opponent(owner.faction));

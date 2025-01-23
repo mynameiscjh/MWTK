@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 
 namespace Don_Eyuil.PassiveAbility
 {
-    public class PassiveAbility_Mimicry_02 : PassiveAbilityBase
+    public class PassiveAbility_DonEyuil_17 : PassiveAbilityBase
     {
         public override string debugDesc => "在一幕中自身每获得3点正面情感便使自身在下一幕中获得1层\"强壮\"与\"迅捷\"(至多2层)\r\n获得正面情感时若自身情感槽已被填满则使情感最低的一名友方角色获得1点正面情感\r\n若开启舞台时只有自身一名我方角色…\r\n(获得效果 光荣的决斗)\r\n(不可转移)\r\n";
         public int posNum = 0;
@@ -40,7 +40,7 @@ namespace Don_Eyuil.PassiveAbility
                 new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Ldarg_1),
                 new CodeInstruction(OpCodes.Ldarg_2),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PassiveAbility_Mimicry_02), "Func"))
+                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PassiveAbility_DonEyuil_17), "Func"))
             });
             return codes.AsEnumerable();
         }
