@@ -7,6 +7,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
     public class DiceCardSelfAbility_DonEyuil_76 : DiceCardSelfAbilityBase
     {
         public static string Desc = "[战斗开始]对自身施加3层[流血]并使两名我方角色获得1层[振奋]自身每激活了一种[硬血术]书页便额外施加1层[强壮](至多2层)";
+        public override string[] Keywords => new string[] { "Bleeding_Keyword", "DonEyuil", "DonEyuil_1_2" };
         public override void OnStartBattle()
         {
             owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Bleeding, 3, owner);

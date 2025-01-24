@@ -5,7 +5,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
     public class DiceCardSelfAbility_DonEyuil_70 : DiceCardSelfAbilityBase
     {
         public static string Desc = "[持有时]自身每承受5点[流血]伤害便时本书页所有进攻型骰子威力+1(至多+3)";
-
+        public override string[] Keywords => new string[] { "Bleeding_Keyword", "DonEyuil", "DonEyuil_1_5" };
         public override void OnAddToHand(BattleUnitModel owner)
         {
             if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_BleedCOunt>(owner) != null)

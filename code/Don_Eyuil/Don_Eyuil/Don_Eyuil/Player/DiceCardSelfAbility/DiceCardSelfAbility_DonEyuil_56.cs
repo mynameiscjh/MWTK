@@ -1,11 +1,9 @@
-﻿using Don_Eyuil.Buff;
-
-namespace Don_Eyuil.DiceCardSelfAbility
+﻿namespace Don_Eyuil.DiceCardSelfAbility
 {
     public class DiceCardSelfAbility_DonEyuil_56 : DiceCardSelfAbilityBase
     {
         public static string Desc = "本书页仅限[硬血结晶]达到15层后使用\r\n[使用时]消耗所有[硬血结晶]每消耗1层便使本书页施加的[流血]层数+1\r\n";
-
+        public override string[] Keywords => new string[] { "BattleUnitBuf_BleedCrystal", "Bleeding_Keyword", "DonEyuil" };
         public override bool OnChooseCard(BattleUnitModel owner)
         {
             return BattleUnitBuf_HardBlood_Crystal.GetBufStack<BattleUnitBuf_HardBlood_Crystal>(owner) >= 15;

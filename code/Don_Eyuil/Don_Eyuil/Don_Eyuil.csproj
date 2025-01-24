@@ -33,24 +33,30 @@
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\..\..\..\..\workshop\content\1256670\2603522001\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="10EnumExtender">
       <HintPath>G:\SteamLibrary\steamapps\common\Library Of Ruina\LibraryOfRuina_Data\Mods\堂埃尤尔\Assemblies\10EnumExtender.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Assemblies\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="CustomMapUtility, Version=3.1.1.0, Culture=neutral, PublicKeyToken=52e277cf1b9a4a04, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Assemblies\CustomMapUtility.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Facepunch.Steamworks.Win64, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Managed\Facepunch.Steamworks.Win64.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,23 +68,29 @@
     <Reference Include="System.Xml" />
     <Reference Include="Unity.TextMeshPro">
       <HintPath>..\..\..\..\..\Managed\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Assemblies\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
       <HintPath>..\..\..\..\..\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>..\..\..\..\..\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -87,7 +99,6 @@
     <Compile Include="Don_Eyuil\DiceCardSelfAbility.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_HardBlood.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_46.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_47.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_63.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_64.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_68.cs" />
@@ -116,43 +127,25 @@
     <Compile Include="Don_Eyuil\PassiveAbility.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Armour.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Blade.cs" />
-    <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_BleedCrystal.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Bow.cs" />
-    <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_DeepWound.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_DoubleSwords.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Duel.cs" />
-    <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Flow.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Lance.cs" />
-    <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_PhysicalShield.cs" />
-    <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Rifle.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Scourge.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Sickle.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Sword.cs" />
-    <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Thistles.cs" />
-    <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Tidewater.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Umbrella.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_13.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_18.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_19.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_20.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_28.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_33.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_57.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_59.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_60.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DmgCount.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_01.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_32.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_56.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_58.cs" />
     <Compile Include="BloodFiendInitializer.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_61.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardSelfAbility\DiceCardSelfAbility_DonEyuil_77.cs" />
     <Compile Include="Don_Eyuil\Player\PassiveAbility\PassiveAbility_DonEyuil_15.cs" />
     <Compile Include="Don_Eyuil\Player\PassiveAbility\PassiveAbility_DonEyuil_16.cs" />
     <Compile Include="Don_Eyuil\Player\PassiveAbility\PassiveAbility_DonEyuil_17.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_48.cs" />
-    <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_49.cs" />
     <Compile Include="Don_Eyuil\MapManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

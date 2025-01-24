@@ -6,7 +6,7 @@ namespace Don_Eyuil.DiceCardSelfAbility
     public class DiceCardSelfAbility_DonEyuil_58 : DiceCardSelfAbilityBase
     {
         public static string Desc = "[使用时]自身速度每高于目标2点便时本书页施加的流血层数+1(至多+2)\r\n若以本书页击杀目标则对所有敌方角色施加9层[流血]\r\n";
-
+        public override string[] Keywords => new string[] { "Bleeding_Keyword", "DonEyuil" };
         public override void OnUseCard()
         {
             int speedDiceResultValue = card.speedDiceResultValue;

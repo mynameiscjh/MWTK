@@ -147,5 +147,39 @@
       <Name>百般武艺</Name>
       <Desc>现在获得了{0}个硬血术</Desc>
     </BattleEffectText>
+
+    <BattleEffectText ID="DonEyuil">
+      <Name>堂埃尤尔专属战斗书页</Name>
+      <Desc>仅限堂埃尤尔之页装备</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="DonEyuil_8_9">
+      <Name>特殊硬血术书页</Name>
+      <Desc>仅限同时装备了8式硬血术和9式硬血术时装备</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="DonEyuil_9">
+      <Name>特殊硬血术书页</Name>
+      <Desc>仅限装备了9式硬血术时装备</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="DonEyuil_1_5">
+      <Name>特殊硬血术书页</Name>
+      <Desc>仅限同时装备了1式硬血术和5式硬血术时装备</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="DonEyuil_5_6">
+      <Name>特殊硬血术书页</Name>
+      <Desc>仅限同时装备了5式硬血术和6式硬血术时装备</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="DonEyuil_2">
+      <Name>特殊硬血术书页</Name>
+      <Desc>仅限装备了2式硬血术时装备</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="DonEyuil_7_8">
+      <Name>特殊硬血术书页</Name>
+      <Desc>仅限同时装备了8式硬血术和9式硬血术时装备</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="DonEyuil_1_2">
+      <Name>特殊硬血术书页</Name>
+      <Desc>仅限同时装备了1式硬血术和2式硬血术时装备</Desc>
+    </BattleEffectText>
   </effectTextList>
 </BattleEffectTextRoot>

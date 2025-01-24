@@ -3,6 +3,7 @@
     public class DiceCardAbility_DonEyuil_71 : DiceCardAbilityBase
     {
         public static string Desc = "[命中时]将自身的[流血]转移至目标";
+        public override string[] Keywords => new string[] { "Bleeding_Keyword" };
         public override void OnSucceedAttack(BattleUnitModel target)
         {
             if (!owner.bufListDetail.HasBuf<BattleUnitBuf_bleeding>())

@@ -23,7 +23,7 @@ namespace Don_Eyuil.PassiveAbility
 
         public override void OnWaveStart()
         {
-            cards = new List<LorId>(this.owner.UnitData.unitData.GetDeckForBattle(1).Where(item => HardBloodCards.Contains(item.id)).Select(item => item.id));
+            cards = new List<LorId>(this.owner.UnitData.unitData.GetDeckForBattle(1).Where(item => map.Values.Contains(item.id)).Select(item => item.id));
             owner.personalEgoDetail.AddCard(MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
             fl0 = false;
             fl2 = false;
@@ -120,7 +120,7 @@ namespace Don_Eyuil.PassiveAbility
             var emoCards = new List<EmotionEgoXmlInfo>(temp.Count);
             foreach (var item in temp)
             {
-                emoCards.Add(new EmotionEgoXmlInfo_Mod(map[item]));
+                emoCards.Add(new EmotionEgoXmlInfo_Mod(item));
             }
 
 
@@ -320,6 +320,7 @@ namespace Don_Eyuil.PassiveAbility
                 var card = ItemXmlDataList.instance.GetCardItem(MyTools.Create(item));
                 __result.Add(card);
             }
+            __result.AddRange(map.Values.ToList().Select(x => ItemXmlDataList.instance.GetCardItem(x)));
         }
 
         [HarmonyPatch(typeof(UIInvenCardListScroll), "ApplyFilterAll")]
@@ -340,7 +341,7 @@ namespace Don_Eyuil.PassiveAbility
                 ____currentCardListForFilter.Clear();
                 foreach (var item in HardBloodCards)
                 {
-                    var card = ItemXmlDataList.instance.GetCardItem(item);
+                    var card = ItemXmlDataList.instance.GetCardItem(map[item]);
                     DiceCardItemModel itemModel = new DiceCardItemModel(card);
                     itemModel.num = 99;
                     ____currentCardListForFilter.Add(itemModel);
@@ -349,6 +350,7 @@ namespace Don_Eyuil.PassiveAbility
             }
             else
             {
+                ____currentCardListForFilter.RemoveAll(x => map.Values.ToList().Exists(item => item == x.ClassInfo.id));
                 ____currentCardListForFilter.RemoveAll(x => HardBloodCards.Exists(item => item == x.ClassInfo.id));
                 ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
 
@@ -371,7 +373,8 @@ namespace Don_Eyuil.PassiveAbility
                 {
                     foreach (var needCard in item.Item2)
                     {
-                        if (!list.Contains(needCard))
+                        var A = map[needCard];
+                        if (!list.Contains(A))
                         {
                             ____currentCardListForFilter.RemoveAll(x => x.GetID() == item.Item1);
                             temp.bookItem.MoveCardFromCurrentDeckToInventory(item.Item1);
@@ -398,6 +401,10 @@ namespace Don_Eyuil.PassiveAbility
                 return;
             }
             if (HardBloodCards.Contains(cardId))
+            {
+                __result = CardEquipState.Equippable;
+            }
+            if (map.Values.ToList().Contains(cardId))
             {
                 __result = CardEquipState.Equippable;
             }
@@ -437,6 +444,11 @@ namespace Don_Eyuil.PassiveAbility
         public static bool InventoryModel_RemoveCard_Pre(LorId cardId, ref bool __result)
         {
             if (HardBloodCards.Contains(cardId))
+            {
+                __result = true;
+                return false;
+            }
+            if (map.Values.Contains(cardId))
             {
                 __result = true;
                 return false;
