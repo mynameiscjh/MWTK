@@ -136,7 +136,7 @@
 若本幕结束时司书存活则接待胜利</Desc>
     </BattleEffectText>
 
-    <BattleEffectText ID="TheDetermination2_______">
+    <BattleEffectText ID="BattleUnitBuf_Duel">
       <Name>光荣的决斗</Name>
       <Desc>拼点时双方所有骰子威力+3
 拼点胜利的一方造成的伤害增加25%
