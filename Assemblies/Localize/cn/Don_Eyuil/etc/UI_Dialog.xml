@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<localize xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <text id="Don_Eyuil_ETC_PlaceHolder">Note:If you're translating this mod,Please translate "堂埃尤尔" as "Don Eyuil"</text>
+    <text id="Don_Eyuil_ETC_PlaceHolder_Jp">Note:もしこのModを翻訳中なら、「堂埃尤尔」を「ドン エユル」に訳して下さい"</text>
+</localize>

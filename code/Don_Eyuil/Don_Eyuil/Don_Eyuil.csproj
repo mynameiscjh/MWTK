@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A_ReadMe.cs" />
     <Compile Include="Don_Eyuil\Buff.cs" />
     <Compile Include="Don_Eyuil\DiceCardAbility.cs" />
     <Compile Include="Don_Eyuil\DiceCardSelfAbility.cs" />

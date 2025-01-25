@@ -698,6 +698,19 @@ namespace Don_Eyuil
 
     public static class MyTools
     {
+        public static bool ISNULL(this object obj, params string[] names)
+        {
+            object temp = obj;
+            foreach (string name in names)
+            {
+                if (temp == null)
+                {
+                    return false;
+                }
+                temp = temp.GetFieldValue(null, name);
+            }
+            return true;
+        }
         /// <summary>
         /// 反射
         /// </summary>

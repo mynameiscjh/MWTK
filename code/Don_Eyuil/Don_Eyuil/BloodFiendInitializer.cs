@@ -20,7 +20,324 @@ using File = System.IO.File;
 
 namespace Don_Eyuil
 {
+    [HarmonyPatch]
+    public static class TKS_BloodFiend_PatchMethods_StoryFerrisWheel
+    {
+        public static bool isInit = false;
+        public static GameObject Icons_FerrisWheel = null;
+        public static GameObject Phase_FerrisWheel = null;
+        public static string Desc;
+        public static bool IsInFerrisWheel = false;
+        public static GameObject icons = null;
+        [HarmonyPatch(typeof(UIStoryProgressPanel), "SetStoryLine")]
+        [HarmonyPostfix]
+        public static void UIStoryProgressPanel_SetStoryLine_Post(UIStoryProgressPanel __instance)
+        {
+            if (isInit)
+            {
+                return;
+            }
+            var list = __instance.GetFieldValue<List<UIStoryProgressIconSlot>>("iconList");
+            var temp = list.Find((UIStoryProgressIconSlot x) => x.currentStory == UIStoryLine.HanaAssociation);
+            icons = temp.transform.parent.parent.gameObject;
+            Icons_FerrisWheel = UnityEngine.Object.Instantiate(icons, icons.transform.parent);
+            Icons_FerrisWheel.name = "..D";
+            for (int i = 0; i < Icons_FerrisWheel.transform.childCount; i++)
+            {
+                if (i == 3)
+                {
+                    Phase_FerrisWheel = Icons_FerrisWheel.transform.GetChild(3).gameObject;
+                    continue;
+                }
+                UnityEngine.Object.Destroy(Icons_FerrisWheel.transform.GetChild(i).gameObject);
+            }
+            Phase_FerrisWheel.name = "TK";
+            foreach (Transform child in Phase_FerrisWheel.GetComponentsInChildren<Transform>())
+            {
+                if (child.gameObject == Phase_FerrisWheel)
+                {
+                    continue;
+                }
+                UnityEngine.Object.Destroy(child.gameObject);
+            }
+            Vector3 降低可读性的魔法数字2 = new Vector3(0, -50, 0);
 
+            GameObject point = new GameObject("point");
+            point.transform.parent = Phase_FerrisWheel.transform;
+            point.transform.localPosition = new Vector3(853.7309f, 7736f + 1583.335f - 400f, 0f) + 降低可读性的魔法数字2;
+            point.AddComponent<RedLine>();
+            point.transform.localScale = new Vector3(15f, 15f, 0.8f);
+            point.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["特别大的摩天轮"];
+
+            GameObject ferrisWheel = new GameObject("摩天轮");
+            ferrisWheel.transform.parent = icons.transform;
+            ferrisWheel.transform.localPosition = new Vector3(652.9309f, 7871.67f - 400f + 200f, 0) + 降低可读性的魔法数字2;
+            Desc = "200是应为好看";
+            Desc = "400 和 降低可读性的魔法数字2都是因为月亮计划会让坐标上移所以需要减回来";
+            var image = ferrisWheel.AddComponent<Image>();//7871.67
+            image.sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮_BIG"];
+            var button = ferrisWheel.AddComponent<Button>();
+            button.targetGraphic = image;
+            button.onClick.AddListener(new UnityEngine.Events.UnityAction(() =>
+            {
+                icons.SetActive(false);
+                icons.transform.parent.GetChild(0).gameObject.SetActive(false);
+                Icons_FerrisWheel.SetActive(true);
+                IsInFerrisWheel = true;
+            }));
+
+            GameObject ferrisWheel_back = new GameObject("摩天轮_back");
+            ferrisWheel_back.transform.parent = Icons_FerrisWheel.transform;
+            ferrisWheel_back.transform.localPosition = new Vector3(652.9309f, 7871.67f - 400f + 200f, 0) + 降低可读性的魔法数字2;
+            var image_back = ferrisWheel_back.AddComponent<Image>();
+            image_back.sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮_BIG"];
+            var button_back = ferrisWheel_back.AddComponent<Button>();
+            button_back.targetGraphic = image_back;
+            button_back.onClick.AddListener(new UnityEngine.Events.UnityAction(() =>
+            {
+                icons.SetActive(true);
+                icons.transform.parent.GetChild(0).gameObject.SetActive(true);
+                Icons_FerrisWheel.SetActive(false);
+                IsInFerrisWheel = false;
+            }));
+
+            //-879.5304 -9054.552 0
+#if false
+            GameObject 箭头 = new GameObject("箭头");
+            箭头.transform.parent = Icons_FerrisWheel.transform;
+            箭头.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["..D"];
+            箭头.transform.localPosition = new Vector3(652.9309f, -715f, 0);
+            var 箭头_button = 箭头.AddComponent<Button>();
+            箭头_button.targetGraphic = 箭头.GetComponent<Image>();
+            箭头_button.onClick.AddListener(new UnityEngine.Events.UnityAction(() => Icons_FerrisWheel.transform.parent.localPosition = new Vector3(-879.5304f, -9054.552f, 0)));
+#endif
+            Vector3 降低可读性的魔法数字 = new Vector3(0f, 140f, 0f);
+
+            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("TEST", new UIIconManager.IconSet
+            {
+                icon = TKS_BloodFiend_Initializer.ArtWorks["..D"],
+                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["..D"],
+                colorGlow = new Color(1, 1, 1, 1),
+                color = new Color(1, 1, 1, 1),
+                type = ""
+            });
+
+            void Func(int r, LorId id)
+            {
+                UIStoryProgressIconSlot testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+                testS.name = "139";
+                testS.currentStory = UIStoryLine.HanaAssociation;
+                testS.Initialized(__instance);
+                testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
+                testS.SetSlotData(new List<StageClassInfo>()
+                {
+                    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
+                });
+
+                testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, r * 5);
+                testS.gameObject.SetActive(true);
+            }
+
+            Func(0, MyId.Stage_测试);
+            Func(45, MyId.Stage_测试);
+            Func(90, MyId.Stage_测试);
+            Func(135, MyId.Stage_测试);
+            Func(180, MyId.Stage_测试);
+            Func(45 + 180, MyId.Stage_测试);
+            Func(90 + 180, MyId.Stage_测试);
+            Func(135 + 180, MyId.Stage_测试);
+
+
+            GameObject 底座 = new GameObject("摩天轮底座");
+            底座.transform.parent = Phase_FerrisWheel.transform;
+            底座.transform.localPosition = new Vector3(853.7309f, 7606f + 1583.335f - 400f, 0f) + 降低可读性的魔法数字2;//853.7309 8739.335 0
+            底座.transform.localScale = new Vector3(16.25f, 15.25f, 0.8713f);
+            var A = 底座.AddComponent<Image>();
+            A.sprite = TKS_BloodFiend_Initializer.ArtWorks["底座"];
+            A.raycastTarget = false;
+
+            var Don_Eyuil = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+            Don_Eyuil.name = "Don_Eyuil";
+            Don_Eyuil.currentStory = UIStoryLine.BlackSilence;
+            Don_Eyuil.Initialized(__instance);
+            Don_Eyuil.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f + 50, 0) + 降低可读性的魔法数字2;
+            Desc = "50是因为不在中间";
+            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("Don_Eyuil", new UIIconManager.IconSet
+            {
+                icon = TKS_BloodFiend_Initializer.ArtWorks["Don_Eyuil"],
+                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["Don_Eyuil"],
+                colorGlow = new Color(1, 1, 1, 1),
+                color = new Color(1, 1, 1, 1),
+                type = ""
+            });
+            Don_Eyuil.SetSlotData(new List<StageClassInfo>()
+            {
+                Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_埃尤尔)
+            });
+
+            UIStoryProgressIconSlot B = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
+            B.name = "B..D";
+            B.currentStory = UIStoryLine.HanaAssociation;
+            B.Initialized(__instance);
+            B.transform.localPosition = new Vector3(1052.931f, 7938.335f, 0f);
+            B.SetSlotData(new List<StageClassInfo>()
+                {
+                    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
+                });
+            B.gameObject.SetActive(true);
+
+            Icons_FerrisWheel.SetActive(false);
+
+            isInit = true;
+
+        }
+
+        [HarmonyPatch(typeof(StageClassInfo), "currentState", MethodType.Getter)]
+        [HarmonyPostfix]
+        public static void StageClassInfo_currentState_Post(StageClassInfo __instance, ref StoryState __result)
+        {
+            if (__instance.id == MyId.Stage_测试)
+            {
+                __result = StoryState.Close;
+            }
+        }
+
+        [HarmonyPatch(typeof(UIStoryProgressPanel), "OpenInit")]
+        [HarmonyPostfix]
+        public static void UIStoryProgressPanel_OpenInit_Post()
+        {
+            if (IsInFerrisWheel)
+            {
+                icons.SetActive(true);
+                icons.transform.parent.GetChild(0).gameObject.SetActive(true);
+                Icons_FerrisWheel.SetActive(false);
+                IsInFerrisWheel = false;
+            }
+        }
+
+        public class Roll : MonoBehaviour
+        {
+            public Vector2 point; // 旋转中心的坐标
+            public float R;
+
+            public void Init(Vector2 point, float r, int index = 0)
+            {
+                this.point = point;
+                this.R = r;
+                this.index = index;
+            }
+
+            public List<Vector2> points = new List<Vector2>();
+            public int index = 0;
+            void Start()
+            {
+                float count = 1800;
+                float a = 360 / count;
+                for (int i = 0; i < count; i++)
+                {
+                    points.Add(new Vector2(Mathf.Cos(a * i * Mathf.Deg2Rad) * R + point.x, Mathf.Sin(a * i * Mathf.Deg2Rad) * R + point.y));
+                }
+                //StartCoroutine(GetEnumerator());
+            }
+            float time = 0.05f;
+            void Update()
+            {
+                time -= Time.deltaTime;
+                if (time > 0)
+                {
+                    return;
+                }
+                transform.localPosition = points[index];
+                index++;
+                index %= points.Count;
+                time = 0.05f;
+            }
+        }
+
+        public class RedLine : MonoBehaviour
+        {
+            float time = 0.05f;
+            float temp = 0f;
+            void Update()
+            {
+                time -= Time.deltaTime;
+                if (time > 0)
+                {
+                    return;
+                }
+                transform.localRotation = Quaternion.Euler(0, 0, temp);
+                temp += 0.2f;
+                time = 0.05f;
+
+
+
+            }
+        }
+
+        public static List<string> Stages = new List<string>()
+        {
+            "Don_Eyuil"
+        };
+
+        [HarmonyPatch(typeof(UIInvitationPanel), "GetTheBlueReverberationPrimaryStage")]
+        [HarmonyPostfix]
+        public static void UIInvitationPanel_GetTheBlueReverberationPrimaryStage_Post(UIInvitationPanel __instance, ref UIStoryLine __result)
+        {
+
+            if (__instance == null || __instance.CurrentStage == null || __instance.CurrentStage.storyType == null || !Stages.Exists(x => x == __instance.CurrentStage.storyType))
+            {
+                return;
+            }
+
+            __result = UIStoryLine.BlackSilence;
+        }
+        [HarmonyPatch(typeof(UIInvitationRightMainPanel), "SetInvBookApplyState")]
+        [HarmonyPostfix]
+        public static void UIInvitationRightMainPanel_SetInvBookApplyState_Post(InvitationApply_State state, UIInvitationPanel ___invPanel, ref Image ___img_endcontents_content)
+        {
+            var temp = ___invPanel.CurrentStage;
+            if (temp == null || temp.storyType == null)
+            {
+                return;
+            }
+
+            if (state == InvitationApply_State.BlackSilence && Stages.Exists(x => x == temp.storyType))
+            {
+                ___img_endcontents_content.sprite = TKS_BloodFiend_Initializer.ArtWorks["..D"];
+            }
+        }
+        [HarmonyPatch(typeof(UIInvitationRightMainPanel), "OnClickSendButtonForBlue")]
+        [HarmonyPrefix]
+        public static bool UIInvitationRightMainPanel_OnClickSendButtonForBlue_Pre(UIInvitationRightMainPanel __instance, UIInvitationPanel ___invPanel)
+        {
+            StageClassInfo currentStage = ___invPanel.CurrentStage;
+
+            if (currentStage == null || currentStage.storyType == null || !Stages.Exists(x => x == currentStage.storyType))
+            {
+                return true;
+            }
+
+            if (__instance.currentinvState == InvitationApply_State.BlackSilence)
+            {
+                UIAlarmPopup.instance.SetAlarmTextForBlue(UIAlarmType.StartTheBlueBattlePrimary, (bool yesno) =>
+                {
+                    if (yesno)
+                    {
+                        StageClassInfo stageClassInfo = Singleton<StageClassInfoList>.Instance.GetAllDataList().Find((StageClassInfo x) => x.storyType == currentStage.storyType);
+                        Singleton<LibraryQuestManager>.Instance.OnSendInvitation(stageClassInfo.id);
+                        UI.UIController.Instance.PrepareBattle(stageClassInfo, new List<DropBookXmlInfo>());
+                        UISoundManager.instance.PlayEffectSound(UISoundType.Ui_Invite);
+
+
+                    }
+                }, "伟大摩天轮", UIStoryLine.BlackSilence);
+                return false;
+            }
+            return true;
+
+        }
+
+    }
     [HarmonyPatch]
     public class TKS_BloodFiend_PatchMethods_Testify
     {
@@ -487,12 +804,12 @@ namespace Don_Eyuil
 
         public static void DonEyuilLoad(string DllPath)
         {
-            void LoadLocalize()
+            void LoadLocalize(string LocalizeKey)
             {
                 void AddLocalize_EffectTexts()
                 {
                     Dictionary<string, BattleEffectText> dictionary = typeof(BattleEffectTextsXmlList).GetField("_dictionary", AccessTools.all).GetValue(Singleton<BattleEffectTextsXmlList>.Instance) as Dictionary<string, BattleEffectText>;
-                    FileInfo[] files = new DirectoryInfo(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language + "/EffectTexts").GetFiles();
+                    FileInfo[] files = TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language +"/" + LocalizeKey + "/EffectTexts");
                     for (int i = 0; i < files.Length; i++)
                     {
                         using (StringReader stringReader = new StringReader(File.ReadAllText(files[i].FullName)))
@@ -509,7 +826,7 @@ namespace Don_Eyuil
 
                 void LoadLocalize_BattleCardAbilities()
                 {
-                    FileInfo[] array = TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language + "/BattleCardAbilities");
+                    FileInfo[] array = TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language + "/" + LocalizeKey + "/BattleCardAbilities");
                     for (int i = 0; i < array.Length; i++)
                     {
                         using (StringReader stringReader = new StringReader(File.ReadAllText(array[i].FullName)))
@@ -532,8 +849,36 @@ namespace Don_Eyuil
                         }
                     }
                 }
+                void AddLocalize_Etc()
+                {
+                    foreach (FileInfo fileInfo in TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language + "/" + LocalizeKey + "/etc"))
+                    {
+                        XmlDocument xmlDocument = new XmlDocument();
+                        xmlDocument.LoadXml(File.ReadAllText(fileInfo.FullName));
+                        foreach (object obj in xmlDocument.SelectNodes("localize/text"))
+                        {
+                            try
+                            {
+                                XmlNode xmlNode = (XmlNode)obj;
+                                if (xmlNode.Attributes.GetNamedItem("id") != null)
+                                {
+                                    TextDataModel.textDic[xmlNode.Attributes.GetNamedItem("id").InnerText] = xmlNode.InnerText;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Debug.LogErrorFormat("Failed Load Localize:{0}\nCause:{1}", new object[]
+                                {
+                                    obj,
+                                    ex
+                                });
+                            }
+                        }
+                    }
+                }
                 LoadLocalize_BattleCardAbilities();
                 AddLocalize_EffectTexts();
+                AddLocalize_Etc();
             }
             void LoadCustomSkin(string path)
             {
@@ -584,46 +929,67 @@ namespace Don_Eyuil
 
             LoadCustomSkin(Path.Combine(DllPath, "..", "Resource\\CharacterSkin"));
             LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
-            LoadLocalize();
+            LoadLocalize("Don_Eyuil");
         }
 
         public override void OnInitializeMod()
         {
+            TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
+
             Harmony harmony = new Harmony(packageId);
             harmony.PatchAll();
-            harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
-            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
-            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
+            //Extra扩展Patch---------------------------------------------------------//
+                harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
+                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
+                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
+                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_StoryFerrisWheel));
+                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
+                //harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify.TransBehavior_AtkVSDfnPatch));
+            //-----------------------------------------------------------------------//
 
-            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil));
-            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
-            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
-            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
-            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
-            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverHpPatch));
-            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
-            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.CanForcelyAggroPatch));
-            //harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterApplyEnemyCardPatch));
+            //Buff基类时点Patch------------------------------------------------------//
+                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil));
+                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
+                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
+                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
+                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
+                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverHpPatch));
+                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
+                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.CanForcelyAggroPatch));
+                //harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterApplyEnemyCardPatch));
+            //-----------------------------------------------------------------------//
 
-            harmony.PatchAll(typeof(RedDiceCardAbility));
+            //被动基类时点Patch------------------------------------------------------//
+                harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil));
+                harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.OnStartBattleTheLastPatch));
+                harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.AfterApplyEnemyCardPatch));
+            //-----------------------------------------------------------------------//
 
-            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
-            //harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify.TransBehavior_AtkVSDfnPatch));
+            //存存币基类扩展Patch----------------------------------------------------//
+                harmony.PatchAll(typeof(RedDiceCardAbility));
+            //-----------------------------------------------------------------------//
 
-            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil));
-            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.OnStartBattleTheLastPatch));
-            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.AfterApplyEnemyCardPatch));
+            //被动效果Patch----------------------------------------------------------//
+                harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
+            //-----------------------------------------------------------------------//
 
-            harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
-            harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
-            harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
-            harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
-            harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
-            harmony.PatchAll(typeof(Story_FerrisWheel));
+            //Buff效果Patch----------------------------------------------------------//
+                harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
+                harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
+            //-----------------------------------------------------------------------//
+
+            //骰子效果Patch----------------------------------------------------------//
+                harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
+            //-----------------------------------------------------------------------//
+
+            //书页效果Patch----------------------------------------------------------//
+                harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
+            //-----------------------------------------------------------------------//
+
+
 
 
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
-            TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
             TKS_EnumExtension.DiceFlagExtension.ExtendEnum(typeof(TKS_EnumExtension.DiceFlagExtension));
             // Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
@@ -708,339 +1074,6 @@ namespace Don_Eyuil
         public static ulong User_小D = 76561199079466854;
         public static ulong User_天空 = 76561198877012566;
         public static ulong User_139 = 76561198995229429;
-    }
-
-
-    public static class Story_FerrisWheel
-    {
-        public static bool isInit = false;
-        public static GameObject Icons_FerrisWheel = null;
-        public static GameObject Phase_FerrisWheel = null;
-        public static string Desc;
-        public static bool IsInFerrisWheel = false;
-        public static GameObject icons = null;
-        [HarmonyPatch(typeof(UIStoryProgressPanel), "SetStoryLine")]
-        [HarmonyPostfix]
-        public static void UIStoryProgressPanel_SetStoryLine_Post(UIStoryProgressPanel __instance)
-        {
-            if (isInit)
-            {
-                return;
-            }
-            var list = __instance.GetFieldValue<List<UIStoryProgressIconSlot>>("iconList");
-            var temp = list.Find((UIStoryProgressIconSlot x) => x.currentStory == UIStoryLine.HanaAssociation);
-            icons = temp.transform.parent.parent.gameObject;
-            Icons_FerrisWheel = UnityEngine.Object.Instantiate(icons, icons.transform.parent);
-            Icons_FerrisWheel.name = "..D";
-            for (int i = 0; i < Icons_FerrisWheel.transform.childCount; i++)
-            {
-                if (i == 3)
-                {
-                    Phase_FerrisWheel = Icons_FerrisWheel.transform.GetChild(3).gameObject;
-                    continue;
-                }
-                UnityEngine.Object.Destroy(Icons_FerrisWheel.transform.GetChild(i).gameObject);
-            }
-            Phase_FerrisWheel.name = "TK";
-            foreach (Transform child in Phase_FerrisWheel.GetComponentsInChildren<Transform>())
-            {
-                if (child.gameObject == Phase_FerrisWheel)
-                {
-                    continue;
-                }
-                UnityEngine.Object.Destroy(child.gameObject);
-            }
-            Vector3 降低可读性的魔法数字2 = new Vector3(0, -50, 0);
-
-            GameObject point = new GameObject("point");
-            point.transform.parent = Phase_FerrisWheel.transform;
-            point.transform.localPosition = new Vector3(853.7309f, 7736f + 1583.335f - 400f, 0f) + 降低可读性的魔法数字2;
-            point.AddComponent<RedLine>();
-            point.transform.localScale = new Vector3(15f, 15f, 0.8f);
-            point.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["特别大的摩天轮"];
-
-            GameObject ferrisWheel = new GameObject("摩天轮");
-            ferrisWheel.transform.parent = icons.transform;
-            ferrisWheel.transform.localPosition = new Vector3(652.9309f, 7871.67f - 400f + 200f, 0) + 降低可读性的魔法数字2;
-            Desc = "200是应为好看";
-            Desc = "400 和 降低可读性的魔法数字2都是因为月亮计划会让坐标上移所以需要减回来";
-            var image = ferrisWheel.AddComponent<Image>();//7871.67
-            image.sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮_BIG"];
-            var button = ferrisWheel.AddComponent<Button>();
-            button.targetGraphic = image;
-            button.onClick.AddListener(new UnityEngine.Events.UnityAction(() =>
-            {
-                icons.SetActive(false);
-                icons.transform.parent.GetChild(0).gameObject.SetActive(false);
-                Icons_FerrisWheel.SetActive(true);
-                IsInFerrisWheel = true;
-            }));
-
-            GameObject ferrisWheel_back = new GameObject("摩天轮_back");
-            ferrisWheel_back.transform.parent = Icons_FerrisWheel.transform;
-            ferrisWheel_back.transform.localPosition = new Vector3(652.9309f, 7871.67f - 400f + 200f, 0) + 降低可读性的魔法数字2;
-            var image_back = ferrisWheel_back.AddComponent<Image>();
-            image_back.sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮_BIG"];
-            var button_back = ferrisWheel_back.AddComponent<Button>();
-            button_back.targetGraphic = image_back;
-            button_back.onClick.AddListener(new UnityEngine.Events.UnityAction(() =>
-            {
-                icons.SetActive(true);
-                icons.transform.parent.GetChild(0).gameObject.SetActive(true);
-                Icons_FerrisWheel.SetActive(false);
-                IsInFerrisWheel = false;
-            }));
-
-            //-879.5304 -9054.552 0
-#if false
-            GameObject 箭头 = new GameObject("箭头");
-            箭头.transform.parent = Icons_FerrisWheel.transform;
-            箭头.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["..D"];
-            箭头.transform.localPosition = new Vector3(652.9309f, -715f, 0);
-            var 箭头_button = 箭头.AddComponent<Button>();
-            箭头_button.targetGraphic = 箭头.GetComponent<Image>();
-            箭头_button.onClick.AddListener(new UnityEngine.Events.UnityAction(() => Icons_FerrisWheel.transform.parent.localPosition = new Vector3(-879.5304f, -9054.552f, 0)));
-#endif
-            Vector3 降低可读性的魔法数字 = new Vector3(0f, 140f, 0f);
-
-            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("TEST", new UIIconManager.IconSet
-            {
-                icon = TKS_BloodFiend_Initializer.ArtWorks["..D"],
-                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["..D"],
-                colorGlow = new Color(1, 1, 1, 1),
-                color = new Color(1, 1, 1, 1),
-                type = ""
-            });
-
-            void Func(int r, LorId id)
-            {
-                UIStoryProgressIconSlot testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
-                testS.name = "139";
-                testS.currentStory = UIStoryLine.HanaAssociation;
-                testS.Initialized(__instance);
-                testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
-                testS.SetSlotData(new List<StageClassInfo>()
-                {
-                    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
-                });
-
-                testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, r * 5);
-                testS.gameObject.SetActive(true);
-            }
-
-            Func(0, MyId.Stage_测试);
-            Func(45, MyId.Stage_测试);
-            Func(90, MyId.Stage_测试);
-            Func(135, MyId.Stage_测试);
-            Func(180, MyId.Stage_测试);
-            Func(45 + 180, MyId.Stage_测试);
-            Func(90 + 180, MyId.Stage_测试);
-            Func(135 + 180, MyId.Stage_测试);
-
-
-            GameObject 底座 = new GameObject("摩天轮底座");
-            底座.transform.parent = Phase_FerrisWheel.transform;
-            底座.transform.localPosition = new Vector3(853.7309f, 7606f + 1583.335f - 400f, 0f) + 降低可读性的魔法数字2;//853.7309 8739.335 0
-            底座.transform.localScale = new Vector3(16.25f, 15.25f, 0.8713f);
-            var A = 底座.AddComponent<Image>();
-            A.sprite = TKS_BloodFiend_Initializer.ArtWorks["底座"];
-            A.raycastTarget = false;
-
-            var Don_Eyuil = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
-            Don_Eyuil.name = "Don_Eyuil";
-            Don_Eyuil.currentStory = UIStoryLine.BlackSilence;
-            Don_Eyuil.Initialized(__instance);
-            Don_Eyuil.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f + 50, 0) + 降低可读性的魔法数字2;
-            Desc = "50是因为不在中间";
-            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("Don_Eyuil", new UIIconManager.IconSet
-            {
-                icon = TKS_BloodFiend_Initializer.ArtWorks["Don_Eyuil"],
-                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["Don_Eyuil"],
-                colorGlow = new Color(1, 1, 1, 1),
-                color = new Color(1, 1, 1, 1),
-                type = ""
-            });
-            Don_Eyuil.SetSlotData(new List<StageClassInfo>()
-            {
-                Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_埃尤尔)
-            });
-
-            UIStoryProgressIconSlot B = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
-            B.name = "B..D";
-            B.currentStory = UIStoryLine.HanaAssociation;
-            B.Initialized(__instance);
-            B.transform.localPosition = new Vector3(1052.931f, 7938.335f, 0f);
-            B.SetSlotData(new List<StageClassInfo>()
-                {
-                    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
-                });
-            B.gameObject.SetActive(true);
-
-            Icons_FerrisWheel.SetActive(false);
-
-            isInit = true;
-
-        }
-
-        [HarmonyPatch(typeof(StageClassInfo), "currentState", MethodType.Getter)]
-        [HarmonyPostfix]
-        public static void StageClassInfo_currentState_Post(StageClassInfo __instance, ref StoryState __result)
-        {
-            if (__instance.id == MyId.Stage_测试)
-            {
-                __result = StoryState.Close;
-            }
-        }
-
-        [HarmonyPatch(typeof(UIStoryProgressPanel), "OpenInit")]
-        [HarmonyPostfix]
-        public static void UIStoryProgressPanel_OpenInit_Post()
-        {
-            if (IsInFerrisWheel)
-            {
-                icons.SetActive(true);
-                icons.transform.parent.GetChild(0).gameObject.SetActive(true);
-                Icons_FerrisWheel.SetActive(false);
-                IsInFerrisWheel = false;
-            }
-        }
-
-        public class Roll : MonoBehaviour
-        {
-            public Vector2 point; // 旋转中心的坐标
-            public float R;
-
-            public void Init(Vector2 point, float r, int index = 0)
-            {
-                this.point = point;
-                this.R = r;
-                this.index = index;
-            }
-
-            public List<Vector2> points = new List<Vector2>();
-            public int index = 0;
-            void Start()
-            {
-                float count = 1800;
-                float a = 360 / count;
-                for (int i = 0; i < count; i++)
-                {
-                    points.Add(new Vector2(Mathf.Cos(a * i * Mathf.Deg2Rad) * R + point.x, Mathf.Sin(a * i * Mathf.Deg2Rad) * R + point.y));
-                }
-                //StartCoroutine(GetEnumerator());
-            }
-            float time = 0.05f;
-            void Update()
-            {
-                time -= Time.deltaTime;
-                if (time > 0)
-                {
-                    return;
-                }
-                transform.localPosition = points[index];
-                index++;
-                index %= points.Count;
-                time = 0.05f;
-            }
-        }
-
-        public class RedLine : MonoBehaviour
-        {
-            float time = 0.05f;
-            float temp = 0f;
-            void Update()
-            {
-                time -= Time.deltaTime;
-                if (time > 0)
-                {
-                    return;
-                }
-                transform.localRotation = Quaternion.Euler(0, 0, temp);
-                temp += 0.2f;
-                time = 0.05f;
-
-
-
-            }
-        }
-
-        public static List<string> Stages = new List<string>()
-        {
-            "Don_Eyuil"
-        };
-
-        public static bool ISNULL(this object obj, params string[] names)
-        {
-            object temp = obj;
-            foreach (string name in names)
-            {
-                if (temp == null)
-                {
-                    return false;
-                }
-                temp = temp.GetFieldValue(null, name);
-            }
-            return true;
-        }
-
-        [HarmonyPatch(typeof(UIInvitationPanel), "GetTheBlueReverberationPrimaryStage")]
-        [HarmonyPostfix]
-        public static void UIInvitationPanel_GetTheBlueReverberationPrimaryStage_Post(UIInvitationPanel __instance, ref UIStoryLine __result)
-        {
-
-            if (__instance == null || __instance.CurrentStage == null || __instance.CurrentStage.storyType == null || !Stages.Exists(x => x == __instance.CurrentStage.storyType))
-            {
-                return;
-            }
-
-            __result = UIStoryLine.BlackSilence;
-        }
-        [HarmonyPatch(typeof(UIInvitationRightMainPanel), "SetInvBookApplyState")]
-        [HarmonyPostfix]
-        public static void UIInvitationRightMainPanel_SetInvBookApplyState_Post(InvitationApply_State state, UIInvitationPanel ___invPanel, ref Image ___img_endcontents_content)
-        {
-            var temp = ___invPanel.CurrentStage;
-            if (temp == null || temp.storyType == null)
-            {
-                return;
-            }
-
-            if (state == InvitationApply_State.BlackSilence && Stages.Exists(x => x == temp.storyType))
-            {
-                ___img_endcontents_content.sprite = TKS_BloodFiend_Initializer.ArtWorks["..D"];
-            }
-        }
-        [HarmonyPatch(typeof(UIInvitationRightMainPanel), "OnClickSendButtonForBlue")]
-        [HarmonyPrefix]
-        public static bool UIInvitationRightMainPanel_OnClickSendButtonForBlue_Pre(UIInvitationRightMainPanel __instance, UIInvitationPanel ___invPanel)
-        {
-            StageClassInfo currentStage = ___invPanel.CurrentStage;
-
-            if (currentStage == null || currentStage.storyType == null || !Stages.Exists(x => x == currentStage.storyType))
-            {
-                return true;
-            }
-
-            if (__instance.currentinvState == InvitationApply_State.BlackSilence)
-            {
-                UIAlarmPopup.instance.SetAlarmTextForBlue(UIAlarmType.StartTheBlueBattlePrimary, (bool yesno) =>
-                {
-                    if (yesno)
-                    {
-                        StageClassInfo stageClassInfo = Singleton<StageClassInfoList>.Instance.GetAllDataList().Find((StageClassInfo x) => x.storyType == currentStage.storyType);
-                        Singleton<LibraryQuestManager>.Instance.OnSendInvitation(stageClassInfo.id);
-                        UI.UIController.Instance.PrepareBattle(stageClassInfo, new List<DropBookXmlInfo>());
-                        UISoundManager.instance.PlayEffectSound(UISoundType.Ui_Invite);
-
-
-                    }
-                }, "伟大摩天轮", UIStoryLine.BlackSilence);
-                return false;
-            }
-            return true;
-
-        }
-
     }
 
 }
