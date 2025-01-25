@@ -32,10 +32,7 @@ namespace Don_Eyuil
         }
         protected override void LateUpdate()
         {
-            if (currentEnemyTheme(SingletonBehavior<BattleSoundManager>.Instance).clip == MyTools.CMH.GetAudioClip("PastMoonLight_2_1.mp3"))
-            {
-                currentEnemyTheme(SingletonBehavior<BattleSoundManager>.Instance).loop = false;
-            }
+
             if (currentEnemyTheme(SingletonBehavior<BattleSoundManager>.Instance).clip == MyTools.CMH.GetAudioClip("PastMoonLight_2_1.mp3") && !currentEnemyTheme(SingletonBehavior<BattleSoundManager>.Instance).isPlaying)
             {
                 currentEnemyTheme(SingletonBehavior<BattleSoundManager>.Instance).clip = MyTools.CMH.GetAudioClip("PastMoonLight_2_2.wav");

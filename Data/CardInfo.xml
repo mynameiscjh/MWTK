@@ -79,7 +79,7 @@
   <Card ID="4">
     <Name>剑刃截断</Name>
     <TextId>-1</TextId>
-    <Artwork>DonEyuil_1.png</Artwork>
+    <Artwork>DonEyuil_3.png</Artwork>
     <Rarity>Uncommon</Rarity>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
     <Script />
@@ -429,7 +429,7 @@
     <Script>DonEyuil_22</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_80" ActionScript="" Desc="" />
       <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
       <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
@@ -567,7 +567,7 @@
   <Card ID="24">
     <Name>血鞭抽打</Name>
     <TextId>-1</TextId>
-    <Artwork>DonEyuil_1.png</Artwork>
+    <Artwork>DonEyuil_2.png</Artwork>
     <Rarity>Common</Rarity>
     <Spec Range="Near" Cost="1" Affection="One" EmotionLimit="0" />
     <Script></Script>
@@ -614,7 +614,7 @@
   <Card ID="26">
     <Name>血伞挥打</Name>
     <TextId>-1</TextId>
-    <Artwork>DonEyuil_1.png</Artwork>
+    <Artwork>DonEyuil_2.png</Artwork>
     <Rarity>Common</Rarity>
     <Spec Range="Near" Cost="1" Affection="One" EmotionLimit="0" />
     <Script></Script>
@@ -668,7 +668,7 @@
     <Script>DonEyuil_34</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="15" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="hubertDice" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="15" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_81" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -810,7 +810,7 @@
   <Card ID="34">
     <Name>硬血截断</Name>
     <TextId>-1</TextId>
-    <Artwork>DonEyuil_1.png</Artwork>
+    <Artwork>DonEyuil_3.png</Artwork>
     <Rarity>Rare</Rarity>
     <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
     <Script>DonEyuil_39</Script>
@@ -1395,7 +1395,7 @@
   <Card ID="57">
     <Name>血伞挥打</Name>
     <TextId>-1</TextId>
-    <Artwork>DonEyuil_1.png</Artwork>
+    <Artwork>DonEyuil_2.png</Artwork>
     <Rarity>Common</Rarity>
     <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
@@ -1499,7 +1499,7 @@
   <Card ID="61">
     <Name>硬血截断</Name>
     <TextId>-1</TextId>
-    <Artwork>DonEyuil_1.png</Artwork>
+    <Artwork>DonEyuil_3.png</Artwork>
     <Rarity>Rare</Rarity>
     <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
@@ -1575,7 +1575,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="64">
-    <Name>经典反击书页</Name>
+    <Name></Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>
@@ -1599,7 +1599,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="65">
-    <Name>双剑反击闪避书页</Name>
+    <Name></Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>

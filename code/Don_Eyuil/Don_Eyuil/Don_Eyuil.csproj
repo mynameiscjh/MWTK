@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A_ReadMe.cs" />
     <Compile Include="Don_Eyuil\Buff.cs" />
     <Compile Include="Don_Eyuil\DiceCardAbility.cs" />
     <Compile Include="Don_Eyuil\DiceCardSelfAbility.cs" />
@@ -148,11 +149,15 @@
     <Compile Include="Don_Eyuil\Player\PassiveAbility\PassiveAbility_DonEyuil_17.cs" />
     <Compile Include="Don_Eyuil\MapManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="San_Sora\PassiveAbility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="San_Sora\Player\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

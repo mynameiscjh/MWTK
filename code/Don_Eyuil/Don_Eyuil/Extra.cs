@@ -13,10 +13,42 @@ using static CharacterSound;
 using static UI.UIIconManager;
 using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.UI.GridLayoutGroup;
+using LOR_DiceSystem;
+using LOR_XML;
 using CustomMapUtility;
 
 namespace Don_Eyuil
 {
+    public class EmotionEgoXmlInfo_Mod : EmotionEgoXmlInfo
+    {
+        public string packageId = "";
+
+
+        public EmotionEgoXmlInfo_Mod(LorId id)
+        {
+            this.packageId = id.packageId;
+            this._CardId = id.id;
+        }
+        public EmotionEgoXmlInfo_Mod()
+        {
+
+        }
+        [HarmonyPatch(typeof(EmotionEgoXmlInfo), "get_CardId")]
+        [HarmonyPostfix]
+        public static void EmotionEgoXmlInfo_get_CardId_Post(EmotionEgoXmlInfo __instance, ref LorId __result)
+        {
+            if (__instance is EmotionEgoXmlInfo_Mod)
+            {
+                __result = new LorId((__instance as EmotionEgoXmlInfo_Mod).packageId, __instance._CardId);
+
+                if (!ItemXmlDataList.instance.GetFieldValue<Dictionary<LorId, DiceCardXmlInfo>>("_cardInfoTable").TryGetValue(__result, out var v))
+                {
+                    var card = ItemXmlDataList.instance.GetCardItem(__result);
+                    ItemXmlDataList.instance.GetFieldValue<Dictionary<LorId, DiceCardXmlInfo>>("_cardInfoTable").Add(__result, card);
+                }
+            }
+        }
+    }
     public class RedDiceCardAbility : DiceCardAbilityBase
     {
         public static Dictionary<BattlePlayingCardDataInUnitModel, List<BattleDiceBehavior>> RedDice = new Dictionary<BattlePlayingCardDataInUnitModel, List<BattleDiceBehavior>>();
@@ -544,7 +576,7 @@ namespace Don_Eyuil
 
         public static bool UseBuf<T>(BattleUnitModel model, int stack) where T : BattleUnitBuf_Don_Eyuil
         {
-            T BuffInstance = GetOrAddBuf<T>(model,BufReadyType.ThisRound);
+            T BuffInstance = GetBuf<T>(model,BufReadyType.ThisRound);
             if (BuffInstance != null && BuffInstance.stack >= stack)
             {
                 BuffInstance.Add(-stack);
@@ -666,6 +698,19 @@ namespace Don_Eyuil
 
     public static class MyTools
     {
+        public static bool ISNULL(this object obj, params string[] names)
+        {
+            object temp = obj;
+            foreach (string name in names)
+            {
+                if (temp == null)
+                {
+                    return false;
+                }
+                temp = temp.GetFieldValue(null, name);
+            }
+            return true;
+        }
         /// <summary>
         /// 反射
         /// </summary>

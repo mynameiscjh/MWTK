@@ -179,6 +179,7 @@ namespace Don_Eyuil
             int round = Singleton<StageController>.Instance.RoundTurn;
             if (Phase == 1 && APassive02 != null)
             {
+                MyTools.CMH.EnforceMap(0);
                 //APassive02.CurrentArtPair = APassive02.SelectHardBloodArt(APassive02.CurrentArtPair);
                 //Debug.LogError("CurrentArtPair:" + APassive02.CurrentArtPair.ComboType +"|||||||||" + String.Join(",", APassive02.CurrentArtPair.Arts));
                 if (APassive02.CurrentArtPair.ComboType == HardBloodArtCombo.Sheild)
@@ -216,6 +217,7 @@ namespace Don_Eyuil
             }
             if (Phase == 2)
             {
+                MyTools.CMH.EnforceMap(1);
                 /*二阶段：开幕清空自身负面状态并恢复所有混乱抗性, 不再切换硬血术状态
                     第一幕：速度骰子×5 为仍在饥渴中的家人设下的晚宴 必须担负的责任 硬血截断 血之宝库 血之宝库
                     第二幕：速度骰子×7 若能摆脱这可怖的疾病 必须担负的责任 这绝非理想中的共存...旋转!绽放吧!! 凝血化锋 硬血截断 血之宝库
@@ -258,6 +260,7 @@ namespace Don_Eyuil
             }
             if (Phase == 3)
             {
+                MyTools.CMH.EnforceMap(2);
                 /*
                     三阶段：开幕清空自身负面状态并恢复所有混乱抗性并召唤4个不同的凝结的情感
                     第一幕：速度骰子×6 冲锋!驽骍难得! 梦之冒险 硬血截断 血如泉涌 血之宝库 血之宝库
@@ -292,10 +295,24 @@ namespace Don_Eyuil
                         AddNewCard(MyId.Card_血之宝库_1, 999);
                         break;
                     case 4:
+                        owner.bufListDetail.GetActivatedBufList().DoIf(x => x.positiveType == BufPositiveType.Negative, y => y.Destroy());
+                        if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                        {
+                            this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                        }
+                        this.owner.breakDetail.nextTurnBreak = false;
+                        this.owner.breakDetail.RecoverBreakLife(1, false);
+                        this.owner.breakDetail.RecoverBreak(this.owner.breakDetail.GetDefaultBreakGauge());
                         AddNewCard(MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_1, 999);
                         AddNewCard(MyId.Card_便以决斗作为这场战斗的结尾吧, 900);
                         break;
                     case 5:
+                        if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                        {
+                            this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                        }
+                        this.owner.breakDetail.nextTurnBreak = false;
+                        this.owner.breakDetail.RecoverBreakLife(1, false);
                         AddNewCard(MyId.Card_你是否心怀梦想_无所畏惧, 999);
                         AddNewCard(MyId.Card_你是否心怀理解_尊重他人, 999);
                         AddNewCard(MyId.Card_你是否相信希望_憧憬未来, 999);
@@ -700,7 +717,7 @@ namespace Don_Eyuil
                 {
                     foreach (DiceBehaviour diceBehaviour in this._owner.cardSlotDetail.keepCard.GetDiceBehaviourXmlList())
                     {
-                        if (diceBehaviour.Type == BehaviourType.Def)
+                        if (diceBehaviour.Type == BehaviourType.Def || (diceBehaviour.Type == BehaviourType.Standby && diceBehaviour.Detail == BehaviourDetail.Guard))
                         {
                             BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(_owner, 10);
                         }
