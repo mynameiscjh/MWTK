@@ -126,7 +126,14 @@ namespace Don_Eyuil
                 color = new Color(1, 1, 1, 1),
                 type = ""
             });
-
+            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("SanSora", new UIIconManager.IconSet
+            {
+                icon = TKS_BloodFiend_Initializer.ArtWorks["tk"],
+                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["tk"],
+                colorGlow = new Color(1, 1, 1, 1),
+                color = new Color(1, 1, 1, 1),
+                type = ""
+            });
             void Func(int r, LorId id)
             {
                 UIStoryProgressIconSlot testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
@@ -136,14 +143,14 @@ namespace Don_Eyuil
                 testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
                 testS.SetSlotData(new List<StageClassInfo>()
                 {
-                    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
+                    Singleton<StageClassInfoList>.Instance.GetData(id)
                 });
 
                 testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, r * 5);
                 testS.gameObject.SetActive(true);
             }
 
-            Func(0, MyId.Stage_测试);
+            Func(0, MyId.Stage_桑空);
             Func(45, MyId.Stage_测试);
             Func(90, MyId.Stage_测试);
             Func(135, MyId.Stage_测试);
@@ -970,6 +977,10 @@ namespace Don_Eyuil
                 harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.AfterApplyEnemyCardPatch));
             //-----------------------------------------------------------------------//
 
+            //硬血术选卡扩展Patch----------------------------------------------------//
+                harmony.PatchAll(typeof(HardBloodCards));
+            //-----------------------------------------------------------------------//
+
             //存存币基类扩展Patch----------------------------------------------------//
                 harmony.PatchAll(typeof(RedDiceCardAbility));
             //-----------------------------------------------------------------------//
@@ -990,7 +1001,7 @@ namespace Don_Eyuil
             //书页效果Patch----------------------------------------------------------//
                 harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
             //-----------------------------------------------------------------------//
-            harmony.PatchAll(typeof(HardBloodCards));
+
 
 
 

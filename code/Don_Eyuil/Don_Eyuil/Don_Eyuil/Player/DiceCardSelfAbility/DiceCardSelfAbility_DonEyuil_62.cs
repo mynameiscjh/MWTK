@@ -1,4 +1,5 @@
 ﻿using Don_Eyuil.Don_Eyuil.Player.Buff;
+using Don_Eyuil.Don_Eyuil.Player.PassiveAbility;
 
 namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
 {
