@@ -12,6 +12,11 @@ namespace Don_Eyuil.Don_Eyuil.Buff
         {
             if (cardBuf.bufType == KeywordBuf.Bleeding && _owner.currentDiceAction.currentBehavior.Detail == LOR_DiceSystem.BehaviourDetail.Hit)
             {
+                if (BattleObjectManager.instance.GetAliveList_opponent(_owner.faction).Count <= 0)
+                {
+                    return base.OnGiveKeywordBufByCard(cardBuf, stack, target);
+                }
+
                 RandomUtil.SelectOne(BattleObjectManager.instance.GetAliveList_opponent(_owner.faction)).bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, stack);
             }
 

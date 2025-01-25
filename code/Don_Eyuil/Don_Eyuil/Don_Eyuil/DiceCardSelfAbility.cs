@@ -1,19 +1,6 @@
 ﻿using HarmonyLib;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LOR_DiceSystem;
-using System.Reflection.Emit;
-using HyperCard;
-using UnityEngine;
-using Don_Eyuil.Buff;
-using static Don_Eyuil.PassiveAbility_DonEyuil_01;
-using static Don_Eyuil.PassiveAbility_DonEyuil_02.HardBloodArtPair;
-using static UnityEngine.UI.GridLayoutGroup;
-using Don_Eyuil.Don_Eyuil.DiceCardSelfAbility;
-using TMPro;
 namespace Don_Eyuil
 {
     public class DiceCardSelfAbility_DonEyuil_01 : DiceCardSelfAbilityBase
@@ -52,11 +39,11 @@ namespace Don_Eyuil
             public BattleUnitBuf_HardBloodBleedingAddition(BattleUnitModel model) : base(model) { }
             public override int OnGiveKeywordBufByCard(BattleUnitBuf cardBuf, int stack, BattleUnitModel target)
             {
-                if(cardBuf.bufType == KeywordBuf.Bleeding)
+                if (cardBuf.bufType == KeywordBuf.Bleeding)
                 {
                     return AdditionCount;
                 }
-                return base.OnGiveKeywordBufByCard(cardBuf,stack,target);
+                return base.OnGiveKeywordBufByCard(cardBuf, stack, target);
             }
         }
         public override void OnEndBattle()
@@ -74,7 +61,7 @@ namespace Don_Eyuil
         public static string Desc = "[使用时]若目标[流血]层数不低于4层则在下一幕获得2层[迅捷]";
         public override void OnUseCard()
         {
-            if(card.target != null && card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 4)
+            if (card.target != null && card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 4)
             {
                 owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Quickness, 2, owner);
             }
@@ -85,7 +72,7 @@ namespace Don_Eyuil
         public static string Desc = "[使用时]若自身速度不低于6则使本书页所有骰子威力+2";
         public override void OnUseCard()
         {
-            if(card.speedDiceResultValue >= 6)
+            if (card.speedDiceResultValue >= 6)
             {
                 card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus()
                 {
@@ -121,7 +108,7 @@ namespace Don_Eyuil
         public override void OnUseCard()
         {
             //if ((behavior.card.speedDiceResultValue - behavior.card.target.GetSpeedDiceResult(behavior.card.targetSlotOrder).value) >= 2)
-            if(card.target != null)
+            if (card.target != null)
             {
                 BattleUnitBuf_HardBloodBleedingAddition.GetOrAddBuf<BattleUnitBuf_HardBloodBleedingAddition>(owner).AdditionCount = Math.Min(2, Math.Max(0, (card.speedDiceResultValue - card.target.GetSpeedDiceResult(card.targetSlotOrder).value) / 2));
             }
@@ -133,9 +120,9 @@ namespace Don_Eyuil
 
         public override void OnUseCard()
         {
-            if(card.target != null && card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 4)
+            if (card.target != null && card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 4)
             {
-                card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { power = 3 } );
+                card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { power = 3 });
             }
         }
     }
@@ -173,7 +160,7 @@ namespace Don_Eyuil
             public BattleUnitBuf_HardBloodBleedingAddition(BattleUnitModel model) : base(model) { }
             public override int GetMultiplierOnGiveKeywordBufByCard(BattleUnitBuf cardBuf, BattleUnitModel target)
             {
-                if(cardBuf.bufType == KeywordBuf.Bleeding)
+                if (cardBuf.bufType == KeywordBuf.Bleeding)
                 {
                     return 2;
                 }
@@ -188,7 +175,7 @@ namespace Don_Eyuil
         }
         public override void OnUseCard()
         {
-            if(card.target != null && card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) > 0)
+            if (card.target != null && card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) > 0)
             {
                 BattleUnitBuf_HardBloodBleedingAddition.GetOrAddBuf<BattleUnitBuf_HardBloodBleedingAddition>(owner);
             }
@@ -197,10 +184,10 @@ namespace Don_Eyuil
     public class DiceCardSelfAbility_DonEyuil_21 : DiceCardSelfAbilityBase
     {
         public static string Desc = "[战斗开始]下一幕使目标不会被施加[流血]";
-        
+
         public override void OnStartBattle()
         {
-            BattleUnitBuf_AntiBleeding.GainBuf<BattleUnitBuf_AntiBleeding>(card.target, 1,BufReadyType.NextRound);
+            BattleUnitBuf_AntiBleeding.GainBuf<BattleUnitBuf_AntiBleeding>(card.target, 1, BufReadyType.NextRound);
         }
         public class BattleUnitBuf_AntiBleeding : BattleUnitBuf_Don_Eyuil
         {
@@ -208,7 +195,7 @@ namespace Don_Eyuil
             {
                 this.Destroy();
             }
-            public BattleUnitBuf_AntiBleeding(BattleUnitModel model) : base(model){ }
+            public BattleUnitBuf_AntiBleeding(BattleUnitModel model) : base(model) { }
 
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByEtc")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByEtc")]
@@ -225,11 +212,11 @@ namespace Don_Eyuil
         public static string Desc = "本书页命中目标时将使自身获得10点护盾\r\n[使用后]结束本幕";
         public override void OnSucceedAreaAttack(BattleUnitModel target)
         {
-            if(target != null)
+            if (target != null)
             {
                 BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(owner, 10);
             }
-            
+
         }
         public override void OnEndAreaAttack()
         {
@@ -268,7 +255,7 @@ namespace Don_Eyuil
 
         public override void OnUseCard()
         {
-            if(card.target != null && card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 3)
+            if (card.target != null && card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 3)
             {
                 card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { min = 3 });
             }
@@ -306,7 +293,7 @@ namespace Don_Eyuil
             int TriggeredCount = 0;
             public override void OnLoseParrying(BattleDiceBehavior behavior)
             {
-                if(TriggeredCount < 3)//0 1 2
+                if (TriggeredCount < 3)//0 1 2
                 {
                     TriggeredCount++;//1 2 3
                     _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 2);
@@ -356,7 +343,7 @@ namespace Don_Eyuil
         {
             public override void OnLoseParrying(BattleDiceBehavior behavior)
             {
-                _owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Strength, 1,_owner);
+                _owner.bufListDetail.AddKeywordBufByCard(KeywordBuf.Strength, 1, _owner);
             }
             public override void OnRoundEnd()
             {
@@ -368,18 +355,21 @@ namespace Don_Eyuil
     public class DiceCardSelfAbility_DonEyuil_39 : DiceCardSelfAbilityBase
     {
         public static string Desc = "本书页命中时将恢复等同于伤害量25%的体力若这一幕中自身已经累积承受10点流血伤害则改为50%\r\n本书页恢复溢出的体力将转化为等量护盾";
+
+        public override string[] Keywords => new string[] { "DonEyuil_5_6", "DonEyuil" };
+
         public class BattleUnitBuf_HardBloodBleedingAddition : BattleUnitBuf_Don_Eyuil
         {
             public int BleedingDmgTotal = 0;
             public BattleUnitBuf_HardBloodBleedingAddition(BattleUnitModel model) : base(model) { }
             public override void OnSuccessAttack(BattleDiceBehavior behavior)
             {
-                if(behavior != null && behavior.card != null && behavior.card.card.XmlData.Script == "DonEyuil_39")
+                if (behavior != null && behavior.card != null && behavior.card.card.XmlData.Script == "DonEyuil_39")
                 {
                     int RecoverHpNum = (int)(behavior.DiceResultDamage * BleedingDmgTotal >= 10 ? 0.5 : 0.25);
-                    if(_owner.hp + RecoverHpNum > _owner.MaxHp)
+                    if (_owner.hp + RecoverHpNum > _owner.MaxHp)
                     {
-                        BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(_owner,(int) _owner.hp + RecoverHpNum - _owner.MaxHp);
+                        BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(_owner, (int)_owner.hp + RecoverHpNum - _owner.MaxHp);
                         RecoverHpNum = _owner.MaxHp - (int)_owner.hp;
                     }
                     _owner.RecoverHP(RecoverHpNum);
@@ -405,7 +395,7 @@ namespace Don_Eyuil
         public static string Desc = "[战斗开始]对自身与2名敌方角色施加1层[强壮]于[振奋]";
         public override void OnStartBattle()
         {
-            owner.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Strength, 1,owner);
+            owner.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Strength, 1, owner);
             MyTools.TKSRandomUtil(BattleObjectManager.instance.GetAliveList_opponent(owner.faction), 2, false, false).Do(x => x.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.BreakProtection, 1, owner));
         }
     }
@@ -415,7 +405,7 @@ namespace Don_Eyuil
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
             behavior.GiveDamage_SubTarget(card.target, -1);
-           // BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(y => y != card.target, x => behavior.GiveDamage_SubTarget(x));
+            // BattleObjectManager.instance.GetAliveList_opponent(owner.faction).DoIf(y => y != card.target, x => behavior.GiveDamage_SubTarget(x));
         }
         public override void OnRollDice(BattleDiceBehavior behavior)
         {
@@ -435,11 +425,11 @@ namespace Don_Eyuil
         public override void BeforeGiveDamage(BattleDiceBehavior behavior)
         {
             var Count = BattleUnitBuf_Resonance.GetAllUnitWithBuf<BattleUnitBuf_Resonance>(Faction.Player).Count * 25;
-            if(Count >0)
+            if (Count > 0)
             {
                 behavior.ApplyDiceStatBonus(new DiceStatBonus()
                 {
-                    dmgRate = -Count ,
+                    dmgRate = -Count,
                     breakRate = -Count
                 });
             }
@@ -455,7 +445,7 @@ namespace Don_Eyuil
         }
         public override void OnEndBattle()
         {
-            
+
             BattleObjectManager.instance.GetAliveList().Do(target =>
             {
                 List<BattlePlayingCardDataInUnitModel> list = new List<BattlePlayingCardDataInUnitModel>();
@@ -475,7 +465,7 @@ namespace Don_Eyuil
         public static string Desc = "[战斗开始]将场上所有共鸣效果转移至目标并对目标施加[光荣的决斗]同时使所有其余敌方角色无法行动";
         public override void OnStartBattle()
         {
-            if(card.target != null)
+            if (card.target != null)
             {
                 /*BattleUnitBuf_Resonance.GetAllBufOnField<BattleUnitBuf_Resonance>().DoIf(y => y.owner!= card.target,x =>
                 {
@@ -500,7 +490,7 @@ namespace Don_Eyuil
                     BattleUnitBuf_DuelStun.GetOrAddBuf<BattleUnitBuf_DuelStun>(y);
                 });
             }
-            BattleUnitBuf_GloriousDuel.GetOrAddBuf<BattleUnitBuf_GloriousDuel>(card.target,BufReadyType.NextRound);
+            BattleUnitBuf_GloriousDuel.GetOrAddBuf<BattleUnitBuf_GloriousDuel>(card.target, BufReadyType.NextRound);
         }
         public class BattleUnitBuf_DuelStun : BattleUnitBuf_Don_Eyuil
         {
@@ -517,15 +507,15 @@ namespace Don_Eyuil
 
         }
     }
-    public class DiceCardSelfAbility_DonEyuil_52: DiceCardSelfAbilityBase
+    public class DiceCardSelfAbility_DonEyuil_52 : DiceCardSelfAbilityBase
     {
         public static string Desc = "[使用时]若目标带有[璀璨的梦想]则使本书页所有骰子最大值与最小值-10";
         public override void OnUseCard()
         {
-            if(card.target != null && BattleUnitBuf_Resonance.GetBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BrightDream>(card.target) != null)
+            if (card.target != null && BattleUnitBuf_Resonance.GetBuf<BattleUnitBuf_Resonance.BattleUnitBuf_Resonance_BrightDream>(card.target) != null)
             {
                 card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { min = -10, max = -10 });
-            }    
+            }
         }
     }
     public class DiceCardSelfAbility_DonEyuil_53 : DiceCardSelfAbilityBase

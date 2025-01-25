@@ -26,6 +26,11 @@ namespace Don_Eyuil
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["硬血结晶"]);
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
             this.stack = 0;
+            if (model.Book.BookId != MyId.Book_堂_埃尤尔之页)
+            {
+                Debug.Log("error");
+
+            }
         }
     }
     //无法凝结的血
@@ -203,7 +208,7 @@ namespace Don_Eyuil
             public override void OnRoundEnd()
             {
                 _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
-                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.BreakProtection,3);
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.BreakProtection, 3);
             }
         }
         public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
@@ -216,13 +221,13 @@ namespace Don_Eyuil
             {
                 if (BattleObjectManager.instance.GetAliveList().Exists(x => x.passiveDetail.HasPassive<PassiveAbility_DonEyuil_07>()))
                 {
-                    BattleUnitBuf_InfinityStrongNBreakProtection.GetOrAddBuf < BattleUnitBuf_InfinityStrongNBreakProtection>(owner).OnRoundEnd();
+                    BattleUnitBuf_InfinityStrongNBreakProtection.GetOrAddBuf<BattleUnitBuf_InfinityStrongNBreakProtection>(owner).OnRoundEnd();
                 }
                 this.Destroy();
             }
             if (HasTriggered == false)
             {
-                _owner.TakeBreakDamage((int)(this._owner.breakDetail.GetDefaultBreakGauge() * 0.2),DamageType.ETC);
+                _owner.TakeBreakDamage((int)(this._owner.breakDetail.GetDefaultBreakGauge() * 0.2), DamageType.ETC);
                 _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 1);
                 return;
             }
@@ -230,7 +235,7 @@ namespace Don_Eyuil
         }
         public override void OnSuccessAttack(BattleDiceBehavior behavior)
         {
-            if(behavior != null && behavior.card != null && behavior.card.target != null && behavior.card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 3)
+            if (behavior != null && behavior.card != null && behavior.card.target != null && behavior.card.target.bufListDetail.GetKewordBufStack(KeywordBuf.Bleeding) >= 3)
             {
                 _owner.RecoverHP(2);
             }
@@ -272,7 +277,7 @@ namespace Don_Eyuil
         public static string Desc = "\"堂埃尤尔\"的体力不会低于100\r\n若本幕结束时司书存活则接待胜利";
         public override void OnRoundEndTheLast()
         {
-            if(!_owner.IsDead())
+            if (!_owner.IsDead())
             {
                 BattleObjectManager.instance.GetAliveList(Faction.Enemy).Do(x => x.DieFake());
                 Singleton<StageController>.Instance.CheckEndBattle();
@@ -297,7 +302,7 @@ namespace Don_Eyuil
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
             this.stack = 0;
         }
-        public class BattleUnitBuf_Resonance_BrightDream: BattleUnitBuf_Resonance
+        public class BattleUnitBuf_Resonance_BrightDream : BattleUnitBuf_Resonance
         {
             protected override string keywordId => "BattleUnitBuf_Resonance_BrightDream";
             public static string Desc = "自身永久获得1层\"强壮\"与\"迅捷\"\r\n拼点时恢复2点混乱抗性";
@@ -327,7 +332,7 @@ namespace Don_Eyuil
             {
                 var Alivelist = BattleObjectManager.instance.GetAliveList(_owner.faction);
                 Alivelist.Remove(_owner);
-                if(Alivelist.Count > 0)
+                if (Alivelist.Count > 0)
                 {
                     Alivelist.OrderByDescending(x => x.cardSlotDetail.PlayPoint);
                     Alivelist[0].cardSlotDetail.RecoverPlayPoint(1);
@@ -402,13 +407,13 @@ namespace Don_Eyuil
             }
             public override void OnStartParrying(BattlePlayingCardDataInUnitModel card)
             {
-                if(card.currentBehavior != null && card.currentBehavior.TargetDice != null && card.currentBehavior.TargetDice.card != null)
+                if (card.currentBehavior != null && card.currentBehavior.TargetDice != null && card.currentBehavior.TargetDice.card != null)
                 {
                     card.currentBehavior.TargetDice.card.ApplyDiceStatBonus(DiceMatch.AllAttackDice, new DiceStatBonus() { power = -1 });
                 }
             }
         }
-        
+
     }
     //血甲护盾
     public class BattleUnitBuf_BloodShield : BattleUnitBuf_Don_Eyuil

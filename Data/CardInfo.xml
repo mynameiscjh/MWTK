@@ -1672,7 +1672,7 @@
 
 
   <Card ID="68">
-    <Name>堂埃尤尔派硬血术-血剑</Name>
+    <Name>堂埃尤尔派硬血术1式-血剑</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
@@ -1696,7 +1696,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="69">
-    <Name>堂埃尤尔派硬血术-血枪</Name>
+    <Name>堂埃尤尔派硬血术2式-血枪</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
@@ -1720,7 +1720,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="70">
-    <Name>堂埃尤尔派硬血术-血镰</Name>
+    <Name>堂埃尤尔派硬血术3式-血镰</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
@@ -1744,7 +1744,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="71">
-    <Name>堂埃尤尔派硬血术-血刃</Name>
+    <Name>堂埃尤尔派硬血术4式-血刃</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
@@ -1768,7 +1768,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="72">
-    <Name>堂埃尤尔派硬血术-双剑</Name>
+    <Name>堂埃尤尔派硬血术5式-双剑</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
@@ -1792,7 +1792,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="73">
-    <Name>堂埃尤尔派硬血术-血甲</Name>
+    <Name>堂埃尤尔派硬血术6式-血甲</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
@@ -1816,7 +1816,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="74">
-    <Name>堂埃尤尔派硬血术-血弓</Name>
+    <Name>堂埃尤尔派硬血术7式-血弓</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
@@ -1840,7 +1840,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="75">
-    <Name>堂埃尤尔派硬血术-血鞭</Name>
+    <Name>堂埃尤尔派硬血术8式-血鞭</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
@@ -1864,7 +1864,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="76">
-    <Name>堂埃尤尔派硬血术-血伞</Name>
+    <Name>堂埃尤尔派硬血术9式-血伞</Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
