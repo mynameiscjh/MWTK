@@ -1,5 +1,7 @@
 ﻿
 using Don_Eyuil.Don_Eyuil.Player.Buff;
+using Don_Eyuil.Don_Eyuil.Player.DiceCardAbility;
+using Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility;
 using Don_Eyuil.Don_Eyuil.Player.PassiveAbility;
 using EnumExtenderV2;
 using HarmonyLib;
