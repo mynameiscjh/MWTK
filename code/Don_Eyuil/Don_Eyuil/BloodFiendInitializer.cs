@@ -1,9 +1,12 @@
-﻿using Don_Eyuil.PassiveAbility;
+﻿
+using Don_Eyuil.Don_Eyuil.Player.Buff;
+using Don_Eyuil.Don_Eyuil.Player.PassiveAbility;
 using EnumExtenderV2;
 using HarmonyLib;
 using LOR_DiceSystem;
 using LOR_XML;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -622,6 +625,7 @@ namespace Don_Eyuil
 
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
             harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
+            harmony.PatchAll(typeof(HardBloodCards));
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
             harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
@@ -739,6 +743,7 @@ namespace Don_Eyuil
         public static LorId Card_若能摆脱这可怖的疾病 = MyTools.Create(67);
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
         public static LorId Stage_埃尤尔 = MyTools.Create(1);
+        public static LorId Stage_桑空 = MyTools.Create(2);
         public static LorId Stage_测试 = MyTools.Create(881506);
         public static ulong User_漠北九月 = 76561198941514651;
         public static ulong User_小D = 76561199079466854;
@@ -848,6 +853,15 @@ namespace Don_Eyuil
                 type = ""
             });
 
+            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("SanSora", new UIIconManager.IconSet
+            {
+                icon = TKS_BloodFiend_Initializer.ArtWorks["tk"],
+                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["tk"],
+                colorGlow = new Color(1, 1, 1, 1),
+                color = new Color(1, 1, 1, 1),
+                type = ""
+            });
+
             void Func(int r, LorId id)
             {
                 UIStoryProgressIconSlot testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
@@ -857,14 +871,14 @@ namespace Don_Eyuil
                 testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
                 testS.SetSlotData(new List<StageClassInfo>()
                 {
-                    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
+                    Singleton<StageClassInfoList>.Instance.GetData(id)
                 });
 
                 testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, r * 5);
                 testS.gameObject.SetActive(true);
             }
 
-            Func(0, MyId.Stage_测试);
+            Func(0, MyId.Stage_桑空);
             Func(45, MyId.Stage_测试);
             Func(90, MyId.Stage_测试);
             Func(135, MyId.Stage_测试);
@@ -1075,6 +1089,531 @@ namespace Don_Eyuil
             }
             return true;
 
+        }
+
+    }
+
+    public static class HardBloodCards
+    {
+        public static List<LorId> cards_Don_Eyuil = new List<LorId>();
+
+        public static Dictionary<LorId, LorId> map_Don_Eyuil = new Dictionary<LorId, LorId>()
+        {
+            {MyTools.Create(45), MyTools.Create(68)},
+            {MyTools.Create(46), MyTools.Create(69)},
+            {MyTools.Create(47), MyTools.Create(70)},
+            {MyTools.Create(48), MyTools.Create(71)},
+            {MyTools.Create(49), MyTools.Create(72)},
+            {MyTools.Create(50), MyTools.Create(73)},
+            {MyTools.Create(51), MyTools.Create(74)},
+            {MyTools.Create(52), MyTools.Create(75)},
+            {MyTools.Create(53), MyTools.Create(76)},
+        };
+
+        public static List<(LorId, List<LorId>)> cardRemovaList_Don_Eyuil = new List<(LorId, List<LorId>)>
+                {
+                     ( MyId.Card_血伞挥打_2, new List<LorId>{MyId.Card_堂埃尤尔派硬血术8式_血鞭_2, MyId.Card_堂埃尤尔派硬血术9式_血伞_2}),
+                     ( MyId.Card_旋转_绽放把_2, new List<LorId>{MyId.Card_堂埃尤尔派硬血术9式_血伞_2}),
+                     ( MyId.Card_凝血化锋_2, new List<LorId>{MyId.Card_堂埃尤尔派硬血术1式_血剑_2, MyId.Card_堂埃尤尔派硬血术5式_双剑_2}),
+                     ( MyId.Card_纵血为刃_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术5式_双剑_2, MyId.Card_堂埃尤尔派硬血术6式_血甲_2}),
+                     ( MyId.Card_硬血截断_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术2式_血枪_2}),
+                     ( MyId.Card_血如泉涌_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术7式_血弓_2, MyId.Card_堂埃尤尔派硬血术8式_血鞭_2}),
+                     ( MyId.Card_梦之冒险_2, new List<LorId>{ MyId.Card_堂埃尤尔派硬血术1式_血剑_2, MyId.Card_堂埃尤尔派硬血术2式_血枪_2}),
+                };
+
+        public static List<LorId> HardBloodCards_Don_Eyuil = new List<LorId>()
+        {   MyId.Card_堂埃尤尔派硬血术1式_血剑_2,
+            MyId.Card_堂埃尤尔派硬血术2式_血枪_2,
+            MyId.Card_堂埃尤尔派硬血术3式_血镰_2,
+            MyId.Card_堂埃尤尔派硬血术4式_血刃_2,
+            MyId.Card_堂埃尤尔派硬血术5式_双剑_2,
+            MyId.Card_堂埃尤尔派硬血术6式_血甲_2,
+            MyId.Card_堂埃尤尔派硬血术7式_血弓_2,
+            MyId.Card_堂埃尤尔派硬血术8式_血鞭_2,
+            MyId.Card_堂埃尤尔派硬血术9式_血伞_2,
+        };
+
+        public static Dictionary<LorId, Type> cardToBufMap_Don_Eyuil = new Dictionary<LorId, System.Type>
+                {
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术1式_血剑_2], typeof(BattleUnitBuf_Sword) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术2式_血枪_2], typeof(BattleUnitBuf_Lance) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术3式_血镰_2], typeof(BattleUnitBuf_Sickle) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术4式_血刃_2], typeof(BattleUnitBuf_Blade) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术5式_双剑_2], typeof(BattleUnitBuf_DoubleSwords) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术6式_血甲_2], typeof(BattleUnitBuf_Armour) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术7式_血弓_2], typeof(BattleUnitBuf_Bow) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术8式_血鞭_2], typeof(BattleUnitBuf_Scourge) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术9式_血伞_2], typeof(BattleUnitBuf_Umbrella) }
+                };
+
+        //不使用楼层ego的整个pre(月亮计划你该死啊)
+        [HarmonyPatch(typeof(BattleUnitCardsInHandUI), "UpdateCardList")]
+        [HarmonyPrefix]
+        public static bool BattleUnitCardsInHandUI_UpdateCardList_Pre(BattleUnitCardsInHandUI.HandState ____handState, BattleUnitModel ____selectedUnit, BattleUnitModel ____hOveredUnit, BattleUnitCardsInHandUI __instance, ref float ____xInterval, List<BattleDiceCardUI> ____activatedCardList, List<BattleDiceCardUI> ____cardList)
+        {
+            if (!__instance.IsActivated())
+            {
+                return false;
+            }
+            List<BattleDiceCardModel> list = new List<BattleDiceCardModel>();
+            if (____handState == BattleUnitCardsInHandUI.HandState.BattleCard)
+            {
+                ____xInterval = 60f;
+                if (____selectedUnit != null)
+                {
+                    list = ____selectedUnit.allyCardDetail.GetHand();
+                }
+                else if (____hOveredUnit != null)
+                {
+                    list = ____hOveredUnit.allyCardDetail.GetHand();
+                }
+                if (list.Count >= 9)
+                {
+                    ____xInterval = ____xInterval * 8f / (float)list.Count;
+                }
+            }
+            else if (____handState == BattleUnitCardsInHandUI.HandState.EgoCard)
+            {
+                ____xInterval = 65f;
+                BattleUnitModel battleUnitModel = null;
+                if (____selectedUnit != null)
+                {
+                    battleUnitModel = ____selectedUnit;
+                }
+                else if (____hOveredUnit != null)
+                {
+                    battleUnitModel = ____hOveredUnit;
+                }
+                if (battleUnitModel != null && battleUnitModel.personalEgoDetail.ExistsCard())
+                {
+                    list = battleUnitModel.personalEgoDetail.GetHand();
+                }
+                if (battleUnitModel != null && battleUnitModel.Book.GetBookClassInfoId() != 250022 && battleUnitModel.Book.GetBookClassInfoId() != MyId.Book_堂_埃尤尔之页)
+                {
+                    list.AddRange(Singleton<SpecialCardListModel>.Instance.GetHand());
+                }
+                if (list.Count >= 9)
+                {
+                    ____xInterval = ____xInterval * 8f / (float)list.Count;
+                }
+            }
+            ____activatedCardList.Clear();
+            List<BattleDiceCardModel> list2 = list;
+            int num = 0;
+            while (num < list2.Count && num < ____cardList.Count)
+            {
+                ____cardList[num].gameObject.SetActive(true);
+                ____cardList[num].SetCard(list2[num], Array.Empty<BattleDiceCardUI.Option>());
+                ____cardList[num].SetDefault();
+                ____cardList[num].ResetSiblingIndex();
+                ____activatedCardList.Add(____cardList[num]);
+                num++;
+            }
+            for (int i = 0; i < ____activatedCardList.Count; i++)
+            {
+                Navigation navigation = default(Navigation);
+                navigation.mode = Navigation.Mode.Explicit;
+                if (i > 0)
+                {
+                    navigation.selectOnLeft = ____activatedCardList[i - 1].selectable;
+                }
+                else if (____activatedCardList.Count >= 2)
+                {
+                    navigation.selectOnLeft = ____activatedCardList[____activatedCardList.Count - 1].selectable;
+                }
+                else
+                {
+                    navigation.selectOnLeft = null;
+                }
+                if (i < ____activatedCardList.Count - 1)
+                {
+                    navigation.selectOnRight = ____activatedCardList[i + 1].selectable;
+                }
+                else if (____activatedCardList.Count >= 2)
+                {
+                    navigation.selectOnRight = ____activatedCardList[0].selectable;
+                }
+                else
+                {
+                    navigation.selectOnRight = null;
+                }
+                ____activatedCardList[i].selectable.navigation = navigation;
+                ____activatedCardList[i].selectable.parentSelectable = __instance.selectablePanel;
+            }
+            if (____activatedCardList.Count == 0)
+            {
+                if (UIControlManager.isControllerInput)
+                {
+                    __instance.emptyCardImage.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                __instance.emptyCardImage.gameObject.SetActive(false);
+            }
+            __instance.SetSelectedCardUI(null);
+            for (int j = list2.Count; j < ____cardList.Count; j++)
+            {
+                ____cardList[j].gameObject.SetActive(false);
+            }
+            if (____selectedUnit == null)
+            {
+                __instance.InvokeMethod("SetActivatedCardsDefaultPos");
+                return false;
+            }
+            if (__instance._beforeSelectDice != SingletonBehavior<BattleManagerUI>.Instance.selectedAllyDice && __instance._beforeSelectDice != null)
+            {
+                __instance.InvokeMethod("SetActivatedCardsDefaultPos");
+            }
+            return false;
+        }
+
+        //分两个卡组
+        [HarmonyPatch(typeof(UIEquipDeckCardList), "SetDeckLayout")]
+        [HarmonyPostfix]
+        public static void UIEquipDeckCardList_SetDeckLayout_Post(UIEquipDeckCardList __instance)
+        {
+            if (__instance.currentunit.bookItem.BookId == MyTools.Create(10000001))
+            {
+                var deckTabsController = __instance.GetFieldValue<UICustomTabsController>("deckTabsController");
+                deckTabsController.transform.GetChild(1).GetComponent<HorizontalLayoutGroup>().enabled = false;
+                deckTabsController.CustomTabs[0].TabName.text = "并非硬血术卡组";
+                deckTabsController.CustomTabs[0].transform.localPosition = new Vector3(118.8028f, 20.65f, 0);
+                deckTabsController.CustomTabs[1].TabName.text = "硬血术卡组";
+                deckTabsController.CustomTabs[1].transform.localPosition = new Vector3(312.7585f, 20.65f, 0);
+                deckTabsController.CustomTabs[2].gameObject.SetActive(false);
+                deckTabsController.CustomTabs[3].gameObject.SetActive(false);
+            }
+            else
+            {
+                var deckTabsController = __instance.GetFieldValue<UICustomTabsController>("deckTabsController");
+                deckTabsController.transform.GetChild(1).GetComponent<HorizontalLayoutGroup>().enabled = true;
+            }
+        }
+
+        //更改专属卡(月亮计划你该死啊)
+        [HarmonyPatch(typeof(BookModel), "GetOnlyCards")]
+        [HarmonyPostfix]
+        public static void BookModel_GetOnlyCards_Post(ref List<DiceCardXmlInfo> __result, BookModel __instance)
+        {
+            if (__instance.BookId != MyId.Book_堂_埃尤尔之页)
+            {
+                return;
+            }
+            __result.Clear();
+            foreach (var item in __instance.ClassInfo.EquipEffect.OnlyCard)
+            {
+                var card = ItemXmlDataList.instance.GetCardItem(MyTools.Create(item));
+                __result.Add(card);
+            }
+            __result.AddRange(map_Don_Eyuil.Values.ToList().Select(x => ItemXmlDataList.instance.GetCardItem(x)));
+        }
+
+        //实现了硬血卡组只能配硬血卡 特殊卡只能配特殊硬血卡组后才能配(我你该死啊)
+        [HarmonyPatch(typeof(UIInvenCardListScroll), "ApplyFilterAll")]
+        [HarmonyPostfix]
+        public static void UIInvenCardListScroll_ApplyFilterAll_Post(List<DiceCardItemModel> ____currentCardListForFilter, UIInvenCardListScroll __instance)
+        {
+            var temp = __instance.GetFieldValue<UnitDataModel>("_unitdata");
+            if (temp == null)
+            {
+                return;
+            }
+            if (temp.bookItem.BookId != MyId.Book_堂_埃尤尔之页)
+            {
+                return;
+            }
+            if (temp.bookItem.GetCurrentDeckIndex() == 1)
+            {
+                ____currentCardListForFilter.Clear();
+                foreach (var item in HardBloodCards_Don_Eyuil)
+                {
+                    var card = ItemXmlDataList.instance.GetCardItem(map_Don_Eyuil[item]);
+                    DiceCardItemModel itemModel = new DiceCardItemModel(card);
+                    itemModel.num = 99;
+                    ____currentCardListForFilter.Add(itemModel);
+                    ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
+                }
+            }
+            else
+            {
+                ____currentCardListForFilter.RemoveAll(x => map_Don_Eyuil.Values.ToList().Exists(item => item == x.ClassInfo.id));
+                ____currentCardListForFilter.RemoveAll(x => HardBloodCards_Don_Eyuil.Exists(item => item == x.ClassInfo.id));
+                ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
+
+                var list = temp.bookItem.GetCardListByIndex(1).Select(x => x.id).ToList();
+
+
+
+                var temp_object = GameObject.Find("UI_Object/[CG]PPForForceCg/FrontCanvas/[Panel]BattlePagePanel(Clone)/PanelActiveController/[Librarian]Left_Panel/[Script]LibrarianDeckPanel/[Script]CardDeckPanel");
+
+                foreach (var item in cardRemovaList_Don_Eyuil)
+                {
+                    foreach (var needCard in item.Item2)
+                    {
+                        var A = map_Don_Eyuil[needCard];
+                        if (!list.Contains(A))
+                        {
+                            ____currentCardListForFilter.RemoveAll(x => x.GetID() == item.Item1);
+                            temp.bookItem.MoveCardFromCurrentDeckToInventory(item.Item1);
+                            var component = temp_object?.GetComponent<UIEquipDeckCardList>();
+
+                            component?.SetCardsData(component?.currentunit?.GetDeckCardModelAll());
+                        }
+                    }
+                }
+            }
+            __instance.SetCardsData(__instance.GetCurrentPageList());
+        }
+
+        //取消硬血卡的特殊限制
+        [HarmonyPatch(typeof(DeckModel), "AddCardFromInventory")]
+        [HarmonyPostfix]
+        public static void DeckModel_AddCardFromInventory_Post(ref CardEquipState __result, LorId cardId, List<DiceCardXmlInfo> ____deck)
+        {
+            if (__result == CardEquipState.Equippable)
+            {
+                return;
+            }
+            if (____deck.Count >= 9)
+            {
+                return;
+            }
+            if (HardBloodCards_Don_Eyuil.Contains(cardId))
+            {
+                __result = CardEquipState.Equippable;
+            }
+            if (map_Don_Eyuil.Values.ToList().Contains(cardId))
+            {
+                __result = CardEquipState.Equippable;
+            }
+        }
+
+        //跟新
+        [HarmonyPatch(typeof(UIEquipDeckCardList), "OnChangeDeckTab")]
+        [HarmonyPostfix]
+        public static void UIEquipDeckCardList_OnChangeDeckTab_Post(UIEquipDeckCardList __instance, UICustomTabsController ___deckTabsController)
+        {
+            if (__instance.currentunit == null)
+            {
+                return;
+            }
+            if (!__instance.currentunit.bookItem.IsMultiDeck())
+            {
+                return;
+            }
+            if (__instance.currentunit.bookItem.BookId == MyId.Book_堂_埃尤尔之页)
+            {
+
+                var temp = __instance.transform.parent.parent.parent.GetChild(1).GetChild(0).GetComponent<UIInvenCardListScroll>();
+                temp.ApplyFilterAll();
+            }
+            return;
+        }
+
+        //取消硬血卡的特殊限制
+        [HarmonyPatch(typeof(InventoryModel), "RemoveCard")]
+        [HarmonyPrefix]
+        public static bool InventoryModel_RemoveCard_Pre(LorId cardId, ref bool __result)
+        {
+            if (HardBloodCards_Don_Eyuil.Contains(cardId))
+            {
+                __result = true;
+                return false;
+            }
+            if (map_Don_Eyuil.Values.Contains(cardId))
+            {
+                __result = true;
+                return false;
+            }
+            return true;
+        }
+
+        //可以配ego书页
+        [HarmonyPatch(typeof(UIDetailCardSlot), "SetData")]
+        [HarmonyPostfix]
+        public static void UIDetailCardSlot_SetData_Post(DiceCardItemModel cardmodel, GameObject ___ob_selfAbility)
+        {
+            try
+            {
+                GameObject gameObject = ___ob_selfAbility.transform.parent.parent.parent.gameObject;
+                bool flag = gameObject != null && gameObject.name.Contains("[Rect]RightPanel");
+                if (flag)
+                {
+                    gameObject.GetComponentsInChildren<Image>().ToList<Image>().ForEach(delegate (Image x)
+                    {
+                        Debug.Log("Image.name:" + ((x != null) ? x.name : null));
+                    });
+                    Image image = gameObject.GetComponentsInChildren<Image>().FirstOrDefault((Image x) => x.name.Contains("[Image]BgFrame"));
+                    bool flag2 = image != null;
+                    if (flag2)
+                    {
+                        bool flag3 = cardmodel != null && cardmodel.ClassInfo.IsEgo();
+                        if (flag3)
+                        {
+                            image.overrideSprite = TKS_BloodFiend_Initializer.ArtWorks["RightPanel"];
+                        }
+                        else
+                        {
+                            image.overrideSprite = null;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        //可以配ego书页
+        [HarmonyPatch(typeof(UIOriginCardSlot), "SetData")]
+        [HarmonyPostfix]
+        public static void UIOriginCardSlot_SetData_Post(UIOriginCardSlot __instance, DiceCardItemModel cardmodel, ref DiceCardItemModel ____cardModel, ref Image[] ___img_linearDodge, ref Image ___img_Artwork, ref Image[] ___img_Frames)
+        {
+            try
+            {
+                bool flag = ____cardModel != null && ____cardModel.ClassInfo.IsEgo();
+                if (flag)
+                {
+                    for (int i = 0; i < ___img_Frames.Length; i++)
+                    {
+                        bool flag2 = !(___img_Frames[i] == null);
+                        if (flag2)
+                        {
+                            ___img_Frames[i].color = Color.white;
+                        }
+                    }
+                    Image image = ___img_Frames.FirstOrDefault((Image x) => x.name.Contains("[Image]NormalFrame"));
+                    bool flag3 = image != null;
+                    if (flag3)
+                    {
+                        image.overrideSprite = TKS_BloodFiend_Initializer.ArtWorks["LeftPanel"];
+                    }
+                    Image image2 = ___img_Frames.FirstOrDefault((Image x) => x.name.Contains("[Image]NormalLinearDodge"));
+                    bool flag4 = image2 != null;
+                    if (flag4)
+                    {
+                        image2.gameObject.SetActive(false);
+                    }
+                    for (int j = 0; j < ___img_linearDodge.Length; j++)
+                    {
+                        bool flag5 = !(___img_linearDodge[j] == null);
+                        if (flag5)
+                        {
+                            ___img_linearDodge[j].gameObject.SetActive(false);
+                        }
+                    }
+                }
+                else
+                {
+                    Image[] array = ___img_Frames;
+                    bool flag6 = array == null;
+                    Image image3;
+                    if (flag6)
+                    {
+                        image3 = null;
+                    }
+                    else
+                    {
+                        image3 = array.FirstOrDefault((Image x) => x.name.Contains("[Image]NormalFrame"));
+                    }
+                    Image image4 = image3;
+                    bool flag7 = image4 != null;
+                    if (flag7)
+                    {
+                        image4.overrideSprite = null;
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        //可以配ego书页
+        [HarmonyPatch(typeof(UIOriginCardSlot), "SetData")]
+        [HarmonyPrefix]
+        public static bool UIOriginCardSlot_SetData_Pre(UIOriginCardSlot __instance, ref DiceCardItemModel ____cardModel, ref Image[] ___img_linearDodge, ref Image[] ___img_Frames)
+        {
+            try
+            {
+                Image image = ___img_Frames.FirstOrDefault((Image x) => x.name.Contains("[Image]NormalLinearDodge"));
+                bool flag = image != null;
+                if (flag)
+                {
+                    image.gameObject.SetActive(true);
+                }
+                for (int i = 0; i < ___img_linearDodge.Length; i++)
+                {
+                    bool flag2 = !(___img_linearDodge[i] == null);
+                    if (flag2)
+                    {
+                        ___img_linearDodge[i].gameObject.SetActive(true);
+                    }
+                }
+            }
+            catch
+            {
+            }
+            return true;
+        }
+
+#if false
+        [HarmonyPatch(typeof(UIOriginCardSlot), "SetHighlightedSlot")]
+        [HarmonyPostfix]
+        public static void UIOriginCardSlot_SetHighlightedSlot_Post(UIOriginCardSlot __instance, bool on, ref DiceCardItemModel ____cardModel, ref Image[] ___img_Frames)
+        {
+            bool flag = !on && ____cardModel != null && ____cardModel.ClassInfo.IsEgo();
+            if (flag)
+            {
+                for (int i = 0; i < ___img_Frames.Length; i++)
+                {
+                    bool flag2 = !(___img_Frames[i] == null);
+                    if (flag2)
+                    {
+                        ___img_Frames[i].color = Color.white;
+                    }
+                }
+            }
+        }
+#endif
+        //应该需要hp把特定buff加上
+        [HarmonyPatch(typeof(LevelUpUI), "OnSelectEgoCard")]
+        [HarmonyPrefix]
+        public static bool LevelUpUI_OnSelectEgoCard_Pre(BattleDiceCardUI picked)
+        {
+            if (map_Don_Eyuil.Values.ToList().Exists(x => x == picked.CardModel.GetID()))
+            {
+                var I39 = BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页);
+                if (I39 == null)
+                {
+                    return true;
+                }
+
+                if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(I39) == null)
+                {
+                    BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_HardBlood>(I39, 0);
+                }
+
+                // 创建映射字典
+
+
+                if (cardToBufMap_Don_Eyuil.TryGetValue(picked.CardModel.GetID(), out System.Type bufType))
+                {
+                    if (typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GetBuf").MakeGenericMethod(bufType).Invoke(null, new object[] { I39, BufReadyType.ThisRound }) == null)
+                    {
+                        var method = typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GainBuf").MakeGenericMethod(bufType);
+                        method.Invoke(null, new object[] { I39, 1, BufReadyType.ThisRound });
+                    }
+                }
+                var temp = map_Don_Eyuil.ToList().Find(x => x.Value == picked.CardModel.GetID()).Key;
+                cards_Don_Eyuil.Remove(temp);
+                I39.personalEgoDetail.AddCard(temp);
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
+                return false;
+            }
+
+            return true;
         }
 
     }

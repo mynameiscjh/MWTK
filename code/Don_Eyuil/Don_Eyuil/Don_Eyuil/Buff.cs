@@ -1,5 +1,5 @@
 ﻿using BattleCharacterProfile;
-using Don_Eyuil.Don_Eyuil.Buff;
+using Don_Eyuil.Don_Eyuil.Player.Buff;
 using HarmonyLib;
 using System;
 using System.Collections;

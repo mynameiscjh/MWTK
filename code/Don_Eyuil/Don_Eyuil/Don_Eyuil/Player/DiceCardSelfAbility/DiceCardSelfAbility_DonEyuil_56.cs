@@ -1,4 +1,4 @@
-﻿namespace Don_Eyuil.DiceCardSelfAbility
+﻿namespace Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility
 {
     public class DiceCardSelfAbility_DonEyuil_56 : DiceCardSelfAbilityBase
     {

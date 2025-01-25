@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Don_Eyuil.Don_Eyuil.Buff
+namespace Don_Eyuil.Don_Eyuil.Player.Buff
 {
     public class BattleUnitBuf_Scourge : BattleUnitBuf_Don_Eyuil
     {
