@@ -155,11 +155,15 @@
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_49.cs" />
     <Compile Include="Don_Eyuil\MapManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="San_Sora\PassiveAbility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="San_Sora\Player\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -544,7 +544,7 @@ namespace Don_Eyuil
 
         public static bool UseBuf<T>(BattleUnitModel model, int stack) where T : BattleUnitBuf_Don_Eyuil
         {
-            T BuffInstance = GetOrAddBuf<T>(model,BufReadyType.ThisRound);
+            T BuffInstance = GetBuf<T>(model,BufReadyType.ThisRound);
             if (BuffInstance != null && BuffInstance.stack >= stack)
             {
                 BuffInstance.Add(-stack);

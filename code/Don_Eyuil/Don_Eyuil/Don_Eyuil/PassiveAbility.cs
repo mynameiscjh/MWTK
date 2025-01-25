@@ -304,10 +304,24 @@ namespace Don_Eyuil
                         AddNewCard(MyId.Card_血之宝库_1, 999);
                         break;
                     case 4:
+                        owner.bufListDetail.GetActivatedBufList().DoIf(x => x.positiveType == BufPositiveType.Negative, y => y.Destroy());
+                        if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                        {
+                            this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                        }
+                        this.owner.breakDetail.nextTurnBreak = false;
+                        this.owner.breakDetail.RecoverBreakLife(1, false);
+                        this.owner.breakDetail.RecoverBreak(this.owner.breakDetail.GetDefaultBreakGauge());
                         AddNewCard(MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_1, 999);
                         AddNewCard(MyId.Card_便以决斗作为这场战斗的结尾吧, 900);
                         break;
                     case 5:
+                        if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                        {
+                            this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                        }
+                        this.owner.breakDetail.nextTurnBreak = false;
+                        this.owner.breakDetail.RecoverBreakLife(1, false);
                         AddNewCard(MyId.Card_你是否心怀梦想_无所畏惧, 999);
                         AddNewCard(MyId.Card_你是否心怀理解_尊重他人, 999);
                         AddNewCard(MyId.Card_你是否相信希望_憧憬未来, 999);
