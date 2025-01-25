@@ -24,12 +24,6 @@ using File = System.IO.File;
 namespace Don_Eyuil
 {
 
-    public class DiceCardSelfAbility_Testify_TransDice : DiceCardSelfAbilityBase
-    {
-
-
-
-    }
     [HarmonyPatch]
     public class TKS_BloodFiend_PatchMethods_Testify
     {
@@ -638,36 +632,6 @@ namespace Don_Eyuil
             // Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
             DonEyuilLoad(Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path)));
 
-        }
-    }
-    public class EmotionEgoXmlInfo_Mod : EmotionEgoXmlInfo
-    {
-        public string packageId = "";
-
-
-        public EmotionEgoXmlInfo_Mod(LorId id)
-        {
-            this.packageId = id.packageId;
-            this._CardId = id.id;
-        }
-        public EmotionEgoXmlInfo_Mod()
-        {
-
-        }
-        [HarmonyPatch(typeof(EmotionEgoXmlInfo), "get_CardId")]
-        [HarmonyPostfix]
-        public static void EmotionEgoXmlInfo_get_CardId_Post(EmotionEgoXmlInfo __instance, ref LorId __result)
-        {
-            if (__instance is EmotionEgoXmlInfo_Mod)
-            {
-                __result = new LorId((__instance as EmotionEgoXmlInfo_Mod).packageId, __instance._CardId);
-
-                if (!ItemXmlDataList.instance.GetFieldValue<Dictionary<LorId, DiceCardXmlInfo>>("_cardInfoTable").TryGetValue(__result, out var v))
-                {
-                    var card = ItemXmlDataList.instance.GetCardItem(__result);
-                    ItemXmlDataList.instance.GetFieldValue<Dictionary<LorId, DiceCardXmlInfo>>("_cardInfoTable").Add(__result, card);
-                }
-            }
         }
     }
 

@@ -1575,7 +1575,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="64">
-    <Name>经典反击书页</Name>
+    <Name></Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>
@@ -1599,7 +1599,7 @@
     <MaxNum>150</MaxNum>
   </Card>
   <Card ID="65">
-    <Name>双剑反击闪避书页</Name>
+    <Name></Name>
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>
