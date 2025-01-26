@@ -246,6 +246,7 @@
 (不可转移)</Desc>
   </Passive>
 
+<!-- 桑空-->
   <Passive ID="18">
     <Negative>false</Negative>
     <IsHide>false</IsHide>
