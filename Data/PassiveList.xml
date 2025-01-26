@@ -245,4 +245,176 @@
 若开启舞台时只有自身一名我方角色…
 (不可转移)</Desc>
   </Passive>
+
+  <Passive ID="18">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_01</Script>
+    <Name>200年前的回忆</Name>
+    <Desc>每幕开始时移除手中的书页并将意图使用的书页置入手中
+自身书页费用为0</Desc>
+  </Passive>
+  <Passive ID="19">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_02</Script>
+    <Name>桑空派变体硬血术</Name>
+    <Desc>自身将定期将速度骰子设置为不同的硬血术效果
+命中目标时将恢复等同于骰子基础值的体力</Desc>
+  </Passive>
+  <Passive ID="20">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_03</Script>
+    <Name>展翼向梦</Name>
+    <Desc>自身命中目标时获得2层”血羽”
+每幕结束时若自身”血羽”不低于10层则使自身在下一幕中获得1层”迅捷”</Desc>
+  </Passive>
+  <Passive ID="21">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_04</Script>
+    <Name>血甲</Name>
+    <Desc>开启舞台时获得500层护盾
+护盾消耗完时改变自身行动逻辑并获得新的被动在此之前体力无法低于500</Desc>
+  </Passive>
+  <Passive ID="22">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_05</Script>
+    <Name>正在进行的冒险与重燃的热血</Name>
+    <Desc>自身每拥有50点护盾便使自身受到的伤害与混乱伤害减少5%(至多30%)
+每幕开始时获得(自身失去护盾量/25)层”血羽”</Desc>
+  </Passive>
+  <Passive ID="23">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_06</Script>
+    <Name>亲族们仍在苦难之中!</Name>
+    <Desc>自身拼点失败时将对自身施加2层”流血”
+自身累计施加100层”流血”前体力无法低于300
+条件达成后下一幕改变行动逻辑并获得新的被动</Desc>
+  </Passive>
+  <Passive ID="24">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_07</Script>
+    <Name>若能实现那理想中的共存</Name>
+    <Desc>敌方角色死亡时将在这一幕中对自身施加10层”流血”与2层”虚弱”
+自身所有骰子与招架型外的骰子拼点时威力+2</Desc>
+  </Passive>
+  <Passive ID="25">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_08</Script>
+    <Name>激荡的心情与永不终结之梦</Name>
+    <Desc>自身拼点失败使改为获得正面情感
+每幕中场上所有角色每获得10点正面情感便使其下幕所有骰子威力+1</Desc>
+  </Passive>
+  <Passive ID="26">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_09</Script>
+    <Name>昂首阔步迈向你我的明天</Name>
+    <Desc>体力无法低于10且自身不会陷入混乱
+获得本被动后每过一幕便使自身所有骰子威力+1
+4幕后若仍有司书存活则司书方获得胜利</Desc>
+  </Passive>
+  <Passive ID="27">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>SanSora_10</Script>
+    <Name>桑空派变体硬血术</Name>
+    <Desc>自身拥有一套额外的卡组可设置至多4种"硬血术"书页
+自身将根据放于”硬血术”书页依次使自身的骰子获得对应效果
+自身可以使用个人书页”桑空派变体硬血术终式-La Sangre”
+(不可转移)</Desc>
+  </Passive>
+  <Passive ID="28">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>5</Cost>
+    <Script>SanSora_11</Script>
+    <Name>我将高展血羽</Name>
+    <Desc>命中目标时若自身速度高于目标则使自身获得2层”血羽”并恢复速度差值的体力(至多4点)
+自身恢复体力时若溢出则随机使一名友方角色获得1点正面情感(每幕至多触发3次)</Desc>
+  </Passive>
+  <Passive ID="29">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>12</Cost>
+    <Script>SanSora_12</Script>
+    <Name>直至触及那梦想!</Name>
+    <Desc>同一舞台中自身每累计获得10点正面情感便使自身永久获得1层”迅捷”与”伤害提升”(至多2层)</Desc>
+  </Passive>
 </PassiveXmlRoot>

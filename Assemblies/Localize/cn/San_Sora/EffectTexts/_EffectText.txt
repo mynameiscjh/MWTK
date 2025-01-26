@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <effectTextList>
+
+    <BattleEffectText ID="BattleUnitBuf_Bloodfeather">
+      <Name>血羽</Name>
+      <Desc>自身速度不低于5时闪避型骰子最小值+1
+可用于特殊书页
+本状态根据层数获得相应强化(最大值:30层)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Bloodfeather_II">
+      <Name>血羽II</Name>
+      <Desc>自身速度不低于5时自身所有骰子最大值与最小值+1
+可用于特殊书页
+本状态根据层数获得相应强化(最大值:30层)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Bloodfeather_III">
+      <Name>血羽II</Name>
+      <Desc>自身速度不低于5时施加的”流血”层数+1
+每有15层本效果便使自身所有骰子最大值与最小值+1</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_SanFlicker_Enemy">
+      <Name>摇曳</Name>
+      <Desc>这一幕自身被击中时获得5点护盾并对目标施加3层"流血"</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_SanFlicker">
+      <Name>摇曳</Name>
+      <Desc>每幕结束时移除本效果并使自身获得等同于这一幕受到的”流血”伤害量的护盾
+自身被击中时将对目标施加1层”流血”</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_Enemy">
+      <Name>桑空派变体硬血术</Name>
+      <Desc>自身前{0}颗速度骰子为{1} 后{2}颗速度骰子为{3}</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt">
+      <Name>桑空派变体硬血术</Name>
+      <Desc>自身速度骰子将依次获得以下效果:</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodSword">
+      <Name>桑空派变体硬血术1式-血剑</Name>
+      <Desc>本速度骰子中投掷进攻型骰子时不再受到流血伤害转而获得等量”结晶硬血”(单次至多3层)
+自身”结晶硬血”层数不低于10时本速度骰子中使用书页时消耗3层并使进攻型骰子威力+2</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodLance">
+      <Name>桑空派变体硬血术2式-血枪</Name>
+      <Desc>若本速度骰子使用书页时速度不低于6则使该书页施加的”流血”层数翻倍且以本书页消耗”血羽”时返还消耗量/2</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodSickle">
+      <Name>桑空派变体硬血术3式-血镰</Name>
+      <Desc></Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodBlade">
+      <Name>桑空派变体硬血术4式-血刃</Name>
+      <Desc>本速度骰子使用书页期间若自身”血羽”与”结晶硬血”层数之和不低于30则与目标拼点时目标受到的”流血”伤害将扩散至两名敌方角色</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_DoubleSwords">
+      <Name>桑空派变体硬血术5式-双剑</Name>
+      <Desc>本骰子中使用的书页恢复体力时将同时恢复混乱抗性
+战斗开始时自身拥有”结晶硬血”则在这一幕中获得一颗斩击反击骰子(4-8[命中时]施加1层[流血])</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodShield">
+      <Name>桑空派变体硬血术6式-血甲</Name>
+      <Desc>自身”血羽”不低于10层时本速度骰子恢复体力溢出时将转化为等量护盾
+自身拥有护盾时使自身所有防御型骰子威力+2</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodBow">
+      <Name>桑空派变体硬血术7式-血弓</Name>
+      <Desc>本速度骰子中使用的书页将变为远程书页(无法对E.G.O书页与群体生效)且进攻型骰子最小值+2
+自身每幕第一张使用的书页施加的”流血”层数额外+1</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodScourge">
+      <Name>桑空派变体硬血术8式-血鞭</Name>
+      <Desc>本速度骰子中的书页对自身施加”流血”时将同时对两名敌方角色施加一次
+自身在一幕中若至少承受了15点”流血”伤害则在这一幕结束时恢复1点光芒</Desc>
+    </BattleEffectText>
+
+  </effectTextList>
+</BattleEffectTextRoot>

@@ -1889,5 +1889,124 @@
   </Card>
 
 
+  <Card ID="77">
+    <Name>致伤</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Common</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_01</Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="78">
+    <Name>摧垮</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Common</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_02</Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="black_4th_gaunlet_atk2" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atkTwoRound " ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="79">
+    <Name>伴血猛袭</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_03</Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="10" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice01" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="80">
+    <Name>释血化刃</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Common</Rarity>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_04</Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice02" ActionScript="" Desc="" />
+      <Behaviour Min="3" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice02" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="81">
+    <Name>冲锋截断</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>DonEyuil_05</Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetarte" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice03" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice04" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="82">
+    <Name>桑空派变体硬血术6式-血甲</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="FarAreaEach" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_05</Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice05" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="83">
+    <Name>硬血为铠</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script></Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="6" Dice="10" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3pw" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3pw" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Standby" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="84">
+    <Name>利血贯穿</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Far" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_06</Script>
+    <ScriptDesc />
+    <BehaviourList>
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Penetarte" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice06" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetarte" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice07" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="8" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
 
 </DiceCardXmlRoot>
