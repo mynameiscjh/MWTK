@@ -150,11 +150,15 @@
     <Compile Include="Don_Eyuil\MapManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="San_Sora\PassiveAbility.cs" />
+    <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Armour.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Blade.cs" />
+    <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Bow.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Crystal_HardBlood.cs" />
+    <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_DoubleSwords.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Feather.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Lance.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_SanHardBlood.cs" />
+    <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Scourge.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Sickle.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Sword.cs" />
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_10.cs" />
