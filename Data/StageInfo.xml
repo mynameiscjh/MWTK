@@ -33,8 +33,8 @@
   <Stage id="2">
     <Name>桑空</Name>
     <Wave>
-      <Unit>1</Unit>
-      <Formation>1</Formation>
+      <Unit>6</Unit>
+      <Formation>41</Formation>
       <FormationType>Default</FormationType>
       <AvailableUnit>5</AvailableUnit>
       <emotionCardList />
@@ -49,10 +49,10 @@
     <Condition>
       <Level>0</Level>
     </Condition>
-    <StoryType>SanSora</StoryType>
     <Story Condition="Start">Button</Story>
     <Story Condition="End" />
     <IsChapterLast>false</IsChapterLast>
+    <StoryType>SanSora</StoryType>
     <invitationtype>false</invitationtype>
   </Stage>
   <Stage id="881506">

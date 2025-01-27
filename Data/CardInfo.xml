@@ -1889,7 +1889,7 @@
     <MaxNum>150</MaxNum>
   </Card>
 
-<!-- 桑空-->
+  <!-- 桑空-->
   <Card ID="77">
     <Name>致伤</Name>
     <TextId>-1</TextId>
@@ -1958,7 +1958,7 @@
     <Script>DonEyuil_05</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetarte" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice03" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice03" ActionScript="" Desc="" />
       <Behaviour Min="4" Dice="8" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice04" ActionScript="" Desc="" />
       <Behaviour Min="4" Dice="7" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
@@ -2003,8 +2003,8 @@
     <Script>SanSora_06</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Penetarte" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice06" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetarte" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice07" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice06" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice07" ActionScript="" Desc="" />
       <Behaviour Min="6" Dice="8" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>

@@ -1,14 +1,9 @@
-﻿
-using Don_Eyuil.Don_Eyuil.Player.Buff;
-using Don_Eyuil.Don_Eyuil.Player.DiceCardAbility;
-using Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility;
-using Don_Eyuil.Don_Eyuil.Player.PassiveAbility;
+﻿using Don_Eyuil.Don_Eyuil.Player.PassiveAbility;
 using EnumExtenderV2;
 using HarmonyLib;
 using LOR_DiceSystem;
 using LOR_XML;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -821,7 +816,7 @@ namespace Don_Eyuil
                 void AddLocalize_EffectTexts()
                 {
                     Dictionary<string, BattleEffectText> dictionary = typeof(BattleEffectTextsXmlList).GetField("_dictionary", AccessTools.all).GetValue(Singleton<BattleEffectTextsXmlList>.Instance) as Dictionary<string, BattleEffectText>;
-                    FileInfo[] files = TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language +"/" + LocalizeKey + "/EffectTexts");
+                    FileInfo[] files = TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language + "/" + LocalizeKey + "/EffectTexts");
                     for (int i = 0; i < files.Length; i++)
                     {
                         using (StringReader stringReader = new StringReader(File.ReadAllText(files[i].FullName)))
@@ -951,55 +946,55 @@ namespace Don_Eyuil
             Harmony harmony = new Harmony(packageId);
             harmony.PatchAll();
             //Extra扩展Patch---------------------------------------------------------//
-                harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
-                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
-                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
-                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_StoryFerrisWheel));
-                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
-                //harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify.TransBehavior_AtkVSDfnPatch));
+            harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_StoryFerrisWheel));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
+            //harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify.TransBehavior_AtkVSDfnPatch));
             //-----------------------------------------------------------------------//
 
             //Buff基类时点Patch------------------------------------------------------//
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverHpPatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.CanForcelyAggroPatch));
-                //harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterApplyEnemyCardPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverHpPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.CanForcelyAggroPatch));
+            //harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterApplyEnemyCardPatch));
             //-----------------------------------------------------------------------//
 
             //被动基类时点Patch------------------------------------------------------//
-                harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil));
-                harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.OnStartBattleTheLastPatch));
-                harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.AfterApplyEnemyCardPatch));
+            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil));
+            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.OnStartBattleTheLastPatch));
+            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.AfterApplyEnemyCardPatch));
             //-----------------------------------------------------------------------//
 
             //硬血术选卡扩展Patch----------------------------------------------------//
-                harmony.PatchAll(typeof(HardBloodCards));
+            harmony.PatchAll(typeof(HardBloodCards));
             //-----------------------------------------------------------------------//
 
             //存存币基类扩展Patch----------------------------------------------------//
-                harmony.PatchAll(typeof(RedDiceCardAbility));
+            harmony.PatchAll(typeof(RedDiceCardAbility));
             //-----------------------------------------------------------------------//
 
             //被动效果Patch----------------------------------------------------------//
-                harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
+            harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             //-----------------------------------------------------------------------//
 
             //Buff效果Patch----------------------------------------------------------//
-                harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
-                harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
+            harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
+            harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
             //-----------------------------------------------------------------------//
 
             //骰子效果Patch----------------------------------------------------------//
-                harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
+            harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
             //-----------------------------------------------------------------------//
 
             //书页效果Patch----------------------------------------------------------//
-                harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
+            harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
             //-----------------------------------------------------------------------//
 
 
@@ -1084,6 +1079,7 @@ namespace Don_Eyuil
         public static LorId Card_血伞反击 = MyTools.Create(66);
         public static LorId Card_若能摆脱这可怖的疾病 = MyTools.Create(67);
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
+        public static LorId Book_桑空之页 = MyTools.Create(10000002);
         public static LorId Stage_埃尤尔 = MyTools.Create(1);
         public static LorId Stage_桑空 = MyTools.Create(2);
         public static LorId Stage_测试 = MyTools.Create(881506);
