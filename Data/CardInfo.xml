@@ -2010,4 +2010,124 @@
     <Chapter>7</Chapter>
   </Card>
 
+  <Card ID="85">
+    <Name>桑空派变体硬血术1式-血剑</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>Sword_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="86">
+    <Name>桑空派变体硬血术2式-血枪</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>Lance_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="87">
+    <Name>桑空派变体硬血术3式-血镰</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>Sickle_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="88">
+    <Name>桑空派变体硬血术4式-血刃</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>Blade_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="89">
+    <Name>桑空派变体硬血术5式-双剑</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>DoubleSwords_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="90">
+    <Name>桑空派变体硬血术6式-血甲</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>Armour_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="91">
+    <Name>桑空派变体硬血术7式-血弓</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>Bow_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="92">
+    <Name>桑空派变体硬血术8式-血鞭</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>Scourge_Desc</Script>
+    <ScriptDesc />
+    <BehaviourList>
+
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
 </DiceCardXmlRoot>

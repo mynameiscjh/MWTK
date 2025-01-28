@@ -10,7 +10,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
 
         public BattleUnitBuf_Blade(SpeedDiceUI dice) : base(dice)
         {
-            dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["这里要放图片哦"];
+            dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血刃骰子"];
         }
 
         public override void AfterOtherUnitTakeBleedingDamage(BattleUnitModel Unit, int Dmg)

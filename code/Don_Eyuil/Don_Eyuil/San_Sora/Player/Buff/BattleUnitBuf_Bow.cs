@@ -10,7 +10,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
 
         public BattleUnitBuf_Bow(SpeedDiceUI dice) : base(dice)
         {
-            dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["这里要放图片哦"];
+            dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血弓骰子"];
         }
         public List<BattlePlayingCardDataInUnitModel> changedCard = new List<BattlePlayingCardDataInUnitModel>();
         public override void OnStartBattle()
@@ -31,8 +31,8 @@ namespace Don_Eyuil.San_Sora.Player.Buff
             foreach (var card in changedCard)
             {
                 card.card.XmlData.Spec.Ranged = LOR_DiceSystem.CardRange.Near;
-                changedCard.Remove(card);
             }
+            changedCard.Clear();
         }
     }
 }

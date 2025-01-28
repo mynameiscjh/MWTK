@@ -52,6 +52,18 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             MyId.Card_堂埃尤尔派硬血术9式_血伞_2,
         };
 
+        public static List<LorId> HardBloodCards_San_Sora = new List<LorId>()
+        {
+            MyId.Card_Desc_桑空派变体硬血术1式_血剑,
+            MyId.Card_Desc_桑空派变体硬血术2式_血枪,
+            MyId.Card_Desc_桑空派变体硬血术3式_血镰,
+            MyId.Card_Desc_桑空派变体硬血术4式_血刃,
+            MyId.Card_Desc_桑空派变体硬血术5式_双剑,
+            MyId.Card_Desc_桑空派变体硬血术6式_血甲,
+            MyId.Card_Desc_桑空派变体硬血术7式_血弓,
+            MyId.Card_Desc_桑空派变体硬血术8式_血鞭,
+        };
+
         public static Dictionary<LorId, Type> cardToBufMap_Don_Eyuil = new Dictionary<LorId, System.Type>
                 {
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术1式_血剑_2], typeof(BattleUnitBuf_Sword) },
@@ -330,10 +342,26 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 
                             component?.SetCardsData(component?.currentunit?.GetDeckCardModelAll());
                         }
-
                     }
+
+                    ____currentCardListForFilter.Clear();
+                    foreach (var item in HardBloodCards_San_Sora)
+                    {
+                        var card = ItemXmlDataList.instance.GetCardItem(item);
+                        DiceCardItemModel itemModel = new DiceCardItemModel(card);
+                        itemModel.num = 99;
+                        ____currentCardListForFilter.Add(itemModel);
+                    }
+                    __instance.SetCardsData(__instance.GetCurrentPageList());
+                    return;
                 }
             }
+
+            foreach (var item in HardBloodCards_San_Sora)
+            {
+                ____currentCardListForFilter.RemoveAll(x => x.GetID() == item);
+            }
+            __instance.SetCardsData(__instance.GetCurrentPageList());
         }
 
         //取消硬血卡的特殊限制
@@ -356,6 +384,10 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             }
 
             if (HardBloodCards_Don_Eyuil.Contains(cardId))
+            {
+                __result = CardEquipState.Equippable;
+            }
+            if (HardBloodCards_San_Sora.Contains(cardId))
             {
                 __result = CardEquipState.Equippable;
             }
@@ -409,6 +441,11 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
         public static bool InventoryModel_RemoveCard_Pre(LorId cardId, ref bool __result)
         {
             if (HardBloodCards_Don_Eyuil.Contains(cardId))
+            {
+                __result = true;
+                return false;
+            }
+            if (HardBloodCards_San_Sora.Contains(cardId))
             {
                 __result = true;
                 return false;

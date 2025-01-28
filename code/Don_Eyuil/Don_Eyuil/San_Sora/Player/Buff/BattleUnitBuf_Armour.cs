@@ -9,7 +9,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
 
         public BattleUnitBuf_Armour(SpeedDiceUI dice) : base(dice)
         {
-            dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["这里要放图片哦"];
+            dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血甲骰子"];
         }
 
         public override void BeforeRecoverHp(int v)

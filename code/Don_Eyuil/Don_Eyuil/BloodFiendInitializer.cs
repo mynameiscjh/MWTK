@@ -1078,6 +1078,16 @@ namespace Don_Eyuil
         public static LorId Card_双剑反击闪避书页 = MyTools.Create(65);
         public static LorId Card_血伞反击 = MyTools.Create(66);
         public static LorId Card_若能摆脱这可怖的疾病 = MyTools.Create(67);
+
+        public static LorId Card_Desc_桑空派变体硬血术1式_血剑 = MyTools.Create(85);
+        public static LorId Card_Desc_桑空派变体硬血术2式_血枪 = MyTools.Create(86);
+        public static LorId Card_Desc_桑空派变体硬血术3式_血镰 = MyTools.Create(87);
+        public static LorId Card_Desc_桑空派变体硬血术4式_血刃 = MyTools.Create(88);
+        public static LorId Card_Desc_桑空派变体硬血术5式_双剑 = MyTools.Create(89);
+        public static LorId Card_Desc_桑空派变体硬血术6式_血甲 = MyTools.Create(90);
+        public static LorId Card_Desc_桑空派变体硬血术7式_血弓 = MyTools.Create(91);
+        public static LorId Card_Desc_桑空派变体硬血术8式_血鞭 = MyTools.Create(92);
+
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
         public static LorId Book_桑空之页 = MyTools.Create(10000002);
         public static LorId Stage_埃尤尔 = MyTools.Create(1);
