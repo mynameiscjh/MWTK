@@ -220,6 +220,24 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 deckTabsController.CustomTabs[1].transform.localPosition = new Vector3(312.7585f, 20.65f, 0);
                 deckTabsController.CustomTabs[2].gameObject.SetActive(false);
                 deckTabsController.CustomTabs[3].gameObject.SetActive(false);
+
+                if (__instance.currentunit.bookItem.GetCurrentDeckIndex() == 1)
+                {
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(4).gameObject.SetActive(false);
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(5).gameObject.SetActive(false);
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(6).gameObject.SetActive(false);
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(7).gameObject.SetActive(false);
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(8).gameObject.SetActive(false);
+                }
+                else
+                {
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(4).gameObject.SetActive(true);
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(5).gameObject.SetActive(true);
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(6).gameObject.SetActive(true);
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(7).gameObject.SetActive(true);
+                    __instance.transform.GetChild(1).GetChild(0).GetChild(8).gameObject.SetActive(true);
+                }
+
                 return;
             }
 
@@ -255,49 +273,67 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             {
                 return;
             }
-            if (temp.bookItem.BookId != MyId.Book_堂_埃尤尔之页)
+            if (temp.bookItem.BookId == MyId.Book_堂_埃尤尔之页)
             {
+                if (temp.bookItem.GetCurrentDeckIndex() == 1)
+                {
+                    ____currentCardListForFilter.Clear();
+                    foreach (var item in HardBloodCards_Don_Eyuil)
+                    {
+                        var card = ItemXmlDataList.instance.GetCardItem(map_Don_Eyuil[item]);
+                        DiceCardItemModel itemModel = new DiceCardItemModel(card);
+                        itemModel.num = 99;
+                        ____currentCardListForFilter.Add(itemModel);
+                        ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
+                    }
+                }
+                else
+                {
+                    ____currentCardListForFilter.RemoveAll(x => map_Don_Eyuil.Values.ToList().Exists(item => item == x.ClassInfo.id));
+                    ____currentCardListForFilter.RemoveAll(x => HardBloodCards_Don_Eyuil.Exists(item => item == x.ClassInfo.id));
+                    ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
+
+                    var list = temp.bookItem.GetCardListByIndex(1).Select(x => x.id).ToList();
+
+                    var temp_object = GameObject.Find("UI_Object/[CG]PPForForceCg/FrontCanvas/[Panel]BattlePagePanel(Clone)/PanelActiveController/[Librarian]Left_Panel/[Script]LibrarianDeckPanel/[Script]CardDeckPanel");
+
+                    foreach (var item in cardRemovaList_Don_Eyuil)
+                    {
+                        foreach (var needCard in item.Item2)
+                        {
+                            var A = map_Don_Eyuil[needCard];
+                            if (!list.Contains(A))
+                            {
+                                ____currentCardListForFilter.RemoveAll(x => x.GetID() == item.Item1);
+                                temp.bookItem.MoveCardFromCurrentDeckToInventory(item.Item1);
+                                var component = temp_object?.GetComponent<UIEquipDeckCardList>();
+
+                                component?.SetCardsData(component?.currentunit?.GetDeckCardModelAll());
+                            }
+                        }
+                    }
+                }
+                __instance.SetCardsData(__instance.GetCurrentPageList());
                 return;
             }
-            if (temp.bookItem.GetCurrentDeckIndex() == 1)
+            if (temp.bookItem.BookId == MyId.Book_桑空之页)
             {
-                ____currentCardListForFilter.Clear();
-                foreach (var item in HardBloodCards_Don_Eyuil)
+                if (temp.bookItem.GetCurrentDeckIndex() == 1)
                 {
-                    var card = ItemXmlDataList.instance.GetCardItem(map_Don_Eyuil[item]);
-                    DiceCardItemModel itemModel = new DiceCardItemModel(card);
-                    itemModel.num = 99;
-                    ____currentCardListForFilter.Add(itemModel);
-                    ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
-                }
-            }
-            else
-            {
-                ____currentCardListForFilter.RemoveAll(x => map_Don_Eyuil.Values.ToList().Exists(item => item == x.ClassInfo.id));
-                ____currentCardListForFilter.RemoveAll(x => HardBloodCards_Don_Eyuil.Exists(item => item == x.ClassInfo.id));
-                ____currentCardListForFilter.RemoveAll(x => x.GetID() == MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
-
-                var list = temp.bookItem.GetCardListByIndex(1).Select(x => x.id).ToList();
-
-                var temp_object = GameObject.Find("UI_Object/[CG]PPForForceCg/FrontCanvas/[Panel]BattlePagePanel(Clone)/PanelActiveController/[Librarian]Left_Panel/[Script]LibrarianDeckPanel/[Script]CardDeckPanel");
-
-                foreach (var item in cardRemovaList_Don_Eyuil)
-                {
-                    foreach (var needCard in item.Item2)
+                    if (temp.bookItem.GetCardListFromCurrentDeck().Count >= 4)
                     {
-                        var A = map_Don_Eyuil[needCard];
-                        if (!list.Contains(A))
+                        var temp_object = GameObject.Find("UI_Object/[CG]PPForForceCg/FrontCanvas/[Panel]BattlePagePanel(Clone)/PanelActiveController/[Librarian]Left_Panel/[Script]LibrarianDeckPanel/[Script]CardDeckPanel");
+                        for (int i = 4; i < temp.bookItem.GetCardListFromCurrentDeck().Count; i++)
                         {
-                            ____currentCardListForFilter.RemoveAll(x => x.GetID() == item.Item1);
-                            temp.bookItem.MoveCardFromCurrentDeckToInventory(item.Item1);
+                            temp.bookItem.MoveCardFromCurrentDeckToInventory(temp.bookItem.GetCardListFromCurrentDeck()[i].id);
                             var component = temp_object?.GetComponent<UIEquipDeckCardList>();
 
                             component?.SetCardsData(component?.currentunit?.GetDeckCardModelAll());
                         }
+
                     }
                 }
             }
-            __instance.SetCardsData(__instance.GetCurrentPageList());
         }
 
         //取消硬血卡的特殊限制
@@ -313,6 +349,12 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             {
                 return;
             }
+
+            if (UI.UIController.Instance.CurrentUnit.bookItem.GetCurrentDeckIndex() == 1 && UI.UIController.Instance.CurrentUnit.bookItem.BookId == MyId.Book_桑空之页 && UI.UIController.Instance.CurrentUnit.bookItem.GetCardListFromCurrentDeck().Count >= 5)
+            {
+                __result = CardEquipState.FullOfDeck;
+            }
+
             if (HardBloodCards_Don_Eyuil.Contains(cardId))
             {
                 __result = CardEquipState.Equippable;
@@ -322,6 +364,17 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 __result = CardEquipState.Equippable;
             }
         }
+
+        [HarmonyPatch(typeof(BookModel), "AddCardFromInventoryToCurrentDeck")]
+        [HarmonyPostfix]
+        public static void BookModel_AddCardFromInventoryToCurrentDeck_Pos(BookModel __instance, ref CardEquipState __result)
+        {
+            if (__instance.GetCurrentDeckIndex() == 1 && __instance.BookId == MyId.Book_桑空之页 && __instance.GetCardListFromCurrentDeck().Count >= 5)
+            {
+                __result = CardEquipState.FullOfDeck;
+            }
+        }
+
 
         //跟新
         [HarmonyPatch(typeof(UIEquipDeckCardList), "OnChangeDeckTab")]
