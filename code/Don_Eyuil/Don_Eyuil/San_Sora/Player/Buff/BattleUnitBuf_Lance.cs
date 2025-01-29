@@ -1,5 +1,4 @@
 ﻿using LOR_BattleUnit_UI;
-using UnityEngine.UI;
 
 namespace Don_Eyuil.San_Sora.Player.Buff
 {
@@ -9,11 +8,16 @@ namespace Don_Eyuil.San_Sora.Player.Buff
 
         public BattleUnitBuf_Lance(SpeedDiceUI dice) : base(dice)
         {
-            dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血枪骰子"];
+            //dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血枪骰子"];
         }
 
         public override void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
         {
+            if (_owner.currentDiceAction == null)
+            {
+                return;
+            }
+
             if (_owner.currentDiceAction == Card && _owner.currentDiceAction.speedDiceResultValue >= 6 && BufType == KeywordBuf.Bleeding)
             {
                 Stack *= 2;

@@ -158,6 +158,7 @@
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Feather.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Lance.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_SanHardBlood.cs" />
+    <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_SanSora.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Scourge.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Sickle.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Sword.cs" />

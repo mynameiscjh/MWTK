@@ -29,6 +29,7 @@ namespace Don_Eyuil.San_Sora.Player.PassiveAbility
         public override void OnWaveStart()
         {
             list = owner.Book.GetCardListByIndex(1).FindAll(x => HardBloodCards.HardBloodCards_San_Sora.Contains(x.id)).Select(x => x.id).ToList();
+            BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_SanSora>(owner, 1);
         }
 
         public override void OnRollSpeedDice()

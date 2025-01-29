@@ -8,6 +8,11 @@ namespace Don_Eyuil.San_Sora.Player.PassiveAbility
 
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
+            if (behavior.TargetDice == null)
+            {
+                return;
+            }
+
             if (behavior.card.speedDiceResultValue > behavior.TargetDice.card.speedDiceResultValue)
             {
                 BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Feather>(owner, 2);

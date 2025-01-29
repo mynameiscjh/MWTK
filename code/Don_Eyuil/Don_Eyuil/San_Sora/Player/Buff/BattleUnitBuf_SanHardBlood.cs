@@ -9,6 +9,8 @@ namespace Don_Eyuil.San_Sora.Player.Buff
         public SpeedDiceUI dice;
 
         public BattlePlayingCardDataInUnitModel Card => _owner.cardSlotDetail.cardAry[dice.view.speedDiceSetterUI.GetFieldValue<List<SpeedDiceUI>>("_speedDices").FindIndex(x => x == dice)];
+        public int Index => dice.view.speedDiceSetterUI.GetFieldValue<List<SpeedDiceUI>>("_speedDices").FindIndex(x => x == dice);
+        public override int paramInBufDesc => dice.view.speedDiceSetterUI.GetFieldValue<List<SpeedDiceUI>>("_speedDices").FindIndex(x => x == dice);
 
         public BattleUnitBuf_SanHardBlood(SpeedDiceUI dice) : base(dice.view.model)
         {
@@ -25,4 +27,5 @@ namespace Don_Eyuil.San_Sora.Player.Buff
             return BattleUnitBuf_Don_Eyuil.GetBuf<T>(model, ReadyType).dice;
         }
     }
+
 }

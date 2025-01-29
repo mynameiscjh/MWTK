@@ -72,10 +72,16 @@
       <Desc>本速度骰子中使用的书页将变为远程书页(无法对E.G.O书页与群体生效)且进攻型骰子最小值+2
 自身每幕第一张使用的书页施加的”流血”层数额外+1</Desc>
     </BattleEffectText>
+
     <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodScourge">
       <Name>桑空派变体硬血术8式-血鞭</Name>
       <Desc>本速度骰子中的书页对自身施加”流血”时将同时对两名敌方角色施加一次
 自身在一幕中若至少承受了15点”流血”伤害则在这一幕结束时恢复1点光芒</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_SanSora">
+      <Name>桑空派变体硬血术</Name>
+      <Desc>null</Desc>
     </BattleEffectText>
 
   </effectTextList>

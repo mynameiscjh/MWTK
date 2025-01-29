@@ -1,6 +1,5 @@
 ﻿using LOR_BattleUnit_UI;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
 namespace Don_Eyuil.San_Sora.Player.Buff
 {
@@ -10,7 +9,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
 
         public BattleUnitBuf_Bow(SpeedDiceUI dice) : base(dice)
         {
-            dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血弓骰子"];
+            //dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血弓骰子"];
         }
         public List<BattlePlayingCardDataInUnitModel> changedCard = new List<BattlePlayingCardDataInUnitModel>();
         public override void OnStartBattle()

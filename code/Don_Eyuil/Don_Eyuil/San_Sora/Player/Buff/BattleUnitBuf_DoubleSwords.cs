@@ -1,7 +1,6 @@
 ﻿using LOR_BattleUnit_UI;
 using LOR_DiceSystem;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
 namespace Don_Eyuil.San_Sora.Player.Buff
 {
@@ -11,7 +10,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
 
         public BattleUnitBuf_DoubleSwords(SpeedDiceUI dice) : base(dice)
         {
-            dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["双剑骰子"];
+            //dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["双剑骰子"];
         }
 
         public override void OnSuccessAttack(BattleDiceBehavior behavior)
