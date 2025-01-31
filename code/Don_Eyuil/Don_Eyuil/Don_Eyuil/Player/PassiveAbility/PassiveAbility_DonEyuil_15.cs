@@ -759,19 +759,6 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             ___txt_cost.text = "";
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
 

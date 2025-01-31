@@ -668,7 +668,17 @@ namespace Don_Eyuil
                 gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
                 gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
             }
-
+            else
+            {
+                for (int i = 0; i < ___txt_cost.transform.childCount; i++)
+                {
+                    var temp = ___txt_cost.transform.GetChild(i).gameObject;
+                    if (temp.name == "摩天轮")
+                    {
+                        UnityEngine.Object.DestroyImmediate(temp);
+                    }
+                }
+            }
         }
     }
     public class TKS_BloodFiend_Initializer : ModInitializer

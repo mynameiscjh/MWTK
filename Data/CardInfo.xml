@@ -2130,4 +2130,117 @@
     <Chapter>7</Chapter>
   </Card>
 
+  <Card ID="94">
+    <Name>桑空派变体硬血术终式-La Sangre</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Option>EgoPersonal</Option>
+    <Spec Range="Special" Cost="8" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_07</Script>
+    <ScriptDesc>自身当前每有一张已经生效的硬血术书页便使本书页费用-1 自身每消耗3层”血羽”或”结晶硬血”便使本书页获得1点冷却</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="7" Dice="12" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="SanSora_Dice08" ActionScript="" Desc="[命中时]这一幕与下两幕对目标施加4层[流血]" />
+      <Behaviour Min="7" Dice="12" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="SanSora_Dice09" ActionScript="" Desc="[命中时]这一幕使目标的[流血]无法低于与自身的速度差值" />
+      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice10" ActionScript="" Desc="[命中时]重复触发自身与目标情感等级之和次[流血]若目标因本效果死亡则对所有敌方角色施加目标此时拥有的[流血]" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="95">
+    <Name>释血化刃</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Common</Rarity>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_08</Script>
+    <ScriptDesc>[战斗开始]这一幕对自身施加3层[流血] 这一幕中若自身至少受到10点[流血]伤害则额外恢复1点光芒</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="SanSora_Dice11" ActionScript="" Desc="[命中时]若目标带有[流血]则抽取一张书页" />
+      <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="96">
+    <Name>冲锋截断</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_09</Script>
+    <ScriptDesc>[使用时]若自身速度不低于6则使本书页所有骰子威力+2</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice12" ActionScript="" Desc="[命中时]若本书页应用在[血枪]骰子上则在下一幕获得2层[迅捷]" />
+      <Behaviour Min="3" Dice="6" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="SanSora_Dice13" ActionScript="" Desc="[命中时]消耗3层[血羽]对目标下两幕对目标施加4层[流血]" />
+      <Behaviour Min="4" Dice="7" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="97">
+    <Name>硬血为铠</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_10</Script>
+    <ScriptDesc>若自身[血羽]不低于15层则自动抽取本书页 [战斗开始]消耗10层[血羽]使我方所有[拉曼查乐园的血魔]获得[摇曳] 若本书页应用在[血甲]骰子上则本效果将继承至下一幕</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="SanSora_Dice14" ActionScript="" Desc="[拼点胜利]对目标施加3层[流血]" />
+      <Behaviour Min="6" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice15" ActionScript="" Desc="[命中时]这一幕对双方施加3层[流血]" />
+      <Behaviour Min="3" Dice="7" Type="Standby" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="98">
+    <Name>利血贯穿</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Far" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_11</Script>
+    <ScriptDesc>若本书页应用在[血弓]骰子上则使本书页第二颗骰子最小值+2 [使用时]消耗至多9层[血羽]每消耗3层便使本书页所有骰子最大值+1</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice16" ActionScript="" Desc="[命中时]这一幕使目标被施加的[流血]层数+1" />
+      <Behaviour Min="2" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice17" ActionScript="" Desc="[命中时]若本骰子基础值不低于6则使本骰子重复投掷一次(至多2次)" />
+      <Behaviour Min="6" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="99">
+    <Name>血刃剔除</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+    <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_12</Script>
+    <ScriptDesc>本舞台每消耗10层血羽便使本书页费用-1(至多-2) 本书页击中目标时目标每有2层流血便使本书页造成的伤害增加10%(至多100%)</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="SanSora_Dice18" ActionScript="" Desc="若本书页应用在[血剑]骰子上则使本骰子重复投掷1次" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="SanSora_Dice19" ActionScript="" Desc="[命中时]若本书页应用在[血刃]骰子上则这一幕对目标施加3层[流血]" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="SanSora_Dice20" ActionScript="" Desc="[命中时]下两幕对目标施加3层[流血]" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="100">
+    <Name>翱翔向梦</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_13</Script>
+    <ScriptDesc>[使用时]抽取1张书页并获得5层[血羽]</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice21" ActionScript="" Desc="[命中时]这一幕自身每获得1点正面情感便时自身获得1层[血羽]" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="3" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="SanSora_Dice22" ActionScript="" Desc="[命中时]获得2层[血羽]" />
+      <Behaviour Min="2" Dice="6" Type="Standby" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
 </DiceCardXmlRoot>
