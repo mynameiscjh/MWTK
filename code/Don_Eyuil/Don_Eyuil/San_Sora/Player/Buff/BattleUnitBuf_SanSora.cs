@@ -54,6 +54,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks["桑空硬血"]);
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
         }
+
     }
 
 }

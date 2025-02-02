@@ -168,6 +168,13 @@
     <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_Bow_Desc.cs" />
     <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_DoubleSwords_Desc.cs" />
     <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_Lance_Desc.cs" />
+    <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_SanSora_07.cs" />
+    <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_SanSora_08.cs" />
+    <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_SanSora_09.cs" />
+    <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_SanSora_10.cs" />
+    <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_SanSora_11.cs" />
+    <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_SanSora_12.cs" />
+    <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_SanSora_13.cs" />
     <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_Scourge_Desc.cs" />
     <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_Sickle_Desc.cs" />
     <Compile Include="San_Sora\Player\DiceCardSelfAbility\DiceCardSelfAbility_Sword_Desc.cs" />

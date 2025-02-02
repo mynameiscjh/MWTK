@@ -14,5 +14,18 @@ namespace Don_Eyuil.San_Sora.Player.Buff
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
             this.stack = 0;
         }
+
+        public int count = 0;
+        public override void OnUseBuf(ref int stack)
+        {
+            count += stack;
+            if (_owner.personalEgoDetail.GetCardAll().Exists(x => x.GetID() == MyId.Card_桑空派变体硬血术终式_La_Sangre) && count >= 3)
+            {
+                var card = _owner.personalEgoDetail.GetCardAll().Find(x => x.GetID() == MyId.Card_桑空派变体硬血术终式_La_Sangre);
+                card?.AddCoolTime(1);
+                count = 0;
+            }
+        }
+
     }
 }

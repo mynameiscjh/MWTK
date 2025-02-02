@@ -60,12 +60,20 @@ namespace Don_Eyuil.San_Sora.Player.Buff
                 Stack += 1;
             }
         }
-
+        int count = 0;
+        public static int UsedStack = 0;
         public override void OnUseBuf(ref int stack)
         {
-            if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_Lance>(_owner) != null && _owner.currentDiceAction != null && _owner.currentDiceAction == BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_Lance>(_owner).Card && _owner.currentDiceAction.speedDiceResultValue >= 6)
+            UsedStack += stack;
+            if (GetBuf<BattleUnitBuf_Lance>(_owner) != null && _owner.currentDiceAction != null && _owner.currentDiceAction == GetBuf<BattleUnitBuf_Lance>(_owner).Card && _owner.currentDiceAction.speedDiceResultValue >= 6)
             {
-                BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Feather>(_owner, stack / 2);
+                GainBuf<BattleUnitBuf_Feather>(_owner, stack / 2);
+            }
+            if (_owner.personalEgoDetail.GetCardAll().Exists(x => x.GetID() == MyId.Card_桑空派变体硬血术终式_La_Sangre) && UsedStack - count >= 3)
+            {
+                var card = _owner.personalEgoDetail.GetCardAll().Find(x => x.GetID() == MyId.Card_桑空派变体硬血术终式_La_Sangre);
+                card?.AddCoolTime((UsedStack - count) / 3);
+                count = UsedStack;
             }
         }
 

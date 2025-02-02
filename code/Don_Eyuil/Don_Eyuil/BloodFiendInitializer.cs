@@ -1097,6 +1097,7 @@ namespace Don_Eyuil
         public static LorId Card_Desc_桑空派变体硬血术6式_血甲 = MyTools.Create(90);
         public static LorId Card_Desc_桑空派变体硬血术7式_血弓 = MyTools.Create(91);
         public static LorId Card_Desc_桑空派变体硬血术8式_血鞭 = MyTools.Create(92);
+        public static LorId Card_桑空派变体硬血术终式_La_Sangre = MyTools.Create(94);
 
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
         public static LorId Book_桑空之页 = MyTools.Create(10000002);
@@ -1107,6 +1108,14 @@ namespace Don_Eyuil
         public static ulong User_小D = 76561199079466854;
         public static ulong User_天空 = 76561198877012566;
         public static ulong User_139 = 76561198995229429;
+
+
+        public static List<LorId> Books_拉曼查乐园的血魔 = new List<LorId>()
+        {
+            Book_堂_埃尤尔之页,
+            Book_桑空之页
+        };
+
     }
 
 }
