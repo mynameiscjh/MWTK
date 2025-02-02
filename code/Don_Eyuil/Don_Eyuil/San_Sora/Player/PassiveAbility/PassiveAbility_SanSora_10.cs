@@ -5,6 +5,10 @@ using LOR_BattleUnit_UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
+using UI;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Don_Eyuil.San_Sora.Player.PassiveAbility
 {
@@ -73,5 +77,18 @@ namespace Don_Eyuil.San_Sora.Player.PassiveAbility
                 }
             }
         }
+
+        [HarmonyPatch(typeof(UILibrarianEquipInfoSlot), "SetData")]
+        [HarmonyPostfix]
+        public static void UILibrarianEquipInfoSlot_SetData_Post(BookPassiveInfo passive, Image ___Frame, TextMeshProUGUI ___txt_cost)
+        {
+            if (passive == null || passive.passive.id != MyTools.Create(27))
+            {
+                return;
+            }
+            ___Frame.color = Color.red;
+            ___txt_cost.text = "";
+        }
+
     }
 }

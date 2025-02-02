@@ -1,4 +1,5 @@
 ﻿using Don_Eyuil.Don_Eyuil.Player.PassiveAbility;
+using Don_Eyuil.San_Sora.Player.PassiveAbility;
 using EnumExtenderV2;
 using HarmonyLib;
 using LOR_DiceSystem;
@@ -668,17 +669,6 @@ namespace Don_Eyuil
                 gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
                 gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
             }
-            else
-            {
-                for (int i = 0; i < ___txt_cost.transform.childCount; i++)
-                {
-                    var temp = ___txt_cost.transform.GetChild(i).gameObject;
-                    if (temp.name == "摩天轮")
-                    {
-                        UnityEngine.Object.DestroyImmediate(temp);
-                    }
-                }
-            }
         }
     }
     public class TKS_BloodFiend_Initializer : ModInitializer
@@ -992,6 +982,7 @@ namespace Don_Eyuil
 
             //被动效果Patch----------------------------------------------------------//
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
+            harmony.PatchAll(typeof(PassiveAbility_SanSora_10));
             //-----------------------------------------------------------------------//
 
             //Buff效果Patch----------------------------------------------------------//
