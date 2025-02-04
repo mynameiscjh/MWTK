@@ -73,7 +73,7 @@
   <Book ID="10000002">
     <Name>桑空之页</Name>
     <TextId>-1</TextId>
-    <BookIcon />
+    <BookIcon>SanSora</BookIcon>
     <EquipEffect>
       <HpReduction>0</HpReduction>
       <HP>97</HP>
@@ -95,6 +95,12 @@
       <Passive>28</Passive>
       <Passive>29</Passive>
       <Passive Pid="@origin">10008</Passive>
+      <OnlyCard>95</OnlyCard>
+      <OnlyCard>96</OnlyCard>
+      <OnlyCard>97</OnlyCard>
+      <OnlyCard>98</OnlyCard>
+      <OnlyCard>99</OnlyCard>
+      <OnlyCard>100</OnlyCard>
     </EquipEffect>
     <Option>MultiDeck</Option>
     <Rarity>Unique</Rarity>

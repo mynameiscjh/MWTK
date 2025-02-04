@@ -262,7 +262,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
         [HarmonyPostfix]
         public static void BookModel_GetOnlyCards_Post(ref List<DiceCardXmlInfo> __result, BookModel __instance)
         {
-            if (__instance.BookId != MyId.Book_堂_埃尤尔之页)
+            if (__instance.BookId.packageId != TKS_BloodFiend_Initializer.packageId)
             {
                 return;
             }
@@ -272,7 +272,10 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 var card = ItemXmlDataList.instance.GetCardItem(MyTools.Create(item));
                 __result.Add(card);
             }
-            __result.AddRange(map_Don_Eyuil.Values.ToList().Select(x => ItemXmlDataList.instance.GetCardItem(x)));
+            if (__instance.BookId == MyId.Book_堂_埃尤尔之页)
+            {
+                __result.AddRange(map_Don_Eyuil.Values.ToList().Select(x => ItemXmlDataList.instance.GetCardItem(x)));
+            }
         }
 
         //实现了硬血卡组只能配硬血卡 特殊卡只能配特殊硬血卡组后才能配(我你该死啊)
@@ -352,6 +355,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                         itemModel.num = 99;
                         ____currentCardListForFilter.Add(itemModel);
                     }
+
                     __instance.SetCardsData(__instance.GetCurrentPageList());
                     return;
                 }
@@ -471,7 +475,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 {
                     gameObject.GetComponentsInChildren<Image>().ToList<Image>().ForEach(delegate (Image x)
                     {
-                        Debug.Log("Image.name:" + ((x != null) ? x.name : null));
+                        Debug.Log("Image.name:" + (x?.name));
                     });
                     Image image = gameObject.GetComponentsInChildren<Image>().FirstOrDefault((Image x) => x.name.Contains("[Image]BgFrame"));
                     bool flag2 = image != null;

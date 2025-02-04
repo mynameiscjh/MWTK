@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\passiveability\\passiveability_sansora_10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\passiveability\\passiveability_sansora_10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice22.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice22.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice21.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice21.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice21.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,15 +31,15 @@
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardselfability\\dicecardselfability_sansora_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice20.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice20.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice20.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice19.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice19.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice19.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice18.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice18.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice18.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -35,39 +47,39 @@
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\buff\\battleunitbuf_sansora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice09.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice09.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice09.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -75,11 +87,11 @@
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\buff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice08.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice08.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardability\\dicecardability_sansora_dice08.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\san_sora\\player\\dicecardselfability\\dicecardselfability_sansora_11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardselfability\\dicecardselfability_sansora_11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardselfability\\dicecardselfability_sansora_11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -105,18 +117,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardselfability\\dicecardselfability_sansora_12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardselfability\\dicecardselfability_sansora_12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\passiveability\\passiveability_sansora_10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\passiveability\\passiveability_sansora_10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\buff\\battleunitbuf_lance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -633,7 +633,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -645,294 +645,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "DiceCardAbility_SanSora_Dice22.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice22.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice22.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice22.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice22.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABLAAAAAAAAAA==",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice22.cs",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice22.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T17:28:12.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DiceCardAbility_SanSora_Dice21.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs*",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAABIAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:19:36.814Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DiceCardAbility_SanSora_Dice20.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:14:16.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DiceCardAbility_SanSora_Dice19.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:09:14.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DiceCardAbility_SanSora_Dice18.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs*",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAmwBQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T16:59:23.784Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DiceCardSelfAbility_SanSora_13.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs*",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAuwCEAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T16:29:37.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BattleUnitBuf_Feather.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T05:08:03.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DiceCardAbility_SanSora_Dice17.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T16:52:44.904Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DiceCardAbility_SanSora_Dice16.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T16:29:55.016Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DiceCardAbility_SanSora_Dice15.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T16:17:38.44Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DiceCardAbility_SanSora_Dice14.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T16:15:06.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BattleUnitBuf_SanSora.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-29T02:15:00.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DiceCardAbility_SanSora_Dice13.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T16:10:13.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DiceCardAbility_SanSora_Dice12.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T16:04:54.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DiceCardAbility_SanSora_Dice11.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T15:57:17.614Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DiceCardAbility_SanSora_Dice10.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs*",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAmwBsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T15:49:15.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DiceCardAbility_SanSora_Dice09.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAmwBQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T15:24:14.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "DiceCardAbility_SanSora_Dice08.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs*",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T15:19:38.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "DiceCardSelfAbility_SanSora_11.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAsAAACpAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T15:41:16.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 101,
-              "Title": "Roll.cs",
-              "DocumentMoniker": "D:\\unity\\UiTest\\Assets\\Roll.cs",
-              "ToolTip": "D:\\unity\\UiTest\\Assets\\Roll.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T19:37:59.246Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 122,
-              "Title": "DiceCardSelfAbility_DonEyuil_32.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T17:29:06.243Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 102,
-              "Title": "PassiveAbility_Mimicry_02.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T18:01:09.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Buff.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Buff.cs",
-              "ViewState": "AgIAAHQCAAAAAAAAAAAuwH4CAABoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T14:41:45.615Z",
               "EditorCaption": ""
             },
             {
@@ -958,6 +679,77 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-17T17:42:52.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PassiveAbility_SanSora_10.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAmwCQAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T04:34:54.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PassiveAbility_DonEyuil_15.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
+              "ViewState": "AgIAAGMBAAAAAAAAAAAmwG8BAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T14:31:46.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BloodFiendInitializer.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\BloodFiendInitializer.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
+              "RelativeToolTip": "Don_Eyuil\\BloodFiendInitializer.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAuwH4AAAB+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T07:03:34.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "PassiveAbility_Mimicry_02.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T18:01:09.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 122,
+              "Title": "DiceCardSelfAbility_DonEyuil_32.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T17:29:06.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "Roll.cs",
+              "DocumentMoniker": "D:\\unity\\UiTest\\Assets\\Roll.cs",
+              "ToolTip": "D:\\unity\\UiTest\\Assets\\Roll.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T19:37:59.246Z"
             },
             {
               "$type": "Document",
@@ -1558,7 +1350,235 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DiceCardAbility_SanSora_Dice21.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs*",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABIAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T17:19:36.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DiceCardAbility_SanSora_Dice20.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T17:14:16.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DiceCardAbility_SanSora_Dice19.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T17:09:14.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DiceCardAbility_SanSora_Dice18.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs*",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwBQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T16:59:23.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DiceCardSelfAbility_SanSora_13.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAuwCEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T16:29:37.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BattleUnitBuf_Feather.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-26T05:08:03.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DiceCardAbility_SanSora_Dice17.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T16:52:44.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DiceCardAbility_SanSora_Dice16.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T16:29:55.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DiceCardAbility_SanSora_Dice15.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T16:17:38.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DiceCardAbility_SanSora_Dice14.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T16:15:06.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BattleUnitBuf_SanSora.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T02:15:00.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DiceCardAbility_SanSora_Dice13.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T16:10:13.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DiceCardAbility_SanSora_Dice12.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T16:04:54.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DiceCardAbility_SanSora_Dice11.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T15:57:17.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DiceCardAbility_SanSora_Dice10.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAmwBsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T15:49:15.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DiceCardAbility_SanSora_Dice09.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAmwBQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T15:24:14.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DiceCardAbility_SanSora_Dice08.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs*",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T15:19:38.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DiceCardSelfAbility_SanSora_11.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
+              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAsAAACpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T15:41:16.451Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 20,
+              "Title": "Buff.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Buff.cs",
+              "ViewState": "AgIAAHQCAAAAAAAAAAAuwH4CAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T14:41:45.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "DiceCardSelfAbility_SanSora_10.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_10.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_10.cs",
@@ -1570,7 +1590,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "DiceCardSelfAbility_SanSora_09.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_09.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_09.cs",
@@ -1582,7 +1602,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "DiceCardSelfAbility_SanSora_08.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_08.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_08.cs",
@@ -1594,7 +1614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "DiceCardSelfAbility_SanSora_07.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_07.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_07.cs",
@@ -1606,7 +1626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "DiceCardSelfAbility_Lance_Desc.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Lance_Desc.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Lance_Desc.cs",
@@ -1618,7 +1638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "DiceCardSelfAbility_SanSora_12.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_12.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_12.cs",
@@ -1627,18 +1647,6 @@
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAD2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-02T16:15:41.613Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "BloodFiendInitializer.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\BloodFiendInitializer.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
-              "RelativeToolTip": "Don_Eyuil\\BloodFiendInitializer.cs",
-              "ViewState": "AgIAAFUDAAAAAAAAAAAmwGcDAAB/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T07:03:34.058Z"
             },
             {
               "$type": "Document",
@@ -1651,30 +1659,6 @@
               "ViewState": "AgIAAAoAAAAAAAAAAAAAABQAAACJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-26T16:31:42.239Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "PassiveAbility_DonEyuil_15.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
-              "ViewState": "AgIAAOoCAAAAAAAAAAAuwO0CAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T14:31:46.667Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "PassiveAbility_SanSora_10.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
-              "RelativeToolTip": "Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAmwA4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T04:34:54.139Z"
             },
             {
               "$type": "Document",

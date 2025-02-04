@@ -34,6 +34,7 @@ namespace Don_Eyuil.San_Sora.Player.PassiveAbility
         {
             list = owner.Book.GetCardListByIndex(1).FindAll(x => HardBloodCards.HardBloodCards_San_Sora.Contains(x.id)).Select(x => x.id).ToList();
             BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_SanSora>(owner, 1);
+            owner.personalEgoDetail.AddCard(MyId.Card_桑空派变体硬血术终式_La_Sangre);
         }
 
         public override void OnRollSpeedDice()

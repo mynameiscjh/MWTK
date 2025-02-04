@@ -2167,6 +2167,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Rare</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
     <Script>SanSora_09</Script>
     <ScriptDesc>[使用时]若自身速度不低于6则使本书页所有骰子威力+2</ScriptDesc>
@@ -2183,6 +2184,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
     <Script>SanSora_10</Script>
     <ScriptDesc>若自身[血羽]不低于15层则自动抽取本书页 [战斗开始]消耗10层[血羽]使我方所有[拉曼查乐园的血魔]获得[摇曳] 若本书页应用在[血甲]骰子上则本效果将继承至下一幕</ScriptDesc>
@@ -2199,6 +2201,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Rare</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Far" Cost="3" Affection="One" EmotionLimit="0" />
     <Script>SanSora_11</Script>
     <ScriptDesc>若本书页应用在[血弓]骰子上则使本书页第二颗骰子最小值+2 [使用时]消耗至多9层[血羽]每消耗3层便使本书页所有骰子最大值+1</ScriptDesc>
@@ -2215,6 +2218,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
     <Script>SanSora_12</Script>
     <ScriptDesc>本舞台每消耗10层血羽便使本书页费用-1(至多-2) 本书页击中目标时目标每有2层流血便使本书页造成的伤害增加10%(至多100%)</ScriptDesc>
@@ -2231,6 +2235,7 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Uncommon</Rarity>
+    <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
     <Script>SanSora_13</Script>
     <ScriptDesc>[使用时]抽取1张书页并获得5层[血羽]</ScriptDesc>
