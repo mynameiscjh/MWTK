@@ -2,6 +2,7 @@
 using Don_Eyuil.San_Sora.Player.PassiveAbility;
 using EnumExtenderV2;
 using HarmonyLib;
+using JetBrains.Annotations;
 using LOR_DiceSystem;
 using LOR_XML;
 using System;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Xml;
+using System.Xml.Linq;
 //using Workshop;
 using System.Xml.Serialization;
 using TMPro;
@@ -656,18 +658,45 @@ namespace Don_Eyuil
     [HarmonyPatch]
     public class TKS_BloodFiend_PatchMethods_PassiveUI
     {
+
         [HarmonyPatch(typeof(UILibrarianEquipInfoSlot), "SetData")]
         [HarmonyPostfix]
         public static void UILibrarianEquipInfoSlot_SetData_Post(BookPassiveInfo passive, Image ___Frame, TextMeshProUGUI ___txt_cost)
         {
-            if (passive != null && passive.passive.id == MyTools.Create(1))
+            void CreateFerrisWheelIcon(int id )
             {
-                ___txt_cost.text = "";
-                GameObject gameObject = new GameObject("摩天轮");
-                gameObject.transform.parent = ___txt_cost.transform;
-                gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-                gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-                gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
+                void InitializeFerrisWheelIcon()
+                {
+                    ___txt_cost.text = "";
+                    GameObject gameObject = new GameObject($"TKS_FerrisWheelCostIcon");
+                    gameObject.transform.parent = ___txt_cost.transform;
+                    gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+                    gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                    gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks[$"FWC_{id}"];
+                }
+                foreach (Transform ChildObject in ___txt_cost.transform)
+                {
+                    if(ChildObject.name == "TKS_FerrisWheelCostIcon")
+                    {
+                        Debug.LogError("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                        ChildObject.gameObject.SetActive(false);
+                        GameObject.Destroy(ChildObject.gameObject);
+                    }
+                }
+                if(passive.passive.id.packageId == TKS_BloodFiend_Initializer.packageId)
+                {
+                    switch (passive.passive.id.id)
+                    {
+                        case 1:
+                        case 18:
+                            InitializeFerrisWheelIcon();
+                            return;
+                    }
+                }
+            }
+            if(passive != null)
+            {
+                CreateFerrisWheelIcon(passive.passive.id.id);
             }
         }
     }
@@ -778,6 +807,43 @@ namespace Don_Eyuil
                 public static ActionDetail TKS_BL_S64 { get; internal set; }
                 public static ActionDetail TKS_BL_S65 { get; internal set; }
                 public static ActionDetail TKS_BL_S66 { get; internal set; }
+                public static ActionDetail TKS_BL_S67 { get; internal set; }
+                public static ActionDetail TKS_BL_S68 { get; internal set; }
+                public static ActionDetail TKS_BL_S69 { get; internal set; }
+                public static ActionDetail TKS_BL_S70 { get; internal set; }
+                public static ActionDetail TKS_BL_S71 { get; internal set; }
+                public static ActionDetail TKS_BL_S72 { get; internal set; }
+                public static ActionDetail TKS_BL_S73 { get; internal set; }
+                public static ActionDetail TKS_BL_S74 { get; internal set; }
+                public static ActionDetail TKS_BL_S75 { get; internal set; }
+                public static ActionDetail TKS_BL_S76 { get; internal set; }
+                public static ActionDetail TKS_BL_S77 { get; internal set; }
+                public static ActionDetail TKS_BL_S78 { get; internal set; }
+                public static ActionDetail TKS_BL_S79 { get; internal set; }
+                public static ActionDetail TKS_BL_S80 { get; internal set; }
+                public static ActionDetail TKS_BL_S81 { get; internal set; }
+                public static ActionDetail TKS_BL_S82 { get; internal set; }
+                public static ActionDetail TKS_BL_S83 { get; internal set; }
+                public static ActionDetail TKS_BL_S84 { get; internal set; }
+                public static ActionDetail TKS_BL_S85 { get; internal set; }
+                public static ActionDetail TKS_BL_S86 { get; internal set; }
+                public static ActionDetail TKS_BL_S87 { get; internal set; }
+                public static ActionDetail TKS_BL_S88 { get; internal set; }
+                public static ActionDetail TKS_BL_S89 { get; internal set; }
+                public static ActionDetail TKS_BL_S90 { get; internal set; }
+                public static ActionDetail TKS_BL_S91 { get; internal set; }
+                public static ActionDetail TKS_BL_S92 { get; internal set; }
+                public static ActionDetail TKS_BL_S93 { get; internal set; }
+                public static ActionDetail TKS_BL_S94 { get; internal set; }
+                public static ActionDetail TKS_BL_S95 { get; internal set; }
+                public static ActionDetail TKS_BL_S96 { get; internal set; }
+                public static ActionDetail TKS_BL_S97 { get; internal set; }
+                public static ActionDetail TKS_BL_S98 { get; internal set; }
+                public static ActionDetail TKS_BL_S99 { get; internal set; }
+                public static ActionDetail TKS_BL_S100 { get; internal set; }
+                public static ActionDetail TKS_BL_S101 { get; internal set; }
+                public static ActionDetail TKS_BL_S102 { get; internal set; }
+                public static ActionDetail TKS_BL_S103 { get; internal set; }
             }
             public class DiceFlagExtension : TKS_EnumExtender<DiceFlag>
             {
@@ -937,6 +1003,7 @@ namespace Don_Eyuil
             LoadCustomSkin(Path.Combine(DllPath, "..", "Resource\\CharacterSkin"));
             LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
             LoadLocalize("Don_Eyuil");
+            LoadLocalize("San_Sora");
         }
 
         public override void OnInitializeMod()
