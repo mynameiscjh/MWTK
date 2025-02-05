@@ -1,6 +1,8 @@
 ﻿using CustomMapUtility;
 using HarmonyLib;
+using JetBrains.Annotations;
 using LOR_DiceSystem;
+using Steamworks.Ugc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -410,21 +412,37 @@ namespace Don_Eyuil
         {
 
         }
+        public virtual void BeforeAddKeywordBuf(BattleUnitModel Adder,KeywordBuf BufType, ref int Stack)
+        {
+
+        }
         public virtual void BeforeOtherUnitAddKeywordBuf(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
+        {
+
+        }
+        public virtual void BeforeOtherUnitAddKeywordBuf(BattleUnitModel Adder, KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
         {
 
         }
         public class BeforeAddKeywordBufPatch
         {
-            public static void Trigger_AddKeywordBuf_Before(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
+            public static void Trigger_AddKeywordBuf_Before(KeywordBuf BufType, BattleUnitModel Target, ref int Stack,BattleUnitModel Adder)
             {
                 if (Stack > 0)
                 {
+                    try
+                    {
+                        Adder = Adder != null ? Adder :Adder.faction == Faction.Player?
+                            BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Mapping_Books_命名空间与核心书页映射(new System.Diagnostics.StackFrame(1).GetMethod()?.DeclaringType.Namespace).Item1) :
+                            BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Mapping_Books_命名空间与核心书页映射(new System.Diagnostics.StackFrame(1).GetMethod()?.DeclaringType.Namespace).Item2);
+                    }
+                    catch (Exception _) { }
                     foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
                     {
                         if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
                         {
                             (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(BufType, ref Stack);//Target = owner所以没有一参传入
+                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(Adder, BufType, ref Stack);
                         }
                     }
                     List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
@@ -436,6 +454,7 @@ namespace Don_Eyuil
                             if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
                             {
                                 (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(BufType, Target, ref Stack);
+                                (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(Adder,BufType, Target, ref Stack);
                             }
                         }
                     }                    // Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
@@ -460,6 +479,7 @@ namespace Don_Eyuil
                         new CodeInstruction(OpCodes.Ldarg_0),
                         new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
                         new CodeInstruction(OpCodes.Ldarga,2),
+                        new CodeInstruction(OpCodes.Ldarg_3),
                         new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddKeywordBufPatch),"Trigger_AddKeywordBuf_Before")),
                         new CodeInstruction(OpCodes.Ldarg_2),
                         new CodeInstruction(OpCodes.Ldc_I4_0),

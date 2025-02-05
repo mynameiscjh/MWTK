@@ -1173,6 +1173,18 @@ namespace Don_Eyuil
             Book_堂_埃尤尔之页,
             Book_桑空之页
         };
+       
+        /// <summary>
+        /// 通过给定的命名空间返回与之对应的核心书页ID
+        /// </summary>
+        /// <param name="NameSpace">给定的命名空间</param>
+        /// <returns>返回参数的存储形式为(玩家核心ID,来宾核心ID)</returns>
+        public static (LorId, LorId) Mapping_Books_命名空间与核心书页映射(string NameSpace)
+        {
+            return NameSpace.Contains("San_Sora") ? (MyTools.Create(10000002), MyTools.Create(8)) :
+                NameSpace.Contains("Don_Eyuil") ? (MyTools.Create(10000001), MyTools.Create(1)) :
+                (null,null);
+        }
 
     }
 
