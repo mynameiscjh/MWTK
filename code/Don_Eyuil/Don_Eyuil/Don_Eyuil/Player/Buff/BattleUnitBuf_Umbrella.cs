@@ -1,8 +1,8 @@
-﻿using Don_Eyuil.Buff;
+﻿
 using System.Collections.Generic;
 using DiceCardXmlInfo = LOR_DiceSystem.DiceCardXmlInfo;
 
-namespace Don_Eyuil.Don_Eyuil.Buff
+namespace Don_Eyuil.Don_Eyuil.Player.Buff
 {
     public class BattleUnitBuf_Umbrella : BattleUnitBuf_Don_Eyuil
     {

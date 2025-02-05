@@ -1,4 +1,5 @@
-﻿using Don_Eyuil.Don_Eyuil.DiceCardSelfAbility;
+﻿
+using Don_Eyuil.Don_Eyuil.Player.DiceCardSelfAbility;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;

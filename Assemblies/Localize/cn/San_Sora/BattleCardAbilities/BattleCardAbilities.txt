@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BattleCardAbility ID="SanSora_01">
+    <Desc>自身每有10层[血羽]便使本书页所有骰子造成的伤害增加20%</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_02">
+    <Desc>[使用时]若目标未拥有[流血]则使本书页所有骰子威力+3</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_03">
+    <Desc>[拼点开始]自身与目标每有2层[流血]便使本书页所有骰子威力+1(至多+4)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_04">
+    <Desc>[战斗开始]这一幕对自身施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_05">
+    <Desc>[使用时]自身每有10层[血羽]便使本书页所有骰子威力+1
+本书页击中目标使将获得10点护盾
+[使用后]结束本幕并使自身在下一幕获得[摇曳]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_06">
+    <Desc>[使用时]消耗至多15层[血羽]每消耗3层便使本书页所有骰子最大值+1</Desc>
+  </BattleCardAbility>
+
+
+  <BattleCardAbility ID="SanSora_Dice01">
+    <Desc>[命中时]消耗至多15层[血羽]每消耗5层便使本骰子重复投掷1次并施加2层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice02">
+    <Desc>[命中时]获得4层[血羽]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice03">
+    <Desc>[命中时]若目标拥有至少3层[流血]则使自身在下一幕得2层[迅捷]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice04">
+    <Desc>[命中时]消耗3层[血羽]对目标下两幕对目标施加4层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice05">
+    <Desc>[命中时]施加2层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice06">
+    <Desc>[命中时]这一幕使目标被施加的[流血]层数+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice07">
+    <Desc>[命中时]若本骰子基础值不低于6则使本骰子重复投掷一次(至多2次)</Desc>
+  </BattleCardAbility>
+</BattleCardAbilityDescRoot>

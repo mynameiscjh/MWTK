@@ -70,4 +70,95 @@
     <SoundInfo Motion="J" WinExternal="false" Win="" LoseExternal="false" Lose="" />
     <SoundInfo Motion="Z" WinExternal="false" Win="" LoseExternal="false" Lose="" />
   </Book>
+
+  <Book ID="10000002">
+    <Name>桑空之页</Name>
+    <TextId>-1</TextId>
+    <BookIcon>SanSora</BookIcon>
+    <EquipEffect>
+      <HpReduction>0</HpReduction>
+      <HP>97</HP>
+      <DeadLine>0</DeadLine>
+      <Break>64</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SpeedDiceNum>0</SpeedDiceNum>
+      <SResist>Endure</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Endure</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+      <MaxPlayPoint>4</MaxPlayPoint>
+      <StartPlayPoint>4</StartPlayPoint>
+      <AddedStartDraw>0</AddedStartDraw>
+      <Passive>27</Passive>
+      <Passive>28</Passive>
+      <Passive>29</Passive>
+      <Passive Pid="@origin">10008</Passive>
+      <OnlyCard>95</OnlyCard>
+      <OnlyCard>96</OnlyCard>
+      <OnlyCard>97</OnlyCard>
+      <OnlyCard>98</OnlyCard>
+      <OnlyCard>99</OnlyCard>
+      <OnlyCard>100</OnlyCard>
+    </EquipEffect>
+    <Option>MultiDeck</Option>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>桑空-占位符</CharacterSkin>
+    <CharacterSkinType>Custom</CharacterSkinType>
+    <SkinGender>N</SkinGender>
+    <Chapter>7</Chapter>
+    <Episode>-1</Episode>
+    <RangeType>Melee</RangeType>
+    <NotEquip>false</NotEquip>
+    <RandomFace>false</RandomFace>
+    <SpeedDiceNum>1</SpeedDiceNum>
+    <SuccessionPossibleNumber>9</SuccessionPossibleNumber>
+  </Book>
+
+  <Book ID="10000003">
+    <Name>耀之页</Name>
+    <TextId>-1</TextId>
+    <BookIcon></BookIcon>
+    <EquipEffect>
+      <HpReduction>0</HpReduction>
+      <HP>102</HP>
+      <DeadLine>0</DeadLine>
+      <Break>58</Break>
+      <SpeedMin>4</SpeedMin>
+      <Speed>6</Speed>
+      <SpeedDiceNum>0</SpeedDiceNum>
+      <SResist>Endure</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Endure</PBResist>
+      <HBResist>Normal</HBResist>
+      <MaxPlayPoint>4</MaxPlayPoint>
+      <StartPlayPoint>4</StartPlayPoint>
+      <AddedStartDraw>0</AddedStartDraw>
+      <Passive>43</Passive>
+      <Passive>44</Passive>
+      <Passive>45</Passive>
+      <Passive>46</Passive>
+      <Passive Pid="@origin">10008</Passive>
+    </EquipEffect>
+    <Option>MultiDeck</Option>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>白月翟-占位符</CharacterSkin>
+    <CharacterSkinType>Custom</CharacterSkinType>
+    <SkinGender>N</SkinGender>
+    <Chapter>7</Chapter>
+    <Episode>-1</Episode>
+    <RangeType>Melee</RangeType>
+    <NotEquip>false</NotEquip>
+    <RandomFace>false</RandomFace>
+    <SpeedDiceNum>1</SpeedDiceNum>
+    <SuccessionPossibleNumber>9</SuccessionPossibleNumber>
+    <SoundInfo Motion="H" WinExternal="false" Win="" LoseExternal="false" Lose="" />
+    <SoundInfo Motion="F" WinExternal="false" Win="" LoseExternal="false" Lose="" />
+    <SoundInfo Motion="J" WinExternal="false" Win="" LoseExternal="false" Lose="" />
+    <SoundInfo Motion="Z" WinExternal="false" Win="" LoseExternal="false" Lose="" />
+  </Book>
 </BookXmlRoot>

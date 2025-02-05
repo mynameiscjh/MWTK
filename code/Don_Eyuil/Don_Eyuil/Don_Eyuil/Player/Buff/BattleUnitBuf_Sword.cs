@@ -1,4 +1,4 @@
-﻿namespace Don_Eyuil.Buff
+﻿namespace Don_Eyuil.Don_Eyuil.Player.Buff
 {
     public class BattleUnitBuf_Sword : BattleUnitBuf_Don_Eyuil
     {

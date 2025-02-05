@@ -1,6 +1,8 @@
-﻿using Don_Eyuil.PassiveAbility;
+﻿using Don_Eyuil.Don_Eyuil.Player.PassiveAbility;
+using Don_Eyuil.San_Sora.Player.PassiveAbility;
 using EnumExtenderV2;
 using HarmonyLib;
+using JetBrains.Annotations;
 using LOR_DiceSystem;
 using LOR_XML;
 using System;
@@ -10,6 +12,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Xml;
+using System.Xml.Linq;
 //using Workshop;
 using System.Xml.Serialization;
 using TMPro;
@@ -121,7 +124,14 @@ namespace Don_Eyuil
                 color = new Color(1, 1, 1, 1),
                 type = ""
             });
-
+            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("SanSora", new UIIconManager.IconSet
+            {
+                icon = TKS_BloodFiend_Initializer.ArtWorks["tk"],
+                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["tk"],
+                colorGlow = new Color(1, 1, 1, 1),
+                color = new Color(1, 1, 1, 1),
+                type = ""
+            });
             void Func(int r, LorId id)
             {
                 UIStoryProgressIconSlot testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
@@ -131,14 +141,14 @@ namespace Don_Eyuil
                 testS.transform.localPosition = new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2;
                 testS.SetSlotData(new List<StageClassInfo>()
                 {
-                    Singleton<StageClassInfoList>.Instance.GetData(MyId.Stage_测试)
+                    Singleton<StageClassInfoList>.Instance.GetData(id)
                 });
 
                 testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, r * 5);
                 testS.gameObject.SetActive(true);
             }
 
-            Func(0, MyId.Stage_测试);
+            Func(0, MyId.Stage_桑空);
             Func(45, MyId.Stage_测试);
             Func(90, MyId.Stage_测试);
             Func(135, MyId.Stage_测试);
@@ -648,20 +658,46 @@ namespace Don_Eyuil
     [HarmonyPatch]
     public class TKS_BloodFiend_PatchMethods_PassiveUI
     {
+
         [HarmonyPatch(typeof(UILibrarianEquipInfoSlot), "SetData")]
         [HarmonyPostfix]
         public static void UILibrarianEquipInfoSlot_SetData_Post(BookPassiveInfo passive, Image ___Frame, TextMeshProUGUI ___txt_cost)
         {
-            if (passive != null && passive.passive.id == MyTools.Create(1))
+            void CreateFerrisWheelIcon(int id )
             {
-                ___txt_cost.text = "";
-                GameObject gameObject = new GameObject("摩天轮");
-                gameObject.transform.parent = ___txt_cost.transform;
-                gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
-                gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-                gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["摩天轮"];
+                void InitializeFerrisWheelIcon()
+                {
+                    ___txt_cost.text = "";
+                    GameObject gameObject = new GameObject($"TKS_FerrisWheelCostIcon");
+                    gameObject.transform.parent = ___txt_cost.transform;
+                    gameObject.transform.localPosition = new Vector3(0f, 0f, 0f);
+                    gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                    gameObject.AddComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks[$"FWC_{id}"];
+                }
+                foreach (Transform ChildObject in ___txt_cost.transform)
+                {
+                    if(ChildObject.name == "TKS_FerrisWheelCostIcon")
+                    {
+                        Debug.LogError("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                        ChildObject.gameObject.SetActive(false);
+                        GameObject.Destroy(ChildObject.gameObject);
+                    }
+                }
+                if(passive.passive.id.packageId == TKS_BloodFiend_Initializer.packageId)
+                {
+                    switch (passive.passive.id.id)
+                    {
+                        case 1:
+                        case 18:
+                            InitializeFerrisWheelIcon();
+                            return;
+                    }
+                }
             }
-
+            if(passive != null)
+            {
+                CreateFerrisWheelIcon(passive.passive.id.id);
+            }
         }
     }
     public class TKS_BloodFiend_Initializer : ModInitializer
@@ -771,6 +807,43 @@ namespace Don_Eyuil
                 public static ActionDetail TKS_BL_S64 { get; internal set; }
                 public static ActionDetail TKS_BL_S65 { get; internal set; }
                 public static ActionDetail TKS_BL_S66 { get; internal set; }
+                public static ActionDetail TKS_BL_S67 { get; internal set; }
+                public static ActionDetail TKS_BL_S68 { get; internal set; }
+                public static ActionDetail TKS_BL_S69 { get; internal set; }
+                public static ActionDetail TKS_BL_S70 { get; internal set; }
+                public static ActionDetail TKS_BL_S71 { get; internal set; }
+                public static ActionDetail TKS_BL_S72 { get; internal set; }
+                public static ActionDetail TKS_BL_S73 { get; internal set; }
+                public static ActionDetail TKS_BL_S74 { get; internal set; }
+                public static ActionDetail TKS_BL_S75 { get; internal set; }
+                public static ActionDetail TKS_BL_S76 { get; internal set; }
+                public static ActionDetail TKS_BL_S77 { get; internal set; }
+                public static ActionDetail TKS_BL_S78 { get; internal set; }
+                public static ActionDetail TKS_BL_S79 { get; internal set; }
+                public static ActionDetail TKS_BL_S80 { get; internal set; }
+                public static ActionDetail TKS_BL_S81 { get; internal set; }
+                public static ActionDetail TKS_BL_S82 { get; internal set; }
+                public static ActionDetail TKS_BL_S83 { get; internal set; }
+                public static ActionDetail TKS_BL_S84 { get; internal set; }
+                public static ActionDetail TKS_BL_S85 { get; internal set; }
+                public static ActionDetail TKS_BL_S86 { get; internal set; }
+                public static ActionDetail TKS_BL_S87 { get; internal set; }
+                public static ActionDetail TKS_BL_S88 { get; internal set; }
+                public static ActionDetail TKS_BL_S89 { get; internal set; }
+                public static ActionDetail TKS_BL_S90 { get; internal set; }
+                public static ActionDetail TKS_BL_S91 { get; internal set; }
+                public static ActionDetail TKS_BL_S92 { get; internal set; }
+                public static ActionDetail TKS_BL_S93 { get; internal set; }
+                public static ActionDetail TKS_BL_S94 { get; internal set; }
+                public static ActionDetail TKS_BL_S95 { get; internal set; }
+                public static ActionDetail TKS_BL_S96 { get; internal set; }
+                public static ActionDetail TKS_BL_S97 { get; internal set; }
+                public static ActionDetail TKS_BL_S98 { get; internal set; }
+                public static ActionDetail TKS_BL_S99 { get; internal set; }
+                public static ActionDetail TKS_BL_S100 { get; internal set; }
+                public static ActionDetail TKS_BL_S101 { get; internal set; }
+                public static ActionDetail TKS_BL_S102 { get; internal set; }
+                public static ActionDetail TKS_BL_S103 { get; internal set; }
             }
             public class DiceFlagExtension : TKS_EnumExtender<DiceFlag>
             {
@@ -809,7 +882,7 @@ namespace Don_Eyuil
                 void AddLocalize_EffectTexts()
                 {
                     Dictionary<string, BattleEffectText> dictionary = typeof(BattleEffectTextsXmlList).GetField("_dictionary", AccessTools.all).GetValue(Singleton<BattleEffectTextsXmlList>.Instance) as Dictionary<string, BattleEffectText>;
-                    FileInfo[] files = TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language +"/" + LocalizeKey + "/EffectTexts");
+                    FileInfo[] files = TKS_BloodFiend_Initializer.SafeGetFiles(DllPath + "/Localize/" + TKS_BloodFiend_Initializer.language + "/" + LocalizeKey + "/EffectTexts");
                     for (int i = 0; i < files.Length; i++)
                     {
                         using (StringReader stringReader = new StringReader(File.ReadAllText(files[i].FullName)))
@@ -930,6 +1003,7 @@ namespace Don_Eyuil
             LoadCustomSkin(Path.Combine(DllPath, "..", "Resource\\CharacterSkin"));
             LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
             LoadLocalize("Don_Eyuil");
+            LoadLocalize("San_Sora");
         }
 
         public override void OnInitializeMod()
@@ -939,51 +1013,56 @@ namespace Don_Eyuil
             Harmony harmony = new Harmony(packageId);
             harmony.PatchAll();
             //Extra扩展Patch---------------------------------------------------------//
-                harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
-                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
-                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
-                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_StoryFerrisWheel));
-                harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
-                //harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify.TransBehavior_AtkVSDfnPatch));
+            harmony.PatchAll(typeof(EmotionEgoXmlInfo_Mod));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_StoryFerrisWheel));
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
+            //harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify.TransBehavior_AtkVSDfnPatch));
             //-----------------------------------------------------------------------//
 
             //Buff基类时点Patch------------------------------------------------------//
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverHpPatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
-                harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.CanForcelyAggroPatch));
-                //harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterApplyEnemyCardPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverHpPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.CanForcelyAggroPatch));
+            //harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterApplyEnemyCardPatch));
             //-----------------------------------------------------------------------//
 
             //被动基类时点Patch------------------------------------------------------//
-                harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil));
-                harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.OnStartBattleTheLastPatch));
-                harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.AfterApplyEnemyCardPatch));
+            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil));
+            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.OnStartBattleTheLastPatch));
+            harmony.PatchAll(typeof(PassiveAbilityBase_Don_Eyuil.AfterApplyEnemyCardPatch));
+            //-----------------------------------------------------------------------//
+
+            //硬血术选卡扩展Patch----------------------------------------------------//
+            harmony.PatchAll(typeof(HardBloodCards));
             //-----------------------------------------------------------------------//
 
             //存存币基类扩展Patch----------------------------------------------------//
-                harmony.PatchAll(typeof(RedDiceCardAbility));
+            harmony.PatchAll(typeof(RedDiceCardAbility));
             //-----------------------------------------------------------------------//
 
             //被动效果Patch----------------------------------------------------------//
-                harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
+            harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
+            harmony.PatchAll(typeof(PassiveAbility_SanSora_10));
             //-----------------------------------------------------------------------//
 
             //Buff效果Patch----------------------------------------------------------//
-                harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
-                harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
+            harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
+            harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
             //-----------------------------------------------------------------------//
 
             //骰子效果Patch----------------------------------------------------------//
-                harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
+            harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
             //-----------------------------------------------------------------------//
 
             //书页效果Patch----------------------------------------------------------//
-                harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
+            harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
             //-----------------------------------------------------------------------//
 
 
@@ -1067,13 +1146,34 @@ namespace Don_Eyuil
         public static LorId Card_双剑反击闪避书页 = MyTools.Create(65);
         public static LorId Card_血伞反击 = MyTools.Create(66);
         public static LorId Card_若能摆脱这可怖的疾病 = MyTools.Create(67);
+
+        public static LorId Card_Desc_桑空派变体硬血术1式_血剑 = MyTools.Create(85);
+        public static LorId Card_Desc_桑空派变体硬血术2式_血枪 = MyTools.Create(86);
+        public static LorId Card_Desc_桑空派变体硬血术3式_血镰 = MyTools.Create(87);
+        public static LorId Card_Desc_桑空派变体硬血术4式_血刃 = MyTools.Create(88);
+        public static LorId Card_Desc_桑空派变体硬血术5式_双剑 = MyTools.Create(89);
+        public static LorId Card_Desc_桑空派变体硬血术6式_血甲 = MyTools.Create(90);
+        public static LorId Card_Desc_桑空派变体硬血术7式_血弓 = MyTools.Create(91);
+        public static LorId Card_Desc_桑空派变体硬血术8式_血鞭 = MyTools.Create(92);
+        public static LorId Card_桑空派变体硬血术终式_La_Sangre = MyTools.Create(94);
+
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
+        public static LorId Book_桑空之页 = MyTools.Create(10000002);
         public static LorId Stage_埃尤尔 = MyTools.Create(1);
+        public static LorId Stage_桑空 = MyTools.Create(2);
         public static LorId Stage_测试 = MyTools.Create(881506);
         public static ulong User_漠北九月 = 76561198941514651;
         public static ulong User_小D = 76561199079466854;
         public static ulong User_天空 = 76561198877012566;
         public static ulong User_139 = 76561198995229429;
+
+
+        public static List<LorId> Books_拉曼查乐园的血魔 = new List<LorId>()
+        {
+            Book_堂_埃尤尔之页,
+            Book_桑空之页
+        };
+
     }
 
 }

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BattleCardAbility ID="WhiteMoonSparkle_01">
+    <Desc>[使用时]恢复1点光芒,若目标使用的书页指定了友方角色则额外恢复抽取1张书页(同时计入转移目标前后)
+本书页根据当前所装备的副武器获得额外效果</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_02">
+    <Desc>[战斗开始]使所有我方角色本幕首次通过书页获得的正面状态层数+1自身当前每应用1把副武器便使自身获得1层强壮(至多2层)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_03">
+    <Desc>[战斗开始]我方角色首次受到单方面攻击时给予其1颗突刺反击(4～8)
+[使用时]丢弃一张书页(优先同名)若丢弃的为同名书页 则将书页中的首颗进攻型骰子置入本书页末尾</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_04">
+    <Desc>本书页根据自身当前主武器改变
+[拼点开始]摧毁本书页所有骰子 并置入与目标书页骰子数等量的点数为被摧毁骰子最大最小值平均值的进攻型骰子 骰子类型为目标弱点抗性(且首颗骰子拥有所有被摧毁骰子的骰子效果)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_05">
+    <Desc>本书页根据自身当前主武器改变
+[拼点开始]本书页所有骰子拼点失败时重复投掷1次(至多1次)但造成的伤害与混乱伤害-60%</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_06">
+    <Desc>本书页根据自身当前主武器改变
+本书页将视为拥有所有月相标记
+[拼点开始]若目标首颗骰子平均值大于15则在书页末尾置入一颗打击骰子(13～17若骰子基础值不低于20则造成伤害+50%)反之则置入书页开头</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_07">
+    <Desc>本书页根据自身当前主武器改变
+本书页将在使用后移出战斗 并在2幕后回到手中
+[使用时]本书页造成的伤害与混乱伤害+40% 且本书页每命中3次敌人便在下一幕获得1层强壮与伤害强化(至多3层)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_08">
+    <Desc>本书页根据自身当前主武器改变
+本书页将在使用后移出战斗 并在2幕后回到手中
+[使用时]本书页使用期间使目标受到的非命中伤害+50% </Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_09">
+    <Desc>本书页根据自身当前主武器改变
+本书页将在使用后移出战斗 并在2幕后回到手中
+[使用时]本书页骰子最大最小值提升25% 且拼点胜利时造成的伤害与混乱伤害-90%但拼点胜利时使骰子重复投掷1次</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_10">
+    <Desc>本书页根据当前所应用的副武器获得额外效果
+本书页使用期间使双方“进攻型”骰子无论是否取得拼点胜利皆可对目标造成命中伤害 
+[拼点开始]使目标造成的伤害与混乱伤害减少自身骰子点数3/2(向下取整)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_11">
+    <Desc>本书页根据当前所应用的副武器获得额外效果
+本书页第一颗骰子[命中时]追加等同于基础值次数的2点伤害</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_12">
+    <Desc>本书页根据当前所应用的副武器获得额外效果
+[使用时]自身每有2张书页指定该目标便使本书页进攻型骰子命中时额外命中一次</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_13">
+    <Desc>仅限自身应用至少2种副武器时使用
+[使用时]自身当前每应用1种副武器便使本书页所有骰子最大最小值+1且造成的伤害+20%
+根据当前所应用的副武器获得额外效果</Desc>
+  </BattleCardAbility>
+
+  <BattleCardAbility ID="WhiteMoonSparkle_14">
+    <Desc>若本书页所有骰子均被消耗且未拼点胜利则下一幕使自身获得1层[束缚]与[强壮]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_15">
+    <Desc>本书页根据当前所装备的副武器获得额外效果</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_16">
+    <Desc>[战斗开始]我方角色首次受到单方面攻击时给予其1颗突刺反击(4～8)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_17">
+    <Desc>[战斗开始]使所有司书本幕首次通过书页获得的正面状态层数+1 并使自身与体力最高的两名司书获得1层[强壮]</Desc>
+  </BattleCardAbility>
+
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice01">
+    <Desc>[命中时]下一幕对目标施加1层[收尾标记]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice02">
+    <Desc>[命中时]使目前正面情感最多的我方角色下一幕获得1层[强壮]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice03">
+    <Desc>[命中时]下一幕开始时使目标层数最多的负面状态层数+20%(向上取整)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice04">
+    <Desc>[命中时]使情感硬币最多的1名友方角色获得2点正面情感</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice05">
+    <Desc>[命中时]下一幕开始时抽取1张书页</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice06">
+    <Desc>[命中时]使本书页剩余骰子额外命中(自身当前应用副武器数量)个目标</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice07">
+    <Desc>[拼点胜利]本骰子造成的伤害与混乱伤害+20%</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice08">
+    <Desc>[拼点胜利]本骰子造成的伤害与混乱伤害+2</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice09">
+    <Desc>[拼点失败]使本书页最后1颗进攻型骰子威力+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice10">
+    <Desc>[拼点失败]使本书页下一颗骰子最大值+10 [投掷时]若本书页无下一颗骰子则使所有我方角色恢复5点混乱抗性</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice11">
+    <Desc>[命中时]使本书页剩余骰子额外命中1名敌方角色</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice12">
+    <Desc>[命中时]下一幕使所有我方角色获得1层迅捷与忍耐</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice13">
+    <Desc>[命中时]触发目标层数最多的伤害类负面4次(仅限原版)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice14">
+    <Desc>本书页使用期间目标每承受10点非命中伤害便使本书页第2颗骰子重复投掷1次(至多3次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice15">
+    <Desc>[命中时]下一幕对目标施加1层束缚与麻痹并使目标层数最多的负面状态层数+15%(向上取整)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice16">
+    <Desc>若自身当前应用的副武器为千斤弓则本骰子额外命中2命目标</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice17">
+    <Desc>[拼点胜利]摧毁目标书页剩余骰子[命中时]追加5点伤害</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice18">
+    <Desc>[命中时]使自身获得1点正面情感</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice19">
+    <Desc>[命中时]这一幕对目标施加1层[收尾标记]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice20">
+    <Desc>[命中时]这一幕对目标施加[全面洞悉]</Desc>
+  </BattleCardAbility>
+
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice21">
+    <Desc>[命中时] [迎来结局?]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice22">
+    <Desc>[命中时]击杀所有角色</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice23">
+    <Desc>[未被消耗]下一幕使自身获得1层[强壮]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice24">
+    <Desc>[未被消耗]下一幕使自身获得1层[迅捷]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice25">
+    <Desc>[未被消耗/拼点胜利]下一幕使自身获得1层[伤害强化]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice26">
+    <Desc>[命中时]下一幕开始时抽取本书页</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="WhiteMoonSparkle_Dice27">
+    <Desc>[命中时]将1颗突刺骰子(4～8)置入本书页末尾</Desc>
+  </BattleCardAbility>
+</BattleCardAbilityDescRoot>

@@ -1,0 +1,10 @@
+<ModInfo>
+  <ClothInfo>
+    <Name>Sansora</Name>
+    <Default>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-13.8" head_y="396" rotation="4" head_enable="False" />
+    </Default>
+  </ClothInfo>
+</ModInfo>

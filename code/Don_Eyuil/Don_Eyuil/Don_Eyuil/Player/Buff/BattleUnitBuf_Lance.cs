@@ -1,7 +1,7 @@
 ﻿using LOR_DiceSystem;
 using UnityEngine;
 
-namespace Don_Eyuil.Buff
+namespace Don_Eyuil.Don_Eyuil.Player.Buff
 {
     public class BattleUnitBuf_Lance : BattleUnitBuf_Don_Eyuil
     {

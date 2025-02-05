@@ -1,11 +1,12 @@
-﻿using Don_Eyuil.Buff;
+﻿
+using Don_Eyuil.Don_Eyuil.Player.Buff;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 
-namespace Don_Eyuil.PassiveAbility
+namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 {
     public class PassiveAbility_DonEyuil_17 : PassiveAbilityBase
     {

@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using System;
 
-namespace Don_Eyuil.PassiveAbility
+namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 {
     public class PassiveAbility_DonEyuil_16 : PassiveAbilityBase
     {

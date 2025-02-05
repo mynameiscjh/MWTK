@@ -1,21 +1,12 @@
-﻿using EnumExtenderV2;
+﻿using CustomMapUtility;
 using HarmonyLib;
-using HyperCard;
-using LOR_BattleUnit_UI;
+using LOR_DiceSystem;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using UnityEngine;
-using static CharacterSound;
-using static UI.UIIconManager;
-using static UnityEngine.GraphicsBuffer;
-using static UnityEngine.UI.GridLayoutGroup;
-using LOR_DiceSystem;
-using LOR_XML;
-using CustomMapUtility;
 
 namespace Don_Eyuil
 {
@@ -271,6 +262,21 @@ namespace Don_Eyuil
                 BattleObjectManager.instance.GetAliveList().Do(x => x.passiveDetail.PassiveList.FindAll(n => n is PassiveAbilityBase_Don_Eyuil).Do(y => (y as PassiveAbilityBase_Don_Eyuil).AfterApplyEnemyCard()));
             }
         }
+
+        public virtual void BeforeRecoverHP(ref int v) { }
+
+        [HarmonyPatch(typeof(BattleUnitModel), "RecoverHP")]
+        [HarmonyPrefix]
+        public static void BattleUnitModel_RecoverHP_Pre(BattleUnitModel __instance, ref int v)
+        {
+            foreach (var item in __instance.passiveDetail.PassiveList)
+            {
+                if (item is PassiveAbilityBase_Don_Eyuil)
+                {
+                    (item as PassiveAbilityBase_Don_Eyuil).BeforeRecoverHP(ref v);
+                }
+            }
+        }
     }
     public class BattleUnitBuf_Don_Eyuil : BattleUnitBuf
     {
@@ -301,7 +307,7 @@ namespace Don_Eyuil
         }
         public class BeforeRecoverPlayPointPatch
         {
-            public static void Trigger_RecoverPlayPoint_Before(BattlePlayingCardSlotDetail Detail,ref int value)
+            public static void Trigger_RecoverPlayPoint_Before(BattlePlayingCardSlotDetail Detail, ref int value)
             {
                 var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
                 if (Model != null)
@@ -323,7 +329,7 @@ namespace Don_Eyuil
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
                 codes.InsertRange(0, new List<CodeInstruction>()
-                { 
+                {
                     new CodeInstruction(OpCodes.Ldarg_0),
                     new CodeInstruction(OpCodes.Ldarga_S,1),
                     new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeRecoverPlayPointPatch),"Trigger_RecoverPlayPoint_Before")),
@@ -340,7 +346,7 @@ namespace Don_Eyuil
         {
             [HarmonyPatch(typeof(BattleUnitModel), "RecoverHP")]
             [HarmonyPrefix]
-            public static void BattleUnitModel_RecoverHP_Pre(BattleUnitModel __instance,int v)
+            public static void BattleUnitModel_RecoverHP_Pre(BattleUnitModel __instance, int v)
             {
                 __instance.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).BeforeRecoverHp(v));
             }
@@ -351,11 +357,11 @@ namespace Don_Eyuil
         }
         public class BeforeAddEmotionCoinPatch
         {
-            public static void Trigger_CreateEmotionCoin_Before(BattleUnitEmotionDetail Detail,EmotionCoinType CoinType, ref int Count)
+            public static void Trigger_CreateEmotionCoin_Before(BattleUnitEmotionDetail Detail, EmotionCoinType CoinType, ref int Count)
             {
 
                 var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
-                if(Model != null)
+                if (Model != null)
                 {
                     foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
                     {
@@ -443,7 +449,7 @@ namespace Don_Eyuil
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByCard")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufNextNextByCard")]
             [HarmonyTranspiler]
-            public static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions,ILGenerator ILcodegenerator)
+            public static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
                 Label l = ILcodegenerator.DefineLabel();
@@ -559,9 +565,9 @@ namespace Don_Eyuil
             }
             return ResultList;
         }
-        public static List<BattleUnitModel> GetAllUnitWithBuf<T>(Faction? Faction = null,BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
+        public static List<BattleUnitModel> GetAllUnitWithBuf<T>(Faction? Faction = null, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
-            List<BattleUnitModel> UnitList = Faction.HasValue? BattleObjectManager.instance.GetAliveList(Faction.Value): BattleObjectManager.instance.GetAliveList();
+            List<BattleUnitModel> UnitList = Faction.HasValue ? BattleObjectManager.instance.GetAliveList(Faction.Value) : BattleObjectManager.instance.GetAliveList();
             List<BattleUnitModel> ResultList = new List<BattleUnitModel>() { };
             foreach (BattleUnitModel model in UnitList)
             {
@@ -574,16 +580,20 @@ namespace Don_Eyuil
             return ResultList;
         }
 
+        public virtual void OnUseBuf(ref int stack) { }
+
         public static bool UseBuf<T>(BattleUnitModel model, int stack) where T : BattleUnitBuf_Don_Eyuil
         {
-            T BuffInstance = GetBuf<T>(model,BufReadyType.ThisRound);
+            T BuffInstance = GetBuf<T>(model, BufReadyType.ThisRound);
             if (BuffInstance != null && BuffInstance.stack >= stack)
             {
+                BuffInstance.OnUseBuf(ref stack);
                 BuffInstance.Add(-stack);
                 return true;
             }
             return false;
         }
+
         public static T GainBuf<T>(BattleUnitModel model, int stack, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_Don_Eyuil
         {
             T BuffInstance = GetOrAddBuf<T>(model, ReadyType);
@@ -655,14 +665,14 @@ namespace Don_Eyuil
             return BuffInstance;
         }
 
-        public BattleUnitModel owner { get{ return this._owner; } }
+        public BattleUnitModel owner { get { return this._owner; } }
     }
     public static class ExtraMethods
     {
-        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior,BattleUnitModel OriginalTarget, int EnemyCount)
+        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior, BattleUnitModel OriginalTarget, int EnemyCount)
         {
             var owner = behavior.owner;
-            if(owner != null)
+            if (owner != null)
             {
                 if (!behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
                 {
@@ -672,9 +682,9 @@ namespace Don_Eyuil
                 }
             }
         }
-        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior,params BattleUnitModel[] target)
+        public static void GiveDamage_SubTarget(this BattleDiceBehavior behavior, params BattleUnitModel[] target)
         {
-            if(behavior != null && !behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
+            if (behavior != null && !behavior.HasFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget))
             {
                 behavior.AddFlag(TKS_BloodFiend_Initializer.TKS_EnumExtension.DiceFlagExtension.HasGivenDamage_SubTarget);
                 if (behavior.owner.battleCardResultLog == null) { behavior.owner.battleCardResultLog = new BattleCardTotalResult(behavior.card); }
@@ -815,7 +825,7 @@ namespace Don_Eyuil
         {
             get
             {
-                return  CustomMapHandler.GetCMU(TKS_BloodFiend_Initializer.packageId);
+                return CustomMapHandler.GetCMU(TKS_BloodFiend_Initializer.packageId);
             }
         }
         public static LorId Create(int v)
@@ -825,6 +835,7 @@ namespace Don_Eyuil
 
         public static List<T> TKSRandomUtil<T>(List<T> ListToRandom_Arg, int randomnum, bool canbethesame = false, bool copywhenempty = true)
         {
+    
             List<T> list = new List<T>();
             var ListToRandom = ListToRandom_Arg;
             T item = default(T);
