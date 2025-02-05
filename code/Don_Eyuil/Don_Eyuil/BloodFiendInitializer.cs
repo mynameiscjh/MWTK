@@ -2,7 +2,6 @@
 using Don_Eyuil.San_Sora.Player.PassiveAbility;
 using EnumExtenderV2;
 using HarmonyLib;
-using JetBrains.Annotations;
 using LOR_DiceSystem;
 using LOR_XML;
 using System;
@@ -12,13 +11,13 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Xml;
-using System.Xml.Linq;
 //using Workshop;
 using System.Xml.Serialization;
 using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
+using static Don_Eyuil.WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Year;
 using File = System.IO.File;
 
 namespace Don_Eyuil
@@ -132,6 +131,16 @@ namespace Don_Eyuil
                 color = new Color(1, 1, 1, 1),
                 type = ""
             });
+
+            UISpriteDataManager.instance.GetFieldValue<Dictionary<string, UIIconManager.IconSet>>("StoryIconDic").Add("Sparkle", new UIIconManager.IconSet
+            {
+                icon = TKS_BloodFiend_Initializer.ArtWorks["xy"],
+                iconGlow = TKS_BloodFiend_Initializer.ArtWorks["xy"],
+                colorGlow = new Color(1, 1, 1, 1),
+                color = new Color(1, 1, 1, 1),
+                type = ""
+            });
+
             void Func(int r, LorId id)
             {
                 UIStoryProgressIconSlot testS = UnityEngine.Object.Instantiate(temp, Phase_FerrisWheel.transform);
@@ -152,7 +161,7 @@ namespace Don_Eyuil
             Func(45, MyId.Stage_测试);
             Func(90, MyId.Stage_测试);
             Func(135, MyId.Stage_测试);
-            Func(180, MyId.Stage_测试);
+            Func(180, MyId.Stage_白月);
             Func(45 + 180, MyId.Stage_测试);
             Func(90 + 180, MyId.Stage_测试);
             Func(135 + 180, MyId.Stage_测试);
@@ -391,7 +400,7 @@ namespace Don_Eyuil
                 if (GetParryingTeam(PM, Team.defender) != null
                     && GetParryingTeam(PM, Team.defender).playingCard != null
                     && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior != null && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card != null
-                    && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card.card.XmlData.Script == "Testify_TransDice")
+                    && (GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card.card.XmlData.Script == "Testify_TransDice" || GetParryingTeam(PM, Team.defender).playingCard.card.HasBuf<BattleDiceCardBuf_TransDice>()))
                 {
                     return true;
                 }
@@ -455,7 +464,7 @@ namespace Don_Eyuil
                 if (GetParryingTeam(PM, Team.loser) != null
                     && GetParryingTeam(PM, Team.loser).playingCard != null
                     && GetParryingTeam(PM, Team.loser).playingCard.currentBehavior != null && GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.card != null
-                    && GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.card.card.XmlData.Script == "Testify_TransDice")
+                    && (GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.card.card.XmlData.Script == "Testify_TransDice" || GetParryingTeam(PM, Team.loser).playingCard.card.HasBuf<BattleDiceCardBuf_TransDice>()))
                 {
                     return true;
                 }
@@ -663,7 +672,7 @@ namespace Don_Eyuil
         [HarmonyPostfix]
         public static void UILibrarianEquipInfoSlot_SetData_Post(BookPassiveInfo passive, Image ___Frame, TextMeshProUGUI ___txt_cost)
         {
-            void CreateFerrisWheelIcon(int id )
+            void CreateFerrisWheelIcon(int id)
             {
                 void InitializeFerrisWheelIcon()
                 {
@@ -676,14 +685,14 @@ namespace Don_Eyuil
                 }
                 foreach (Transform ChildObject in ___txt_cost.transform)
                 {
-                    if(ChildObject.name == "TKS_FerrisWheelCostIcon")
+                    if (ChildObject.name == "TKS_FerrisWheelCostIcon")
                     {
                         Debug.LogError("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                         ChildObject.gameObject.SetActive(false);
                         GameObject.Destroy(ChildObject.gameObject);
                     }
                 }
-                if(passive.passive.id.packageId == TKS_BloodFiend_Initializer.packageId)
+                if (passive.passive.id.packageId == TKS_BloodFiend_Initializer.packageId)
                 {
                     switch (passive.passive.id.id)
                     {
@@ -694,7 +703,7 @@ namespace Don_Eyuil
                     }
                 }
             }
-            if(passive != null)
+            if (passive != null)
             {
                 CreateFerrisWheelIcon(passive.passive.id.id);
             }
@@ -1159,8 +1168,10 @@ namespace Don_Eyuil
 
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
         public static LorId Book_桑空之页 = MyTools.Create(10000002);
+        public static LorId Book_小耀之页 = MyTools.Create(10000003);
         public static LorId Stage_埃尤尔 = MyTools.Create(1);
         public static LorId Stage_桑空 = MyTools.Create(2);
+        public static LorId Stage_白月 = MyTools.Create(3);
         public static LorId Stage_测试 = MyTools.Create(881506);
         public static ulong User_漠北九月 = 76561198941514651;
         public static ulong User_小D = 76561199079466854;

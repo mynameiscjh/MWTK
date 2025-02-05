@@ -22,7 +22,7 @@
   <BookUse ID="3">
     <Name>耀之书</Name>
     <TextId />
-    <BookIcon />
+    <BookIcon>Sparkle</BookIcon>
     <Chapter>7</Chapter>
     <BookValue>0</BookValue>
     <DropItem Type="Equip">10000003</DropItem>

@@ -83,7 +83,7 @@
   </Enemy>
 
   <Enemy ID="6">
-    <Name>测试</Name>
+    <Name>测试虾</Name>
     <FaceType>Skin</FaceType>
     <NameID>-1</NameID>
     <MinHeight>170</MinHeight>
@@ -97,6 +97,25 @@
     <DropBonus>0</DropBonus>
     <DropTable Level="0">
       <DropItem Prob="1">2</DropItem>
+    </DropTable>
+    <AiScript />
+  </Enemy>
+
+  <Enemy ID="7">
+    <Name>测试虾</Name>
+    <FaceType>Skin</FaceType>
+    <NameID>-1</NameID>
+    <MinHeight>170</MinHeight>
+    <MaxHeight>170</MaxHeight>
+    <Unknown>false</Unknown>
+    <Gender>F</Gender>
+    <Retreat>false</Retreat>
+    <BookId>6</BookId>
+    <BodyId>0</BodyId>
+    <Exp>0</Exp>
+    <DropBonus>0</DropBonus>
+    <DropTable Level="0">
+      <DropItem Prob="1">3</DropItem>
     </DropTable>
     <AiScript />
   </Enemy>

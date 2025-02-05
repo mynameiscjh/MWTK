@@ -196,12 +196,18 @@
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_10.cs" />
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_11.cs" />
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_12.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Bow.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Sparkle.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Sword.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Year.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="WhiteMoon_Sparkle\Player\PassiveAbility\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

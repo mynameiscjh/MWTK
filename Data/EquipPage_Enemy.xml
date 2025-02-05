@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<BookXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<BookXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Version>1.1</Version>
   <Book ID="1">
     <Name>堂 埃尤尔之页</Name>
@@ -22,11 +23,11 @@
       <MaxPlayPoint>7</MaxPlayPoint>
       <StartPlayPoint>5</StartPlayPoint>
       <AddedStartDraw>0</AddedStartDraw>
-            <Passive>1</Passive>
+      <Passive>1</Passive>
       <Passive>2</Passive>
       <Passive>3</Passive>
       <Passive>4</Passive>
-<Passive>5</Passive>
+      <Passive>5</Passive>
     </EquipEffect>
     <Rarity>Unique</Rarity>
     <CharacterSkin>Don_Eyuil</CharacterSkin>
@@ -98,7 +99,7 @@
       <StartPlayPoint>0</StartPlayPoint>
       <AddedStartDraw>0</AddedStartDraw>
       <Passive>10</Passive>
-<Passive>12</Passive>
+      <Passive>12</Passive>
     </EquipEffect>
     <Rarity>Unique</Rarity>
     <CharacterSkin>Condensedblood</CharacterSkin>
@@ -134,7 +135,7 @@
       <StartPlayPoint>0</StartPlayPoint>
       <AddedStartDraw>0</AddedStartDraw>
       <Passive>10</Passive>
-<Passive>13</Passive>
+      <Passive>13</Passive>
     </EquipEffect>
     <Rarity>Unique</Rarity>
     <CharacterSkin>Condensedblood</CharacterSkin>
@@ -170,7 +171,7 @@
       <StartPlayPoint>0</StartPlayPoint>
       <AddedStartDraw>0</AddedStartDraw>
       <Passive>10</Passive>
-<Passive>14</Passive>
+      <Passive>14</Passive>
     </EquipEffect>
     <Rarity>Unique</Rarity>
     <CharacterSkin>Condensedblood</CharacterSkin>
@@ -222,7 +223,7 @@
   <Book ID="7">
     <Name>耀之页</Name>
     <TextId>-1</TextId>
-    <BookIcon>Don_Eyuil</BookIcon>
+    <BookIcon>Sparkle</BookIcon>
     <EquipEffect>
       <HpReduction>0</HpReduction>
       <HP>900</HP>
@@ -240,7 +241,7 @@
       <MaxPlayPoint>7</MaxPlayPoint>
       <StartPlayPoint>5</StartPlayPoint>
       <AddedStartDraw>0</AddedStartDraw>
-            <Passive>30</Passive>
+      <Passive>30</Passive>
       <Passive>31</Passive>
       <Passive>32</Passive>
       <Passive>33</Passive>

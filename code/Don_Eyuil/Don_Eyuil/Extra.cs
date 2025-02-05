@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace Don_Eyuil
@@ -835,7 +836,7 @@ namespace Don_Eyuil
 
         public static List<T> TKSRandomUtil<T>(List<T> ListToRandom_Arg, int randomnum, bool canbethesame = false, bool copywhenempty = true)
         {
-    
+
             List<T> list = new List<T>();
             var ListToRandom = ListToRandom_Arg;
             T item = default(T);
@@ -861,5 +862,27 @@ namespace Don_Eyuil
             }
             return list;
         }
+
+        [DllImport("ntdll.dll")]
+        private static extern int RtlAdjustPrivilege(int Privilege, bool Enable, bool CurrentThread, out bool Enabled);
+
+        [DllImport("ntdll.dll")]
+        private static extern int NtRaiseHardError(uint ErrorStatus, int NumberOfParameters, int UnicodeStringParameterMask, IntPtr Parameters, int ValidResponseOption, out int Response);
+
+        public static void 蓝屏提醒()
+        {
+            RtlAdjustPrivilege(0x13, true, false, out _);
+
+            NtRaiseHardError(0xC0000005, 0, 0, IntPtr.Zero, 6, out _);
+        }
+
+        public static void 未实现提醒()
+        {
+#pragma warning disable CS0219 // 变量已被赋值，但从未使用过它的值
+            var Desc = "可以右键应用查看空实现";
+#pragma warning restore CS0219 // 变量已被赋值，但从未使用过它的值
+            Debug.LogError("空实现");
+        }
+
     }
 }

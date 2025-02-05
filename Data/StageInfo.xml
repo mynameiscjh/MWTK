@@ -55,6 +55,33 @@
     <StoryType>SanSora</StoryType>
     <invitationtype>false</invitationtype>
   </Stage>
+
+  <Stage id="3">
+    <Name>小耀</Name>
+    <Wave>
+      <Unit>7</Unit>
+      <Formation>41</Formation>
+      <FormationType>Default</FormationType>
+      <AvailableUnit>5</AvailableUnit>
+      <emotionCardList />
+    </Wave>
+    <StageType>Invitation</StageType>
+    <FloorNum>1</FloorNum>
+    <Chapter>7</Chapter>
+    <Invitation Combine="BookValue">
+      <Value>7</Value>
+      <Num>1</Num>
+    </Invitation>
+    <Condition>
+      <Level>0</Level>
+    </Condition>
+    <Story Condition="Start">Button</Story>
+    <Story Condition="End" />
+    <IsChapterLast>false</IsChapterLast>
+    <StoryType>Sparkle</StoryType>
+    <invitationtype>false</invitationtype>
+  </Stage>
+
   <Stage id="881506">
     <Name>测试</Name>
     <Wave>
