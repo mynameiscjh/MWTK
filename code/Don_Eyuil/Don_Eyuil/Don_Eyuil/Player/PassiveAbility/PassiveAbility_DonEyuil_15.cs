@@ -64,6 +64,8 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             MyId.Card_Desc_桑空派变体硬血术8式_血鞭,
         };
 
+        public static List<LorId> ChosenCard = new List<LorId>();
+
         public static Dictionary<LorId, Type> cardToBufMap_Don_Eyuil = new Dictionary<LorId, System.Type>
                 {
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术1式_血剑_2], typeof(BattleUnitBuf_Sword) },
@@ -262,7 +264,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
         [HarmonyPostfix]
         public static void BookModel_GetOnlyCards_Post(ref List<DiceCardXmlInfo> __result, BookModel __instance)
         {
-            if (__instance.BookId != MyId.Book_堂_埃尤尔之页)
+            if (__instance.BookId.packageId != TKS_BloodFiend_Initializer.packageId)
             {
                 return;
             }
@@ -272,7 +274,10 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 var card = ItemXmlDataList.instance.GetCardItem(MyTools.Create(item));
                 __result.Add(card);
             }
-            __result.AddRange(map_Don_Eyuil.Values.ToList().Select(x => ItemXmlDataList.instance.GetCardItem(x)));
+            if (__instance.BookId == MyId.Book_堂_埃尤尔之页)
+            {
+                __result.AddRange(map_Don_Eyuil.Values.ToList().Select(x => ItemXmlDataList.instance.GetCardItem(x)));
+            }
         }
 
         //实现了硬血卡组只能配硬血卡 特殊卡只能配特殊硬血卡组后才能配(我你该死啊)
@@ -325,6 +330,10 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                         }
                     }
                 }
+                foreach (var item in HardBloodCards_San_Sora)
+                {
+                    ____currentCardListForFilter.RemoveAll(x => x.GetID() == item);
+                }
                 __instance.SetCardsData(__instance.GetCurrentPageList());
                 return;
             }
@@ -352,6 +361,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                         itemModel.num = 99;
                         ____currentCardListForFilter.Add(itemModel);
                     }
+
                     __instance.SetCardsData(__instance.GetCurrentPageList());
                     return;
                 }
@@ -361,6 +371,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             {
                 ____currentCardListForFilter.RemoveAll(x => x.GetID() == item);
             }
+            ____currentCardListForFilter.RemoveAll(x => map_Don_Eyuil.Values.ToList().Exists(item => item == x.ClassInfo.id));
             __instance.SetCardsData(__instance.GetCurrentPageList());
         }
 
@@ -471,7 +482,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 {
                     gameObject.GetComponentsInChildren<Image>().ToList<Image>().ForEach(delegate (Image x)
                     {
-                        Debug.Log("Image.name:" + ((x != null) ? x.name : null));
+                        Debug.Log("Image.name:" + (x?.name));
                     });
                     Image image = gameObject.GetComponentsInChildren<Image>().FirstOrDefault((Image x) => x.name.Contains("[Image]BgFrame"));
                     bool flag2 = image != null;
@@ -624,9 +635,6 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                     BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_HardBlood>(I39, 0);
                 }
 
-                // 创建映射字典
-
-
                 if (cardToBufMap_Don_Eyuil.TryGetValue(picked.CardModel.GetID(), out System.Type bufType))
                 {
                     if (typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GetBuf").MakeGenericMethod(bufType).Invoke(null, new object[] { I39, BufReadyType.ThisRound }) == null)
@@ -635,6 +643,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                         method.Invoke(null, new object[] { I39, 1, BufReadyType.ThisRound });
                     }
                 }
+                ChosenCard.Add(picked.CardModel.GetID());
                 var temp = map_Don_Eyuil.ToList().Find(x => x.Value == picked.CardModel.GetID()).Key;
                 cards_Don_Eyuil.Remove(temp);
                 I39.personalEgoDetail.AddCard(temp);
@@ -654,7 +663,28 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 
         public override void OnWaveStart()
         {
-            HardBloodCards.cards_Don_Eyuil = new List<LorId>(this.owner.UnitData.unitData.GetDeckForBattle(1).Where(item => HardBloodCards.map_Don_Eyuil.Values.Contains(item.id)).Select(item => item.id));
+            HardBloodCards.cards_Don_Eyuil = new List<LorId>(this.owner.UnitData.unitData.GetDeckForBattle(1).Where(item => HardBloodCards.map_Don_Eyuil.Values.Contains(item.id) && !HardBloodCards.ChosenCard.Contains(item.id)).Select(item => item.id));
+
+            foreach (var item in HardBloodCards.ChosenCard)
+            {
+                if (BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_HardBlood>(owner) == null)
+                {
+                    BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_HardBlood>(owner, 0);
+                }
+
+                if (HardBloodCards.cardToBufMap_Don_Eyuil.TryGetValue(item, out System.Type bufType))
+                {
+                    if (typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GetBuf").MakeGenericMethod(bufType).Invoke(null, new object[] { owner, BufReadyType.ThisRound }) == null)
+                    {
+                        var method = typeof(BattleUnitBuf_Don_Eyuil).GetMethod("GainBuf").MakeGenericMethod(bufType);
+                        method.Invoke(null, new object[] { owner, 1, BufReadyType.ThisRound });
+                    }
+                }
+
+                var temp = HardBloodCards.map_Don_Eyuil.ToList().Find(x => x.Value == item).Key;
+                owner.personalEgoDetail.AddCard(temp);
+            }
+
             owner.personalEgoDetail.AddCard(MyId.Card_堂埃尤尔派硬血术终式_La_Sangre_2);
             fl0 = false;
             fl2 = false;

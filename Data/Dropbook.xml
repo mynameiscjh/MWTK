@@ -14,7 +14,7 @@
   <BookUse ID="2">
     <Name>桑空之书</Name>
     <TextId />
-    <BookIcon />
+    <BookIcon>SanSora</BookIcon>
     <Chapter>7</Chapter>
     <BookValue>0</BookValue>
     <DropItem Type="Equip">10000002</DropItem>

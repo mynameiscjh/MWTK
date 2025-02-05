@@ -55,6 +55,11 @@ namespace Don_Eyuil.San_Sora.Player.Buff
 
         public override void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
         {
+            if (owner.currentDiceAction == null)
+            {
+                return;
+            }
+
             if (owner.currentDiceAction.speedDiceResultValue >= 5 && stage == 3 && BufType == KeywordBuf.Bleeding)
             {
                 Stack += 1;
