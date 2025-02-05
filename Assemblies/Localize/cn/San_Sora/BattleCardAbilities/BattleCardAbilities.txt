@@ -20,7 +20,23 @@
   <BattleCardAbility ID="SanSora_06">
     <Desc>[使用时]消耗至多15层[血羽]每消耗3层便使本书页所有骰子最大值+1</Desc>
   </BattleCardAbility>
-
+  <BattleCardAbility ID="SanSora_14">
+    <Desc>[使用时]消耗8层[血羽]使本书页所有骰子威力+2</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_15">
+    <Desc>[我无法视而不见!]
+[战斗开始]对自身施加3层[流血]并使这一幕自身对敌方角色施加的[流血]层数+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_16">
+    <Desc>[便能达成那理想中的共存吧...]
+[战斗开始]若场上的[流血]总数不低于20则使自身在这一幕中获得4层[虚弱]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_17">
+    <Desc>[我坚信共存与梦想终会实现]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_18">
+    <Desc>[我将一刻不停的向之飞翔！！]</Desc>
+  </BattleCardAbility>
 
   <BattleCardAbility ID="SanSora_Dice01">
     <Desc>[命中时]消耗至多15层[血羽]每消耗5层便使本骰子重复投掷1次并施加2层[流血]</Desc>
@@ -42,5 +58,17 @@
   </BattleCardAbility>
   <BattleCardAbility ID="SanSora_Dice07">
     <Desc>[命中时]若本骰子基础值不低于6则使本骰子重复投掷一次(至多2次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice23">
+    <Desc>[命中时]这一幕对目标施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice24">
+    <Desc>[拼点失败]这一幕与下一幕使自身获得3层[强壮]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice25">
+    <Desc>[命中时]这一幕自身每获得1点正面情感便时自身获得1层[血羽]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice26">
+    <Desc>本骰子不造成伤害与混乱伤害</Desc>
   </BattleCardAbility>
 </BattleCardAbilityDescRoot>

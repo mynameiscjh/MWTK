@@ -37,7 +37,6 @@ namespace Don_Eyuil
             {
                 currentEnemyTheme(SingletonBehavior<BattleSoundManager>.Instance).clip = MyTools.CMH.GetAudioClip("PastMoonLight_2_2.wav");
                 currentEnemyTheme(SingletonBehavior<BattleSoundManager>.Instance).Play();
-                currentEnemyTheme(SingletonBehavior<BattleSoundManager>.Instance).loop = true;
             }
         }
     }

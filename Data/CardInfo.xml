@@ -2010,6 +2010,96 @@
     <Chapter>7</Chapter>
   </Card>
 
+ <!-- 桑空补充部分-->
+  <Card ID="124">
+    <Name>血刃剔除</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+    <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_14</Script>
+    <ScriptDesc>[使用时]消耗8层[血羽]使本书页所有骰子威力+2</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="3" Dice="7" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atkTwoRound" ActionScript="" Desc="[命中时]下两幕对目标施加3层[流血]" />
+      <Behaviour Min="3" Dice="7" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="2" Dice="7" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice23" ActionScript="" Desc="[命中时]这一幕对目标施加3层[流血]" />
+      <Behaviour Min="2" Dice="6" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atkTwoRound" ActionScript="" Desc="[命中时]下两幕对目标施加3层[流血]" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="125">
+    <Name>受苦的亲族正在增多</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_15</Script>
+    <ScriptDesc>[我无法视而不见!] [战斗开始]对自身施加3层[流血]并使这一幕自身对敌方角色施加的[流血]层数+1</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice24" ActionScript="" Desc="[拼点失败]这一幕与下一幕使自身获得3层[强壮]" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="126">
+    <Name>若能摆脱这可怖的疾病...</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="FarArea" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_16</Script>
+    <ScriptDesc>[便能达成那理想中的共存吧...] [战斗开始]若场上的[流血]总数不低于20则使自身在这一幕中获得4层[虚弱]</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="20" Dice="30" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="127">
+    <Name>翱翔向梦</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_17</Script>
+    <ScriptDesc>[我坚信共存与梦想终会实现]</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice25" ActionScript="" Desc="[命中时]这一幕自身每获得1点正面情感便时自身获得1层[血羽]" />
+      <Behaviour Min="4" Dice="9" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="strength1atk" ActionScript="" Desc="[命中时]下一幕使自身获得1层[强壮]" />
+      <Behaviour Min="2" Dice="7" Type="Standby" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="128">
+    <Name>桑空派变体硬血术终式-La Sangre</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Special" Cost="6" Affection="One" EmotionLimit="0" />
+    <Script></Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="7" Dice="11" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice08" ActionScript="" Desc="[命中时]这一幕与下两幕对目标施加4层[流血]" />
+      <Behaviour Min="7" Dice="11" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice09" ActionScript="" Desc="[命中时]这一幕使目标的[流血]无法低于与自身的速度差值" />
+      <Behaviour Min="7" Dice="14" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice10" ActionScript="" Desc="[命中时]重复触发自身与目标情感等级之和次[流血]若目标因本效果死亡则对所有敌方角色施加目标此时拥有的[流血]" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="129">
+    <Name>直到触及到那梦想</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="FarAreaEach" Cost="9" Affection="One" EmotionLimit="0" />
+    <Script>SanSora_18</Script>
+    <ScriptDesc>[我将一刻不停的向之飞翔！！]</ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="30" Dice="40" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice26" ActionScript="" Desc="本骰子不造成伤害与混乱伤害" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
   <Card ID="85">
     <Name>桑空派变体硬血术1式-血剑</Name>
     <TextId>-1</TextId>
@@ -2587,4 +2677,6 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+
+ <!-- 由于我是铸币我填来宾桑空xml的时候填岔劈了所以接下来的书页请从130开始填-->
 </DiceCardXmlRoot>
