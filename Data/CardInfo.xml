@@ -2243,4 +2243,343 @@
     <Chapter>7</Chapter>
   </Card>
 
+ <!-- 白月耀-->
+  <Card ID="101">
+    <Name>一如既往</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Far" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script></Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="9" Dice="15" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice01" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="102">
+    <Name>一如既往</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Special" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script></Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice02" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="103">
+    <Name>所经之途</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Common</Rarity>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_01</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="4" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="104">
+    <Name>所寻之义</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_02</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice03" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice04" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="6" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="105">
+    <Name>所行之事</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_03</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice05" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice06" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="106">
+    <Name>所护之物</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_04</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="6" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice07" ActionScript="" Desc="" />
+<Behaviour Min="6" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice08" ActionScript="" Desc="" />
+<Behaviour Min="4" Dice="10" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="107">
+    <Name>所护之物</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Far" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_05</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice09" ActionScript="" Desc="" />
+<Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice09" ActionScript="" Desc="" />
+<Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="G" MotionDefault="N" EffectRes="" Script="powerDouble" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="108">
+    <Name>所护之物</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_06</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="5" Dice="10" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice10" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="109">
+    <Name>所见之梦</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_07</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice11" ActionScript="" Desc="" />
+<Behaviour Min="5" Dice="10" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice11" ActionScript="" Desc="" />
+<Behaviour Min="5" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice12" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="110">
+    <Name>所见之梦</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Far" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_08</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice13" ActionScript="" Desc="" />
+<Behaviour Min="5" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice14" ActionScript="" Desc="" />
+<Behaviour Min="8" Dice="16" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="111">
+    <Name>所见之梦</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_08</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice13" ActionScript="" Desc="" />
+<Behaviour Min="5" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice14" ActionScript="" Desc="" />
+<Behaviour Min="8" Dice="16" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="112">
+    <Name>所见之梦</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Special" Cost="4" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_09</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="8" Dice="20" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice15" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="113">
+    <Name>传承之梦</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+<Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_10</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="6" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="damage5atk" ActionScript="" Desc="" />
+<Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="damage5atk" ActionScript="" Desc="" />
+<Behaviour Min="4" Dice="8" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="damage5atk" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="114">
+    <Name>传承之梦</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+<Option>EgoPersonal</Option>
+    <Spec Range="Far" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_11</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="9" Dice="19" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice16" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="115">
+    <Name>传承之梦</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+<Option>EgoPersonal</Option>
+    <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_12</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="9" Dice="19" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice17" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="116">
+    <Name>月下终曲</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Unique</Rarity>
+<Option>EgoPersonal</Option>
+    <Spec Range="FarAreaEach" Cost="6" Affection="Team" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_13</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice18" ActionScript="" Desc="" />
+<Behaviour Min="5" Dice="8" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice19" ActionScript="" Desc="" />
+<Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice20" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="117">
+    <Name>倘若相遇便代表离别</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="FarAreaEach" Cost="0" Affection="Team" EmotionLimit="0" />
+    <Script></Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="999" Dice="999" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+<Behaviour Min="999" Dice="999" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+<Behaviour Min="999" Dice="999" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice21" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="118">
+    <Name>那么旅途有何意义？</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Special" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script></Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="999" Dice="999" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice22" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="119">
+    <Name>那么重要的便是旅途中的回忆</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Special" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script></Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="1000" Dice="1000" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="120">
+    <Name>水之镜</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Rare</Rarity>
+    <Spec Range="Special" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_14</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+<Behaviour Min="5" Dice="9" Type="Standby" Detail="Penetrate" Motion="J" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice23" ActionScript="" Desc="" />
+<Behaviour Min="4" Dice="9" Type="Standby" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice24" ActionScript="" Desc="" />
+<Behaviour Min="4" Dice="9" Type="Standby" Detail="Hit" Motion="J" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice25" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="121">
+    <Name>所经之途</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Common</Rarity>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_15</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="4" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="122">
+    <Name>所行之事</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Common</Rarity>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_16</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice27" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice11" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="123">
+    <Name>所寻之义</Name>
+    <TextId>-1</TextId>
+    <Artwork>DonEyuil_1.png</Artwork>
+    <Rarity>Common</Rarity>
+    <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
+    <Script>WhiteMoonSparkle_16</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+      <Behaviour Min="5" Dice="11" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice03" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice03" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="8" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
 </DiceCardXmlRoot>

@@ -418,4 +418,252 @@
     <Name>直至触及那梦想!</Name>
     <Desc>同一舞台中自身每累计获得10点正面情感便使自身永久获得1层”迅捷”与”伤害提升”(至多2层)</Desc>
   </Passive>
+
+<!-- 白月耀-->
+  <Passive ID="30">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_1</Script>
+    <Name>200年前的回忆</Name>
+    <Desc>每幕开始时移除手中的书页并将意图使用的书页置入手中
+自身书页费用为0</Desc>
+  </Passive>
+  <Passive ID="31">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_2</Script>
+    <Name>白月骑士</Name>
+    <Desc>自身拥有3种独有"武器"效果皆分为主副两种 
+若拥有被动"往日的重现"则获得随机的1种强化主武器且每幕开始时随机切换为其他强化主武器</Desc>
+  </Passive>
+  <Passive ID="32">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_3</Script>
+    <Name>所经过的旅途</Name>
+    <Desc>第3幕开始时召唤自身未损坏的武器若场上仅剩下一把武器则摧毁指向该武器书页并使该武器体力无法低于1这一幕结束时随意选择一把存活的武器作为主武器并装备所有存活的武器为副武器随后使场上所有的武器死亡
+第三幕之后每幕开始时若自身无主武器buff则重复上述行为
+每一幕开始时若自身已拥有主武器则在下一幕强化该武器 武器强化后若这一幕与上一幕自身拼点失败次数大于拼点胜利次数则使当前主武器损坏
+武器损坏后移除主武器buff并使副武器更改为非强化版本
+若所有武器均已损坏则...</Desc>
+  </Passive>
+  <Passive ID="33">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_4</Script>
+    <Name>所经过的旅途</Name>
+    <Desc>每幕结束时若自身获得的负面情感数量大于正面情感数量则使自身下一幕所有骰子威力+1造成的伤害与混乱伤害+1反之则使所有司书获得1层"守护"与"振奋"</Desc>
+  </Passive>
+  <Passive ID="34">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_5</Script>
+    <Name>所经过的旅途</Name>
+    <Desc>若某司书保护友方角色免受攻击(转移攻击目标)则使其当前书页的所有骰子威力+1</Desc>
+  </Passive>
+  <Passive ID="35">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_6</Script>
+    <Name>水之镜</Name>
+    <Desc>自身免疫所有伤害与混乱伤害
+遭遇单方面攻击时将等同于目标书页骰子数等量的招架骰子(3～7[拼点失败]不承受反震伤害)迎击
+若自身所有主武器均已损坏则移除本被动</Desc>
+  </Passive>
+  <Passive ID="36">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Rare</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_7</Script>
+    <Name>惊险的比试</Name>
+    <Desc>使击杀自身的角色在下一幕获得1层"强壮"与2层"迅捷"</Desc>
+  </Passive>
+  <Passive ID="37">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Rare</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_8</Script>
+    <Name>往日的重现</Name>
+    <Desc>获得被动"所抵达的悲剧" "所听到的悲鸣" "身旁空无一人"</Desc>
+  </Passive>
+  <Passive ID="38">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Rare</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_9</Script>
+    <Name>往日的重现</Name>
+    <Desc>获得被动"所抵达的悲剧" "所听到的悲鸣" "身旁空无一人"</Desc>
+  </Passive>
+  <Passive ID="39">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Rare</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_10</Script>
+    <Name>所抵达的悲剧</Name>
+    <Desc>自身根据当前的阶段获得对应的"追忆"
+自身体力达到600/300时切换阶段并移除上一阶段所获得的"追忆"(自身切换到该阶段前体力无法低于600/300)</Desc>
+  </Passive>
+  <Passive ID="40">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Rare</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_11</Script>
+    <Name>所听到的悲鸣</Name>
+    <Desc>舞台中所有角色获得的情感更改为负面情感每一幕获得最多负面情感的角色将在下一幕所有骰子威力+2</Desc>
+  </Passive>
+  <Passive ID="41">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Rare</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_12</Script>
+    <Name>身旁空无一人</Name>
+    <Desc>使场上所有司书无法被友方角色施加任何buff</Desc>
+  </Passive>
+  <Passive ID="42">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_13</Script>
+    <Name>白月骑士</Name>
+    <Desc>自身拥有三种武器
+开启舞台时可各选择一种主武器和副武器(可重复)若选择了同种武器则获得附加效果(每幕可在战斗准备阶段更改1次)
+自身情感等级达到2/4级时可额外选择1种武器强化/额外应用一种副武器
+场上每有3名敌方角色死亡则可额外选择一次上述效果 若友方角色死亡同样同样可以选择一次上述效果
+(不可转移)</Desc>
+  </Passive>
+  <Passive ID="43">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>0</Cost>
+    <Script>WhiteMoonSparkle_14</Script>
+    <Name>月光之源</Name>
+    <Desc>自身可使用固有E.G.O书页“传承之梦” “月下终曲”
+“传承之梦”根据自身当前主武器改变且仅能在当前主武器强化后使用并根据当前所应用的副武器获得额外效果
+自身个人E.G.O书页将享受全队情感充能但仅能通过正面情感充能
+我方角色正面情感硬币溢出时使混乱抗性最低的1名我方角色恢复2点混乱抗性
+自身负面情感硬币溢出时使自身恢复1点体力
+(不可转移)</Desc>
+  </Passive>
+  <Passive ID="44">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>7</Cost>
+    <Script>WhiteMoonSparkle_15</Script>
+    <Name>月光之源</Name>
+    <Desc>自身可使用固有E.G.O书页“传承之梦” “月下终曲”
+“传承之梦”根据自身当前主武器改变且仅能在当前主武器强化后使用并根据当前所应用的副武器获得额外效果
+自身个人E.G.O书页将享受全队情感充能但仅能通过正面情感充能
+我方角色正面情感硬币溢出时使混乱抗性最低的1名我方角色恢复2点混乱抗性
+自身负面情感硬币溢出时使自身恢复1点体力
+(不可转移)</Desc>
+  </Passive>
+  <Passive ID="45">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Unique</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>7</Cost>
+    <Script>WhiteMoonSparkle_16</Script>
+    <Name>水之镜</Name>
+    <Desc>受到单方面攻击时将等同于目标书页骰子数等量的招架骰子(1～2[拼点失败]不承受反震伤害)迎击
+下令战斗时获得1颗远程反击骰子(斩击4～8使目标当前骰子无法再次投掷)
+(本被动不可转移)</Desc>
+  </Passive>
+  <Passive ID="46">
+    <Negative>false</Negative>
+    <IsHide>false</IsHide>
+    <Rarity>Rare</Rarity>
+    <Lock>false</Lock>
+    <CanGivePassive>true</CanGivePassive>
+    <CanReceivePassive>false</CanReceivePassive>
+    <InnerType>-1</InnerType>
+    <Cost>3</Cost>
+    <Script>WhiteMoonSparkle_16</Script>
+    <Name>惊险的比试</Name>
+    <Desc>战斗开始自身每有一张书页指向同一目标便使自身本幕对其造成的伤害+1(至多+3)</Desc>
+  </Passive>
 </PassiveXmlRoot>

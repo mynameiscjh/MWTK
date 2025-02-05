@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <effectTextList>
+
+    <BattleEffectText ID="BattleUnitBuf_ChainsofFetters">
+      <Name>追忆-名为羁绊的锁链</Name>
+      <Desc>场上所有司书永久获得1层"迅捷”
+场上所有司书若存在友方单位则无法主动与指向自身的书页拼点且拉取指向友方的书页时该书页拼点失败时受到的伤害+40%
+本buff移除时使所有司书获得"正因这份羁绊而前行"</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_ForFetters">
+      <Name>正因这份羁绊而前行</Name>
+      <Desc>自身可无视速度拉取指向友方的书页
+拉取指向友方的书页时该书页拼点失败时受到的伤害与混乱伤害-40%</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_HunterandMonster">
+      <Name>追忆-死于轮回中的猎人与怪物</Name>
+      <Desc>使自身获得"猎人"
+使场上所有角色获得"罪孽"所有角色造成伤害时获得等同于伤害量的罪孽
+每幕开始时罪孽最多的角色获得"怪物"
+本buff移除时使所有司书获得"也因这份理由而珍惜"</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Sparkle_Sin">
+      <Name>罪孽</Name>
+      <Desc>目前拥有{0}层罪孽</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Hunter">
+      <Name>猎人</Name>
+      <Desc>自身不会受到任何来自命中的伤害与混乱伤害
+每幕结束时获得50层"罪孽"</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Monster">
+      <Name>怪物</Name>
+      <Desc>这一幕所有骰子威力+1造成的伤害与混乱伤害+1～2
+但自身投掷进攻型骰子时对自身追加等同于骰子最终值的追加伤害</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Value">
+      <Name>也因这份理由而珍惜</Name>
+      <Desc>自身拉取指向友方的书页时该书页所有骰子威力+1拼点胜利使自身恢复2点体力与混乱抗性</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_OurEnding">
+      <Name>追忆-我们走在同一条路上面对同样的终局...</Name>
+      <Desc>自身骰子威力+1 骰子拼点时使双方获得目标骰子的一半加成(威力/伤害)
+本buff移除时使所有司书获得"于是我们于这条路上携手同行"</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Walktogether">
+      <Name>于是我们于这条路上携手同行</Name>
+      <Desc>我珍惜着获得的回忆,继续前行</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_DragonoftheSpring_LotusinAutumn">
+      <Name>泉之龙/秋之莲(主)</Name>
+      <Desc>自身所有骰子最大值+3
+自身防御型骰子拼点胜利时将骰子类型更改为随机进攻型骰子
+自身拼点失败时将骰子类型更改为招架
+自身每幕首次拼点胜利时使自身下一幕获得1层"迅捷"</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary">
+      <Name>泉之龙/秋之莲(副)</Name>
+      <Desc>自身每幕第1张书页造成的伤害减少至50%但命中时额外造成1次伤害(可触发骰子命中效果以外的命中效果)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Reinforced">
+      <Name>泉之龙/秋之莲(强化主)</Name>
+      <Desc>自身所有骰子最大值+3
+自身防御型骰子拼点胜利时将骰子类型更改为随机进攻型骰子
+自身拼点失败时将骰子类型更改为招架
+自身拼点胜利时使自身下一幕获得1层"迅捷"(至多2层)自身速度高于目标时拼点胜利时造成的伤害与混乱伤害+3拼点失败时受到的伤害与混乱伤害-2</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary_Reinforced">
+      <Name>泉之龙/秋之莲(强化副)</Name>
+      <Desc>自身每幕前2张书页造成的伤害减少至75%但命中时额外造成2次伤害(可触发骰子命中效果以外的命中效果)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Together">
+      <Name>泉之龙/秋之莲(主副同用额外效果)</Name>
+      <Desc>自身命中目标时使下颗骰子最小值+1
+自身每命中敌人5/8次便使自身恢复1点光芒/抽取1张书页</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_ThousandPoundBow">
+      <Name>千斤弓(主)</Name>
+      <Desc>使自身所有普通战斗书页类型暂时更改为远程,且书页中所有防御型骰子类型暂时更改为突刺
+目标书页骰子每与自身拼点1次便使目标书页所有骰子威力-1
+拼点开始时将1颗闪避(4～8)置入书页末尾(每幕至多触发1次)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_ThousandPoundBow_Secondary">
+      <Name>千斤弓(副)</Name>
+      <Desc>目标上一幕每承受1次伤害便使自身对其造成的伤害与混乱伤害+5%(至多25%)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_ThousandPoundBow_Reinforced">
+      <Name>千斤弓(强化主)</Name>
+      <Desc>所有骰子威力+1
+使自身所有普通战斗书页类型暂时更改为远程,且书页中所有防御型骰子类型暂时更改为突刺
+目标书页骰子每与自身拼点1次便使目标书页所有骰子威力-1
+拼点开始时将1颗闪避(5～8[拼点胜利]视为以1颗点数相同的突刺骰子命中1次)置入书页末尾(每幕至多触发1次)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_ThousandPoundBow_Secondary_Reinforced">
+      <Name>千斤弓(强化副)</Name>
+      <Desc>目标上一幕每承受1次伤害便使自身对其造成的伤害与混乱伤害+10%(至多50%)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_ThousandPoundBow_Together">
+      <Name>千斤弓(主副同用额外效果)</Name>
+      <Desc>根据自身书页装备的速度骰子使书页中的最后1颗进攻型骰类型更改为四色骰子
+x=自身骰子最终值
+第1颗速度骰子:赤:命中时造成1.5x点物理伤害(不计算抗性)
+第2颗速度骰子:白:命中时造成1.5x点混乱伤害(不计算抗性)
+第3颗速度骰子:黑:命中时造成x点伤害与混乱伤害(不计算抗性)
+第4颗速度骰子:蓝:命中时追加目标最大生命值x%点伤害(追加的伤害无法超过2x)
+(覆盖原本的骰子)</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_MoonSword">
+      <Name>月之剑(主)</Name>
+      <Desc>所有骰子威力+1
+每一幕开始时赋予手中所有书页4种月相标记(以残月>弦月>凸月>满月的顺序施加 若已拥有标记则刷新标记)
+若自身以正确顺序使用标记书页 则推进月相变化(正确顺序为残月>弦月>凸月>满月  根据速度骰子从左到右判断使用顺序 从残月开始计算)
+根据本幕推进到的月相结果使下一幕获得对应月相buff</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_MoonSword_Secondary">
+      <Name>月之剑(副)</Name>
+      <Desc>无视自身的伤害降低效果与目标不高于30%或100的减伤效果(不包括抗性)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_MoonSword_Reinforced">
+      <Name>月之剑(强化主)</Name>
+      <Desc>所有骰子威力+2
+速度骰子最小值+2 
+每一幕开始时赋予手中所有书页4种月相标记(以残月>弦月>凸月>满月的顺序施加 若已拥有标记则刷新标记)
+若自身以正确顺序使用标记书页 则推进月相变化(正确顺序为残月>弦月>凸月>满月  根据速度骰子从左到右判断使用顺序 从残月开始计算)
+根据本幕推进到的月相结果使下一幕获得对应月相buff</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_MoonSword_Secondary_Reinforced">
+      <Name>月之剑(强化副)</Name>
+      <Desc>无视自身的伤害降低效果与目标不高于99%或100的减伤效果(不包括抗性)
+若目标无减伤效果则额外触发一次命中时效果(每幕至多触发1次)</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_MoonSword_Together">
+      <Name>月之剑(主副同用额外效果)</Name>
+      <Desc>速度骰子+1
+每幕首颗速度骰子中使用的书页下一幕抽回至手中(不对ego书页生效)</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_WaningCrescent">
+      <Name>残月</Name>
+      <Desc>这一幕自身命中目标时使自身与体力最低的1名我方角色恢复2点体力与混乱抗性</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Quarter">
+      <Name>弦月</Name>
+      <Desc>自身获得的情感硬币数+1获得的情感硬币溢出时使所有友方角色获得相同的情感硬币</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Gibbous">
+      <Name>凸月</Name>
+      <Desc>自身命中时造成的伤害减少至20%但命中时追加点数80%的追加伤害
+自身可无视速度拉取指向体力最低友方角色的书页</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_FullMoon">
+      <Name>满月</Name>
+      <Desc>这一幕自身命中目标时使自身与体力最低的1名我方角色恢复2点体力与混乱抗性
+自身获得的情感硬币数+1 获得的情感硬币溢出时使所有友方角色获得相同的情感硬币 以此方法获得3枚正面/负面情感硬币的友方角色获得1层强壮/忍耐
+自身命中时造成的伤害减少至20%但命中时追加点数80%的追加伤害
+自身可无视速度拉取指向友方角色的书页</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_BloodofEyuil">
+      <Name>埃尤尔之血</Name>
+      <Desc>本buff视为一把已装备的副武器 但不占用副武器位置
+自身每张书页首次命中目标时对目标造成一次目标当前流血层数50%的流血伤害
+自身命中带有流血的目标时在下一幕对其施加当前流血层数20%的流血</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_FixerMarking">
+      <Name>收尾标记</Name>
+      <Desc>这一幕自身受到的非命中造成的伤害与混乱伤害+50*{0}%</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_AllInSight">
+      <Name>全面洞悉</Name>
+      <Desc>这一幕自身投出的点数无法超过骰子最大值</Desc>
+    </BattleEffectText>
+
+    <BattleEffectText ID="BattleUnitBuf_Inheritance_Sparkle">
+      <Name>传承之物</Name>
+      <Desc>自身速度+1对指向堂埃尤尔的敌方角色造成的伤害与混乱伤害+1 若自身与堂埃尤尔幕指向了同一目标则使该目标本幕对堂埃尤尔造成的伤害与混乱伤害-1
+若堂埃尤尔同时被3张书页选中则这一幕对所有指向堂埃尤尔的敌方角色使用1张[一如既往]</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="BattleUnitBuf_Inheritance_Eyuil">
+      <Name>传递之物</Name>
+      <Desc>自身获得的正面情感+1对指向耀的敌方角色施加的"流血"层数+1
+若耀同时被3张书页选中则这一幕对所有指向耀的敌方角色使用1张[一如既往]
+自身情感等级达到4时使"耀"获得"埃尤尔之血"</Desc>
+    </BattleEffectText>
+
+   </effectTextList>
+</BattleEffectTextRoot>
