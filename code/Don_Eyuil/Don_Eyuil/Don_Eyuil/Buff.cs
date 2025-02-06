@@ -420,11 +420,8 @@ namespace Don_Eyuil
     {
         public void ReduceShield(int num)
         {
-            this.stack -= num;
-            if (this.stack <= 0)
-            {
-                this.stack = 0;
-            }
+            GainBuf<BattleUnitBuf_BloodShield>(owner, -num);
+            //this.Add(-num);
             if (_owner.bufListDetail.HasBuf<BattleUnitBuf_Armour>() || _owner.bufListDetail.HasBuf<PassiveAbility_DonEyuil_02.BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodShield>())
             {
                 BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch.Trigger_BleedingDmg_After(_owner, num, KeywordBuf.Bleeding);

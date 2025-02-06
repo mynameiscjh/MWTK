@@ -14,6 +14,7 @@ using static CharacterSound;
 using System.Runtime.InteropServices;
 using Don_Eyuil.San_Sora.Player.Buff;
 using Don_Eyuil;
+using static Don_Eyuil.BattleUnitBuf_Don_Eyuil;
 namespace Don_Eyuil.San_Sora
 {
     public class PassiveAbility_SanSora_01 : PassiveAbilityBase
@@ -53,8 +54,7 @@ namespace Don_Eyuil.San_Sora
         {
             switch (Phase)
             {
-                case 1: case 2: return 500;
-                case 3: return 100;
+                case 1:return 500;
                 default: return base.GetMinHp();
             }
         }
@@ -106,6 +106,104 @@ namespace Don_Eyuil.San_Sora
         public override void OnWaveStart()
         {
             BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(owner, 500);
+        }
+    }
+    public class PassiveAbility_SanSora_05 : PassiveAbilityBase
+    {
+        //正在进行的冒险与重燃的热血
+        public override string debugDesc => "自身每拥有50点护盾便使自身受到的伤害与混乱伤害减少5%(至多30%)\r\n每幕开始时获得(自身失去护盾量/25)层”血羽”";
+        public class BattleUnitBuf_SanSoraDmgRedu : BattleUnitBuf_Don_Eyuil
+        {
+            public int LostShieldCount = 0;
+            public BattleUnitBuf_SanSoraDmgRedu(BattleUnitModel model) : base(model)
+            {
+                this.stack = 0;
+            }
+            public override int GetBreakDamageReductionRate()
+            {
+                return Math.Min(5 * (BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(owner) / 50),30);
+            }
+            public override int GetDamageReductionRate()
+            {
+                return Math.Min(5 * (BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(owner) / 50), 30);
+            }
+            public override void OnGainEyuilBufStack(BattleUnitBuf_Don_Eyuil Buff, ref int stack)
+            {
+                if(Buff is BattleUnitBuf_BloodShield && stack < 0)
+                {
+                    LostShieldCount += Math.Abs(stack);
+                }
+            }
+            public override void OnRoundStartAfter()
+            {
+                BattleUnitBuf_Feather.GainBuf<BattleUnitBuf_Feather>(owner, LostShieldCount / 25);
+            }
+        }
+        public override void OnCreated()
+        {
+            BattleUnitBuf_SanSoraDmgRedu.GetOrAddBuf<BattleUnitBuf_SanSoraDmgRedu>(owner);
+        }
+        public override void OnDestroyed()
+        {
+            BattleUnitBuf_SanSoraDmgRedu.RemoveBuf<BattleUnitBuf_SanSoraDmgRedu>(owner);
+        }
+    }
+    public class PassiveAbility_SanSora_06 : PassiveAbilityBase
+    {
+        //亲族们仍在苦难之中!
+        public override string debugDesc => "自身拼点失败时将对自身施加2层”流血”\r\n自身累计施加100层”流血”前体力无法低于300\r\n条件达成后下一幕改变行动逻辑并获得新的被动";
+        public override void OnLoseParrying(BattleDiceBehavior behavior)
+        {
+            owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 2);
+        }
+    }
+    public class PassiveAbility_SanSora_07 : PassiveAbilityBase
+    {
+        //若能实现那理想中的共存
+        public override string debugDesc => "敌方角色死亡时将在这一幕中对自身施加10层”流血”与2层”虚弱”\r\n自身所有骰子与招架型外的骰子拼点时威力+2";
+        public override void OnDieOtherUnit(BattleUnitModel unit)
+        {
+            if(unit.faction == Faction.Enemy)
+            {
+                owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Bleeding, 10);
+                owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 2);
+            }
+        }
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            if(behavior != null && behavior.TargetDice != null && behavior.TargetDice.Detail != BehaviourDetail.Guard)
+            {
+                behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = 2 });
+            }
+        }
+    }
+    public class PassiveAbility_SanSora_08 : PassiveAbilityBase
+    {
+        //激荡的心情与永不终结之梦
+        public override string debugDesc => "自身拼点失败使改为获得正面情感\r\n每幕中场上所有角色每获得10点正面情感便使其下幕所有骰子威力+1";
+
+        [HarmonyPatch(typeof(BattleParryingManager), "Decision")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BattleParryingManager_Decision_Tran(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            for (int i = 1; i < codes.Count; i++)
+            {
+                /*if (codes[i].opcode == OpCodes.Ldfld && codes[i].operand == AccessTools.Field(typeof(BattleParryingManager), "_currentLoserTeam") &&
+                    codes[i + 1].opcode == OpCodes.Ldfld && codes[i + 1].operand == AccessTools.Field(typeof(BattleParryingManager.ParryingTeam), "unit") &&
+                    codes[i + 2].Calls(AccessTools.Method(typeof(BattleUnitModel), "get_emotionDetail")) &&
+                    codes[i + 3].opcode == OpCodes.Ldc_I4_1 &&
+                    codes[i + 4].opcode == OpCodes.Ldloc_2 &&
+                    codes[i + 5].Calls(AccessTools.Method(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")))
+                {
+
+                }*/
+                if (codes[i].opcode == OpCodes.Ldloc_2 && codes[i + 1].Calls(AccessTools.Method(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")))
+                {
+
+                }
+            }
+            return codes.AsEnumerable();
         }
     }
 }

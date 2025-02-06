@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 using LOR_DiceSystem;
 using Steamworks.Ugc;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -430,13 +431,14 @@ namespace Don_Eyuil
             {
                 if (Stack > 0)
                 {
-                    try
+                    /*try
                     {
-                        Adder = Adder != null ? Adder :Adder.faction == Faction.Player?
-                            BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Mapping_Books_命名空间与核心书页映射(new System.Diagnostics.StackFrame(1).GetMethod()?.DeclaringType.Namespace).Item1) :
-                            BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Mapping_Books_命名空间与核心书页映射(new System.Diagnostics.StackFrame(1).GetMethod()?.DeclaringType.Namespace).Item2);
+                        //Adder = Adder != null ? Adder :Adder.faction == Faction.Player?
+                           // BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Mapping_Books_命名空间与核心书页映射(new System.Diagnostics.StackFrame(1).GetMethod()?.DeclaringType.Namespace).Item1) :
+                           // BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Mapping_Books_命名空间与核心书页映射(new System.Diagnostics.StackFrame(1).GetMethod()?.DeclaringType.Namespace).Item2);
                     }
-                    catch (Exception _) { }
+                    catch (Exception _) { }*/
+                    Adder = Adder != null ? Adder : Target;
                     foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
                     {
                         if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
@@ -551,11 +553,43 @@ namespace Don_Eyuil
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
+        public virtual void OnGainEyuilBufStack(BattleUnitBuf_Don_Eyuil Buff, ref int stack)
+        {
 
+        }
+        public virtual void OnOtherUnitGainEyuilBufStack(BattleUnitBuf_Don_Eyuil Buff, BattleUnitModel Target, ref int stack)
+        {
 
+        }
+        public class OnGainEyuilBufStackPatch
+        {
+            public static void Trigger_GainEyuilBufStack(BattleUnitBuf_Don_Eyuil Buff, BattleUnitModel Target,ref int stack)
+            {
+                foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
+                {
+                    if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                    {
+                        (Buf as BattleUnitBuf_Don_Eyuil).OnGainEyuilBufStack(Buff, ref stack);
+                    }
+                }
+                List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                aliveList.Remove(Target);
+                foreach (var Model in aliveList)
+                {
+                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                    {
+                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                        {
+                            (Buf as BattleUnitBuf_Don_Eyuil).OnOtherUnitGainEyuilBufStack(Buff, Target,ref stack);
+                        }
+                    }
+                }
+            }
+        }
         public virtual int GetMaxStack() => -1;
         public virtual void Add(int stack)
         {
+            //stack = GetMaxStack() >= 0 ? GetMaxStack() - Math.Min(this.stack, GetMaxStack()) : stack;
             this.stack += stack;
             if (GetMaxStack() >= 0)
             {
@@ -608,7 +642,10 @@ namespace Don_Eyuil
             if (BuffInstance != null && BuffInstance.stack >= stack)
             {
                 BuffInstance.OnUseBuf(ref stack);
-                BuffInstance.Add(-stack);
+                GainBuf<T>(model, -stack);
+                //stack *= -1;
+                //OnGainEyuilBufStackPatch.Trigger_GainEyuilBufStack(BuffInstance, model, ref stack);
+                //BuffInstance.Add(stack);
                 return true;
             }
             return false;
@@ -619,6 +656,7 @@ namespace Don_Eyuil
             T BuffInstance = GetOrAddBuf<T>(model, ReadyType);
             if (BuffInstance != null)
             {
+                OnGainEyuilBufStackPatch.Trigger_GainEyuilBufStack(BuffInstance, model, ref stack);
                 BuffInstance.Add(stack);
             }
             return BuffInstance;
