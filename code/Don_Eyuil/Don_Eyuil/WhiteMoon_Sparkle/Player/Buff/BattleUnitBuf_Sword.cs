@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using UnityEngine;
 
 namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
@@ -16,6 +17,72 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public bool IsIntensify = false;
 
+        [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BattleDiceBehavior_GiveDamage_Tran(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count; i++)
+            {
+                if (codes[i].opcode == OpCodes.Ldloc_S && codes[i].ToString().Contains("13") && codes[i + 1].opcode == OpCodes.Ldc_I4_0 && codes[i + 2].opcode == OpCodes.Ldarg_0 && codes[i + 3].opcode == OpCodes.Call && codes[i + 3].operand.ToString().Contains("get_owner") && codes[i + 4].opcode == OpCodes.Ldc_I4_0 && codes[i + 5].Calls(AccessTools.Method(typeof(BattleUnitModel), "TakeDamage")))
+                {
+                    codes.InsertRange(i + 1, new List<CodeInstruction>
+                    {
+                        new CodeInstruction(OpCodes.Ldarg_0),
+                        CodeInstruction.Call(typeof(BattleUnitBuf_Sword), "ChangeDamage")
+                    });
+                    break;
+                }
+            }
+            return codes.AsEnumerable();
+        }
+
+        public static bool fl_ChangeDamage = false;
+
+        public static int ChangeDamage(int oldDmg, BattleDiceBehavior behavior)
+        {
+            if (behavior == null || behavior.card.target == null || !behavior.card.owner.bufListDetail.HasBuf<BattleUnitBuf_Sword>())
+            {
+                return oldDmg;
+            }
+            var buf = BattleUnitBuf_Don_Eyuil.GetBuf<BattleUnitBuf_Sword>(behavior.card.owner);
+            var atkResist = behavior.card.target.GetResistHP(behavior.Detail);
+            var dmg = (int)(behavior.DiceResultValue * BookModel.GetResistRate(atkResist));
+            if (dmg < oldDmg)
+            {
+                return oldDmg;
+            }
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == buf && !buf.IsIntensify)
+            {
+                if (dmg * 0.7 >= oldDmg)
+                {
+                    return dmg;
+                }
+                if (dmg - 100 >= oldDmg)
+                {
+                    return dmg;
+                }
+            }
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == buf && buf.IsIntensify)
+            {
+                if (!fl_ChangeDamage)
+                {
+                    behavior.owner.OnSucceedAttack(behavior);
+                    fl_ChangeDamage = true;
+                }
+
+                if (dmg * 0.99 >= oldDmg)
+                {
+                    return dmg;
+                }
+                if (dmg - 100 >= oldDmg)
+                {
+                    return dmg;
+                }
+            }
+            return oldDmg;
+        }
+
         public class BattleDiceCardBuf_Moon : BattleDiceCardBuf
         {
             public BattleDiceCardBuf_Moon()
@@ -25,157 +92,204 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 this.SetFieldValue<Sprite>("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks[$"Moon{this._stack}"]);
             }
 
+            public BattleDiceCardBuf_Moon(int v)
+            {
+                this._stack = v;
+                this.SetFieldValue<bool>("_iconInit", true);
+                this.SetFieldValue<Sprite>("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks[$"Moon{this._stack}"]);
+            }
+
+            public override void OnRoundEnd()
+            {
+                Destroy();
+            }
+
             public void Change(int v)
             {
                 this._stack = v;
                 this.SetFieldValue<Sprite>("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks[$"Moon{this._stack}"]);
             }
 
-        }
-
-        public class BattleUnitBuf_NewMoon : BattleUnitBuf_Don_Eyuil
-        {
-            public static string Desc = "这一幕自身命中目标时使自身与体力最低的1名我方角色恢复2点体力与混乱抗性";
-
-            public override void OnSuccessAttack(BattleDiceBehavior behavior)
+            public static void ChangeMoon(BattleUnitModel owner, int v)
             {
-                var temp = BattleObjectManager.instance.GetAliveList(owner.faction);
-                temp.Sort((x, y) => (int)(x.hp - y.hp));
-                temp.First().RecoverHP(2);
-                temp.First().RecoverBreakLife(2);
-                _owner.RecoverHP(2);
-                _owner.RecoverBreakLife(2);
-            }
-
-            public BattleUnitBuf_NewMoon(BattleUnitModel model) : base(model)
-            {
-            }
-        }
-
-        public class BattleUnitBuf_QuarterMoon : BattleUnitBuf_Don_Eyuil
-        {
-            public static string Desc = "自身获得的情感硬币数+1 获得的情感硬币溢出时使所有友方角色获得相同的情感硬币";
-
-            public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
-            {
-                Count++;
-                if (_owner.emotionDetail.AllEmotionCoins.Count >= _owner.emotionDetail.MaximumCoinNumber)
+                owner.bufListDetail.RemoveBufAll(typeof(BattleUnitBuf_NewMoon));
+                owner.bufListDetail.RemoveBufAll(typeof(BattleUnitBuf_QuarterMoon));
+                owner.bufListDetail.RemoveBufAll(typeof(BattleUnitBuf_GibbousMoon));
+                owner.bufListDetail.RemoveBufAll(typeof(BattleUnitBuf_FullMoon));
+                switch (v)
                 {
-                    BattleObjectManager.instance.GetAliveList(_owner.faction).Where(x => x.Book.BookId != MyId.Book_堂_埃尤尔之页 && x != _owner).Do(x => x.emotionDetail.CreateEmotionCoin(CoinType, 1));
+                    case 0:
+                        BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_NewMoon>(owner, 1);
+                        break;
+                    case 1:
+                        BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_QuarterMoon>(owner, 1);
+                        break;
+                    case 2:
+                        BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_GibbousMoon>(owner, 1);
+                        break;
+                    case 3:
+                        BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_FullMoon>(owner, 1);
+                        break;
+                    default:
+                        break;
                 }
             }
 
-            public BattleUnitBuf_QuarterMoon(BattleUnitModel model) : base(model)
+            public class BattleUnitBuf_NewMoon : BattleUnitBuf_Don_Eyuil
             {
-            }
-        }
+                public static string Desc = "这一幕自身命中目标时使自身与体力最低的1名我方角色恢复2点体力与混乱抗性";
 
-        public class BattleUnitBuf_GibbousMoon : BattleUnitBuf_Don_Eyuil
-        {
-            public static string Desc = "自身命中时造成的伤害减少至0%但命中时追加点数80%的追加伤害\r\n自身可无视速度拉取指向体力最低友方角色的书页\r\n";
-
-            [HarmonyPatch(typeof(BattleUnitModel), "CanChangeAttackTarget")]
-            [HarmonyPostfix]
-            public static void BattleUnitModel_CanChangeAttackTarget_Post(BattleUnitModel target, int targetIndex, BattleUnitModel __instance, ref bool __result)
-            {
-                if (target.cardSlotDetail.cardAry[targetIndex] == null)
+                public override void OnSuccessAttack(BattleDiceBehavior behavior)
                 {
-                    return;
-                }
-
-                if (__instance.Book.BookId == MyId.Book_小耀之页 && (GetBuf<BattleUnitBuf_GibbousMoon>(__instance) != null || GetBuf<BattleUnitBuf_FullMoon>(__instance) != null))
-                {
-                    var temp = BattleObjectManager.instance.GetAliveList(__instance.faction);
+                    var temp = BattleObjectManager.instance.GetAliveList(owner.faction);
                     temp.Sort((x, y) => (int)(x.hp - y.hp));
-                    if (temp[0] == null)
+                    temp.First().RecoverHP(2);
+                    temp.First().RecoverBreakLife(2);
+                    _owner.RecoverHP(2);
+                    _owner.RecoverBreakLife(2);
+                }
+
+                public BattleUnitBuf_NewMoon(BattleUnitModel model) : base(model)
+                {
+                }
+            }
+
+            public class BattleUnitBuf_QuarterMoon : BattleUnitBuf_Don_Eyuil
+            {
+                public static string Desc = "自身获得的情感硬币数+1 获得的情感硬币溢出时使所有友方角色获得相同的情感硬币";
+
+                public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+                {
+                    Count++;
+                    if (_owner.emotionDetail.AllEmotionCoins.Count >= _owner.emotionDetail.MaximumCoinNumber)
+                    {
+                        BattleObjectManager.instance.GetAliveList(_owner.faction).Where(x => x.Book.BookId != MyId.Book_堂_埃尤尔之页 && x != _owner).Do(x => x.emotionDetail.CreateEmotionCoin(CoinType, 1));
+                    }
+                }
+
+                public BattleUnitBuf_QuarterMoon(BattleUnitModel model) : base(model)
+                {
+                }
+            }
+
+            public class BattleUnitBuf_GibbousMoon : BattleUnitBuf_Don_Eyuil
+            {
+                public static string Desc = "自身命中时造成的伤害减少至0%但命中时追加点数80%的追加伤害\r\n自身可无视速度拉取指向体力最低友方角色的书页\r\n";
+
+                [HarmonyPatch(typeof(BattleUnitModel), "CanChangeAttackTarget")]
+                [HarmonyPostfix]
+                public static void BattleUnitModel_CanChangeAttackTarget_Post(BattleUnitModel target, int targetIndex, BattleUnitModel __instance, ref bool __result)
+                {
+                    if (target.cardSlotDetail.cardAry[targetIndex] == null)
                     {
                         return;
                     }
-                    if (target.cardSlotDetail.cardAry[targetIndex].target.hp == temp[0].hp)
+
+                    if (__instance.Book.BookId == MyId.Book_小耀之页 && (GetBuf<BattleUnitBuf_GibbousMoon>(__instance) != null || GetBuf<BattleUnitBuf_FullMoon>(__instance) != null))
                     {
-                        __result = true;
+                        var temp = BattleObjectManager.instance.GetAliveList(__instance.faction);
+                        temp.Sort((x, y) => (int)(x.hp - y.hp));
+                        if (temp[0] == null)
+                        {
+                            return;
+                        }
+                        if (target.cardSlotDetail.cardAry[targetIndex].target.hp == temp[0].hp)
+                        {
+                            __result = true;
+                        }
                     }
                 }
-            }
 
-            public override void BeforeGiveDamage(BattleDiceBehavior behavior)
-            {
-                behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmgRate = -100 });
-            }
-
-            public override void OnSuccessAttack(BattleDiceBehavior behavior)
-            {
-                behavior.card.target.TakeDamage((int)(behavior.DiceResultValue * 0.8));
-            }
-
-            public BattleUnitBuf_GibbousMoon(BattleUnitModel model) : base(model)
-            {
-            }
-        }
-
-        public class BattleUnitBuf_FullMoon : BattleUnitBuf_Don_Eyuil
-        {
-            public static string Desc = "这一幕自身命中目标时使自身与体力最低的1名我方角色恢复2点体力与混乱抗性\r\n自身获得的情感硬币数+1 获得的情感硬币溢出时使所有友方角色获得相同的情感硬币 以此方法获得3枚正面/负面情感硬币的友方角色获得1层强壮/忍耐\r\n自身命中时造成的伤害减少至20%但命中时追加点数80%的追加伤害\r\n自身可无视速度拉取指向友方角色的书页\r\n";
-
-            public Dictionary<BattleUnitModel, int[]> dic = new Dictionary<BattleUnitModel, int[]>();
-
-            public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
-            {
-                Count++;
-                if (_owner.emotionDetail.AllEmotionCoins.Count >= _owner.emotionDetail.MaximumCoinNumber)
+                public override void BeforeGiveDamage(BattleDiceBehavior behavior)
                 {
-                    BattleObjectManager.instance.GetAliveList(_owner.faction).Where(x => x.Book.BookId != MyId.Book_堂_埃尤尔之页 && x != _owner).Do(x =>
-                    {
-                        x.emotionDetail.CreateEmotionCoin(CoinType, 1);
-                        if (dic.ContainsKey(x))
-                        {
-                            switch (CoinType)
-                            {
-                                case EmotionCoinType.Positive:
-                                    dic[x][0]++;
-                                    break;
-                                case EmotionCoinType.Negative:
-                                    dic[x][1]++;
-                                    break;
-                            }
-                        }
-                        else
-                        {
-                            dic.Add(x, new int[2] { CoinType == EmotionCoinType.Positive ? 1 : 0, CoinType == EmotionCoinType.Negative ? 1 : 0 });
-                        }
-                        if (dic[x][0] >= 3)
-                        {
-                            x.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
-                        }
-                        if (dic[x][1] >= 3)
-                        {
-                            x.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Endurance, 1);
-                        }
-                    });
+                    behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmgRate = -100 });
+                }
+
+                public override void OnSuccessAttack(BattleDiceBehavior behavior)
+                {
+                    behavior.card.target.TakeDamage((int)(behavior.DiceResultValue * 0.8));
+                }
+
+                public BattleUnitBuf_GibbousMoon(BattleUnitModel model) : base(model)
+                {
                 }
             }
 
-            public override void BeforeGiveDamage(BattleDiceBehavior behavior)
+            public class BattleUnitBuf_FullMoon : BattleUnitBuf_Don_Eyuil
             {
-                behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmgRate = -80 });
-            }
+                public static string Desc = "这一幕自身命中目标时使自身与体力最低的1名我方角色恢复2点体力与混乱抗性\r\n自身获得的情感硬币数+1 获得的情感硬币溢出时使所有友方角色获得相同的情感硬币 以此方法获得3枚正面/负面情感硬币的友方角色获得1层强壮/忍耐\r\n自身命中时造成的伤害减少至20%但命中时追加点数80%的追加伤害\r\n自身可无视速度拉取指向友方角色的书页\r\n";
 
-            public override void OnSuccessAttack(BattleDiceBehavior behavior)
-            {
-                behavior.card.target.TakeDamage((int)(behavior.DiceResultValue * 0.8));
+                public Dictionary<BattleUnitModel, int[]> dic = new Dictionary<BattleUnitModel, int[]>();
 
-                var temp = BattleObjectManager.instance.GetAliveList(owner.faction);
-                temp.Sort((x, y) => (int)(x.hp - y.hp));
-                temp.First().RecoverHP(2);
-                temp.First().RecoverBreakLife(2);
-                _owner.RecoverHP(2);
-                _owner.RecoverBreakLife(2);
-            }
+                public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+                {
+                    Count++;
+                    if (_owner.emotionDetail.AllEmotionCoins.Count >= _owner.emotionDetail.MaximumCoinNumber)
+                    {
+                        BattleObjectManager.instance.GetAliveList(_owner.faction).Where(x => x.Book.BookId != MyId.Book_堂_埃尤尔之页 && x != _owner).Do(x =>
+                        {
+                            x.emotionDetail.CreateEmotionCoin(CoinType, 1);
+                            if (dic.ContainsKey(x))
+                            {
+                                switch (CoinType)
+                                {
+                                    case EmotionCoinType.Positive:
+                                        dic[x][0]++;
+                                        break;
+                                    case EmotionCoinType.Negative:
+                                        dic[x][1]++;
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                dic.Add(x, new int[2] { CoinType == EmotionCoinType.Positive ? 1 : 0, CoinType == EmotionCoinType.Negative ? 1 : 0 });
+                            }
+                            if (dic[x][0] >= 3)
+                            {
+                                x.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
+                            }
+                            if (dic[x][1] >= 3)
+                            {
+                                x.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Endurance, 1);
+                            }
+                        });
+                    }
+                }
 
-            public BattleUnitBuf_FullMoon(BattleUnitModel model) : base(model)
-            {
+                public override void BeforeGiveDamage(BattleDiceBehavior behavior)
+                {
+                    behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmgRate = -80 });
+                }
+
+                public override void OnSuccessAttack(BattleDiceBehavior behavior)
+                {
+                    behavior.card.target.TakeDamage((int)(behavior.DiceResultValue * 0.8));
+
+                    var temp = BattleObjectManager.instance.GetAliveList(owner.faction);
+                    temp.Sort((x, y) => (int)(x.hp - y.hp));
+                    temp.First().RecoverHP(2);
+                    temp.First().RecoverBreakLife(2);
+                    _owner.RecoverHP(2);
+                    _owner.RecoverBreakLife(2);
+                }
+
+                public BattleUnitBuf_FullMoon(BattleUnitModel model) : base(model)
+                {
+                }
             }
         }
+
+        public override int SpeedDiceNumAdder()
+        {
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this && BattleUnitBuf_Sparkle.Instance.SubWeapon == this)
+            {
+                return 1;
+            }
+
+            return base.SpeedDiceNumAdder();
+        }
+
 
         public override void OnRoundStart()
         {
@@ -183,7 +297,54 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
             {
                 _owner.Book.SetSpeedDiceMin(_owner.Book.ClassInfo.EquipEffect.SpeedMin + 2);
             }
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this)
+            {
+                foreach (var item in _owner.allyCardDetail.GetHand())
+                {
+                    item.AddBuf(new BattleDiceCardBuf_Moon(Random.Range(0, 3)));
+                }
+            }
+            fl_ChangeDamage = false;
+        }
 
+        public override void OnStartBattle()
+        {
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this)
+            {
+                int currentStage = -1;
+                foreach (var item in _owner.cardSlotDetail.cardAry)
+                {
+                    if (item.card.HasBuf<BattleDiceCardBuf_Moon>())
+                    {
+                        var buf = item.card.GetBufList().Find(x => x.GetType() == typeof(BattleDiceCardBuf_Moon)) as BattleDiceCardBuf_Moon;
+                        if (currentStage + 1 == buf.Stack)
+                        {
+                            currentStage++;
+                        }
+                        else
+                        {
+                            currentStage = -1;
+                        }
+                    }
+                }
+                if (currentStage == -1)
+                {
+                    currentStage = 0;
+                }
+                BattleDiceCardBuf_Moon.ChangeMoon(_owner, currentStage);
+            }
+        }
+
+        public override void OnRoundEnd()
+        {
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this && BattleUnitBuf_Sparkle.Instance.SubWeapon == this)
+            {
+                if (_owner.cardSlotDetail.cardAry[0] == null)
+                {
+                    return;
+                }
+                _owner.allyCardDetail.DrawCardsAllSpecific(_owner.cardSlotDetail.cardAry[0].card.GetID());
+            }
         }
 
         public override void BeforeRollDice(BattleDiceBehavior behavior)
