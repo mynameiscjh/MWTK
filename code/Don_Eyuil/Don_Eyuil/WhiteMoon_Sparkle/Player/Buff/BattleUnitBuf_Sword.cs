@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -33,6 +34,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                     });
                     break;
                 }
+                
             }
             return codes.AsEnumerable();
         }
@@ -52,7 +54,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
             {
                 return oldDmg;
             }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == buf && !buf.IsIntensify)
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(buf) && !buf.IsIntensify)
             {
                 if (dmg * 0.7 >= oldDmg)
                 {
@@ -63,7 +65,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                     return dmg;
                 }
             }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == buf && buf.IsIntensify)
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(buf) && buf.IsIntensify)
             {
                 if (!fl_ChangeDamage)
                 {
@@ -282,7 +284,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override int SpeedDiceNumAdder()
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this && BattleUnitBuf_Sparkle.Instance.SubWeapon == this)
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this))
             {
                 return 1;
             }
@@ -293,15 +295,15 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override void OnRoundStart()
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this && IsIntensify)
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && IsIntensify)
             {
                 _owner.Book.SetSpeedDiceMin(_owner.Book.ClassInfo.EquipEffect.SpeedMin + 2);
             }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this)
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
             {
                 foreach (var item in _owner.allyCardDetail.GetHand())
                 {
-                    item.AddBuf(new BattleDiceCardBuf_Moon(Random.Range(0, 3)));
+                    item.AddBuf(new BattleDiceCardBuf_Moon(UnityEngine.Random.Range(0, 3)));
                 }
             }
             fl_ChangeDamage = false;
@@ -309,9 +311,10 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override void OnStartBattle()
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this)
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
             {
                 int currentStage = -1;
+                int maxStage = 0;
                 foreach (var item in _owner.cardSlotDetail.cardAry)
                 {
                     if (item.card.HasBuf<BattleDiceCardBuf_Moon>())
@@ -325,19 +328,16 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                         {
                             currentStage = -1;
                         }
+                        maxStage = Math.Max(maxStage, currentStage);
                     }
                 }
-                if (currentStage == -1)
-                {
-                    currentStage = 0;
-                }
-                BattleDiceCardBuf_Moon.ChangeMoon(_owner, currentStage);
+                BattleDiceCardBuf_Moon.ChangeMoon(_owner, maxStage);
             }
         }
 
         public override void OnRoundEnd()
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this && BattleUnitBuf_Sparkle.Instance.SubWeapon == this)
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this))
             {
                 if (_owner.cardSlotDetail.cardAry[0] == null)
                 {
@@ -349,7 +349,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapon == this)
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
             {
                 behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = IsIntensify ? 2 : 1 });
             }

@@ -622,6 +622,19 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
         [HarmonyPrefix]
         public static bool LevelUpUI_OnSelectEgoCard_Pre(BattleDiceCardUI picked)
         {
+
+            if (BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text == "选择主武器书页")
+            {
+                MyTools.未实现提醒();
+                return false;
+            }
+
+            if (BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text == "选择副武器书页")
+            {
+                MyTools.未实现提醒();
+                return false;
+            }
+
             if (map_Don_Eyuil.Values.ToList().Exists(x => x == picked.CardModel.GetID()))
             {
                 var I39 = BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页);
@@ -645,7 +658,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 }
                 ChosenCard.Add(picked.CardModel.GetID());
                 var temp = map_Don_Eyuil.ToList().Find(x => x.Value == picked.CardModel.GetID()).Key;
-                cards_Don_Eyuil.Remove(temp);
+                cards_Don_Eyuil.Remove(picked.CardModel.GetID());
                 I39.personalEgoDetail.AddCard(temp);
                 BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
                 return false;
@@ -663,6 +676,12 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 
         public override void OnWaveStart()
         {
+
+            if (StageController.Instance.CurrentWave == 1)
+            {
+                HardBloodCards.ChosenCard.Clear();
+            }
+
             HardBloodCards.cards_Don_Eyuil = new List<LorId>(this.owner.UnitData.unitData.GetDeckForBattle(1).Where(item => HardBloodCards.map_Don_Eyuil.Values.Contains(item.id) && !HardBloodCards.ChosenCard.Contains(item.id)).Select(item => item.id));
 
             foreach (var item in HardBloodCards.ChosenCard)

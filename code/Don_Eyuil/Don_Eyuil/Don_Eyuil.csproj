@@ -99,6 +99,7 @@
     <Compile Include="Don_Eyuil\DiceCardAbility.cs" />
     <Compile Include="Don_Eyuil\DiceCardSelfAbility.cs" />
     <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_HardBlood.cs" />
+    <Compile Include="Don_Eyuil\Player\Buff\BattleUnitBuf_Transmit.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_46.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_63.cs" />
     <Compile Include="Don_Eyuil\Player\DiceCardAbility\DiceCardAbility_DonEyuil_64.cs" />
@@ -196,18 +197,24 @@
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_10.cs" />
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_11.cs" />
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_12.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Blood.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Bow.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Flag.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Inherit.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Know.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Sparkle.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Sword.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Year.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\PassiveAbility\PassiveAbility_WhiteMoonSparkle_13.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\PassiveAbility\PassiveAbility_WhiteMoonSparkle_14.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\PassiveAbility\PassiveAbility_WhiteMoonSparkle_16.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\PassiveAbility\PassiveAbility_WhiteMoonSparkle_17.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WhiteMoon_Sparkle\Player\PassiveAbility\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,11 +1,17 @@
-﻿namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
+﻿using HarmonyLib;
+using System;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine.UI;
+
+namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 {
     public class BattleUnitBuf_Sparkle : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc = "管理百般武艺";
 
-        public BattleUnitBuf_Don_Eyuil PrimaryWeapon = null;
-        public BattleUnitBuf_Don_Eyuil SubWeapon = null;
+        public List<BattleUnitBuf_Don_Eyuil> PrimaryWeapons = new List<BattleUnitBuf_Don_Eyuil>();
+        public List<BattleUnitBuf_Don_Eyuil> SubWeapons = new List<BattleUnitBuf_Don_Eyuil>();
         static BattleUnitBuf_Sparkle _instance = null;
         public static BattleUnitBuf_Sparkle Instance
         {
@@ -27,14 +33,31 @@
             }
         }
 
-        public void ReselectPrimaryWeapon()
+        public int stage = 0;
+
+        public void SelectPrimaryWeapon()
         {
             MyTools.未实现提醒();
+            var emoCards = new List<EmotionEgoXmlInfo>();
+
+            BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
+            BattleManagerUI.Instance.ui_levelup.InitEgo(Math.Min(3, emoCards.Count), emoCards);
+            BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["玩家硬血术统一图标"];
+            BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "选择主武器书页";
+            BattleManagerUI.Instance.ui_levelup._emotionLevels.Do(x => x.Set(false, false, false));
         }
 
-        public void ReselectSubWeapon()
+        public void SelectSubWeapon()
         {
             MyTools.未实现提醒();
+
+            var emoCards = new List<EmotionEgoXmlInfo>();
+
+            BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
+            BattleManagerUI.Instance.ui_levelup.InitEgo(Math.Min(3, emoCards.Count), emoCards);
+            BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["玩家硬血术统一图标"];
+            BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "选择副武器书页";
+            BattleManagerUI.Instance.ui_levelup._emotionLevels.Do(x => x.Set(false, false, false));
         }
 
         public BattleUnitBuf_Sparkle(BattleUnitModel model) : base(model)

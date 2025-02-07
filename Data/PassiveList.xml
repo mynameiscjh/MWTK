@@ -503,7 +503,7 @@
     <Script>WhiteMoonSparkle_6</Script>
     <Name>水之镜</Name>
     <Desc>自身免疫所有伤害与混乱伤害
-遭遇单方面攻击时将等同于目标书页骰子数等量的招架骰子(3～7[拼点失败]不承受反震伤害)迎击
+遭遇单方面攻击时将等同于目标书页骰子数等量的招架骰子(3~7[拼点失败]不承受反震伤害)迎击
 若自身所有主武器均已损坏则移除本被动</Desc>
   </Passive>
   <Passive ID="36">
@@ -649,8 +649,8 @@
     <Cost>7</Cost>
     <Script>WhiteMoonSparkle_16</Script>
     <Name>水之镜</Name>
-    <Desc>受到单方面攻击时将等同于目标书页骰子数等量的招架骰子(1～2[拼点失败]不承受反震伤害)迎击
-下令战斗时获得1颗远程反击骰子(斩击4～8使目标当前骰子无法再次投掷)
+    <Desc>受到单方面攻击时将等同于目标书页骰子数等量的招架骰子(1~2[拼点失败]不承受反震伤害)迎击
+下令战斗时获得1颗远程反击骰子(斩击4~8使目标当前骰子无法再次投掷)
 (本被动不可转移)</Desc>
   </Passive>
   <Passive ID="46">
@@ -662,7 +662,7 @@
     <CanReceivePassive>false</CanReceivePassive>
     <InnerType>-1</InnerType>
     <Cost>3</Cost>
-    <Script>WhiteMoonSparkle_16</Script>
+    <Script>WhiteMoonSparkle_17</Script>
     <Name>惊险的比试</Name>
     <Desc>战斗开始自身每有一张书页指向同一目标便使自身本幕对其造成的伤害+1(至多+3)</Desc>
   </Passive>

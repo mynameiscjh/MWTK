@@ -19,7 +19,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override void OnStartBattle()
         {
-            if (Instance.PrimaryWeapon == this)
+            if (Instance.PrimaryWeapons.Contains(this))
             {
                 foreach (var item in _owner.cardSlotDetail.cardAry)
                 {
@@ -27,7 +27,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                     item.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { max = 3 });
                 }
             }
-            if (Instance.SubWeapon == this && !IsIntensify)
+            if (Instance.SubWeapons.Contains(this) && !IsIntensify)
             {
                 foreach (var item in _owner.cardSlotDetail.cardAry)
                 {
@@ -35,7 +35,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 }
             }
 
-            if (Instance.SubWeapon == this && IsIntensify)
+            if (Instance.SubWeapons.Contains(this) && IsIntensify)
             {
                 foreach (var item in _owner.cardSlotDetail.cardAry)
                 {
@@ -46,11 +46,11 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
-            if (Instance.SubWeapon == this && !IsIntensify)
+            if (Instance.SubWeapons.Contains(this) && !IsIntensify)
             {
                 behavior.GiveDamage(behavior.card.target);
             }
-            if (Instance.SubWeapon == this && IsIntensify)
+            if (Instance.SubWeapons.Contains(this) && IsIntensify)
             {
                 behavior.GiveDamage(behavior.card.target);
                 behavior.GiveDamage(behavior.card.target);
@@ -61,7 +61,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override void OnSuccessAttack(BattleDiceBehavior behavior)
         {
-            if (Instance.SubWeapon == this && Instance.PrimaryWeapon == this)
+            if (Instance.SubWeapons.Contains(this) && Instance.PrimaryWeapons.Contains(this))
             {
                 behavior.card.ApplyDiceStatBonus(DiceMatch.NextDice, new DiceStatBonus() { min = 1 });
                 count_attack++;
@@ -85,12 +85,12 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override void OnWinParrying(BattleDiceBehavior behavior)
         {
-            if ((count_quickness < 1 && Instance.PrimaryWeapon == this) || (count_quickness < 2 && Instance.PrimaryWeapon == this && IsIntensify))
+            if ((count_quickness < 1 && Instance.PrimaryWeapons.Contains(this)) || (count_quickness < 2 && Instance.PrimaryWeapons.Contains(this) && IsIntensify))
             {
                 _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Quickness, 1, _owner);
                 count_quickness++;
             }
-            if (Instance.PrimaryWeapon == this && IsIntensify)
+            if (Instance.PrimaryWeapons.Contains(this) && IsIntensify)
             {
                 behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg = 3, breakDmg = 3 });
             }
@@ -98,7 +98,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override void OnLoseParrying(BattleDiceBehavior behavior)
         {
-            if (Instance.PrimaryWeapon == this && IsIntensify)
+            if (Instance.PrimaryWeapons.Contains(this) && IsIntensify)
             {
                 behavior.TargetDice.ApplyDiceStatBonus(new DiceStatBonus() { dmg = -2, breakDmg = -2 });
             }

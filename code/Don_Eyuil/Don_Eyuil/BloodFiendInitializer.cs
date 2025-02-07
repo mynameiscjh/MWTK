@@ -152,7 +152,12 @@ namespace Don_Eyuil
                 {
                     Singleton<StageClassInfoList>.Instance.GetData(id)
                 });
-
+                var 挂钩 = new GameObject($"挂钩 {r}");
+                挂钩.transform.parent = testS.transform.GetChild(1).GetChild(1);
+                挂钩.transform.localPosition = Vector3.zero;
+                var image_挂钩 = 挂钩.AddComponent<Image>();
+                image_挂钩.sprite = TKS_BloodFiend_Initializer.ArtWorks["挂钩"];
+                image_挂钩.raycastTarget = false;
                 testS.gameObject.AddComponent<Roll>().Init(new Vector3(852.9309f, 7585f + 1583.335f - 400f, 0) + 降低可读性的魔法数字2, 600, r * 5);
                 testS.gameObject.SetActive(true);
             }
@@ -1088,6 +1093,7 @@ namespace Don_Eyuil
 
     public class MyId
     {
+        public static LorId 未实现id = MyTools.Create(0);
         public static LorId Card_血之宝库_1 = MyTools.Create(1);
         public static LorId Card_血剑斩击 = MyTools.Create(2);
         public static LorId Card_凝血化锋_1 = MyTools.Create(3);
@@ -1177,6 +1183,7 @@ namespace Don_Eyuil
         public static ulong User_小D = 76561199079466854;
         public static ulong User_天空 = 76561198877012566;
         public static ulong User_139 = 76561198995229429;
+        public static ulong User_回声 = 1554789556;
 
 
         public static List<LorId> Books_拉曼查乐园的血魔 = new List<LorId>()
