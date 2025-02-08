@@ -2258,7 +2258,7 @@
     <Script></Script>
     <ScriptDesc></ScriptDesc>
     <BehaviourList>
-      <Behaviour Min="9" Dice="15" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice01" ActionScript="" Desc="" />
+      <Behaviour Min="9" Dice="15" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice01" ActionScript="" Desc="[命中时]下一幕对目标施加1层[收尾标记]" />
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -2272,7 +2272,7 @@
     <ScriptDesc></ScriptDesc>
     <BehaviourList>
       <Behaviour Min="5" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice02" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice02" ActionScript="" Desc="[命中时]使目前正面情感最多的我方角色下一幕获得1层[强壮]" />
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -2284,7 +2284,8 @@
     <Rarity>Common</Rarity>
     <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_01</Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc>
+</ScriptDesc>
     <BehaviourList>
       <Behaviour Min="4" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
       <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
@@ -2300,7 +2301,7 @@
     <Script>WhiteMoonSparkle_02</Script>
     <ScriptDesc></ScriptDesc>
     <BehaviourList>
-      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice03" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="7" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice03" ActionScript="" Desc="[命中时]下一幕开始时使目标层数最多的负面状态层数+20%(向上取整)" />
       <Behaviour Min="4" Dice="7" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice04" ActionScript="" Desc="" />
       <Behaviour Min="4" Dice="6" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
@@ -2328,7 +2329,9 @@
     <Rarity>Rare</Rarity>
     <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_04</Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc>本书页根据自身当前主武器改变
+[拼点开始]摧毁本书页所有骰子 并置入与目标书页骰子数等量的点数为被摧毁骰子最大最小值平均值的进攻型骰子 骰子类型为目标弱点抗性（且首颗骰子拥有所有被摧毁骰子的骰子效果）
+</ScriptDesc>
     <BehaviourList>
       <Behaviour Min="6" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice07" ActionScript="" Desc="" />
 <Behaviour Min="6" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice08" ActionScript="" Desc="" />
@@ -2343,10 +2346,12 @@
     <Rarity>Rare</Rarity>
     <Spec Range="Far" Cost="3" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_05</Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc>本书页根据自身当前主武器改变
+[拼点开始]本书页所有骰子拼点失败时重复投掷1次（至多1次）但造成的伤害与混乱伤害-60%
+</ScriptDesc>
     <BehaviourList>
-      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice09" ActionScript="" Desc="" />
-<Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice09" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice09" ActionScript="" Desc="[拼点失败]使本书页最后1颗进攻型骰子威力+1" />
+<Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice09" ActionScript="" Desc="[拼点失败]使本书页最后1颗进攻型骰子威力+1" />
 <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="G" MotionDefault="N" EffectRes="" Script="powerDouble" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
@@ -2358,7 +2363,10 @@
     <Rarity>Rare</Rarity>
     <Spec Range="Near" Cost="3" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_06</Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc>本书页根据自身当前主武器改变
+本书页将视为拥有所有月相标记
+[拼点开始]若目标首颗骰子平均值大于15则在书页末尾置入一颗打击骰子(13~17若骰子基础值不低于20则造成伤害+50%)反之则置入书页开头
+</ScriptDesc>
     <BehaviourList>
 <Behaviour Min="5" Dice="10" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice10" ActionScript="" Desc="" />
     </BehaviourList>
@@ -2372,7 +2380,11 @@
     <Rarity>Unique</Rarity>
     <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_07</Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc>本书页根据自身当前主武器改变
+本书页将在使用后移出战斗 并在2幕后回到手中
+[使用时]本书页造成的伤害与混乱伤害+40% 且本书页每命中3次敌人便在下一幕获得1层强壮与伤害强化（至多3层）
+
+</ScriptDesc>
     <BehaviourList>
 <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice11" ActionScript="" Desc="" />
 <Behaviour Min="5" Dice="10" Type="Atk" Detail="Hit" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice11" ActionScript="" Desc="" />
@@ -2387,7 +2399,11 @@
     <Rarity>Unique</Rarity>
     <Spec Range="Far" Cost="4" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_08</Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc>本书页根据自身当前主武器改变
+本书页将在使用后移出战斗 并在2幕后回到手中
+[使用时]本书页使用期间使目标受到的非命中伤害+50% 
+
+</ScriptDesc>
     <BehaviourList>
 <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice13" ActionScript="" Desc="" />
 <Behaviour Min="5" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice14" ActionScript="" Desc="" />
@@ -2402,7 +2418,11 @@
     <Rarity>Unique</Rarity>
     <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_08</Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc>本书页根据自身当前主武器改变
+本书页将在使用后移出战斗 并在2幕后回到手中
+[使用时]本书页使用期间使目标受到的非命中伤害+50% 
+
+</ScriptDesc>
     <BehaviourList>
 <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice13" ActionScript="" Desc="" />
 <Behaviour Min="5" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice14" ActionScript="" Desc="" />
@@ -2550,7 +2570,11 @@
     <Rarity>Common</Rarity>
     <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_15</Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc>[使用时]恢复1点光芒 若目标使用的书页指定了友方角色则额外恢复抽取1张书页(同时计入转移目标前后) 
+本书页根据当前所装备的副武器获得额外效果泉之龙/秋之莲:[使用时]将1颗斩击骰子(3~4)置入书页末尾
+千斤弓:[使用时]下一幕使自身获得1层迅捷
+月之剑:[使用时]使本书页命中时使情感硬币最少的我方角色获得1点正面情感
+埃尤尔之血:[使用时]使本书页命中时下一幕对目标施加1层[无法凝结的血]</ScriptDesc>
     <BehaviourList>
       <Behaviour Min="4" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
       <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
@@ -2564,10 +2588,12 @@
     <Rarity>Common</Rarity>
     <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_16</Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc>[战斗开始]我方角色首次受到单方面攻击时给予其1颗突刺反击(4~8)
+[使用时]丢弃一张书页(优先同名)若丢弃的为同名书页 则将书页中的首颗进攻型骰子置入本书页末尾
+</ScriptDesc>
     <BehaviourList>
-      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice27" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice11" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice27" ActionScript="" Desc="[命中时]下一幕开始时抽取1张书页" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice11" ActionScript="" Desc="[命中时]使本书页剩余骰子额外命中(自身当前应用副武器数量)个目标" />
       <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
@@ -2578,11 +2604,11 @@
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Common</Rarity>
     <Spec Range="Near" Cost="0" Affection="One" EmotionLimit="0" />
-    <Script>WhiteMoonSparkle_16</Script>
-    <ScriptDesc></ScriptDesc>
+    <Script>WhiteMoonSparkle_17</Script>
+    <ScriptDesc>[战斗开始]使所有我方角色本幕首次通过书页获得的正面状态层数+1 自身当前每应用1把副武器便使自身获得1层强壮(至多2层)</ScriptDesc>
     <BehaviourList>
       <Behaviour Min="5" Dice="11" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice03" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice03" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="10" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice04" ActionScript="" Desc="[命中时]使情感硬币最多的1名友方角色获得2点正面情感" />
       <Behaviour Min="6" Dice="8" Type="Def" Detail="Guard" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>

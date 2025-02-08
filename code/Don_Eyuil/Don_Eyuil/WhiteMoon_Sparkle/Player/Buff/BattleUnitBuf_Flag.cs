@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
+﻿namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 {
     public class BattleUnitBuf_Flag : BattleUnitBuf_Don_Eyuil
     {
@@ -28,6 +22,11 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
             }
 
             return base.DmgFactor(dmg, type, keyword);
+        }
+
+        public override void OnRoundEnd()
+        {
+            this.Destroy();
         }
 
         public BattleUnitBuf_Flag(BattleUnitModel model) : base(model)

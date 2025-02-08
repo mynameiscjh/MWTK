@@ -205,6 +205,13 @@
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Sparkle.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Sword.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Year.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\DiceCardAbility\DiceCardAbility_WhiteMoonSparkle_Dice01.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\DiceCardAbility\DiceCardAbility_WhiteMoonSparkle_Dice02.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\DiceCardAbility\DiceCardAbility_WhiteMoonSparkle_Dice03.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\DiceCardAbility\DiceCardAbility_WhiteMoonSparkle_Dice04.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\DiceCardSelfAbility\DiceCardSelfAbility_WhiteMoonSparkle_15.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\DiceCardSelfAbility\DiceCardSelfAbility_WhiteMoonSparkle_16.cs" />
+    <Compile Include="WhiteMoon_Sparkle\Player\DiceCardSelfAbility\DiceCardSelfAbility_WhiteMoonSparkle_17.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\PassiveAbility\PassiveAbility_WhiteMoonSparkle_13.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\PassiveAbility\PassiveAbility_WhiteMoonSparkle_14.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\PassiveAbility\PassiveAbility_WhiteMoonSparkle_16.cs" />
