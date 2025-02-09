@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using static Don_Eyuil.WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Inherit;
+﻿using Don_Eyuil.WhiteMoon_Sparkle.Player.Buff;
+using System.Collections.Generic;
 
 namespace Don_Eyuil.Don_Eyuil.Player.Buff
 {
@@ -13,11 +13,11 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
             {
                 Count++;
             }
-            MyTools.未实现提醒();
+
             var temp = BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_小耀之页);
-            if (_owner.emotionDetail.EmotionLevel == 4 && temp.personalEgoDetail.GetCardAll().Find(x => x.GetID() == MyId.未实现id) == null)
+            if (_owner.emotionDetail.EmotionLevel == 4 && !BattleUnitBuf_Sparkle.Instance.SubWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Blood)))
             {
-                temp.personalEgoDetail.AddCard(MyId.未实现id);
+                BattleUnitBuf_Sparkle.Instance.AddSubWeapon<BattleUnitBuf_Blood>();
             }
         }
 
@@ -43,8 +43,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
 
             if (attackSparkleList.Count >= 3)
             {
-                MyTools.未实现提醒();
-                var temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.未实现id));
+                var temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_一如既往_埃尤尔));
                 foreach (var item in attackSparkleList)
                 {
                     var card = new BattlePlayingCardDataInUnitModel

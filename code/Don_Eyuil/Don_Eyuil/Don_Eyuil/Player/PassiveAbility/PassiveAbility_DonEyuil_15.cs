@@ -1,4 +1,5 @@
 ﻿using Don_Eyuil.Don_Eyuil.Player.Buff;
+using Don_Eyuil.WhiteMoon_Sparkle.Player.Buff;
 using HarmonyLib;
 using LOR_DiceSystem;
 using System;
@@ -68,13 +69,13 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 
         public static Dictionary<LorId, Type> cardToBufMap_Don_Eyuil = new Dictionary<LorId, System.Type>
                 {
-                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术1式_血剑_2], typeof(BattleUnitBuf_Sword) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术1式_血剑_2], typeof(Buff.BattleUnitBuf_Sword) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术2式_血枪_2], typeof(BattleUnitBuf_Lance) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术3式_血镰_2], typeof(BattleUnitBuf_Sickle) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术4式_血刃_2], typeof(BattleUnitBuf_Blade) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术5式_双剑_2], typeof(BattleUnitBuf_DoubleSwords) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术6式_血甲_2], typeof(BattleUnitBuf_Armour) },
-                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术7式_血弓_2], typeof(BattleUnitBuf_Bow) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术7式_血弓_2], typeof(Buff.BattleUnitBuf_Bow) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术8式_血鞭_2], typeof(BattleUnitBuf_Scourge) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术9式_血伞_2], typeof(BattleUnitBuf_Umbrella) }
                 };
@@ -625,13 +626,36 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 
             if (BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text == "选择主武器书页")
             {
-                MyTools.未实现提醒();
+                if (picked.CardModel.GetID() == MyId.Card_Desc_泉之龙_秋之莲)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddPrimaryWeapon<BattleUnitBuf_Year>();
+                }
+                if (picked.CardModel.GetID() == MyId.Card_Desc_千斤弓)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddPrimaryWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Bow>();
+                }
+                if (picked.CardModel.GetID() == MyId.Card_Desc_月之剑)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddPrimaryWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
+                }
+
                 return false;
             }
 
             if (BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text == "选择副武器书页")
             {
-                MyTools.未实现提醒();
+                if (picked.CardModel.GetID() == MyId.Card_Desc_泉之龙_秋之莲)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddSubWeapon<BattleUnitBuf_Year>();
+                }
+                if (picked.CardModel.GetID() == MyId.Card_Desc_千斤弓)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Bow>();
+                }
+                if (picked.CardModel.GetID() == MyId.Card_Desc_月之剑)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
+                }
                 return false;
             }
 

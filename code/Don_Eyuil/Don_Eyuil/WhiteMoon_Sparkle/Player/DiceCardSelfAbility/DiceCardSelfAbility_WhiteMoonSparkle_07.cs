@@ -1,29 +1,59 @@
 ﻿using Don_Eyuil.WhiteMoon_Sparkle.Player.Buff;
+using System;
 
 namespace Don_Eyuil.WhiteMoon_Sparkle.Player.DiceCardSelfAbility
 {
     public class DiceCardSelfAbility_WhiteMoonSparkle_07 : DiceCardSelfAbilityBase
     {
-        public static string Desc = "本书页根据自身当前主武器改变\r\n本书页将在使用后移出战斗 并在2幕后回到手中\r\n[使用时]本书页使用期间使目标受到的非命中伤害+50% \r\n";
+        public static string Desc = "本书页根据自身当前主武器改变\r\n本书页将在使用后移出战斗 并在2幕后回到手中\r\n[使用时]本书页造成的伤害与混乱伤害+40% 且本书页每命中3次敌人便在下一幕获得1层强壮与伤害强化（至多3层）";
 
         public override void OnAddToHand(BattleUnitModel owner)
         {
             if (!BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
             {
-                owner.allyCardDetail.AddCardToHand(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.未实现id)));
-                owner.allyCardDetail.ExhaustCard(MyId.未实现id);
+                owner.allyCardDetail.ExhaustCard(MyId.Card_所见之梦_泉之龙_秋之莲);
+            }
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
+            {
+                owner.allyCardDetail.AddCardToHand(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所见之梦_千斤弓)));
+            }
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Sword)))
+            {
+                owner.allyCardDetail.AddCardToHand(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所见之梦_月之剑)));
             }
         }
 
         public override void OnUseCard()
         {
+            card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { dmgRate = 40, breakRate = 40 });
+
             BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitCard_ReturnCard>(owner, 1).card = card.card;
+            BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_命中3次敌人便在下一幕获得1层强壮与伤害强化_至多3层>(owner, 1).card = card;
+
             owner.allyCardDetail.ExhaustACardAnywhere(card.card);
         }
 
-        public class BattleUnitCard_非命中伤害加百分之50 : BattleUnitBuf_Don_Eyuil
+        public class BattleUnitBuf_命中3次敌人便在下一幕获得1层强壮与伤害强化_至多3层 : BattleUnitBuf_Don_Eyuil
         {
+            public BattleUnitBuf_命中3次敌人便在下一幕获得1层强壮与伤害强化_至多3层(BattleUnitModel model) : base(model)
+            {
+            }
 
+            int count = 0;
+            public BattlePlayingCardDataInUnitModel card;
+            public override void OnSuccessAttack(BattleDiceBehavior behavior)
+            {
+                if (behavior.card == card)
+                {
+                    count++;
+                }
+            }
+
+            public override void OnRoundStart()
+            {
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, Math.Min(count / 3, 3));
+                _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.DmgUp, Math.Min(count / 3, 3));
+            }
         }
 
         public class BattleUnitCard_ReturnCard : BattleUnitBuf_Don_Eyuil

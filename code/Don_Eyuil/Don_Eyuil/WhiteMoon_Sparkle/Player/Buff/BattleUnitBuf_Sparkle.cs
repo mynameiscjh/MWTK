@@ -37,8 +37,12 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public void SelectPrimaryWeapon()
         {
-            MyTools.未实现提醒();
-            var emoCards = new List<EmotionEgoXmlInfo>();
+            var emoCards = new List<EmotionEgoXmlInfo>()
+            {
+                new EmotionEgoXmlInfo_Mod(MyId.Card_Desc_泉之龙_秋之莲),
+                new EmotionEgoXmlInfo_Mod(MyId.Card_Desc_千斤弓),
+                new EmotionEgoXmlInfo_Mod(MyId.Card_Desc_月之剑),
+            };
 
             BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
             BattleManagerUI.Instance.ui_levelup.InitEgo(Math.Min(3, emoCards.Count), emoCards);
@@ -49,15 +53,28 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public void SelectSubWeapon()
         {
-            MyTools.未实现提醒();
-
-            var emoCards = new List<EmotionEgoXmlInfo>();
+            var emoCards = new List<EmotionEgoXmlInfo>()
+            {
+                new EmotionEgoXmlInfo_Mod(MyId.Card_Desc_泉之龙_秋之莲),
+                new EmotionEgoXmlInfo_Mod(MyId.Card_Desc_千斤弓),
+                new EmotionEgoXmlInfo_Mod(MyId.Card_Desc_月之剑),
+            };
 
             BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
             BattleManagerUI.Instance.ui_levelup.InitEgo(Math.Min(3, emoCards.Count), emoCards);
             BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["玩家硬血术统一图标"];
             BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "选择副武器书页";
             BattleManagerUI.Instance.ui_levelup._emotionLevels.Do(x => x.Set(false, false, false));
+        }
+
+        public void AddSubWeapon<T>() where T : BattleUnitBuf_Don_Eyuil
+        {
+            SubWeapons.Add(GainBuf<T>(_owner, 1));
+        }
+
+        public void AddPrimaryWeapon<T>() where T : BattleUnitBuf_Don_Eyuil
+        {
+            PrimaryWeapons.Add(GainBuf<T>(_owner, 1));
         }
 
         public BattleUnitBuf_Sparkle(BattleUnitModel model) : base(model)

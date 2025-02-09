@@ -1172,6 +1172,23 @@ namespace Don_Eyuil
         public static LorId Card_Desc_桑空派变体硬血术8式_血鞭 = MyTools.Create(92);
         public static LorId Card_桑空派变体硬血术终式_La_Sangre = MyTools.Create(94);
 
+        public static LorId Card_一如既往_埃尤尔 = MyTools.Create(102);
+        public static LorId Card_一如既往_小耀 = MyTools.Create(101);
+        public static LorId Card_所护之物_泉之龙_秋之莲 = MyTools.Create(106);
+        public static LorId Card_所护之物_千斤弓 = MyTools.Create(107);
+        public static LorId Card_所护之物_月之剑 = MyTools.Create(108);
+        public static LorId Card_所见之梦_泉之龙_秋之莲 = MyTools.Create(109);
+        public static LorId Card_所见之梦_千斤弓 = MyTools.Create(110);
+        public static LorId Card_所见之梦_月之剑 = MyTools.Create(111);
+        public static LorId Card_传承之梦_泉之龙_秋之莲 = MyTools.Create(113);
+        public static LorId Card_传承之梦_千斤弓 = MyTools.Create(114);
+        public static LorId Card_传承之梦_月之剑 = MyTools.Create(115);
+        public static LorId Card_月下终曲 = MyTools.Create(116);
+        public static LorId Card_Desc_泉之龙_秋之莲 = MyTools.Create(124);
+        public static LorId Card_Desc_千斤弓 = MyTools.Create(125);
+        public static LorId Card_Desc_月之剑 = MyTools.Create(126);
+        public static LorId Card_反击通用书页 = MyTools.Create(127);
+
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
         public static LorId Book_桑空之页 = MyTools.Create(10000002);
         public static LorId Book_小耀之页 = MyTools.Create(10000003);

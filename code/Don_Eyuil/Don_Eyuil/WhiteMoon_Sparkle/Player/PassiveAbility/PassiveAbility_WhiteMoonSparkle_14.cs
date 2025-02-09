@@ -12,9 +12,8 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
 
         public override void OnWaveStart()
         {
-            MyTools.未实现提醒();
-            owner.personalEgoDetail.AddCard(MyId.未实现id);
-            owner.personalEgoDetail.AddCard(MyId.未实现id);
+            owner.personalEgoDetail.AddCard(MyId.Card_传承之梦_泉之龙_秋之莲);
+            owner.personalEgoDetail.AddCard(MyId.Card_月下终曲);
             BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Temp>(owner, 1);
         }
 

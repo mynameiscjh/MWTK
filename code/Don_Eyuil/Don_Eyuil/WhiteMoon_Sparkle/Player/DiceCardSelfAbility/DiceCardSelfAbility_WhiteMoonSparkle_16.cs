@@ -1,4 +1,6 @@
-﻿namespace Don_Eyuil.WhiteMoon_Sparkle.Player.DiceCardSelfAbility
+﻿using System.Linq;
+
+namespace Don_Eyuil.WhiteMoon_Sparkle.Player.DiceCardSelfAbility
 {
     public class DiceCardSelfAbility_WhiteMoonSparkle_16 : DiceCardSelfAbilityBase
     {
@@ -8,8 +10,33 @@
         {
             foreach (var item in BattleObjectManager.instance.GetAliveList(owner.faction))
             {
-                var card = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.未实现id));
+                var card = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_反击通用书页));
                 item.cardSlotDetail.keepCard.AddBehaviour(card, card.CreateDiceCardBehaviorList()[0]);
+            }
+        }
+
+        public override void OnUseCard()
+        {
+            var temp = owner.allyCardDetail.GetHand();
+            temp.Sort((x, y) =>
+            {
+                if (x.GetID() == card.card.GetID())
+                {
+                    return -1;
+                }
+                if (y.GetID() == card.card.GetID())
+                {
+                    return 1;
+                }
+                return 0;
+            });
+            if (temp.Count > 0)
+            {
+                owner.allyCardDetail.ExhaustACard(temp.First());
+                if (temp.First().GetID() == card.card.GetID())
+                {
+                    card.AddDice(temp.First().CreateDiceCardBehaviorList().First());
+                }
             }
         }
     }

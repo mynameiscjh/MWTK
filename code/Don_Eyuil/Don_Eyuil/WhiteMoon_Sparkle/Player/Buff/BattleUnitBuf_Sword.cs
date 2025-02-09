@@ -34,7 +34,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                     });
                     break;
                 }
-                
+
             }
             return codes.AsEnumerable();
         }
@@ -320,7 +320,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                     if (item.card.HasBuf<BattleDiceCardBuf_Moon>())
                     {
                         var buf = item.card.GetBufList().Find(x => x.GetType() == typeof(BattleDiceCardBuf_Moon)) as BattleDiceCardBuf_Moon;
-                        if (currentStage + 1 == buf.Stack)
+                        if (currentStage + 1 == buf.Stack || item.card.GetID() == MyId.Card_所护之物_泉之龙_秋之莲 || item.card.GetID() == MyId.Card_所护之物_千斤弓 || item.card.GetID() == MyId.Card_所护之物_月之剑)
                         {
                             currentStage++;
                         }

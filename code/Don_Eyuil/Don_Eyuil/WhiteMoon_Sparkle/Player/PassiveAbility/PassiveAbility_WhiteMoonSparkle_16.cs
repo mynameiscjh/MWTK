@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using LOR_DiceSystem;
 
 namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
 {
@@ -8,9 +9,23 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
 
         public override void OnStartBattle()
         {
-            var temp = ItemXmlDataList.instance.GetCardItem(MyId.未实现id);
+            var temp = ItemXmlDataList.instance.GetCardItem(MyId.Card_反击通用书页);
             var card = BattleDiceCardModel.CreatePlayingCard(temp);
-            owner.cardSlotDetail.keepCard.AddBehaviour(card, card.CreateDiceCardBehaviorList()[0]);
+            owner.cardSlotDetail.keepCard.AddBehaviour(card, card.CreateDiceCardBehaviorList()[1]);
+        }
+
+        public class DiceCardAbility_不承受反震伤害 : DiceCardAbilityBase
+        {
+            [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDeflectDamage")]
+            [HarmonyPrefix]
+            public static bool BattleDiceBehavior_GiveDeflectDamage_Pre(BattleDiceBehavior targetDice)
+            {
+                if (targetDice.abilityList.Exists(x => x.GetType() == typeof(DiceCardAbility_不承受反震伤害)))
+                {
+                    return false;
+                }
+                return true;
+            }
         }
 
         [HarmonyPatch(typeof(BattleOneSidePlayManager), "StartOneSidePlay")]
@@ -19,8 +34,32 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
         {
             if (card.target.passiveDetail.HasPassive<PassiveAbility_WhiteMoonSparkle_16>())
             {
-                MyTools.未实现提醒();
-                var temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.未实现id));
+
+                var xmlData = new DiceCardXmlInfo()
+                {
+                    workshopID = TKS_BloodFiend_Initializer.packageId,
+                    workshopName = "虚构的书页",
+                    Artwork = "DonEyuil_1.png",
+                    Rarity = Rarity.Common,
+                    Spec = new DiceCardSpec { Ranged = CardRange.Near, Cost = 0, affection = CardAffection.One, emotionLimit = 0 },
+                    Chapter = 7,
+                    _id = 139186,
+                };
+                for (int i = 0; i < card.cardBehaviorQueue.Count; i++)
+                {
+                    xmlData.DiceBehaviourList.Add(new DiceBehaviour
+                    {
+                        Min = 1,
+                        Dice = 2,
+                        Type = BehaviourType.Def,
+                        Detail = BehaviourDetail.Guard,
+                        MotionDetail = MotionDetail.Z,
+                        MotionDetailDefault = MotionDetail.N,
+                        Script = "不承受反震伤害"
+                    });
+                }
+
+                var temp = BattleDiceCardModel.CreatePlayingCard(xmlData);
                 var parryCard = new BattlePlayingCardDataInUnitModel
                 {
                     owner = card.target,

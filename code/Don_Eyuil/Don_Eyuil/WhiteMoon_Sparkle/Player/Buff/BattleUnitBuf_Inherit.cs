@@ -32,8 +32,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
             if (attackDonEyuilList.Count >= 3)
             {
-                MyTools.未实现提醒();
-                var temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.未实现id));
+                var temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_一如既往_小耀));
                 foreach (var item in attackDonEyuilList)
                 {
                     var card = new BattlePlayingCardDataInUnitModel

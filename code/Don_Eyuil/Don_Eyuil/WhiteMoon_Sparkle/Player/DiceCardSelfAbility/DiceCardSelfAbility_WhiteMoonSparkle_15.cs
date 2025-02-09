@@ -13,7 +13,6 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.DiceCardSelfAbility
             "埃尤尔之血:[使用时]使本书页命中时下一幕对目标施加1层[无法凝结的血]\r\n";
         public override void OnUseCard()
         {
-            MyTools.未实现提醒();
 
             owner.cardSlotDetail.RecoverPlayPoint(1);
 
