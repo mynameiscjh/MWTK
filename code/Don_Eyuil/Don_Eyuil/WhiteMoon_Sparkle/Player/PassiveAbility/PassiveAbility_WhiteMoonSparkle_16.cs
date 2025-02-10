@@ -72,8 +72,8 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
                     targetSlotOrder = 0,
                     cardAbility = temp.CreateDiceCardSelfAbilityScript()
                 };
-                parryCard.cardAbility.card = parryCard;
-                parryCard.cardAbility.OnApplyCard();
+                //parryCard.cardAbility.card = parryCard;
+                //parryCard.cardAbility.OnApplyCard();
                 parryCard.ResetCardQueue();
                 if (card.owner.faction == Faction.Enemy)
                 {

@@ -13,6 +13,11 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
         {
             foreach (var item in owner.cardSlotDetail.cardAry)
             {
+                if (item == null)
+                {
+                    continue;
+                }
+
                 if (dic.TryGetValue(item.target, out var temp))
                 {
                     if (temp == null)
@@ -29,8 +34,13 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
 
             foreach (var item in dic.Values)
             {
+
                 foreach (var card in item)
                 {
+                    if (item == null || card == null)
+                    {
+                        continue;
+                    }
                     card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { dmg = Math.Min(3, item.Count) });
                 }
             }

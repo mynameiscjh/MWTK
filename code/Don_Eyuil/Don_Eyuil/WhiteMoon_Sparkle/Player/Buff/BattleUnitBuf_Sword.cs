@@ -30,7 +30,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                     codes.InsertRange(i + 1, new List<CodeInstruction>
                     {
                         new CodeInstruction(OpCodes.Ldarg_0),
-                        CodeInstruction.Call(typeof(BattleUnitBuf_Sword), "ChangeDamage")
+                        CodeInstruction.Call(typeof(BattleUnitBuf_Sword), "ChangeDamage", new Type[]{typeof(int), typeof(BattleDiceBehavior) })
                     });
                     break;
                 }

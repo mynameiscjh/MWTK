@@ -1,5 +1,7 @@
 ﻿using Don_Eyuil.Don_Eyuil.Player.PassiveAbility;
 using Don_Eyuil.San_Sora.Player.PassiveAbility;
+using Don_Eyuil.WhiteMoon_Sparkle.Player.Buff;
+using Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility;
 using EnumExtenderV2;
 using HarmonyLib;
 using LOR_DiceSystem;
@@ -1064,11 +1066,15 @@ namespace Don_Eyuil
             //被动效果Patch----------------------------------------------------------//
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             harmony.PatchAll(typeof(PassiveAbility_SanSora_10));
+            harmony.PatchAll(typeof(PassiveAbility_WhiteMoonSparkle_14));
+            harmony.PatchAll(typeof(PassiveAbility_WhiteMoonSparkle_16));
             //-----------------------------------------------------------------------//
 
             //Buff效果Patch----------------------------------------------------------//
             harmony.PatchAll(typeof(BattleUnitBuf_UncondensableBlood));
             harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
+            harmony.PatchAll(typeof(BattleUnitBuf_Know));
+            harmony.PatchAll(typeof(BattleUnitBuf_Sword));
             //-----------------------------------------------------------------------//
 
             //骰子效果Patch----------------------------------------------------------//

@@ -2330,7 +2330,7 @@
     <Spec Range="Near" Cost="4" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_04</Script>
     <ScriptDesc>本书页根据自身当前主武器改变
-[拼点开始]摧毁本书页所有骰子 并置入与目标书页骰子数等量的点数为被摧毁骰子最大最小值平均值的进攻型骰子 骰子类型为目标弱点抗性（且首颗骰子拥有所有被摧毁骰子的骰子效果）
+[拼点开始]摧毁本书页所有骰子 并置入与目标书页骰子数等量的点数为被摧毁骰子最大最小值平均值的进攻型骰子 骰子类型为目标弱点抗性(且首颗骰子拥有所有被摧毁骰子的骰子效果)
     </ScriptDesc>
     <BehaviourList>
       <Behaviour Min="6" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice07" ActionScript="" Desc="" />
@@ -2347,7 +2347,7 @@
     <Spec Range="Far" Cost="3" Affection="One" EmotionLimit="0" />
     <Script>WhiteMoonSparkle_05</Script>
     <ScriptDesc>本书页根据自身当前主武器改变
-[拼点开始]本书页所有骰子拼点失败时重复投掷1次（至多1次）但造成的伤害与混乱伤害-60%
+[拼点开始]本书页所有骰子拼点失败时重复投掷1次(至多1次)但造成的伤害与混乱伤害-60%
     </ScriptDesc>
     <BehaviourList>
       <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice09" ActionScript="" Desc="[拼点失败]使本书页最后1颗进攻型骰子威力+1" />
@@ -2382,7 +2382,7 @@
     <Script>WhiteMoonSparkle_07</Script>
     <ScriptDesc>本书页根据自身当前主武器改变
 本书页将在使用后移出战斗 并在2幕后回到手中
-[使用时]本书页造成的伤害与混乱伤害+40% 且本书页每命中3次敌人便在下一幕获得1层强壮与伤害强化（至多3层）
+[使用时]本书页造成的伤害与混乱伤害+40% 且本书页每命中3次敌人便在下一幕获得1层强壮与伤害强化(至多3层)
 
     </ScriptDesc>
     <BehaviourList>
@@ -2405,8 +2405,8 @@
 
     </ScriptDesc>
     <BehaviourList>
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice13" ActionScript="" Desc="[命中时]触发目标层数最多的伤害类负面4次（仅限原版）" />
-      <Behaviour Min="5" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice14" ActionScript="" Desc="本书页使用期间目标每承受10点非命中伤害便使本书页第2颗骰子重复投掷1次（至多3次）" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice13" ActionScript="" Desc="[命中时]触发目标层数最多的伤害类负面4次(仅限原版)" />
+      <Behaviour Min="5" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice14" ActionScript="" Desc="本书页使用期间目标每承受10点非命中伤害便使本书页第2颗骰子重复投掷1次(至多3次)" />
       <Behaviour Min="8" Dice="16" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
@@ -2442,7 +2442,7 @@
     [使用时]本书页骰子最大最小值提升25% 且拼点胜利时造成的伤害与混乱伤害-90%但拼点胜利时使骰子重复投掷1次
     </ScriptDesc>
     <BehaviourList>
-      <Behaviour Min="8" Dice="20" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice15" ActionScript="" Desc="[命中时]下一幕对目标施加1层束缚与麻痹并使目标层数最多的负面状态层数+15%（向上取整）" />
+      <Behaviour Min="8" Dice="20" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="WhiteMoonSparkle_Dice15" ActionScript="" Desc="[命中时]下一幕对目标施加1层束缚与麻痹并使目标层数最多的负面状态层数+15%(向上取整)" />
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -2457,7 +2457,7 @@
     <Script>WhiteMoonSparkle_10</Script>
     <ScriptDesc>本书页根据当前所应用的副武器获得额外效果
 本书页使用期间使双方“进攻型”骰子无论是否取得拼点胜利皆可对目标造成命中伤害 
-使目标造成的伤害与混乱伤害减少自身骰子点数3/2（向下取整）
+使目标造成的伤害与混乱伤害减少自身骰子点数3/2(向下取整)
     </ScriptDesc>
     <BehaviourList>
       <Behaviour Min="6" Dice="10" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="damage5atk" ActionScript="" Desc="" />

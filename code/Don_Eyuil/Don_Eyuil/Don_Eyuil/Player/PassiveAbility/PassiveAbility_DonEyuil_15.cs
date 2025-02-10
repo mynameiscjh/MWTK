@@ -638,7 +638,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 {
                     BattleUnitBuf_Sparkle.Instance.AddPrimaryWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
                 }
-
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
                 return false;
             }
 
@@ -656,6 +656,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 {
                     BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
                 }
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
                 return false;
             }
 

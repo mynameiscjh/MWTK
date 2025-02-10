@@ -21,4 +21,13 @@
     <Card>99</Card>
     <Card>100</Card>
   </DropTable>
+  <DropTable ID="3">
+    <Card>121</Card>
+    <Card>122</Card>
+    <Card>123</Card>
+    <Card>106</Card>
+    <Card>109</Card>
+    <Card>113</Card>
+    <Card>116</Card>
+  </DropTable>
 </CardDropTableXmlRoot>

@@ -1,7 +1,9 @@
 ﻿using HarmonyLib;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
@@ -32,8 +34,6 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 return _instance;
             }
         }
-
-        public int stage = 0;
 
         public void SelectPrimaryWeapon()
         {
@@ -69,12 +69,47 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public void AddSubWeapon<T>() where T : BattleUnitBuf_Don_Eyuil
         {
-            SubWeapons.Add(GainBuf<T>(_owner, 1));
+            var buf = GetBuf<T>(owner);
+            if (buf != null && SubWeapons.Contains(buf))
+            {
+                buf.SetFieldValue<bool>("IsIntensify", true);
+            }
+            if (buf != null && !SubWeapons.Contains(buf))
+            {
+                SubWeapons.Add(buf);
+                return;
+            }
+            if (buf == null)
+            {
+                SubWeapons.Add(GainBuf<T>(_owner, 1));
+            }
         }
 
         public void AddPrimaryWeapon<T>() where T : BattleUnitBuf_Don_Eyuil
         {
-            PrimaryWeapons.Add(GainBuf<T>(_owner, 1));
+            var buf = GetBuf<T>(owner);
+            if (buf != null && PrimaryWeapons.Contains(buf))
+            {
+                buf.SetFieldValue<bool>("IsIntensify", true);
+            }
+            if (buf != null && !PrimaryWeapons.Contains(buf))
+            {
+                PrimaryWeapons.Add(buf);
+                return;
+            }
+            if (buf == null)
+            {
+                PrimaryWeapons.Add(GainBuf<T>(_owner, 1));
+            }
+        }
+
+        public IEnumerator SelectWeapons()
+        {
+            SelectPrimaryWeapon();
+            yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
+
+            SelectSubWeapon();
+            yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
         }
 
         public BattleUnitBuf_Sparkle(BattleUnitModel model) : base(model)

@@ -19,19 +19,23 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public override void OnStartBattle()
         {
+            if (_owner.cardSlotDetail == null || _owner.cardSlotDetail.cardAry == null || _owner.cardSlotDetail.cardAry.Count == 0)
+            {
+                return;
+            }
             if (Instance.PrimaryWeapons.Contains(this))
             {
                 foreach (var item in _owner.cardSlotDetail.cardAry)
                 {
-                    item.card.AddBuf(new BattleDiceCardBuf_TransDice());
-                    item.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { max = 3 });
+                    item?.card?.AddBuf(new BattleDiceCardBuf_TransDice());
+                    item?.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { max = 3 });
                 }
             }
             if (Instance.SubWeapons.Contains(this) && !IsIntensify)
             {
                 foreach (var item in _owner.cardSlotDetail.cardAry)
                 {
-                    item.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { dmgRate = -50 });
+                    item?.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { dmgRate = -50 });
                 }
             }
 
@@ -39,7 +43,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
             {
                 foreach (var item in _owner.cardSlotDetail.cardAry)
                 {
-                    item.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { dmgRate = -75 });
+                    item?.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { dmgRate = -75 });
                 }
             }
         }

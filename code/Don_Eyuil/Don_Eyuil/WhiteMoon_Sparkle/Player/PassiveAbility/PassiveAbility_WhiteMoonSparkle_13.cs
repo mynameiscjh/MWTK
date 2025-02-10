@@ -8,8 +8,9 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
 
         public override void OnWaveStart()
         {
-            BattleUnitBuf_Sparkle.Instance.SelectPrimaryWeapon();
-            BattleUnitBuf_Sparkle.Instance.SelectSubWeapon();
+            BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Sparkle>(owner, 1);
+            BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleUnitBuf_Sparkle.Instance.SelectWeapons());
+
         }
 
         bool fl2 = false, fl4 = false;
