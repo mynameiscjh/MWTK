@@ -1,11 +1,4 @@
-﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using UnityEngine;
-
-namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
+﻿namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 {
     public class BattleUnitBuf_Sword : BattleUnitBuf_Don_Eyuil
     {
@@ -18,6 +11,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public bool IsIntensify = false;
 
+#if false
         [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BattleDiceBehavior_GiveDamage_Tran(IEnumerable<CodeInstruction> instructions)
@@ -92,6 +86,15 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 this._stack = 0;
                 this.SetFieldValue<bool>("_iconInit", true);
                 this.SetFieldValue<Sprite>("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks[$"Moon{this._stack}"]);
+            }
+
+            protected override string keywordIconId
+            {
+                get
+                {
+                    this.SetFieldValue<Sprite>("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks[$"Moon{this._stack}"]);
+                    return "";
+                }
             }
 
             public BattleDiceCardBuf_Moon(int v)
@@ -281,18 +284,19 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 }
             }
         }
-
+#endif
+#if false
         public override int SpeedDiceNumAdder()
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this))
+            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this) && StageController.Instance.RoundTurn != 1)
             {
                 return 1;
             }
 
             return base.SpeedDiceNumAdder();
         }
-
-
+#endif
+#if false
         public override void OnRoundStart()
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && IsIntensify)
@@ -303,12 +307,13 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
             {
                 foreach (var item in _owner.allyCardDetail.GetHand())
                 {
-                    item.AddBuf(new BattleDiceCardBuf_Moon(UnityEngine.Random.Range(0, 3)));
+                    item.AddBuf(new BattleDiceCardBuf_Moon(UnityEngine.Random.Range(0, 3 + 1)));
                 }
             }
             fl_ChangeDamage = false;
         }
-
+#endif
+#if false
         public override void OnStartBattle()
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
@@ -317,6 +322,11 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 int maxStage = 0;
                 foreach (var item in _owner.cardSlotDetail.cardAry)
                 {
+                    if (item == null)
+                    {
+                        continue;
+                    }
+
                     if (item.card.HasBuf<BattleDiceCardBuf_Moon>())
                     {
                         var buf = item.card.GetBufList().Find(x => x.GetType() == typeof(BattleDiceCardBuf_Moon)) as BattleDiceCardBuf_Moon;
@@ -334,7 +344,8 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 BattleDiceCardBuf_Moon.ChangeMoon(_owner, maxStage);
             }
         }
-
+#endif
+#if false
         public override void OnRoundEnd()
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this))
@@ -346,7 +357,8 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 _owner.allyCardDetail.DrawCardsAllSpecific(_owner.cardSlotDetail.cardAry[0].card.GetID());
             }
         }
-
+#endif
+#if false
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
@@ -354,7 +366,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = IsIntensify ? 2 : 1 });
             }
         }
-
+#endif
         public BattleUnitBuf_Sword(BattleUnitModel model) : base(model)
         {
         }

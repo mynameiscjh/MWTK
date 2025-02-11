@@ -20,6 +20,7 @@ using UI;
 using UnityEngine;
 using UnityEngine.UI;
 using static Don_Eyuil.WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Year;
+using Debug = UnityEngine.Debug;
 using File = System.IO.File;
 
 namespace Don_Eyuil
@@ -1022,6 +1023,11 @@ namespace Don_Eyuil
             LoadLocalize("San_Sora");
         }
 
+        public static void Pre_电脑要爆了()
+        {
+            Debug.Log("_+_+_+_");
+        }
+
         public override void OnInitializeMod()
         {
             TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
@@ -1089,6 +1095,7 @@ namespace Don_Eyuil
 
 
             //typeof(TKS_EnumExtension).GetNestedTypes().DoIf(x => !x.IsGenericType, act => TKS_EnumExtension.ExtendEnum(act));
+
             TKS_EnumExtension.SMotionExtension.ExtendEnum(typeof(TKS_EnumExtension.SMotionExtension));
             TKS_EnumExtension.DiceFlagExtension.ExtendEnum(typeof(TKS_EnumExtension.DiceFlagExtension));
             // Debug.LogError(String.Join(".", Enum.GetNames(typeof(ActionDetail))));
@@ -1096,6 +1103,8 @@ namespace Don_Eyuil
 
         }
     }
+
+
 
     public class MyId
     {

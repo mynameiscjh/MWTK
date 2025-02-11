@@ -480,13 +480,14 @@ namespace Don_Eyuil
             [HarmonyPostfix]
             public static void BattleUnitModel_OnStartBattle_Post(BattleUnitModel __instance)
             {
-                __instance.bufListDetail.GetActivatedBufList().ForEach(x =>
-                {
-                    if (!x.IsDestroyed() && x is BattleUnitBuf_Don_Eyuil)
+                new List<BattleUnitBuf>(__instance.bufListDetail.GetActivatedBufList())
+                    .ForEach(x =>
                     {
-                        (x as BattleUnitBuf_Don_Eyuil).OnStartBattle();
-                    }
-                });
+                        if (!x.IsDestroyed() && x is BattleUnitBuf_Don_Eyuil)
+                        {
+                            (x as BattleUnitBuf_Don_Eyuil).OnStartBattle();
+                        }
+                    });
             }
         }
 
@@ -762,7 +763,7 @@ namespace Don_Eyuil
         {
             try
             {
-                obj.GetType().GetField(name, AccessTools.all).SetValue(obj, value);
+                AccessTools.Field(obj.GetType(), name).SetValue(obj, value);
             }
             catch (Exception ex)
             {

@@ -483,7 +483,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 {
                     gameObject.GetComponentsInChildren<Image>().ToList<Image>().ForEach(delegate (Image x)
                     {
-                        Debug.Log("Image.name:" + (x?.name));
+                        UnityEngine.Debug.Log("Image.name:" + (x?.name));
                     });
                     Image image = gameObject.GetComponentsInChildren<Image>().FirstOrDefault((Image x) => x.name.Contains("[Image]BgFrame"));
                     bool flag2 = image != null;
@@ -618,6 +618,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             }
         }
 #endif
+
         //应该需要hp把特定buff加上
         [HarmonyPatch(typeof(LevelUpUI), "OnSelectEgoCard")]
         [HarmonyPrefix]
@@ -654,7 +655,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 }
                 if (picked.CardModel.GetID() == MyId.Card_Desc_月之剑)
                 {
-                    BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
+                    //BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
                 }
                 BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
                 return false;

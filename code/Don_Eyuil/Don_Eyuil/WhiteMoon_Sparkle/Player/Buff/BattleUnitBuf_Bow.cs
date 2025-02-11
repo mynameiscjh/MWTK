@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LOR_DiceSystem;
+using System;
 using System.Collections.Generic;
 
 namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
@@ -69,23 +70,86 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
             }
         }
 
+        public Dictionary<BattlePlayingCardDataInUnitModel, DiceCardXmlInfo> changedCard = new Dictionary<BattlePlayingCardDataInUnitModel, DiceCardXmlInfo>();
+
         public override void OnStartBattle()
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
             {
                 foreach (var item in _owner.cardSlotDetail.cardAry)
                 {
+                    if (item == null)
+                    {
+                        continue;
+                    }
+
                     //_owner.view.charAppearance.SetAltMotion(ActionDetail.Penetrate, ActionDetail.Fire);
                     //_owner.view.charAppearance.SetAltMotion(ActionDetail.Hit, ActionDetail.Fire);
                     //_owner.view.charAppearance.SetAltMotion(ActionDetail.Slash, ActionDetail.Fire);
-                    item.card.XmlData.Spec.Ranged = LOR_DiceSystem.CardRange.Far;
-                    foreach (var dice in item.GetDiceBehaviorList())
+                    if (!item.card.XmlData.IsFloorEgo() && !item.card.XmlData.IsOnlyPage())
                     {
-                        if (dice.Detail == LOR_DiceSystem.BehaviourDetail.Guard)
+                        changedCard[item] = item.card.XmlData.Copy();
+                        item.card.XmlData.Spec.Ranged = CardRange.Far;
+                        foreach (var dice in item.card.XmlData.DiceBehaviourList)
                         {
-                            dice.behaviourInCard.Detail = LOR_DiceSystem.BehaviourDetail.Penetrate;
-                            dice.behaviourInCard.Type = LOR_DiceSystem.BehaviourType.Atk;
+                            if (dice.Detail == BehaviourDetail.Guard)
+                            {
+                                dice.Type = BehaviourType.Atk;
+                                dice.Detail = BehaviourDetail.Penetrate;
+                            }
+                            if (IsIntensify && dice.Type == BehaviourType.Def)
+                            {
+                                dice.Type = BehaviourType.Atk;
+                                dice.Detail = BehaviourDetail.Penetrate;
+                            }
                         }
+#if false
+                        foreach (var dice in new List<BattleDiceBehavior>(item.cardBehaviorQueue))
+                        {
+                            if (dice == null)
+                            {
+                                continue;
+                            }
+                            if (dice.Detail == BehaviourDetail.Guard)
+                            {
+                                dice.DestroyDice(DiceUITiming.Start);
+                                var temp = new BattleDiceBehavior()
+                                {
+                                    behaviourInCard = new DiceBehaviour()
+                                    {
+                                        Min = dice.GetDiceMin(),
+                                        Dice = dice.GetDiceMax(),
+                                        Type = BehaviourType.Atk,
+                                        Detail = BehaviourDetail.Penetrate,
+                                        MotionDetail = MotionDetail.S,
+                                        MotionDetailDefault = MotionDetail.N,
+                                    },
+                                    card = item,
+                                    abilityList = new List<DiceCardAbilityBase>(),
+                                };
+                                item.AddDice(temp);
+                            }
+                            if (IsIntensify && dice.Type == BehaviourType.Def)
+                            {
+                                dice.DestroyDice(DiceUITiming.Start);
+                                var temp = new BattleDiceBehavior()
+                                {
+                                    behaviourInCard = new DiceBehaviour()
+                                    {
+                                        Min = dice.GetDiceMin(),
+                                        Dice = dice.GetDiceMax(),
+                                        Type = BehaviourType.Atk,
+                                        Detail = BehaviourDetail.Penetrate,
+                                        MotionDetail = MotionDetail.S,
+                                        MotionDetailDefault = MotionDetail.N,
+                                    },
+                                    card = item,
+                                    abilityList = new List<DiceCardAbilityBase>(),
+                                };
+                                item.AddDice(temp);
+                            }
+                        }
+#endif
                     }
                 }
             }
@@ -93,6 +157,11 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
             {
                 for (int i = 0; i < _owner.speedDiceCount; i++)
                 {
+                    if (_owner.cardSlotDetail.cardAry[i] == null)
+                    {
+                        continue;
+                    }
+
                     switch (i)
                     {
                         case 0:
@@ -111,6 +180,14 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                             break;
                     }
                 }
+            }
+        }
+
+        public override void OnEndBattlePhase()
+        {
+            foreach (var item in changedCard)
+            {
+                item.Key.card.SetFieldValue<DiceCardXmlInfo>("_xmlData", item.Value);
             }
         }
 
