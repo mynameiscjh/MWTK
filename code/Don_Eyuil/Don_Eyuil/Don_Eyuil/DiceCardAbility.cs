@@ -177,20 +177,6 @@ namespace Don_Eyuil
     {
         public static string Desc = "[命中时]恢复等同于造成伤害量的体力溢出部分将转化为等量护盾";
 
-        public static int AfterGiveDamage(BattleDiceBehavior behavior, int dmg)
-        {
-            if (behavior != null && behavior.abilityList.Exists(x => x is DiceCardAbility_DonEyuil_20) && behavior.owner != null)
-            {
-                int losthp = behavior.owner.MaxHp - (int)behavior.owner.hp;
-                behavior.owner.RecoverHP(Math.Min(losthp, dmg));
-                if (dmg - losthp > 0)
-                {
-                    //BattleUnitBuf_PhysicalShield.AddBuf(behavior.owner, dmg - losthp);
-                    BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(behavior.owner, dmg);
-                }
-            }
-            return dmg;
-        }
         [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BattleDiceBehavior_GiveDamage_Tran(IEnumerable<CodeInstruction> instructions)
@@ -201,7 +187,20 @@ namespace Don_Eyuil
             {
                 new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Ldloc_S, 13),
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(DiceCardAbility_DonEyuil_20), "AfterGiveDamage"))
+                new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegateWithRet<int,BattleDiceBehavior,int>>((BattleDiceBehavior behavior, int dmg)=>
+                {
+                    if (behavior != null && behavior.abilityList.Exists(x => x is DiceCardAbility_DonEyuil_20) && behavior.owner != null)
+                    {
+                        int losthp = behavior.owner.MaxHp - (int)behavior.owner.hp;
+                        behavior.owner.RecoverHP(Math.Min(losthp, dmg));
+                        if (dmg - losthp > 0)
+                        {
+                            //BattleUnitBuf_PhysicalShield.AddBuf(behavior.owner, dmg - losthp);
+                            BattleUnitBuf_BloodShield.GainBuf<BattleUnitBuf_BloodShield>(behavior.owner, dmg);
+                        }
+                    }
+                    return dmg;
+                })
             });
             return codes.AsEnumerable();
         }

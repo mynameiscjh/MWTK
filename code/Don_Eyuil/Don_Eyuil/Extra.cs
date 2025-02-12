@@ -312,34 +312,33 @@ namespace Don_Eyuil
         }
         public class BeforeRecoverPlayPointPatch
         {
-            public static void Trigger_RecoverPlayPoint_Before(BattlePlayingCardSlotDetail Detail, ref int value)
-            {
-                var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
-                if (Model != null)
-                {
-                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
-                    {
-                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
-                        {
-                            Debug.LogError("BeforeRecoverPlayPoint:" + value);
-                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeRecoverPlayPoint(ref value);
-                        }
-                    }
-                }
-            }
-
             [HarmonyPatch(typeof(BattlePlayingCardSlotDetail), "RecoverPlayPoint")]
             [HarmonyTranspiler]
-            public static IEnumerable<CodeInstruction> BattlePlayingCardSlotDetail_RecoverPlayPoint_Transpiler(IEnumerable<CodeInstruction> instructions)
+            public unsafe static IEnumerable<CodeInstruction> BattlePlayingCardSlotDetail_RecoverPlayPoint_Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
                 codes.InsertRange(0, new List<CodeInstruction>()
                 {
                     new CodeInstruction(OpCodes.Ldarg_0),
                     new CodeInstruction(OpCodes.Ldarga_S,1),
-                    new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeRecoverPlayPointPatch),"Trigger_RecoverPlayPoint_Before")),
+                    new CodeInstruction(OpCodes.Conv_U),
+                    new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_2<BattlePlayingCardSlotDetail,int>>((BattlePlayingCardSlotDetail Detail,int* value)=>
+                    {
+                        var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
+                        if (Model != null)
+                        {
+                            foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                            {
+                                if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                {
+                                    Debug.LogError("BeforeRecoverPlayPoint:" + *value);
+                                    (Buf as BattleUnitBuf_Don_Eyuil).BeforeRecoverPlayPoint(ref *value);
+                                }
+                            }
+                        }
+                    }),
+                    //new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeRecoverPlayPointPatch),"Trigger_RecoverPlayPoint_Before")),
                 });
-
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
@@ -362,35 +361,35 @@ namespace Don_Eyuil
         }
         public class BeforeAddEmotionCoinPatch
         {
-            public static void Trigger_CreateEmotionCoin_Before(BattleUnitEmotionDetail Detail, EmotionCoinType CoinType, ref int Count)
-            {
-
-                var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
-                if (Model != null)
-                {
-                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
-                    {
-                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
-                        {
-                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddEmotionCoin(CoinType, ref Count);
-                            Debug.LogError("BeforeAddEmotionCoin:" + CoinType + "," + Count);
-                        }
-                    }
-                }
-            }
             [HarmonyPatch(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")]
             [HarmonyTranspiler]
-            public static IEnumerable<CodeInstruction> BattleUnitEmotionDetail_CreateEmotionCoin_Transpiler(IEnumerable<CodeInstruction> instructions)
+            public unsafe static IEnumerable<CodeInstruction> BattleUnitEmotionDetail_CreateEmotionCoin_Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
                 //Label? L ;
                 codes.InsertRange(0, new List<CodeInstruction>()
+                {
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldarg_1),
+                    new CodeInstruction(OpCodes.Ldarga_S,2),
+                    new CodeInstruction(OpCodes.Conv_U),
+                    new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_3<BattleUnitEmotionDetail,EmotionCoinType,int>>((BattleUnitEmotionDetail Detail, EmotionCoinType CoinType,int* Count)=>
+                    {
+                        var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
+                        if (Model != null)
                         {
-                            new CodeInstruction(OpCodes.Ldarg_0),
-                            new CodeInstruction(OpCodes.Ldarg_1),
-                            new CodeInstruction(OpCodes.Ldarga_S,2),
-                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddEmotionCoinPatch),"Trigger_CreateEmotionCoin_Before")),
-                        });
+                            foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                            {
+                                if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                {
+                                    (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddEmotionCoin(CoinType, ref *Count);
+                                    Debug.LogError("BeforeAddEmotionCoin:" + CoinType + "," + *Count);
+                                }
+                            }
+                        }
+                    }),
+                    //new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddEmotionCoinPatch),"Trigger_CreateEmotionCoin_Before")),
+                });
                 /*
                 for (int i = 1; i < codes.Count; i++)
                 {
@@ -429,66 +428,57 @@ namespace Don_Eyuil
         }
         public class BeforeAddKeywordBufPatch
         {
-            public static void Trigger_AddKeywordBuf_Before(KeywordBuf BufType, BattleUnitModel Target, ref int Stack,BattleUnitModel Adder)
-            {
-                if (Stack > 0)
-                {
-                    /*try
-                    {
-                        //Adder = Adder != null ? Adder :Adder.faction == Faction.Player?
-                           // BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Mapping_Books_命名空间与核心书页映射(new System.Diagnostics.StackFrame(1).GetMethod()?.DeclaringType.Namespace).Item1) :
-                           // BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Mapping_Books_命名空间与核心书页映射(new System.Diagnostics.StackFrame(1).GetMethod()?.DeclaringType.Namespace).Item2);
-                    }
-                    catch (Exception _) { }*/
-                    Adder = Adder != null ? Adder : Target;
-                    foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
-                    {
-                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
-                        {
-                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(BufType, ref Stack);//Target = owner所以没有一参传入
-                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(Adder, BufType, ref Stack);
-                        }
-                    }
-                    List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
-                    aliveList.Remove(Target);
-                    foreach (var Model in aliveList)
-                    {
-                        foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
-                        {
-                            if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
-                            {
-                                (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(BufType, Target, ref Stack);
-                                (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(Adder,BufType, Target, ref Stack);
-                            }
-                        }
-                    }                    // Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
-
-                    // aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model, dmg)));
-                }
-            }
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByEtc")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByEtc")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByCard")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByCard")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufNextNextByCard")]
             [HarmonyTranspiler]
-            public static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
+            public unsafe static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
                 Label l = ILcodegenerator.DefineLabel();
                 codes[0].labels.Add(l);
                 codes.InsertRange(0, new List<CodeInstruction>()
                 {
-                        new CodeInstruction(OpCodes.Ldarg_1),
-                        new CodeInstruction(OpCodes.Ldarg_0),
-                        new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
-                        new CodeInstruction(OpCodes.Ldarga,2),
-                        new CodeInstruction(OpCodes.Ldarg_3),
-                        new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddKeywordBufPatch),"Trigger_AddKeywordBuf_Before")),
-                        new CodeInstruction(OpCodes.Ldarg_2),
-                        new CodeInstruction(OpCodes.Ldc_I4_0),
-                        new CodeInstruction(OpCodes.Bgt_S,l),
-                        new CodeInstruction(OpCodes.Ret),
+                    new CodeInstruction(OpCodes.Ldarg_1),
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
+                    new CodeInstruction(OpCodes.Ldarga,2),
+                    new CodeInstruction(OpCodes.Conv_U),
+                    new CodeInstruction(OpCodes.Ldarg_3),
+                    new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_3<KeywordBuf,BattleUnitModel,int,BattleUnitModel>>((KeywordBuf BufType, BattleUnitModel Target,int* Stack,BattleUnitModel Adder)=>
+                    {
+                        if(*Stack > 0)
+                        {
+                            Adder = Adder != null ? Adder : Target;
+                            foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
+                            {
+                                if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                {
+                                    (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(BufType, ref *Stack);//Target = owner所以没有一参传入
+                                    (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(Adder, BufType, ref *Stack);
+                                }
+                            }
+                            List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                            aliveList.Remove(Target);
+                            foreach (var Model in aliveList)
+                            {
+                                foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                                {
+                                    if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                    {
+                                        (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(BufType, Target, ref *Stack);
+                                        (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(Adder,BufType, Target, ref *Stack);
+                                    }
+                                }
+                            }
+                        }
+                    }),
+                    new CodeInstruction(OpCodes.Ldarg_2),
+                    new CodeInstruction(OpCodes.Ldc_I4_0),
+                    new CodeInstruction(OpCodes.Bgt_S,l),
+                    new CodeInstruction(OpCodes.Ret),
                  });
                 return codes.AsEnumerable<CodeInstruction>();
             }
@@ -523,17 +513,10 @@ namespace Don_Eyuil
         }
         public class OnTakeBleedingDamagePatch
         {
-            public static void Trigger_BleedingDmg_After(BattleUnitModel Model, int dmg, KeywordBuf keyword)
-            {
-                if (keyword == KeywordBuf.Bleeding && dmg > 0)
-                {
-                    Debug.LogError(Model.Book.Name + "TakeBleedingDmg:" + dmg);
-                    Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
-                    List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
-                    aliveList.Remove(Model);
-                    aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model, dmg)));
-                }
-            }
+            //public static void Trigger_BleedingDmg_After(BattleUnitModel Model, int dmg, KeywordBuf keyword)
+            //{
+
+            //}
             [HarmonyPatch(typeof(BattleUnitModel), "TakeDamage")]
             [HarmonyTranspiler]
             public static IEnumerable<CodeInstruction> BattleUnitModel_TakeDamage_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -548,7 +531,17 @@ namespace Don_Eyuil
                             new CodeInstruction(OpCodes.Ldarg_0),
                             new CodeInstruction(OpCodes.Ldloc_2),
                             new CodeInstruction(OpCodes.Ldarg_S,4),
-                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(OnTakeBleedingDamagePatch),"Trigger_BleedingDmg_After"))
+                            new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate<BattleUnitModel,int,KeywordBuf>>((BattleUnitModel Model, int dmg, KeywordBuf keyword)=>
+                            {
+                                if (keyword == KeywordBuf.Bleeding && dmg > 0)
+                                {
+                                    Debug.LogError(Model.Book.Name + "TakeBleedingDmg:" + dmg);
+                                    Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
+                                    List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                                    aliveList.Remove(Model);
+                                    aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model, dmg)));
+                                }
+                            }),
                         });
                     }
                 }
@@ -845,68 +838,68 @@ namespace Don_Eyuil
                     Console.WriteLine($"public unsafe delegate void UnmanagedDelegateWithRet<{GenereDeclare}>({ArgDeclare.Substring(1)});");
                 }
             }
-            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T>(T* A);
-            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T>(T A);
-            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T, in T1>(T* A, T1 A1);
-            public unsafe delegate void UnmanagedDelegateWithRet_2<out TResult, in T, in T1>(T A, T1* A1);
-            public unsafe delegate void UnmanagedDelegateWithRet_12<out TResult, in T, in T1>(T* A, T1* A1);
-            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T, in T1>(T A, T1 A1);
-            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T, in T1, in T2>(T* A, T1 A1, T2 A2);
-            public unsafe delegate void UnmanagedDelegateWithRet_2<out TResult, in T, in T1, in T2>(T A, T1* A1, T2 A2);
-            public unsafe delegate void UnmanagedDelegateWithRet_3<out TResult, in T, in T1, in T2>(T A, T1 A1, T2* A2);
-            public unsafe delegate void UnmanagedDelegateWithRet_12<out TResult, in T, in T1, in T2>(T* A, T1* A1, T2 A2);
-            public unsafe delegate void UnmanagedDelegateWithRet_13<out TResult, in T, in T1, in T2>(T* A, T1 A1, T2* A2);
-            public unsafe delegate void UnmanagedDelegateWithRet_23<out TResult, in T, in T1, in T2>(T A, T1* A1, T2* A2);
-            public unsafe delegate void UnmanagedDelegateWithRet_123<out TResult, in T, in T1, in T2>(T* A, T1* A1, T2* A2);
-            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T, in T1, in T2>(T A, T1 A1, T2 A2);
-            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2 A2, T3 A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_2<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2 A2, T3 A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_3<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2* A2, T3 A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_4<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2 A2, T3* A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_12<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2 A2, T3 A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_13<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2* A2, T3 A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_14<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2 A2, T3* A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_23<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2* A2, T3 A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_24<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2 A2, T3* A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_34<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2* A2, T3* A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_123<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2* A2, T3 A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_124<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2 A2, T3* A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_134<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2* A2, T3* A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_234<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2* A2, T3* A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_1234<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2* A2, T3* A3);
-            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2 A2, T3 A3);
-            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3 A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_2<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3 A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_3<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3 A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_4<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3* A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_5<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3 A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_12<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3 A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_13<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3 A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_14<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3* A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_15<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3 A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_23<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3 A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_24<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3* A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_25<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3 A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_34<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3* A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_35<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3 A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_45<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3* A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_123<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3 A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_124<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3* A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_125<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3 A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_134<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3* A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_135<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3 A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_145<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3* A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_234<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3* A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_235<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3 A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_245<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3* A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_345<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3* A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_1234<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3* A3, T4 A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_1235<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3 A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_1245<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3* A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_1345<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3* A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_2345<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3* A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet_12345<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3* A3, T4* A4);
-            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1<out TResult, in T>(T* A);
+            public unsafe delegate TResult UnmanagedDelegateWithRet<out TResult, in T>(T A);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1<out TResult, in T, in T1>(T* A, T1 A1);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_2<out TResult, in T, in T1>(T A, T1* A1);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_12<out TResult, in T, in T1>(T* A, T1* A1);
+            public unsafe delegate TResult UnmanagedDelegateWithRet<out TResult, in T, in T1>(T A, T1 A1);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1<out TResult, in T, in T1, in T2>(T* A, T1 A1, T2 A2);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_2<out TResult, in T, in T1, in T2>(T A, T1* A1, T2 A2);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_3<out TResult, in T, in T1, in T2>(T A, T1 A1, T2* A2);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_12<out TResult, in T, in T1, in T2>(T* A, T1* A1, T2 A2);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_13<out TResult, in T, in T1, in T2>(T* A, T1 A1, T2* A2);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_23<out TResult, in T, in T1, in T2>(T A, T1* A1, T2* A2);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_123<out TResult, in T, in T1, in T2>(T* A, T1* A1, T2* A2);
+            public unsafe delegate TResult UnmanagedDelegateWithRet<out TResult, in T, in T1, in T2>(T A, T1 A1, T2 A2);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2 A2, T3 A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_2<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2 A2, T3 A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_3<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2* A2, T3 A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_4<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2 A2, T3* A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_12<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2 A2, T3 A3); 
+            public unsafe delegate TResult UnmanagedDelegateWithRet_13<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2* A2, T3 A3); 
+            public unsafe delegate TResult UnmanagedDelegateWithRet_14<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2 A2, T3* A3); 
+            public unsafe delegate TResult UnmanagedDelegateWithRet_23<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2* A2, T3 A3); 
+            public unsafe delegate TResult UnmanagedDelegateWithRet_24<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2 A2, T3* A3); 
+            public unsafe delegate TResult UnmanagedDelegateWithRet_34<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2* A2, T3* A3); 
+            public unsafe delegate TResult UnmanagedDelegateWithRet_123<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2* A2, T3 A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_124<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2 A2, T3* A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_134<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2* A2, T3* A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_234<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2* A2, T3* A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1234<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2* A2, T3* A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2 A2, T3 A3);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_2<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_3<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_4<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_5<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_12<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_13<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_14<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_15<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_23<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_24<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_25<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_34<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_35<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_45<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_123<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_124<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_125<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_134<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_135<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_145<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_234<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_235<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_245<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_345<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1234<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1235<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1245<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_1345<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_2345<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet_12345<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate TResult UnmanagedDelegateWithRet<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3 A3, T4 A4);
             public unsafe delegate void UnmanagedDelegate_1<in T>(T* A);
             public unsafe delegate void UnmanagedDelegate<in T>(T A);
             public unsafe delegate void UnmanagedDelegate_1<in T, in T1>(T* A, T1 A1);
@@ -980,7 +973,7 @@ namespace Don_Eyuil
             ILGenerator ilgenerator = dynamicMethodDefinition.GetILGenerator();
             Type TargetType = action.Target.GetType();
             string DelegateInMemoryCacheKey = (String.IsNullOrWhiteSpace(CacheKey) ? new System.Diagnostics.StackFrame(1).GetMethod().DeclaringType.Name + "_Trigger" : CacheKey) + (String.IsNullOrWhiteSpace(CacheKeyPostfix) ? "" : $"_{CacheKeyPostfix}");
-            InternalDelegateCache.Add(DelegateInMemoryCacheKey, action);
+            if (!InternalDelegateCache.ContainsKey(DelegateInMemoryCacheKey)) { InternalDelegateCache.Add(DelegateInMemoryCacheKey, action); }
             if ((action.Target != null && TargetType.GetFields().Any((FieldInfo x) => !x.IsStatic)) || action.Target == null)
             {
                 ilgenerator.Emit(OpCodes.Ldsfld, AccessTools.Field(typeof(PatchTools), "InternalDelegateCache"));
@@ -1030,12 +1023,29 @@ namespace Don_Eyuil
         {
             return DefinitionInternalDelegate<T>(action, CacheKeyPostfix, new System.Diagnostics.StackFrame(1).GetMethod().DeclaringType.Name + "_Trigger");
         }
+        /// <summary>
+        /// 尝试根据给定的当前类型与CacheKeyPostfix获取内存内存储的委托
+        /// </summary>
+        /// <param name="Type"></param>
+        /// <param name="CacheKeyPostfix"></param>
+        /// <returns></returns>
         public static Delegate GetInternalDelegate(this Type Type, string CacheKeyPostfix = "")
         {
             Delegate Result = null;
             if (Type != null)
             {
                 PatchTools.InternalDelegateCache.TryGetValue(Type.Name + "_Trigger" + (String.IsNullOrWhiteSpace(CacheKeyPostfix) ? "" : $"_{CacheKeyPostfix}"),out Result);
+            }
+            return Result;
+        }
+
+        public static Delegate GetInternalDelegate<T>(this Type Type, string CacheKeyPostfix = "") where T:Delegate
+        {
+            Delegate Result = null;
+            Result = GetInternalDelegate(Type, CacheKeyPostfix);
+            if(Result != null)
+            {
+                return (T)Result;
             }
             return Result;
         }

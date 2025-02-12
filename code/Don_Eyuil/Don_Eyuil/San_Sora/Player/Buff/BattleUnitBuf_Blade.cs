@@ -1,4 +1,5 @@
 ﻿using LOR_BattleUnit_UI;
+using System;
 using System.Collections.Generic;
 
 namespace Don_Eyuil.San_Sora.Player.Buff
@@ -27,7 +28,8 @@ namespace Don_Eyuil.San_Sora.Player.Buff
                     var temp = RandomUtil.SelectOne(list);
                     list.Remove(temp);
                     temp.TakeDamage(Dmg, DamageType.Buf, null, KeywordBuf.Bleeding);
-                    OnTakeBleedingDamagePatch.Trigger_BleedingDmg_After(temp, Dmg, KeywordBuf.Bleeding);
+                    typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch).GetInternalDelegate()?.DynamicInvoke(temp, Dmg, KeywordBuf.Bleeding);
+                    //OnTakeBleedingDamagePatch.Trigger_BleedingDmg_After(temp, Dmg, KeywordBuf.Bleeding);
                 }
             }
         }

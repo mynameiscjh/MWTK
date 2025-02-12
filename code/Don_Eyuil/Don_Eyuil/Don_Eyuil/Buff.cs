@@ -43,15 +43,6 @@ namespace Don_Eyuil
             this.Destroy();
         }
 
-        public static void UncodensableBloodCheck(BattleUnitBuf BleedingBuf)
-        {
-            var owner = BleedingBuf.GetFieldValue<BattleUnitModel>("_owner");
-            if (owner != null && BattleUnitBuf_UncondensableBlood.GetBufStack<BattleUnitBuf_UncondensableBlood>(owner) > 0)
-            {
-                BleedingBuf.stack = Math.Max(BleedingBuf.stack, 2 + BattleUnitBuf_UncondensableBlood.GetBufStack<BattleUnitBuf_UncondensableBlood>(owner));
-            }
-        }
-
         [HarmonyPatch(typeof(BattleUnitBuf_bleeding), "AfterDiceAction")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BattleUnitBuf_bleeding_AfterDiceAction_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -60,7 +51,14 @@ namespace Don_Eyuil
             codes.InsertRange(codes.Count - 2, new List<CodeInstruction>()
             {
                 new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BattleUnitBuf_UncondensableBlood),"UncodensableBloodCheck"))
+                new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate<BattleUnitBuf>>((BattleUnitBuf BleedingBuf)=>
+                {
+                    var owner = BleedingBuf.GetFieldValue<BattleUnitModel>("_owner");
+                    if (owner != null && BattleUnitBuf_UncondensableBlood.GetBufStack<BattleUnitBuf_UncondensableBlood>(owner) > 0)
+                    {
+                        BleedingBuf.stack = Math.Max(BleedingBuf.stack, 2 + BattleUnitBuf_UncondensableBlood.GetBufStack<BattleUnitBuf_UncondensableBlood>(owner));
+                    }
+                })
             });
             return codes.AsEnumerable<CodeInstruction>();
         }
@@ -424,7 +422,8 @@ namespace Don_Eyuil
             //this.Add(-num);
             if (_owner.bufListDetail.HasBuf<BattleUnitBuf_Armour>() || _owner.bufListDetail.HasBuf<PassiveAbility_DonEyuil_02.BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodShield>())
             {
-                BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch.Trigger_BleedingDmg_After(_owner, num, KeywordBuf.Bleeding);
+                typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch).GetInternalDelegate()?.DynamicInvoke(_owner, num, KeywordBuf.Bleeding);
+                //BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch.Trigger_BleedingDmg_After(_owner, num, KeywordBuf.Bleeding);
             }
 
         }
