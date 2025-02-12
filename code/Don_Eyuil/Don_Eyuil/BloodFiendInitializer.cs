@@ -351,6 +351,41 @@ namespace Don_Eyuil
     [HarmonyPatch]
     public class TKS_BloodFiend_PatchMethods_Testify
     {
+        [HarmonyPatch]
+        public class VersionPatch
+        {
+            public static MethodBase TargetMethod()
+            {
+                return AccessTools.Method(typeof(VersionViewer), "Start");
+            }
+            public static void Testify(ref string Str) => Str += "Ref";
+            public unsafe static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                var Local = ILcodegenerator.DeclareLocal(typeof(string));
+                for (int i = 1; i < codes.Count; i++)
+                {
+                    if (codes[i].opcode == OpCodes.Ldfld && codes[i].operand.ToString().Contains("ver"))
+                    {
+                        codes.InsertRange(i + 1, new List<CodeInstruction>()
+                        {
+                            new CodeInstruction(OpCodes.Stloc, Local.LocalIndex),
+                            new CodeInstruction(OpCodes.Ldloca_S,Local.LocalIndex),
+                            new CodeInstruction(OpCodes.Conv_U),
+                            new CodeInstruction(OpCodes.Nop).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_1<string>>((string* x) =>{
+                                (*x) = "BBBBBBBBBBBBBBBBBBBBBBBBBB";
+                                Testify(ref *x);
+                                //Debug.LogError(typeof(VersionPatch).GetInternalDelegate()?.Method.DeclaringType.Name);
+                                //Debug.LogError(*x +String.Join(",", PatchTools.InternalDelegateCache.Keys));
+                            }),
+                            new CodeInstruction(OpCodes.Ldloc,Local.LocalIndex),
+                        });
+                    }
+                }
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
+
         public enum Team
         {
             attacker, defender,
@@ -1065,6 +1100,9 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
             //-----------------------------------------------------------------------//
 
+            //测试Patch----------------------------------------------------------//
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
+            //-----------------------------------------------------------------------//
 
 
 

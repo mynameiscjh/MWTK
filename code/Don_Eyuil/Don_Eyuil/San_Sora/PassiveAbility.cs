@@ -198,7 +198,7 @@ namespace Don_Eyuil.San_Sora
                 {
 
                 }*/
-                if (codes[i].opcode == OpCodes.Ldloc_2 && codes[i + 1].Calls(AccessTools.Method(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")))
+                if (codes[i].opcode == OpCodes.Ldc_I4_1  && codes[i + 1].opcode == OpCodes.Ldloc_2 && codes[i + 2].Calls(AccessTools.Method(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")))
                 {
 
                 }

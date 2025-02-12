@@ -10,7 +10,10 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using UnityEngine;
-
+using MonoMod.Utils;
+using MonoMod.Utils.Cil;
+using System.Runtime.Remoting.Messaging;
+using System.Runtime.CompilerServices;
 namespace Don_Eyuil
 {
     public class EmotionEgoXmlInfo_Mod : EmotionEgoXmlInfo
@@ -238,7 +241,6 @@ namespace Don_Eyuil
     {
         public virtual void OnStartBattleTheLast()
         {
-
         }
         public class OnStartBattleTheLastPatch
         {
@@ -763,9 +765,284 @@ namespace Don_Eyuil
 
         }
     }
+    public static class PatchTools
+    {
+        public static class UnmanagedDelegateTypes
+        {
+            public static void Inner_UnmanagedDelegateTypesBuilder(int ArgNum)
+            {
+                IEnumerable<IEnumerable<T>> GetCombinations<T>(IEnumerable<T> elements, int k)
+                {
+                    return k == 0 ? new[] { new T[0] } :
+                           elements.SelectMany((e, i) =>
+                               GetCombinations(elements.Skip(i + 1), k - 1).Select(c => new[] { e }.Concat(c)));
+                }
+                for (int i = 1; i <= 5; i++)
+                {
+                    string GenereDeclare = "in T";
+                    for (int GeneC = 0; GeneC < i - 1; GeneC++)
+                    {
+                        GenereDeclare += ",in T" + (GeneC + 1);
+                    }
+                    string ArgDeclare = "";
+                    List<int> N = Enumerable.Range(1, i).ToList();
+                    for (int m = 1; m <= N.Count; m++)
+                    {
+                        var combinations = GetCombinations(N, m);
+                        foreach (var combination in combinations)
+                        {
+                            ArgDeclare = "";
+                            for (int q = 1; q <= N.Count; q++)
+                            {
+                                ArgDeclare += $",T{(q - 1 != 0 ? (q - 1).ToString() : "")}{(combination.Any(x => x == q) ? "*" : "")} A{(q - 1 != 0 ? (q - 1).ToString() : "")}";
+                            }
+                            Console.WriteLine($"public unsafe delegate void UnmanagedDelegate_{String.Join("", combination)}<{GenereDeclare}>({ArgDeclare.Substring(1)});");
+                        }
+                    }
+                    ArgDeclare = "";
+                    for (int q = 1; q <= N.Count; q++)
+                    {
+                        ArgDeclare += $",T{(q - 1 != 0 ? (q - 1).ToString() : "")} A{(q - 1 != 0 ? (q - 1).ToString() : "")}";
+                    }
+                    Console.WriteLine($"public unsafe delegate void UnmanagedDelegate<{GenereDeclare}>({ArgDeclare.Substring(1)});");
+                }
+            }
+            public static void Inner_UnmanagedDelegateTypes_WithRetBuilder(int ArgNum)
+            {
+                IEnumerable<IEnumerable<T>> GetCombinations<T>(IEnumerable<T> elements, int k)
+                {
+                    return k == 0 ? new[] { new T[0] } :
+                           elements.SelectMany((e, i) =>
+                               GetCombinations(elements.Skip(i + 1), k - 1).Select(c => new[] { e }.Concat(c)));
+                }
+                for (int i = 1; i <= 5; ArgNum++)
+                {
+                    string GenereDeclare = "out TResult,in T";
+                    for (int GeneC = 0; GeneC < i - 1; GeneC++)
+                    {
+                        GenereDeclare += ",in T" + (GeneC + 1);
+                    }
+                    string ArgDeclare = "";
+                    List<int> N = Enumerable.Range(1, i).ToList();
+                    for (int m = 1; m <= N.Count; m++)
+                    {
+                        var combinations = GetCombinations(N, m);
+                        foreach (var combination in combinations)
+                        {
+                            ArgDeclare = "";
+                            for (int q = 1; q <= N.Count; q++)
+                            {
+                                ArgDeclare += $",T{(q - 1 != 0 ? (q - 1).ToString() : "")}{(combination.Any(x => x == q) ? "*" : "")} A{(q - 1 != 0 ? (q - 1).ToString() : "")}";
+                            }
+                            Console.WriteLine($"public unsafe delegate void UnmanagedDelegateWithRet_{String.Join("", combination)}<{GenereDeclare}>({ArgDeclare.Substring(1)});");
+                        }
+                    }
+                    ArgDeclare = "";
+                    for (int q = 1; q <= N.Count; q++)
+                    {
+                        ArgDeclare += $",T{(q - 1 != 0 ? (q - 1).ToString() : "")} A{(q - 1 != 0 ? (q - 1).ToString() : "")}";
+                    }
+                    Console.WriteLine($"public unsafe delegate void UnmanagedDelegateWithRet<{GenereDeclare}>({ArgDeclare.Substring(1)});");
+                }
+            }
+            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T>(T* A);
+            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T>(T A);
+            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T, in T1>(T* A, T1 A1);
+            public unsafe delegate void UnmanagedDelegateWithRet_2<out TResult, in T, in T1>(T A, T1* A1);
+            public unsafe delegate void UnmanagedDelegateWithRet_12<out TResult, in T, in T1>(T* A, T1* A1);
+            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T, in T1>(T A, T1 A1);
+            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T, in T1, in T2>(T* A, T1 A1, T2 A2);
+            public unsafe delegate void UnmanagedDelegateWithRet_2<out TResult, in T, in T1, in T2>(T A, T1* A1, T2 A2);
+            public unsafe delegate void UnmanagedDelegateWithRet_3<out TResult, in T, in T1, in T2>(T A, T1 A1, T2* A2);
+            public unsafe delegate void UnmanagedDelegateWithRet_12<out TResult, in T, in T1, in T2>(T* A, T1* A1, T2 A2);
+            public unsafe delegate void UnmanagedDelegateWithRet_13<out TResult, in T, in T1, in T2>(T* A, T1 A1, T2* A2);
+            public unsafe delegate void UnmanagedDelegateWithRet_23<out TResult, in T, in T1, in T2>(T A, T1* A1, T2* A2);
+            public unsafe delegate void UnmanagedDelegateWithRet_123<out TResult, in T, in T1, in T2>(T* A, T1* A1, T2* A2);
+            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T, in T1, in T2>(T A, T1 A1, T2 A2);
+            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2 A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_2<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2 A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_3<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2* A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_4<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2 A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_12<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2 A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_13<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2* A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_14<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2 A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_23<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2* A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_24<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2 A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_34<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2* A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_123<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2* A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_124<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2 A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_134<out TResult, in T, in T1, in T2, in T3>(T* A, T1 A1, T2* A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_234<out TResult, in T, in T1, in T2, in T3>(T A, T1* A1, T2* A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_1234<out TResult, in T, in T1, in T2, in T3>(T* A, T1* A1, T2* A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T, in T1, in T2, in T3>(T A, T1 A1, T2 A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegateWithRet_1<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_2<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_3<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_4<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_5<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_12<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_13<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_14<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_15<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_23<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_24<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_25<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_34<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_35<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_45<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_123<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_124<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_125<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_134<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_135<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_145<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_234<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_235<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_245<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_345<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_1234<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_1235<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_1245<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_1345<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_2345<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet_12345<out TResult, in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegateWithRet<out TResult, in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_1<in T>(T* A);
+            public unsafe delegate void UnmanagedDelegate<in T>(T A);
+            public unsafe delegate void UnmanagedDelegate_1<in T, in T1>(T* A, T1 A1);
+            public unsafe delegate void UnmanagedDelegate_2<in T, in T1>(T A, T1* A1);
+            public unsafe delegate void UnmanagedDelegate_12<in T, in T1>(T* A, T1* A1);
+            public unsafe delegate void UnmanagedDelegate<in T, in T1>(T A, T1 A1);
+            public unsafe delegate void UnmanagedDelegate_1<in T, in T1, in T2>(T* A, T1 A1, T2 A2);
+            public unsafe delegate void UnmanagedDelegate_2<in T, in T1, in T2>(T A, T1* A1, T2 A2);
+            public unsafe delegate void UnmanagedDelegate_3<in T, in T1, in T2>(T A, T1 A1, T2* A2);
+            public unsafe delegate void UnmanagedDelegate_12<in T, in T1, in T2>(T* A, T1* A1, T2 A2);
+            public unsafe delegate void UnmanagedDelegate_13<in T, in T1, in T2>(T* A, T1 A1, T2* A2);
+            public unsafe delegate void UnmanagedDelegate_23<in T, in T1, in T2>(T A, T1* A1, T2* A2);
+            public unsafe delegate void UnmanagedDelegate_123<in T, in T1, in T2>(T* A, T1* A1, T2* A2);
+            public unsafe delegate void UnmanagedDelegate<in T, in T1, in T2>(T A, T1 A1, T2 A2);
+            public unsafe delegate void UnmanagedDelegate_1<in T, in T1, in T2, in T3>(T* A, T1 A1, T2 A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegate_2<in T, in T1, in T2, in T3>(T A, T1* A1, T2 A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegate_3<in T, in T1, in T2, in T3>(T A, T1 A1, T2* A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegate_4<in T, in T1, in T2, in T3>(T A, T1 A1, T2 A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegate_12<in T, in T1, in T2, in T3>(T* A, T1* A1, T2 A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegate_13<in T, in T1, in T2, in T3>(T* A, T1 A1, T2* A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegate_14<in T, in T1, in T2, in T3>(T* A, T1 A1, T2 A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegate_23<in T, in T1, in T2, in T3>(T A, T1* A1, T2* A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegate_24<in T, in T1, in T2, in T3>(T A, T1* A1, T2 A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegate_34<in T, in T1, in T2, in T3>(T A, T1 A1, T2* A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegate_123<in T, in T1, in T2, in T3>(T* A, T1* A1, T2* A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegate_124<in T, in T1, in T2, in T3>(T* A, T1* A1, T2 A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegate_134<in T, in T1, in T2, in T3>(T* A, T1 A1, T2* A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegate_234<in T, in T1, in T2, in T3>(T A, T1* A1, T2* A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegate_1234<in T, in T1, in T2, in T3>(T* A, T1* A1, T2* A2, T3* A3);
+            public unsafe delegate void UnmanagedDelegate<in T, in T1, in T2, in T3>(T A, T1 A1, T2 A2, T3 A3);
+            public unsafe delegate void UnmanagedDelegate_1<in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_2<in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_3<in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_4<in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_5<in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_12<in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_13<in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_14<in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_15<in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_23<in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_24<in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_25<in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_34<in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_35<in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_45<in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_123<in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3 A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_124<in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_125<in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_134<in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_135<in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_145<in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_234<in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_235<in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_245<in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_345<in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_1234<in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3* A3, T4 A4);
+            public unsafe delegate void UnmanagedDelegate_1235<in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3 A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_1245<in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2 A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_1345<in T, in T1, in T2, in T3, in T4>(T* A, T1 A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_2345<in T, in T1, in T2, in T3, in T4>(T A, T1* A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate_12345<in T, in T1, in T2, in T3, in T4>(T* A, T1* A1, T2* A2, T3* A3, T4* A4);
+            public unsafe delegate void UnmanagedDelegate<in T, in T1, in T2, in T3, in T4>(T A, T1 A1, T2 A2, T3 A3, T4 A4);
 
+        }
+        public static Dictionary<string, Delegate> InternalDelegateCache = new Dictionary<string, Delegate>() { };
+        public unsafe static CodeInstruction DefinitionInternalDelegate<T>(T action,string CacheKeyPostfix = "", string CacheKey = null) where T : Delegate
+        {
+            Type[] Arg = (from x in action.Method.GetParameters()
+                          select x.ParameterType).ToArray<Type>();
+            DynamicMethodDefinition dynamicMethodDefinition = new DynamicMethodDefinition(action.Method.Name, action.Method.ReturnType, Arg);
+            ILGenerator ilgenerator = dynamicMethodDefinition.GetILGenerator();
+            Type TargetType = action.Target.GetType();
+            string DelegateInMemoryCacheKey = (String.IsNullOrWhiteSpace(CacheKey) ? new System.Diagnostics.StackFrame(1).GetMethod().DeclaringType.Name + "_Trigger" : CacheKey) + (String.IsNullOrWhiteSpace(CacheKeyPostfix) ? "" : $"_{CacheKeyPostfix}");
+            InternalDelegateCache.Add(DelegateInMemoryCacheKey, action);
+            if ((action.Target != null && TargetType.GetFields().Any((FieldInfo x) => !x.IsStatic)) || action.Target == null)
+            {
+                ilgenerator.Emit(OpCodes.Ldsfld, AccessTools.Field(typeof(PatchTools), "InternalDelegateCache"));
+                ilgenerator.Emit(OpCodes.Ldstr, DelegateInMemoryCacheKey);
+                ilgenerator.Emit(OpCodes.Callvirt, AccessTools.Method(typeof(Dictionary<int, Delegate>), "get_Item"));
+            }
+            else
+            {
+                if (action.Target == null)
+                {
+                    ilgenerator.Emit(OpCodes.Ldnull);
+                }
+                else
+                {
+                    ilgenerator.Emit(OpCodes.Newobj, AccessTools.FirstConstructor(TargetType, (ConstructorInfo x) => x.GetParameters().Length == 0 && !x.IsStatic));
+                }
+                ilgenerator.Emit(OpCodes.Ldftn, action.Method);
+                ilgenerator.Emit(OpCodes.Newobj, AccessTools.Constructor(typeof(T), new Type[]
+                {
+                    typeof(object),
+                    typeof(IntPtr)
+                }, false));
+            }
+            for (int i = 0; i < Arg.Length; i++)
+            {
+                ilgenerator.Emit(OpCodes.Ldarg_S, (short)i);
+            }
+            ilgenerator.Emit(OpCodes.Callvirt, AccessTools.Method(typeof(T), "Invoke"));
+            ilgenerator.Emit(OpCodes.Ret);
+            return new CodeInstruction(OpCodes.Call, dynamicMethodDefinition.Generate());
+        }
+
+        /// <summary>
+        /// <para>根据传入的委托在InternalDelegateCache内生成一个默认为该方法调用者所处类的类名作为Key储存于该字典内的内存内委托 并返回一条调用该委托的IL语句</para>
+        /// <para>*****重点：对于Ref的处理 使用PatchTools.UnmanagedDelegateTypes类下的委托 委托的命名规范为UnmanagedDelegate[是否带有返回值:WithRet][_类型为指针的参数id(从0开始且不加间隔 从左向右打即可)]</para>
+        /// <para>例:(int a, int b, string* c, float* d) => {return "aa"}的需要返回string的委托 使用UnmanagedDelegateWithRet_34[[string, int, int, string, float]]作为泛型参数 (双中括号换尖括号 智能注释里不让打)</para>
+        /// <para>*****重点II：在调用该方法返回的IL字段前的参数准备中 对于指针类型的参数处理方式与处理Ref一致：即读取地址到堆栈上即可 但是指针需要再加一条Conv_U(部分情况会有不同 但大部分情况你用Conv_U指定是对的 具体可以参考官方Opcodes对这几个Conv的解释)</para>
+        /// <para>例II:(LdLoca_S,1)，(Conv_U,null),[本方法]</para>
+        /// 若一个Tranpiler内生成了两个及以上的Delegate请从第二个开始使用CacheKeyPostfix参数命名一个标志后缀(随便打就可以 只是为了区分key)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="postFixCodeIns"></param>
+        /// <param name="action"></param>
+        /// <param name="CacheKeyPostfix">若一个Tranpiler内生成了两个及以上的Delegate请从第二个开始使用这个参数命名</param>
+        /// <returns>new CodeInstruction(Opcodes.Call,内存内生成的调用传入的委托的方法)->可以理解成new CodeInstruction(Opcodes.CallVirt,传入委托.Invoke)->其实就是调用传入委托</returns>
+        public static CodeInstruction WithInternalDelegate<T>(this CodeInstruction postFixCodeIns, T action, string CacheKeyPostfix = "") where T : Delegate
+        {
+            return DefinitionInternalDelegate<T>(action, CacheKeyPostfix, new System.Diagnostics.StackFrame(1).GetMethod().DeclaringType.Name + "_Trigger");
+        }
+        public static Delegate GetInternalDelegate(this Type Type, string CacheKeyPostfix = "")
+        {
+            Delegate Result = null;
+            if (Type != null)
+            {
+                PatchTools.InternalDelegateCache.TryGetValue(Type.Name + "_Trigger" + (String.IsNullOrWhiteSpace(CacheKeyPostfix) ? "" : $"_{CacheKeyPostfix}"),out Result);
+            }
+            return Result;
+        }
+    }
     public static class MyTools
     {
+
         public static bool ISNULL(this object obj, params string[] names)
         {
             object temp = obj;
