@@ -181,6 +181,47 @@ namespace Don_Eyuil.San_Sora
     {
         //激荡的心情与永不终结之梦
         public override string debugDesc => "自身拼点失败使改为获得正面情感\r\n每幕中场上所有角色每获得10点正面情感便使其下幕所有骰子威力+1";
+        public class BattleUnitBuf_SanSoraDmgRedu : BattleUnitBuf_Don_Eyuil
+        {
+            public int GetEmotionCoinCount = 0;
+            public BattleUnitBuf_SanSoraDmgRedu(BattleUnitModel model) : base(model)
+            {
+                this.stack = 0;
+            }
+            public class BattleUnitBuf_SanSoraPowerUp : BattleUnitBuf_Don_Eyuil
+            {
+                public BattleUnitBuf_SanSoraPowerUp(BattleUnitModel model) : base(model)
+                {
+                    this.stack = 0;
+                }
+                public override void BeforeRollDice(BattleDiceBehavior behavior)
+                {
+                    behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = stack });
+                }
+
+                public override void OnRoundEnd()
+                {
+                    this.Destroy();
+                }
+            }
+            public override void OnRoundEnd()
+            {
+                BattleUnitBuf_SanSoraPowerUp.GainBuf<BattleUnitBuf_SanSoraPowerUp>(_owner,GetEmotionCoinCount / 10, BufReadyType.NextRound);
+                GetEmotionCoinCount = 0;
+            }
+            public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
+            {
+                GetEmotionCoinCount += CoinType == EmotionCoinType.Positive ? Count : 0;
+            }
+        }
+        public override void OnCreated()
+        {
+            BattleObjectManager.instance.GetAliveList().Do(x => BattleUnitBuf_SanSoraDmgRedu.GetOrAddBuf<BattleUnitBuf_SanSoraDmgRedu>(x));
+        }
+        public override void OnDestroyed()
+        {
+            BattleObjectManager.instance.GetAliveList().Do(x => BattleUnitBuf_SanSoraDmgRedu.RemoveBuf<BattleUnitBuf_SanSoraDmgRedu>(x));
+        }
 
         [HarmonyPatch(typeof(BattleParryingManager), "Decision")]
         [HarmonyTranspiler]
@@ -196,14 +237,55 @@ namespace Don_Eyuil.San_Sora
                     codes[i + 4].opcode == OpCodes.Ldloc_2 &&
                     codes[i + 5].Calls(AccessTools.Method(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")))
                 {
-
                 }*/
                 if (codes[i].opcode == OpCodes.Ldc_I4_1  && codes[i + 1].opcode == OpCodes.Ldloc_2 && codes[i + 2].Calls(AccessTools.Method(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")))
                 {
-
+                    codes.InsertRange(i + 1,new List<CodeInstruction>()
+                    {
+                        new CodeInstruction(OpCodes.Ldarg_0),
+                        new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleParryingManager), "_currentLoserTeam")),
+                        new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleParryingManager.ParryingTeam), "unit")),
+                        new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegateWithRet<EmotionCoinType,EmotionCoinType,BattleUnitModel>>((EmotionCoinType CoinType,BattleUnitModel Unit)=>
+                        {
+                            if(Unit.passiveDetail.HasPassive<PassiveAbility_SanSora_08>() && CoinType == EmotionCoinType.Negative)
+                            {
+                                return EmotionCoinType.Positive;
+                            }
+                            return CoinType;
+                        })
+                    });
                 }
             }
             return codes.AsEnumerable();
+        }
+    }
+    public class PassiveAbility_SanSora_09 : PassiveAbilityBase
+    {
+        //昂首阔步迈向你我的明天
+        public override string debugDesc => "体力无法低于10且自身不会陷入混乱\r\n获得本被动后每过一幕便使自身所有骰子威力+1\r\n4幕后若仍有司书存活则司书方获得胜利";
+        public class BattleUnitBuf_SanSoraDmgRedu : BattleUnitBuf_Don_Eyuil
+        {
+            public int PowerUpCount = 0;
+            public BattleUnitBuf_SanSoraDmgRedu(BattleUnitModel model) : base(model)
+            {
+                PowerUpCount = 0;
+            }
+            public override void OnRoundEnd()
+            {
+                PowerUpCount++;
+            }
+            public override void BeforeRollDice(BattleDiceBehavior behavior)
+            {
+                behavior.ApplyDiceStatBonus(new DiceStatBonus() { power =  PowerUpCount });
+            }
+        }
+        public override void OnCreated()
+        {
+            BattleUnitBuf_SanSoraDmgRedu.GetOrAddBuf<BattleUnitBuf_SanSoraDmgRedu>(owner);
+        }
+        public override void OnDestroyed()
+        {
+            BattleUnitBuf_SanSoraDmgRedu.RemoveBuf<BattleUnitBuf_SanSoraDmgRedu>(owner);
         }
     }
 }

@@ -20,7 +20,7 @@ using UI;
 using UnityEngine;
 using UnityEngine.UI;
 using File = System.IO.File;
-
+using Don_Eyuil.San_Sora;
 namespace Don_Eyuil
 {
     [HarmonyPatch]
@@ -1085,6 +1085,7 @@ namespace Don_Eyuil
             //被动效果Patch----------------------------------------------------------//
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             harmony.PatchAll(typeof(PassiveAbility_SanSora_10));
+            harmony.PatchAll(typeof(PassiveAbility_SanSora_08));
             //-----------------------------------------------------------------------//
 
             //Buff效果Patch----------------------------------------------------------//
