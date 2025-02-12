@@ -55,6 +55,20 @@ namespace Don_Eyuil.San_Sora.Player.Buff
             typeof(BattleUnitBuf).GetField("_iconInit", AccessTools.all).SetValue(this, true);
         }
 
+        public override int SpeedDiceNumAdder()
+        {
+            if (BattleObjectManager.instance.GetAliveList(Faction.Player).Exists(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页)) return 1;
+            return base.SpeedDiceNumAdder();
+        }
+
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            if (BattleObjectManager.instance.GetAliveList(Faction.Player).Exists(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页))
+            {
+                behavior.ApplyDiceStatBonus(new DiceStatBonus() { min = 1 });
+            }
+        }
+
     }
 
 }

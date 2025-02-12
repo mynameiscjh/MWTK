@@ -1,4 +1,5 @@
 ﻿using Don_Eyuil.Don_Eyuil.Player.Buff;
+using Don_Eyuil.WhiteMoon_Sparkle.Player.Buff;
 using HarmonyLib;
 using LOR_DiceSystem;
 using System;
@@ -68,13 +69,13 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 
         public static Dictionary<LorId, Type> cardToBufMap_Don_Eyuil = new Dictionary<LorId, System.Type>
                 {
-                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术1式_血剑_2], typeof(BattleUnitBuf_Sword) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术1式_血剑_2], typeof(Buff.BattleUnitBuf_Sword) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术2式_血枪_2], typeof(BattleUnitBuf_Lance) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术3式_血镰_2], typeof(BattleUnitBuf_Sickle) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术4式_血刃_2], typeof(BattleUnitBuf_Blade) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术5式_双剑_2], typeof(BattleUnitBuf_DoubleSwords) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术6式_血甲_2], typeof(BattleUnitBuf_Armour) },
-                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术7式_血弓_2], typeof(BattleUnitBuf_Bow) },
+                    { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术7式_血弓_2], typeof(Buff.BattleUnitBuf_Bow) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术8式_血鞭_2], typeof(BattleUnitBuf_Scourge) },
                     { map_Don_Eyuil[MyId.Card_堂埃尤尔派硬血术9式_血伞_2], typeof(BattleUnitBuf_Umbrella) }
                 };
@@ -482,7 +483,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 {
                     gameObject.GetComponentsInChildren<Image>().ToList<Image>().ForEach(delegate (Image x)
                     {
-                        Debug.Log("Image.name:" + (x?.name));
+                        UnityEngine.Debug.Log("Image.name:" + (x?.name));
                     });
                     Image image = gameObject.GetComponentsInChildren<Image>().FirstOrDefault((Image x) => x.name.Contains("[Image]BgFrame"));
                     bool flag2 = image != null;
@@ -617,11 +618,49 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             }
         }
 #endif
+
         //应该需要hp把特定buff加上
         [HarmonyPatch(typeof(LevelUpUI), "OnSelectEgoCard")]
         [HarmonyPrefix]
         public static bool LevelUpUI_OnSelectEgoCard_Pre(BattleDiceCardUI picked)
         {
+
+            if (BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text == "选择主武器书页")
+            {
+                if (picked.CardModel.GetID() == MyId.Card_Desc_泉之龙_秋之莲)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddPrimaryWeapon<BattleUnitBuf_Year>();
+                }
+                if (picked.CardModel.GetID() == MyId.Card_Desc_千斤弓)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddPrimaryWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Bow>();
+                }
+                if (picked.CardModel.GetID() == MyId.Card_Desc_月之剑)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddPrimaryWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
+                }
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
+                return false;
+            }
+
+            if (BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text == "选择副武器书页")
+            {
+                if (picked.CardModel.GetID() == MyId.Card_Desc_泉之龙_秋之莲)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddSubWeapon<BattleUnitBuf_Year>();
+                }
+                if (picked.CardModel.GetID() == MyId.Card_Desc_千斤弓)
+                {
+                    BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Bow>();
+                }
+                if (picked.CardModel.GetID() == MyId.Card_Desc_月之剑)
+                {
+                    //BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
+                }
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
+                return false;
+            }
+
             if (map_Don_Eyuil.Values.ToList().Exists(x => x == picked.CardModel.GetID()))
             {
                 var I39 = BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页);
@@ -645,7 +684,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 }
                 ChosenCard.Add(picked.CardModel.GetID());
                 var temp = map_Don_Eyuil.ToList().Find(x => x.Value == picked.CardModel.GetID()).Key;
-                cards_Don_Eyuil.Remove(temp);
+                cards_Don_Eyuil.Remove(picked.CardModel.GetID());
                 I39.personalEgoDetail.AddCard(temp);
                 BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
                 return false;
@@ -663,6 +702,12 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 
         public override void OnWaveStart()
         {
+
+            if (StageController.Instance.CurrentWave == 1)
+            {
+                HardBloodCards.ChosenCard.Clear();
+            }
+
             HardBloodCards.cards_Don_Eyuil = new List<LorId>(this.owner.UnitData.unitData.GetDeckForBattle(1).Where(item => HardBloodCards.map_Don_Eyuil.Values.Contains(item.id) && !HardBloodCards.ChosenCard.Contains(item.id)).Select(item => item.id));
 
             foreach (var item in HardBloodCards.ChosenCard)

