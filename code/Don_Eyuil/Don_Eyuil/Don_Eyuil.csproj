@@ -175,6 +175,9 @@
     <Compile Include="Don_Eyuil\Player\PassiveAbility\PassiveAbility_DonEyuil_17.cs" />
     <Compile Include="Don_Eyuil\MapManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="San_Sora\Buff.cs" />
+    <Compile Include="San_Sora\DiceCardAbility.cs" />
+    <Compile Include="San_Sora\DiceCardSelfAbility.cs" />
     <Compile Include="San_Sora\PassiveAbility.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Armour.cs" />
     <Compile Include="San_Sora\Player\Buff\BattleUnitBuf_Blade.cs" />

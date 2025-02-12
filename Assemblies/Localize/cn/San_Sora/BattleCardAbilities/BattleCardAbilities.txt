@@ -35,7 +35,10 @@
     <Desc>[我坚信共存与梦想终会实现]</Desc>
   </BattleCardAbility>
   <BattleCardAbility ID="SanSora_18">
-    <Desc>[我将一刻不停的向之飞翔！！]</Desc>
+    <Desc>[我将一刻不停的向之飞翔!!]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_19">
+    <Desc>[使用时]若自身速度不低于6则使本书页所有骰子威力+2</Desc>
   </BattleCardAbility>
 
   <BattleCardAbility ID="SanSora_Dice01">

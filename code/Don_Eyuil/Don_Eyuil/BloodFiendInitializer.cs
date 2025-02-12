@@ -1057,12 +1057,6 @@ namespace Don_Eyuil
             LoadLocalize("Don_Eyuil");
             LoadLocalize("San_Sora");
         }
-
-        public static void Pre_电脑要爆了()
-        {
-            Debug.Log("_+_+_+_");
-        }
-
         public override void OnInitializeMod()
         {
             TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
@@ -1274,7 +1268,6 @@ namespace Don_Eyuil
                 NameSpace.Contains("Don_Eyuil") ? (MyTools.Create(10000001), MyTools.Create(1)) :
                 (null,null);
         }
-
     }
 
 }

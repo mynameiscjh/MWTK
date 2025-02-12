@@ -1955,7 +1955,7 @@
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Rare</Rarity>
     <Spec Range="Near" Cost="2" Affection="One" EmotionLimit="0" />
-    <Script>DonEyuil_05</Script>
+    <Script>DonEyuil_19</Script>
     <ScriptDesc />
     <BehaviourList>
       <Behaviour Min="5" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="SanSora_Dice03" ActionScript="" Desc="" />
