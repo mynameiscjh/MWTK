@@ -31,6 +31,8 @@
 
         public BattleUnitBuf_Flag(BattleUnitModel model) : base(model)
         {
+            this.SetFieldValue("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks["收尾标记"]);
+            this.SetFieldValue("_iconInit", true);
         }
     }
 }

@@ -6,19 +6,34 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.DiceCardSelfAbility
     {
         public static string Desc = "本书页根据当前所应用的副武器获得额外效果\r\n[使用时]自身每有2张书页指定该目标便使本书页进攻型骰子命中时额外命中一次";
 
-        public override void OnAddToHand(BattleUnitModel owner)
+
+
+        public override void OnApplyCard()
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
-            {
-                owner.personalEgoDetail.AddCard(MyId.Card_传承之梦_泉之龙_秋之莲);
-            }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
-            {
-                owner.personalEgoDetail.AddCard(MyId.Card_传承之梦_千斤弓);
-            }
             if (!BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Sword)))
             {
-                owner.personalEgoDetail.RemoveCard(MyId.Card_传承之梦_月之剑);
+                var temp = new BattleDiceCardModel();
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_传承之梦_泉之龙_秋之莲));
+                }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_传承之梦_千斤弓));
+                }
+                card.card.GetBufList().ForEach(x => temp.AddBuf(x));
+                temp.SetCurrentCostMax();
+                temp.SetCurrentCost(card.card.GetCost());
+                card.card = temp;
+                card.cardAbility = temp.CreateDiceCardSelfAbilityScript();
+                card.cardAbility.card = card;
+                card.cardAbility.OnApplyCard();
+                card.ResetCardQueue();
+            }
+            else
+            {
+                card.card.SetCurrentCost(card.card.XmlData.Spec.Cost);
+                card.card.SetCurrentCostMax();
             }
         }
 

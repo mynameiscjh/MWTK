@@ -156,7 +156,7 @@ namespace Don_Eyuil
             TriggeredOnRollDiceCount = 0;
         }
     }
-    //汹涌的血潮(不衰减）
+    //汹涌的血潮(不衰减)
     public class BattleUnitBuf_BloodTide : BattleUnitBuf_Don_Eyuil
     {
         protected override string keywordId => "BattleUnitBuf_Tidewater";

@@ -668,6 +668,29 @@ namespace Don_Eyuil
         }
 
         public BattleUnitModel owner { get { return this._owner; } }
+
+        public virtual string BuffName { get { return Singleton<BattleEffectTextsXmlList>.Instance.GetEffectTextName(this.keywordId); } }
+
+        [HarmonyPatch(typeof(BattleUnitBuf), "bufActivatedName", MethodType.Getter)]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> BattleUnitBuf_bufActivatedName_Tran(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            Label label = new Label();
+            codes[0].labels.Add(label);
+            codes.InsertRange(0, new List<CodeInstruction>
+            {
+                new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Isinst, typeof(BattleUnitBuf_Don_Eyuil)),
+                new CodeInstruction(OpCodes.Brfalse_S, label),
+                new CodeInstruction(OpCodes.Ldarg_0),
+                new CodeInstruction(OpCodes.Castclass, typeof(BattleUnitBuf_Don_Eyuil)),
+                new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(BattleUnitBuf_Don_Eyuil), "get_BuffName")),
+                new CodeInstruction(OpCodes.Ret),
+            });
+
+            return codes.AsEnumerable();
+        }
     }
     public static class ExtraMethods
     {
@@ -768,6 +791,17 @@ namespace Don_Eyuil
             catch (Exception ex)
             {
                 Debug.Log($" : T GetFieldValue<T>(this object obj, string name) : {ex}");
+            }
+        }
+        public static void SetFieldValue(this object obj, string name, object value)
+        {
+            try
+            {
+                AccessTools.Field(obj.GetType(), name).SetValue(obj, value);
+            }
+            catch (Exception ex)
+            {
+                Debug.Log($" : void SetFieldValue(this object obj, string name, object value) : {ex}");
             }
         }
         /// <summary>

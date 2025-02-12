@@ -7,19 +7,35 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.DiceCardSelfAbility
 
         public static string Desc = "本书页根据当前所应用的副武器获得额外效果\r\n本书页第一颗骰子[命中时]追加等同于基础值次数的2点伤害";
 
-        public override void OnAddToHand(BattleUnitModel owner)
+
+
+        public override void OnApplyCard()
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
-            {
-                owner.personalEgoDetail.AddCard(MyId.Card_传承之梦_泉之龙_秋之莲);
-            }
             if (!BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
             {
-                owner.personalEgoDetail.RemoveCard(MyId.Card_传承之梦_千斤弓);
+                var temp = new BattleDiceCardModel();
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_传承之梦_泉之龙_秋之莲));
+                }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Sword)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_传承之梦_月之剑));
+                }
+                card.card.GetBufList().ForEach(x => temp.AddBuf(x));
+                temp.SetCurrentCostMax();
+                temp.SetCurrentCost(card.card.GetCost());
+                card.card = temp;
+                card.cardAbility = temp.CreateDiceCardSelfAbilityScript();
+                card.cardAbility.card = card;
+                card.cardAbility.OnApplyCard();
+                card.ResetCardQueue();
+                card.card.AddCoolTime(card.card.MaxCooltimeValue);
             }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Sword)))
+            else
             {
-                owner.personalEgoDetail.AddCard(MyId.Card_传承之梦_月之剑);
+                card.card.SetCurrentCost(card.card.XmlData.Spec.Cost);
+                card.card.SetCurrentCostMax();
             }
         }
 

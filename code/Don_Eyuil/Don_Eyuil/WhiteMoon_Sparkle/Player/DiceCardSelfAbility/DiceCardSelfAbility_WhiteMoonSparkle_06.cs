@@ -5,21 +5,47 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.DiceCardSelfAbility
 {
     public class DiceCardSelfAbility_WhiteMoonSparkle_06 : DiceCardSelfAbilityBase
     {
-        public static string Desc = "本书页根据自身当前主武器改变\r\n本书页将视为拥有所有月相标记\r\n[拼点开始]若目标首颗骰子平均值大于15则在书页末尾置入一颗打击骰子（13～17若骰子基础值不低于20则造成伤害+50%）反之则置入书页开头\r\n";
+        public static string Desc = "本书页根据自身当前主武器改变\r\n本书页将视为拥有所有月相标记\r\n[拼点开始]若目标首颗骰子平均值大于15则在书页末尾置入一颗打击骰子(13～17若骰子基础值不低于20则造成伤害+50%)反之则置入书页开头\r\n";
 
         public override void OnAddToHand(BattleUnitModel owner)
         {
+            owner.allyCardDetail.GetAllDeck().FindAll(x => x.GetID() == MyId.Card_所护之物_月之剑).ForEach(card =>
+            {
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
+                {
+                    card = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所护之物_泉之龙_秋之莲));
+                }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
+                {
+                    card = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所护之物_千斤弓));
+                }
+            });
+        }
+
+        public override void OnApplyCard()
+        {
             if (!BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Sword)))
             {
-                owner.allyCardDetail.ExhaustCard(MyId.Card_所护之物_月之剑);
+                var temp = new BattleDiceCardModel();
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所护之物_泉之龙_秋之莲));
+                }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所护之物_千斤弓));
+                }
+                card.card.GetBufList().ForEach(x => temp.AddBuf(x));
+                temp.SetCurrentCost(card.card.GetCost());
+                card.card = temp;
+                card.cardAbility = temp.CreateDiceCardSelfAbilityScript();
+                card.cardAbility.card = card;
+                card.cardAbility.OnApplyCard();
+                card.ResetCardQueue();
             }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
+            else
             {
-                owner.allyCardDetail.AddCardToHand(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所护之物_泉之龙_秋之莲)));
-            }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
-            {
-                owner.allyCardDetail.AddCardToHand(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所护之物_千斤弓)));
+                card.card.SetCurrentCost(card.card.XmlData.Spec.Cost);
             }
         }
 

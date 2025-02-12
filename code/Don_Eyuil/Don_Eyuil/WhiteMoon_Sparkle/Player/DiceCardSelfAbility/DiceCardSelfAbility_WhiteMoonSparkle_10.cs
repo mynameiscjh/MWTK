@@ -4,26 +4,37 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.DiceCardSelfAbility
 {
     public class DiceCardSelfAbility_WhiteMoonSparkle_10 : DiceCardSelfAbilityBase
     {
-        public static string Desc = "本书页根据当前所应用的副武器获得额外效果\r\n本书页使用期间使双方“进攻型”骰子无论是否取得拼点胜利皆可对目标造成命中伤害 \r\n使目标造成的伤害与混乱伤害减少自身骰子点数3/2（向下取整）" +
-            "额外效果:\r\n" +
-            "泉之龙/秋之莲:[使用时]本书页造成的伤害与混乱伤害+40% \r\n" +
-            "千斤弓:[使用时]本书页使用期间使目标受到的非命中伤害+50% \r\n" +
-            "月之剑:[使用时]本书页骰子最大最小值提升25%\r\n" +
-            "埃尤尔之血:[使用时]本书页首次命中目标时对目标造成一次目标当前流血层数150%的流血伤害\r\n";
+        public static string Desc = "本书页根据当前所应用的副武器获得额外效果\r\n本书页使用期间使双方“进攻型”骰子无论是否取得拼点胜利皆可对目标造成命中伤害 \r\n使目标造成的伤害与混乱伤害减少自身骰子点数3/2(向下取整)";
 
-        public override void OnAddToHand(BattleUnitModel owner)
+
+
+        public override void OnApplyCard()
         {
             if (!BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
             {
-                owner.personalEgoDetail.RemoveCard(MyId.Card_传承之梦_泉之龙_秋之莲);
+                var temp = new BattleDiceCardModel();
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_传承之梦_千斤弓));
+                }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Sword)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_传承之梦_月之剑));
+                }
+                card.card.GetBufList().ForEach(x => temp.AddBuf(x));
+                temp.SetCurrentCostMax();
+                temp.SetCurrentCost(card.card.GetCost());
+                card.card = temp;
+                card.cardAbility = temp.CreateDiceCardSelfAbilityScript();
+                card.cardAbility.card = card;
+                card.cardAbility.OnApplyCard();
+                card.ResetCardQueue();
+                card.card.AddCoolTime(card.card.MaxCooltimeValue);
             }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
+            else
             {
-                owner.personalEgoDetail.AddCard(MyId.Card_传承之梦_千斤弓);
-            }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Sword)))
-            {
-                owner.personalEgoDetail.AddCard(MyId.Card_传承之梦_月之剑);
+                card.card.SetCurrentCost(card.card.XmlData.Spec.Cost);
+                card.card.SetCurrentCostMax();
             }
         }
 

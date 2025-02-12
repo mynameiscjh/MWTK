@@ -2672,12 +2672,12 @@
     <TextId>-1</TextId>
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Unique</Rarity>
-    <Spec Range="Near" Cost="0" Affection="Team" EmotionLimit="0" />
+    <Spec Range="Far" Cost="0" Affection="Team" EmotionLimit="0" />
     <Script></Script>
     <ScriptDesc></ScriptDesc>
     <BehaviourList>
-    <Behaviour Min="4" Dice="8" Type="Standby" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-    <Behaviour Min="4" Dice="8" Type="Standby" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="forbidReuseDice" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Standby" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>

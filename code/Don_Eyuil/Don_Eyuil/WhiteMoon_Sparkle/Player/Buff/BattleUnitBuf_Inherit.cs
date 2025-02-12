@@ -4,7 +4,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 {
     public class BattleUnitBuf_Inherit : BattleUnitBuf_Don_Eyuil
     {
-        public static string Desc = "传承之物[中立buff]（友方为堂埃尤尔时获得）:\r\n自身速度+1 对指向堂埃尤尔的敌方角色造成的伤害与混乱伤害+1 若自身与堂埃尤尔幕指向了同一目标则使该目标本幕对堂埃尤尔造成的伤害与混乱伤害-1\r\n若堂埃尤尔同时被3张书页选中则这一幕对所有指向堂埃尤尔的敌方角色使用1张[一如既往]\r\n";
+        public static string Desc = "传承之物[中立buff](友方为堂埃尤尔时获得):\r\n自身速度+1 对指向堂埃尤尔的敌方角色造成的伤害与混乱伤害+1 若自身与堂埃尤尔幕指向了同一目标则使该目标本幕对堂埃尤尔造成的伤害与混乱伤害-1\r\n若堂埃尤尔同时被3张书页选中则这一幕对所有指向堂埃尤尔的敌方角色使用1张[一如既往]\r\n";
 
         public override int GetSpeedDiceAdder(int speedDiceResult)
         {
@@ -95,6 +95,8 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public BattleUnitBuf_Inherit(BattleUnitModel model) : base(model)
         {
+            this.SetFieldValue("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks["传承之物和传递之物"]);
+            this.SetFieldValue("_iconInit", true);
         }
     }
 }

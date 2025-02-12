@@ -14,6 +14,8 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
             owner.cardSlotDetail.keepCard.AddBehaviour(card, card.CreateDiceCardBehaviorList()[1]);
         }
 
+
+
         public class DiceCardAbility_不承受反震伤害 : DiceCardAbilityBase
         {
             [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDeflectDamage")]

@@ -865,6 +865,7 @@ namespace Don_Eyuil
             public class DiceFlagExtension : TKS_EnumExtender<DiceFlag>
             {
                 public static DiceFlag HasGivenDamage_SubTarget { get; internal set; }
+                public static DiceFlag HasGivenDamage_BattleUnitBuf_Year { get; internal set; }
             }
         }
         public static string GetPassiveName(int id)
@@ -1021,11 +1022,7 @@ namespace Don_Eyuil
             LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
             LoadLocalize("Don_Eyuil");
             LoadLocalize("San_Sora");
-        }
-
-        public static void Pre_电脑要爆了()
-        {
-            Debug.Log("_+_+_+_");
+            LoadLocalize("WhiteMoon_Sparkle");
         }
 
         public override void OnInitializeMod()
