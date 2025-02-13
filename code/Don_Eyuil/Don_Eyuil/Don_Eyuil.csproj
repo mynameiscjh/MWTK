@@ -225,6 +225,7 @@
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_10.cs" />
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_11.cs" />
     <Compile Include="San_Sora\Player\PassiveAbility\PassiveAbility_SanSora_12.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Blood.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Bow.cs" />
     <Compile Include="WhiteMoon_Sparkle\Player\Buff\BattleUnitBuf_Flag.cs" />

@@ -389,7 +389,7 @@ namespace Don_Eyuil
                             new CodeInstruction(OpCodes.Stloc, Local.LocalIndex),
                             new CodeInstruction(OpCodes.Ldloca_S,Local.LocalIndex),
                             new CodeInstruction(OpCodes.Conv_U),
-                            new CodeInstruction(OpCodes.Nop).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_1<string>>((string* x) =>{
+                            new CodeInstruction(OpCodes.Nop).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_1<string>>((string* x) =>{
                                 (*x) = "BBBBBBBBBBBBBBBBBBBBBBBBBB";
                                 Testify(ref *x);
                                 //Debug.LogError(typeof(VersionPatch).GetInternalDelegate()?.Method.DeclaringType.Name);

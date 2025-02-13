@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 using Don_Eyuil.San_Sora.Player.Buff;
 using Don_Eyuil;
 using static Don_Eyuil.BattleUnitBuf_Don_Eyuil;
+using LOR_BattleUnit_UI;
 namespace Don_Eyuil.San_Sora
 {
     public class PassiveAbility_SanSora_01 : PassiveAbilityBase
@@ -43,21 +44,112 @@ namespace Don_Eyuil.San_Sora
             第四幕速度骰子固定为1颗速度改为99且无法选中 使用 直到触及到那梦想!后司书接待胜利)*/
 
         public static int Phase = 1;
+        public static int Phase1Round = 0;
         public static int Phase2Round = 0;
         public static int Phase3Round = 0;
         public override void OnWaveStart()
         {
-            Phase = 1; Phase2Round = 0; Phase3Round = 0;
+            Phase = 1; Phase1Round = 0; Phase2Round = 0; Phase3Round = 0;
         }
-
         public override int GetMinHp()
         {
             switch (Phase)
             {
-                case 1:return 500;
+                case 1: return 500;
                 default: return base.GetMinHp();
             }
         }
+        public override int SpeedDiceNumAdder()
+        {
+            int EmotionOffest = (owner.emotionDetail.EmotionLevel >= 4) ? -1 : 0;
+            if(Phase == 1)
+            {
+                if(Phase1Round == 3) { return 0 + EmotionOffest; }
+                if(Phase1Round == 4) { return 3 + EmotionOffest; }
+                return 3 + Math.Min(2, Singleton<StageController>.Instance.RoundTurn - 1) + EmotionOffest;
+            }
+            return base.SpeedDiceNumAdder();
+        }
+        public override void OnAfterRollSpeedDice()
+        {
+            List<string> GetHardBloodBufId()
+            {
+                var IDList = new List<string>() { "Blade", "Bow", "DoubleSwords", "Lance", "Scourge", "Sickle", "Sword" };
+                if (Phase1Round == 3 || Phase1Round == 4) { return new List<string>() { "Armour",null }; }
+                return MyTools.TKSRandomUtil(IDList, 2, false, false);
+            }
+            void AddDiceHardBloodBuf(SpeedDiceUI dice,string BufId)
+            {
+                switch (BufId)
+                {
+                    case "Blade":BattleUnitBuf_Blade.GainBuf<BattleUnitBuf_Blade>(dice);return;
+                    case "Bow": BattleUnitBuf_Bow.GainBuf<BattleUnitBuf_Bow>(dice); return;
+                    case "DoubleSwords": BattleUnitBuf_DoubleSwords.GainBuf<BattleUnitBuf_DoubleSwords>(dice); return;
+                    case "Lance": BattleUnitBuf_Lance.GainBuf<BattleUnitBuf_Lance>(dice); return;
+                    case "Scourge": BattleUnitBuf_Scourge.GainBuf<BattleUnitBuf_Scourge>(dice); return;
+                    case "Sickle": BattleUnitBuf_Sickle.GainBuf<BattleUnitBuf_Sickle>(dice); return;
+                    case "Sword": BattleUnitBuf_Sword.GainBuf<BattleUnitBuf_Sword>(dice); return;
+                    case "Armour": BattleUnitBuf_Armour.GainBuf<BattleUnitBuf_Armour>(dice); return;
+                }
+            }
+            var SpeedDices = owner.view.speedDiceSetterUI.GetFieldValue<List<SpeedDiceUI>>("_speedDices");
+            var HardBloodList =  GetHardBloodBufId();
+            //一半/一半的施加硬血术 如果有奇数就随机加
+            SpeedDices.DivisibleSkip((SpeedDices.Count / 2) * 2).SplitDivisibleIEnumerable().Do((Dice1) => 
+            {
+                Dice1?.Do(x => AddDiceHardBloodBuf(x, RandomUtil.SelectOne(HardBloodList)));
+            },(Dice2) =>
+            {
+                Dice2.DivisibleSkipWhile((x, index) => index <= SpeedDices.Count / 2).Do(x =>
+                {
+                    AddDiceHardBloodBuf(x.Item2, HardBloodList[0]);
+                    AddDiceHardBloodBuf(x.Item1, HardBloodList.Count > 1 ? HardBloodList[0] : HardBloodList[1]);
+                });
+            });
+
+        }
+        public override void OnRoundEndTheLast()
+        {
+            if(Phase == 1 && BattleUnitBuf_BloodShield.GetBufStack<BattleUnitBuf_BloodShield>(owner) <= 0)
+            {
+                Phase = 2;
+                owner.passiveDetail.AddPassive(MyTools.Create(23));
+                owner.passiveDetail.AddPassive(MyTools.Create(24));
+                owner.bufListDetail.GetActivatedBufList().DoIf(x => x.positiveType == BufPositiveType.Negative, y => y.Destroy());
+                if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                {
+                    this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                }
+                this.owner.breakDetail.nextTurnBreak = false;
+                this.owner.breakDetail.RecoverBreakLife(1, false);
+                this.owner.breakDetail.RecoverBreak(this.owner.breakDetail.GetDefaultBreakGauge());
+            }
+        }
+        public void AddNewCard(LorId Id, int pro)
+        {
+            BattleDiceCardModel battleDiceCardModel = this.owner.allyCardDetail.AddTempCard(Id);
+            if (battleDiceCardModel != null)
+            {
+                battleDiceCardModel.SetCostToZero(true);
+                battleDiceCardModel.SetPriorityAdder(pro);
+                battleDiceCardModel.temporary = true;
+            }
+        }
+        public override void OnRoundStart()
+        {
+            owner.allyCardDetail.ExhaustAllCardsInHand();
+            int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
+            if(Phase == 1)
+            {
+                if (Phase1Round > 3)//0 1 2 3 Pass 4 -> 0
+                {
+                    Phase1Round = 0;
+                }
+                Phase1Round++;//0 1 2 3 -> 1 2 3 4
+            }
+        }
+
+
 
     }
     public class PassiveAbility_SanSora_02: PassiveAbilityBase
@@ -245,7 +337,7 @@ namespace Don_Eyuil.San_Sora
                         new CodeInstruction(OpCodes.Ldarg_0),
                         new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleParryingManager), "_currentLoserTeam")),
                         new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleParryingManager.ParryingTeam), "unit")),
-                        new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegateWithRet<EmotionCoinType,EmotionCoinType,BattleUnitModel>>((EmotionCoinType CoinType,BattleUnitModel Unit)=>
+                        new CodeInstruction(OpCodes.Call).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegateWithRet<EmotionCoinType,EmotionCoinType,BattleUnitModel>>((EmotionCoinType CoinType,BattleUnitModel Unit)=>
                         {
                             if(Unit.passiveDetail.HasPassive<PassiveAbility_SanSora_08>() && CoinType == EmotionCoinType.Negative)
                             {
