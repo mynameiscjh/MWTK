@@ -1,4 +1,11 @@
-﻿namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
+﻿using HarmonyLib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using UnityEngine;
+
+namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 {
     public class BattleUnitBuf_Sword : BattleUnitBuf_Don_Eyuil
     {
@@ -11,7 +18,7 @@
 
         public bool IsIntensify = false;
 
-#if false
+#if true
         [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BattleDiceBehavior_GiveDamage_Tran(IEnumerable<CodeInstruction> instructions)
@@ -285,7 +292,7 @@
             }
         }
 #endif
-#if false
+#if true
         public override int SpeedDiceNumAdder()
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this) && StageController.Instance.RoundTurn != 1)
@@ -296,26 +303,40 @@
             return base.SpeedDiceNumAdder();
         }
 #endif
-#if false
+#if true
+
+        [HarmonyPatch(typeof(BookModel), "SpeedMin", MethodType.Getter)]
+        [HarmonyPostfix]
+        public static void BookModel_SpeedMin_Post(ref int __result)
+        {
+            if (BattleObjectManager.instance.GetAliveList().Count > 0 && BattleUnitBuf_Sparkle.Instance != null)
+            {
+                var buf = BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Find(x => x is BattleUnitBuf_Sword);
+                if (buf != null && buf.GetFieldValue<bool>("IsIntensify"))
+                {
+                    __result += 2;
+                }
+            }
+        }
+
         public override void OnRoundStart()
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && IsIntensify)
-            {
-                _owner.Book.SetSpeedDiceMin(_owner.Book.ClassInfo.EquipEffect.SpeedMin + 2);
-            }
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
             {
+                var temp = 0;
                 foreach (var item in _owner.allyCardDetail.GetHand())
                 {
-                    item.AddBuf(new BattleDiceCardBuf_Moon(UnityEngine.Random.Range(0, 3 + 1)));
+                    item.AddBuf(new BattleDiceCardBuf_Moon(temp % 4));
+                    temp++;
                 }
             }
             fl_ChangeDamage = false;
         }
 #endif
-#if false
+#if true
         public override void OnStartBattle()
         {
+
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
             {
                 int currentStage = -1;
@@ -345,7 +366,7 @@
             }
         }
 #endif
-#if false
+#if true
         public override void OnRoundEnd()
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this))
@@ -358,7 +379,7 @@
             }
         }
 #endif
-#if false
+#if true
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))

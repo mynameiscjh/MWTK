@@ -662,7 +662,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 }
                 if (picked.CardModel.GetID() == MyId.Card_Desc_月之剑)
                 {
-                    //BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
+                    BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
                 }
                 BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
                 return false;
