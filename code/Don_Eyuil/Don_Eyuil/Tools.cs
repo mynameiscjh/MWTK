@@ -59,6 +59,9 @@ namespace Don_Eyuil
     }
     public static class DivisibleIEnumerableTools
     {
+        //在这个类中所有的方法都默认：使用ValueTuple时 Item1为符合条件(Predicate或count)的值 Item2为不符合的
+        //即：DivisibleTake(2)时 Item1为1,2项(因为其符合<=2的条件) Item2为3,4...项
+        //最好使用Item1? Item2?用来避免null的情况
         public static (IEnumerable<TSource>, IEnumerable<TSource>) SplitDivisibleIEnumerable<TSource>(this IEnumerable<(TSource, TSource)> source)
         {
             return (source.Select(x => { return x.Item1; }), source.Select(x => { return x.Item2; }));
