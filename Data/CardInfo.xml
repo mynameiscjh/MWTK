@@ -2010,7 +2010,7 @@
     <Chapter>7</Chapter>
   </Card>
 
- <!-- 桑空补充部分-->
+  <!-- 桑空补充部分-->
   <Card ID="124">
     <Name>血刃剔除</Name>
     <TextId>-1</TextId>
@@ -2716,7 +2716,7 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
-	<!-- 由于我是铸币我填来宾桑空xml的时候填岔劈了所以接下来的书页请从130开始填-->
+  <!-- 由于我是铸币我填来宾桑空xml的时候填岔劈了所以接下来的书页请从130开始填-->
 
   <Card ID="130">
     <Name>泉之龙/秋之莲</Name>

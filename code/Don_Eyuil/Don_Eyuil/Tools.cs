@@ -1,29 +1,21 @@
 ﻿using CustomMapUtility;
 using HarmonyLib;
-using JetBrains.Annotations;
-using LOR_DiceSystem;
-using Steamworks.Ugc;
+using MonoMod.Utils;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using UnityEngine;
-using MonoMod.Utils;
-using MonoMod.Utils.Cil;
-using System.Runtime.Remoting.Messaging;
-using System.Runtime.CompilerServices;
-using Mono.Cecil;
 namespace Don_Eyuil
 {
 
     public static class ValueTupleTools
     {
-        public static ValueTuple<TSource, TSource> Do<TSource>(this ValueTuple<TSource,TSource> tuple,Action<TSource> Act1, Action<TSource> Act2)
+        public static ValueTuple<TSource, TSource> Do<TSource>(this ValueTuple<TSource, TSource> tuple, Action<TSource> Act1, Action<TSource> Act2)
         {
-            Act1(tuple.Item1);Act2(tuple.Item2);
+            Act1(tuple.Item1); Act2(tuple.Item2);
             return tuple;
         }
     }
@@ -54,6 +46,11 @@ namespace Don_Eyuil
         public static List<T> InsertRanges<T>(this List<T> list, int index, params IEnumerable<T>[] collection)
         {
             collection?.Do((x, _) => list.InsertRange(index, x));
+            return list;
+        }
+        public static IEnumerable<T> Sort<T>(this IEnumerable<T> list, Comparison<T> comparison)
+        {
+            list.ToList().Sort(comparison);
             return list;
         }
     }
@@ -382,7 +379,7 @@ namespace Don_Eyuil
         }
         public static List<CodeInstruction> WithInternalDelegate<T>(this CodeInstruction postFixCodeIns, T action, string CacheKeyPostfix = "") where T : Delegate
         {
-            return new List<CodeInstruction>() { DefinitionInternalDelegate<T>(action, CacheKeyPostfix, new System.Diagnostics.StackFrame(1).GetMethod().DeclaringType.Name + "_Trigger") , postFixCodeIns };
+            return new List<CodeInstruction>() { DefinitionInternalDelegate<T>(action, CacheKeyPostfix, new System.Diagnostics.StackFrame(1).GetMethod().DeclaringType.Name + "_Trigger"), postFixCodeIns };
         }
         /// <summary>
         /// <para>根据传入的委托在InternalDelegateCache内生成一个默认为该方法调用者所处类的类名作为Key储存于该字典内的内存内委托 并返回一条调用该委托的IL语句</para>

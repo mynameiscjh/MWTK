@@ -26,6 +26,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
                 stage = 3;
             }
             typeof(BattleUnitBuf).GetField("_bufIcon", AccessTools.all).SetValue(this, TKS_BloodFiend_Initializer.ArtWorks[$"血羽{stage}"]);
+            SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(_owner, _owner.faction, _owner.hp, _owner.breakDetail.breakGauge, _owner.bufListDetail.GetBufUIDataList());
         }
 
         public BattleUnitBuf_Feather(BattleUnitModel model) : base(model)
