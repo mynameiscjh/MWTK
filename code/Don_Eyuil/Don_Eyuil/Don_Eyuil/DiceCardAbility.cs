@@ -187,7 +187,7 @@ namespace Don_Eyuil
             {
                 new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Ldloc_S, 13),
-                new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegateWithRet<int,BattleDiceBehavior,int>>((BattleDiceBehavior behavior, int dmg)=>
+                new CodeInstruction(OpCodes.Call).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegateWithRet<int,BattleDiceBehavior,int>>((BattleDiceBehavior behavior, int dmg)=>
                 {
                     if (behavior != null && behavior.abilityList.Exists(x => x is DiceCardAbility_DonEyuil_20) && behavior.owner != null)
                     {

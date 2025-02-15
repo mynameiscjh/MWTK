@@ -51,7 +51,7 @@ namespace Don_Eyuil
             codes.InsertRange(codes.Count - 2, new List<CodeInstruction>()
             {
                 new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Call).WithInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate<BattleUnitBuf>>((BattleUnitBuf BleedingBuf)=>
+                new CodeInstruction(OpCodes.Call).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate<BattleUnitBuf>>((BattleUnitBuf BleedingBuf)=>
                 {
                     var owner = BleedingBuf.GetFieldValue<BattleUnitModel>("_owner");
                     if (owner != null && BattleUnitBuf_UncondensableBlood.GetBufStack<BattleUnitBuf_UncondensableBlood>(owner) > 0)

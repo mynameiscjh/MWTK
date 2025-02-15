@@ -260,4 +260,44 @@
     <SpeedDiceNum>1</SpeedDiceNum>
     <SuccessionPossibleNumber>9</SuccessionPossibleNumber>
   </Book>
+
+  <Book ID="8">
+    <Name>桑空之页</Name>
+    <TextId>-1</TextId>
+    <BookIcon>SanSora</BookIcon>
+    <EquipEffect>
+      <HpReduction>0</HpReduction>
+      <HP>500</HP>
+      <DeadLine>0</DeadLine>
+      <Break>650</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>6</Speed>
+      <SpeedDiceNum>0</SpeedDiceNum>
+      <SResist>Endure</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Endure</HResist>
+      <SBResist>Endure</SBResist>
+      <PBResist>Endure</PBResist>
+      <HBResist>Endure</HBResist>
+      <MaxPlayPoint>7</MaxPlayPoint>
+      <StartPlayPoint>5</StartPlayPoint>
+      <AddedStartDraw>0</AddedStartDraw>
+      <Passive>18</Passive>
+      <Passive>19</Passive>
+      <Passive>20</Passive>
+      <Passive>21</Passive>
+      <Passive>22</Passive>
+    </EquipEffect>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>San_Sora</CharacterSkin>
+    <CharacterSkinType>Custom</CharacterSkinType>
+    <SkinGender>N</SkinGender>
+    <Chapter>7</Chapter>
+    <Episode>-1</Episode>
+    <RangeType>Melee</RangeType>
+    <NotEquip>false</NotEquip>
+    <RandomFace>false</RandomFace>
+    <SpeedDiceNum>1</SpeedDiceNum>
+    <SuccessionPossibleNumber>9</SuccessionPossibleNumber>
+  </Book>
 </BookXmlRoot>
