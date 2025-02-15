@@ -3,72 +3,120 @@
   "WorkspaceRootPath": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_sword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_sword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_know.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_know.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_sparkle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_sparkle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\bloodfiendinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_year.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_year.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_transmit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_transmit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_inherit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_inherit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_flag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_flag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\passiveability\\passiveability_whitemoonsparkle_17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_sparkle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_sparkle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\extra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|e:\\game\\steamapps\\common\\library of ruina\\libraryofruina_data\\mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\don_eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_year.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_year.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_sword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_sword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_blood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_blood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_hardblood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_hardblood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_know.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_know.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_flag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\buff\\battleunitbuf_flag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_09.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_09.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_08.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_08.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_07.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_07.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_06.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_06.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_05.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_05.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\.editorconfig||{68B46364-D378-42F2-9E72-37D86C5F4468}",
@@ -81,42 +129,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_12.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_07.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_07.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_09.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_09.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_05.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_05.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_06.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_06.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_08.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\whitemoon_sparkle\\player\\dicecardselfability\\dicecardselfability_whitemoonsparkle_08.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_transmit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_transmit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\whitemoon_sparkle\\player\\dicecardability\\dicecardability_whitemoonsparkle_dice01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -213,10 +225,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_17.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\passiveability\\passiveability_doneyuil_16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\passiveability\\passiveability_sansora_11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -407,10 +415,6 @@
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\passiveability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_hardblood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_hardblood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\buff\\battleunitbuf_armour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\buff\\battleunitbuf_armour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -425,10 +429,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\san_sora\\player\\dicecardselfability\\dicecardselfability_sickle_desc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\san_sora\\player\\dicecardselfability\\dicecardselfability_sickle_desc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|solutionrelative:don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_bow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33031B3D-AED8-4431-AF7D-EE56FD5B161D}|Don_Eyuil\\Don_Eyuil.csproj|E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\don_eyuil\\don_eyuil\\player\\buff\\battleunitbuf_doubleswords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -834,6 +834,84 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "BattleUnitBuf_Inherit.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Inherit.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Inherit.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Inherit.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Inherit.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAmwEAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T09:09:47.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BattleUnitBuf_Transmit.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Transmit.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Transmit.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Transmit.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Transmit.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwEwAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T09:09:47.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PassiveAbility_WhiteMoonSparkle_16.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_16.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_16.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_16.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_16.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T14:05:12.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BloodFiendInitializer.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\BloodFiendInitializer.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
+              "RelativeToolTip": "Don_Eyuil\\BloodFiendInitializer.cs",
+              "ViewState": "AgIAACsEAAAAAAAAAAAuwD0EAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T07:03:34.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PassiveAbility_WhiteMoonSparkle_14.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_14.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_14.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_14.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_14.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAA8AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T12:44:34.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PassiveAbility_WhiteMoonSparkle_13.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_13.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_13.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_13.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_13.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAmwCEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T12:16:34.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "PassiveAbility_WhiteMoonSparkle_17.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_17.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_17.cs",
@@ -846,116 +924,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BattleUnitBuf_Sword.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sword.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sword.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sword.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sword.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T17:13:31.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "BattleUnitBuf_Sparkle.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sparkle.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sparkle.cs",
               "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sparkle.cs",
               "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sparkle.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAG8AAABlAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAuwHMAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T12:08:30.899Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BattleUnitBuf_Know.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Know.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Know.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Know.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Know.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA0AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T09:09:47.5Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "PassiveAbility_DonEyuil_15.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
               "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
               "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_15.cs",
-              "ViewState": "AgIAAHgCAAAAAAAAAAAuwH4CAAARAAAAAAAAAA==",
+              "ViewState": "AgIAANwCAAAAAAAAAAAuwOsCAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-18T14:31:46.667Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BloodFiendInitializer.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\BloodFiendInitializer.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\BloodFiendInitializer.cs",
-              "RelativeToolTip": "Don_Eyuil\\BloodFiendInitializer.cs",
-              "ViewState": "AgIAANMCAAAAAAAAAAAuwAMEAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T07:03:34.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PassiveAbility_WhiteMoonSparkle_16.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_16.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_16.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_16.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_16.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T14:05:12.777Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PassiveAbility_WhiteMoonSparkle_14.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_14.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_14.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_14.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_14.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAB+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T12:44:34.602Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PassiveAbility_WhiteMoonSparkle_13.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_13.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_13.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_13.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\PassiveAbility\\PassiveAbility_WhiteMoonSparkle_13.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAAYAAAC/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T12:16:34.019Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "BattleUnitBuf_Bow.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Bow.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Bow.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Bow.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Bow.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAuwFsAAAA4AAAAAAAAAA==",
+              "Title": "PassiveAbility_DonEyuil_16.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_16.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_16.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_16.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_16.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T14:39:48.159Z"
+              "WhenOpened": "2025-01-19T09:37:46.999Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -965,9 +969,10 @@
               "RelativeDocumentMoniker": "Don_Eyuil\\Extra.cs",
               "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Extra.cs",
               "RelativeToolTip": "Don_Eyuil\\Extra.cs",
-              "ViewState": "AgIAAPUCAAAAAAAAAAAuwP0CAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAFYCAAAAAAAAAAAuwGoCAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T15:38:45.95Z"
+              "WhenOpened": "2025-02-10T15:38:45.95Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -977,45 +982,63 @@
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Year.cs",
               "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Year.cs",
               "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Year.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALMAAAAAAAAAAAAgwLoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T11:52:14.81Z"
+              "WhenOpened": "2025-02-05T11:52:14.81Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAuwBkAAAAVAAAAAAAAAA==",
+              "Title": "BattleUnitBuf_Sword.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sword.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sword.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sword.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Sword.cs",
+              "ViewState": "AgIAAG8BAAAAAAAAAAAAAMYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T11:17:02.632Z"
+              "WhenOpened": "2025-02-05T17:13:31.575Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAAAgAAACXAAAAAAAAAA==",
+              "Title": "BattleUnitBuf_Bow.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Bow.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Bow.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Bow.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Bow.cs",
+              "ViewState": "AgIAACQBAAAAAAAAAAAAAGMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T10:47:52.11Z"
+              "WhenOpened": "2025-02-05T14:39:48.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 167,
-              "Title": "DiceCardSelfAbility_DonEyuil_11.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 149,
+              "Title": "PassiveAbility_Mimicry_02.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T17:37:47.171Z"
+              "WhenOpened": "2025-01-17T18:01:09.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 169,
+              "Title": "DiceCardSelfAbility_DonEyuil_32.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T17:29:06.243Z"
             },
             {
               "$type": "Document",
@@ -1040,26 +1063,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
-              "Title": "PassiveAbility_Mimicry_02.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\PassiveAbility\\PassiveAbility_Mimicry_02.cs",
+              "DocumentIndex": 167,
+              "Title": "DiceCardSelfAbility_DonEyuil_11.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_11.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T18:01:09.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 169,
-              "Title": "DiceCardSelfAbility_DonEyuil_32.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\DiceCardSelfAbility\\DiceCardSelfAbility_DonEyuil_32.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T17:29:06.243Z"
+              "WhenOpened": "2025-01-17T17:37:47.171Z"
             },
             {
               "$type": "Document",
@@ -1659,48 +1671,192 @@
               "WhenOpened": "2025-01-18T08:28:32.234Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BattleUnitBuf_HardBlood.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T04:07:13.089Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "BattleUnitBuf_Inherit.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Inherit.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Inherit.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Inherit.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Inherit.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAGEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T09:09:47.59Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "BattleUnitBuf_Flag.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Flag.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Flag.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Flag.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Flag.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T09:09:47.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
               "Title": "BattleUnitBuf_Blood.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Blood.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Blood.cs",
               "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Blood.cs",
               "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Blood.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T09:09:47.224Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BattleUnitBuf_Know.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Know.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Know.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Know.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Know.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T09:09:47.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BattleUnitBuf_Flag.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Flag.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Flag.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Flag.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\Buff\\BattleUnitBuf_Flag.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACEAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T09:09:47.428Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 18,
+              "Title": "BattleUnitBuf_Bow.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
+              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T03:50:03.997Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAACQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T12:38:08.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAACUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T13:24:33.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAB0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T13:36:02.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_04.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAmwDYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T10:47:52.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAmwCgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T10:47:52.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T10:47:52.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwCkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T10:47:52.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwCkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T10:47:52.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwCkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T10:47:52.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
+              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
+              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
+              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
+              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_15.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAuwBkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T11:17:02.632Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
               "Title": "DiceCardSelfAbility_WhiteMoonSparkle_16.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_16.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_16.cs",
@@ -1712,7 +1868,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 29,
               "Title": ".editorconfig",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\.editorconfig",
               "RelativeDocumentMoniker": ".editorconfig",
@@ -1723,7 +1879,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 31,
               "Title": "DiceCardSelfAbility_WhiteMoonSparkle_13.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_13.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_13.cs",
@@ -1735,115 +1891,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_12.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAmwBAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T13:36:02.878Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_11.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAmwAsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T13:24:33.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_10.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAmwA8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T12:38:08.917Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_07.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAmwAsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T10:47:52.654Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_09.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAmwAkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T10:47:52.714Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_05.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAA0AAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T10:47:52.172Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_06.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T10:47:52.25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
-              "RelativeToolTip": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_08.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAmwBQAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T10:47:52.594Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "BattleUnitBuf_Transmit.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Transmit.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Transmit.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Transmit.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Transmit.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAuwCsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T09:09:47.659Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice01.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice01.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice01.cs",
@@ -1855,7 +1903,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice18.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice18.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice18.cs",
@@ -1867,7 +1915,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice19.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice19.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice19.cs",
@@ -1879,7 +1927,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice20.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice20.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice20.cs",
@@ -1891,7 +1939,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice17.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice17.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice17.cs",
@@ -1903,7 +1951,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice16.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice16.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice16.cs",
@@ -1915,7 +1963,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "Buff.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Buff.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Buff.cs",
@@ -1927,7 +1975,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice15.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice15.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice15.cs",
@@ -1939,7 +1987,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice14.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice14.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice14.cs",
@@ -1951,7 +1999,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice13.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice13.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice13.cs",
@@ -1963,7 +2011,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice12.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice12.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice12.cs",
@@ -1975,7 +2023,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice34.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice34.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice34.cs",
@@ -1987,7 +2035,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice07.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice07.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice07.cs",
@@ -1999,7 +2047,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice11.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice11.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice11.cs",
@@ -2011,7 +2059,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice10.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice10.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice10.cs",
@@ -2023,7 +2071,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice08.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice08.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice08.cs",
@@ -2035,7 +2083,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice09.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice09.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice09.cs",
@@ -2047,7 +2095,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice27.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice27.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice27.cs",
@@ -2059,7 +2107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice04.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice04.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice04.cs",
@@ -2071,7 +2119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice03.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice03.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice03.cs",
@@ -2083,7 +2131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "DiceCardSelfAbility_WhiteMoonSparkle_17.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_17.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_WhiteMoonSparkle_17.cs",
@@ -2095,7 +2143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "DiceCardAbility_WhiteMoonSparkle_Dice02.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice02.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\WhiteMoon_Sparkle\\Player\\DiceCardAbility\\DiceCardAbility_WhiteMoonSparkle_Dice02.cs",
@@ -2107,7 +2155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "A_ReadMe.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\A_ReadMe.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\A_ReadMe.cs",
@@ -2119,7 +2167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "PassiveAbility_DonEyuil_17.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_17.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_17.cs",
@@ -2131,19 +2179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "PassiveAbility_DonEyuil_16.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_16.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_16.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_16.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\PassiveAbility\\PassiveAbility_DonEyuil_16.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T09:37:46.999Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 56,
               "Title": "PassiveAbility_SanSora_11.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_11.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_11.cs",
@@ -2155,7 +2191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 57,
               "Title": "PassiveAbility_SanSora_10.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_10.cs",
@@ -2167,7 +2203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 59,
               "Title": "BattleUnitBuf_Bow.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Bow.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Bow.cs",
@@ -2179,7 +2215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 60,
               "Title": "BattleUnitBuf_SanSora.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanSora.cs",
@@ -2191,7 +2227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 58,
               "Title": "BattleUnitBuf_Sword.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Sword.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Sword.cs",
@@ -2203,7 +2239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 61,
               "Title": "BattleUnitBuf_SanHardBlood.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanHardBlood.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_SanHardBlood.cs",
@@ -2215,7 +2251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 62,
               "Title": "BattleUnitBuf_Feather.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Feather.cs",
@@ -2227,7 +2263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 63,
               "Title": "DiceCardAbility_SanSora_Dice22.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice22.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice22.cs",
@@ -2239,7 +2275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 64,
               "Title": "DiceCardAbility_SanSora_Dice21.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice21.cs",
@@ -2251,7 +2287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 66,
               "Title": "DiceCardAbility_SanSora_Dice20.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice20.cs",
@@ -2263,7 +2299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 67,
               "Title": "DiceCardAbility_SanSora_Dice19.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice19.cs",
@@ -2275,7 +2311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 68,
               "Title": "DiceCardAbility_SanSora_Dice18.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice18.cs",
@@ -2287,7 +2323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 65,
               "Title": "DiceCardSelfAbility_SanSora_13.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_13.cs",
@@ -2299,7 +2335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "DiceCardAbility_SanSora_Dice17.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice17.cs",
@@ -2311,7 +2347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 70,
               "Title": "DiceCardAbility_SanSora_Dice16.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice16.cs",
@@ -2323,7 +2359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 71,
               "Title": "DiceCardAbility_SanSora_Dice15.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice15.cs",
@@ -2335,7 +2371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 72,
               "Title": "DiceCardAbility_SanSora_Dice14.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice14.cs",
@@ -2347,7 +2383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 73,
               "Title": "DiceCardAbility_SanSora_Dice13.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice13.cs",
@@ -2359,7 +2395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 74,
               "Title": "DiceCardAbility_SanSora_Dice12.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice12.cs",
@@ -2371,7 +2407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 75,
               "Title": "DiceCardAbility_SanSora_Dice11.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice11.cs",
@@ -2383,7 +2419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 76,
               "Title": "DiceCardAbility_SanSora_Dice10.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice10.cs",
@@ -2395,7 +2431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 77,
               "Title": "DiceCardAbility_SanSora_Dice09.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice09.cs",
@@ -2407,7 +2443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 78,
               "Title": "DiceCardAbility_SanSora_Dice08.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardAbility\\DiceCardAbility_SanSora_Dice08.cs",
@@ -2419,7 +2455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 79,
               "Title": "DiceCardSelfAbility_SanSora_11.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_11.cs",
@@ -2431,7 +2467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 80,
               "Title": "DiceCardSelfAbility_SanSora_10.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_10.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_10.cs",
@@ -2443,7 +2479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 81,
               "Title": "DiceCardSelfAbility_SanSora_09.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_09.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_09.cs",
@@ -2455,7 +2491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 82,
               "Title": "DiceCardSelfAbility_SanSora_08.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_08.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_08.cs",
@@ -2467,7 +2503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 83,
               "Title": "DiceCardSelfAbility_SanSora_07.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_07.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_07.cs",
@@ -2479,7 +2515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 84,
               "Title": "DiceCardSelfAbility_Lance_Desc.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Lance_Desc.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Lance_Desc.cs",
@@ -2491,7 +2527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 85,
               "Title": "DiceCardSelfAbility_SanSora_12.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_12.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_SanSora_12.cs",
@@ -2503,7 +2539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 86,
               "Title": "BattleUnitBuf_Lance.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Lance.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Lance.cs",
@@ -2515,7 +2551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 87,
               "Title": "BattleUnitBuf_Sway.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Sway.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Sway.cs",
@@ -2527,7 +2563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 88,
               "Title": "BattleUnitBuf_Crystal_HardBlood.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Crystal_HardBlood.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Crystal_HardBlood.cs",
@@ -2539,7 +2575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 89,
               "Title": "BattleUnitBuf_DoubleSwords.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_DoubleSwords.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_DoubleSwords.cs",
@@ -2551,7 +2587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 94,
               "Title": "BattleUnitBuf_Armour.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Armour.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Armour.cs",
@@ -2563,7 +2599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 93,
               "Title": "BattleUnitBuf_Umbrella.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Umbrella.cs",
@@ -2575,7 +2611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 92,
               "Title": "BattleUnitBuf_Sickle.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Sickle.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Sickle.cs",
@@ -2587,7 +2623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 91,
               "Title": "BattleUnitBuf_Duel.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Duel.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Duel.cs",
@@ -2599,7 +2635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 90,
               "Title": "BattleUnitBuf_Blade.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Blade.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Blade.cs",
@@ -2611,7 +2647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 97,
               "Title": "DiceCardSelfAbility_Scourge_Desc.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Scourge_Desc.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Scourge_Desc.cs",
@@ -2623,7 +2659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 96,
               "Title": "DiceCardSelfAbility_Sword_Desc.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Sword_Desc.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Sword_Desc.cs",
@@ -2635,7 +2671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 95,
               "Title": "PassiveAbility_SanSora_12.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_12.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\PassiveAbility\\PassiveAbility_SanSora_12.cs",
@@ -2647,7 +2683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 98,
               "Title": "DiceCardSelfAbility_DoubleSwords_Desc.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DoubleSwords_Desc.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_DoubleSwords_Desc.cs",
@@ -2659,7 +2695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 99,
               "Title": "DiceCardSelfAbility_Bow_Desc.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Bow_Desc.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Bow_Desc.cs",
@@ -2671,7 +2707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 100,
               "Title": "DiceCardSelfAbility_Blade_Desc.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Blade_Desc.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Blade_Desc.cs",
@@ -2683,7 +2719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 101,
               "Title": "DiceCardSelfAbility_Armour_Desc.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Armour_Desc.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Armour_Desc.cs",
@@ -2695,7 +2731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 102,
               "Title": "PassiveAbility.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\PassiveAbility.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\PassiveAbility.cs",
@@ -2707,19 +2743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
-              "Title": "BattleUnitBuf_HardBlood.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_HardBlood.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAADMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T04:07:13.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 103,
               "Title": "BattleUnitBuf_Armour.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Armour.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Armour.cs",
@@ -2731,7 +2755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 104,
               "Title": "BattleUnitBuf_Scourge.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Scourge.cs",
@@ -2743,7 +2767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 105,
               "Title": "BattleUnitBuf_Sickle.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Sickle.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\Buff\\BattleUnitBuf_Sickle.cs",
@@ -2755,7 +2779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 106,
               "Title": "DiceCardSelfAbility_Sickle_Desc.cs",
               "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Sickle_Desc.cs",
               "RelativeDocumentMoniker": "Don_Eyuil\\San_Sora\\Player\\DiceCardSelfAbility\\DiceCardSelfAbility_Sickle_Desc.cs",
@@ -2764,18 +2788,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T12:36:08.867Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 106,
-              "Title": "BattleUnitBuf_Bow.cs",
-              "DocumentMoniker": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
-              "RelativeDocumentMoniker": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
-              "ToolTip": "E:\\game\\steamapps\\common\\Library Of Ruina\\LibraryOfRuina_Data\\Mods\\\u5802\u57C3\u5C24\u5C14 - \u526F\u672C\\code\\Don_Eyuil\\Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
-              "RelativeToolTip": "Don_Eyuil\\Don_Eyuil\\Player\\Buff\\BattleUnitBuf_Bow.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T03:50:03.997Z"
             },
             {
               "$type": "Document",

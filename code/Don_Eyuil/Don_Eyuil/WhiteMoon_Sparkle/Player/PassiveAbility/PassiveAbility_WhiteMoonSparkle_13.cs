@@ -1,4 +1,11 @@
 ﻿using Don_Eyuil.WhiteMoon_Sparkle.Player.Buff;
+using HarmonyLib;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
 {
@@ -8,9 +15,34 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
 
         public override void OnWaveStart()
         {
-            BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Sparkle>(owner, 1);
-            BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleUnitBuf_Sparkle.Instance.SelectWeapons());
+            if (BattleUnitBuf_Sparkle.Instance != null && StageController.Instance.CurrentWave != 1)
+            {
+                owner.bufListDetail.AddBuf(BattleUnitBuf_Sparkle.Instance);
+                foreach (var item in BattleUnitBuf_Sparkle.Instance.PrimaryWeapons)
+                {
+                    if (!owner.bufListDetail.GetActivatedBufList().Contains(item))
+                    {
+                        owner.bufListDetail.AddBuf(item);
+                    }
 
+                }
+                foreach (var item in BattleUnitBuf_Sparkle.Instance.SubWeapons)
+                {
+                    if (!owner.bufListDetail.GetActivatedBufList().Contains(item))
+                    {
+                        owner.bufListDetail.AddBuf(item);
+                    }
+                }
+            }
+            else
+            {
+                BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Sparkle>(owner, 1);
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleUnitBuf_Sparkle.Instance.SelectWeapons());
+            }
+            if (BattleObjectManager.instance.GetAliveList().Exists(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页))
+            {
+                BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Inherit>(owner, 1);
+            }
         }
 
         bool fl2 = false, fl4 = false;
@@ -27,7 +59,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
                 {
                     fl4 = true;
                 }
-                BattleUnitBuf_Sparkle.Instance.SelectSubWeapon();
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(SelectWeapon(false));
             }
         }
         int count = 0;
@@ -39,12 +71,37 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
             }
             if (unit.faction == Faction.Player)
             {
-                BattleUnitBuf_Sparkle.Instance.SelectSubWeapon();
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(SelectWeapon(false));
             }
             if (count % 3 == 0 && count > 0)
             {
-                BattleUnitBuf_Sparkle.Instance.SelectSubWeapon();
+                BattleManagerUI.Instance.ui_levelup.StartCoroutine(SelectWeapon(false));
             }
+        }
+
+        public IEnumerator SelectWeapon(bool isPrimary)
+        {
+            yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
+
+            var emoCards = new List<EmotionEgoXmlInfo>()
+            {
+                new EmotionEgoXmlInfo_Mod(MyId.Card_Desc_泉之龙_秋之莲),
+                new EmotionEgoXmlInfo_Mod(MyId.Card_Desc_千斤弓),
+                new EmotionEgoXmlInfo_Mod(MyId.Card_Desc_月之剑),
+            };
+            BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
+            BattleManagerUI.Instance.ui_levelup.InitEgo(Math.Min(3, emoCards.Count), emoCards);
+            BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["玩家硬血术统一图标"];
+            if (isPrimary)
+            {
+                BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "选择主武器书页";
+            }
+            else
+            {
+                BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "选择副武器书页";
+            }
+            BattleManagerUI.Instance.ui_levelup._emotionLevels.Do(x => x.Set(false, false, false));
+            yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
         }
 
     }

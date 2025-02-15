@@ -255,7 +255,14 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 
                 return;
             }
-
+            deckTabsController.CustomTabs[0].gameObject.SetActive(false);
+            deckTabsController.CustomTabs[1].gameObject.SetActive(false);
+            deckTabsController.CustomTabs[2].gameObject.SetActive(false);
+            deckTabsController.CustomTabs[3].gameObject.SetActive(false);
+            deckTabsController.CustomTabs[0].gameObject.SetActive(true);
+            deckTabsController.CustomTabs[1].gameObject.SetActive(true);
+            deckTabsController.CustomTabs[2].gameObject.SetActive(true);
+            deckTabsController.CustomTabs[3].gameObject.SetActive(true);
             deckTabsController.transform.GetChild(1).GetComponent<HorizontalLayoutGroup>().enabled = true;
 
         }
@@ -655,7 +662,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 }
                 if (picked.CardModel.GetID() == MyId.Card_Desc_月之剑)
                 {
-                    //BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
+                    BattleUnitBuf_Sparkle.Instance.AddSubWeapon<WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Sword>();
                 }
                 BattleManagerUI.Instance.ui_levelup.StartCoroutine(BattleManagerUI.Instance.ui_levelup.InvokeMethod<IEnumerator>("OnSelectRoutine"));
                 return false;
@@ -696,7 +703,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
     }
     public class PassiveAbility_DonEyuil_15 : PassiveAbilityBase
     {
-        public override string debugDesc => "堂埃尤尔派硬血术 0费 特殊\r\n自身拥有一套额外的卡组可设置\"硬血术\"书页\r\n情感等级达到0/2/4时可以选择激活设置的\"硬血术\"书页情感等级达到4级后每有一名角色因流血死亡则可额外激活一次设置的\"硬血术\"书页\r\n（这里的选择激活硬血术界面用选EGO的那个levelup的UI做)\r\n（实现上面，基本就是正常的多写一个卡组就可以了)\r\n\r\n自身可使用个人书页\"堂埃尤尔派硬血术终式\"且无法使用楼层E.G.O书页\r\n";
+        public override string debugDesc => "堂埃尤尔派硬血术 0费 特殊\r\n自身拥有一套额外的卡组可设置\"硬血术\"书页\r\n情感等级达到0/2/4时可以选择激活设置的\"硬血术\"书页情感等级达到4级后每有一名角色因流血死亡则可额外激活一次设置的\"硬血术\"书页\r\n(这里的选择激活硬血术界面用选EGO的那个levelup的UI做)\r\n(实现上面，基本就是正常的多写一个卡组就可以了)\r\n\r\n自身可使用个人书页\"堂埃尤尔派硬血术终式\"且无法使用楼层E.G.O书页\r\n";
 
 
 
@@ -734,6 +741,12 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             fl0 = false;
             fl2 = false;
             fl4 = false;
+
+            if (BattleObjectManager.instance.GetAliveList().Exists(x => x.Book.BookId == MyId.Book_小耀之页))
+            {
+                BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Transmit>(owner, 1);
+            }
+
         }
 
         bool fl0 = false;
@@ -813,13 +826,18 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 emoCards.Add(new EmotionEgoXmlInfo_Mod(item));
             }
 
+            BattleManagerUI.Instance.ui_levelup.StartCoroutine(OnSelectRoutine(emoCards));
+        }
 
+        IEnumerator OnSelectRoutine(List<EmotionEgoXmlInfo> emoCards)
+        {
+            yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
             BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
             BattleManagerUI.Instance.ui_levelup.InitEgo(Math.Min(3, emoCards.Count), emoCards);
             BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["玩家硬血术统一图标"];
             BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "选择硬血流书页";
             BattleManagerUI.Instance.ui_levelup._emotionLevels.Do(x => x.Set(false, false, false));
-
+            yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
         }
 
         [HarmonyPatch(typeof(UILibrarianEquipInfoSlot), "SetData")]

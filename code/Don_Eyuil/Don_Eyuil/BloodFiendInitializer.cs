@@ -20,6 +20,7 @@ using UI;
 using UnityEngine;
 using UnityEngine.UI;
 using static Don_Eyuil.WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Year;
+using static Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility.PassiveAbility_WhiteMoonSparkle_16;
 using Debug = UnityEngine.Debug;
 using File = System.IO.File;
 using Don_Eyuil.San_Sora;
@@ -749,6 +750,7 @@ namespace Don_Eyuil
             public class DiceFlagExtension : TKS_EnumExtender<DiceFlag>
             {
                 public static DiceFlag HasGivenDamage_SubTarget { get; internal set; }
+                public static DiceFlag HasGivenDamage_BattleUnitBuf_Year { get; internal set; }
             }
         }
         public static string GetPassiveName(int id)
@@ -905,6 +907,7 @@ namespace Don_Eyuil
             LoadArtWorks(new DirectoryInfo(DllPath + "/ArtWork"));
             LoadLocalize("Don_Eyuil");
             LoadLocalize("San_Sora");
+            LoadLocalize("WhiteMoon_Sparkle");
         }
         public override void OnInitializeMod()
         {
@@ -965,6 +968,7 @@ namespace Don_Eyuil
 
             //骰子效果Patch----------------------------------------------------------//
             harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
+            harmony.PatchAll(typeof(DiceCardAbility_不承受反震伤害));
             //-----------------------------------------------------------------------//
 
             //书页效果Patch----------------------------------------------------------//

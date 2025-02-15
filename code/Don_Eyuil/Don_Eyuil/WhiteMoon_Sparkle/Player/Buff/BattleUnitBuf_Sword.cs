@@ -1,17 +1,24 @@
-﻿namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
+﻿using HarmonyLib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using UnityEngine;
+
+namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 {
     public class BattleUnitBuf_Sword : BattleUnitBuf_Don_Eyuil
     {
         public static string Desc =
-            "月之剑（主）[中立buff]:\r\n所有骰子威力+1\r\n每一幕开始时赋予手中所有书页4种月相标记(以残月>弦月>凸月>满月的顺序施加 若已拥有标记则刷新标记)\r\n若自身以正确顺序使用标记书页 则推进月相变化(正确顺序为残月>弦月>凸月>满月  根据速度骰子从左到右判断使用顺序 从残月开始计算)\r\n根据本幕推进到的月相结果使下一幕获得对应月相buff\r\n" +
-            "\r\n月之剑（副）[中立buff]:\r\n无视自身的伤害降低效果与目标不高于30%或100的减伤效果(不包括抗性)\r\n" +
-            "\r\n月之剑+（强化主）[中立buff]:\r\n所有骰子威力+2\r\n速度骰子最小值+2 \r\n每一幕开始时赋予手中所有书页4种月相标记（以残月>弦月>凸月>满月的顺序施加 若已拥有标记则刷新标记）\r\n若自身以正确顺序使用标记书页 则推进月相变化（正确顺序为残月>弦月>凸月>满月  根据速度骰子从左到右判断使用顺序 从残月开始计算）\r\n根据本幕推进到的月相结果使下一幕获得对应月相buff\r\n" +
-            "\r\n月之剑+（强化副）[中立buff]:\r\n无视自身的伤害降低效果与目标不高于99%或100的减伤效果（不包括抗性）\r\n若目标无减伤效果则额外触发一次命中时效果(每幕至多触发1次)\r\n" +
-            "\r\n月之剑（主副同用额外效果）[中立buff]:\r\n速度骰子+1\r\n每幕首颗速度骰子中使用的书页下一幕抽回至手中（不对ego书页生效）\r\n";
+            "月之剑(主)[中立buff]:\r\n所有骰子威力+1\r\n每一幕开始时赋予手中所有书页4种月相标记(以残月>弦月>凸月>满月的顺序施加 若已拥有标记则刷新标记)\r\n若自身以正确顺序使用标记书页 则推进月相变化(正确顺序为残月>弦月>凸月>满月  根据速度骰子从左到右判断使用顺序 从残月开始计算)\r\n根据本幕推进到的月相结果使下一幕获得对应月相buff\r\n" +
+            "\r\n月之剑(副)[中立buff]:\r\n无视自身的伤害降低效果与目标不高于30%或100的减伤效果(不包括抗性)\r\n" +
+            "\r\n月之剑+(强化主)[中立buff]:\r\n所有骰子威力+2\r\n速度骰子最小值+2 \r\n每一幕开始时赋予手中所有书页4种月相标记(以残月>弦月>凸月>满月的顺序施加 若已拥有标记则刷新标记)\r\n若自身以正确顺序使用标记书页 则推进月相变化(正确顺序为残月>弦月>凸月>满月  根据速度骰子从左到右判断使用顺序 从残月开始计算)\r\n根据本幕推进到的月相结果使下一幕获得对应月相buff\r\n" +
+            "\r\n月之剑+(强化副)[中立buff]:\r\n无视自身的伤害降低效果与目标不高于99%或100的减伤效果(不包括抗性)\r\n若目标无减伤效果则额外触发一次命中时效果(每幕至多触发1次)\r\n" +
+            "\r\n月之剑(主副同用额外效果)[中立buff]:\r\n速度骰子+1\r\n每幕首颗速度骰子中使用的书页下一幕抽回至手中(不对ego书页生效)\r\n";
 
         public bool IsIntensify = false;
 
-#if false
+#if true
         [HarmonyPatch(typeof(BattleDiceBehavior), "GiveDamage")]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> BattleDiceBehavior_GiveDamage_Tran(IEnumerable<CodeInstruction> instructions)
@@ -285,7 +292,7 @@
             }
         }
 #endif
-#if false
+#if true
         public override int SpeedDiceNumAdder()
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this) && StageController.Instance.RoundTurn != 1)
@@ -296,26 +303,40 @@
             return base.SpeedDiceNumAdder();
         }
 #endif
-#if false
+#if true
+
+        [HarmonyPatch(typeof(BookModel), "SpeedMin", MethodType.Getter)]
+        [HarmonyPostfix]
+        public static void BookModel_SpeedMin_Post(ref int __result)
+        {
+            if (BattleObjectManager.instance.GetAliveList().Count > 0 && BattleUnitBuf_Sparkle.Instance != null)
+            {
+                var buf = BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Find(x => x is BattleUnitBuf_Sword);
+                if (buf != null && buf.GetFieldValue<bool>("IsIntensify"))
+                {
+                    __result += 2;
+                }
+            }
+        }
+
         public override void OnRoundStart()
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && IsIntensify)
-            {
-                _owner.Book.SetSpeedDiceMin(_owner.Book.ClassInfo.EquipEffect.SpeedMin + 2);
-            }
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
             {
+                var temp = 0;
                 foreach (var item in _owner.allyCardDetail.GetHand())
                 {
-                    item.AddBuf(new BattleDiceCardBuf_Moon(UnityEngine.Random.Range(0, 3 + 1)));
+                    item.AddBuf(new BattleDiceCardBuf_Moon(temp % 4));
+                    temp++;
                 }
             }
             fl_ChangeDamage = false;
         }
 #endif
-#if false
+#if true
         public override void OnStartBattle()
         {
+
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
             {
                 int currentStage = -1;
@@ -345,7 +366,7 @@
             }
         }
 #endif
-#if false
+#if true
         public override void OnRoundEnd()
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this))
@@ -358,7 +379,7 @@
             }
         }
 #endif
-#if false
+#if true
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
@@ -369,6 +390,67 @@
 #endif
         public BattleUnitBuf_Sword(BattleUnitModel model) : base(model)
         {
+            this.SetFieldValue("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks["月之剑"]);
+            this.SetFieldValue("_iconInit", true);
         }
+
+        public override string BuffName
+        {
+            get
+            {
+                string temp = string.Empty;
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && !IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_MoonSword") + " ";
+                }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_MoonSword_Reinforced") + " ";
+                }
+                if (BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this) && !IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_MoonSword_Secondary") + " ";
+                }
+                if (BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this) && IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_MoonSword_Secondary_Reinforced") + " ";
+                }
+                if (BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_MoonSword_Together") + " ";
+                }
+                return temp;
+            }
+        }
+
+        public override string bufActivatedText
+        {
+            get
+            {
+                string temp = string.Empty;
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && !IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_MoonSword") + "\r\n";
+                }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this) && IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_MoonSword_Reinforced") + "\r\n";
+                }
+                if (BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this) && !IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_MoonSword_Secondary") + "\r\n";
+                }
+                if (BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this) && IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_MoonSword_Secondary_Reinforced") + "\r\n";
+                }
+                if (BattleUnitBuf_Sparkle.Instance.SubWeapons.Contains(this) && BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Contains(this))
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_MoonSword_Together") + "\r\n";
+                }
+                return temp;
+            }
+        }
+
     }
 }

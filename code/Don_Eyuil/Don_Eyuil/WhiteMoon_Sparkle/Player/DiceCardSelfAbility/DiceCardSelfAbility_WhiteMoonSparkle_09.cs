@@ -8,17 +8,43 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.DiceCardSelfAbility
 
         public override void OnAddToHand(BattleUnitModel owner)
         {
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
+            owner.allyCardDetail.GetAllDeck().FindAll(x => x.GetID() == MyId.Card_所见之梦_月之剑).ForEach(card =>
             {
-                owner.allyCardDetail.AddCardToHand(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所见之梦_千斤弓)));
-            }
-            if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
-            {
-                owner.allyCardDetail.AddCardToHand(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所见之梦_泉之龙_秋之莲)));
-            }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
+                {
+                    card = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所见之梦_千斤弓));
+                }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
+                {
+                    card = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所见之梦_泉之龙_秋之莲));
+                }
+            });
+        }
+
+        public override void OnApplyCard()
+        {
             if (!BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Sword)))
             {
-                owner.allyCardDetail.ExhaustCard(MyId.Card_所见之梦_月之剑);
+                var temp = new BattleDiceCardModel();
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Year)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所见之梦_泉之龙_秋之莲));
+                }
+                if (BattleUnitBuf_Sparkle.Instance.PrimaryWeapons.Exists(x => x.GetType() == typeof(BattleUnitBuf_Bow)))
+                {
+                    temp = BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(MyId.Card_所见之梦_千斤弓));
+                }
+                card.card.GetBufList().ForEach(x => temp.AddBuf(x));
+                temp.SetCurrentCost(card.card.GetCost());
+                card.card = temp;
+                card.cardAbility = temp.CreateDiceCardSelfAbilityScript();
+                card.cardAbility.card = card;
+                card.cardAbility.OnApplyCard();
+                card.ResetCardQueue();
+            }
+            else
+            {
+                card.card.SetCurrentCost(card.card.XmlData.Spec.Cost);
             }
         }
 

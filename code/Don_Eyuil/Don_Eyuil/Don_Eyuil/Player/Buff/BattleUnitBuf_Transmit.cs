@@ -5,7 +5,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
 {
     public class BattleUnitBuf_Transmit : BattleUnitBuf_Don_Eyuil
     {
-        public static string Desc = "传递之物[中立buff]（友方为白月骑士时堂埃尤尔获得）:\r\n自身获得的正面情感+1对指向耀的敌方角色施加的\"流血\"层数+1\r\n若耀同时被3张书页选中则这一幕对所有指向耀的敌方角色使用1张[一如既往]\r\n自身情感等级达到4时使\"耀\"获得\"埃尤尔之血\"\r\n";
+        public static string Desc = "传递之物[中立buff](友方为白月骑士时堂埃尤尔获得):\r\n自身获得的正面情感+1对指向耀的敌方角色施加的\"流血\"层数+1\r\n若耀同时被3张书页选中则这一幕对所有指向耀的敌方角色使用1张[一如既往]\r\n自身情感等级达到4时使\"耀\"获得\"埃尤尔之血\"\r\n";
 
         public override void BeforeAddEmotionCoin(EmotionCoinType CoinType, ref int Count)
         {
@@ -29,6 +29,11 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
             {
                 foreach (var card in item.cardSlotDetail.cardAry)
                 {
+                    if (card == null)
+                    {
+                        continue;
+                    }
+
                     if (card.target.Book.BookId == MyId.Book_小耀之页)
                     {
                         attackSparkleList.Add(item);
@@ -38,6 +43,10 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
 
             foreach (var item in BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_小耀之页).cardSlotDetail.cardAry)
             {
+                if (item == null)
+                {
+                    continue;
+                }
                 sparkleAttackList.Add(item.target);
             }
 
@@ -58,10 +67,14 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
                         targetSlotOrder = 0,
                         cardAbility = temp.CreateDiceCardSelfAbilityScript()
                     };
-                    card.cardAbility.card = card;
-                    card.cardAbility.OnApplyCard();
+                    if (card.cardAbility != null)
+                    {
+                        card.cardAbility.card = card;
+                        card.cardAbility.OnApplyCard();
+                    }
                     card.ResetCardQueue();
-                    BattleOneSidePlayManager.Instance.StartOneSidePlay(card);
+
+                    StageController.Instance.GetAllCards().Add(card);
                 }
             }
         }
@@ -76,6 +89,8 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
 
         public BattleUnitBuf_Transmit(BattleUnitModel model) : base(model)
         {
+            this.SetFieldValue("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks["传承之物和传递之物"]);
+            this.SetFieldValue("_iconInit", true);
         }
     }
 }
