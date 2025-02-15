@@ -159,15 +159,4 @@ namespace Don_Eyuil.San_Sora
         }
     }
 
-    public class DiceCardSelfAbility_SanSora_19 : DiceCardSelfAbilityBase
-    {
-        public static string Desc = "[使用时]若自身速度不低于6则使本书页所有骰子威力+2";
-        public override void OnUseCard()
-        {
-            if(card.speedDiceResultValue >= 6)
-            {
-                card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { power = 2 });
-            }
-        }
-    }
 }

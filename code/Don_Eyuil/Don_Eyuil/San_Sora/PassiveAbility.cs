@@ -53,13 +53,15 @@ namespace Don_Eyuil.San_Sora
         public override void OnWaveStart()
         {
             Phase = 1; Phase1Round = 0; Phase2Round = 0; Phase3Round = 0; AddedBleedingCount = 0;
+            BattleUnitBuf_SanSora_HardBloodArt_Enemy.GetOrAddBuf<BattleUnitBuf_SanSora_HardBloodArt_Enemy>(owner);
         }
+        public BattleUnitBuf_SanSora_HardBloodArt_Enemy HardBloodArt => BattleUnitBuf_SanSora_HardBloodArt_Enemy.GetOrAddBuf<BattleUnitBuf_SanSora_HardBloodArt_Enemy>(owner);
         public override int GetMinHp()
         {
             switch (Phase)
             {
                 case 1: return 500;
-                case 2: if (AddedBleedingCount >= 100) { return base.GetMinHp(); } return 300;
+                case 2: if (AddedBleedingCount >= 100) { return 10; } return 300;
                 case 3: return 10;
                 default: return base.GetMinHp();
             }
@@ -100,38 +102,68 @@ namespace Don_Eyuil.San_Sora
             List<string> GetHardBloodBufId()
             {
                 var IDList = new List<string>() { "Blade", "Bow", "DoubleSwords", "Lance", "Scourge", "Sickle", "Sword" };
-                if (Phase1Round == 3 || Phase1Round == 4) { return new List<string>() { "Armour",null }; }
+                if (Phase1Round == 3 || Phase1Round == 4) { return new List<string>() { "Armour"}; }
                 return MyTools.TKSRandomUtil(IDList, 2, false, false);
             }
-            void AddDiceHardBloodBuf(SpeedDiceUI dice,string BufId)
+            BattleUnitBuf_SanHardBlood AddDiceHardBloodBuf(SpeedDiceUI dice,string BufId,int index = 0)
             {
-                switch (BufId)
+                if(dice != null)
                 {
-                    case "Blade":BattleUnitBuf_Blade.GainBuf<BattleUnitBuf_Blade>(dice);return;
-                    case "Bow": BattleUnitBuf_Bow.GainBuf<BattleUnitBuf_Bow>(dice); return;
-                    case "DoubleSwords": BattleUnitBuf_DoubleSwords.GainBuf<BattleUnitBuf_DoubleSwords>(dice); return;
-                    case "Lance": BattleUnitBuf_Lance.GainBuf<BattleUnitBuf_Lance>(dice); return;
-                    case "Scourge": BattleUnitBuf_Scourge.GainBuf<BattleUnitBuf_Scourge>(dice); return;
-                    case "Sickle": BattleUnitBuf_Sickle.GainBuf<BattleUnitBuf_Sickle>(dice); return;
-                    case "Sword": BattleUnitBuf_Sword.GainBuf<BattleUnitBuf_Sword>(dice); return;
-                    case "Armour": BattleUnitBuf_Armour.GainBuf<BattleUnitBuf_Armour>(dice); return;
+                    Debug.LogError("HardBlood" + index + BufId);
+                    switch (BufId)
+                    {
+                        case "Blade": return BattleUnitBuf_Blade.GainBuf<BattleUnitBuf_Blade>(dice);
+                        case "Bow": return BattleUnitBuf_Bow.GainBuf<BattleUnitBuf_Bow>(dice);
+                        case "DoubleSwords": return BattleUnitBuf_DoubleSwords.GainBuf<BattleUnitBuf_DoubleSwords>(dice);
+                        case "Lance": return BattleUnitBuf_Lance.GainBuf<BattleUnitBuf_Lance>(dice);
+                        case "Scourge": return BattleUnitBuf_Scourge.GainBuf<BattleUnitBuf_Scourge>(dice);
+                        case "Sickle": return BattleUnitBuf_Sickle.GainBuf<BattleUnitBuf_Sickle>(dice);
+                        case "Sword": return BattleUnitBuf_Sword.GainBuf<BattleUnitBuf_Sword>(dice);
+                        case "Armour": return BattleUnitBuf_Armour.GainBuf<BattleUnitBuf_Armour>(dice);
+                    }
                 }
+                return null;
             }
+            owner.bufListDetail.GetActivatedBufList().DoIf(x => x is BattleUnitBuf_SanHardBlood, x => x.Destroy());
             var SpeedDices = owner.view.speedDiceSetterUI.GetFieldValue<List<SpeedDiceUI>>("_speedDices");
             var HardBloodList =  GetHardBloodBufId();
             //一半/一半的施加硬血术 如果有奇数就随机加
-            SpeedDices.DivisibleSkip((SpeedDices.Count / 2) * 2).SplitDivisibleIEnumerable().Do((Dice1) => 
+            /*SpeedDices.DivisibleSkip((SpeedDices.Count / 2) * 2).SplitDivisibleIEnumerable().Do((Dice1) => 
             {
+                Dice1?.Do(x => Debug.LogError("HardBlood:" + x.OrderOfDice + "DDD"));
                 Dice1?.Do(x => AddDiceHardBloodBuf(x, RandomUtil.SelectOne(HardBloodList)));
             },(Dice2) =>
             {
-                Dice2.DivisibleSkipWhile((x, index) => index <= SpeedDices.Count / 2).Do(x =>
+                Dice2?.DivisibleSkipWhile((x, index) => index <= SpeedDices.Count / 2).Do(x =>
                 {
                     AddDiceHardBloodBuf(x.Item2, HardBloodList[0]);
                     AddDiceHardBloodBuf(x.Item1, HardBloodList.Count > 1 ? HardBloodList[0] : HardBloodList[1]);
                 });
+                Dice2?.Do(x => Debug.LogError("HardBlood:" + x.OrderOfDice + "UUU"));
+            });*/
+            //0 --1->0
+            //0 1 --2->1
+            //0 1 2 3 4 --5-->2
+            HardBloodArt.HardBloodTuple.Item1 = new List<BattleUnitBuf_SanHardBlood>() { };
+            SpeedDices.Take(owner.speedDiceCount).DivisibleSkipWhile((x, index) => index < SpeedDices.Count / 2).Do((x,index) =>
+            {
+                if(x.Item2 != null)
+                {
+                    HardBloodArt.HardBloodTuple.Item1.Add(AddDiceHardBloodBuf(x.Item2, HardBloodList[0], index));
+                }
+                if(x.Item1 != null)
+                {
+                    var HardBloodItem1Id = (SpeedDices.Count % 2 >= 1 && index == SpeedDices.Count / 2) ? RandomUtil.SelectOne(HardBloodList) : HardBloodList.Count > 1 ? HardBloodList[1] : HardBloodList[0];
+                    var HardBloodItem1 = AddDiceHardBloodBuf(x.Item1, HardBloodItem1Id, index);
+                    if (HardBloodItem1Id == HardBloodList[0]) { HardBloodArt.HardBloodTuple.Item1.Add(HardBloodItem1); }
+                    else
+                    {
+                        if (HardBloodArt.HardBloodTuple.Item2 == null) { HardBloodArt.HardBloodTuple.Item2 = new List<BattleUnitBuf_SanHardBlood>() { }; }
+                        HardBloodArt.HardBloodTuple.Item2.Add(HardBloodItem1);
+                    }
+                }
             });
-
+            SingletonBehavior<BattleManagerUI>.Instance.ui_unitListInfoSummary.UpdateCharacterProfile(owner, owner.faction, owner.hp, owner.breakDetail.breakGauge, owner.bufListDetail.GetBufUIDataList());
         }
         public override void OnRoundEndTheLast()
         {
@@ -181,8 +213,8 @@ namespace Don_Eyuil.San_Sora
         }
         public override void OnRoundStart()
         {
+            int i = 0;
             owner.allyCardDetail.ExhaustAllCardsInHand();
-            int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
             if(Phase == 1)
             {
                 //第一幕: 摧垮 致伤 致伤 释血化刃 剩余的速度骰子随机填入摧垮 致伤 释血化刃
@@ -195,7 +227,8 @@ namespace Don_Eyuil.San_Sora
                     Phase1Round = 0;
                 }
                 Phase1Round++;//0 1 2 3 -> 1 2 3 4
-                switch(Phase1Round)
+                i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
+                switch (Phase1Round)
                 {
                     case 1:
                         AddNewCard(MyId.Card_摧垮, 999);
@@ -243,6 +276,7 @@ namespace Don_Eyuil.San_Sora
                     Phase2Round = 0;
                 }
                 Phase2Round++;//0 1 2 3 -> 1 2 3 4
+                i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
                 switch (Phase2Round)
                 {
                     case 1:
@@ -293,7 +327,8 @@ namespace Don_Eyuil.San_Sora
                     Phase3Round = 0;
                 }
                 Phase3Round++;//0 1 2 3 -> 1 2 3 4
-                if(Phase3Round == 2)
+                i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
+                if (Phase3Round == 2)
                 {
                     AddNewCard(MyId.Card_桑空派变体硬血术终式_La_Sangre, 999);
                 }

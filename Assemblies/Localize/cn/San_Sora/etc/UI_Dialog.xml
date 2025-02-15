@@ -2,4 +2,7 @@
 <localize xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <text id="San_Sora_ETC_PlaceHolder">Note:If you're translating this mod,Please translate "桑空" as "San Sora"</text>
     <text id="San_Sora_ETC_PlaceHolder_Jp">Note:もしこのModを翻訳中なら、「桑空」を「サンソラ」に訳して下さい"</text>
+
+    <text id="San_Sora_HardBloodPrefix">自身前{0}颗速度骰子为{1}</text>
+    <text id="San_Sora_HardBloodPostfix">自身后{0}颗速度骰子为{1}</text>
 </localize>

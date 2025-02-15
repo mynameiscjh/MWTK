@@ -6,7 +6,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
     {
         public static string Desc = "血羽\r\n自身速度不低于5时闪避型骰子最小值+1\r\n可用于特殊书页\r\n本状态根据层数获得相应强化(最大值:30层)\r\n达到10层以上转化为血羽II\r\n血羽II\r\n自身速度不低于5时自身所有骰子最大值与最小值+1\r\n可用于特殊书页\r\n本状态根据层数获得相应强化(最大值:30层)\r\n达到10层以上转化为血羽III\r\n血羽III\r\n自身速度不低于5时施加的”流血”层数+1\r\n每有15层本效果便使自身所有骰子最大值与最小值+1 🐟";
 
-        protected override string keywordId => $"Feather{stage}";
+        protected override string keywordId => $"BattleUnitBuf_Bloodfeather_{stage}";
 
         public int stage = 1;
 
@@ -21,7 +21,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
             {
                 stage = 2;
             }
-            if (this.stack >= 10 && stage == 2)
+            if (this.stack >= 20 && stage == 2)
             {
                 stage = 3;
             }

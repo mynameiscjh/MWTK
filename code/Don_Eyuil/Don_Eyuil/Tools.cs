@@ -81,10 +81,7 @@ namespace Don_Eyuil
                     yield return (e.Current, default(TSource));
                 }
             }
-            else
-            {
-                yield return (default(TSource), e.Current);
-            }
+            yield return (default(TSource), e.Current);
         }
         public static IEnumerable<(TSource, TSource)> DivisibleTake<TSource>(this IEnumerable<TSource> source, int count)
         {
@@ -106,15 +103,10 @@ namespace Don_Eyuil
         public static IEnumerable<(TSource, TSource)> DivisibleSkipWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
         {
             int index = -1;
-            bool yielding = false;
             foreach (TSource item in source)
             {
                 index = checked(index + 1);
-                if (!yielding && !predicate(item, index))
-                {
-                    yielding = true;
-                }
-                if (yielding)
+                if (!predicate(item, index))
                 {
                     yield return (item, default(TSource));
                 }

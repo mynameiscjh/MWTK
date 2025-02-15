@@ -332,7 +332,7 @@ namespace Don_Eyuil
                             {
                                 if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
                                 {
-                                    Debug.LogError("BeforeRecoverPlayPoint:" + *value);
+                                    //Debug.LogError("BeforeRecoverPlayPoint:" + *value);
                                     (Buf as BattleUnitBuf_Don_Eyuil).BeforeRecoverPlayPoint(ref *value);
                                 }
                             }

@@ -5,7 +5,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
     public class BattleUnitBuf_Sword : BattleUnitBuf_SanHardBlood
     {
         public static string Desc = "桑空派变体硬血术1式-血剑\r\n本速度骰子中投掷进攻型骰子时不再受到流血伤害转而获得等量”结晶硬血”(单次至多3层)\r\n自身”结晶硬血”层数不低于10时本速度骰子中使用书页时消耗3层并使进攻型骰子威力+2\r\n";
-
+        protected override string keywordId => $"BattleUnitBuf_SanSora_HardBloodArt_BloodSword";
         public BattleUnitBuf_Sword(SpeedDiceUI dice) : base(dice)
         {
             //dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血剑骰子"];

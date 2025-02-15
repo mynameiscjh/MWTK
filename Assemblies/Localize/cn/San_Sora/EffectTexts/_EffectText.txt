@@ -3,19 +3,19 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <effectTextList>
 
-    <BattleEffectText ID="BattleUnitBuf_Bloodfeather">
+    <BattleEffectText ID="BattleUnitBuf_Bloodfeather1">
       <Name>血羽</Name>
       <Desc>自身速度不低于5时闪避型骰子最小值+1
 可用于特殊书页
 本状态根据层数获得相应强化(最大值:30层)</Desc>
     </BattleEffectText>
-    <BattleEffectText ID="BattleUnitBuf_Bloodfeather_II">
+    <BattleEffectText ID="BattleUnitBuf_Bloodfeather_2">
       <Name>血羽II</Name>
       <Desc>自身速度不低于5时自身所有骰子最大值与最小值+1
 可用于特殊书页
 本状态根据层数获得相应强化(最大值:30层)</Desc>
     </BattleEffectText>
-    <BattleEffectText ID="BattleUnitBuf_Bloodfeather_III">
+    <BattleEffectText ID="BattleUnitBuf_Bloodfeather_3">
       <Name>血羽II</Name>
       <Desc>自身速度不低于5时施加的”流血”层数+1
 每有15层本效果便使自身所有骰子最大值与最小值+1</Desc>
@@ -33,7 +33,7 @@
 
     <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_Enemy">
       <Name>桑空派变体硬血术</Name>
-      <Desc>自身前{0}颗速度骰子为{1} 后{2}颗速度骰子为{3}</Desc>
+      <Desc>效果分别为:</Desc>
     </BattleEffectText>
     <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt">
       <Name>桑空派变体硬血术</Name>
@@ -51,7 +51,7 @@
     </BattleEffectText>
     <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodSickle">
       <Name>桑空派变体硬血术3式-血镰</Name>
-      <Desc></Desc>
+      <Desc>若自身血羽与结晶硬血之和不低于30本速度骰子中使用书页的第一颗进攻型骰子将额外造成一次伤害</Desc>
     </BattleEffectText>
     <BattleEffectText ID="BattleUnitBuf_SanSora_HardBloodArt_BloodBlade">
       <Name>桑空派变体硬血术4式-血刃</Name>
