@@ -67,6 +67,12 @@ csharp_prefer_simple_using_statement = true:suggestion
 csharp_space_around_binary_operators = before_and_after
 csharp_indent_labels = one_less_than_current
 
+# CS0168: 声明了变量，但从未使用过
+dotnet_diagnostic.CS0168.severity = suggestion
+
+# CS8500: 这会获取托管类型的地址、获取其大小或声明指向它的指针
+dotnet_diagnostic.CS8500.severity = suggestion
+
 [*.vb]
 #### 命名样式 ####
 

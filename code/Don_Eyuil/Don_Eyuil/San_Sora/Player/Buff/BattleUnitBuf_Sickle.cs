@@ -5,7 +5,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
     public class BattleUnitBuf_Sickle : BattleUnitBuf_SanHardBlood
     {
         public static string Desc = "若自身血羽与结晶硬血之和不低于30本速度骰子中使用书页的第一颗进攻型骰子将额外造\r\n成一次伤害";
-
+        protected override string keywordId => $"BattleUnitBuf_SanSora_HardBloodArt_BloodSickle";
         public BattleUnitBuf_Sickle(SpeedDiceUI dice) : base(dice)
         {
             //dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血镰骰子"];

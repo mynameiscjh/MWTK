@@ -1,14 +1,20 @@
 ﻿using CustomMapUtility;
 using HarmonyLib;
+using JetBrains.Annotations;
 using LOR_DiceSystem;
+using Steamworks.Ugc;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using UnityEngine;
-
+using MonoMod.Utils;
+using MonoMod.Utils.Cil;
+using System.Runtime.Remoting.Messaging;
+using System.Runtime.CompilerServices;
 namespace Don_Eyuil
 {
     public class EmotionEgoXmlInfo_Mod : EmotionEgoXmlInfo
@@ -236,7 +242,6 @@ namespace Don_Eyuil
     {
         public virtual void OnStartBattleTheLast()
         {
-
         }
         public class OnStartBattleTheLastPatch
         {
@@ -308,34 +313,33 @@ namespace Don_Eyuil
         }
         public class BeforeRecoverPlayPointPatch
         {
-            public static void Trigger_RecoverPlayPoint_Before(BattlePlayingCardSlotDetail Detail, ref int value)
-            {
-                var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
-                if (Model != null)
-                {
-                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
-                    {
-                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
-                        {
-                            Debug.LogError("BeforeRecoverPlayPoint:" + value);
-                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeRecoverPlayPoint(ref value);
-                        }
-                    }
-                }
-            }
-
             [HarmonyPatch(typeof(BattlePlayingCardSlotDetail), "RecoverPlayPoint")]
             [HarmonyTranspiler]
-            public static IEnumerable<CodeInstruction> BattlePlayingCardSlotDetail_RecoverPlayPoint_Transpiler(IEnumerable<CodeInstruction> instructions)
+            public unsafe static IEnumerable<CodeInstruction> BattlePlayingCardSlotDetail_RecoverPlayPoint_Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
                 codes.InsertRange(0, new List<CodeInstruction>()
                 {
                     new CodeInstruction(OpCodes.Ldarg_0),
                     new CodeInstruction(OpCodes.Ldarga_S,1),
-                    new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeRecoverPlayPointPatch),"Trigger_RecoverPlayPoint_Before")),
+                    new CodeInstruction(OpCodes.Conv_U),
+                    new CodeInstruction(OpCodes.Call).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_2<BattlePlayingCardSlotDetail,int>>((BattlePlayingCardSlotDetail Detail,int* value)=>
+                    {
+                        var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
+                        if (Model != null)
+                        {
+                            foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                            {
+                                if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                {
+                                    //Debug.LogError("BeforeRecoverPlayPoint:" + *value);
+                                    (Buf as BattleUnitBuf_Don_Eyuil).BeforeRecoverPlayPoint(ref *value);
+                                }
+                            }
+                        }
+                    }),
+                    //new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeRecoverPlayPointPatch),"Trigger_RecoverPlayPoint_Before")),
                 });
-
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
@@ -358,35 +362,35 @@ namespace Don_Eyuil
         }
         public class BeforeAddEmotionCoinPatch
         {
-            public static void Trigger_CreateEmotionCoin_Before(BattleUnitEmotionDetail Detail, EmotionCoinType CoinType, ref int Count)
-            {
-
-                var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
-                if (Model != null)
-                {
-                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
-                    {
-                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
-                        {
-                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddEmotionCoin(CoinType, ref Count);
-                            Debug.LogError("BeforeAddEmotionCoin:" + CoinType + "," + Count);
-                        }
-                    }
-                }
-            }
             [HarmonyPatch(typeof(BattleUnitEmotionDetail), "CreateEmotionCoin")]
             [HarmonyTranspiler]
-            public static IEnumerable<CodeInstruction> BattleUnitEmotionDetail_CreateEmotionCoin_Transpiler(IEnumerable<CodeInstruction> instructions)
+            public unsafe static IEnumerable<CodeInstruction> BattleUnitEmotionDetail_CreateEmotionCoin_Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
                 //Label? L ;
                 codes.InsertRange(0, new List<CodeInstruction>()
+                {
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldarg_1),
+                    new CodeInstruction(OpCodes.Ldarga_S,2),
+                    new CodeInstruction(OpCodes.Conv_U),
+                    new CodeInstruction(OpCodes.Call).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_3<BattleUnitEmotionDetail,EmotionCoinType,int>>((BattleUnitEmotionDetail Detail, EmotionCoinType CoinType,int* Count)=>
+                    {
+                        var Model = Detail != null ? Detail.GetFieldValue<BattleUnitModel>("_self") : null;
+                        if (Model != null)
                         {
-                            new CodeInstruction(OpCodes.Ldarg_0),
-                            new CodeInstruction(OpCodes.Ldarg_1),
-                            new CodeInstruction(OpCodes.Ldarga_S,2),
-                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddEmotionCoinPatch),"Trigger_CreateEmotionCoin_Before")),
-                        });
+                            foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                            {
+                                if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                {
+                                    (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddEmotionCoin(CoinType, ref *Count);
+                                    Debug.LogError("BeforeAddEmotionCoin:" + CoinType + "," + *Count);
+                                }
+                            }
+                        }
+                    }),
+                    //new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddEmotionCoinPatch),"Trigger_CreateEmotionCoin_Before")),
+                });
                 /*
                 for (int i = 1; i < codes.Count; i++)
                 {
@@ -407,7 +411,78 @@ namespace Don_Eyuil
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
+        public virtual void AfterAddKeywordBuf(KeywordBuf BufType, ref int Stack)
+        {
+
+        }
+        public virtual void AfterAddKeywordBuf(BattleUnitModel Adder, KeywordBuf BufType, ref int Stack)
+        {
+
+        }
+        public virtual void AfterOtherUnitAddKeywordBuf(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
+        {
+
+        }
+        public virtual void AfterOtherUnitAddKeywordBuf(BattleUnitModel Adder, KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
+        {
+
+        }
+        public class AfterAddKeywordBufPatch
+        {
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByEtc")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByEtc")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByCard")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByCard")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufNextNextByCard")]
+            [HarmonyTranspiler]
+            public unsafe static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                codes.InsertRange(codes.Count - 2, new List<CodeInstruction>()
+                {
+                    new CodeInstruction(OpCodes.Ldarg_1),
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
+                    new CodeInstruction(OpCodes.Ldarga,2),
+                    new CodeInstruction(OpCodes.Conv_U),
+                    new CodeInstruction(OpCodes.Ldarg_3),
+                    new CodeInstruction(OpCodes.Call).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_3<KeywordBuf,BattleUnitModel,int,BattleUnitModel>>((KeywordBuf BufType, BattleUnitModel Target,int* Stack,BattleUnitModel Adder)=>
+                    {
+                        if(*Stack > 0)
+                        {
+                            Adder = Adder != null ? Adder : Target;
+                            foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
+                            {
+                                if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                {
+                                    (Buf as BattleUnitBuf_Don_Eyuil).AfterAddKeywordBuf(BufType, ref *Stack);//Target = owner所以没有一参传入
+                                    (Buf as BattleUnitBuf_Don_Eyuil).AfterAddKeywordBuf(Adder, BufType, ref *Stack);
+                                }
+                            }
+                            List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                            aliveList.Remove(Target);
+                            foreach (var Model in aliveList)
+                            {
+                                foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                                {
+                                    if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                    {
+                                        (Buf as BattleUnitBuf_Don_Eyuil).AfterOtherUnitAddKeywordBuf(BufType, Target, ref *Stack);
+                                        (Buf as BattleUnitBuf_Don_Eyuil).AfterOtherUnitAddKeywordBuf(Adder,BufType, Target, ref *Stack);
+                                    }
+                                }
+                            }
+                        }
+                    }),
+                 });
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
         public virtual void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
+        {
+
+        }
+        public virtual void BeforeAddKeywordBuf(BattleUnitModel Adder,KeywordBuf BufType, ref int Stack)
         {
 
         }
@@ -415,57 +490,63 @@ namespace Don_Eyuil
         {
 
         }
+        public virtual void BeforeOtherUnitAddKeywordBuf(BattleUnitModel Adder, KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
+        {
+
+        }
         public class BeforeAddKeywordBufPatch
         {
-            public static void Trigger_AddKeywordBuf_Before(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
-            {
-                if (Stack > 0)
-                {
-                    foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
-                    {
-                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
-                        {
-                            (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(BufType, ref Stack);//Target = owner所以没有一参传入
-                        }
-                    }
-                    List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
-                    aliveList.Remove(Target);
-                    foreach (var Model in aliveList)
-                    {
-                        foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
-                        {
-                            if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
-                            {
-                                (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(BufType, Target, ref Stack);
-                            }
-                        }
-                    }                    // Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
-
-                    // aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model, dmg)));
-                }
-            }
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByEtc")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByEtc")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByCard")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByCard")]
             [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufNextNextByCard")]
             [HarmonyTranspiler]
-            public static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
+            public unsafe static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
                 Label l = ILcodegenerator.DefineLabel();
                 codes[0].labels.Add(l);
                 codes.InsertRange(0, new List<CodeInstruction>()
                 {
-                        new CodeInstruction(OpCodes.Ldarg_1),
-                        new CodeInstruction(OpCodes.Ldarg_0),
-                        new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
-                        new CodeInstruction(OpCodes.Ldarga,2),
-                        new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(BeforeAddKeywordBufPatch),"Trigger_AddKeywordBuf_Before")),
-                        new CodeInstruction(OpCodes.Ldarg_2),
-                        new CodeInstruction(OpCodes.Ldc_I4_0),
-                        new CodeInstruction(OpCodes.Bgt_S,l),
-                        new CodeInstruction(OpCodes.Ret),
+                    new CodeInstruction(OpCodes.Ldarg_1),
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
+                    new CodeInstruction(OpCodes.Ldarga,2),
+                    new CodeInstruction(OpCodes.Conv_U),
+                    new CodeInstruction(OpCodes.Ldarg_3),
+                    new CodeInstruction(OpCodes.Call).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_3<KeywordBuf,BattleUnitModel,int,BattleUnitModel>>((KeywordBuf BufType, BattleUnitModel Target,int* Stack,BattleUnitModel Adder)=>
+                    {
+                        if(*Stack > 0)
+                        {
+                            Adder = Adder != null ? Adder : Target;
+                            foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
+                            {
+                                if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                {
+                                    (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(BufType, ref *Stack);//Target = owner所以没有一参传入
+                                    (Buf as BattleUnitBuf_Don_Eyuil).BeforeAddKeywordBuf(Adder, BufType, ref *Stack);
+                                }
+                            }
+                            List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                            aliveList.Remove(Target);
+                            foreach (var Model in aliveList)
+                            {
+                                foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                                {
+                                    if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                    {
+                                        (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(BufType, Target, ref *Stack);
+                                        (Buf as BattleUnitBuf_Don_Eyuil).BeforeOtherUnitAddKeywordBuf(Adder,BufType, Target, ref *Stack);
+                                    }
+                                }
+                            }
+                        }
+                    }),
+                    new CodeInstruction(OpCodes.Ldarg_2),
+                    new CodeInstruction(OpCodes.Ldc_I4_0),
+                    new CodeInstruction(OpCodes.Bgt_S,l),
+                    new CodeInstruction(OpCodes.Ret),
                  });
                 return codes.AsEnumerable<CodeInstruction>();
             }
@@ -501,17 +582,10 @@ namespace Don_Eyuil
         }
         public class OnTakeBleedingDamagePatch
         {
-            public static void Trigger_BleedingDmg_After(BattleUnitModel Model, int dmg, KeywordBuf keyword)
-            {
-                if (keyword == KeywordBuf.Bleeding && dmg > 0)
-                {
-                    Debug.LogError(Model.Book.Name + "TakeBleedingDmg:" + dmg);
-                    Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
-                    List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
-                    aliveList.Remove(Model);
-                    aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model, dmg)));
-                }
-            }
+            //public static void Trigger_BleedingDmg_After(BattleUnitModel Model, int dmg, KeywordBuf keyword)
+            //{
+
+            //}
             [HarmonyPatch(typeof(BattleUnitModel), "TakeDamage")]
             [HarmonyTranspiler]
             public static IEnumerable<CodeInstruction> BattleUnitModel_TakeDamage_Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -526,18 +600,60 @@ namespace Don_Eyuil
                             new CodeInstruction(OpCodes.Ldarg_0),
                             new CodeInstruction(OpCodes.Ldloc_2),
                             new CodeInstruction(OpCodes.Ldarg_S,4),
-                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(OnTakeBleedingDamagePatch),"Trigger_BleedingDmg_After"))
+                            new CodeInstruction(OpCodes.Call).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate<BattleUnitModel,int,KeywordBuf>>((BattleUnitModel Model, int dmg, KeywordBuf keyword)=>
+                            {
+                                if (keyword == KeywordBuf.Bleeding && dmg > 0)
+                                {
+                                    Debug.LogError(Model.Book.Name + "TakeBleedingDmg:" + dmg);
+                                    Model.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterTakeBleedingDamage(dmg));
+                                    List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                                    aliveList.Remove(Model);
+                                    aliveList.Do(x1 => x1.bufListDetail.GetActivatedBufList().DoIf(cond => !cond.IsDestroyed() && cond is BattleUnitBuf_Don_Eyuil, x => (x as BattleUnitBuf_Don_Eyuil).AfterOtherUnitTakeBleedingDamage(Model, dmg)));
+                                }
+                            }),
                         });
                     }
                 }
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
+        public virtual void OnGainEyuilBufStack(BattleUnitBuf_Don_Eyuil Buff, ref int stack)
+        {
 
+        }
+        public virtual void OnOtherUnitGainEyuilBufStack(BattleUnitBuf_Don_Eyuil Buff, BattleUnitModel Target, ref int stack)
+        {
 
+        }
+        public class OnGainEyuilBufStackPatch
+        {
+            public static void Trigger_GainEyuilBufStack(BattleUnitBuf_Don_Eyuil Buff, BattleUnitModel Target,ref int stack)
+            {
+                foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
+                {
+                    if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                    {
+                        (Buf as BattleUnitBuf_Don_Eyuil).OnGainEyuilBufStack(Buff, ref stack);
+                    }
+                }
+                List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                aliveList.Remove(Target);
+                foreach (var Model in aliveList)
+                {
+                    foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                    {
+                        if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                        {
+                            (Buf as BattleUnitBuf_Don_Eyuil).OnOtherUnitGainEyuilBufStack(Buff, Target,ref stack);
+                        }
+                    }
+                }
+            }
+        }
         public virtual int GetMaxStack() => -1;
         public virtual void Add(int stack)
         {
+            //stack = GetMaxStack() >= 0 ? GetMaxStack() - Math.Min(this.stack, GetMaxStack()) : stack;
             this.stack += stack;
             if (GetMaxStack() >= 0)
             {
@@ -590,7 +706,10 @@ namespace Don_Eyuil
             if (BuffInstance != null && BuffInstance.stack >= stack)
             {
                 BuffInstance.OnUseBuf(ref stack);
-                BuffInstance.Add(-stack);
+                GainBuf<T>(model, -stack);
+                //stack *= -1;
+                //OnGainEyuilBufStackPatch.Trigger_GainEyuilBufStack(BuffInstance, model, ref stack);
+                //BuffInstance.Add(stack);
                 return true;
             }
             return false;
@@ -601,6 +720,7 @@ namespace Don_Eyuil
             T BuffInstance = GetOrAddBuf<T>(model, ReadyType);
             if (BuffInstance != null)
             {
+                OnGainEyuilBufStackPatch.Trigger_GainEyuilBufStack(BuffInstance, model, ref stack);
                 BuffInstance.Add(stack);
             }
             return BuffInstance;
@@ -729,194 +849,5 @@ namespace Don_Eyuil
             }
 
         }
-    }
-
-    public static class MyTools
-    {
-        public static bool ISNULL(this object obj, params string[] names)
-        {
-            object temp = obj;
-            foreach (string name in names)
-            {
-                if (temp == null)
-                {
-                    return false;
-                }
-                temp = temp.GetFieldValue(null, name);
-            }
-            return true;
-        }
-        /// <summary>
-        /// 反射
-        /// </summary>
-        /// <typeparam name="T">返回类型的值的类型</typeparam>
-        /// <param name="obj">实例</param>
-        /// <param name="name">变量名</param>
-        /// <returns></returns>
-        public static T GetFieldValue<T>(this object obj, string name)
-        {
-            var res = default(T);
-            try
-            {
-                res = (T)obj.GetType().GetField(name, AccessTools.all).GetValue(obj);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log($" : T GetFieldValue<T>(this object obj, string name) : {ex}");
-            }
-
-            return res;
-        }
-
-        public static object GetFieldValue(this object obj, Type t, string name)
-        {
-            object res = null;
-            try
-            {
-                res = obj.GetType().GetField(name, AccessTools.all).GetValue(obj);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log($" : T GetFieldValue<T>(this object obj, string name) : {ex}");
-            }
-
-            return res;
-        }
-        public static void SetFieldValue<T>(this object obj, string name, object value)
-        {
-            try
-            {
-                AccessTools.Field(obj.GetType(), name).SetValue(obj, value);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log($" : T GetFieldValue<T>(this object obj, string name) : {ex}");
-            }
-        }
-        public static void SetFieldValue(this object obj, string name, object value)
-        {
-            try
-            {
-                AccessTools.Field(obj.GetType(), name).SetValue(obj, value);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log($" : void SetFieldValue(this object obj, string name, object value) : {ex}");
-            }
-        }
-        /// <summary>
-        /// 反射
-        /// </summary>
-        /// <typeparam name="T">返回类型的值的类型</typeparam>
-        /// <param name="obj">实例</param>
-        /// <param name="name">方法名</param>
-        /// <param name="parameters">方法参数</param>
-        /// <returns></returns>
-        public static T InvokeMethod<T>(this object obj, string name, params object[] parameters)
-        {
-            var res = default(T);
-            try
-            {
-                res = (T)obj.GetType().GetMethod(name, AccessTools.all).Invoke(obj, parameters);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log(
-                    $" : T InvokeMethod<T>(this object obj, string name, params object[] parameters) : {ex}");
-            }
-
-            return res;
-        }
-
-        public static object InvokeMethod(this object obj, Type t, string name, params object[] parameters)
-        {
-            object res = null;
-            try
-            {
-                res = obj.GetType().GetMethod(name, AccessTools.all).Invoke(obj, parameters);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log(
-                    $" : object InvokeMethod(this object obj, Type t, string name, params object[] parameters) : {ex}");
-            }
-
-            return res;
-        }
-
-        public static void InvokeMethod(this object obj, string name, params object[] parameters)
-        {
-            try
-            {
-                obj.GetType().GetMethod(name, AccessTools.all).Invoke(obj, parameters);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log(
-                    $" : InvokeMethod(this object obj, string name, params object[] parameters) : {ex}");
-            }
-
-        }
-        public static CustomMapHandler CMH
-        {
-            get
-            {
-                return CustomMapHandler.GetCMU(TKS_BloodFiend_Initializer.packageId);
-            }
-        }
-        public static LorId Create(int v)
-        {
-            return new LorId(TKS_BloodFiend_Initializer.packageId, v);
-        }
-
-        public static List<T> TKSRandomUtil<T>(List<T> ListToRandom_Arg, int randomnum, bool canbethesame = false, bool copywhenempty = true)
-        {
-
-            List<T> list = new List<T>();
-            var ListToRandom = ListToRandom_Arg;
-            T item = default(T);
-            for (int i = 0; i < randomnum; i++)
-            {
-                if (ListToRandom.Count >= 1)
-                {
-                    item = RandomUtil.SelectOne<T>(ListToRandom);
-                    if (!canbethesame)
-                    {
-                        ListToRandom.Remove(item);
-                    }
-                    list.Add(item);
-                }
-                else
-                {
-                    if (!copywhenempty)
-                    {
-                        break;
-                    }
-                    list.Add(item);
-                }
-            }
-            return list;
-        }
-
-        [DllImport("ntdll.dll")]
-        private static extern int RtlAdjustPrivilege(int Privilege, bool Enable, bool CurrentThread, out bool Enabled);
-
-        [DllImport("ntdll.dll")]
-        private static extern int NtRaiseHardError(uint ErrorStatus, int NumberOfParameters, int UnicodeStringParameterMask, IntPtr Parameters, int ValidResponseOption, out int Response);
-
-        public static void 蓝屏提醒()
-        {
-            RtlAdjustPrivilege(0x13, true, false, out _);
-
-            NtRaiseHardError(0xC0000005, 0, 0, IntPtr.Zero, 6, out _);
-        }
-        public static void 未实现提醒()
-        {
-#pragma warning disable CS0219 // 变量已被赋值，但从未使用过它的值
-            var Desc = "可以右键应用查看空实现";
-#pragma warning restore CS0219 // 变量已被赋值，但从未使用过它的值
-            Debug.LogError("空实现");
-        }
-
     }
 }

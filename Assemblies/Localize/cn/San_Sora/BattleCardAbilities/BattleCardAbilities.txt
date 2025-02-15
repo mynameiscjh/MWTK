@@ -20,7 +20,49 @@
   <BattleCardAbility ID="SanSora_06">
     <Desc>[使用时]消耗至多15层[血羽]每消耗3层便使本书页所有骰子最大值+1</Desc>
   </BattleCardAbility>
-
+  <BattleCardAbility ID="SanSora_07">
+    <Desc>自身当前每有一张已经生效的硬血术书页便使本书页费用-1 
+自身每消耗3层”血羽”或”结晶硬血”便使本书页获得1点冷却</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_08">
+    <Desc>[战斗开始]这一幕对自身施加3层[流血] 
+这一幕中若自身至少受到10点[流血]伤害则额外恢复1点光芒</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_09">
+    <Desc>[使用时]若自身速度不低于6则使本书页所有骰子威力+2</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_10">
+    <Desc>若自身[血羽]不低于15层则自动抽取本书页 [
+战斗开始]消耗10层[血羽]使我方所有[拉曼查乐园的血魔]获得[摇曳] 若本书页应用在[血甲]骰子上则本效果将继承至下一幕</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_11">
+    <Desc>若本书页应用在[血弓]骰子上则使本书页第二颗骰子最小值+2 
+[使用时]消耗至多9层[血羽]每消耗3层便使本书页所有骰子最大值+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_12">
+    <Desc>本舞台每消耗10层血羽便使本书页费用-1(至多-2) 
+本书页击中目标时目标每有2层流血便使本书页造成的伤害增加10%(至多100%)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_13">
+    <Desc>[使用时]若自身速度不低于6则使本书页所有骰子威力+2</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_14">
+    <Desc>[使用时]抽取1张书页并获得5层[血羽]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_15">
+    <Desc>[我无法视而不见!]
+[战斗开始]对自身施加3层[流血]并使这一幕自身对敌方角色施加的[流血]层数+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_16">
+    <Desc>[便能达成那理想中的共存吧...]
+[战斗开始]若场上的[流血]总数不低于20则使自身在这一幕中获得4层[虚弱]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_17">
+    <Desc>[我坚信共存与梦想终会实现]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_18">
+    <Desc>[我将一刻不停的向之飞翔!!]</Desc>
+  </BattleCardAbility>
 
   <BattleCardAbility ID="SanSora_Dice01">
     <Desc>[命中时]消耗至多15层[血羽]每消耗5层便使本骰子重复投掷1次并施加2层[流血]</Desc>
@@ -42,5 +84,62 @@
   </BattleCardAbility>
   <BattleCardAbility ID="SanSora_Dice07">
     <Desc>[命中时]若本骰子基础值不低于6则使本骰子重复投掷一次(至多2次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice08">
+    <Desc>[命中时]这一幕与下两幕对目标施加4层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice09">
+    <Desc>[命中时]这一幕使目标的[流血]无法低于与自身的速度差值</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice10">
+    <Desc>[命中时]重复触发自身与目标情感等级之和次[流血]若目标因本效果死亡则对所有敌方角色施加目标此时拥有的[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice11">
+    <Desc>[命中时]若目标带有[流血]则抽取一张书页</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice12">
+    <Desc>[命中时]若本书页应用在[血枪]骰子上则在下一幕获得2层[迅捷]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice13">
+    <Desc>[命中时]消耗3层[血羽]对目标下两幕对目标施加4层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice14">
+    <Desc>[拼点胜利]对目标施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice15">
+    <Desc>[命中时]这一幕对双方施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice16">
+    <Desc>[命中时]这一幕使目标被施加的[流血]层数+1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice17">
+    <Desc>[命中时]若本骰子基础值不低于6则使本骰子重复投掷一次(至多2次)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice18">
+    <Desc>若本书页应用在[血剑]骰子上则使本骰子重复投掷1次</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice19">
+    <Desc>[命中时]若本书页应用在[血刃]骰子上则这一幕对目标施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice20">
+    <Desc>[命中时]下两幕对目标施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice21">
+    <Desc>[命中时]这一幕自身每获得1点正面情感便时自身获得1层[血羽]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice22">
+    <Desc>[命中时]获得2层[血羽]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice23">
+    <Desc>[命中时]这一幕对目标施加3层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice24">
+    <Desc>[拼点失败]这一幕与下一幕使自身获得3层[强壮]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice25">
+    <Desc>[命中时]这一幕自身每获得1点正面情感便时自身获得1层[血羽]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="SanSora_Dice26">
+    <Desc>本骰子不造成伤害与混乱伤害</Desc>
   </BattleCardAbility>
 </BattleCardAbilityDescRoot>

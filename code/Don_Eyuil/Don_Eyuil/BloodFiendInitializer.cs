@@ -23,7 +23,7 @@ using static Don_Eyuil.WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Year;
 using static Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility.PassiveAbility_WhiteMoonSparkle_16;
 using Debug = UnityEngine.Debug;
 using File = System.IO.File;
-
+using Don_Eyuil.San_Sora;
 namespace Don_Eyuil
 {
     [HarmonyPatch]
@@ -304,7 +304,8 @@ namespace Don_Eyuil
 
         public static List<string> Stages = new List<string>()
         {
-            "Don_Eyuil"
+            "Don_Eyuil",
+            "SanSora"
         };
 
         [HarmonyPatch(typeof(UIInvitationPanel), "GetTheBlueReverberationPrimaryStage")]
@@ -369,152 +370,35 @@ namespace Don_Eyuil
     [HarmonyPatch]
     public class TKS_BloodFiend_PatchMethods_Testify
     {
-        public enum Team
-        {
-            attacker, defender,
-            winner, loser,
-        }
-        public static BattleParryingManager.ParryingTeam GetParryingTeam(BattleParryingManager PM, Team T)
-        {
-            switch (T)
-            {
-                case Team.attacker: return PM.GetFieldValue<BattleParryingManager.ParryingTeam>("_currentAttackerTeam");
-                case Team.defender: return PM.GetFieldValue<BattleParryingManager.ParryingTeam>("_currentDefenderTeam");
-                case Team.winner: return PM.GetFieldValue<BattleParryingManager.ParryingTeam>("_currentWinnerTeam");
-                case Team.loser: return PM.GetFieldValue<BattleParryingManager.ParryingTeam>("_currentLoserTeam");
-            }
-            return null;
-        }
-        public static void SetParryingTeam(BattleParryingManager PM, Team T, BattleParryingManager.ParryingTeam TM)
-        {
-            switch (T)
-            {
-                case Team.attacker: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentAttackerTeam", TM); break;
-                case Team.defender: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentDefenderTeam", TM); break;
-                case Team.winner: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentWinnerTeam", TM); break;
-                case Team.loser: PM.SetFieldValue<BattleParryingManager.ParryingTeam>("_currentLoserTeam", TM); break;
-            }
-        }
-
         [HarmonyPatch]
-        public class TransBehavior_AtkVSDfnPatch
+        public class VersionPatch
         {
             public static MethodBase TargetMethod()
             {
-                return AccessTools.Method(typeof(BattleParryingManager), "ActionPhaseAtkVSDfn");
+                return AccessTools.Method(typeof(VersionViewer), "Start");
             }
-            //Defender = winner
-            public static bool CheckDiceCardAbility(BattleParryingManager PM)
-            {
-                if (GetParryingTeam(PM, Team.defender) != null
-                    && GetParryingTeam(PM, Team.defender).playingCard != null
-                    && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior != null && GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card != null
-                    && (GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.card.card.XmlData.Script == "Testify_TransDice" || GetParryingTeam(PM, Team.defender).playingCard.card.HasBuf<BattleDiceCardBuf_TransDice>()))
-                {
-                    return true;
-                }
-                return false;
-            }
-            //Defender = winner
-            public static void TransDice(BattleParryingManager PM)
-            {
-                if (PM != null)
-                {
-                    if (GetParryingTeam(PM, Team.defender).playingCard.currentBehavior != null)
-                    {
-                        GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.behaviourInCard.Type = BehaviourType.Atk;
-                        GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.behaviourInCard.Detail = RandomUtil.SelectOne(BehaviourDetail.Slash, BehaviourDetail.Hit, BehaviourDetail.Penetrate);
-                        PM.InvokeMethod("ActionPhaseAtkVSAtk");
-                        //GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.behaviourInCard.Type = BehaviourType.Def;
-                        //GetParryingTeam(PM, Team.defender).playingCard.currentBehavior.behaviourInCard.Detail = BehaviourDetail.Guard;
-                    }
-
-                }
-            }
-            public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
+            public unsafe static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
             {
                 List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
-                Label? L = null;
+                var Local = ILcodegenerator.DeclareLocal(typeof(string));
                 for (int i = 1; i < codes.Count; i++)
                 {
-                    if (codes[i].opcode == OpCodes.Ldarg_0
-                        && codes[i + 1].opcode == OpCodes.Ldfld && codes[i + 1].operand == AccessTools.Field(typeof(BattleParryingManager), "_currentDefenderTeam")
-                        && codes[i + 2].opcode == OpCodes.Ldarg_0
-                        && codes[i + 3].opcode == OpCodes.Ldfld && codes[i + 3].operand == AccessTools.Field(typeof(BattleParryingManager), "_currentLoserTeam")
-                        && codes[i + 4].opcode == OpCodes.Bne_Un && codes[i + 4].Branches(out L))
+                    if (codes[i].opcode == OpCodes.Ldfld && codes[i].operand.ToString().Contains("ver"))
                     {
-                        Label L2 = ILcodegenerator.DefineLabel();
-                        int codeIndex = codes.FindIndex((CodeInstruction code) => code.labels.Contains(L.Value));
-                        codes[i + 4].operand = L2;
-                        codes.InsertRange(codeIndex, new List<CodeInstruction>()
+                        codes.InsertRange(i + 1, new List<CodeInstruction>()
                         {
-                            new CodeInstruction(OpCodes.Ldarg_0).WithLabels(L2),
-                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(TransBehavior_AtkVSDfnPatch),"CheckDiceCardAbility")),
-                            new CodeInstruction(OpCodes.Brfalse_S,L),
-                            new CodeInstruction(OpCodes.Ldarg_0),
-                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(TransBehavior_AtkVSDfnPatch),"TransDice")),
-                            new CodeInstruction(OpCodes.Ret)
+                            new CodeInstruction(OpCodes.Stloc, Local.LocalIndex),
+                            new CodeInstruction(OpCodes.Ldloca_S,Local.LocalIndex),
+                            new CodeInstruction(OpCodes.Conv_U),
+                            new CodeInstruction(OpCodes.Nop).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_1<string>>((string* x) =>{
+                                (*x) = "当前血魔Mod测试版版本id:" + TKS_BloodFiend_Initializer.Version;
+                                //Debug.LogError(typeof(VersionPatch).GetInternalDelegate()?.Method.DeclaringType.Name);
+                                //Debug.LogError(*x +String.Join(",", PatchTools.InternalDelegateCache.Keys));
+                            }),
+                            new CodeInstruction(OpCodes.Ldloc,Local.LocalIndex),
                         });
                     }
                 }
-                return codes.AsEnumerable<CodeInstruction>();
-            }
-        }
-        [HarmonyPatch]
-        public class TransBehavior_AtkVSAtkPatch
-        {
-            public static MethodBase TargetMethod()
-            {
-                return AccessTools.Method(typeof(BattleParryingManager), "ActionPhaseAtkVSAtk");
-            }
-            //loser = defender 
-            public static bool CheckDiceCardAbility(BattleParryingManager PM)
-            {
-                if (GetParryingTeam(PM, Team.loser) != null
-                    && GetParryingTeam(PM, Team.loser).playingCard != null
-                    && GetParryingTeam(PM, Team.loser).playingCard.currentBehavior != null && GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.card != null
-                    && (GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.card.card.XmlData.Script == "Testify_TransDice" || GetParryingTeam(PM, Team.loser).playingCard.card.HasBuf<BattleDiceCardBuf_TransDice>()))
-                {
-                    return true;
-                }
-                return false;
-            }
-            //loser = defender 
-            public static void TransDice(BattleParryingManager PM)
-            {
-                if (PM != null)
-                {
-                    SetParryingTeam(PM, Team.attacker, GetParryingTeam(PM, Team.winner));
-                    SetParryingTeam(PM, Team.defender, GetParryingTeam(PM, Team.loser));
-                    GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.behaviourInCard.Type = BehaviourType.Def;
-                    GetParryingTeam(PM, Team.loser).playingCard.currentBehavior.behaviourInCard.Detail = BehaviourDetail.Guard;
-                    if (GetParryingTeam(PM, Team.winner) != null)
-                    {
-                        if (GetParryingTeam(PM, Team.winner).GetParryingDiceType() == BattleParryingManager.ParryingDiceType.Attack)
-                        {
-                            PM.InvokeMethod("ActionPhaseAtkVSDfn");
-                        }
-                        else
-                        {
-                            PM.InvokeMethod("ActionPhaseDfnVSDfn");
-                        }
-                    }
-                }
-            }
-            public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
-            {
-                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
-                Label L2 = ILcodegenerator.DefineLabel();
-                codes[0].labels.Add(L2);
-                codes.InsertRange(0, new List<CodeInstruction>()
-                {
-                    new CodeInstruction(OpCodes.Ldarg_0).WithLabels(),
-                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(TransBehavior_AtkVSAtkPatch),"CheckDiceCardAbility")),
-                            new CodeInstruction(OpCodes.Brfalse_S,L2),
-                            new CodeInstruction(OpCodes.Ldarg_0),
-                            new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(TransBehavior_AtkVSAtkPatch),"TransDice")),
-                            new CodeInstruction(OpCodes.Ret)
-                });
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
@@ -696,7 +580,6 @@ namespace Don_Eyuil
                 {
                     if (ChildObject.name == "TKS_FerrisWheelCostIcon")
                     {
-                        Debug.LogError("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                         ChildObject.gameObject.SetActive(false);
                         GameObject.Destroy(ChildObject.gameObject);
                     }
@@ -720,6 +603,7 @@ namespace Don_Eyuil
     }
     public class TKS_BloodFiend_Initializer : ModInitializer
     {
+        public static string Version = "v2.1";
         public static string packageId = "Don_Eyuil";
         public static Dictionary<string, Sprite> ArtWorks = new Dictionary<string, Sprite>();
         public static string language;
@@ -984,7 +868,7 @@ namespace Don_Eyuil
                         {
                             string[] array5 = directories5[i].Split('\\');
                             Workshop.WorkshopSkinData workshopBookSkinData = Singleton<CustomizingBookSkinLoader>.Instance.GetWorkshopBookSkinData(packageId, array5[array5.Length - 1]);
-                            if (workshopBookSkinData != null && workshopBookSkinData.dataName == "Don_Eyuil")
+                            if (workshopBookSkinData != null && (workshopBookSkinData.dataName == "Don_Eyuil") || (workshopBookSkinData.dataName == "San_Sora"))
                             {
                                 foreach (KeyValuePair<ActionDetail, Workshop.ClothCustomizeData> keyValuePair in TKS_BloodFiend_PatchMethods_CustomCharacterSkin.LoadCustomAppearanceSMotion(directories5[i]).clothCustomInfo)
                                 {
@@ -1025,7 +909,6 @@ namespace Don_Eyuil
             LoadLocalize("San_Sora");
             LoadLocalize("WhiteMoon_Sparkle");
         }
-
         public override void OnInitializeMod()
         {
             TKS_BloodFiend_Initializer.language = GlobalGameManager.Instance.CurrentOption.language;
@@ -1037,7 +920,6 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_CustomCharacterSkin));
             harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_PassiveUI));
             harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_StoryFerrisWheel));
-            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
             //harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify.TransBehavior_AtkVSDfnPatch));
             //-----------------------------------------------------------------------//
 
@@ -1046,6 +928,7 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterAddKeywordBufPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverHpPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
@@ -1070,6 +953,7 @@ namespace Don_Eyuil
             //被动效果Patch----------------------------------------------------------//
             harmony.PatchAll(typeof(PassiveAbility_DonEyuil_15));
             harmony.PatchAll(typeof(PassiveAbility_SanSora_10));
+            harmony.PatchAll(typeof(PassiveAbility_SanSora_08));
             harmony.PatchAll(typeof(PassiveAbility_WhiteMoonSparkle_14));
             harmony.PatchAll(typeof(PassiveAbility_WhiteMoonSparkle_16));
             //-----------------------------------------------------------------------//
@@ -1079,6 +963,7 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(BattleUnitBuf_BloodShield));
             harmony.PatchAll(typeof(BattleUnitBuf_Know));
             harmony.PatchAll(typeof(BattleUnitBuf_Sword));
+            harmony.PatchAll(typeof(BattleUnitBuf_Year.BattleDiceCardBuf_TransDice.DiceTransformPatch));
             //-----------------------------------------------------------------------//
 
             //骰子效果Patch----------------------------------------------------------//
@@ -1090,6 +975,9 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(DiceCardSelfAbility_DonEyuil_21.BattleUnitBuf_AntiBleeding));
             //-----------------------------------------------------------------------//
 
+            //测试Patch----------------------------------------------------------//
+            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
+            //-----------------------------------------------------------------------//
 
 
 
@@ -1176,6 +1064,20 @@ namespace Don_Eyuil
         public static LorId Card_血伞反击 = MyTools.Create(66);
         public static LorId Card_若能摆脱这可怖的疾病 = MyTools.Create(67);
 
+        public static LorId Card_致伤 = MyTools.Create(77);
+        public static LorId Card_摧垮 = MyTools.Create(78);
+        public static LorId Card_伴血猛袭 = MyTools.Create(79);
+        public static LorId Card_释血化刃 = MyTools.Create(80);
+        public static LorId Card_冲锋截断 = MyTools.Create(81);
+        public static LorId Card_桑空派变体硬血术6式_血甲 = MyTools.Create(82);
+        public static LorId Card_硬血为铠 = MyTools.Create(83);
+        public static LorId Card_利血贯穿 = MyTools.Create(84);
+        public static LorId Card_血刃剔除 = MyTools.Create(124);
+        public static LorId Card_受苦的亲族正在增多 = MyTools.Create(125);
+        public static LorId Card_若能摆脱这可怖的疾病_2 = MyTools.Create(126);
+        public static LorId Card_翱翔向梦 = MyTools.Create(127);
+        public static LorId Card_桑空派变体硬血术终式_La_Sangre = MyTools.Create(128);
+        public static LorId Card_直到触及到那梦想 = MyTools.Create(129);
         public static LorId Card_Desc_桑空派变体硬血术1式_血剑 = MyTools.Create(85);
         public static LorId Card_Desc_桑空派变体硬血术2式_血枪 = MyTools.Create(86);
         public static LorId Card_Desc_桑空派变体硬血术3式_血镰 = MyTools.Create(87);
@@ -1184,7 +1086,15 @@ namespace Don_Eyuil
         public static LorId Card_Desc_桑空派变体硬血术6式_血甲 = MyTools.Create(90);
         public static LorId Card_Desc_桑空派变体硬血术7式_血弓 = MyTools.Create(91);
         public static LorId Card_Desc_桑空派变体硬血术8式_血鞭 = MyTools.Create(92);
-        public static LorId Card_桑空派变体硬血术终式_La_Sangre = MyTools.Create(94);
+        public static LorId Card_桑空派变体硬血术终式_La_Sangre_2 = MyTools.Create(94);
+        public static LorId Card_释血化刃_2 = MyTools.Create(95);
+        public static LorId Card_冲锋截断_2 = MyTools.Create(96);
+        public static LorId Card_硬血为铠_2 = MyTools.Create(97);
+        public static LorId Card_利血贯穿_2 = MyTools.Create(98);
+        public static LorId Card_血刃剔除_2 = MyTools.Create(99);
+        public static LorId Card_翱翔向梦_2 = MyTools.Create(100);
+
+
 
         public static LorId Card_一如既往_埃尤尔 = MyTools.Create(102);
         public static LorId Card_一如既往_小耀 = MyTools.Create(101);
@@ -1222,7 +1132,18 @@ namespace Don_Eyuil
             Book_堂_埃尤尔之页,
             Book_桑空之页
         };
-
+       
+        /// <summary>
+        /// 通过给定的命名空间返回与之对应的核心书页ID
+        /// </summary>
+        /// <param name="NameSpace">给定的命名空间</param>
+        /// <returns>返回参数的存储形式为(玩家核心ID,来宾核心ID)</returns>
+        public static (LorId, LorId) Mapping_Books_命名空间与核心书页映射(string NameSpace)
+        {
+            return NameSpace.Contains("San_Sora") ? (MyTools.Create(10000002), MyTools.Create(8)) :
+                NameSpace.Contains("Don_Eyuil") ? (MyTools.Create(10000001), MyTools.Create(1)) :
+                (null,null);
+        }
     }
 
 }

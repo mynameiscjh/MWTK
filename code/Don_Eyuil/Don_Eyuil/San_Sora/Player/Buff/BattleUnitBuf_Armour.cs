@@ -5,7 +5,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
     public class BattleUnitBuf_Armour : BattleUnitBuf_SanHardBlood
     {
         public static string Desc = "自身”血羽”不低于10层时本速度骰子恢复体力溢出时将转化为等量护盾\r\n自身拥有护盾时使自身所有防御型骰子威力+2";
-
+        protected override string keywordId => "BattleUnitBuf_SanSora_HardBloodArt_BloodShield";
         public BattleUnitBuf_Armour(SpeedDiceUI dice) : base(dice)
         {
             //dice.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["血甲骰子"];

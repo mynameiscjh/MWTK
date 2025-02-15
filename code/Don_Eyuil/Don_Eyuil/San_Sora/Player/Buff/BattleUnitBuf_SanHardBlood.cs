@@ -17,9 +17,11 @@ namespace Don_Eyuil.San_Sora.Player.Buff
             this.dice = dice;
         }
 
-        public static void GainBuf<T>(SpeedDiceUI dice) where T : BattleUnitBuf_SanHardBlood
+        public static T GainBuf<T>(SpeedDiceUI dice) where T : BattleUnitBuf_SanHardBlood
         {
-            dice.view.model.bufListDetail.AddBuf(Activator.CreateInstance(typeof(T), new object[] { dice }) as T);
+            T BuffInstance = Activator.CreateInstance(typeof(T), new object[] { dice }) as T;
+            dice.view.model.bufListDetail.AddBuf(BuffInstance);
+            return BuffInstance;
         }
 
         public static SpeedDiceUI GetBufDice<T>(BattleUnitModel model, BufReadyType ReadyType = BufReadyType.ThisRound) where T : BattleUnitBuf_SanHardBlood

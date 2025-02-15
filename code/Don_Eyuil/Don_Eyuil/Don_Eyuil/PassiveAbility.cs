@@ -758,20 +758,13 @@ namespace Don_Eyuil
             {
                 switch (RandomUtil.SelectOne(new List<string>() { "S", "L", "SS", "SC", "U", "SI" }))
                 {
-                    case "S":
-                        return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSword>(owner);
-                    case "L":
-                        return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodLance>(owner);
-                    case "SS":
-                        return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_DoubleSwords>(owner);
-                    case "SC":
-                        return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodScourge>(owner);
-                    case "U":
-                        return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodUmbrella>(owner);
-                    case "SI":
-                        return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSickle>(owner);
-                    default:
-                        return null;
+                    case "S":return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSword>(owner);
+                    case "L":return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodLance>(owner);
+                    case "SS":return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_DoubleSwords>(owner);
+                    case "SC":return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodScourge>(owner);
+                    case "U":return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodUmbrella>(owner);
+                    case "SI":return BattleUnitBuf_HardBloodArt.GetOrAddBuf<BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSickle>(owner);
+                    default:return null;
                 }
                 //Type BloodArt = RandomUtil.SelectOne(typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSword), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodLance), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_DoubleSwords), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodBlade), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodScourge), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodUmbrella), typeof(BattleUnitBuf_HardBloodArt.BattleUnitBuf_HardBloodArt_BloodSickle));
                 //return AccessTools.Method(typeof(BattleUnitBuf_HardBloodArt), "GetOrAddBuf").MakeGenericMethod(BloodArt).Invoke(null, new object[] { owner }) as BattleUnitBuf_HardBloodArt;

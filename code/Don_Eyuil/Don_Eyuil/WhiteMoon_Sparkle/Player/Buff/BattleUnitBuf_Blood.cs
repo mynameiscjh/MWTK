@@ -23,7 +23,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
             }
             list.Add(behavior.card);
             behavior.card.target.TakeDamage(behavior.card.target.bufListDetail.GetActivatedBuf(KeywordBuf.Bleeding).stack / 2);
-            BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch.Trigger_BleedingDmg_After(_owner, behavior.card.target.bufListDetail.GetActivatedBuf(KeywordBuf.Bleeding).stack / 2, KeywordBuf.Bleeding);
+            typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch).GetInternalDelegate().DynamicInvoke(_owner, behavior.card.target.bufListDetail.GetActivatedBuf(KeywordBuf.Bleeding).stack / 2, KeywordBuf.Bleeding);
         }
 
         public override void OnRoundStart()
