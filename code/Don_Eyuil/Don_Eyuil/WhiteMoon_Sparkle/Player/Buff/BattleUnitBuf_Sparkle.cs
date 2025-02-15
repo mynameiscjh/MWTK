@@ -29,6 +29,14 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                             break;
                         }
                     }
+                    if (_instance == null)
+                    {
+                        var model = BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_小耀之页);
+                        if (model != null)
+                        {
+                            _instance = GainBuf<BattleUnitBuf_Sparkle>(model, 1);
+                        }
+                    }
                     return _instance;
                 }
                 return _instance;
@@ -105,6 +113,8 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public IEnumerator SelectWeapons()
         {
+            yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
+
             SelectPrimaryWeapon();
             yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
 
@@ -114,7 +124,18 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
         public BattleUnitBuf_Sparkle(BattleUnitModel model) : base(model)
         {
+            PrimaryWeapons = new List<BattleUnitBuf_Don_Eyuil>();
+            SubWeapons = new List<BattleUnitBuf_Don_Eyuil>();
+            _instance = this;
         }
+
+        public override void Destroy()
+        {
+            base.Destroy();
+            PrimaryWeapons = new List<BattleUnitBuf_Don_Eyuil>();
+            SubWeapons = new List<BattleUnitBuf_Don_Eyuil>();
+        }
+
     }
 
 }

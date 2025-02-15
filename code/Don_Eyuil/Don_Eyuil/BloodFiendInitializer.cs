@@ -20,6 +20,7 @@ using UI;
 using UnityEngine;
 using UnityEngine.UI;
 using static Don_Eyuil.WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Year;
+using static Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility.PassiveAbility_WhiteMoonSparkle_16;
 using Debug = UnityEngine.Debug;
 using File = System.IO.File;
 
@@ -1082,6 +1083,7 @@ namespace Don_Eyuil
 
             //骰子效果Patch----------------------------------------------------------//
             harmony.PatchAll(typeof(DiceCardAbility_DonEyuil_20));
+            harmony.PatchAll(typeof(DiceCardAbility_不承受反震伤害));
             //-----------------------------------------------------------------------//
 
             //书页效果Patch----------------------------------------------------------//

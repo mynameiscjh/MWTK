@@ -741,6 +741,12 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
             fl0 = false;
             fl2 = false;
             fl4 = false;
+
+            if (BattleObjectManager.instance.GetAliveList().Exists(x => x.Book.BookId == MyId.Book_小耀之页))
+            {
+                BattleUnitBuf_Don_Eyuil.GainBuf<BattleUnitBuf_Transmit>(owner, 1);
+            }
+
         }
 
         bool fl0 = false;
@@ -820,13 +826,18 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
                 emoCards.Add(new EmotionEgoXmlInfo_Mod(item));
             }
 
+            BattleManagerUI.Instance.ui_levelup.StartCoroutine(OnSelectRoutine(emoCards));
+        }
 
+        IEnumerator OnSelectRoutine(List<EmotionEgoXmlInfo> emoCards)
+        {
+            yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
             BattleManagerUI.Instance.ui_levelup.SetRootCanvas(true);
             BattleManagerUI.Instance.ui_levelup.InitEgo(Math.Min(3, emoCards.Count), emoCards);
             BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetComponent<Image>().sprite = TKS_BloodFiend_Initializer.ArtWorks["玩家硬血术统一图标"];
             BattleManagerUI.Instance.ui_levelup.transform.GetChild(1).GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = "选择硬血流书页";
             BattleManagerUI.Instance.ui_levelup._emotionLevels.Do(x => x.Set(false, false, false));
-
+            yield return new WaitUntil(() => BattleManagerUI.Instance.ui_levelup.IsEnabled == false);
         }
 
         [HarmonyPatch(typeof(UILibrarianEquipInfoSlot), "SetData")]

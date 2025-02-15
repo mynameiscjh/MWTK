@@ -18,6 +18,10 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
             {
                 foreach (var card in item.cardSlotDetail.cardAry)
                 {
+                    if (card == null)
+                    {
+                        continue;
+                    }
                     if (card.target.Book.BookId == MyId.Book_堂_埃尤尔之页)
                     {
                         attackDonEyuilList.Add(item);
@@ -27,6 +31,10 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 
             foreach (var item in BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_堂_埃尤尔之页).cardSlotDetail.cardAry)
             {
+                if (item == null)
+                {
+                    continue;
+                }
                 donEyuilAttackList.Add(item.target);
             }
 
@@ -47,15 +55,23 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                         targetSlotOrder = 0,
                         cardAbility = temp.CreateDiceCardSelfAbilityScript()
                     };
-                    card.cardAbility.card = card;
-                    card.cardAbility.OnApplyCard();
+                    if (card.cardAbility != null)
+                    {
+                        card.cardAbility.card = card;
+                        card.cardAbility.OnApplyCard();
+                    }
                     card.ResetCardQueue();
-                    BattleOneSidePlayManager.Instance.StartOneSidePlay(card);
+
+                    StageController.Instance.GetAllCards().Add(card);
                 }
             }
 
             foreach (var card in _owner.cardSlotDetail.cardAry)
             {
+                if (card == null)
+                {
+                    continue;
+                }
                 if (donEyuilAttackList.Contains(card.target))
                 {
                     card.target.bufListDetail.AddBuf(new BattleUnitBuf_DmgDown());

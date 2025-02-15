@@ -29,6 +29,11 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
             {
                 foreach (var card in item.cardSlotDetail.cardAry)
                 {
+                    if (card == null)
+                    {
+                        continue;
+                    }
+
                     if (card.target.Book.BookId == MyId.Book_小耀之页)
                     {
                         attackSparkleList.Add(item);
@@ -38,6 +43,10 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
 
             foreach (var item in BattleObjectManager.instance.GetAliveList().Find(x => x.Book.BookId == MyId.Book_小耀之页).cardSlotDetail.cardAry)
             {
+                if (item == null)
+                {
+                    continue;
+                }
                 sparkleAttackList.Add(item.target);
             }
 
@@ -58,10 +67,14 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
                         targetSlotOrder = 0,
                         cardAbility = temp.CreateDiceCardSelfAbilityScript()
                     };
-                    card.cardAbility.card = card;
-                    card.cardAbility.OnApplyCard();
+                    if (card.cardAbility != null)
+                    {
+                        card.cardAbility.card = card;
+                        card.cardAbility.OnApplyCard();
+                    }
                     card.ResetCardQueue();
-                    BattleOneSidePlayManager.Instance.StartOneSidePlay(card);
+
+                    StageController.Instance.GetAllCards().Add(card);
                 }
             }
         }
@@ -76,6 +89,8 @@ namespace Don_Eyuil.Don_Eyuil.Player.Buff
 
         public BattleUnitBuf_Transmit(BattleUnitModel model) : base(model)
         {
+            this.SetFieldValue("_bufIcon", TKS_BloodFiend_Initializer.ArtWorks["传承之物和传递之物"]);
+            this.SetFieldValue("_iconInit", true);
         }
     }
 }

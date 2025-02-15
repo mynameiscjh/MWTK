@@ -62,6 +62,7 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
                 }
 
                 var temp = BattleDiceCardModel.CreatePlayingCard(xmlData);
+
                 var parryCard = new BattlePlayingCardDataInUnitModel
                 {
                     owner = card.target,
@@ -74,9 +75,8 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility
                     targetSlotOrder = 0,
                     cardAbility = temp.CreateDiceCardSelfAbilityScript()
                 };
-                //parryCard.cardAbility.card = parryCard;
-                //parryCard.cardAbility.OnApplyCard();
                 parryCard.ResetCardQueue();
+                parryCard.ApplyDiceAbility(DiceMatch.AllDice, new DiceCardAbility_不承受反震伤害());
                 if (card.owner.faction == Faction.Enemy)
                 {
                     BattleParryingManager.Instance.StartParrying(card, parryCard);
