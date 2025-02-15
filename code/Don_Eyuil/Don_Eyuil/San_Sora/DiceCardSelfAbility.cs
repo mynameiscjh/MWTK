@@ -152,6 +152,11 @@ namespace Don_Eyuil.San_Sora
     public class DiceCardSelfAbility_SanSora_18 : DiceCardSelfAbilityBase
     {
         public static string Desc = "[我将一刻不停的向之飞翔!!]";
+        public override void OnEndBattle()
+        {
+            BattleObjectManager.instance.GetAliveList(Faction.Enemy).Do(x => x.DieFake());
+            Singleton<StageController>.Instance.CheckEndBattle();
+        }
     }
 
     public class DiceCardSelfAbility_SanSora_19 : DiceCardSelfAbilityBase

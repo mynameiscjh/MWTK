@@ -411,6 +411,73 @@ namespace Don_Eyuil
                 return codes.AsEnumerable<CodeInstruction>();
             }
         }
+        public virtual void AfterAddKeywordBuf(KeywordBuf BufType, ref int Stack)
+        {
+
+        }
+        public virtual void AfterAddKeywordBuf(BattleUnitModel Adder, KeywordBuf BufType, ref int Stack)
+        {
+
+        }
+        public virtual void AfterOtherUnitAddKeywordBuf(KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
+        {
+
+        }
+        public virtual void AfterOtherUnitAddKeywordBuf(BattleUnitModel Adder, KeywordBuf BufType, BattleUnitModel Target, ref int Stack)
+        {
+
+        }
+        public class AfterAddKeywordBufPatch
+        {
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByEtc")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByEtc")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufThisRoundByCard")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufByCard")]
+            [HarmonyPatch(typeof(BattleUnitBufListDetail), "AddKeywordBufNextNextByCard")]
+            [HarmonyTranspiler]
+            public unsafe static IEnumerable<CodeInstruction> BattleUnitBufListDetail_AddKeywordBuf_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILcodegenerator)
+            {
+                List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+                codes.InsertRange(codes.Count - 2, new List<CodeInstruction>()
+                {
+                    new CodeInstruction(OpCodes.Ldarg_1),
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldfld,AccessTools.Field(typeof(BattleUnitBufListDetail),"_self")),
+                    new CodeInstruction(OpCodes.Ldarga,2),
+                    new CodeInstruction(OpCodes.Conv_U),
+                    new CodeInstruction(OpCodes.Ldarg_3),
+                    new CodeInstruction(OpCodes.Call).CallInternalDelegate<PatchTools.UnmanagedDelegateTypes.UnmanagedDelegate_3<KeywordBuf,BattleUnitModel,int,BattleUnitModel>>((KeywordBuf BufType, BattleUnitModel Target,int* Stack,BattleUnitModel Adder)=>
+                    {
+                        if(*Stack > 0)
+                        {
+                            Adder = Adder != null ? Adder : Target;
+                            foreach (var Buf in Target.bufListDetail.GetActivatedBufList())
+                            {
+                                if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                {
+                                    (Buf as BattleUnitBuf_Don_Eyuil).AfterAddKeywordBuf(BufType, ref *Stack);//Target = owner所以没有一参传入
+                                    (Buf as BattleUnitBuf_Don_Eyuil).AfterAddKeywordBuf(Adder, BufType, ref *Stack);
+                                }
+                            }
+                            List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList();
+                            aliveList.Remove(Target);
+                            foreach (var Model in aliveList)
+                            {
+                                foreach (var Buf in Model.bufListDetail.GetActivatedBufList())
+                                {
+                                    if (!Buf.IsDestroyed() && Buf is BattleUnitBuf_Don_Eyuil)
+                                    {
+                                        (Buf as BattleUnitBuf_Don_Eyuil).AfterOtherUnitAddKeywordBuf(BufType, Target, ref *Stack);
+                                        (Buf as BattleUnitBuf_Don_Eyuil).AfterOtherUnitAddKeywordBuf(Adder,BufType, Target, ref *Stack);
+                                    }
+                                }
+                            }
+                        }
+                    }),
+                 });
+                return codes.AsEnumerable<CodeInstruction>();
+            }
+        }
         public virtual void BeforeAddKeywordBuf(KeywordBuf BufType, ref int Stack)
         {
 

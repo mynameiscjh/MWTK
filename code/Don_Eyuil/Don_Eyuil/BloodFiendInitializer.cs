@@ -730,7 +730,6 @@ namespace Don_Eyuil
                 {
                     if (ChildObject.name == "TKS_FerrisWheelCostIcon")
                     {
-                        Debug.LogError("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                         ChildObject.gameObject.SetActive(false);
                         GameObject.Destroy(ChildObject.gameObject);
                     }
@@ -1077,6 +1076,7 @@ namespace Don_Eyuil
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnTakeBleedingDamagePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.OnStartBattlePatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddKeywordBufPatch));
+            harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.AfterAddKeywordBufPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeAddEmotionCoinPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverHpPatch));
             harmony.PatchAll(typeof(BattleUnitBuf_Don_Eyuil.BeforeRecoverPlayPointPatch));
@@ -1122,7 +1122,7 @@ namespace Don_Eyuil
             //-----------------------------------------------------------------------//
 
             //测试Patch----------------------------------------------------------//
-            harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
+            //harmony.PatchAll(typeof(TKS_BloodFiend_PatchMethods_Testify));
             //-----------------------------------------------------------------------//
 
 
@@ -1210,6 +1210,20 @@ namespace Don_Eyuil
         public static LorId Card_血伞反击 = MyTools.Create(66);
         public static LorId Card_若能摆脱这可怖的疾病 = MyTools.Create(67);
 
+        public static LorId Card_致伤 = MyTools.Create(77);
+        public static LorId Card_摧垮 = MyTools.Create(78);
+        public static LorId Card_伴血猛袭 = MyTools.Create(79);
+        public static LorId Card_释血化刃 = MyTools.Create(80);
+        public static LorId Card_冲锋截断 = MyTools.Create(81);
+        public static LorId Card_桑空派变体硬血术6式_血甲 = MyTools.Create(82);
+        public static LorId Card_硬血为铠 = MyTools.Create(83);
+        public static LorId Card_利血贯穿 = MyTools.Create(84);
+        public static LorId Card_血刃剔除 = MyTools.Create(124);
+        public static LorId Card_受苦的亲族正在增多 = MyTools.Create(125);
+        public static LorId Card_若能摆脱这可怖的疾病_2 = MyTools.Create(126);
+        public static LorId Card_翱翔向梦 = MyTools.Create(127);
+        public static LorId Card_桑空派变体硬血术终式_La_Sangre = MyTools.Create(128);
+        public static LorId Card_直到触及到那梦想 = MyTools.Create(129);
         public static LorId Card_Desc_桑空派变体硬血术1式_血剑 = MyTools.Create(85);
         public static LorId Card_Desc_桑空派变体硬血术2式_血枪 = MyTools.Create(86);
         public static LorId Card_Desc_桑空派变体硬血术3式_血镰 = MyTools.Create(87);
@@ -1218,7 +1232,15 @@ namespace Don_Eyuil
         public static LorId Card_Desc_桑空派变体硬血术6式_血甲 = MyTools.Create(90);
         public static LorId Card_Desc_桑空派变体硬血术7式_血弓 = MyTools.Create(91);
         public static LorId Card_Desc_桑空派变体硬血术8式_血鞭 = MyTools.Create(92);
-        public static LorId Card_桑空派变体硬血术终式_La_Sangre = MyTools.Create(94);
+        public static LorId Card_桑空派变体硬血术终式_La_Sangre_2 = MyTools.Create(94);
+        public static LorId Card_释血化刃_2 = MyTools.Create(95);
+        public static LorId Card_冲锋截断_2 = MyTools.Create(96);
+        public static LorId Card_硬血为铠_2 = MyTools.Create(97);
+        public static LorId Card_利血贯穿_2 = MyTools.Create(98);
+        public static LorId Card_血刃剔除_2 = MyTools.Create(99);
+        public static LorId Card_翱翔向梦_2 = MyTools.Create(100);
+
+
 
         public static LorId Card_一如既往_埃尤尔 = MyTools.Create(102);
         public static LorId Card_一如既往_小耀 = MyTools.Create(101);

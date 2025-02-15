@@ -16,6 +16,7 @@ using Don_Eyuil.San_Sora.Player.Buff;
 using Don_Eyuil;
 using static Don_Eyuil.BattleUnitBuf_Don_Eyuil;
 using LOR_BattleUnit_UI;
+using static Don_Eyuil.San_Sora.PassiveAbility_SanSora_06;
 namespace Don_Eyuil.San_Sora
 {
     public class PassiveAbility_SanSora_01 : PassiveAbilityBase
@@ -47,17 +48,27 @@ namespace Don_Eyuil.San_Sora
         public static int Phase1Round = 0;
         public static int Phase2Round = 0;
         public static int Phase3Round = 0;
+
+        public int AddedBleedingCount = 0;
         public override void OnWaveStart()
         {
-            Phase = 1; Phase1Round = 0; Phase2Round = 0; Phase3Round = 0;
+            Phase = 1; Phase1Round = 0; Phase2Round = 0; Phase3Round = 0; AddedBleedingCount = 0;
         }
         public override int GetMinHp()
         {
             switch (Phase)
             {
                 case 1: return 500;
+                case 2: if (AddedBleedingCount >= 100) { return base.GetMinHp(); } return 300;
+                case 3: return 10;
                 default: return base.GetMinHp();
             }
+        }
+        public override bool isStraighten => Phase == 3;
+        public override bool isTargetable => !(Phase == 3 && Phase3Round >= 4);
+        public override int GetSpeedDiceAdder(int speedDiceResult)
+        {
+            return (Phase == 3 && Phase3Round >= 4)? 99: base.GetSpeedDiceAdder(speedDiceResult);
         }
         public override int SpeedDiceNumAdder()
         {
@@ -67,6 +78,20 @@ namespace Don_Eyuil.San_Sora
                 if(Phase1Round == 3) { return 0 + EmotionOffest; }
                 if(Phase1Round == 4) { return 3 + EmotionOffest; }
                 return 3 + Math.Min(2, Singleton<StageController>.Instance.RoundTurn - 1) + EmotionOffest;
+            }
+            else if(Phase == 2)
+            {
+                switch(Phase2Round)
+                {
+                    case 1:return 6 + EmotionOffest;
+                    case 2: return 5 + EmotionOffest;
+                    case 3: return 5 + EmotionOffest;
+                    case 4: return 3 + EmotionOffest;
+                }
+            }
+            else if(Phase == 3)
+            {
+                return 6;
             }
             return base.SpeedDiceNumAdder();
         }
@@ -123,7 +148,26 @@ namespace Don_Eyuil.San_Sora
                 this.owner.breakDetail.nextTurnBreak = false;
                 this.owner.breakDetail.RecoverBreakLife(1, false);
                 this.owner.breakDetail.RecoverBreak(this.owner.breakDetail.GetDefaultBreakGauge());
+                AddedBleedingCount = 0;
             }
+            if (Phase == 2 && AddedBleedingCount >= 100)
+            {
+                Phase = 3;
+                owner.bufListDetail.GetActivatedBufList().DoIf(x => x.positiveType == BufPositiveType.Negative, y => y.Destroy());
+                if (this.owner.turnState == BattleUnitTurnState.BREAK)
+                {
+                    this.owner.turnState = BattleUnitTurnState.WAIT_CARD;
+                }
+                this.owner.breakDetail.nextTurnBreak = false;
+                this.owner.breakDetail.RecoverBreakLife(1, false);
+                this.owner.breakDetail.RecoverBreak(this.owner.breakDetail.GetDefaultBreakGauge());
+                owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_SanSora_06));
+                owner.passiveDetail.DestroyPassive(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_SanSora_07));
+                owner.passiveDetail.AddPassive(MyTools.Create(25));
+                owner.passiveDetail.AddPassive(MyTools.Create(26));
+                AddedBleedingCount = 0;
+            }
+
         }
         public void AddNewCard(LorId Id, int pro)
         {
@@ -141,11 +185,133 @@ namespace Don_Eyuil.San_Sora
             int i = this.owner.Book.GetSpeedDiceRule(this.owner).diceNum - this.owner.Book.GetSpeedDiceRule(this.owner).breakedNum;
             if(Phase == 1)
             {
+                //第一幕: 摧垮 致伤 致伤 释血化刃 剩余的速度骰子随机填入摧垮 致伤 释血化刃
+                //第二幕:利血贯穿 伴血猛袭 伴血猛袭 冲锋截断 摧垮 摧垮 剩余的速度骰子随机填入摧垮 致伤 释血化刃
+                //第三幕: 速度骰子变为1颗固定为血甲并固定使用桑空派变体硬血术6式 - 血甲
+                //第四幕：速度骰子变为4颗且所有骰子为血甲固定使用硬血为铠
+                //循环
                 if (Phase1Round > 3)//0 1 2 3 Pass 4 -> 0
                 {
                     Phase1Round = 0;
                 }
                 Phase1Round++;//0 1 2 3 -> 1 2 3 4
+                switch(Phase1Round)
+                {
+                    case 1:
+                        AddNewCard(MyId.Card_摧垮, 999);
+                        AddNewCard(MyId.Card_致伤, 999);
+                        AddNewCard(MyId.Card_致伤, 999);
+                        AddNewCard(MyId.Card_释血化刃, 999);
+                        i -= 4;
+                        break;
+                    case 2:
+                        AddNewCard(MyId.Card_利血贯穿, 999);
+                        AddNewCard(MyId.Card_伴血猛袭, 999);
+                        AddNewCard(MyId.Card_伴血猛袭, 999);
+                        AddNewCard(MyId.Card_冲锋截断, 999);
+                        AddNewCard(MyId.Card_摧垮, 999);
+                        AddNewCard(MyId.Card_摧垮, 999);
+                        i -= 6;
+                        break;
+                    case 3:
+                        AddNewCard(MyId.Card_桑空派变体硬血术6式_血甲, 999);
+                        i = -1;
+                        break;
+                    case 4:
+                        AddNewCard(MyId.Card_硬血为铠, 999);
+                        AddNewCard(MyId.Card_硬血为铠, 999);
+                        AddNewCard(MyId.Card_硬血为铠, 999);
+                        AddNewCard(MyId.Card_硬血为铠, 999);
+                        i = -1;
+                        break;
+                }
+                while (i > 0)
+                {
+                    AddNewCard(RandomUtil.SelectOne(new List<LorId>() { MyId.Card_摧垮, MyId.Card_致伤, MyId.Card_释血化刃 }), 500);
+                    i--;
+                }
+            }
+            else if (Phase == 2)
+            {
+                //第一幕:速度骰子变为7颗 受苦的亲族正在增多 利血贯穿 利血贯穿 伴血猛袭 冲锋截断 血刃剔除 剩余的速度骰子随机填入伴血猛袭与摧垮
+                //第二幕：速度骰子变为6颗 利血贯穿 冲锋截断 血刃剔除 血刃剔除 释血化刃 释血化刃
+                //第三幕：速度骰子变为6颗 冲锋截断 冲锋截断 伴血猛袭 剩余的速度骰子随机填入伴血猛袭与摧垮
+                //第四幕:速度骰子变为4颗 若能摆脱这可怖的疾病...血刃剔除 血刃剔除 血刃剔除
+                //循环
+                if (Phase2Round > 3)//0 1 2 3 Pass 4 -> 0
+                {
+                    Phase2Round = 0;
+                }
+                Phase2Round++;//0 1 2 3 -> 1 2 3 4
+                switch (Phase2Round)
+                {
+                    case 1:
+                        AddNewCard(MyId.Card_受苦的亲族正在增多, 999);
+                        AddNewCard(MyId.Card_利血贯穿, 999);
+                        AddNewCard(MyId.Card_利血贯穿, 999);
+                        AddNewCard(MyId.Card_伴血猛袭, 999);
+                        AddNewCard(MyId.Card_冲锋截断, 999);
+                        AddNewCard(MyId.Card_血刃剔除, 999);
+                        i -= 6;
+                        break;
+                    case 2:
+                        AddNewCard(MyId.Card_利血贯穿, 999);
+                        AddNewCard(MyId.Card_冲锋截断, 999);
+                        AddNewCard(MyId.Card_血刃剔除, 999);
+                        AddNewCard(MyId.Card_血刃剔除, 999);
+                        AddNewCard(MyId.Card_释血化刃, 999);
+                        AddNewCard(MyId.Card_释血化刃, 999);
+                        i = -1;
+                        break;
+                    case 3:
+                        AddNewCard(MyId.Card_冲锋截断, 999);
+                        AddNewCard(MyId.Card_冲锋截断, 999);
+                        AddNewCard(MyId.Card_伴血猛袭, 999);
+                        i -= 3;
+                        break;
+                    case 4:
+                        AddNewCard(MyId.Card_若能摆脱这可怖的疾病, 999);
+                        AddNewCard(MyId.Card_血刃剔除, 999);
+                        AddNewCard(MyId.Card_血刃剔除, 999);
+                        AddNewCard(MyId.Card_血刃剔除, 999);
+                        i = -1;
+                        break;
+                }
+                while (i > 0)
+                {
+                    AddNewCard(RandomUtil.SelectOne(new List<LorId>() { MyId.Card_摧垮, MyId.Card_伴血猛袭}), 500);
+                    i--;
+                }
+            }
+            else if (Phase == 3)
+            {
+                //每幕固定使用1-2张翱翔向梦其余骰子随机填入血刃剔除 伴血猛袭 冲锋截断 释血化刃 利血贯穿
+                //第二幕固定使用一张桑空派变体硬血术终式 - La Sangre
+                //第四幕速度骰子固定为1颗速度改为99且无法选中 使用 直到触及到那梦想!后司书接待胜利)*/
+                if (Phase3Round > 3)//0 1 2 3 Pass 4 -> 0
+                {
+                    Phase3Round = 0;
+                }
+                Phase3Round++;//0 1 2 3 -> 1 2 3 4
+                if(Phase3Round == 2)
+                {
+                    AddNewCard(MyId.Card_桑空派变体硬血术终式_La_Sangre, 999);
+                }
+                if (Phase3Round == 4)
+                {
+                    AddNewCard(MyId.Card_直到触及到那梦想, 999);
+                    return;
+                }
+                MyTools.TKSRandomUtil(new List<LorId>() { MyId.Card_翱翔向梦, MyId.Card_翱翔向梦 }, RandomUtil.Range(1, 2), true, false).Do(x =>
+                {
+                    AddNewCard(x, 900);
+                    i--;
+                });
+                while (i > 0)
+                {
+                    AddNewCard(RandomUtil.SelectOne(new List<LorId>() { MyId.Card_血刃剔除, MyId.Card_伴血猛袭, MyId.Card_冲锋截断, MyId.Card_释血化刃, MyId.Card_利血贯穿 }), 500);
+                    i--;
+                }
             }
         }
 
@@ -248,6 +414,31 @@ namespace Don_Eyuil.San_Sora
         {
             owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Bleeding, 2);
         }
+        public class BattleUnitBuf_SanSoraBleedingCount : BattleUnitBuf_Don_Eyuil
+        {
+            public BattleUnitBuf_SanSoraBleedingCount(BattleUnitModel model) : base(model)
+            {
+                this.stack = 0;
+            }
+            public override void AfterAddKeywordBuf(BattleUnitModel Adder, KeywordBuf BufType, ref int Stack)
+            {
+                PassiveAbility_SanSora_01 Passive = null;
+                if (BufType == KeywordBuf.Bleeding && (Passive = Adder.passiveDetail.PassiveList.Find(x => x is PassiveAbility_SanSora_01) as PassiveAbility_SanSora_01) != null)
+                {
+                    Passive.AddedBleedingCount += Stack;
+                }
+            }
+        }
+        public override void OnCreated()
+        {
+            BattleObjectManager.instance.GetAliveList().Do(x => BattleUnitBuf_SanSoraBleedingCount.GetOrAddBuf<BattleUnitBuf_SanSoraBleedingCount>(x));
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(23);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(23);
+        }
+        public override void OnDestroyed()
+        {
+            BattleObjectManager.instance.GetAliveList().Do(x => BattleUnitBuf_SanSoraBleedingCount.RemoveBuf<BattleUnitBuf_SanSoraBleedingCount>(x));
+        }
     }
     public class PassiveAbility_SanSora_07 : PassiveAbilityBase
     {
@@ -267,6 +458,11 @@ namespace Don_Eyuil.San_Sora
             {
                 behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = 2 });
             }
+        }
+        public override void OnCreated()
+        {
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(24);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(24);
         }
     }
     public class PassiveAbility_SanSora_08 : PassiveAbilityBase
@@ -309,6 +505,8 @@ namespace Don_Eyuil.San_Sora
         public override void OnCreated()
         {
             BattleObjectManager.instance.GetAliveList().Do(x => BattleUnitBuf_SanSoraDmgRedu.GetOrAddBuf<BattleUnitBuf_SanSoraDmgRedu>(x));
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(25);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(25);
         }
         public override void OnDestroyed()
         {
@@ -374,6 +572,8 @@ namespace Don_Eyuil.San_Sora
         public override void OnCreated()
         {
             BattleUnitBuf_SanSoraDmgRedu.GetOrAddBuf<BattleUnitBuf_SanSoraDmgRedu>(owner);
+            this.name = TKS_BloodFiend_Initializer.GetPassiveName(26);
+            this.desc = TKS_BloodFiend_Initializer.GetPassiveDesc(26);
         }
         public override void OnDestroyed()
         {
