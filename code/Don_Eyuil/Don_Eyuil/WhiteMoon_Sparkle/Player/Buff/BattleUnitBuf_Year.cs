@@ -22,6 +22,19 @@ using static Don_Eyuil.WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Year;
 using Debug = UnityEngine.Debug;
 using File = System.IO.File;
 using Don_Eyuil.San_Sora;
+using CustomMapUtility;
+using HarmonyLib;
+using JetBrains.Annotations;
+using Steamworks.Ugc;
+using System.Collections;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Runtime.InteropServices;
+using MonoMod.Utils;
+using MonoMod.Utils.Cil;
+using System.Runtime.Remoting.Messaging;
+using System.Runtime.CompilerServices;
+using Mono.Cecil;
 namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
 {
     public class BattleUnitBuf_Year : BattleUnitBuf_Don_Eyuil
@@ -139,72 +152,8 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                 behavior.TargetDice.ApplyDiceStatBonus(new DiceStatBonus() { dmg = -2, breakDmg = -2 });
             }
         }
-        public class BattleDiceCardBuf_TransDice : BattleDiceCardBuf {
-
-        public class BattleDiceCardBuf_TransDice : BattleDiceCardBuf
+        public class BattleDiceCardBuf_TransDice : BattleDiceCardBuf 
         {
-
-        }
-
-        protected override string keywordId => "BattleUnitBuf_DragonoftheSpring_LotusinAutumn";
-
-        public override string BuffName
-        {
-            get
-            {
-                string temp = string.Empty;
-                if (Instance.PrimaryWeapons.Contains(this) && !IsIntensify)
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn") + " ";
-                }
-                if (Instance.PrimaryWeapons.Contains(this) && IsIntensify)
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Reinforced") + " ";
-                }
-                if (Instance.SubWeapons.Contains(this) && !IsIntensify)
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary") + " ";
-                }
-                if (Instance.SubWeapons.Contains(this) && IsIntensify)
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary_Reinforced") + " ";
-                }
-                if (Instance.SubWeapons.Contains(this) && Instance.PrimaryWeapons.Contains(this))
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Together") + " ";
-                }
-                return temp;
-            }
-        }
-
-        public override string bufActivatedText
-        {
-            get
-            {
-                string temp = string.Empty;
-                if (Instance.PrimaryWeapons.Contains(this) && !IsIntensify)
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn") + "\r\n";
-                }
-                if (Instance.PrimaryWeapons.Contains(this) && IsIntensify)
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Reinforced") + "\r\n";
-                }
-                if (Instance.SubWeapons.Contains(this) && !IsIntensify)
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary") + "\r\n";
-                }
-                if (Instance.SubWeapons.Contains(this) && IsIntensify)
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary_Reinforced") + "\r\n";
-                }
-                if (Instance.SubWeapons.Contains(this) && Instance.PrimaryWeapons.Contains(this))
-                {
-                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Together") + "\r\n";
-                }
-                return temp;
-            }
-        }
             [HarmonyPatch]
             public class DiceTransformPatch
             {
@@ -358,6 +307,66 @@ namespace Don_Eyuil.WhiteMoon_Sparkle.Player.Buff
                         return codes.AsEnumerable<CodeInstruction>();
                     }
                 }
+            }
+        }
+
+        protected override string keywordId => "BattleUnitBuf_DragonoftheSpring_LotusinAutumn";
+
+        public override string BuffName
+        {
+            get
+            {
+                string temp = string.Empty;
+                if (Instance.PrimaryWeapons.Contains(this) && !IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn") + " ";
+                }
+                if (Instance.PrimaryWeapons.Contains(this) && IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Reinforced") + " ";
+                }
+                if (Instance.SubWeapons.Contains(this) && !IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary") + " ";
+                }
+                if (Instance.SubWeapons.Contains(this) && IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary_Reinforced") + " ";
+                }
+                if (Instance.SubWeapons.Contains(this) && Instance.PrimaryWeapons.Contains(this))
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextName("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Together") + " ";
+                }
+                return temp;
+            }
+        }
+
+        public override string bufActivatedText
+        {
+            get
+            {
+                string temp = string.Empty;
+                if (Instance.PrimaryWeapons.Contains(this) && !IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn") + "\r\n";
+                }
+                if (Instance.PrimaryWeapons.Contains(this) && IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Reinforced") + "\r\n";
+                }
+                if (Instance.SubWeapons.Contains(this) && !IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary") + "\r\n";
+                }
+                if (Instance.SubWeapons.Contains(this) && IsIntensify)
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Secondary_Reinforced") + "\r\n";
+                }
+                if (Instance.SubWeapons.Contains(this) && Instance.PrimaryWeapons.Contains(this))
+                {
+                    temp += BattleEffectTextsXmlList.Instance.GetEffectTextDesc("BattleUnitBuf_DragonoftheSpring_LotusinAutumn_Together") + "\r\n";
+                }
+                return temp;
             }
         }
     }

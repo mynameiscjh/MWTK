@@ -491,6 +491,17 @@ namespace Don_Eyuil
                 Debug.Log($" : T GetFieldValue<T>(this object obj, string name) : {ex}");
             }
         }
+        public static void SetFieldValue(this object obj, string name, object value)
+        {
+            try
+            {
+                AccessTools.Field(obj.GetType(), name).SetValue(obj, value);
+            }
+            catch (Exception ex)
+            {
+                Debug.Log($" : void SetFieldValue(this object obj, string name, object value) : {ex}");
+            }
+        }
         /// <summary>
         /// 反射
         /// </summary>
