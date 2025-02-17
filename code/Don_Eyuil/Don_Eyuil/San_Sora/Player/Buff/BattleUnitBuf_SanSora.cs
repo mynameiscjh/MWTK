@@ -1,4 +1,6 @@
 ﻿using HarmonyLib;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Don_Eyuil.San_Sora.Player.Buff
 {
@@ -34,20 +36,20 @@ namespace Don_Eyuil.San_Sora.Player.Buff
         {
             get
             {
-                string temp = "如下\n";
-                temp += Sword != null ? $"{nameof(BattleUnitBuf_Sword)}: 附加于第{Sword.Index}颗骰子\n" : "";
-                temp += Lance != null ? $"{nameof(BattleUnitBuf_Lance)}: 附加于第{Lance.Index}颗骰子\n" : "";
-                temp += Blade != null ? $"{nameof(BattleUnitBuf_Blade)} : 附加于第{Blade.Index}颗骰子\n" : "";
-                temp += Bow != null ? $"{nameof(BattleUnitBuf_Bow)} : 附加于第{Bow.Index}颗骰子\n" : "";
-                temp += DoubleSwords != null ? $"{nameof(BattleUnitBuf_DoubleSwords)} : 附加于第{DoubleSwords.Index}颗骰子\n" : "";
-                temp += Scourge != null ? $"{nameof(BattleUnitBuf_Scourge)} : 附加于第{Scourge.Index}颗骰子\n" : "";
-                temp += Sickle != null ? $"{nameof(BattleUnitBuf_Sickle)} : 附加于第{Sickle.Index}颗骰子\n" : "";
-                temp += Armour != null ? $"{nameof(BattleUnitBuf_Armour)}  : 附加于第{Armour.Index}颗骰子\n" : "";
+                string temp = Singleton<BattleEffectTextsXmlList>.Instance.GetEffectTextDesc(keywordId, paramInBufDesc);
+
+                var tempList = new List<BattleUnitBuf_SanHardBlood> { Sword, Lance, Blade, Bow, DoubleSwords, Scourge, Sickle, Armour }.Where(x => x != null).Sort((x, y) => x.Index - y.Index).ToList();
+
+                foreach (var item in tempList)
+                {
+                    temp += "\r\n" + item.bufActivatedText;
+                }
+
                 return temp;
             }
         }
 
-        protected override string keywordId => "BattleUnitBuf_SanSora";
+        protected override string keywordId => "BattleUnitBuf_SanSora_HardBloodArt";
 
         public BattleUnitBuf_SanSora(BattleUnitModel model) : base(model)
         {

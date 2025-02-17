@@ -19,9 +19,9 @@ namespace Don_Eyuil.San_Sora.Player.Buff
         public override void OnUseBuf(ref int stack)
         {
             count += stack;
-            if (_owner.personalEgoDetail.GetCardAll().Exists(x => x.GetID() == MyId.Card_桑空派变体硬血术终式_La_Sangre) && count >= 3)
+            if (_owner.personalEgoDetail.GetCardAll().Exists(x => x.GetID() == MyId.Card_桑空派变体硬血术终式_La_Sangre_2) && count >= 3)
             {
-                var card = _owner.personalEgoDetail.GetCardAll().Find(x => x.GetID() == MyId.Card_桑空派变体硬血术终式_La_Sangre);
+                var card = _owner.personalEgoDetail.GetCardAll().Find(x => x.GetID() == MyId.Card_桑空派变体硬血术终式_La_Sangre_2);
                 card?.AddCoolTime(1);
                 count = 0;
             }

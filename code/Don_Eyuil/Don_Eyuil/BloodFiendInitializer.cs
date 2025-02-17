@@ -1,10 +1,10 @@
 ﻿using Don_Eyuil.Don_Eyuil.Player.PassiveAbility;
+using Don_Eyuil.San_Sora;
 using Don_Eyuil.San_Sora.Player.PassiveAbility;
 using Don_Eyuil.WhiteMoon_Sparkle.Player.Buff;
 using Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility;
 using EnumExtenderV2;
 using HarmonyLib;
-using LOR_DiceSystem;
 using LOR_XML;
 using System;
 using System.Collections.Generic;
@@ -19,11 +19,9 @@ using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
-using static Don_Eyuil.WhiteMoon_Sparkle.Player.Buff.BattleUnitBuf_Year;
 using static Don_Eyuil.WhiteMoon_Sparkle.Player.PassiveAbility.PassiveAbility_WhiteMoonSparkle_16;
 using Debug = UnityEngine.Debug;
 using File = System.IO.File;
-using Don_Eyuil.San_Sora;
 namespace Don_Eyuil
 {
     [HarmonyPatch]
@@ -1108,10 +1106,10 @@ namespace Don_Eyuil
         public static LorId Card_传承之梦_千斤弓 = MyTools.Create(114);
         public static LorId Card_传承之梦_月之剑 = MyTools.Create(115);
         public static LorId Card_月下终曲 = MyTools.Create(116);
-        public static LorId Card_Desc_泉之龙_秋之莲 = MyTools.Create(124);
-        public static LorId Card_Desc_千斤弓 = MyTools.Create(125);
-        public static LorId Card_Desc_月之剑 = MyTools.Create(126);
-        public static LorId Card_反击通用书页 = MyTools.Create(127);
+        public static LorId Card_Desc_泉之龙_秋之莲 = MyTools.Create(130);
+        public static LorId Card_Desc_千斤弓 = MyTools.Create(131);
+        public static LorId Card_Desc_月之剑 = MyTools.Create(132);
+        public static LorId Card_反击通用书页 = MyTools.Create(133);
 
         public static LorId Book_堂_埃尤尔之页 = MyTools.Create(10000001);
         public static LorId Book_桑空之页 = MyTools.Create(10000002);
@@ -1132,7 +1130,7 @@ namespace Don_Eyuil
             Book_堂_埃尤尔之页,
             Book_桑空之页
         };
-       
+
         /// <summary>
         /// 通过给定的命名空间返回与之对应的核心书页ID
         /// </summary>
@@ -1142,7 +1140,7 @@ namespace Don_Eyuil
         {
             return NameSpace.Contains("San_Sora") ? (MyTools.Create(10000002), MyTools.Create(8)) :
                 NameSpace.Contains("Don_Eyuil") ? (MyTools.Create(10000001), MyTools.Create(1)) :
-                (null,null);
+                (null, null);
         }
     }
 
