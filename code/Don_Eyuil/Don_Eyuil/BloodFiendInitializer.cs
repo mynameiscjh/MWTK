@@ -603,7 +603,7 @@ namespace Don_Eyuil
     }
     public class TKS_BloodFiend_Initializer : ModInitializer
     {
-        public static string Version = "v2.1";
+        public static string Version = "v2.3";
         public static string packageId = "Don_Eyuil";
         public static Dictionary<string, Sprite> ArtWorks = new Dictionary<string, Sprite>();
         public static string language;
