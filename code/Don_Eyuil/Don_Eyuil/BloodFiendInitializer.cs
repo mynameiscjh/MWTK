@@ -749,6 +749,7 @@ namespace Don_Eyuil
             {
                 public static DiceFlag HasGivenDamage_SubTarget { get; internal set; }
                 public static DiceFlag HasGivenDamage_BattleUnitBuf_Year { get; internal set; }
+                public static DiceFlag HasGivenDamage { get; internal set; }
             }
         }
         public static string GetPassiveName(int id)
