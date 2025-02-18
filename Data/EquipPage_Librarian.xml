@@ -52,6 +52,7 @@
       <OnlyCard>61</OnlyCard>
       <OnlyCard>62</OnlyCard>
       <OnlyCard>63</OnlyCard>
+      <OnlyCard>65535</OnlyCard>
     </EquipEffect>
     <Option>MultiDeck</Option>
     <Rarity>Unique</Rarity>
