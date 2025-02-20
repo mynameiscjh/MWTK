@@ -181,9 +181,9 @@
     <Script>DonEyuil_06</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_07" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_08" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_07" ActionScript="XD_血枪_1" Desc="" />
+      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="XD_血枪_2" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_08" ActionScript="XD_血枪_3" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -256,9 +256,9 @@
     <Script>DonEyuil_11</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="greta_destroyDice" ActionScript="" Desc="" />
-      <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_12" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_13" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="greta_destroyDice" ActionScript="XD_血镰_1" Desc="" />
+      <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_12" ActionScript="XD_血镰_2" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_13" ActionScript="XD_血镰_3" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1140,9 +1140,9 @@
     <Script>DonEyuil_11</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="greta_destroyDice" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="6" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_12" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_13" ActionScript="" Desc="" />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="greta_destroyDice" ActionScript="XD_血镰_1" Desc="" />
+      <Behaviour Min="5" Dice="6" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_12" ActionScript="XD_血镰_2" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_13" ActionScript="XD_血镰_3" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -2779,13 +2779,12 @@
     <Artwork>DonEyuil_1.png</Artwork>
     <Rarity>Common</Rarity>
     <Option>OnlyPage</Option>
-    <Spec Range="Near" Cost="0" Affection="Team" EmotionLimit="0" />
+    <Spec Range="FarAreaEach" Cost="0" Affection="Team" EmotionLimit="0" />
     <Script></Script>
-    <ScriptDesc></ScriptDesc>
+    <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_07" ActionScript="XD_血枪_1" Desc="" />
-      <Behaviour Min="6" Dice="12" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="XD_血枪_2" Desc="" />
-      <!-- <Behaviour Min="7" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_08" ActionScript="" Desc="" />-->
+      <Behaviour Min="15" Dice="29" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_终式_1" Desc="" />
+      <Behaviour Min="17" Dice="34" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_终式_2" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
