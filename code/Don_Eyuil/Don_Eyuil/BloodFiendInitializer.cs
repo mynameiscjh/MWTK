@@ -744,6 +744,23 @@ namespace Don_Eyuil
                 public static ActionDetail TKS_BL_S101 { get; internal set; }
                 public static ActionDetail TKS_BL_S102 { get; internal set; }
                 public static ActionDetail TKS_BL_S103 { get; internal set; }
+                public static ActionDetail TKS_BL_S104 { get; internal set; }
+                public static ActionDetail TKS_BL_S105 { get; internal set; }
+                public static ActionDetail TKS_BL_S106 { get; internal set; }
+                public static ActionDetail TKS_BL_S107 { get; internal set; }
+                public static ActionDetail TKS_BL_S108 { get; internal set; }
+                public static ActionDetail TKS_BL_S109 { get; internal set; }
+                public static ActionDetail TKS_BL_S110 { get; internal set; }
+                public static ActionDetail TKS_BL_S111 { get; internal set; }
+                public static ActionDetail TKS_BL_S112 { get; internal set; }
+                public static ActionDetail TKS_BL_S113 { get; internal set; }
+                public static ActionDetail TKS_BL_S114 { get; internal set; }
+                public static ActionDetail TKS_BL_S115 { get; internal set; }
+                public static ActionDetail TKS_BL_S116 { get; internal set; }
+                public static ActionDetail TKS_BL_S117 { get; internal set; }
+                public static ActionDetail TKS_BL_S118 { get; internal set; }
+                public static ActionDetail TKS_BL_S119 { get; internal set; }
+                public static ActionDetail TKS_BL_S120 { get; internal set; }
             }
             public class DiceFlagExtension : TKS_EnumExtender<DiceFlag>
             {

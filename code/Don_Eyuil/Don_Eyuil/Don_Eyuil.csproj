@@ -120,8 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="A_ReadMe.cs" />
+    <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_旋转_绽放吧.cs" />
+    <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_硬血截断.cs" />
+    <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_纵血为刃.cs" />
     <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_终式.cs" />
     <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_血之宝库.cs" />
+    <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_血伞.cs" />
     <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_血刃.cs" />
     <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_双剑.cs" />
     <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_血剑.cs" />
