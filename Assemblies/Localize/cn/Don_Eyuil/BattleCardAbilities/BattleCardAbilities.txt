@@ -256,4 +256,38 @@
   <BattleCardAbility ID="DonEyuil_81">
     <Desc>[命中时]对目标施加8层[流血]与1层[虚弱]</Desc>
   </BattleCardAbility>
+
+  <BattleCardAbility ID="DonEyuil_134">
+    <Desc>仅限装备了血剑时装备
+每一幕开始时若[硬血结晶]不低于15则自动抽取本书页
+[战斗开始]若[硬血结晶]不低于25层则消耗10层时自己获得[摇曳]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_Dice_28">
+    <Desc>[投掷前]本书页使用期间自身[流血]不再衰减</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_Dice_29">
+    <Desc>[命中时]将自身[流血]转移至目标</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_135">
+    <Desc>仅限装备了血镰时装备
+[持有时]自身每施加5层[流血]便使本书页费用-1(使用后复原)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_Dice_30">
+    <Desc>[命中时]使手中一张费用不为0的书页费用-1</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_136">
+    <Desc>仅限装备了血弓时装备
+[使用时]若自身上一张书页为[血鞭]则在本书页末尾置入一颗打击骰子(4-8)</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_Dice_31">
+    <Desc>[命中时]使本书页施加[流血]时额外触发一次</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_Dice_32">
+    <Desc>[命中时]施加1层[流血]</Desc>
+  </BattleCardAbility>
+  <BattleCardAbility ID="DonEyuil_137">
+    <Desc>堂埃尤尔专属书页
+[使用时]获得1点正面情感若自身情感等级达到5则额外恢复1点光芒</Desc>
+  </BattleCardAbility>
+
 </BattleCardAbilityDescRoot>
