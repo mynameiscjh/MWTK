@@ -21,7 +21,7 @@ namespace Don_Eyuil
     }
     public static class ChainingIEnumerableTools
     {
-        public static IEnumerable<T> Do<T>(this IEnumerable<T> sequence, Action<T, int> action)
+        public static IEnumerable<T> ChainingDo<T>(this IEnumerable<T> sequence, Action<T, int> action)
         {
             if (sequence != null)
             {
@@ -35,23 +35,55 @@ namespace Don_Eyuil
             }
             return sequence;
         }
-        public static IEnumerable<T> DoIf<T>(this IEnumerable<T> sequence, Func<T, bool> condition, Action<T, int> action)
+        public static IEnumerable<T> ChainingDo<T>(this IEnumerable<T> sequence, Action<T> action)
         {
-            return sequence.Where(condition).Do(action);
+            if (sequence != null)
+            {
+                IEnumerator<T> enumerator = sequence.GetEnumerator();
+                while (enumerator.MoveNext())
+                {
+                    action(enumerator.Current);
+                }
+            }
+            return sequence;
         }
-        public static IEnumerable<T> DoIf<T>(this IEnumerable<T> sequence, Func<T, int, bool> condition, Action<T, int> action)
+        public static IEnumerable<T> ChainingDoIf<T>(this IEnumerable<T> sequence, Func<T, bool> condition, Action<T, int> action)
         {
-            return sequence.Where(condition).Do(action);
+            return sequence.Where(condition).ChainingDo(action);
         }
-        public static List<T> InsertRanges<T>(this List<T> list, int index, params IEnumerable<T>[] collection)
+        public static IEnumerable<T> ChainingDoIf<T>(this IEnumerable<T> sequence, Func<T, int, bool> condition, Action<T, int> action)
         {
-            collection?.Do((x, _) => list.InsertRange(index, x));
-            return list;
+            return sequence.Where(condition).ChainingDo(action);
         }
-        public static IEnumerable<T> Sort<T>(this IEnumerable<T> list, Comparison<T> comparison)
+        public static IEnumerable<T> ChainingInsertRanges<T>(this IEnumerable<T> sequence, int index, params IEnumerable<T>[] collection)
         {
-            list.ToList().Sort(comparison);
-            return list;
+            collection?.ChainingDo((x) => sequence.ToList().InsertRange(index, x));
+            return sequence;
+        }
+        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence,T item)
+        {
+            sequence.ToList().Remove(item);
+            return sequence;
+        }
+        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence,int index)
+        {
+            sequence.ToList().RemoveAt(index);
+            return sequence;
+        }
+        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence, int index,int range)
+        {
+            sequence.ToList().RemoveRange(index,range);
+            return sequence;
+        }
+        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence, Predicate<T> match)
+        {
+            sequence.ToList().RemoveAll(match);
+            return sequence;
+        }
+        public static IEnumerable<T> ChainingSort<T>(this IEnumerable<T> sequence, Comparison<T> comparison)
+        {
+            sequence.ToList().Sort(comparison);
+            return sequence;
         }
     }
     public static class DivisibleIEnumerableTools
@@ -64,39 +96,6 @@ namespace Don_Eyuil
             return (source.Select(x => { return x.Item1; }), source.Select(x => { return x.Item2; }));
         }
 
-        public static IEnumerable<(TSource, TSource)> DivisibleSkip<TSource>(this IEnumerable<TSource> source, int count)
-        {
-            IEnumerator<TSource> e = source.GetEnumerator();
-            while (count > 0 && e.MoveNext())
-            {
-                count--;
-            }
-            if (count <= 0)
-            {
-                while (e.MoveNext())
-                {
-                    yield return (e.Current, default(TSource));
-                }
-            }
-            yield return (default(TSource), e.Current);
-        }
-        public static IEnumerable<(TSource, TSource)> DivisibleTake<TSource>(this IEnumerable<TSource> source, int count)
-        {
-            foreach (TSource item in source)
-            {
-                int num = count - 1;
-                count = num;
-                if (num >= 0)
-                {
-                    yield return (item, default(TSource));
-                }
-                else
-                {
-                    yield return (default(TSource), item);
-                }
-
-            }
-        }
         public static IEnumerable<(TSource, TSource)> DivisibleSkipWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
         {
             int index = -1;
@@ -110,22 +109,6 @@ namespace Don_Eyuil
                 else
                 {
                     yield return (default(TSource), item);
-                }
-            }
-        }
-        public static IEnumerable<(TSource, TSource)> DivisibleTakeWhile<TSource>(this IEnumerable<TSource> source, Func<TSource, int, bool> predicate)
-        {
-            int index = -1;
-            foreach (TSource item in source)
-            {
-                index = checked(index + 1);
-                if (!predicate(item, index))
-                {
-                    yield return (default(TSource), item);
-                }
-                else
-                {
-                    yield return (item, default(TSource));
                 }
             }
         }

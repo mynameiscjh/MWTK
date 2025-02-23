@@ -269,6 +269,10 @@ namespace Don_Eyuil
                     第四幕：速度骰子×2 堂埃尤尔派硬血术终式-La Sangre 便以决斗作为这场战斗的结尾吧
                     第五幕：速度骰子×4  4种决斗书页)
                 */
+                if (Phase3Round > 4)//0 1 2 3 4 Pass 5-> 0
+                {
+                    Phase3Round = 0;
+                }
                 Phase3Round++;
                 switch (Phase3Round)
                 {

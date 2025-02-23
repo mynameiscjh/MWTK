@@ -146,7 +146,7 @@ namespace Don_Eyuil.San_Sora
             //0 1 --2->1
             //0 1 2 3 4 --5-->2
             HardBloodArt.HardBloodTuple = (new List<BattleUnitBuf_SanHardBlood>() { }, null);
-            SpeedDices.Take(owner.speedDiceCount).DivisibleSkipWhile((x, index) => index < SpeedDices.Count / 2).Do((x,index) =>
+            SpeedDices.Take(owner.speedDiceCount).DivisibleSkipWhile((x, index) => index < SpeedDices.Count / 2).ChainingDo((x,index) =>
             {
                 if(x.Item2 != null)
                 {
