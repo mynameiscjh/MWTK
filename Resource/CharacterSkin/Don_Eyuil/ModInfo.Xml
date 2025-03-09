@@ -651,5 +651,100 @@
       <Pivot pivot_x="-101.2" pivot_y="-174.6" />
       <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
     </TKS_BL_S120>
+    <TKS_BL_S121>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-69" pivot_y="-243.6" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S121>
+    <TKS_BL_S122>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="43.7" pivot_y="-475.9" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S122>
+    <TKS_BL_S123>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="181.7" pivot_y="-462.1" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S123>
+    <TKS_BL_S124>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="50.6" pivot_y="-455.2" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S124>
+    <TKS_BL_S125>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="190.9" pivot_y="-96.4" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S125>
+    <TKS_BL_S126>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="78.2" pivot_y="-310.3" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S126>
+    <TKS_BL_S127>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="78.2" pivot_y="-310.3" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S127>
+    <TKS_BL_S128>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="250.7" pivot_y="-333.3" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S128>
+    <TKS_BL_S129>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-25.3" pivot_y="-287.3" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S129>
+    <TKS_BL_S130>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="20.7" pivot_y="-202.2" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S130>
+    <TKS_BL_S131>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-255.3" pivot_y="-232.1" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S131>
+    <TKS_BL_S132>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-255.3" pivot_y="-232.1" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S132>
+    <TKS_BL_S133>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-66.7" pivot_y="-202.2" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S133>
+    <TKS_BL_S134>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-66.7" pivot_y="-202.2" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S134>
+    <TKS_BL_S135>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-13.8" pivot_y="-190.7" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S135>
+    <TKS_BL_S136>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-34.5" pivot_y="-163.1" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S136>
+    <TKS_BL_S137>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-103.5" pivot_y="-176.9" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S137>
+    <TKS_BL_S138>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-32.2" pivot_y="-199.9" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S138>
+    <TKS_BL_S139>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-41.4" pivot_y="-204.5" />
+      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+    </TKS_BL_S139>
   </ClothInfo>
 </ModInfo>
