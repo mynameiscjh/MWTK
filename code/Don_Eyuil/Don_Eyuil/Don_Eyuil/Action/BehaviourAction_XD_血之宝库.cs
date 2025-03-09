@@ -5,7 +5,7 @@ using static RencounterManager;
 
 namespace Don_Eyuil.Don_Eyuil.Action
 {
-    public class BehaviourAction_XD_血之宝库_1 : BehaviourActionBase
+    /*public class BehaviourAction_XD_血之宝库_1 : BehaviourActionBase
     {
         public override List<MovingAction> GetMovingAction(ref ActionAfterBehaviour self, ref ActionAfterBehaviour opponent)
         {
@@ -55,7 +55,7 @@ namespace Don_Eyuil.Don_Eyuil.Action
             opponent.infoList = list_opponent;
             return list_self;
         }
-    }
+    }*/
 
     public class BehaviourAction_XD_血之宝库_3 : BehaviourActionBase
     {

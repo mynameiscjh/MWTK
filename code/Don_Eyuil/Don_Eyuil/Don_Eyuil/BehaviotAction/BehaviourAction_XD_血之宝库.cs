@@ -2,10 +2,11 @@
 using UnityEngine;
 using static Don_Eyuil.TKS_BloodFiend_Initializer.TKS_EnumExtension;
 using static RencounterManager;
+using DG.Tweening;
 
 namespace Don_Eyuil.Don_Eyuil.Action
 {
-    public class BehaviourAction_XD_血之宝库a_1 : BehaviourActionBase_Don_Eyuil
+    public class BehaviourAction_XD_血之宝库_1 : BehaviourActionBase_Don_Eyuil
     {
         public override void GetMovingAction_DonEyuil(ref List<MovingAction> LS, ref List<MovingAction> LO, ref ActionAfterBehaviour self, ref ActionAfterBehaviour opponent)
         {
@@ -23,7 +24,7 @@ namespace Don_Eyuil.Don_Eyuil.Action
 
         }
     }
-    public class BehaviourAction_XD_血之宝库a_2 : BehaviourActionBase_Don_Eyuil
+    public class BehaviourAction_XD_血之宝库_2 : BehaviourActionBase_Don_Eyuil
     {
         public override void GetMovingAction_DonEyuil(ref List<MovingAction> LS, ref List<MovingAction> LO, ref ActionAfterBehaviour self, ref ActionAfterBehaviour opponent)
         {
@@ -38,7 +39,6 @@ namespace Don_Eyuil.Don_Eyuil.Action
             .Start(LO, ActionDetail.Damaged, CharMoveState.Stop, delay: 0.4f).SetEffectTiming(EffectTiming.POST, EffectTiming.POST, EffectTiming.POST)
             .Next(LS, SMotionExtension.TKS_BL_S2, CharMoveState.Stop, delay: 0.4f).SetEffectTiming(EffectTiming.POST, EffectTiming.POST, EffectTiming.POST)
             .Finish();
-
         }
     }
 }

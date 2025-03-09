@@ -820,9 +820,9 @@ namespace Don_Eyuil
         {
             return;
         }
-        public ChainingMovingActionManager Start(List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        public IChainingMovingAction Start(List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
         {
-            return new ChainingMovingActionManager(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+            return new ChainingMovingAction(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
         }
         public override List<RencounterManager.MovingAction> GetMovingAction(ref RencounterManager.ActionAfterBehaviour self, ref RencounterManager.ActionAfterBehaviour opponent)
         {

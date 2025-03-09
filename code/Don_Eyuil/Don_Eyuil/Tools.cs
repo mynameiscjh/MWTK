@@ -9,6 +9,12 @@ using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using static RencounterManager;
+using DG.Tweening;
+using static Don_Eyuil.MovingActionTools.ChainingMovingAction;
+using static Don_Eyuil.MovingActionTools;
+using static WayBackHomeMapManager;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 namespace Don_Eyuil
 {
 
@@ -116,6 +122,98 @@ namespace Don_Eyuil
     }
     public static class MovingActionTools
     {
+        public interface IMovingActionManager
+        {
+            MovingAction _movingAction { get; set; }
+            List<MovingAction> _baseMovingActions { get; set; }
+            void Push();
+        }
+        public interface IChainingMovingAction
+        {
+            IMovingActionManager _movingActionManager { get; set; }
+        }
+        public interface IDOTWeenMovingAction:IChainingMovingAction
+        {
+            Tween _tween { get; set; }
+        }
+        sealed public class MovingActionManager: IMovingActionManager
+        {
+            public MovingAction _movingAction { get; set; }
+            public List<MovingAction> _baseMovingActions { get; set; }
+            public MovingActionManager(MovingAction movingAction, List<MovingAction> baseMovingActions)
+            {
+                _movingAction = movingAction; _baseMovingActions = baseMovingActions;
+            }
+            public void Push()
+            {
+                _baseMovingActions.Add(_movingAction);
+            }
+        }
+        sealed public class ChainingMovingAction : IChainingMovingAction
+        {
+            public IMovingActionManager _movingActionManager { get; set; }
+            public ChainingMovingAction(List<MovingAction> Base, ActionDetail actionDetail, CharMoveState moveState, float dstRatio, bool updateDir, float delay, float speed)
+            {
+                _movingActionManager = new MovingActionManager(new MovingAction(actionDetail, moveState, dstRatio, updateDir, delay, speed), Base ?? new List<MovingAction>() { });
+            }
+        }
+        sealed public class DOTWeenMovingAction : IChainingMovingAction, IDOTWeenMovingAction
+        {
+            public IMovingActionManager _movingActionManager { get; set; }
+            public Tween _tween { get; set; }
+            public DOTWeenMovingAction(IMovingActionManager movingActionManager,Tween tween)
+            {
+                _movingActionManager = movingActionManager;
+                _tween = tween;
+            }
+        }
+        public static IChainingMovingAction Start(this List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            return new ChainingMovingAction(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public static IChainingMovingAction Finish(this IChainingMovingAction baseAction)
+        {
+            baseAction._movingActionManager?.Push();
+            Debug.LogError("MovingActionTools:ManageFlowPushedSuccessfully");
+            return baseAction;
+        }
+        public static IChainingMovingAction Next(this IChainingMovingAction baseAction, List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            baseAction.Finish();
+            return new ChainingMovingAction(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public static IChainingMovingAction Start(this IChainingMovingAction baseAction, List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            baseAction.Finish();
+            return new ChainingMovingAction(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public static IChainingMovingAction SetEffectTiming(this IChainingMovingAction baseAction, EffectTiming atk, EffectTiming recover, EffectTiming damaged)
+        {
+            baseAction._movingActionManager?._movingAction?.SetEffectTiming(atk, recover, damaged); 
+            return baseAction;
+        }
+        public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, RencounterManager.MovingAction.MoveCustomEventWithElapsed m)
+        {
+            baseAction._movingActionManager?._movingAction?.SetCustomMoving(m);
+            return baseAction;
+        }
+        public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, RencounterManager.MovingAction.MoveCustomEvent m)
+        {
+            baseAction._movingActionManager?._movingAction?.SetCustomMoving(m);
+            return baseAction;
+        }
+        //-------------------------------DOTWEEN部分开始---------------------------------------------------------//
+        public static IDOTWeenMovingAction WithDOTWeen(this IChainingMovingAction baseAction,Tween tween)
+        {
+            return new DOTWeenMovingAction(baseAction._movingActionManager,tween);
+        }
+        public static IDOTWeenMovingAction DOTWeen_Method(this IDOTWeenMovingAction baseAction)
+        {
+            return baseAction;
+        }
+    }
+    /*public static class MovingActionTools
+    {
         public class ChainingMovingActionManager
         {
             public MovingAction _movingAction;
@@ -149,7 +247,13 @@ namespace Don_Eyuil
             baseManager._baseMovingActions.Add(baseManager._movingAction);
             return baseManager;
         }
-    }
+        public static ChainingDOTWeenMovingActionManager WithDOTween(this ChainingMovingActionManager baseManager)
+        {
+
+            return baseManager;
+        }
+    }*/
+
     public static class PatchTools
     {
         public static class UnmanagedDelegateTypes

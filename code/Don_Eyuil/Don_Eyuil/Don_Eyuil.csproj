@@ -54,6 +54,10 @@
       <HintPath>..\..\..\Assemblies\CustomMapUtility.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DOTween, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\DOTween.dll</HintPath>
+    </Reference>
     <Reference Include="Facepunch.Steamworks.Win64, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Managed\Facepunch.Steamworks.Win64.dll</HintPath>
