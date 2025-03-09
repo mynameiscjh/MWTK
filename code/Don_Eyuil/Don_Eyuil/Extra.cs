@@ -15,6 +15,8 @@ using MonoMod.Utils;
 using MonoMod.Utils.Cil;
 using System.Runtime.Remoting.Messaging;
 using System.Runtime.CompilerServices;
+using static RencounterManager;
+using static Don_Eyuil.MovingActionTools;
 namespace Don_Eyuil
 {
     public class EmotionEgoXmlInfo_Mod : EmotionEgoXmlInfo
@@ -808,8 +810,28 @@ namespace Don_Eyuil
                 new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(BattleUnitBuf_Don_Eyuil), "get_BuffName")),
                 new CodeInstruction(OpCodes.Ret),
             });
-
             return codes.AsEnumerable();
+        }
+    }
+    public class BehaviourActionBase_Don_Eyuil: BehaviourActionBase
+    {
+        public virtual bool CheckTriggerCondition(ref RencounterManager.ActionAfterBehaviour self, ref RencounterManager.ActionAfterBehaviour opponent) => self.result != Result.Win;
+        public virtual void GetMovingAction_DonEyuil(ref List<MovingAction> LS, ref List<MovingAction> LO, ref RencounterManager.ActionAfterBehaviour self, ref RencounterManager.ActionAfterBehaviour opponent)
+        {
+            return;
+        }
+        public ChainingMovingActionManager Start(List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            return new ChainingMovingActionManager(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public override List<RencounterManager.MovingAction> GetMovingAction(ref RencounterManager.ActionAfterBehaviour self, ref RencounterManager.ActionAfterBehaviour opponent)
+        {
+            if (this.CheckTriggerCondition(ref self, ref opponent)) { return new List<MovingAction>(); }
+            opponent.infoList.Clear();
+            List<MovingAction> list_self = new List<MovingAction>(),list_opponent = new List<MovingAction>();
+            GetMovingAction_DonEyuil(ref list_self, ref list_opponent, ref self, ref opponent);
+            opponent.infoList = list_opponent;
+            return list_self;
         }
     }
     public static class ExtraMethods

@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using static RencounterManager;
 namespace Don_Eyuil
 {
 
@@ -111,6 +112,42 @@ namespace Don_Eyuil
                     yield return (default(TSource), item);
                 }
             }
+        }
+    }
+    public static class MovingActionTools
+    {
+        public class ChainingMovingActionManager
+        {
+            public MovingAction _movingAction;
+            public List<MovingAction> _baseMovingActions;
+            public ChainingMovingActionManager(List<MovingAction> Base,ActionDetail actionDetail, CharMoveState moveState, float dstRatio, bool updateDir, float delay, float speed)
+            {
+                _movingAction = new MovingAction(actionDetail, moveState, dstRatio, updateDir, delay, speed);
+                _baseMovingActions = Base ?? new List<MovingAction>() { };
+            }
+        }
+        public static ChainingMovingActionManager Start(this List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            return new ChainingMovingActionManager(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public static ChainingMovingActionManager Next(this ChainingMovingActionManager _, List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            _.Finish();
+            return new ChainingMovingActionManager(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public static ChainingMovingActionManager Start(this ChainingMovingActionManager _, List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            return _.Next(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public static ChainingMovingActionManager SetEffectTiming(this ChainingMovingActionManager baseManager, EffectTiming atk, EffectTiming recover, EffectTiming damaged)
+        {
+            baseManager._movingAction.SetEffectTiming(atk, recover, damaged);
+            return baseManager;
+        }
+        public static ChainingMovingActionManager Finish(this ChainingMovingActionManager baseManager)
+        {
+            baseManager._baseMovingActions.Add(baseManager._movingAction);
+            return baseManager;
         }
     }
     public static class PatchTools
