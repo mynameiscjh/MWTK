@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="A_ReadMe.cs" />
+    <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_凝血化锋.cs" />
     <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_旋转_绽放吧.cs" />
     <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_硬血截断.cs" />
     <Compile Include="Don_Eyuil\Action\BehaviourAction_XD_纵血为刃.cs" />
