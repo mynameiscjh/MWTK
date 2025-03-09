@@ -38,7 +38,7 @@ namespace Don_Eyuil.San_Sora.Player.Buff
             {
                 string temp = Singleton<BattleEffectTextsXmlList>.Instance.GetEffectTextDesc(keywordId, paramInBufDesc);
 
-                var tempList = new List<BattleUnitBuf_SanHardBlood> { Sword, Lance, Blade, Bow, DoubleSwords, Scourge, Sickle, Armour }.Where(x => x != null).Sort((x, y) => x.Index - y.Index).ToList();
+                var tempList = new List<BattleUnitBuf_SanHardBlood> { Sword, Lance, Blade, Bow, DoubleSwords, Scourge, Sickle, Armour }.Where(x => x != null).ChainingSort((x, y) => x.Index - y.Index).ToList();
 
                 foreach (var item in tempList)
                 {

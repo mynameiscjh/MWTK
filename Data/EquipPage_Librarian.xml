@@ -52,7 +52,6 @@
       <OnlyCard>61</OnlyCard>
       <OnlyCard>62</OnlyCard>
       <OnlyCard>63</OnlyCard>
-      <OnlyCard>65535</OnlyCard>
     </EquipEffect>
     <Option>MultiDeck</Option>
     <Rarity>Unique</Rarity>
@@ -106,7 +105,7 @@
     </EquipEffect>
     <Option>MultiDeck</Option>
     <Rarity>Unique</Rarity>
-    <CharacterSkin>桑空-占位符</CharacterSkin>
+    <CharacterSkin>San_Sora</CharacterSkin>
     <CharacterSkinType>Custom</CharacterSkinType>
     <SkinGender>N</SkinGender>
     <Chapter>7</Chapter>

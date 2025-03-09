@@ -93,6 +93,7 @@ namespace Don_Eyuil.San_Sora
             }
             else if(Phase == 3)
             {
+                if (Phase3Round == 4) { return 0 + EmotionOffest; }
                 return 6;
             }
             return base.SpeedDiceNumAdder();
@@ -144,8 +145,8 @@ namespace Don_Eyuil.San_Sora
             //0 --1->0
             //0 1 --2->1
             //0 1 2 3 4 --5-->2
-            HardBloodArt.HardBloodTuple.Item1 = new List<BattleUnitBuf_SanHardBlood>() { };
-            SpeedDices.Take(owner.speedDiceCount).DivisibleSkipWhile((x, index) => index < SpeedDices.Count / 2).Do((x,index) =>
+            HardBloodArt.HardBloodTuple = (new List<BattleUnitBuf_SanHardBlood>() { }, null);
+            SpeedDices.Take(owner.speedDiceCount).DivisibleSkipWhile((x, index) => index < SpeedDices.Count / 2).ChainingDo((x,index) =>
             {
                 if(x.Item2 != null)
                 {
