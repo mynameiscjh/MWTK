@@ -755,6 +755,7 @@ namespace Don_Eyuil.Don_Eyuil.Player.PassiveAbility
 
         public override void OnRoundStart()
         {
+            owner.allyCardDetail.AddTempCard(MyTools.Create(65535)).SetCostToZero();
             if ((owner.emotionDetail.EmotionLevel == 0 && !fl0) || (owner.emotionDetail.EmotionLevel == 2 && !fl2) || (owner.emotionDetail.EmotionLevel == 4 && !fl4) || (fl && owner.emotionDetail.EmotionLevel > 4))
             {
                 ShowCards();
