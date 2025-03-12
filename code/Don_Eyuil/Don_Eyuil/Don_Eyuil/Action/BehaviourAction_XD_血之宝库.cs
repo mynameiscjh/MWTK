@@ -57,7 +57,7 @@ namespace Don_Eyuil.Don_Eyuil.Action
         }
     }*/
 
-    public class BehaviourAction_XD_血之宝库_3 : BehaviourActionBase
+    public class BehaviourAction_XD_血之宝库A_3 : BehaviourActionBase
     {
         public override unsafe List<MovingAction> GetMovingAction(ref ActionAfterBehaviour self, ref ActionAfterBehaviour opponent)
         {

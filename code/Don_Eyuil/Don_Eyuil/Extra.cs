@@ -17,6 +17,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Runtime.CompilerServices;
 using static RencounterManager;
 using static Don_Eyuil.MovingActionTools;
+using static Don_Eyuil.MovingActionTools.ChainingMovingAction;
 namespace Don_Eyuil
 {
     public class EmotionEgoXmlInfo_Mod : EmotionEgoXmlInfo
