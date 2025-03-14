@@ -15,6 +15,9 @@ using static Don_Eyuil.MovingActionTools;
 using static WayBackHomeMapManager;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
+using static Don_Eyuil.MovingActionTools.MovingActionManager;
+using BTAI;
+using static Don_Eyuil.MovingActionTools.DOTWeenMovingAction;
 namespace Don_Eyuil
 {
 
@@ -122,49 +125,294 @@ namespace Don_Eyuil
     }
     public static class MovingActionTools
     {
-        public interface IMovingActionManager
+        public class MovingActionManager: IMovingActionManager
         {
-            MovingAction _movingAction { get; set; }
-            List<MovingAction> _baseMovingActions { get; set; }
-            void Push();
+            public interface IMovingActionManager
+            {
+                MovingAction _movingAction { get; set; }
+                List<MovingAction> _baseMovingActions { get; set; }
+                void Push();
+            }
+            public MovingAction _movingAction { get; set; }
+            public List<MovingAction> _baseMovingActions { get; set; }
+
+            protected readonly IMovingActionManager _movingActionDecorater;
+            public MovingActionManager(MovingAction movingAction, List<MovingAction> baseMovingActions){
+                _movingAction = movingAction; _baseMovingActions = baseMovingActions;
+            }
+            public MovingActionManager(IMovingActionManager movingActionDecorater)
+            {
+                _movingActionDecorater = movingActionDecorater;
+                _movingAction = movingActionDecorater?._movingAction;
+                _baseMovingActions = movingActionDecorater?._baseMovingActions;
+            }
+
+            //C->(CP->BP)->B->(BP->AP)->A->P
+            public virtual void Push(){
+                if(_movingActionDecorater != null){ _movingActionDecorater.Push(); } else{
+                    _baseMovingActions.Add(_movingAction);
+                }
+            }
+            public class MovingAction_CustomMovingEventSetter: MovingActionManager
+            {
+                private bool _Interval = false;
+                public MovingAction_CustomMovingEventSetter(IMovingActionManager movingActionDecorater,bool interval = false) : base(movingActionDecorater)
+                {
+                    _Interval = interval;
+                }
+                public virtual MovingAction.MoveCustomEventWithElapsed MergeMoveFunc()
+                {
+                    return (float deltaTime, float elapsedTime) => { return true; };
+                }
+                public override void Push()
+                {
+                    MovingAction.MoveCustomEventWithElapsed baseMoveFunc = (AccessTools.Field(typeof(MovingAction), "_moveFunc").GetValue(_movingAction) as MovingAction.MoveCustomEventWithElapsed) ?? new MovingAction.MoveCustomEventWithElapsed((float deltaTime, float elapsedTime) => { return true; });
+                    MovingAction.MoveCustomEventWithElapsed newMoveFunc = MergeMoveFunc();
+                    float latestElapsedTime = 0f;
+                    _movingAction?.SetCustomMoving((float deltaTime, float elapsedTime) =>
+                    {
+                        if (newMoveFunc != baseMoveFunc)
+                        {
+                            if (newMoveFunc(deltaTime, elapsedTime))
+                            {
+                                newMoveFunc = baseMoveFunc;
+                                latestElapsedTime = elapsedTime;
+                                if (!_Interval) { newMoveFunc(deltaTime, 0); };
+                            }
+                        }
+                        else
+                        {
+                            return newMoveFunc(deltaTime, elapsedTime - latestElapsedTime);
+                        }
+                        return false;
+                    });
+                    base.Push();
+                }
+                sealed public class MovingAction_CustomMovingEventActionManager: MovingAction_CustomMovingEventSetter
+                {
+                    private Queue<MovingAction.MoveCustomEventWithElapsed> _moveFuncQueue = new Queue<MovingAction.MoveCustomEventWithElapsed> { };
+                    public MovingAction_CustomMovingEventActionManager(IMovingActionManager movingActionDecorater, MovingAction.MoveCustomEventWithElapsed[] moveFuncs, bool interval = false) : base(movingActionDecorater, interval){
+                        moveFuncs?.DoIf(x => x.Method.HasMethodBody(), y => _moveFuncQueue.Enqueue(y));
+                    }
+                    public MovingAction_CustomMovingEventActionManager(IMovingActionManager movingActionDecorater, MovingAction.MoveCustomEvent[] moveFuncs, bool interval = false) : base(movingActionDecorater, interval){
+                        moveFuncs?.DoIf(x => x.Method.HasMethodBody(), y => _moveFuncQueue.Enqueue(((float deltaTime, float elapsedTime) => y(deltaTime))));
+                    }
+                    public override MovingAction.MoveCustomEventWithElapsed MergeMoveFunc()
+                    {
+                        float latestElapsedTime = 0f;
+                        return (deltaTime, elapsedTime) =>
+                        {
+                            if (_moveFuncQueue.Count > 0)
+                            {
+                                if (_moveFuncQueue.Peek()(deltaTime, elapsedTime - latestElapsedTime))
+                                {
+                                    _moveFuncQueue.Dequeue();
+                                    latestElapsedTime = elapsedTime;
+                                    if (!_Interval && _moveFuncQueue.Count > 0) { _moveFuncQueue.Peek()(deltaTime, 0); };
+                                }
+                            }
+                            else
+                            {
+                                return true;
+                            }
+                            return false;
+                        };
+                    }
+                }
+                sealed public class MovingAction_DOTWeenActionManager : MovingAction_CustomMovingEventSetter
+                {
+                    private DG.Tweening.Sequence _DOTWeenSequence;
+                    public MovingAction_DOTWeenActionManager(IMovingActionManager movingActionDecorater, Queue<Tween> DOTWeens, bool interval = false) : base(movingActionDecorater, interval)
+                    {
+                        _DOTWeenSequence = _DOTWeenSequence??DOTween.Sequence();
+                        foreach (Tween tween in DOTWeens)
+                        {
+                            _DOTWeenSequence.Append(tween);
+                        }
+                        _DOTWeenSequence.Pause();
+                    }
+                    public MovingAction_DOTWeenActionManager(IMovingActionManager movingActionDecorater, DG.Tweening.Sequence DOTWeens, bool interval = false) : base(movingActionDecorater, interval)
+                    {
+                        _DOTWeenSequence = DOTWeens;
+                        _DOTWeenSequence.Pause();
+                    }
+                    public override MovingAction.MoveCustomEventWithElapsed MergeMoveFunc()
+                    {
+                        bool _HasStartedPlaying = false;
+                        bool _HasFinishedPlaying = false;
+                        return (deltaTime, elapsedTime) =>
+                        {
+                            if (!_HasStartedPlaying)
+                            {
+                                _DOTWeenSequence.Play().AppendCallback(() => { _HasFinishedPlaying = true; }); 
+                                _HasStartedPlaying = true;
+                            }
+                            return _HasFinishedPlaying;
+                        };
+                    }
+                }
+
+            }
         }
+        sealed public class ChainingMovingAction: IChainingMovingAction
+        {
+            public interface IChainingMovingAction
+            {
+                IMovingActionManager _movingActionManager { get; set; }
+                void Finish();
+            }
+            public IMovingActionManager _movingActionManager { get; set; }
+            public ChainingMovingAction(List<MovingAction> Base, ActionDetail actionDetail, CharMoveState moveState, float dstRatio, bool updateDir, float delay, float speed)
+            {
+                _movingActionManager = new MovingActionManager(new MovingAction(actionDetail, moveState, dstRatio, updateDir, delay, speed), Base ?? new List<MovingAction>() { });
+            }
+            public void Finish()
+            {
+                _movingActionManager?.Push();
+            }
+        }
+        sealed public class DOTWeenMovingAction : IChainingMovingAction, IDOTWeenMovingAction
+        {
+            public interface IDOTWeenMovingAction : IChainingMovingAction
+            {
+                IDOTWeenMovingAction AppendDOTween(params Tween[] tweens);
+            }
+            public IMovingActionManager _movingActionManager { get; set; }
+            private Queue<Tween> _DOTWeenQueue = new Queue<Tween> { };
+            public DOTWeenMovingAction(IMovingActionManager movingActionManager){
+                _movingActionManager = movingActionManager;
+            }
+            public void Finish()
+            {
+                this.WithMovingActionDecorator(new MovingAction_CustomMovingEventSetter.MovingAction_DOTWeenActionManager(_movingActionManager, _DOTWeenQueue));
+                _movingActionManager?.Push();
+            }
+            public IDOTWeenMovingAction AppendDOTween(params Tween[] tweens)
+            {
+                tweens.Do(x => _DOTWeenQueue.Enqueue(x.Pause()));
+                return this;
+            }
+        }
+        //---------------------------------装饰器部分--------------------------------------------------------//
+        public static IChainingMovingAction WithMovingActionDecorator(this IChainingMovingAction baseAction, IMovingActionManager movingActionDecorator)
+        {
+            baseAction._movingActionManager = movingActionDecorator;
+            return baseAction;
+        }
+
+        //---------------------------------定义流控制部分--------------------------------------------------------//
+        public static IChainingMovingAction Start(this List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            return new ChainingMovingAction(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public static IChainingMovingAction Finish(this IChainingMovingAction baseAction)
+        {
+            baseAction.Finish();
+            return baseAction;
+        }
+        public static IChainingMovingAction Next(this IChainingMovingAction baseAction, List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            baseAction.Finish();
+            return new ChainingMovingAction(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public static IChainingMovingAction Start(this IChainingMovingAction baseAction, List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
+        {
+            baseAction.Finish();
+            return new ChainingMovingAction(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
+        }
+        public static IChainingMovingAction SetEffectTiming(this IChainingMovingAction baseAction, EffectTiming atk, EffectTiming recover, EffectTiming damaged)
+        {
+            baseAction._movingActionManager?._movingAction?.SetEffectTiming(atk, recover, damaged);
+            return baseAction;
+        }
+        public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, params RencounterManager.MovingAction.MoveCustomEventWithElapsed[] m)
+        {
+            return baseAction.WithMovingActionDecorator(new MovingAction_CustomMovingEventSetter.MovingAction_CustomMovingEventActionManager(baseAction._movingActionManager, m));
+        }
+        public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, params RencounterManager.MovingAction.MoveCustomEvent[] m)
+        {
+            return baseAction.WithMovingActionDecorator(new MovingAction_CustomMovingEventSetter.MovingAction_CustomMovingEventActionManager(baseAction._movingActionManager, m));
+        }
+        public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, bool interval, params RencounterManager.MovingAction.MoveCustomEventWithElapsed[] m)
+        {
+            return baseAction.WithMovingActionDecorator(new MovingAction_CustomMovingEventSetter.MovingAction_CustomMovingEventActionManager(baseAction._movingActionManager, m,interval));
+        }
+        public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, bool interval, params RencounterManager.MovingAction.MoveCustomEvent[] m)
+        {
+            return baseAction.WithMovingActionDecorator(new MovingAction_CustomMovingEventSetter.MovingAction_CustomMovingEventActionManager(baseAction._movingActionManager, m, interval));
+        }
+        //---------------------------------DOTWeen部分--------------------------------------------------------//
+        public static IDOTWeenMovingAction WithDOTWeen(this IChainingMovingAction baseAction, params Tween[] tweens)
+        {
+            return new DOTWeenMovingAction(baseAction._movingActionManager).AppendDOTween(tweens);
+        }
+        //确保在最好情况下一条定义流只维护一个DOTWeen装饰器以减少开销
+        public static IDOTWeenMovingAction WithDOTWeen(this IDOTWeenMovingAction baseAction, params Tween[] tweens)
+        {
+            return baseAction?.AppendDOTween(tweens);
+        }
+    }
+    /*public static class MovingActionTools
+    {
         public interface IChainingMovingAction
         {
-            IMovingActionManager _movingActionManager { get; set; }
+            MovingActionManager _movingActionManager { get; set; }
+            void Finish();
         }
         public interface IDOTWeenMovingAction:IChainingMovingAction
         {
-            Tween _tween { get; set; }
+            Queue<Tween> _tweenQueue { get; set; }
         }
-        sealed public class MovingActionManager: IMovingActionManager
+        sealed public class MovingActionManager
         {
             public MovingAction _movingAction { get; set; }
             public List<MovingAction> _baseMovingActions { get; set; }
+            public RencounterManager.MovingAction.MoveCustomEventWithElapsed _moveCustomEvent { get; set; }
             public MovingActionManager(MovingAction movingAction, List<MovingAction> baseMovingActions)
             {
                 _movingAction = movingAction; _baseMovingActions = baseMovingActions;
             }
             public void Push()
             {
+                if (_moveCustomEvent != null) { _movingAction.SetCustomMoving(_moveCustomEvent); }
                 _baseMovingActions.Add(_movingAction);
+            }
+            public void WithCustomMoving(RencounterManager.MovingAction.MoveCustomEventWithElapsed m)
+            {
+                _moveCustomEvent = (_moveCustomEvent == null) ? m : (_moveCustomEvent + m);
             }
         }
         sealed public class ChainingMovingAction : IChainingMovingAction
         {
-            public IMovingActionManager _movingActionManager { get; set; }
+            public MovingActionManager _movingActionManager { get; set; }
             public ChainingMovingAction(List<MovingAction> Base, ActionDetail actionDetail, CharMoveState moveState, float dstRatio, bool updateDir, float delay, float speed)
             {
                 _movingActionManager = new MovingActionManager(new MovingAction(actionDetail, moveState, dstRatio, updateDir, delay, speed), Base ?? new List<MovingAction>() { });
             }
+            public void Finish()
+            {
+                _movingActionManager?.Push();
+            }
         }
         sealed public class DOTWeenMovingAction : IChainingMovingAction, IDOTWeenMovingAction
         {
-            public IMovingActionManager _movingActionManager { get; set; }
-            public Tween _tween { get; set; }
-            public DOTWeenMovingAction(IMovingActionManager movingActionManager,Tween tween)
+            public MovingActionManager _movingActionManager { get; set; }
+            public Queue<Tween> _tweenQueue { get; set; }
+            public DOTWeenMovingAction(MovingActionManager movingActionManager,Tween tween)
             {
                 _movingActionManager = movingActionManager;
-                _tween = tween;
+                _tweenQueue = _tweenQueue ?? new Queue<Tween>() { };
+                _tweenQueue.Enqueue(tween);
+            }
+            public DOTWeenMovingAction(MovingActionManager movingActionManager,params Tween[] tweens)
+            {
+                _movingActionManager = movingActionManager;
+                _tweenQueue = _tweenQueue ?? new Queue<Tween>() { };
+                tweens.Do(x =>  _tweenQueue.Enqueue(x));
+            }
+            public void Finish()
+            {
+                _movingActionManager?.Push();
             }
         }
         public static IChainingMovingAction Start(this List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
@@ -173,8 +421,8 @@ namespace Don_Eyuil
         }
         public static IChainingMovingAction Finish(this IChainingMovingAction baseAction)
         {
-            baseAction._movingActionManager?.Push();
-            Debug.LogError("MovingActionTools:ManageFlowPushedSuccessfully");
+            baseAction.Finish();
+            //Debug.LogError("MovingActionTools:ManageFlowPushedSuccessfully");
             return baseAction;
         }
         public static IChainingMovingAction Next(this IChainingMovingAction baseAction, List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
@@ -194,63 +442,24 @@ namespace Don_Eyuil
         }
         public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, RencounterManager.MovingAction.MoveCustomEventWithElapsed m)
         {
-            baseAction._movingActionManager?._movingAction?.SetCustomMoving(m);
+            baseAction._movingActionManager.WithCustomMoving(m);
+            //baseAction._movingActionManager?._movingAction?.SetCustomMoving(m);
             return baseAction;
         }
         public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, RencounterManager.MovingAction.MoveCustomEvent m)
         {
-            baseAction._movingActionManager?._movingAction?.SetCustomMoving(m);
+            baseAction._movingActionManager.WithCustomMoving(((float deltaTime, float elapsedTime) => m(deltaTime)));
+            //baseAction._movingActionManager?._movingAction?.SetCustomMoving(m);
             return baseAction;
         }
         //-------------------------------DOTWEEN部分开始---------------------------------------------------------//
         public static IDOTWeenMovingAction WithDOTWeen(this IChainingMovingAction baseAction,Tween tween)
-        {
+        { 
             return new DOTWeenMovingAction(baseAction._movingActionManager,tween);
         }
-        public static IDOTWeenMovingAction DOTWeen_Method(this IDOTWeenMovingAction baseAction)
+        public static IDOTWeenMovingAction WithDOTWeen(this IChainingMovingAction baseAction,params Tween[] tweens)
         {
-            return baseAction;
-        }
-    }
-    /*public static class MovingActionTools
-    {
-        public class ChainingMovingActionManager
-        {
-            public MovingAction _movingAction;
-            public List<MovingAction> _baseMovingActions;
-            public ChainingMovingActionManager(List<MovingAction> Base,ActionDetail actionDetail, CharMoveState moveState, float dstRatio, bool updateDir, float delay, float speed)
-            {
-                _movingAction = new MovingAction(actionDetail, moveState, dstRatio, updateDir, delay, speed);
-                _baseMovingActions = Base ?? new List<MovingAction>() { };
-            }
-        }
-        public static ChainingMovingActionManager Start(this List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
-        {
-            return new ChainingMovingActionManager(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
-        }
-        public static ChainingMovingActionManager Next(this ChainingMovingActionManager _, List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
-        {
-            _.Finish();
-            return new ChainingMovingActionManager(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
-        }
-        public static ChainingMovingActionManager Start(this ChainingMovingActionManager _, List<MovingAction> managedList, ActionDetail actionDetail, CharMoveState moveState, float dstRatio = 1f, bool updateDir = true, float delay = 0.125f, float speed = 1f)
-        {
-            return _.Next(managedList, actionDetail, moveState, dstRatio, updateDir, delay, speed);
-        }
-        public static ChainingMovingActionManager SetEffectTiming(this ChainingMovingActionManager baseManager, EffectTiming atk, EffectTiming recover, EffectTiming damaged)
-        {
-            baseManager._movingAction.SetEffectTiming(atk, recover, damaged);
-            return baseManager;
-        }
-        public static ChainingMovingActionManager Finish(this ChainingMovingActionManager baseManager)
-        {
-            baseManager._baseMovingActions.Add(baseManager._movingAction);
-            return baseManager;
-        }
-        public static ChainingDOTWeenMovingActionManager WithDOTween(this ChainingMovingActionManager baseManager)
-        {
-
-            return baseManager;
+            return new DOTWeenMovingAction(baseAction._movingActionManager, tweens);
         }
     }*/
 
