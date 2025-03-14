@@ -80,25 +80,16 @@ namespace Don_Eyuil.Don_Eyuil.Action
                 return false;
 
             }).SetEffectTiming_Tool(EffectTiming.NONE, EffectTiming.NONE, EffectTiming.NONE).Add(list_self);*/
-
+            
 
             Start(LO, ActionDetail.Default, CharMoveState.Stop, delay: 0.4f).SetEffectTiming(EffectTiming.NONE, EffectTiming.NONE, EffectTiming.NONE)
-            .Next(LS, SMotionExtension.TKS_BL_S3, CharMoveState.Custom, 5, false, 0.8f, 3).WithCustomMoving((deltaTime, elapsedTime) =>
-                {
-                    Debug.LogError("aaaaaaa:" + elapsedTime);
-                    return elapsedTime>=0.5f;
-                }, (deltaTime, elapsedTime) =>
-                {
-                    Debug.LogError("bbbbbbb:" + elapsedTime);
-                    return elapsedTime >= 0.75f;
-                }).SetEffectTiming(EffectTiming.NONE, EffectTiming.NONE, EffectTiming.NONE)
-                .WithCustomMoving((deltaTime, elapsedTime) =>
-                {
-                    Debug.LogError("ccccccc:" + elapsedTime);
-                    return elapsedTime >= 0.3f;
-                })
-            .Start(LO, ActionDetail.Damaged, CharMoveState.Stop, delay: 0.4f).SetEffectTiming(EffectTiming.POST, EffectTiming.POST, EffectTiming.POST)
             .Next(LS, SMotionExtension.TKS_BL_S3, CharMoveState.Custom, 5, false, 0.8f, 3).SetEffectTiming(EffectTiming.NONE, EffectTiming.NONE, EffectTiming.NONE)
+            .Start(LO, ActionDetail.Damaged, CharMoveState.Stop, delay: 0.4f).SetEffectTiming(EffectTiming.POST, EffectTiming.POST, EffectTiming.POST)
+            .Next(LS, SMotionExtension.TKS_BL_S2, CharMoveState.Custom, 5, false, 0.8f, 3).SetEffectTiming(EffectTiming.NONE, EffectTiming.NONE, EffectTiming.NONE)
+            .Start(LO, ActionDetail.Damaged, CharMoveState.Stop, delay: 0.4f).SetEffectTiming(EffectTiming.POST, EffectTiming.POST, EffectTiming.POST)
+            .Next(LS, SMotionExtension.TKS_BL_S1, CharMoveState.Custom, 5, false, 0.8f, 3).WithDOTWeen(
+                self.view.transform.DOMoveY(5f,0.25f).SetEase(Ease.InSine).SetRelative(), 
+                self.view.transform.DOMoveY(-5f, 0.25f).SetEase(Ease.OutSine).SetRelative())
             .Finish();
         }
     }
