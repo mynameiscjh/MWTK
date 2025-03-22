@@ -62,7 +62,7 @@
     <BehaviourList>
       <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_02" ActionScript="XD_凝血化锋_1" Desc="" />
       <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="4" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_凝血化锋_2" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -791,9 +791,9 @@
     <Script>DonEyuil_39</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_31" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_31" ActionScript="XD_纵血为刃_1" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_纵血为刃_2" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_纵血为刃_3" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -816,9 +816,9 @@
     <Script>DonEyuil_39</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_40" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_40" ActionScript="XD_硬血截断_1" Desc="" />
       <Behaviour Min="5" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="XD_硬血截断_3" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -891,9 +891,9 @@
     <Script>DonEyuil_44</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_46" ActionScript="" Desc="" />
-      <Behaviour Min="7" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding4atk" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_46" ActionScript="XD_冲锋_驽骍难得_1" Desc="" />
+      <Behaviour Min="7" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_冲锋_驽骍难得_2" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding4atk" ActionScript="XD_冲锋_驽骍难得_3" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -941,8 +941,8 @@
     <Script>DonEyuil_50</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="15" Dice="29" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="17" Dice="34" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="15" Dice="29" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_终式_1" Desc="" />
+      <Behaviour Min="17" Dice="34" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_终式_2" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1325,8 +1325,8 @@
     <Script>DonEyuil_62</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_63" ActionScript="" Desc="" />
-      <Behaviour Min="13" Dice="21" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_64" ActionScript="" Desc="" />
+      <Behaviour Min="9" Dice="17" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_63" ActionScript="XD_终式_1" Desc="" />
+      <Behaviour Min="13" Dice="21" Type="Atk" Detail="Slash" Motion="H" MotionDefault="N" EffectRes="" Script="DonEyuil_64" ActionScript="XD_终式_2" Desc="" />
     </BehaviourList>
     <Chapter>6</Chapter>
     <SpecialEffect />
@@ -1376,9 +1376,9 @@
     <Script>DonEyuil_66</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_46" ActionScript="" Desc="" />
-      <Behaviour Min="7" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding4atk" ActionScript="" Desc="" />
+      <Behaviour Min="6" Dice="11" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_46" ActionScript="XD_冲锋_驽骍难得_1" Desc="" />
+      <Behaviour Min="7" Dice="9" Type="Atk" Detail="Slash" Motion="Z" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_冲锋_驽骍难得_2" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="bleeding4atk" ActionScript="XD_冲锋_驽骍难得_3" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1480,9 +1480,9 @@
     <Script>DonEyuil_39</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_71" ActionScript="" Desc="" />
-      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_71" ActionScript="XD_纵血为刃_1" Desc="" />
+      <Behaviour Min="6" Dice="9" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_纵血为刃_2" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_纵血为刃_3" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -1506,9 +1506,9 @@
     <Script>DonEyuil_72</Script>
     <ScriptDesc />
     <BehaviourList>
-      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_73" ActionScript="" Desc="" />
+      <Behaviour Min="8" Dice="13" Type="Atk" Detail="Penetrate" Motion="Z" MotionDefault="N" EffectRes="" Script="DonEyuil_73" ActionScript="XD_硬血截断_1" Desc="" />
       <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc="" />
-      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="" Desc="" />
+      <Behaviour Min="5" Dice="8" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="bleeding3atk" ActionScript="XD_硬血截断_3" Desc="" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <SpecialEffect />
@@ -2784,8 +2784,8 @@
     <ScriptDesc />
     <BehaviourList>
       <Behaviour Min="7" Dice="13" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_Dice_30" ActionScript="XD_辉耀血光_1" Desc="[命中时]使手中一张费用不为0的书页费用-1" />
-      <!-- <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc=" " />
-      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc=" " /> -->
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_辉耀血光_2" Desc=" " />
+      <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc=" " />
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -2801,8 +2801,8 @@
 每一幕开始时若[硬血结晶]不低于15则自动抽取本书页
 [战斗开始]若[硬血结晶]不低于25层则消耗10层时自己获得[摇曳]</ScriptDesc>
     <BehaviourList>
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_Dice_28" ActionScript="" Desc="[投掷前]本书页使用期间自身[流血]不再衰减" />
-      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_Dice_29" ActionScript="" Desc="[命中时]将自身[流血]转移至目标" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_Dice_28" ActionScript="XD_血晶瓦解_1" Desc="[投掷前]本书页使用期间自身[流血]不再衰减" />
+      <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_Dice_29" ActionScript="XD_血晶瓦解_2" Desc="[命中时]将自身[流血]转移至目标" />
       <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc=" " />
       <Behaviour Min="2" Dice="7" Type="Standby" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc=" " />
     </BehaviourList>
@@ -2819,8 +2819,8 @@
     <ScriptDesc>仅限装备了血镰时装备
 [持有时]自身每施加5层[流血]便使本书页费用-1(使用后复原)</ScriptDesc>
     <BehaviourList>
-      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_Dice_30" ActionScript="" Desc="[命中时]使手中一张费用不为0的书页费用-1" />
-      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc=" " />
+      <Behaviour Min="7" Dice="13" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="DonEyuil_Dice_30" ActionScript="XD_辉耀血光_1" Desc="[命中时]使手中一张费用不为0的书页费用-1" />
+      <Behaviour Min="6" Dice="9" Type="Atk" Detail="Slash" Motion="J" MotionDefault="N" EffectRes="" Script="" ActionScript="XD_辉耀血光_2" Desc=" " />
       <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc=" " />
     </BehaviourList>
     <Chapter>7</Chapter>
@@ -2854,7 +2854,7 @@
 [使用时]获得1点正面情感若自身情感等级达到5则额外恢复1点光芒</ScriptDesc>
     <BehaviourList>
       <Behaviour Min="6" Dice="7" Type="Def" Detail="Guard" Motion="G" MotionDefault="N" EffectRes="" Script="" ActionScript="" Desc=" " />
-      <Behaviour Min="4" Dice="5" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="" Desc="[命中时]下一幕中对目标施加2层[流血]" />
+      <Behaviour Min="4" Dice="5" Type="Atk" Detail="Hit" Motion="H" MotionDefault="N" EffectRes="" Script="bleeding2atk" ActionScript="XD_流淌于心_2" Desc="[命中时]下一幕中对目标施加2层[流血]" />
     </BehaviourList>
     <Chapter>7</Chapter>
     <Category>None</Category>

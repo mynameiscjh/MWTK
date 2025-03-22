@@ -8,7 +8,7 @@
         {
             foreach (var item in owner.allyCardDetail.GetHand())
             {
-                if (item.GetCost() > 0 && !item.GetFieldValue<DiceCardSelfAbilityBase>("_script").IsFixedCost())
+                if (item.GetCost() > 0 && !(item.GetFieldValue<DiceCardSelfAbilityBase>("_script")?.IsFixedCost() ?? false))
                 {
                     item.AddCost(-1);
                     return;

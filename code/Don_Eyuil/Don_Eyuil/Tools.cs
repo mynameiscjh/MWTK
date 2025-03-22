@@ -1,4 +1,5 @@
 ﻿using CustomMapUtility;
+using DG.Tweening;
 using HarmonyLib;
 using MonoMod.Utils;
 using System;
@@ -8,16 +9,10 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using UnityEngine;
-using static RencounterManager;
-using DG.Tweening;
 using static Don_Eyuil.MovingActionTools.ChainingMovingAction;
-using static Don_Eyuil.MovingActionTools;
-using static WayBackHomeMapManager;
-using DG.Tweening.Core;
-using DG.Tweening.Plugins.Options;
-using static Don_Eyuil.MovingActionTools.MovingActionManager;
-using BTAI;
 using static Don_Eyuil.MovingActionTools.DOTWeenMovingAction;
+using static Don_Eyuil.MovingActionTools.MovingActionManager;
+using static RencounterManager;
 namespace Don_Eyuil
 {
 
@@ -70,19 +65,19 @@ namespace Don_Eyuil
             collection?.ChainingDo((x) => sequence.ToList().InsertRange(index, x));
             return sequence;
         }
-        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence,T item)
+        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence, T item)
         {
             sequence.ToList().Remove(item);
             return sequence;
         }
-        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence,int index)
+        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence, int index)
         {
             sequence.ToList().RemoveAt(index);
             return sequence;
         }
-        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence, int index,int range)
+        public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence, int index, int range)
         {
-            sequence.ToList().RemoveRange(index,range);
+            sequence.ToList().RemoveRange(index, range);
             return sequence;
         }
         public static IEnumerable<T> ChainingRemove<T>(this IEnumerable<T> sequence, Predicate<T> match)
@@ -125,7 +120,7 @@ namespace Don_Eyuil
     }
     public static class MovingActionTools
     {
-        public class MovingActionManager: IMovingActionManager
+        public class MovingActionManager : IMovingActionManager
         {
             public interface IMovingActionManager
             {
@@ -137,7 +132,8 @@ namespace Don_Eyuil
             public List<MovingAction> _baseMovingActions { get; set; }
 
             protected readonly IMovingActionManager _movingActionDecorater;
-            public MovingActionManager(MovingAction movingAction, List<MovingAction> baseMovingActions){
+            public MovingActionManager(MovingAction movingAction, List<MovingAction> baseMovingActions)
+            {
                 _movingAction = movingAction; _baseMovingActions = baseMovingActions;
             }
             public MovingActionManager(IMovingActionManager movingActionDecorater)
@@ -148,15 +144,18 @@ namespace Don_Eyuil
             }
 
             //C->(CP->BP)->B->(BP->AP)->A->P
-            public virtual void Push(){
-                if(_movingActionDecorater != null){ _movingActionDecorater.Push(); } else{
+            public virtual void Push()
+            {
+                if (_movingActionDecorater != null) { _movingActionDecorater.Push(); }
+                else
+                {
                     _baseMovingActions.Add(_movingAction);
                 }
             }
-            public class MovingAction_CustomMovingEventSetter: MovingActionManager
+            public class MovingAction_CustomMovingEventSetter : MovingActionManager
             {
                 private bool _Interval = false;
-                public MovingAction_CustomMovingEventSetter(IMovingActionManager movingActionDecorater,bool interval = false) : base(movingActionDecorater)
+                public MovingAction_CustomMovingEventSetter(IMovingActionManager movingActionDecorater, bool interval = false) : base(movingActionDecorater)
                 {
                     _Interval = interval;
                 }
@@ -177,7 +176,8 @@ namespace Don_Eyuil
                             {
                                 newMoveFunc = baseMoveFunc;
                                 latestElapsedTime = elapsedTime;
-                                if (!_Interval) { newMoveFunc(deltaTime, 0); };
+                                if (!_Interval) { newMoveFunc(deltaTime, 0); }
+                                ;
                             }
                         }
                         else
@@ -188,13 +188,15 @@ namespace Don_Eyuil
                     });
                     base.Push();
                 }
-                sealed public class MovingAction_CustomMovingEventActionManager: MovingAction_CustomMovingEventSetter
+                sealed public class MovingAction_CustomMovingEventActionManager : MovingAction_CustomMovingEventSetter
                 {
                     private Queue<MovingAction.MoveCustomEventWithElapsed> _moveFuncQueue = new Queue<MovingAction.MoveCustomEventWithElapsed> { };
-                    public MovingAction_CustomMovingEventActionManager(IMovingActionManager movingActionDecorater, MovingAction.MoveCustomEventWithElapsed[] moveFuncs, bool interval = false) : base(movingActionDecorater, interval){
+                    public MovingAction_CustomMovingEventActionManager(IMovingActionManager movingActionDecorater, MovingAction.MoveCustomEventWithElapsed[] moveFuncs, bool interval = false) : base(movingActionDecorater, interval)
+                    {
                         moveFuncs?.DoIf(x => x.Method.HasMethodBody(), y => _moveFuncQueue.Enqueue(y));
                     }
-                    public MovingAction_CustomMovingEventActionManager(IMovingActionManager movingActionDecorater, MovingAction.MoveCustomEvent[] moveFuncs, bool interval = false) : base(movingActionDecorater, interval){
+                    public MovingAction_CustomMovingEventActionManager(IMovingActionManager movingActionDecorater, MovingAction.MoveCustomEvent[] moveFuncs, bool interval = false) : base(movingActionDecorater, interval)
+                    {
                         moveFuncs?.DoIf(x => x.Method.HasMethodBody(), y => _moveFuncQueue.Enqueue(((float deltaTime, float elapsedTime) => y(deltaTime))));
                     }
                     public override MovingAction.MoveCustomEventWithElapsed MergeMoveFunc()
@@ -208,7 +210,8 @@ namespace Don_Eyuil
                                 {
                                     _moveFuncQueue.Dequeue();
                                     latestElapsedTime = elapsedTime;
-                                    if (!_Interval && _moveFuncQueue.Count > 0) { _moveFuncQueue.Peek()(deltaTime, 0); };
+                                    if (!_Interval && _moveFuncQueue.Count > 0) { _moveFuncQueue.Peek()(deltaTime, 0); }
+                                    ;
                                 }
                             }
                             else
@@ -224,7 +227,7 @@ namespace Don_Eyuil
                     private DG.Tweening.Sequence _DOTWeenSequence;
                     public MovingAction_DOTWeenActionManager(IMovingActionManager movingActionDecorater, Queue<Tween> DOTWeens, bool interval = false) : base(movingActionDecorater, interval)
                     {
-                        _DOTWeenSequence = _DOTWeenSequence??DOTween.Sequence();
+                        _DOTWeenSequence = _DOTWeenSequence ?? DOTween.Sequence();
                         foreach (Tween tween in DOTWeens)
                         {
                             _DOTWeenSequence.Append(tween);
@@ -244,8 +247,10 @@ namespace Don_Eyuil
                         {
                             if (!_HasStartedPlaying)
                             {
-                                _DOTWeenSequence.Play().AppendCallback(() => { _HasFinishedPlaying = true; }); 
+                                Debug.Log("这是DOTWeen执行");
+                                _DOTWeenSequence.Play();
                                 _HasStartedPlaying = true;
+                                _DOTWeenSequence.onComplete += () => { _HasFinishedPlaying = true; Debug.Log("这是DOTWeen在委托里执行"); };
                             }
                             return _HasFinishedPlaying;
                         };
@@ -254,7 +259,7 @@ namespace Don_Eyuil
 
             }
         }
-        sealed public class ChainingMovingAction: IChainingMovingAction
+        sealed public class ChainingMovingAction : IChainingMovingAction
         {
             public interface IChainingMovingAction
             {
@@ -279,7 +284,8 @@ namespace Don_Eyuil
             }
             public IMovingActionManager _movingActionManager { get; set; }
             private Queue<Tween> _DOTWeenQueue = new Queue<Tween> { };
-            public DOTWeenMovingAction(IMovingActionManager movingActionManager){
+            public DOTWeenMovingAction(IMovingActionManager movingActionManager)
+            {
                 _movingActionManager = movingActionManager;
             }
             public void Finish()
@@ -335,7 +341,7 @@ namespace Don_Eyuil
         }
         public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, bool interval, params RencounterManager.MovingAction.MoveCustomEventWithElapsed[] m)
         {
-            return baseAction.WithMovingActionDecorator(new MovingAction_CustomMovingEventSetter.MovingAction_CustomMovingEventActionManager(baseAction._movingActionManager, m,interval));
+            return baseAction.WithMovingActionDecorator(new MovingAction_CustomMovingEventSetter.MovingAction_CustomMovingEventActionManager(baseAction._movingActionManager, m, interval));
         }
         public static IChainingMovingAction WithCustomMoving(this IChainingMovingAction baseAction, bool interval, params RencounterManager.MovingAction.MoveCustomEvent[] m)
         {
@@ -344,6 +350,7 @@ namespace Don_Eyuil
         //---------------------------------DOTWeen部分--------------------------------------------------------//
         public static IDOTWeenMovingAction WithDOTWeen(this IChainingMovingAction baseAction, params Tween[] tweens)
         {
+            Debug.Log("这是DOTWeen");
             return new DOTWeenMovingAction(baseAction._movingActionManager).AppendDOTween(tweens);
         }
         //确保在最好情况下一条定义流只维护一个DOTWeen装饰器以减少开销
